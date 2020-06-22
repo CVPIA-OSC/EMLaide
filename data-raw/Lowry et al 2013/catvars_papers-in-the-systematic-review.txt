@@ -1,0 +1,1052 @@
+attributeName	code	definition
+type	journal	
+type	chapter	
+journal	JOURNAL OF PLANT ECOLOGY-UK	
+journal	JOURNAL OF ECOLOGY	
+journal	BIOLOGICAL INVASIONS	
+journal	BIOLOGICAL CONSERVATION	
+journal	ECOLOGY	
+journal	ECOGRAPHY	
+journal	DIVERSITY AND DISTRIBUTIONS	
+journal	WILDLIFE RESEARCH	
+journal	OIKOS	
+journal	WESTERN NORTH AMERICAN NATURALIST	
+journal	JOURNAL OF CHEMICAL ECOLOGY	
+journal	AUSTRALIAN JOURNAL OF BOTANY	
+journal	JOURNAL OF PEST SCIENCE	
+journal	FOREST ECOLOGY AND MANAGEMENT	
+journal	OECOLOGIA	
+journal	PROCEEDINGS OF THE ROYAL SOCIETY B-BIOLOGICAL SCIENCES	
+journal	PROCEEDINGS OF THE NATIONAL ACADEMY OF SCIENCES OF THE UNITED STATES OF AMERICA	
+journal	GLOBAL CHANGE BIOLOGY	
+journal	MARINE ECOLOGY-PROGRESS SERIES	
+journal	MOLECULAR ECOLOGY	
+journal	BIOLOGY LETTERS	
+journal	BMC PLANT BIOLOGY	
+journal	FUNCTIONAL PLANT BIOLOGY	
+journal	PLOS BIOLOGY	
+journal	NORTHEASTERN NATURALIST	
+journal	BOTANY-BOTANIQUE	
+journal	AQUATIC ECOLOGY	
+journal	AGRICULTURAL AND FOREST ENTOMOLOGY	
+journal	ESTUARIES AND COASTS	
+journal	AMERICAN MIDLAND NATURALIST	
+journal	AMERICAN MALACOLOGICAL BULLETIN	
+journal	BASIC AND APPLIED ECOLOGY	
+journal	BIOFOULING	
+journal	BIOTROPICA	
+journal	AQUATIC BOTANY	
+journal	JOURNAL OF APPLIED ECOLOGY	
+journal	NATURE	
+journal	POLISH JOURNAL OF ECOLOGY	
+journal	ECOLOGICAL MONOGRAPHS	
+journal	APPLIED VEGETATION SCIENCE	
+journal	FLORA	
+journal	ACTA SOCIETATIS BOTANICORUM POLONIAE	
+journal	JOURNAL OF ARID ENVIRONMENTS	
+journal	ACTA OECOLOGICA-INTERNATIONAL JOURNAL OF ECOLOGY	
+journal	SOUTH AFRICAN JOURNAL OF BOTANY	
+journal	EVOLUTIONARY APPLICATIONS	
+journal	AFRICAN JOURNAL OF RANGE & FORAGE SCIENCE	
+journal	NEW FORESTS	
+journal	HYSTRIX-ITALIAN JOURNAL OF MAMMALOGY	
+journal	VELIGER	
+journal	ANNALS OF BOTANY	
+journal	INTERNATIONAL JOURNAL OF WILDLAND FIRE	
+journal	GAYANA BOTANICA	
+journal	HARMFUL ALGAE	
+journal	ECOLOGY OF FRESHWATER FISH	
+journal	PLANT ECOLOGY	
+journal	JOURNAL OF SYSTEMATICS AND EVOLUTION	
+journal	AMERICAN JOURNAL OF BOTANY	
+journal	APPLIED SOIL ECOLOGY	
+journal	BOTANICAL STUDIES	
+journal	PHYTOCOENOLOGIA	
+journal	ESTUARINE COASTAL AND SHELF SCIENCE	
+journal	FRONTIERS IN ECOLOGY AND THE ENVIRONMENT	
+journal	ECOLOGICAL RESEARCH	
+journal	NATURAL AREAS JOURNAL	
+journal	POPULATION ECOLOGY	
+journal	GENETICS	
+journal	PERSPECTIVES IN PLANT ECOLOGY EVOLUTION AND SYSTEMATICS	
+journal	EVOLUTIONARY ECOLOGY RESEARCH	
+journal	JOURNAL OF HEREDITY	
+journal	ECOSCIENCE	
+journal	JOURNAL OF FISH BIOLOGY	
+journal	AUSTRAL ECOLOGY	
+journal	HYDROBIOLOGIA	
+journal	INTERNATIONAL JOURNAL OF PLANT SCIENCES	
+journal	AQUATIC BIOLOGY	
+journal	JOURNAL OF THE TORREY BOTANICAL SOCIETY	
+journal	BELGIAN JOURNAL OF BOTANY	
+journal	NEW PHYTOLOGIST	
+journal	CONSERVATION BIOLOGY	
+journal	JOURNAL OF PLANKTON RESEARCH	
+journal	INSECT CONSERVATION AND DIVERSITY	
+journal	BIOCONTROL	
+journal	GENETICA	
+journal	ECOLOGICAL ENTOMOLOGY	
+journal	JOURNAL OF ENVIRONMENTAL QUALITY	
+journal	JOURNAL OF APPLIED ENTOMOLOGY	
+journal	JOURNAL OF VEGETATION SCIENCE	
+journal	ECOLOGICAL APPLICATIONS	
+journal	JOURNAL OF FRESHWATER ECOLOGY	
+journal	ENVIRONMENTAL MONITORING AND ASSESSMENT	
+journal	JOURNAL OF THE MARINE BIOLOGICAL ASSOCIATION OF THE UNITED KINGDOM	
+journal	BIOLOGICAL CONTROL	
+journal	PLANT BIOLOGY	
+journal	JOURNAL OF EXPERIMENTAL MARINE BIOLOGY AND ECOLOGY	
+journal	FRESHWATER BIOLOGY	
+journal	FOREST SCIENCE	
+journal	JOURNAL OF ENVIRONMENTAL SCIENCES-CHINA	
+journal	AMERICAN NATURALIST	
+journal	ZOOLOGICAL STUDIES	
+journal	JOURNAL OF TROPICAL ECOLOGY	
+journal	ECOLOGY LETTERS	
+journal	PHOTOSYNTHETICA	
+journal	SEED SCIENCE RESEARCH	
+journal	MARINE AND FRESHWATER RESEARCH	
+journal	JOURNAL OF AQUATIC PLANT MANAGEMENT	
+journal	JOURNAL OF EVOLUTIONARY BIOLOGY	
+journal	SOIL BIOLOGY & BIOCHEMISTRY	
+journal	PRESLIA	
+journal	ECOSYSTEMS	
+journal	ANIMAL BEHAVIOUR	
+journal	PACIFIC SCIENCE	
+journal	EVOLUTIONARY ECOLOGY	
+journal	FUNCTIONAL ECOLOGY	
+journal	BIODIVERSITY AND CONSERVATION	
+journal	NORTHWEST SCIENCE	
+journal	SOUTHWESTERN NATURALIST	
+journal	JOURNAL OF NATURAL HISTORY	
+journal	BULLETIN FRANCAIS DE LA PECHE ET DE LA PISCICULTURE	
+journal	ESTUARIES	
+journal	CANADIAN JOURNAL OF BOTANY-REVUE CANADIENNE DE BOTANIQUE	
+journal	CANADIAN JOURNAL OF FISHERIES AND AQUATIC SCIENCES	
+journal	MARINE ENVIRONMENTAL RESEARCH	
+journal	TRANSACTIONS OF THE ROYAL SOCIETY OF SOUTH AFRICA	
+journal	REGULATED RIVERS-RESEARCH & MANAGEMENT	
+journal	VEGETATIO	
+journal	RESTORATION ECOLOGY	
+journal	BEHAVIORAL ECOLOGY AND SOCIOBIOLOGY	
+journal	NEW ZEALAND JOURNAL OF BOTANY	
+journal	HEREDITY	
+journal	AUSTRALIAN JOURNAL OF ECOLOGY	
+journal	PHYSIOLOGIA PLANTARUM	
+journal	POLAR BIOLOGY	
+journal	REVISTA CHILENA DE HISTORIA NATURAL	
+journal	NEW ZEALAND JOURNAL OF ECOLOGY	
+journal	WILSON BULLETIN	
+journal	EVOLUTIONARY TRENDS IN PLANTS	
+journal	EKOLOGIA CSFR	
+journal	PROCEEDINGS OF THE INDIAN ACADEMY OF SCIENCES SECTION B	
+journal	JOURNAL OF THE BRITISH GRASSLAND SOCIETY	
+journal	CANADIAN ENTOMOLOGIST	
+journal	WETLANDS	
+journal	COMMUNITY ECOLOGY	
+journal	JOURNAL OF HERPETOLOGY	
+journal	AQUATIC CONSERVATION-MARINE AND FRESHWATER ECOSYSTEMS	
+journal	CAHIERS DE BIOLOGIE MARINE	
+journal	CANADIAN JOURNAL OF FOREST RESEARCH-REVUE CANADIENNE DE RECHERCHE FORESTIERE	
+journal	ENVIRONMENTAL ENTOMOLOGY	
+journal	MARINE BIOLOGY	
+journal	PLANT SPECIES BIOLOGY	
+journal	JOURNAL OF EXPERIMENTAL BIOLOGY	
+journal	SCIENCE	
+journal	ORNITOLOGIA NEOTROPICAL	
+journal	REVUE D ECOLOGIE-LA TERRE ET LA VIE	
+journal	RANGELAND ECOLOGY & MANAGEMENT	
+journal	MARINE AND FRESHWATER BEHAVIOUR AND PHYSIOLOGY	
+journal	JOURNAL OF GREAT LAKES RESEARCH	
+journal	WATER RESEARCH	
+journal	CHINESE SCIENCE BULLETIN	
+journal	INSECTES SOCIAUX	
+journal	PEDOBIOLOGIA	
+journal	BOTANICA HELVETICA	
+journal	LAKE AND RESERVOIR MANAGEMENT	
+journal	CANADIAN JOURNAL OF ZOOLOGY-REVUE CANADIENNE DE ZOOLOGIE	
+journal	INTEGRATIVE AND COMPARATIVE BIOLOGY	
+journal	EUROPEAN JOURNAL OF PHYCOLOGY	
+journal	BIOLOGY AND FERTILITY OF SOILS	
+journal	ANNALS OF THE ENTOMOLOGICAL SOCIETY OF AMERICA	
+journal	CURRENT SCIENCE	
+journal	ARCHIV FUR HYDROBIOLOGIE	
+journal	PROCEEDINGS OF THE ROYAL SOCIETY OF LONDON SERIES B-BIOLOGICAL SCIENCES	
+journal	ENVIRONMENTAL BIOLOGY OF FISHES	
+journal	BULLETIN DE LA SOCIETE ZOOLOGIQUE DE FRANCE	
+journal	ENVIRONMENTAL MANAGEMENT	
+journal	PLANT SYSTEMATICS AND EVOLUTION	
+journal	TRANSACTIONS OF THE AMERICAN FISHERIES SOCIETY	
+journal	OHIO JOURNAL OF SCIENCE	
+journal	JOURNAL OF ANIMAL ECOLOGY	
+journal	SOIL SCIENCE	
+journal	ECOLOGICAL MODELLING	
+journal	PHYTOCHEMISTRY	
+journal	EVOLUTION	
+journal	BIOCONTROL SCIENCE AND TECHNOLOGY	
+journal	RHODORA	
+journal	GREAT BASIN NATURALIST	
+journal	HERPETOLOGICA	
+journal	ACTA BOTANICA NEERLANDICA	
+journal	TROPICAL ECOLOGY	
+journal	SOUTH AFRICAN JOURNAL OF SCIENCE	
+journal	ZOOLOGICAL SCIENCE	
+journal	BOTANICAL JOURNAL OF THE LINNEAN SOCIETY	
+journal	PLANT BIOSYSTEMS	
+journal	PLOS ONE	
+journal	CANADIAN FIELD-NATURALIST	
+journal	AQUATIC SCIENCES	
+journal	JOURNAL OF INSECT CONSERVATION	
+journal	MICROBIAL ECOLOGY	
+journal	ETHOLOGY	
+journal	BIOCHEMICAL SYSTEMATICS AND ECOLOGY	
+journal	Hydrobiologia	
+journal	Journal of Molluscan Studies	
+journal	Ecological Entomology	
+journal	Biological Invasions	
+journal	Flora: Morphology, Distribution, Functional Ecology of Plants	
+journal	International Journal of Plant Sciences	
+journal	American Naturalist	
+journal	Western North American Naturalist	
+journal	BULLETIN OF ENTOMOLOGICAL RESEARCH	
+journal	INVASIVE PLANT SCIENCE AND MANAGEMENT	
+journal	ENTOMOLOGIA EXPERIMENTALIS ET APPLICATA	
+journal	BOTANICA MARINA	
+journal	FOLIA GEOBOTANICA	
+journal	JOURNAL OF HELMINTHOLOGY	
+journal	ENVIRONMENTAL AND EXPERIMENTAL BOTANY	
+journal	JOURNAL OF INSECT SCIENCE	
+journal	NEOTROPICAL ENTOMOLOGY	
+journal	LIMNOLOGICA	
+journal	JOURNAL OF MOLLUSCAN STUDIES	
+journal	EUROPEAN JOURNAL OF WILDLIFE RESEARCH	
+journal	ANNALES DE LIMNOLOGIE-INTERNATIONAL JOURNAL OF LIMNOLOGY	
+journal	PLANT ECOLOGY & DIVERSITY	
+journal	PLANT ECOLOGY AND EVOLUTION	
+journal	JOURNAL OF EXPERIMENTAL ZOOLOGY PART A-ECOLOGICAL GENETICS AND PHYSIOLOGY	
+journal	ARTHROPOD-PLANT INTERACTIONS	
+journal	LIMNOLOGY	
+journal	ZOOTAXA	
+journal	FUNDAMENTAL AND APPLIED LIMNOLOGY	
+journal	COPEIA	
+journal	JOURNAL OF EXPERIMENTAL BOTANY	
+journal	JOURNAL OF INSECT BEHAVIOR	
+journal	IBIS	
+journal	WILSON JOURNAL OF ORNITHOLOGY	
+journal	PAKISTAN JOURNAL OF BOTANY	
+journal	FLORIDA ENTOMOLOGIST	
+journal	PLANT DISEASE	
+journal	JOURNAL OF PLANT RESEARCH	
+journal	PROCEEDINGS OF THE LINNEAN SOCIETY OF NEW SOUTH WALES	
+journal	BIOLOGICAL JOURNAL OF THE LINNEAN SOCIETY	
+journal	MALACOLOGIA	
+journal	NORDIC JOURNAL OF BOTANY	
+journal	CRUSTACEANA	
+journal	LIMNOLOGY AND OCEANOGRAPHY	
+journal	JOURNAL OF THE NORTH AMERICAN BENTHOLOGICAL SOCIETY	
+journal	APIDOLOGIE	
+journal	TREES-STRUCTURE AND FUNCTION	
+journal	ANNALES DE LA SOCIETE ENTOMOLOGIQUE DE FRANCE	
+journal	JOURNAL OF MAMMALOGY	
+journal	BOTANICAL BULLETIN OF ACADEMIA SINICA	
+journal	SOCIOBIOLOGY	
+journal	SOUTHEASTERN NATURALIST	
+journal	TREE PHYSIOLOGY	
+journal	INVERTEBRATE BIOLOGY	
+journal	ZEITSCHRIFT FUR PFLANZENKRANKHEITEN UND PFLANZENSCHUTZ-JOURNAL OF PLANT DISEASES AND PROTECTION	
+journal	JOURNAL OF SEA RESEARCH	
+database	Web of Science	
+country	Switzerland	
+country	United States	
+country	Switzerland;United States	
+country	Switzerland;United States;United States	
+country	Australia	
+country	Great Britain;Great Britain	
+country	Canary Islands	
+country	Europe; USA	
+country	USA	
+country	Spain	
+country	Hungary	
+country	Chile	
+country	Canada	
+country	Russia, Poland, Europe	
+country	UK	
+country	France	
+country	South Africa	
+country	USA; Spain; Australia	
+country	North America; Europe	
+country	Europe	
+country	England	
+country	Spain, South Africa	
+country	Europe, South Africa	
+country	many	
+country	Tanzania	
+country	United States; American Samoa; Cook Islands; Fiji; Guam; Kiribati; Marshall Islands; Federated States of Micronesia; Nauru; New Caledonia; Niue; Northern Mariana Islands; Palau; Samoa; Tonga	
+country	Germany	
+country	Portugal	
+country	Netherlands	
+country	Denmark	
+country	Austria	
+country	Poland	
+country	China	
+country	Argentina	
+country	Finland	
+country	Italy	
+country	United States; Argentina; Australia	
+country	United States, Spain and South Africa	
+country	France; Germany; Hungary; Portugal; Australia; Senegal; USA; Mexico; Brazil; Uganda	
+country	Japan	
+country	Mauritius	
+country	United States of America	
+country	Venezuela	
+country	NW Europe	
+country	Madagascar	
+country	Republic of Seychelles	
+country	USA; Canada	
+country	U.S.A.	
+country	United States; Canada	
+country	New Zealand	
+country	Belgium	
+country	United Kingdom	
+country	French Polynesia	
+country	USA;Switzerland	
+country	Crete	
+country	Seychelles	
+country	India	
+country	Greece; Italy; France; Spain	
+country	United States; Netherlands Antilles	
+country	Ireland; Germany; Greece; Spain	
+country	Australia;New Zealand;USA	
+country	Czech Republic	
+country	Japan; Argentina	
+country	Scotland	
+country	United States; Germany; Spain	
+country	USA; France	
+country	Czech republic	
+country	Taiwan; New Caledonia; USA	
+country	USA; Argentina; Turkey	
+country	Georgia, Czech Republic	
+country	Spain; Portugal	
+country	Ireland	
+country	France; Spain; Australia	
+country	Sweden	
+country	France; Unites States; Spain	
+country	United States; France	
+country	Antarctica	
+country	France; Spain; Italy	
+country	Czechoslovakia	
+country	Australia; New Zealand	
+country	Uganda	
+country	Mexico	
+country	United States; Hungary	
+country	Ecuador	
+country	Spain; Ireland	
+country	North America	
+country	Jamaica	
+country	Britain; Czech Republic	
+country	Israel	
+country	USA; New Zealand; Australia	
+country	United States; Costa Rica	
+country	Papua New Guinea	
+country	U.S.A.;Netherlands	
+country	Northern Ireland	
+country	USA; Brazil	
+country	Great Britain	
+country	Niger	
+country	United States; Chile	
+country	United States; Iran; Republic of Georgia; Turkmenistan; Kazakstan	
+country	Austria, Germany, Hungary, Italy, and Switzerland	
+country	Vietnam; Madagascar	
+country	New South Wales	
+country	French islands of the southern Indian Ocean	
+country	Israel; United States	
+country	USA; Europe	
+country	USA;Canada	
+country	Thailand	
+country	Puerto Rico	
+country	The Netherlands	
+country	United States; Germany	
+country	Brazil	
+country	England; Wales	
+country	Global	
+country	USA; Germany; Hungary	
+country	Argentinia	
+country	Greece	
+country	United States; China	
+country	USA; Dominican Republic	
+country	Australia; New Zealand; USA; Chile	
+country	Britain	
+country	southern Portugal	
+country	USA ; Australia	
+country	USA ; Canada	
+country	Indonesia	
+country	La Reunion	
+country	Japan; Philippines	
+country	sub-antarctic Kerguelen Islands	
+country	sub-antarctic marion island	
+country	Greece; USA	
+country	Mediterranean; Macaronesia	
+country	Many	
+country	Zambia	
+country	Albania	
+country	Chile; Portugal; Ireland; New Zealand	
+country	Japan; United States	
+country	Germany; United States	
+country	Egypt	
+country	Slovenia	
+country	Portugal;Spain;South Africa	
+country	China;USA	
+country	Arizona	
+country	South Africa ; Germany	
+country	Turkey	
+country	Mallorca;Corsica;Sardinia;Crete	
+country	Dominican Republic	
+country	USA;Chile	
+country	Aegean Sea	
+country	Asia	
+country	Central America	
+country	La Reunion Island	
+country	Lithuania	
+country	Spain;Hungary)	
+country	Pakistan	
+country	grass	
+country	China.	
+country	Denmark;USA;Sweden	
+country	Spain;Morocco	
+country	World	
+country	Bahamas	
+country	Australian	
+country	Laos	
+country	Indo-pacific islands	
+country	Ethiopia	
+country	Reunion	
+country	South Korea	
+country	Eastern Caribean	
+country	Borneo Island	
+country	Norway	
+country	USA;Kenya	
+country	Spain;France	
+country	Belarus	
+country	North Sea	
+country	Martinique	
+country	Portugal; Spain	
+state	Z	
+state	Maryland	
+state	Valais;Oregon	
+state	Valais;Oregon;West Virginia	
+state	Queensland	
+state	Tenerife	
+state	Czech republic; UK; USA	
+state	NJ	
+state	Louisiana	
+state	British Colombia	
+state	Wyoming	
+state	Aveyron	
+state	Montana; Wyoming; Utah; Colorado	
+state	California; Hawaii; North Carolona; Catalonia	
+state	North Carolina; Vermont	
+state	Fribourg	
+state	Ohio	
+state	Connecticut	
+state	New York	
+state	New Jersey; Pennsylvania	
+state	Oregon	
+state	Florida	
+state	East Usambara	
+state	Hawaii	
+state	North Dakota	
+state	Montana	
+state	New Jersey	
+state	Idaho	
+state	Pennsylvania; New Jersey	
+state	Yunnan Province	
+state	Cordoba	
+state	Indiana	
+state	Colorado	
+state	KwaZulu-Natal	
+state	Buenos Aires Province	
+state	Salamanca	
+state	Florida; California; Hawaii	
+state	California	
+state	Santiago province	
+state	Province of Santiago	
+state	Hokkaido	
+state	Kansas	
+state	Jiangsu	
+state	Missouri	
+state	Alsace	
+state	Ontario	
+state	Guangdong Province	
+state	Wisconsin	
+state	Minnesota	
+state	Jiuduansha Islands	
+state	Antananarivo	
+state	Nara Prefecture; Osaka Prefecture; Kyoto Prefecture	
+state	Bonin Islands	
+state	Pennsylvania	
+state	Washington	
+state	Utah; Kansas	
+state	Brittany	
+state	Quebec	
+state	British Columbia	
+state	Hubei	
+state	Massachusetts	
+state	Iowa	
+state	Novia Scotia	
+state	Kentucky	
+state	Tokelau	
+state	Virginia	
+state	Concepcion	
+state	Seraing;  Antwerpen	
+state	New York; Pennsylvania	
+state	Cornwall	
+state	Manitoba	
+state	Oregon;Valais	
+state	Badajoz	
+state	Iberian Peninsula	
+state	Maryland;Connecticut	
+state	Alabama	
+state	Alberta	
+state	Jena	
+state	Bad Lauchst	
+state	Mahe	
+state	Northern Ireland	
+state	Wuhan	
+state	Hawaii; St. Thomas; Curacao	
+state	Beijing	
+state	Tennessee	
+state	New South Wales	
+state	Georgia	
+state	Taiwan	
+state	Hubei Province	
+state	Zhejiang Province	
+state	Zhejiang	
+state	 Nanjing, Jiangsu	
+state	Potsdam	
+state	Fuerteventura Island	
+state	Kybeyan; Midland; Kansas	
+state	Biadaszki	
+state	Reunion	
+state	Auckland	
+state	Mississippi	
+state	Flander	
+state	Texas	
+state	Craigleith	
+state	Vermont; Oregon; Massachusetts; Montana	
+state	Patagonia	
+state	Northern Cape Province	
+state	Arizona	
+state	Nevada	
+state	Catalonia	
+state	Northern Territory	
+state	Texas; Louisiana; Florida; Georgia	
+state	Northeast	
+state	Burgundy	
+state	Cape Floristic Region	
+state	California; Argentina	
+state	New Hampshire	
+state	North Carolina	
+state	New Mexico	
+state	Arkansas; Oklahoma	
+state	Provence	
+state	Zuerich	
+state	Aramar	
+state	North Sea	
+state	Idaho; Oregon; Washington	
+state	Arkansas	
+state	Galway	
+state	Michigan	
+state	Viedma	
+state	Unterfranken	
+state	Illinois	
+state	County Down	
+state	South Island	
+state	South Carolina; Georgia	
+state	Dehli	
+state	Kerguelen	
+state	Berkshire	
+state	Massachusetts; New Hampshire; Maine	
+state	Wasington	
+state	Western Australia	
+state	New South Wales; Queensland	
+state	Kerala	
+state	Ontario; Quebec	
+state	Lazio; Molise	
+state	Utah	
+state	New South Wales; South Australia	
+state	Massachusetts; Connecticut	
+state	Corsica	
+state	La Reunion	
+state	Tamaulipas	
+state	Victoria	
+state	Santiago	
+state	Canary Islands	
+state	Trieste	
+state	Montpellier	
+state	Yorkshire	
+state	Po Valley	
+state	South Canterbury	
+state	Rh	
+state	Aquitane	
+state	quebec	
+state	Galilee; Judean moutnains	
+state	Mukono district	
+state	Missouri; Illinois	
+state	Moravia	
+state	Queensland; New South Wales	
+state	Sichuan	
+state	Christmas Island	
+state	California; Michigan; New York; Ohio; West Virginia	
+state	Florida; Georgia	
+state	Newfoundland	
+state	Pennsylvania; Ohio	
+state	ProParc National de Port Crosvence-Alpes-C	
+state	Idaho; Wyoming; Oregon	
+state	South Australia	
+state	California; Washington	
+state	florida	
+state	Bohemia	
+state	Argancy	
+state	England	
+state	Australian Capital Territory	
+state	Texas;Hawaii	
+state	Zurich	
+state	Madang Province	
+state	Indiana;	
+state	Antrim;Down	
+state	Pruhonice	
+state	North Dakota;South Dakota	
+state	Tuscany	
+state	South australia	
+state	Georgia Sea Islands	
+state	Varanasi	
+state	Iowa; Missouri; Minnesota; Nebraska	
+state	Mulheim; Wurzburg	
+state	Bavaria	
+state	Arizona; Montana	
+state	Tarragona	
+state	South Carolina; Louisiana	
+state	New  Mexico	
+state	Canberra	
+state	Colorado; Wyoming; Montana; South Dakota; Minnesota	
+state	Canterbury	
+state	South Dakota	
+state	Derbyshire	
+state	Sydney	
+state	Prince Edward Islands	
+state	Montana; Washington; Idaho	
+state	Maine	
+state	Carlos Casares	
+state	Cape Town	
+state	Hadera; Baltimore	
+state	South Carolina	
+state	Western Cape	
+state	Aukland	
+state	CA	
+state	Germany	
+state	Ohio;West Virginia;New York;Kentucky;Indiana;Washington;Canada	
+state	Ang Thong	
+state	Perth	
+state	Vermont	
+state	Guarico State	
+state	Hamilton	
+state	Colorado; Wyoming; Montana; South Dakota	
+state	Tahiti	
+state	Mandagout	
+state	California; Colorado; Minnesota; Maine; NH; VT; MA; CT; DE; MD; NJ; VA; AL; GA; OR; WA	
+state	Colorado; South Dakota; Wyoming	
+state	Kyoto	
+state	Southern Ocean Islands	
+state	Marseille	
+state	Townsville	
+state	Uttar Pradesh	
+state	Nanjing	
+state	Santa Catarin	
+state	French Southern and Antarctic Lands	
+state	California; Nevada	
+state	Toronto	
+state	Oklahoma	
+state	Maryland; Virginia	
+state	Vermont; North Carolina	
+state	WA; OR; CO; WY	
+state	Alaska	
+state	Zug	
+state	Thuringa	
+state	Isla Victoria	
+state	Virginia; West Virginia	
+state	Calfornia	
+state	Wisconsin; Michigan; New York; Ohio	
+state	Madrid	
+state	Nieuwoudtiville	
+state	Tennesee	
+state	Shanxi;Shaanxi	
+state	Queensland/New South Wales	
+state	West Virginia	
+state	South Carolina;Georgia	
+state	Andes	
+state	Compi	
+state	Balearic Islands	
+state	Cordoba Province	
+state	Java	
+state	San Francisco	
+state	Guangzhou	
+state	Eastern Poland	
+state	Hafen City	
+state	New England	
+state	Sichuan;Chongqing	
+state	California;Florida	
+state	Galapagos Islands	
+state	The Azores	
+state	Sylt	
+state	South China	
+state	Yuma	
+state	Michigan;California	
+state	Dominica	
+state	Nova Scotia	
+state	Islamabad	
+state	Berlin	
+state	Northern Cape province	
+state	Zhuhai	
+state	Galapagos	
+state	Menorca	
+state	California;Hawaii;Arizona	
+state	New York;Conneticut	
+state	Tyrol	
+state	Vosges	
+state	Delaware	
+state	Rhode Island	
+state	Yucatan	
+state	Mato Grosso	
+state	Kent	
+state	Rio de Janeiro	
+state	Martinique	
+state	MInnesota	
+state	Arizona; California; Hawaii	
+state	Nevada; Utah	
+research_type	Greenhouse;Garden	
+research_type	Field - Observational	
+research_type	Field - Experimental;Greenhouse	
+research_type	Lab	
+research_type	Field - Experimental	
+research_type	Field - Observational;Lab	
+research_type	Field - Experimental;Greenhouse;Garden	
+research_type	Field - Observational;Review	
+research_type	Field - Experimental;Field - Observational;Greenhouse	
+research_type	Theoretical/Modeling	
+research_type	Greenhouse	
+research_type	Field - Experimental;Field - Observational;Theoretical/Modeling	
+research_type	Statistical/Meta-analysis	
+research_type	Field - Observational;Theoretical/Modeling;Statistical/Meta-analysis	
+research_type	Garden	
+research_type	Greenhouse;Lab	
+research_type	Review	
+research_type	Field - Experimental;Field - Observational	
+research_type	Field - Observational;Statistical/Meta-analysis	
+research_type	Field - Observational;Greenhouse	
+research_type	Garden;Lab	
+research_type	Field - Observational;Theoretical/Modeling	
+research_type	Field - Experimental;Lab	
+research_type	Theoretical/Modeling;Garden	
+research_type	Field - Observational;Garden	
+research_type	Field - Observational;Greenhouse;Garden	
+research_type	Field - Experimental;Greenhouse;Lab	
+research_type	Statistical/Meta-analysis;Review	
+research_type	Review/Meta-analysis	
+research_type	Field - Experimental;Garden	
+research_type	Field - Experimental;Statistical/Meta-analysis	
+research_type	Theoretical/Modeling;Statistical/Meta-analysis	
+research_type	Garden;Review	
+research_type	Field - Experimental;Field - Observational;Lab	
+research_type	Field - Experimental;Theoretical/Modeling	
+research_type	Field - Observational;Greenhouse;Lab	
+research_type	Field - Observational;Statistical/Meta-analysis;Review	
+research_type	Theoretical/Modeling;Review	
+research_type	Field - Observational;Review;Meta-analysis	
+research_type	Review;Meta-analysis	
+ecosystem	terrestrial	
+ecosystem	marine	
+ecosystem	estuarine	
+ecosystem	lotic	
+ecosystem	lentic	
+ecosystem	terrestrial;lentic;lotic	
+ecosystem	terrestrial;lotic	
+ecosystem	wetland	
+ecosystem	lentic;lotic	
+ecosystem	terrestrial;marine	
+ecosystem	lotic;estuarine	
+ecosystem	marine;lotic	
+ecosystem	terrestrial;lentic	
+ecosystem	terrestrial;wetland	
+ecosystem	marine;lentic	
+ecosystem	marine;lentic;lotic;estuarine	
+ecosystem	terrestrial;estuarine;wetland	
+biome	Deciduous Forest	
+biome	Mountain	
+biome	Tropical Forest	
+biome	Urban;Old Field	
+biome	Chaparral/Shrublands	
+biome	Desert	
+biome	Grassland	
+biome	Wetland	
+biome	Savanna	
+biome	Intertidal/Near Shore	
+biome	Riparian	
+biome	Deciduous Forest;Coniferous Forest	
+biome	Grassland;Deciduous Forest;Coniferous Forest	
+biome	Deciduous Forest;Old Field	
+biome	Grassland;Deciduous Forest;Chaparral/Shrublands	
+biome	Deciduous Forest;Riparian	
+biome	Grassland;Deciduous Forest;Coniferous Forest;Mountain;Tundra;Chaparral/Shrublands;Urban	
+biome	Coniferous Forest	
+biome	Tropical Forest;Subtropical Forest	
+biome	Intertidal/Near Shore;Pelagic/Open Ocean	
+biome	Deciduous Forest;Coniferous Forest;Riparian;Chaparral/Shrublands	
+biome	Subtropical Forest	
+biome	Deciduous Forest;Chaparral/Shrublands	
+biome	Deciduous Forest;Subtropical Forest	
+biome	Grassland;Deciduous Forest;Coniferous Forest;Mountain;Chaparral/Shrublands;Urban;Old Field	
+biome	Grassland;Chaparral/Shrublands	
+biome	Old Field	
+biome	Urban	
+biome	Coniferous Forest;Urban	
+biome	Grassland;Deciduous Forest	
+biome	Benthic	
+biome	Pelagic/Open Ocean	
+biome	Grassland;Deciduous Forest;Wetland;Chaparral/Shrublands;Old Field;Intertidal/Near Shore	
+biome	Deciduous Forest;Coniferous Forest;Old Field	
+biome	Grassland;Deciduous Forest;Urban;Old Field	
+biome	Wetland;Urban	
+biome	Coniferous Forest;Riparian;Old Field	
+biome	Wetland;Riparian	
+biome	Coral Reef	
+biome	Chaparral/Shrublands;Old Field	
+biome	Grassland;Coniferous Forest;Riparian;Mountain	
+biome	Intertidal/Near Shore;Benthic	
+biome	Tropical Forest;Subtropical Forest;Chaparral/Shrublands	
+biome	Riparian;Chaparral/Shrublands	
+biome	Broadleaf Evergreen Forest;Old Field	
+biome	Grassland;Old Field	
+biome	Grassland;Urban	
+biome	Grassland;Deciduous Forest;Coniferous Forest;Riparian;Chaparral/Shrublands;Old Field	
+biome	Grassland;Subtropical Forest;Chaparral/Shrublands	
+biome	Subtropical Forest;Savanna	
+biome	Tundra	
+biome	Coniferous Forest;Riparian	
+biome	Grassland;Desert	
+biome	Mountain;Chaparral/Shrublands	
+biome	Broadleaf Evergreen Forest;Chaparral/Shrublands;Old Field	
+biome	Grassland;Coniferous Forest;Riparian;Mountain;Chaparral/Shrublands	
+biome	Deciduous Forest;Coniferous Forest;Chaparral/Shrublands	
+biome	Deciduous Forest;Mountain	
+biome	Grassland;Coniferous Forest	
+biome	Riparian;Old Field	
+biome	Wetland;Chaparral/Shrublands	
+biome	Grassland;Deciduous Forest;Coniferous Forest;Broadleaf Evergreen Forest;Savanna;Wetland;Riparian	
+biome	Coniferous Forest;Savanna	
+biome	Grassland;Tundra	
+biome	Deciduous Forest;Savanna	
+biome	Grassland;Mountain	
+biome	Broadleaf Evergreen Forest	
+biome	Broadleaf Evergreen Forest;Intertidal/Near Shore	
+biome	Grassland;Riparian	
+biome	Grassland;Deciduous Forest;Old Field	
+biome	Deciduous Forest;Urban;Old Field	
+biome	Deciduous Forest;Coniferous Forest;Subtropical Forest	
+biome	Grassland;Savanna	
+biome	Grassland;Subtropical Forest	
+biome	Deciduous Forest;Urban	
+biome	Riparian;Urban;Old Field	
+biome	Grassland;Deciduous Forest;Wetland	
+focus	Invasion Hyp.	
+focus	Impacts;Invasion Hyp.	
+focus	Impacts;Fundamentals	
+focus	Fundamentals;Invasion Hyp.	
+focus	Fundamentals	
+focus	Impacts;Fundamentals;Invasion Hyp.	
+hypothesis	Enemy Release;Evolution of Increased Competitive Ability;Novel Weapons;Preadaptation to Climate	
+hypothesis	Novel Weapons	
+hypothesis	Enemy Release	
+hypothesis	Evolution in General	
+hypothesis	Other	
+hypothesis	Evolution in General;Inherent Superiority	
+hypothesis	Evolution in General;Other	
+hypothesis	Preadaptation to Climate	
+hypothesis	Hybridization	
+hypothesis	Inherent Superiority	
+hypothesis	Mutualism Facilitation;Other	
+hypothesis	Mutualism Facilitation	
+hypothesis	Mutualism Facilitation;Propagule Pressure;Ecosystem Engineers	
+hypothesis	Enemy Release;Disturbance	
+hypothesis	Plasticity	
+hypothesis	Propagule Pressure;Preadaptation to Climate;Disturbance	
+hypothesis	Climate Change	
+hypothesis	Evolution of Increased Competitive Ability	
+hypothesis	Inherent Superiority;Disturbance	
+hypothesis	Enemy Release;Evolution in General;Inherent Superiority	
+hypothesis	Mutualism Facilitation;Disturbance	
+hypothesis	Disturbance	
+hypothesis	Evolution in General;Plasticity	
+hypothesis	Community Species Richness;Disturbance	
+hypothesis	Inherent Superiority;Community Species Richness	
+hypothesis	Inherent Superiority;Propagule Pressure;Preadaptation to Climate	
+hypothesis	Community Species Richness;Propagule Pressure	
+hypothesis	Inherent Superiority;Propagule Pressure;Disturbance	
+hypothesis	Enemy Release;Community Species Richness;Propagule Pressure;Disturbance	
+hypothesis	Community Species Richness	
+hypothesis	Preadaptation to Climate;Other	
+hypothesis	Preadaptation to Climate;Climate Change	
+hypothesis	Disturbance;Other	
+hypothesis	Empty Niche	
+hypothesis	Inherent Superiority;Community Species Richness;Preadaptation to Climate;Disturbance;Climate Change	
+hypothesis	Inherent Superiority;Preadaptation to Climate	
+hypothesis	Inherent Superiority;Fluctuating Resources;Other	
+hypothesis	Inherent Superiority;Preadaptation to Climate;Disturbance	
+hypothesis	Inherent Superiority;Other	
+hypothesis	Fluctuating Resources;Disturbance	
+hypothesis	Evolution of Increased Competitive Ability;Inherent Superiority;Preadaptation to Climate	
+hypothesis	Mutualism Facilitation;Inherent Superiority	
+hypothesis	Evolution of Increased Competitive Ability;Novel Weapons	
+hypothesis	Community Species Richness;Propagule Pressure;Other	
+hypothesis	Evolution in General;Preadaptation to Climate	
+hypothesis	Enemy Release;Other	
+hypothesis	Propagule Pressure;Disturbance	
+hypothesis	Mutualism Facilitation;Inherent Superiority;Other	
+hypothesis	Propagule Pressure;Other	
+hypothesis	Community Species Richness;Preadaptation to Climate;Disturbance	
+hypothesis	Inherent Superiority;Fluctuating Resources	
+hypothesis	Propagule Pressure	
+hypothesis	Inherent Superiority;Empty Niche	
+hypothesis	Inherent Superiority;Propagule Pressure	
+hypothesis	Evolution of Increased Competitive Ability;Disturbance	
+hypothesis	Evolution of Increased Competitive Ability;Plasticity	
+hypothesis	Evolution of Increased Competitive Ability;Evolution in General	
+hypothesis	Fluctuating Resources	
+hypothesis	Inherent Superiority;Hybridization	
+hypothesis	Evolution in General;Preadaptation to Climate;Other	
+hypothesis	Evolution of Increased Competitive Ability;Hybridization	
+hypothesis	Enemy Release;Fluctuating Resources	
+hypothesis	Community Species Richness;Propagule Pressure;Preadaptation to Climate	
+hypothesis	Inherent Superiority;Plasticity	
+hypothesis	Preadaptation to Climate;Disturbance	
+hypothesis	Enemy Release;Evolution of Increased Competitive Ability	
+hypothesis	Community Species Richness;Fluctuating Resources	
+hypothesis	Empty Niche;Fluctuating Resources	
+hypothesis	Enemy Release;Novel Weapons	
+hypothesis	Disturbance;Climate Change;Other	
+hypothesis	Mutualism Facilitation;Empty Niche	
+hypothesis	Inherent Superiority;Propagule Pressure;Other	
+hypothesis	Empty Niche;Community Species Richness	
+hypothesis	Inherent Superiority;Community Species Richness;Disturbance	
+hypothesis	Enemy Release;Community Species Richness;Disturbance;Other	
+hypothesis	Community Species Richness;Propagule Pressure;Disturbance;Other	
+hypothesis	Inherent Superiority;Novel Weapons	
+hypothesis	Community Species Richness;Disturbance;Other	
+hypothesis	Ecosystem Engineers	
+hypothesis	Enemy Of My Enemy	
+hypothesis	Novel Weapons;Other	
+hypothesis	Enemy Release;Inherent Superiority;Disturbance	
+hypothesis	Enemy Release;Plasticity	
+hypothesis	Community Species Richness;Other	
+hypothesis	Propagule Pressure;Fluctuating Resources	
+hypothesis	Enemy Release;Inherent Superiority;Propagule Pressure;Fluctuating Resources	
+hypothesis	Disturbance;Ecosystem Engineers	
+hypothesis	Empty Niche;Propagule Pressure;Disturbance	
+hypothesis	Enemy Release;Community Species Richness	
+hypothesis	Inherent Superiority;Climate Change	
+hypothesis	Preadaptation to Climate;Disturbance;Other	
+hypothesis	Enemy Of My Enemy;Preadaptation to Climate;Disturbance	
+hypothesis	Fluctuating Resources;Disturbance;Climate Change	
+hypothesis	Hybridization;Plasticity	
+hypothesis	Enemy Release;Evolution in General	
+hypothesis	Inherent Superiority;Disturbance;Other	
+hypothesis	Evolution in General;Disturbance	
+hypothesis	Evolution in General;Inherent Superiority;Community Species Richness	
+hypothesis	Climate Change;Other	
+hypothesis	Empty Niche;Disturbance;Other	
+hypothesis	Community Species Richness;Disturbance;Ecosystem Engineers	
+hypothesis	Enemy Release;Inherent Superiority	
+hypothesis	Propagule Pressure;Disturbance;Other	
+hypothesis	Enemy Release;Hybridization	
+hypothesis	Enemy Release;Evolution of Increased Competitive Ability;Other	
+hypothesis	Inherent Superiority;Community Species Richness;Propagule Pressure	
+hypothesis	Enemy Release;Empty Niche	
+hypothesis	Mutualism Facilitation;Inherent Superiority;Novel Weapons;Ecosystem Engineers	
+hypothesis	Plasticity;Disturbance	
+hypothesis	Novel Weapons;Plasticity;Ecosystem Engineers	
+hypothesis	Mutualism Facilitation;Ecosystem Engineers	
+hypothesis	Evolution in General;Novel Weapons	
+hypothesis	Evolution in General;Climate Change	
+hypothesis	Community Species Richness;Climate Change	
+hypothesis	Empty Niche;Climate Change	
+hypothesis	Mutualism Facilitation;Propagule Pressure	
+hypothesis	Plasticity;Preadaptation to Climate	
+hypothesis	Community Species Richness;Hybridization;Plasticity	
+hypothesis	Community Species Richness;Propagule Pressure;Disturbance	
+superior_character	Effective Disperser	
+superior_character	Broad Tolerances	
+superior_character	Superior Competitor	
+superior_character	Rapid Growth	
+superior_character	Superior Competitor;Broad Tolerances	
+superior_character	High Reprod. Output	
+superior_character	Rapid Growth;High Reprod. Output	
+superior_character	Superior Competitor;High Reprod. Output	
+superior_character	High Reprod. Output;Effective Disperser	
+superior_character	Self Compatible	
+superior_character	High Reprod. Output;Clonal Reproduction	
+superior_character	Superior Competitor;Rapid Growth	
+superior_character	Rapid Growth;Effective Disperser	
+superior_character	Broad Tolerances;High Reprod. Output	
+superior_character	Broad Tolerances;Rapid Growth;Clonal Reproduction	
+superior_character	Clonal Reproduction	
+superior_character	Superior Competitor;Effective Disperser	
+superior_character	Effective Disperser;Clonal Reproduction	
+superior_character	Broad Tolerances;Rapid Growth	
+superior_character	High Reprod. Output;Self Compatible;Clonal Reproduction	
+superior_character	Broad Tolerances;Self Compatible;Clonal Reproduction	
+superior_character	Broad Tolerances;High Reprod. Output;Clonal Reproduction	
+superior_character	Rapid Growth;High Reprod. Output;Clonal Reproduction	
+superior_character	Broad Tolerances;Rapid Growth;High Reprod. Output;Effective Disperser;Clonal Reproduction	
+superior_character	Rapid Growth;High Reprod. Output;Self Compatible	
+superior_character	Superior Competitor;Rapid Growth;Effective Disperser	
+superior_character	Rapid Growth;Clonal Reproduction	
+superior_character	High Reprod. Output;Self Compatible	
+superior_character	Superior Competitor;Rapid Growth;Effective Disperser;Clonal Reproduction	
+superior_character	Superior Competitor;High Reprod. Output;Self Compatible	
+superior_character	Broad Tolerances;Rapid Growth;High Reprod. Output	
+superior_character	High Reprod. Output;Effective Disperser;Clonal Reproduction	
+superior_character	Superior Competitor;Broad Tolerances;Effective Disperser	
+superior_character	Superior Competitor;Broad Tolerances;High Reprod. Output	
+superior_character	Self Compatible;Clonal Reproduction	
+superior_character	Broad Tolerances;Self Compatible	
+trophic_level	primary;herbivore	
+trophic_level	primary	
+trophic_level	omnivore	
+trophic_level	herbivore;omnivore;predator	
+trophic_level	herbivore	
+trophic_level	filter	
+trophic_level	predator	
+trophic_level	herbivore;omnivore;filter	
+trophic_level	decomposer	
+trophic_level	herbivore;omnivore;decomposer	
+trophic_level	primary;omnivore	
+trophic_level	omnivore;predator;decomposer	
+trophic_level	parasite	
+trophic_level	pathogen	
+trophic_level	primary;parasite	
+trophic_level	primary;herbivore;omnivore;predator;decomposer;filter	
+trophic_level	primary;herbivore;omnivore;predator	
+trophic_level	herbivore;decomposer;filter	
+trophic_level	primary;filter	
+trophic_level	herbivore;omnivore	
+trophic_level	primary;decomposer;filter	
+trophic_level	herbivore;omnivore;predator;parasite	
+trophic_level	primary;herbivore;omnivore;predator;filter	
+trophic_level	predator;filter	
+trophic_level	primary;pathogen	
+trophic_level	herbivore;omnivore;predator;decomposer	
+trophic_level	herbivore;omnivore;predator;filter	
+trophic_level	herbivore;predator	
+trophic_level	primary;herbivore;predator	
+trophic_level	omnivore;parasite	
+trophic_level	primary;herbivore;omnivore	
+trophic_level	primary;herbivore;pathogen	

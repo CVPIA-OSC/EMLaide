@@ -1,0 +1,11 @@
+givenName	middleInitial	surName	organizationName	electronicMailAddress	userId	role	projectTitle	fundingAgency	fundingNumber
+Edward		Lowry	"Department of Biology, Hampden-Sidney College, Hampden-Sidney, VA, USA"	delowry@hsc.edu		creator			
+Emily	J.	Rollinson	"Department of Biological Sciences?, East Stroudsburg University, East Stroudsburg, PA, USA"	erollinson@esu.edu	0000-0003-3428-2352	creator			
+Adam	J.	Laybourn	Lautec ApS			creator			
+Tracy	E.	Scott	"Department of Ecology and Evolution, Stony Brook University, Stony Brook, NY, USA"			creator			
+Matthew	E.	Aiello-Lammens	"Dyson College of Arts and Sciences, PACE university – Westchester campus, Pleasantville, NY, USA"	maiellolammens@pace.edu	0000-0002-6180-5959	creator			
+Sarah	M.	Gray	"Department of Biology, University of Fribourg, Breisgau, Germany"			creator			
+James		Mickley	"Department of Ecology and Evolutionary Biology, University of Connecticut, Storrs, CT, USA"	james.mickley@uconn.edu	0000-0002-5988-5275	creator			
+Jessica		Gurevitch	"Department of Ecology and Evolution, Stony Brook University, Stony Brook, NY, USA"	jessica.gurevitch@stonybrook.edu	0000-0003-0157-4332 	creator			
+Jessica		Gurevitch	"Department of Ecology and Evolution, Stony Brook University, Stony Brook, NY, USA"	jessica.gurevitch@stonybrook.edu	0000-0003-0157-4332 	contact			
+Edward		Lowry				PI	[support for teaching/research postdoctoral position]	"Department of Ecology and Evolution, Stony Brook University, Stony Brook, NY, USA"	
