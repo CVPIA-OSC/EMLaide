@@ -1,3 +1,5 @@
+# TODO implement error when user supplies title that is too short
+# TODO check the requirements for short_name and add appropriate error or warnings
 #' @title Add Title Elements
 #' @param parament_element dataset or project 
 #' @param title title of the project/dataset TODO add EDI recommendations
