@@ -18,4 +18,10 @@ test_that('dataset title length is between 7 and 20 words long', {
     "Please make sure your title is between 7 and 20 words long."
   )
   
+  expect_error(
+    add_title(list(), title = "This title is at least 7 words and not over 20 words.",
+              short_name = "This is a short name and it is way way way way way way way way way way way way way way way way way way too long."),
+    "Short name should not be longer than the dataset's title."
+  )
+  
 })

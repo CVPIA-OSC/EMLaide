@@ -10,7 +10,7 @@ add_title(parent_element, title, short_name)
 \item{title}{The title of the project and/or dataset. A complete title is between
 7 and 20 words long and includes: What, Where, and When (and Who, if relevant).}
 
-\item{short_name}{short name of the project/dataset TODO add EDI recommendations}
+\item{short_name}{Short name or nickname you use to refer to this dataset.}
 
 \item{parament_element}{dataset or project}
 }
