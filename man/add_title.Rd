@@ -7,7 +7,8 @@
 add_title(parent_element, title, short_name)
 }
 \arguments{
-\item{title}{title of the project/dataset TODO add EDI recommendations}
+\item{title}{The title of the project and/or dataset. A complete title is between
+7 and 20 words long and includes: What, Where, and When (and Who, if relevant).}
 
 \item{short_name}{short name of the project/dataset TODO add EDI recommendations}
 
