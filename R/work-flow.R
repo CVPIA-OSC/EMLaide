@@ -1,5 +1,5 @@
 # WORK FLOW -----
-rmarkdown::pandoc_convert('data-raw/example_abstract_methods3.docx', to = 'markdown', 
+rmarkdown::pandoc_convert('data-raw/example_abstract.docx', to = 'markdown', 
                           wd = getwd(), output = 'data-raw/temp.md')
 
 a <- read_file('data-raw/temp.md')
