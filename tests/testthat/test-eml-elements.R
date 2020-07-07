@@ -25,3 +25,8 @@ test_that('dataset title length is between 7 and 20 words long', {
   )
   
 })
+
+
+test_that('dataset abstract warns if abstract is too short',  {
+  expect_warning(add_abstract(list(), abstract = "A not very specific abstract"))
+})
