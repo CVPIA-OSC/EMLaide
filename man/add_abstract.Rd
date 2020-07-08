@@ -9,7 +9,7 @@ add_abstract(parent_element, abstract)
 \arguments{
 \item{abstract}{Abstract paragraphs, minimum of 20 words.}
 
-\item{parament_element}{dataset or project}
+\item{parament_element}{a list representing the EML project or dataset}
 }
 \description{
 Add Title Elements

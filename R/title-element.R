@@ -1,5 +1,5 @@
 #' @title Add Title Elements
-#' @param parament_element dataset or project 
+#' @param parament_element a list representing the EML project or dataset
 #' @param title The title of the project and/or dataset. A complete title is between 
 #' 7 and 20 words long and includes: What, Where, and When (and Who, if relevant).
 #' @param short_name Short name or nickname you use to refer to this dataset. 
