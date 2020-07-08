@@ -40,13 +40,20 @@ add_personnel <- function(parent_element, first_name, last_name, email,
   }
   
   if (role == "Creator") {
-    parent_element$creator <- person
+    if (is.null(parent_element$creator)) {
+      parent_element$creator <- person
+    } else {
+      parent_element$creator <- list(parent_element$creator, person)
+    }
   } else {
     person$role <- role
-    parent_element$associatedParty <- person
+    if (is.null(parent_element$associatedParty)) {
+      parent_element$associatedParty <- person
+    } else {
+      parent_element$associatedParty <- list(parent_element$associatedParty, person)
+    }
   }
-
+  
   return(parent_element)
   
 }
-
