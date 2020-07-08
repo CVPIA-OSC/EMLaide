@@ -1,5 +1,5 @@
 #' @title Add Title Elements
-#' @param parament_element dataset or project 
+#' @param parament_element a list representing the EML project or dataset
 #' @param abstract Abstract paragraphs, minimum of 20 words.
 #' @details 
 #' For	a	dataset,	the	abstract	element	can	appear	at	the	resource	level	or	the	project level.		

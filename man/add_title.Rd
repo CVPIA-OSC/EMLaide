@@ -12,7 +12,7 @@ add_title(parent_element, title, short_name)
 
 \item{short_name}{Short name or nickname you use to refer to this dataset.}
 
-\item{parament_element}{dataset or project}
+\item{parament_element}{a list representing the EML project or dataset}
 }
 \description{
 Add Title Elements
