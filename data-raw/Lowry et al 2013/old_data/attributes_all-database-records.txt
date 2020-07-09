@@ -1,0 +1,27 @@
+attributeName	attributeDefinition	class	unit	dateTimeFormatString	missingValueCode	missingValueCodeExplanation
+record_id	Unique identification number assigned by our group to each publication record we considered for inclusion	character				
+author	the authors of the publication	character				
+year	the year the publication was published	numeric	nominalYear			
+title	the title of the publication	character				
+type	the type of publication (e.g. journal article)	character				
+journal	the title of the journal in which the publication appeared	character				
+volume	the volume of the journal in which the publication appeared	character				
+issue	the issue of the journal in which the publication appeared	character				
+firstpage	the number of the first page of the publication in the journal	character				
+lastpage	the number of the last page of the publication in the journal	character				
+abstract	"the abstract of the publication, if there is one"	character				
+database	the online database from which the publication was drawn from to include in our study (e.g. Web of Science)	character				
+excluded	"after inclusion in our database, if the paper was considered inappropriate for our purpose it was marked for exclusion"	categorical				
+species	the species considered as an invasive in the publication	character				
+country	the country where the process of invasion occurred (when this could be determined) for the publication	character				
+state	the state within country (when this was appropriate) where the process of invasion occurred	character				
+locality	the locality (when this could be determined and was an appropriate category) where the process of invasion occurred	character				
+latitude	"the latitude where the study took place, when this could be determined"	character				
+longitude	"the longitude where the study took place, when this could be determined"	character				
+research_type	"the methods of the study in the publication (e.g. field experiment, theoretical study, etc.) "	character				
+ecosystem	the ecosystem where the process of invasion 	character				
+biome	the biome where the process of invasion occurred 	character				
+focus	"the focus of the publication (e.g. evaluate an invasion hypothesis, evaluate the impacts of invasion, etc.)"	character				
+hypothesis	the hypothesis(es) considered by the publication (if any)	character				
+superior_character	"If the hypothesis considered was the superior fitness characteristics of a invader, which one "	character				
+trophic_level	the trophic level of the invasive species considered by the publication	character				

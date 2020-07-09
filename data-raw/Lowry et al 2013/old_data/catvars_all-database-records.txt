@@ -1,0 +1,3 @@
+attributeName	code	definition
+excluded	1	excluded
+excluded	0	not excluded

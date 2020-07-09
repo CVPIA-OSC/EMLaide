@@ -1,0 +1,3291 @@
+attributeName	code	definition
+type	journal	
+type	chapter	
+journal	JOURNAL OF PLANT ECOLOGY-UK	
+journal	JOURNAL OF ECOLOGY	
+journal	BIOLOGICAL INVASIONS	
+journal	BIOLOGICAL CONSERVATION	
+journal	MARINE ECOLOGY-PROGRESS SERIES	
+journal	ECOLOGY	
+journal	ECOGRAPHY	
+journal	DIVERSITY AND DISTRIBUTIONS	
+journal	WILDLIFE RESEARCH	
+journal	OIKOS	
+journal	WESTERN NORTH AMERICAN NATURALIST	
+journal	JOURNAL OF CHEMICAL ECOLOGY	
+journal	ANNALS OF BOTANY	
+journal	AUSTRALIAN JOURNAL OF BOTANY	
+journal	JOURNAL OF PEST SCIENCE	
+journal	NATURAL AREAS JOURNAL	
+journal	FOREST ECOLOGY AND MANAGEMENT	
+journal	OECOLOGIA	
+journal	PROCEEDINGS OF THE ROYAL SOCIETY B-BIOLOGICAL SCIENCES	
+journal	LIMNETICA	
+journal	PROCEEDINGS OF THE NATIONAL ACADEMY OF SCIENCES OF THE UNITED STATES OF AMERICA	
+journal	GLOBAL CHANGE BIOLOGY	
+journal	MOLECULAR ECOLOGY	
+journal	BIOLOGY LETTERS	
+journal	BMC PLANT BIOLOGY	
+journal	FUNCTIONAL PLANT BIOLOGY	
+journal	PLOS BIOLOGY	
+journal	COPEIA	
+journal	CONSERVATION BIOLOGY	
+journal	RESTORATION ECOLOGY	
+journal	NORTHEASTERN NATURALIST	
+journal	ECOLOGY LETTERS	
+journal	BOTANY-BOTANIQUE	
+journal	JOURNAL OF APPLIED ECOLOGY	
+journal	AQUATIC ECOLOGY	
+journal	AGRICULTURAL AND FOREST ENTOMOLOGY	
+journal	BIOLOGY AND FERTILITY OF SOILS	
+journal	ESTUARIES AND COASTS	
+journal	GEODERMA	
+journal	CASTANEA	
+journal	AMERICAN MIDLAND NATURALIST	
+journal	JOURNAL OF SHELLFISH RESEARCH	
+journal	HYDROBIOLOGIA	
+journal	ECOLOGICAL RESEARCH	
+journal	AMERICAN MALACOLOGICAL BULLETIN	
+journal	BASIC AND APPLIED ECOLOGY	
+journal	BIOFOULING	
+journal	BIOTROPICA	
+journal	JOURNAL OF APPLIED ENTOMOLOGY	
+journal	BIOCONTROL	
+journal	CONTRIBUTIONS TO ZOOLOGY	
+journal	AQUATIC BOTANY	
+journal	PLANT ECOLOGY	
+journal	NATURE	
+journal	POLISH JOURNAL OF ECOLOGY	
+journal	ECOLOGICAL MONOGRAPHS	
+journal	APPLIED VEGETATION SCIENCE	
+journal	FLORA	
+journal	ACTA SOCIETATIS BOTANICORUM POLONIAE	
+journal	ECOLOGICAL APPLICATIONS	
+journal	JOURNAL OF ARID ENVIRONMENTS	
+journal	ACTA OECOLOGICA-INTERNATIONAL JOURNAL OF ECOLOGY	
+journal	AMERICAN JOURNAL OF BOTANY	
+journal	LIMNOLOGY AND OCEANOGRAPHY	
+journal	SOUTH AFRICAN JOURNAL OF BOTANY	
+journal	EVOLUTIONARY APPLICATIONS	
+journal	AFRICAN JOURNAL OF RANGE & FORAGE SCIENCE	
+journal	NEW FORESTS	
+journal	HYSTRIX-ITALIAN JOURNAL OF MAMMALOGY	
+journal	VELIGER	
+journal	INTERNATIONAL JOURNAL OF WILDLAND FIRE	
+journal	GAYANA BOTANICA	
+journal	HARMFUL ALGAE	
+journal	ECOLOGY OF FRESHWATER FISH	
+journal	PERSPECTIVES IN PLANT ECOLOGY EVOLUTION AND SYSTEMATICS	
+journal	JOURNAL OF SYSTEMATICS AND EVOLUTION	
+journal	APPLIED SOIL ECOLOGY	
+journal	CANADIAN JOURNAL OF FISHERIES AND AQUATIC SCIENCES	
+journal	BOTANICAL STUDIES	
+journal	BIODIVERSITY AND CONSERVATION	
+journal	ECOLOGICAL ENTOMOLOGY	
+journal	ZOOLOGICAL SCIENCE	
+journal	PHYTOCOENOLOGIA	
+journal	ESTUARINE COASTAL AND SHELF SCIENCE	
+journal	FRONTIERS IN ECOLOGY AND THE ENVIRONMENT	
+journal	NATURWISSENSCHAFTEN	
+journal	ECOLOGICAL MODELLING	
+journal	COMPTES RENDUS BIOLOGIES	
+journal	JOURNAL OF THE TORREY BOTANICAL SOCIETY	
+journal	MALACOLOGIA	
+journal	POPULATION ECOLOGY	
+journal	GENETICS	
+journal	EVOLUTIONARY ECOLOGY RESEARCH	
+journal	JOURNAL OF HEREDITY	
+journal	ECOSCIENCE	
+journal	JOURNAL OF FISH BIOLOGY	
+journal	PEDOSPHERE	
+journal	AUSTRAL ECOLOGY	
+journal	INTERNATIONAL JOURNAL OF PLANT SCIENCES	
+journal	AQUATIC BIOLOGY	
+journal	FUNDAMENTAL AND APPLIED LIMNOLOGY	
+journal	WETLANDS	
+journal	BELGIAN JOURNAL OF BOTANY	
+journal	TRANSACTIONS OF THE AMERICAN FISHERIES SOCIETY	
+journal	PHYTOCHEMISTRY REVIEWS	
+journal	NEW PHYTOLOGIST	
+journal	APIDOLOGIE	
+journal	AQUATIC ECOSYSTEM HEALTH & MANAGEMENT	
+journal	JOURNAL OF PLANKTON RESEARCH	
+journal	INSECT CONSERVATION AND DIVERSITY	
+journal	INTEGRATIVE AND COMPARATIVE BIOLOGY	
+journal	INTERCIENCIA	
+journal	BRAZILIAN JOURNAL OF BIOLOGY	
+journal	FRESHWATER BIOLOGY	
+journal	GENETICA	
+journal	JOURNAL OF ENVIRONMENTAL QUALITY	
+journal	TROPICAL ECOLOGY	
+journal	WETLANDS ECOLOGY AND MANAGEMENT	
+journal	JOURNAL OF THE NORTH AMERICAN BENTHOLOGICAL SOCIETY	
+journal	JOURNAL OF VEGETATION SCIENCE	
+journal	JOURNAL OF FRESHWATER ECOLOGY	
+journal	BULLETIN OF ENTOMOLOGICAL RESEARCH	
+journal	ANIMAL CONSERVATION	
+journal	ENVIRONMENTAL MONITORING AND ASSESSMENT	
+journal	AUSTRALASIAN PLANT PATHOLOGY	
+journal	RANGELAND JOURNAL	
+journal	BEHAVIORAL ECOLOGY AND SOCIOBIOLOGY	
+journal	JOURNAL OF THE MARINE BIOLOGICAL ASSOCIATION OF THE UNITED KINGDOM	
+journal	BIOLOGICAL CONTROL	
+journal	JOURNAL OF ENVIRONMENTAL MANAGEMENT	
+journal	PLANT BIOLOGY	
+journal	JOURNAL OF FOREST RESEARCH	
+journal	JOURNAL OF EXPERIMENTAL MARINE BIOLOGY AND ECOLOGY	
+journal	ECOLOGICAL ENGINEERING	
+journal	COMMUNITY ECOLOGY	
+journal	NEW ZEALAND JOURNAL OF ECOLOGY	
+journal	FOREST SCIENCE	
+journal	JOURNAL OF ENVIRONMENTAL SCIENCES-CHINA	
+journal	AMERICAN NATURALIST	
+journal	ZOOLOGICAL STUDIES	
+journal	JOURNAL OF TROPICAL ECOLOGY	
+journal	MICROBIAL ECOLOGY	
+journal	AQUATIC SCIENCES	
+journal	PHOTOSYNTHETICA	
+journal	SEED SCIENCE RESEARCH	
+journal	MARINE AND FRESHWATER RESEARCH	
+journal	BIOSCIENCE	
+journal	JOURNAL OF AQUATIC PLANT MANAGEMENT	
+journal	ECOSYSTEMS	
+journal	JOURNAL OF EVOLUTIONARY BIOLOGY	
+journal	SOIL BIOLOGY & BIOCHEMISTRY	
+journal	PRESLIA	
+journal	ANNALS OF THE ENTOMOLOGICAL SOCIETY OF AMERICA	
+journal	AFRICAN ZOOLOGY	
+journal	AQUATIC CONSERVATION-MARINE AND FRESHWATER ECOSYSTEMS	
+journal	MARINE BIOLOGY	
+journal	ANIMAL BEHAVIOUR	
+journal	PACIFIC SCIENCE	
+journal	ACTA OCEANOLOGICA SINICA	
+journal	EVOLUTIONARY ECOLOGY	
+journal	FUNCTIONAL ECOLOGY	
+journal	NORTHWEST SCIENCE	
+journal	CANADIAN JOURNAL OF FOREST RESEARCH-REVUE CANADIENNE DE RECHERCHE FORESTIERE	
+journal	SOUTHWESTERN NATURALIST	
+journal	CANADIAN JOURNAL OF BOTANY-REVUE CANADIENNE DE BOTANIQUE	
+journal	JOURNAL OF NATURAL HISTORY	
+journal	BULLETIN FRANCAIS DE LA PECHE ET DE LA PISCICULTURE	
+journal	ESTUARIES	
+journal	MARINE ENVIRONMENTAL RESEARCH	
+journal	TRANSACTIONS OF THE ROYAL SOCIETY OF SOUTH AFRICA	
+journal	AUK	
+journal	PHILOSOPHICAL TRANSACTIONS OF THE ROYAL SOCIETY OF LONDON SERIES B-BIOLOGICAL SCIENCES	
+journal	REGULATED RIVERS-RESEARCH & MANAGEMENT	
+journal	VEGETATIO	
+journal	BULLETIN OF THE TORREY BOTANICAL CLUB	
+journal	NEW ZEALAND JOURNAL OF BOTANY	
+journal	HEREDITY	
+journal	AUSTRALIAN JOURNAL OF ECOLOGY	
+journal	PHYSIOLOGIA PLANTARUM	
+journal	POLAR BIOLOGY	
+journal	REVISTA CHILENA DE HISTORIA NATURAL	
+journal	OCEANOLOGICA ACTA	
+journal	AUSTRALIAN JOURNAL OF MARINE AND FRESHWATER RESEARCH	
+journal	ENVIRONMENTAL CONSERVATION	
+journal	WILSON BULLETIN	
+journal	SOUTH AFRICAN JOURNAL OF ZOOLOGY	
+journal	EVOLUTIONARY TRENDS IN PLANTS	
+journal	ENVIRONMENT	
+journal	EKOLOGIA CSFR	
+journal	JOURNAL OF THE ROYAL SOCIETY OF NEW ZEALAND	
+journal	CANADIAN JOURNAL OF ZOOLOGY-REVUE CANADIENNE DE ZOOLOGIE	
+journal	BIOLOGIST	
+journal	PROCEEDINGS OF THE INDIAN ACADEMY OF SCIENCES SECTION B	
+journal	JOURNAL OF THE BRITISH GRASSLAND SOCIETY	
+journal	SCIENCE	
+journal	CANADIAN ENTOMOLOGIST	
+journal	JOURNAL OF HERPETOLOGY	
+journal	NIPPON SUISAN GAKKAISHI	
+journal	JOURNAL OF ANIMAL ECOLOGY	
+journal	CAHIERS DE BIOLOGIE MARINE	
+journal	PROCEEDINGS OF THE LINNEAN SOCIETY OF NEW SOUTH WALES	
+journal	HELGOLAND MARINE RESEARCH	
+journal	ENVIRONMENTAL ENTOMOLOGY	
+journal	PLANT SPECIES BIOLOGY	
+journal	JOURNAL OF EXPERIMENTAL BIOLOGY	
+journal	ORNITOLOGIA NEOTROPICAL	
+journal	REVUE D ECOLOGIE-LA TERRE ET LA VIE	
+journal	ACTA PHYTOTAXONOMICA SINICA	
+journal	RANGELAND ECOLOGY & MANAGEMENT	
+journal	MARINE AND FRESHWATER BEHAVIOUR AND PHYSIOLOGY	
+journal	PEDOBIOLOGIA	
+journal	ARCHIV FUR HYDROBIOLOGIE	
+journal	JOURNAL OF ZOOLOGY	
+journal	JOURNAL OF GREAT LAKES RESEARCH	
+journal	WATER RESEARCH	
+journal	CHINESE SCIENCE BULLETIN	
+journal	INSECTES SOCIAUX	
+journal	BOTANICA HELVETICA	
+journal	SOUTHEASTERN NATURALIST	
+journal	NEOTROPICAL ENTOMOLOGY	
+journal	ENVIRONMENTAL TOXICOLOGY	
+journal	BIOLOGICAL JOURNAL OF THE LINNEAN SOCIETY	
+journal	LIMNOLOGICA	
+journal	SOUTH AFRICAN JOURNAL OF SCIENCE	
+journal	LAKE AND RESERVOIR MANAGEMENT	
+journal	FISHERIES MANAGEMENT AND ECOLOGY	
+journal	CANADIAN FIELD-NATURALIST	
+journal	EUROPEAN JOURNAL OF PHYCOLOGY	
+journal	CURRENT SCIENCE	
+journal	MARINE POLLUTION BULLETIN	
+journal	PROCEEDINGS OF THE ROYAL SOCIETY OF LONDON SERIES B-BIOLOGICAL SCIENCES	
+journal	ENVIRONMENTAL BIOLOGY OF FISHES	
+journal	BULLETIN DE LA SOCIETE ZOOLOGIQUE DE FRANCE	
+journal	JOURNAL OF WILDLIFE MANAGEMENT	
+journal	ENVIRONMENTAL MANAGEMENT	
+journal	TRANSACTIONS OF THE ROYAL SOCIETY OF SOUTH AUSTRALIA	
+journal	PLANT SYSTEMATICS AND EVOLUTION	
+journal	INTERNATIONAL REVIEW OF HYDROBIOLOGY	
+journal	OHIO JOURNAL OF SCIENCE	
+journal	NETHERLANDS JOURNAL OF ZOOLOGY	
+journal	SOIL SCIENCE	
+journal	ENTOMOLOGIA GENERALIS	
+journal	SCIENCE OF THE TOTAL ENVIRONMENT	
+journal	PHYTOCHEMISTRY	
+journal	EVOLUTION	
+journal	PHYSICS AND CHEMISTRY OF THE EARTH PART B-HYDROLOGY OCEANS AND ATMOSPHERE	
+journal	BIOLOGICAL REVIEWS	
+journal	BIOCONTROL SCIENCE AND TECHNOLOGY	
+journal	RESEARCHES ON POPULATION ECOLOGY	
+journal	RHODORA	
+journal	ANZEIGER FUR SCHADLINGSKUNDE-JOURNAL OF PEST SCIENCE	
+journal	GREAT BASIN NATURALIST	
+journal	REVISTA DE BIOLOGIA TROPICAL	
+journal	GREAT LAKES ENTOMOLOGIST	
+journal	HERPETOLOGICA	
+journal	JOURNAL OF CONCHOLOGY	
+journal	WATER AIR AND SOIL POLLUTION	
+journal	ANZEIGER FUR SCHADLINGSKUNDE PFLANZENSCHUTZ UMWELTSCHUTZ	
+journal	PLANT DISEASE	
+journal	ACTA BOTANICA NEERLANDICA	
+journal	BULLETIN OF MARINE SCIENCE	
+journal	BOTANICAL JOURNAL OF THE LINNEAN SOCIETY	
+journal	PLANT BIOSYSTEMS	
+journal	PLOS ONE	
+journal	JOURNAL OF SEA RESEARCH	
+journal	JOURNAL OF APPLIED ICHTHYOLOGY	
+journal	JOURNAL OF NEMATOLOGY	
+journal	JOURNAL OF INSECT CONSERVATION	
+journal	ETHOLOGY	
+journal	BIOCHEMICAL SYSTEMATICS AND ECOLOGY	
+journal	Hydrobiologia	
+journal	Journal of Molluscan Studies	
+journal	Ecological Entomology	
+journal	Biological Invasions	
+journal	Flora: Morphology, Distribution, Functional Ecology of Plants	
+journal	International Journal of Plant Sciences	
+journal	American Naturalist	
+journal	Western North American Naturalist	
+journal	INVASIVE PLANT SCIENCE AND MANAGEMENT	
+journal	ENTOMOLOGIA EXPERIMENTALIS ET APPLICATA	
+journal	BOTANICA MARINA	
+journal	FOLIA GEOBOTANICA	
+journal	JOURNAL OF HELMINTHOLOGY	
+journal	ENVIRONMENTAL AND EXPERIMENTAL BOTANY	
+journal	JOURNAL OF INSECT SCIENCE	
+journal	JOURNAL OF MOLLUSCAN STUDIES	
+journal	EUROPEAN JOURNAL OF WILDLIFE RESEARCH	
+journal	JOURNAL OF LIMNOLOGY	
+journal	ANNALES DE LIMNOLOGIE-INTERNATIONAL JOURNAL OF LIMNOLOGY	
+journal	PLANT ECOLOGY & DIVERSITY	
+journal	PLANT ECOLOGY AND EVOLUTION	
+journal	JOURNAL OF EXPERIMENTAL ZOOLOGY PART A-ECOLOGICAL GENETICS AND PHYSIOLOGY	
+journal	ARTHROPOD-PLANT INTERACTIONS	
+journal	LIMNOLOGY	
+journal	ZOOTAXA	
+journal	JOURNAL OF EXPERIMENTAL BOTANY	
+journal	JOURNAL OF INSECT BEHAVIOR	
+journal	IBIS	
+journal	WILSON JOURNAL OF ORNITHOLOGY	
+journal	PAKISTAN JOURNAL OF BOTANY	
+journal	FLORIDA ENTOMOLOGIST	
+journal	JOURNAL OF PLANT RESEARCH	
+journal	NORDIC JOURNAL OF BOTANY	
+journal	CRUSTACEANA	
+journal	TREES-STRUCTURE AND FUNCTION	
+journal	ANNALES DE LA SOCIETE ENTOMOLOGIQUE DE FRANCE	
+journal	JOURNAL OF MAMMALOGY	
+journal	BOTANICAL BULLETIN OF ACADEMIA SINICA	
+journal	SOCIOBIOLOGY	
+journal	TREE PHYSIOLOGY	
+journal	INVERTEBRATE BIOLOGY	
+journal	ZEITSCHRIFT FUR PFLANZENKRANKHEITEN UND PFLANZENSCHUTZ-JOURNAL OF PLANT DISEASES AND PROTECTION	
+journal	CURRENT ZOOLOGY	
+journal	MOLECULAR ECOLOGY RESOURCES	
+journal	BOTHALIA	
+journal	ANNALES ZOOLOGICI FENNICI	
+journal	JOURNAL OF VECTOR ECOLOGY	
+journal	BIRD CONSERVATION INTERNATIONAL	
+journal	CONDOR	
+journal	WILDLIFE MONOGRAPHS	
+journal	JOURNAL OF CRUSTACEAN BIOLOGY	
+journal	AUSTRALIAN JOURNAL OF ENTOMOLOGY	
+journal	BEHAVIOUR	
+journal	ZOOKEYS	
+journal	ANIMAL BIOLOGY	
+journal	AMPHIBIA-REPTILIA	
+journal	ACTA THERIOLOGICA	
+journal	ACTA BOTANICA GALLICA	
+journal	AFRICAN ENTOMOLOGY	
+journal	PROCEEDINGS OF THE ENTOMOLOGICAL SOCIETY OF WASHINGTON	
+journal	WATERBIRDS	
+journal	REVUE SUISSE DE ZOOLOGIE	
+journal	AMERICAN FERN JOURNAL	
+journal	JOURNAL OF PLANT INTERACTIONS	
+journal	OCEANOGRAPHY AND MARINE BIOLOGY - AN ANNUAL REVIEW, VOL. 43	
+journal	TRENDS IN ECOLOGY & EVOLUTION	
+journal	ANNUAL REVIEW OF ECOLOGY AND SYSTEMATICS	
+journal	ANNUAL REVIEW OF ECOLOGY EVOLUTION AND SYSTEMATICS	
+journal	REVIEWS IN FISH BIOLOGY AND FISHERIES	
+journal	ANNUAL REVIEW OF ENTOMOLOGY	
+database	Web of Science	
+country	Switzerland	
+country	United States	
+country	Bahamas	
+country	Switzerland;United States	
+country	Switzerland;United States;United States	
+country	Australia	
+country	Great Britain;Great Britain	
+country	Canary Islands	
+country	Europe; USA	
+country	USA	
+country	Spain	
+country	Hungary	
+country	Chile	
+country	Canada	
+country	spain	
+country	Russia, Poland, Europe	
+country	UK	
+country	France	
+country	South Africa	
+country	USA; Spain; Australia	
+country	North America; Europe	
+country	Europe	
+country	England	
+country	Spain, South Africa	
+country	Europe, South Africa	
+country	Venezuela	
+country	China	
+country	many	
+country	Tanzania	
+country	United States; American Samoa; Cook Islands; Fiji; Guam; Kiribati; Marshall Islands; Federated States of Micronesia; Nauru; New Caledonia; Niue; Northern Mariana Islands; Palau; Samoa; Tonga	
+country	United States; Greece; Portugal; Kenya; Brazil; Guatemala	
+country	Japan	
+country	Mexico	
+country	Germany	
+country	Portugal	
+country	Netherlands	
+country	Denmark	
+country	Austria	
+country	Poland	
+country	Argentina	
+country	Finland	
+country	Italy	
+country	United States; Argentina; Australia	
+country	United States, Spain and South Africa	
+country	France; Germany; Hungary; Portugal; Australia; Senegal; USA; Mexico; Brazil; Uganda	
+country	Mauritius	
+country	United States of America	
+country	Czech Republic	
+country	Azores	
+country	U.S.A	
+country	Taiwan	
+country	NW Europe	
+country	Madagascar	
+country	Republic of Seychelles	
+country	USA; Canada	
+country	U.S.A.	
+country	United States; Canada	
+country	New Zealand	
+country	Belgium	
+country	United Kingdom	
+country	North America and Europe	
+country	French Polynesia	
+country	USA;Switzerland	
+country	India	
+country	Crete	
+country	Seychelles	
+country	Israel	
+country	australia	
+country	Greece; Italy; France; Spain	
+country	United States; Netherlands Antilles	
+country	Ireland; Germany; Greece; Spain	
+country	china	
+country	Australia;New Zealand;USA	
+country	Japan; Argentina	
+country	Scotland	
+country	United States; Germany; Spain	
+country	USA; France	
+country	Uganda	
+country	Czech republic	
+country	Taiwan; New Caledonia; USA	
+country	North America	
+country	USA; Argentina; Turkey	
+country	Georgia, Czech Republic	
+country	Spain; Portugal	
+country	Ireland	
+country	South Georgia Island	
+country	France; Spain; Australia	
+country	Madagascar; Australia	
+country	Ecuador	
+country	Great Britain	
+country	Sweden	
+country	France; Unites States; Spain	
+country	United States; France	
+country	Global	
+country	United Kingdom; Ireland; Netherlands	
+country	Antarctica	
+country	France; Spain; Italy	
+country	Cameroon	
+country	Monaco	
+country	Zimbabwe; Zambia	
+country	Kenya	
+country	Czechoslovakia	
+country	Australia; New Zealand	
+country	South Georgia	
+country	United States; Hungary	
+country	Laos	
+country	Spain; Ireland	
+country	Patagonia	
+country	Jamaica	
+country	Britain; Czech Republic	
+country	Holland	
+country	USA; New Zealand; Australia	
+country	Brazil	
+country	United States; Costa Rica	
+country	Russia	
+country	Papua New Guinea	
+country	U.S.A.;Netherlands	
+country	Northern Ireland	
+country	USA; Brazil	
+country	Niger	
+country	United States; Chile	
+country	United States; Iran; Republic of Georgia; Turkmenistan; Kazakstan	
+country	Austria, Germany, Hungary, Italy, and Switzerland	
+country	Vietnam; Madagascar	
+country	 Bolivia, Brazil, Minas Gerais (a Brazilian state), Peru, and Venezuela	
+country	New South Wales	
+country	French islands of the southern Indian Ocean	
+country	Israel; United States	
+country	USA; Europe	
+country	USA;Canada	
+country	Thailand	
+country	southern Africa	
+country	Puerto Rico	
+country	The Netherlands	
+country	United States; Germany	
+country	England; Wales	
+country	USA; Germany; Hungary	
+country	Argentinia	
+country	Greece	
+country	United States; China	
+country	USA; Dominican Republic	
+country	Australia; New Zealand; USA; Chile	
+country	Britain	
+country	southern Portugal	
+country	USA ; Australia	
+country	USA ; Canada	
+country	Indonesia	
+country	La Reunion	
+country	Japan; Philippines	
+country	sub-antarctic Kerguelen Islands	
+country	sub-antarctic marion island	
+country	Greece; USA	
+country	Mediterranean; Macaronesia	
+country	Many	
+country	Zambia	
+country	Albania	
+country	Chile; Portugal; Ireland; New Zealand	
+country	Japan; United States	
+country	Germany; United States	
+country	Egypt	
+country	Slovenia	
+country	Portugal;Spain;South Africa	
+country	China;USA	
+country	Arizona	
+country	South Africa ; Germany	
+country	Turkey	
+country	Mallorca;Corsica;Sardinia;Crete	
+country	Dominican Republic	
+country	USA;Chile	
+country	Aegean Sea	
+country	Asia	
+country	Central America	
+country	La Reunion Island	
+country	Lithuania	
+country	Spain;Hungary)	
+country	Pakistan	
+country	grass	
+country	China.	
+country	Denmark;USA;Sweden	
+country	Spain;Morocco	
+country	World	
+country	Australian	
+country	Indo-pacific islands	
+country	Ethiopia	
+country	Reunion	
+country	South Korea	
+country	Eastern Caribean	
+country	Borneo Island	
+country	Norway	
+country	Europe;Brazil	
+country	USA;Kenya	
+country	Spain;France	
+country	Belarus	
+country	North Sea	
+country	Martinique	
+country	Portugal; Spain	
+country	Mediterranean	
+country	Balearic islands	
+state	Z	
+state	Maryland	
+state	Valais;Oregon	
+state	Valais;Oregon;West Virginia	
+state	Queensland	
+state	Tenerife	
+state	Czech republic; UK; USA	
+state	NJ	
+state	California	
+state	Catalonia	
+state	Louisiana	
+state	NY	
+state	British Colombia	
+state	Wyoming	
+state	Aveyron	
+state	Montana; Wyoming; Utah; Colorado	
+state	California; Hawaii; North Carolona; Catalonia	
+state	Mississippi	
+state	North Carolina; Vermont	
+state	Fribourg	
+state	New Jersey	
+state	Pennsylvania	
+state	Ohio	
+state	Connecticut	
+state	Colorado	
+state	Madrid; Guadalajara	
+state	New York	
+state	New Jersey; Pennsylvania	
+state	Kwa-Zulu Natal	
+state	Oregon	
+state	Wisconsin	
+state	Florida	
+state	East Usambara	
+state	Hawaii	
+state	North Dakota	
+state	Hokkaido	
+state	Montana	
+state	Idaho	
+state	Pennsylvania; New Jersey	
+state	Yunnan Province	
+state	Cordoba	
+state	Indiana	
+state	Ontario	
+state	KwaZulu-Natal	
+state	Buenos Aires Province	
+state	Salamanca	
+state	Florida; California; Hawaii	
+state	Santiago province	
+state	Province of Santiago	
+state	Kansas	
+state	Jiangsu	
+state	Missouri	
+state	S	
+state	Alsace	
+state	Konstanz	
+state	Guangdong Province	
+state	Chiayi	
+state	Georgia	
+state	Minnesota	
+state	Jiuduansha Islands	
+state	Antananarivo	
+state	Nara Prefecture; Osaka Prefecture; Kyoto Prefecture	
+state	Bonin Islands	
+state	Washington	
+state	Utah; Kansas	
+state	Brittany	
+state	Quebec	
+state	Northern Territory	
+state	British Columbia	
+state	Hubei	
+state	Massachusetts	
+state	Iowa	
+state	Novia Scotia	
+state	Kentucky	
+state	Tokelau	
+state	Virginia	
+state	Concepcion	
+state	Seraing;  Antwerpen	
+state	New York; Pennsylvania	
+state	Cornwall	
+state	Manitoba	
+state	Oregon;Valais	
+state	Badajoz	
+state	Iberian Peninsula	
+state	Maryland;Connecticut	
+state	Alabama	
+state	Utah	
+state	Alberta	
+state	Jena	
+state	Bad Lauchst	
+state	Mahe	
+state	Victoria	
+state	Northern Ireland	
+state	Ogasawara Islands	
+state	Wuhan	
+state	Osaka;Osaka;Shiga;Shiga	
+state	scotland	
+state	washington	
+state	Hawaii; St. Thomas; Curacao	
+state	Beijing	
+state	Tennessee	
+state	New South Wales	
+state	Taiwan	
+state	Hubei Province	
+state	Zhejiang Province	
+state	Zhejiang	
+state	 Nanjing, Jiangsu	
+state	Delaware	
+state	Potsdam	
+state	Fuerteventura Island	
+state	Kybeyan; Midland; Kansas	
+state	Biadaszki	
+state	Reunion	
+state	Auckland	
+state	Flander	
+state	Texas	
+state	Craigleith	
+state	Vermont; Oregon; Massachusetts; Montana	
+state	Patagonia	
+state	Northern Cape Province	
+state	Arizona	
+state	Nevada	
+state	Eastern Cape Province	
+state	Texas; Louisiana; Florida; Georgia	
+state	Northeast	
+state	Burgundy	
+state	Great Basin	
+state	Cape Floristic Region	
+state	California; Argentina	
+state	New Hampshire	
+state	North Carolina	
+state	New Mexico	
+state	Arkansas; Oklahoma	
+state	Provence	
+state	Madeira	
+state	Adelaide	
+state	Zuerich	
+state	Aramar	
+state	North Sea	
+state	Idaho; Oregon; Washington	
+state	Cape Peninsula	
+state	Arkansas	
+state	Cantabria	
+state	Galway	
+state	Michigan	
+state	Galapagos Islands	
+state	Viedma	
+state	Cape Province	
+state	Unterfranken	
+state	Illinois	
+state	County Down	
+state	South Island	
+state	South Carolina; Georgia	
+state	Dehli	
+state	Kerguelen	
+state	Berkshire	
+state	Massachusetts; New Hampshire; Maine	
+state	Wasington	
+state	La Reunion	
+state	Western Australia	
+state	Fiordland	
+state	New South Wales; Queensland	
+state	Kerala	
+state	Ontario; Quebec	
+state	Lazio; Molise	
+state	New South Wales; South Australia	
+state	Massachusetts; Connecticut	
+state	Corsica	
+state	Puerto Rico	
+state	Tamaulipas	
+state	South Carolina	
+state	Santiago	
+state	Canary Islands	
+state	Nebraska	
+state	Galapagos islands	
+state	Trieste	
+state	Montpellier	
+state	Yorkshire	
+state	Po Valley	
+state	South Canterbury	
+state	Rh	
+state	Aquitane	
+state	quebec	
+state	Galilee; Judean moutnains	
+state	Mukono district	
+state	Missouri; Illinois	
+state	Lorraine	
+state	Moravia	
+state	Queensland; New South Wales	
+state	Sichuan	
+state	Christmas Island	
+state	California; Michigan; New York; Ohio; West Virginia	
+state	Florida; Georgia	
+state	New York; North Carolina; Georgia; South Carolina	
+state	Newfoundland	
+state	Pennsylvania; Ohio	
+state	ProParc National de Port Crosvence-Alpes-C	
+state	Southeastern	
+state	Idaho; Wyoming; Oregon	
+state	South Australia	
+state	Westphalia	
+state	Oklahoma	
+state	California; Washington	
+state	florida	
+state	Bohemia	
+state	Argancy	
+state	England	
+state	Australian Capital Territory	
+state	Moscow	
+state	North Island	
+state	Texas;Hawaii	
+state	Zurich	
+state	Madang Province	
+state	Indiana;	
+state	Antrim;Down	
+state	Pruhonice	
+state	North Dakota;South Dakota	
+state	Tuscany	
+state	South australia	
+state	Georgia Sea Islands	
+state	Varanasi	
+state	Iowa; Missouri; Minnesota; Nebraska	
+state	Mulheim; Wurzburg	
+state	Bavaria	
+state	Arizona; Montana	
+state	Tarragona	
+state	South Carolina; Louisiana	
+state	San Carlos de bariloche	
+state	New  Mexico	
+state	Waikato	
+state	Canberra	
+state	Colorado; Wyoming; Montana; South Dakota; Minnesota	
+state	Canterbury	
+state	South Dakota	
+state	Derbyshire	
+state	Sydney	
+state	Prince Edward Islands	
+state	Kwale and Kilifi	
+state	Montana; Washington; Idaho	
+state	Maine	
+state	Santa Juana	
+state	Carlos Casares	
+state	Cape Town	
+state	Hadera; Baltimore	
+state	Belarus	
+state	southwestern Ontario	
+state	Western Cape	
+state	Germany	
+state	Aukland	
+state	CA	
+state	Ohio;West Virginia;New York;Kentucky;Indiana;Washington;Canada	
+state	Ang Thong	
+state	Perth	
+state	Vermont	
+state	Guarico State	
+state	Hamilton	
+state	New Brunswick	
+state	Colorado; Wyoming; Montana; South Dakota	
+state	Tahiti	
+state	Mandagout	
+state	California; Colorado; Minnesota; Maine; NH; VT; MA; CT; DE; MD; NJ; VA; AL; GA; OR; WA	
+state	Colorado; South Dakota; Wyoming	
+state	Kyoto	
+state	Southern Ocean Islands	
+state	Vermont, New York, Michigan, Wisconsin, Minnesota, Washington, Oregon, Alabama, Ontario, and British Columbia	
+state	Marseille	
+state	Townsville	
+state	Uttar Pradesh	
+state	Nanjing	
+state	Santa Catarin	
+state	French Southern and Antarctic Lands	
+state	California; Nevada	
+state	Toronto	
+state	Maryland; Virginia	
+state	Vermont; North Carolina	
+state	WA; OR; CO; WY	
+state	Alaska	
+state	Zug	
+state	Thuringa	
+state	Isla Victoria	
+state	Virginia; West Virginia	
+state	Calfornia	
+state	Wisconsin; Michigan; New York; Ohio	
+state	Madrid	
+state	Nieuwoudtiville	
+state	Tennesee	
+state	Shanxi;Shaanxi	
+state	Queensland/New South Wales	
+state	West Virginia	
+state	South Carolina;Georgia	
+state	Andes	
+state	Compi	
+state	Balearic Islands	
+state	Cordoba Province	
+state	Java	
+state	San Francisco	
+state	Guangzhou	
+state	Eastern Poland	
+state	Hafen City	
+state	New England	
+state	Sichuan;Chongqing	
+state	California;Florida	
+state	The Azores	
+state	Sylt	
+state	South China	
+state	Yuma	
+state	Michigan;California	
+state	Dominica	
+state	Nova Scotia	
+state	Islamabad	
+state	Berlin	
+state	Northern Cape province	
+state	Zhuhai	
+state	Galapagos	
+state	Menorca	
+state	California;Hawaii;Arizona	
+state	New York;Conneticut	
+state	Tyrol	
+state	Vosges	
+state	Rhode Island	
+state	Yucatan	
+state	Mato Grosso	
+state	Kent	
+state	Marlborough	
+state	Rio de Janeiro	
+state	Martinique	
+state	MInnesota	
+state	California; Oregon	
+state	Arizona; California; Hawaii	
+state	Nevada; Utah	
+locality	University of Z	
+locality	Europe, North America	
+locality	Chesapeake and Ohio Canal National Historical Park	
+locality	Lee Stocking Island	
+locality	Central Alps;Wallowa Mountains	
+locality	Southern Alps;Wallowa Mountains	
+locality	Central Alps;Wallowa Mountains;Allegheny Mountains	
+locality	Oxford;Edinburg	
+locality	Anaga massif	
+locality	Piedmont region, Buell-Small Succession Study	
+locality	Southwestern USA	
+locality	Mojave; Sonora	
+locality	Cap de Creus	
+locality	Jean Lafitte Natl Historic Park	
+locality	Albany pine bush	
+locality	Gulf Islands	
+locality	High Plains Grassland Research Station	
+locality	Causse Mejean	
+locality	De Soto National Forest	
+locality	Eastern Ontario	
+locality	Botanical Garden	
+locality	Northwest	
+locality	Dorset County	
+locality	Pinelands	
+locality	Cuyahoga Valley National Park	
+locality	Bodega Bay	
+locality	Royal National Park	
+locality	Arapaho-Roosevelt National Forest	
+locality	Avon Gorge	
+locality	Huevla Province	
+locality	Milford	
+locality	Cerro Saroche National Park	
+locality	Mobile-Tensaw Delta	
+locality	Shanghai Jiuduansha Wetland Nature Reserve	
+locality	Wayne National Forest; Zaleski State Forest; Vinton Furnace Experimental Forest	
+locality	6 sites	
+locality	Frank O. Hazard Arboretum of Wilmington College in Wilmington	
+locality	Pongolapoort Dam	
+locality	McKenzie River	
+locality	Chequamegon-Nicolet National Forest	
+locality	West FL Research & Ed Ctr Univ FL	
+locality	East Usambara Mountains	
+locality	Amani Botanical Garden, East Usambara Mountains	
+locality	Pacific Ocean	
+locality	Sarasota County	
+locality	Europe	
+locality	Kellys Slough National Wildlife Refuge	
+locality	Barcelona	
+locality	Canaveral National Seashore	
+locality	Everglades	
+locality	Halle	
+locality	Amani Nature Reserve	
+locality	Rocky Mountain Biological Laboratory	
+locality	Lausanne	
+locality	Praia do Queimado; Almograve; Zambujeira do Mar	
+locality	Millingerwaard	
+locality	Sudety Mountains	
+locality	Xishuangbanna Tropical Botanical Garden	
+locality	Chaco region	
+locality	Lampa	
+locality	Perth	
+locality	Bloomington	
+locality	Sabie River	
+locality	Kruger National Park	
+locality	University of Hawaii, Volcano Agricultural Experiment Station	
+locality	University of Pietermaritzburg, Neil Tainton Arboretum	
+locality	Buenos Aires, National University of Lujan	
+locality	River Tormes, Salamanca	
+locality	Florida; California; Hawaii; Argentina; Australia	
+locality	Spain	
+locality	California, South African Cape Region and Spanish Mediterranean Region	
+locality	Sedgwik Reserve	
+locality	San Carlos de Apoquindo	
+locality	Quebrada de la Plata	
+locality	Long Island	
+locality	Hokkaido	
+locality	Konza Prairie Biological Station	
+locality	P	
+locality	Germany	
+locality	Nanjing	
+locality	Tyson Research Center	
+locality	Booth and Bear Butte	
+locality	Serra da Tronqueira	
+locality	Rhine former floodplain	
+locality	southeast Pampa	
+locality	Koffler Scientific Reserve	
+locality	Lake Constance	
+locality	Capricornia Cays National Park	
+locality	Oktibbeha County	
+locality	Dongguan City	
+locality	Santzepu, Sheishan District	
+locality	University of Wisconsin-Milwaukee Field Station	
+locality	Cumberland Island	
+locality	Eastern Oregon Agricultural Research Center, Burns	
+locality	Ukhahlamba-Drakensberg Park	
+locality	Tallahassee	
+locality	 Danube near Deggendorf,  Isar mouth	
+locality	Allegheny County	
+locality	Mahe	
+locality	Methow Valley	
+locality	Mediterranean Region	
+locality	Cedar Creek Ecosystem Science Reserve	
+locality	Bay of Morlaix	
+locality	Victoria River	
+locality	Vancouver Island	
+locality	Black River Gorges National Park	
+locality	Changgang Canal	
+locality	Boston Harbor	
+locality	Heshan National Field Research Station	
+locality	Ernesto Tornquist Provincial Park	
+locality	Arthur R. Marshall Loxahatchee National Wildlife Refuge	
+locality	St. Margaret	
+locality	Kof&#64258;er Scienti&#64257;c Reserve at Jokers Hill	
+locality	Madison	
+locality	Elkhorn Slough	
+locality	Multiple Sites, Colgate University, Madison County, New York	
+locality	Colgate University, Madison County, New York	
+locality	Central and Western Region	
+locality	University of Kentucky Arboretum	
+locality	Hudson River Valley	
+locality	Nukunonu atoll	
+locality	Cedarburg Bog	
+locality	Blackwater Ecologic Preserve (BEP)	
+locality	Antietam National Battlefield	
+locality	United States	
+locality	Parana River	
+locality	Peninsula Hualpen	
+locality	University of Maryland	
+locality	Isla Victoria in Nahuel Huapi National Park	
+locality	Black Sea	
+locality	North Coast Watershed (Russian River Basin); Sacramento River Watershed; San Joaquin River Watershed	
+locality	e Tropical Biome of the Eden Project, Cornwall	
+locality	Riding Mountain National Park	
+locality	Malalcahuello National Reserve	
+locality	Sonian Forest	
+locality	Guadiana river	
+locality	Rhone River	
+locality	USDA-ARS National Soil Dynamics Laboratory	
+locality	Bonneville Basin	
+locality	Western Cape	
+locality	University of Calgary	
+locality	Andes	
+locality	vindhyan	
+locality	Holiday Park	
+locality	North America	
+locality	Manly marina	
+locality	Joshua Tree	
+locality	River Sale	
+locality	Lefka Ori (White Mountains)	
+locality	at Wildman Reserve, Northern Territory	
+locality	Hija River and the Haebaru Reservoir	
+locality	Sans Souci forestry station	
+locality	Washington University	
+locality	Madison County	
+locality	Jiuduansha	
+locality	Western Cape Region	
+locality	Vindhyan plateau in the Sonebhadra district of Uttar Pradesh	
+locality	Vindhyan	
+locality	Elsie Roemer Marsh;Robert	
+locality	Long Pine Key	
+locality	 Marlo, East Gippsland	
+locality	UC Davis Riparian Reserve	
+locality	Ozark National Scenic Riverways	
+locality	Strangford Lough, Dorn	
+locality	Chichijima;Hahajima	
+locality	Wuhan Botanical Institute	
+locality	Tsurumi Park;Osaka Castle Park;Ikadachi;Kamiryuge	
+locality	Moccasin Ridge	
+locality	Crete and Lesbos in the Aegean archipelago of Greece, Sardinia in Italy, Corsica and the Hye`res Archipelago (i.e., Bagaud and Porquerolles) in France, as well as Mallorca and Menorca in Spain	
+locality	Cadiz; Malaga	
+locality	Nossegem	
+locality	n St. Thomas (United States Virgin Islands); Curacao (Netherlands Antilles);  Hawaii	
+locality	Crete and Lesbos in Greece; Sardinia in Italy; Porquerolles in France; Mallorca and Menorca in Spain	
+locality	 Institute of Botany, Chinese Academy of Sciences in Beijing	
+locality	Cades Cove, Great Smoky Mountains National Park	
+locality	Port Hacking; Lake Conjola	
+locality	Hawaii; Maui	
+locality	Wuling district of Shei-Pa National Park	
+locality	Chongming Dongtan Nature Reserve	
+locality	Freshwater Ecological Station on Liangzi Lake	
+locality	Nanjing Agricultural Uni	
+locality	White Clay Creek SP	
+locality	Fort Missoula	
+locality	Canarian Archipelago	
+locality	Siemianice Experimental Forest	
+locality	Mare Longue natural reserve	
+locality	University of California - Santa Cruz	
+locality	Patagonia	
+locality	Blowering Dam reservoir	
+locality	Front Range	
+locality	Millstone Township, Monmouth County	
+locality	Antwerp	
+locality	Mediterranean Islands	
+locality	Santa Ana River in Riverside; San Luis Rey River in Oceanside; Aliso Creek in Aliso Viejo, in Orange County	
+locality	Terrigal; Maroubra	
+locality	Lewisville Aquatic Ecosystem Research Facility	
+locality	Santa Barbara	
+locality	Great Lakes	
+locality	Dowd Morass	
+locality	Cairns	
+locality	San Simon Valley	
+locality	Mojave Desert	
+locality	Dickeyville	
+locality	Lake Nabugabo	
+locality	Danube	
+locality	Sado River	
+locality	Edmonton	
+locality	Oak Ridge National Environmental Research Park	
+locality	Rhine River	
+locality	Delta del Llobregat	
+locality	San Francisco Estuary	
+locality	Willamette River	
+locality	Waikato	
+locality	Darwin	
+locality	Yangtze River	
+locality	Gainesville	
+locality	Silesian-Krak	
+locality	Slavkovsky les region	
+locality	Tarland Burn	
+locality	Chichijima Island	
+locality	Table Mountain National Park	
+locality	Hillsborough County; Pasco County	
+locality	Northern CA; Central Argentina	
+locality	Duke Forest	
+locality	Lake Conjola	
+locality	San Francisco	
+locality	Elk Island National Park	
+locality	Ouachita Highlands	
+locality	National Park of Port Cros	
+locality	Eastern	
+locality	Cape Cod	
+locality	Pine Barrens	
+locality	Ocala National Forest	
+locality	Kyoto	
+locality	Cedar Creek Natural History Area	
+locality	southern Africa	
+locality	Lower Lake	
+locality	Global	
+locality	University of Gainesville	
+locality	Montpelier	
+locality	Mission Bay	
+locality	Horni Slavkov	
+locality	Mt. Haleakala	
+locality	River Lagan	
+locality	Falls Church, Seneca; Rockville	
+locality	Adour River	
+locality	Hastings Reservation	
+locality	Forty Mile Scrub NP	
+locality	Potomac River	
+locality	Columbia River Plain	
+locality	Chiwaukee Prairie	
+locality	Pella	
+locality	Institute of Grassland and Environmental Research	
+locality	Estacion Costera de Investigaciones Marinas	
+locality	Nahuel Huapi National Park	
+locality	Gulf of Maine	
+locality	south western islands	
+locality	Haleakala National Park	
+locality	San Francisco Bay	
+locality	Hawaii Volcanoes National Park	
+locality	Lake Kariba	
+locality	Lake Naivasha	
+locality	Tongariro National Park	
+locality	Cape of Good Hope	
+locality	Riverine plain	
+locality	Durokoppin Reserve	
+locality	Kangaroo Island	
+locality	Breaksea Sound	
+locality	Lake Opinicon	
+locality	Kampala	
+locality	Victoria	
+locality	Rio de la Plata	
+locality	Montreal	
+locality	Crystal Cove State Park	
+locality	Delaware Water Gap National Recreation Area	
+locality	Theodore Roosevelt National Park	
+locality	Eastern Asia; North America	
+locality	Willapa Bay	
+locality	Puget Sound	
+locality	Mont Saint-Michel Bay	
+locality	tropical and subtropical Pacific	
+locality	Jenolan Karst Conservation Reserve	
+locality	Montezuma National Wildlife Refuge	
+locality	Canyonlands National Park	
+locality	Luquillo Long Term Ecological Research site	
+locality	Darke County	
+locality	Grand Staircase-Escalante National Monument	
+locality	Mackinac Island	
+locality	Nong Loup Ngeauk wetland	
+locality	Galapagos Islands	
+locality	Yellowstone National Park; Gallatin National Forest	
+locality	Lake Pukaki	
+locality	Port Kembla Harbour; Botany Bay	
+locality	Wear River	
+locality	Hudson River	
+locality	Blue Mountain Province	
+locality	Ciudad Victoria	
+locality	Mendocino	
+locality	Chesapeake Bay	
+locality	Anticosti Island	
+locality	Guadiana River	
+locality	Blue Mountains	
+locality	Mc Laughlin Natural ReserveAddress:Station is accessible	
+locality	Fort Drum	
+locality	Indooroopilly	
+locality	Ridley Creek State Park	
+locality	Flager Beach	
+locality	Bonner	
+locality	McLaughlin Natural Reserve	
+locality	Clemson	
+locality	Melbourne	
+locality	Big Stony Creek	
+locality	Gran Canaria; Tenerife	
+locality	Australian Alps	
+locality	Mont-Saint-Michel	
+locality	Malibu	
+locality	Lyon	
+locality	Sand Hills	
+locality	Southern California	
+locality	Kalmthoutse Heide	
+locality	Ash Meadows NWR	
+locality	Killarney Provincial Park	
+locality	Flagstaff	
+locality	Galapagos islands	
+locality	Adriatic Sea	
+locality	Galveston	
+locality	River Warfe	
+locality	Knoxville	
+locality	Broome County	
+locality	Bolinas Lagoon	
+locality	Yampa and Green Rivers	
+locality	Po River	
+locality	River Erne	
+locality	Toulouse	
+locality	Ya	
+locality	Lake Michigan; Lake Huron	
+locality	Cumberland Plain	
+locality	Mabira forest-reserve	
+locality	Middletown	
+locality	Konza Prairie	
+locality	St. Louis; Meredosia	
+locality	Slavkovsky les protected	
+locality	Boundary waters	
+locality	Botany Bay	
+locality	Willapia Bay	
+locality	Moselle	
+locality	Missoula	
+locality	Santa Catalina Island	
+locality	Brno	
+locality	Sydney	
+locality	Yolo County	
+locality	Biosphere Reserve of the Northern Vosges	
+locality	Panzhihua	
+locality	Bozeman	
+locality	Volcanoes National Park	
+locality	Hopland	
+locality	Lake Griffin; Lake Juliette	
+locality	Zurich	
+locality	Grande Caricaie	
+locality	La Aquada	
+locality	Long Island; Southeastern Coast	
+locality	Gros Morne National Park	
+locality	Ligonier; Waterman; Cedarville; Fairborn	
+locality	Banff National Park	
+locality	Aiguamolls de l'Emporda	
+locality	Pietermaritzburg	
+locality	Port Cros National Park	
+locality	Porto Alegre city	
+locality	Alice Springs	
+locality	Darling Basin	
+locality	Lake Erie	
+locality	Montseny Natural Park	
+locality	Muddy River	
+locality	Snake, Madison; and Colombia Rivers	
+locality	Adelaide	
+locality	Culburra	
+locality	River Rhine	
+locality	Lake Wanaka	
+locality	Oxford	
+locality	Quabbin Reservoir	
+locality	Ottawa	
+locality	lake okeechobee	
+locality	Garden Creek Ranch Preserve	
+locality	Myall Lakes National Park	
+locality	Amherst	
+locality	Shawnee National Forest	
+locality	Waiakea Forest Reserve	
+locality	Carlos Avery Wildlife Management Area	
+locality	Lake Donghu	
+locality	Cumberland Plateau	
+locality	Marias River	
+locality	Vistula River	
+locality	Moselle River	
+locality	York	
+locality	La Marque	
+locality	Oak Ridge National Laboratory	
+locality	Canberra	
+locality	Lake Glubokoe Station	
+locality	Racine	
+locality	Cape Florisitc Region	
+locality	Galveston Co.;Honolul Co.	
+locality	Jasper Ridge Biological Preserve	
+locality	University of Zurich	
+locality	West Yellowstone	
+locality	Baitabag;Ohu;Mis	
+locality	Indiana Research and Training Preserve;Griffy Lake Nature Preserve;The Leeren Doedel;The Ossenbos	
+locality	The University of Houston Coastal Centre	
+locality	Silwood Park	
+locality	Academy of Sciences of the Czech Republic	
+locality	Neepawa	
+locality	Denison University Biological Reserve	
+locality	Theodore Roosevelt National Park;Wind Cave National Park	
+locality	College of Charleston Dixie Plantation	
+locality	ParkLands Foundation Merwin Nature Preserve	
+locality	Whyalla	
+locality	La Reunion Island	
+locality	Sunderland	
+locality	Desert Experimental Range	
+locality	San Joaquin Delta	
+locality	Jokers Hil	
+locality	Cedar Creek	
+locality	Lough Neagh	
+locality	Allamuchy State Park	
+locality	Musselshell River	
+locality	River Main; Ruhr Valley	
+locality	London; NE England	
+locality	Wurzburg	
+locality	Killawarra State Forest	
+locality	Cordoba mountain range	
+locality	River Main	
+locality	Central Bohemia	
+locality	Cheesman Lake; Turkey Creek	
+locality	Davis	
+locality	Sheyenne National Grassland	
+locality	Sierra Nevada	
+locality	southern Appalachians	
+locality	Fitzroy River	
+locality	Lake Mojave	
+locality	Gila River; Yellowstone River	
+locality	Escalante	
+locality	Rh	
+locality	Broadstone Stream	
+locality	Sahelian fallow	
+locality	Andilamena	
+locality	National Parks	
+locality	Gardner Marsh	
+locality	Lake St. Clair	
+locality	Dixon Springs State Park; Bell Smith Springs; Lusk Creek; Cove Hollow	
+locality	 University of Nevada, Reno, Experiment Statio	
+locality	Kent  State  University	
+locality	Pearl Harbor	
+locality	Harp Lake	
+locality	Woodside	
+locality	The University of Adelaide	
+locality	Nireco stream	
+locality	Middle Rio Grande	
+locality	W	
+locality	Lake Kainui	
+locality	Hutcheson Memorial Forest Center	
+locality	Port Phillip Bay	
+locality	Kaupulehu preserve	
+locality	shortgrass steppe at the Central Plains Experimental Range (Pawnee National Grassland, Nunn, Colorado), mixed grass prairie at the High Plains Experiment Station (Cheyenne, Wyoming), northern mixed prairie at Wind Cave National Park (Hot Springs, South Dakota), and tallgrass prairie at Pipestone National Monument (Pipestone, Minnesota).	
+locality	Sumatra	
+locality	302 nature reserves	
+locality	Minnesota Horticultural Research Center	
+locality	Yathong Nature Reserve	
+locality	Cass	
+locality	South Fork Eel river	
+locality	Homestake Mine/ Donald and Sylvia McLaughlin UC Natural Reserve	
+locality	west-central Italian rivers Ombrone, Fiora, Albegna and Bruna	
+locality	Vandenberg Air Force Base (VAFB), Santa Barbara County	
+locality	University of Louisville	
+locality	Trail of Tears State Forest, Jackson Hole Ecological Area, and Jackson Hollow Ecological Area	
+locality	Wind Cave National Park	
+locality	pitcher-plant bogs and pine flatwoods communities	
+locality	Camp Redon	
+locality	Buxton Climate Change Impacts Laboratory	
+locality	near Moses Lake	
+locality	Tejo river basin	
+locality	Lang Son;  La Reunion	
+locality	South Australia	
+locality	University of California at Davis, Cosumnes River Preserve. and Santa Cruz Island	
+locality	10 urban bushland sites	
+locality	University of California, Santa Barbara	
+locality	Marion Island	
+locality	Ninole ridges, Kau District	
+locality	University of Toronto Joker	
+locality	River Mondego	
+locality	Ridges Land Laboratory	
+locality	Glencairn Station, upper Waitaki Valley, South Island,	
+locality	Morristown National Historical Park; Allamuchy State Park; Worthington State Forest;	
+locality	Kings Park	
+locality	Cape Neddick; Isles of Shoals; near Gloucester, Massachusetts	
+locality	Ottawa National Wildlife Refuge	
+locality	Wet Beaver Creek	
+locality	Mackenzie Basin	
+locality	Arconciel; Sensine; Praz; Chesopelloz; Corjolens; Coussiberle; Sion; M	
+locality	northern Lake Victoria	
+locality	Tumut region of southern New South Wales	
+locality	Rangitawa Bush; Denton	
+locality	Inland Pampas; Estancia San Claudio	
+locality	Suisun Marsh, San Francisco Estuary	
+locality	Kauai; The Alakai Swamp	
+locality	Olo river basin	
+locality	MetroParks	
+locality	Banbury Springs	
+locality	Ile de la Possession, in the Crozet archipelago, Iles Kerguelen and Ile Amsterdam	
+locality	inner northern coast range (Napa and Lake Counties)	
+locality	voyage across Atlantic Ocean, ballast water	
+locality	Everglades National Park	
+locality	Gulf Coast	
+locality	Lake; Napa; Sonoma Counties	
+locality	Wethersfield; Hamden; Rocky Hill; Bloomfield; Southbury	
+locality	O'ahu; Hawai'	
+locality	Central Plains Experimental Range	
+locality	Australian Capital Territory	
+locality	Kango Valley	
+locality	Guelph	
+locality	Newmarket	
+locality	Whakapipi Stream	
+locality	Jackson county	
+locality	Lake St. Lucia	
+locality	St. Paul	
+locality	Manhattan	
+locality	Palouse Prarie	
+locality	South-East District	
+locality	Central Valley;Sierra Nevada	
+locality	Council Grove City	
+locality	Montpellier country	
+locality	Albuquerque, New Mexico, Bosque del Apache Wildlife Refuge (150 km south of Albuquerque), and Los Lunas (32 km south of Albuquerque)	
+locality	Insubrian area	
+locality	Colorado River; Lees Ferry	
+locality	Hornsby Plateau	
+locality	Arthur's Pass National Park	
+locality	Montpellier	
+locality	Luquillo Experimental Forest	
+locality	Lake Michigamme	
+locality	Maui; Ohau	
+locality	h. j. andrews experimental forest	
+locality	Forrestdale Lake	
+locality	University of Vermont	
+locality	Allegan County	
+locality	Hawaii	
+locality	Texas Agricultural Experiment Station	
+locality	Middlesex Fells Reservation	
+locality	Konza Prairie Research Natural Area	
+locality	Research Station Biologica de los Llano	
+locality	Jericho	
+locality	Bar River	
+locality	University of California Bodega Marine Reserve	
+locality	Ejido Oviedo Mota	
+locality	Belvedere	
+locality	The River Lagan	
+locality	Andy	
+locality	Toolangi State Forest	
+locality	Botanical Garden of Kyoto University	
+locality	Morristown National Historical Park; Allamuchy State Park; Worthington State Forest	
+locality	Tompkins County	
+locality	Limburg	
+locality	Darling Downs	
+locality	Riou archipelago	
+locality	Bodega Bay Marine Reserve	
+locality	 James Cook University; Heathlands Reserve, Cape York Peninsula	
+locality	Humboldt Bay	
+locality	Vindhyan highlands	
+locality	Catalina Bay	
+locality	Tom	
+locality	Chikuma River	
+locality	Lynne of Lorne; Dunstaffnage fish farm	
+locality	San Luis Obispo County	
+locality	central-southern Adriatic sand dunes	
+locality	Camp Shelby Training Site	
+locality	South-West Coast Drainage Divisio	
+locality	Long Island; Stony Brook University	
+locality	Durham	
+locality	Penh	
+locality	Chapman University	
+locality	Mata Nacional das Dunas de Quiaio	
+locality	Boone Co. and Story Co.	
+locality	Kerguelen Archipelago	
+locality	KwaZulu-Natal	
+locality	Lake Tahoe	
+locality	Wilsons Promontory National Park	
+locality	Hong Kong	
+locality	Guangzhou	
+locality	Indiana University Research and Teaching Preserve	
+locality	South Island	
+locality	Western Ghats	
+locality	Chaco Serrano Forest	
+locality	Queen's University Biology Station	
+locality	Mojave Desert; Sonoran Desert	
+locality	Oklahoma State University Range Research Station	
+locality	Many sites (see comments)	
+locality	Athens	
+locality	Meuse River	
+locality	Bern	
+locality	Barton Road Ecological Research Area	
+locality	Concord	
+locality	Totem Field	
+locality	River Murray	
+locality	Robinson Crusoe Island	
+locality	York University	
+locality	Lake Ontario	
+locality	University of Bielefeld	
+locality	University of York	
+locality	Bay of Marseilles	
+locality	Managed Nature Reserve Vauda	
+locality	Denali National Park	
+locality	Meshomasic State Forest	
+locality	Cevennes National Park	
+locality	Amesville; Dark Entry Forest; New Milford	
+locality	Gulf of Corinth	
+locality	Robert Musgrave Research Facility	
+locality	Otter Point Creek National Estuarine Research Reserve	
+locality	Oak Ridge	
+locality	Concepcion	
+locality	Dayton	
+locality	Willamette Valley	
+locality	Nanjing Agricultural University	
+locality	North America; Europe	
+locality	Socorro Island	
+locality	University of California McLaughlin Reserve	
+locality	Lamington National Park	
+locality	Big Thicket National Preserve	
+locality	Tunlanchuan Forest;Yaopin Forest	
+locality	Border Ranges	
+locality	Almograve; Evaristo	
+locality	Alps	
+locality	Maryland Coastal Plain	
+locality	Kosciuszko National Park	
+locality	Shandong Province	
+locality	Newcastle	
+locality	Eastern Germany	
+locality	Puyehue National Park	
+locality	Snake River	
+locality	Strangford Lough	
+locality	northern California	
+locality	Cabrera Archipelago	
+locality	Sierras Grandes	
+locality	Itaipu ; Lajes	
+locality	Ingham County	
+locality	Dieng	
+locality	St. Lawrence River	
+locality	Nanhu Lake	
+locality	Lake Michigan	
+locality	lower subtropical	
+locality	River Elbe	
+locality	Mt. Trumbull ; Uinkaret Mountains	
+locality	Lago Maggiore	
+locality	Plata Basin	
+locality	Tibetan Plateau	
+locality	Mauna Kea	
+locality	south Florida	
+locality	Lake Powell	
+locality	Arnhem Land	
+locality	Inland Pampa	
+locality	Pyrenees	
+locality	Donana park	
+locality	Oahu Island	
+locality	Rhinelander	
+locality	Coosa River	
+locality	Odiel estuary	
+locality	Tauranga	
+locality	White River National Fores	
+locality	Donana National Park	
+locality	Himalayan Foothills	
+locality	Diskobolos Military Base	
+locality	Flooding Pampas	
+locality	western Ontario	
+locality	Hog Island Bay	
+locality	Qi	
+locality	Fynbos Biome	
+locality	Raleigh	
+locality	Blackwater River State Forest	
+locality	Chihuahuan Desert	
+locality	Sydney Harbor	
+locality	Bourgneuf Bay	
+locality	Long Island Sound	
+locality	Mount Koma	
+locality	Baltic coast	
+locality	Australian Alps.	
+locality	River Oder	
+locality	Lake Kizaki	
+locality	River Guadiana	
+locality	madison	
+locality	Bagaud	
+locality	Duncan	
+locality	Stour Estuary	
+locality	Farmington	
+locality	Gila Basin	
+locality	Chongming Island	
+locality	Muskegon Lake	
+locality	western Atlantic Ocean	
+locality	Gulf of Mexico	
+locality	Marennes-Oleron	
+locality	Beagle coast	
+locality	Ogasawara Islands;Bonin	
+locality	Big Cypress National Preserve	
+locality	Coastal Maulino forest	
+locality	Colorado River basin	
+locality	Wadden Sea	
+locality	Mediterranean	
+locality	Yellowstone	
+locality	Macleay River	
+locality	Northern California	
+latitude	47.55	
+latitude	39.00131	
+latitude	23.765708	
+latitude	46.1667	
+latitude	-22.16	
+latitude	55.93;51.74	
+latitude	28.543965	
+latitude	40.5	
+latitude	33.696766	
+latitude	42.289094	
+latitude	29.799	
+latitude	42.650661	
+latitude	-30.5	
+latitude	48.683053	
+latitude	38.887719	
+latitude	41	
+latitude	44.258282	
+latitude	-33.958853	
+latitude	30.631295	
+latitude	50.688628	
+latitude	41.2833	
+latitude	38.328561	
+latitude	10.00; 10.15	
+latitude	30.6667	
+latitude	39.4833; 39.3666; 39.1833	
+latitude	39.550648	
+latitude	-27.3537	
+latitude	44.15	
+latitude	31.2833	
+latitude	-5.0917	
+latitude	27.2106	
+latitude	47.941848	
+latitude	42.5833	
+latitude	41.386597	
+latitude	28.934	
+latitude	46.5729	
+latitude	51.489664	
+latitude	47.3667	
+latitude	46.5218	
+latitude	37.849	
+latitude	52.45	
+latitude	56.4;56.3833;56.3833;56.3667	
+latitude	21.0017	
+latitude	-33	
+latitude	-31.945426	
+latitude	39.320142	
+latitude	19.9167	
+latitude	19.4667	
+latitude	-28.3703	
+latitude	-34.566667	
+latitude	40.956	
+latitude	34.739167	
+latitude	-33.45	
+latitude	-33.483333	
+latitude	40.8869;40.8523;40.874;40.9055;40.9085;40.9429	
+latitude	41.35;45.55	
+latitude	39.0833	
+latitude	-20.4058	
+latitude	32.0356	
+latitude	38.5269	
+latitude	43.928495	
+latitude	37.7833	
+latitude	48.5837	
+latitude	10.25	
+latitude	-37	
+latitude	44.0333	
+latitude	47.60962	
+latitude	-23.25	
+latitude	23.4236	
+latitude	43.386899	
+latitude	43.4	
+latitude	43.592328	
+latitude	31.13	
+latitude	45.341335	
+latitude	57.06	
+latitude	-29.1739	
+latitude	26.61	
+latitude	30.403675	
+latitude	48.830374	
+latitude	40.8671	
+latitude	-4	
+latitude	48.37	
+latitude	-23.6333;-29.9167;-33.3833	
+latitude	45.4	
+latitude	48.66	
+latitude	-16.4	
+latitude	48.0017	
+latitude	-20.6333	
+latitude	42.355892	
+latitude	22.6667	
+latitude	42.1333;42.1167	
+latitude	26.502224	
+latitude	44.35	
+latitude	44.03	
+latitude	43.039582	
+latitude	36.8167	
+latitude	47.65	
+latitude	38.0333	
+latitude	-9.75	
+latitude	43.3883	
+latitude	36.87	
+latitude	39.47	
+latitude	-36.75	
+latitude	50.36; 51.14	
+latitude	38.989336	
+latitude	-40.57	
+latitude	50.771208	
+latitude	-38.41	
+latitude	50.91	
+latitude	46;45	
+latitude	46.8603	
+latitude	38.93	
+latitude	40	
+latitude	43.0011	
+latitude	32.61	
+latitude	51.06	
+latitude	26.0497	
+latitude	40.7993	
+latitude	-27.4528	
+latitude	50.0833	
+latitude	51.37	
+latitude	35.26	
+latitude	-12.43	
+latitude	26.22	
+latitude	-4.75	
+latitude	-4.38	
+latitude	38.531113	
+latitude	42.84	
+latitude	31.0833	
+latitude	24.13	
+latitude	37.7597	
+latitude	25.414129	
+latitude	-37.8	
+latitude	54.4351	
+latitude	27.0667	
+latitude	30.544965	
+latitude	34.7089	
+latitude	46.75	
+latitude	50.8717;51.2433	
+latitude	30.522787	
+latitude	35.5942	
+latitude	34.05; 34.16	
+latitude	-28.68	
+latitude	19.38;20.706	
+latitude	39.10; 39.06; 39.04; 39.14; 39.08; 39.21; 39.16; 39.16	
+latitude	24.23	
+latitude	31.25	
+latitude	30.16	
+latitude	28.54	
+latitude	32.2	
+latitude	39.72	
+latitude	46.846691	
+latitude	52.24	
+latitude	27	
+latitude	51.14	
+latitude	-20	
+latitude	36.99286	
+latitude	-35.4167	
+latitude	40.38	
+latitude	40.2094	
+latitude	51.7	
+latitude	33.58; 33.15; 33.33	
+latitude	-33.26; -33.95	
+latitude	33.061047	
+latitude	56	
+latitude	42.8717;45.505;42.5233;46.8833	
+latitude	-28.8	
+latitude	48.9736	
+latitude	35.9	
+latitude	-33.5442	
+latitude	51.3167	
+latitude	57.1167	
+latitude	-33.5	
+latitude	32.8842	
+latitude	27.04	
+latitude	-33.9667	
+latitude	49.927179	
+latitude	46.8435	
+latitude	39.2667;-36.6667	
+latitude	35	
+latitude	-35.2622	
+latitude	34.0667	
+latitude	19.7681	
+latitude	53.618987	
+latitude	34.696461	
+latitude	43	
+latitude	32.769955	
+latitude	-35.0006	
+latitude	43.6	
+latitude	50.7667	
+latitude	-34.193; -34.2003;-34.1006	
+latitude	53.55; 53.5667	
+latitude	-54.1833	
+latitude	47.116869	
+latitude	39.0014	
+latitude	39.74	
+latitude	41.804462	
+latitude	-34.1939;-34.2003;-34.1006	
+latitude	37.66806	
+latitude	35.049111	
+latitude	-0.812961	
+latitude	45.419419	
+latitude	-27.8333	
+latitude	42.254442	
+latitude	42.422063	
+latitude	29.654344	
+latitude	49.787388	
+latitude	46.284326	
+latitude	40.497941	
+latitude	43.65	
+latitude	44.989084	
+latitude	38.306979	
+latitude	32.772842	
+latitude	50.15	
+latitude	20.707308	
+latitude	-42.2167	
+latitude	39.036786	
+latitude	43.70114	
+latitude	19.754183	
+latitude	38.546554	
+latitude	36.3833	
+latitude	-18.1	
+latitude	38.74	
+latitude	-49.491323	
+latitude	-37.2667;-37.4667	
+latitude	46.443062	
+latitude	53.4667	
+latitude	42.527152	
+latitude	-32.1	
+latitude	-29.0767	
+latitude	-12.458318	
+latitude	-38.0167	
+latitude	34.6833	
+latitude	-40.99995	
+latitude	40.4	
+latitude	20.7163	
+latitude	37.758094; 37.640471	
+latitude	19.3333	
+latitude	-16.948309	
+latitude	-0.7685	
+latitude	49.65	
+latitude	-34.64	
+latitude	-31.4084	
+latitude	-45.574603; -45.607997; -45.595747	
+latitude	-53.5;-55	
+latitude	19.6	
+latitude	-42.8333	
+latitude	41.43	
+latitude	48	
+latitude	45.35	
+latitude	-21.1833	
+latitude	33.585351	
+latitude	40.8811	
+latitude	41.10864	
+latitude	46.948997	
+latitude	-33.15;-30.35	
+latitude	47; 42	
+latitude	46.6667	
+latitude	48.641337	
+latitude	45.593297; 46.597704	
+latitude	-33.8167	
+latitude	38.016289	
+latitude	18.3	
+latitude	46.9262;46.9233	
+latitude	40.099911	
+latitude	52.7833;53.5	
+latitude	37.4	
+latitude	37.4833	
+latitude	45.85	
+latitude	31.3508	
+latitude	17.962511	
+latitude	45.677437;46.585907	
+latitude	44.8;44.6167	
+latitude	-44.050781	
+latitude	48.538432	
+latitude	-27.5715;-27.4875	
+latitude	54.778514	
+latitude	40.686001	
+latitude	-21.130237	
+latitude	-39.0333	
+latitude	45.2967	
+latitude	23.6667	
+latitude	39.7292	
+latitude	49.733001	
+latitude	37.25009	
+latitude	46	
+latitude	49.5	
+latitude	37.650339	
+latitude	-33.556044	
+latitude	18.117335	
+latitude	38.875078	
+latitude	47.610607	
+latitude	-27.493761	
+latitude	39.943871	
+latitude	29.440988	
+latitude	46.875055	
+latitude	38.873554	
+latitude	39.914792	
+latitude	-34.823781	
+latitude	34.649633	
+latitude	-37.994729	
+latitude	37.410692	
+latitude	-40.791771	
+latitude	-33.337068	
+latitude	19.669488	
+latitude	28.266408	
+latitude	47.16843	
+latitude	-37.3033	
+latitude	48.608216	
+latitude	34.073592	
+latitude	45.576754	
+latitude	42.787943	
+latitude	34.457654	
+latitude	51.416595	
+latitude	36.409292	
+latitude	46.066871	
+latitude	35.339942	
+latitude	-0.605198	
+latitude	45.67673	
+latitude	43.600582	
+latitude	38.208619	
+latitude	44.05	
+latitude	29.332083	
+latitude	46.839153	
+latitude	39.242464	
+latitude	54.063579	
+latitude	35.983785	
+latitude	43.6487	
+latitude	42.008043	
+latitude	36.814411	
+latitude	37.920818	
+latitude	40.231734	
+latitude	31.102804	
+latitude	44.94264	
+latitude	-44.169104	
+latitude	54.628225	
+latitude	45.60174	
+latitude	53.136226; 50.024682	
+latitude	44.161125	
+latitude	-29.523758	
+latitude	47.058148	
+latitude	46.478206	
+latitude	52.490808	
+latitude	33.1667;31.4833	
+latitude	44.6667;43.8333	
+latitude	-34.001898	
+latitude	0.386784	
+latitude	38.75	
+latitude	39.090261	
+latitude	36; 40	
+latitude	50.052201	
+latitude	47.95	
+latitude	-37.867699	
+latitude	-33.975168	
+latitude	46.549086	
+latitude	49.105028	
+latitude	46.8774	
+latitude	46.099968; -40.378773; -41.144949	
+latitude	41.849924	
+latitude	33.376756	
+latitude	49.192766	
+latitude	-33.854002	
+latitude	38.559227	
+latitude	48.04008	
+latitude	-27.113901	
+latitude	26.6	
+latitude	45.0011	
+latitude	20.792836; 19.651124	
+latitude	32.6869	
+latitude	-10.484706	
+latitude	19.488861	
+latitude	37.36; 42.66; 40.72; 43.207; 38.37; 41.56	
+latitude	38.999602	
+latitude	33.074; 28.855	
+latitude	47.332	
+latitude	46.93	
+latitude	-31.6333	
+latitude	40.69	
+latitude	37.71	
+latitude	49.59	
+latitude	29.2	
+latitude	40.2333;40.6167;39.5667;39.6333	
+latitude	51.16	
+latitude	42.23	
+latitude	-34	
+latitude	-29.6	
+latitude	45.5167	
+latitude	-30.04	
+latitude	-23.67	
+latitude	-35.16	
+latitude	41.67	
+latitude	-33.85	
+latitude	41.75	
+latitude	-33.4	
+latitude	36.73	
+latitude	43.72; 44.64; 46.16	
+latitude	-34.9294	
+latitude	34.9667	
+latitude	50.96	
+latitude	34.81	
+latitude	-44.53	
+latitude	49.61	
+latitude	39.5	
+latitude	41.43; 46.63	
+latitude	42.48	
+latitude	-10.478	
+latitude	45.4167	
+latitude	26.935	
+latitude	46.861	
+latitude	34.408	
+latitude	47.813	
+latitude	-32.509	
+latitude	49.85	
+latitude	42.395	
+latitude	37.47	
+latitude	19.6833	
+latitude	9.646093; 10.455258; 10.200461; 19.620987; 19.697676; 19.453094	
+latitude	45.3167	
+latitude	30.58	
+latitude	36.89	
+latitude	34.84	
+latitude	47.93	
+latitude	52.08	
+latitude	49.2	
+latitude	46.8731	
+latitude	54.09	
+latitude	29.362	
+latitude	35.925	
+latitude	-35.28	
+latitude	55.75	
+latitude	42.81	
+latitude	-38.26	
+latitude	-34.732735	
+latitude	29.399804;21.41327	
+latitude	37.408805	
+latitude	-5.1333;-5.2333	
+latitude	-35.017504	
+latitude	39.1968;39.1986;52.0087;52.1337	
+latitude	29.3833	
+latitude	54.38	
+latitude	51.4167	
+latitude	49.9947	
+latitude	40.094882	
+latitude	46.919317;43.591582	
+latitude	32.7363	
+latitude	42.503	
+latitude	51.69	
+latitude	35.8764	
+latitude	17.1333	
+latitude	43.1	
+latitude	-35.8;-35.2833	
+latitude	43.6114	
+latitude	31.054754	
+latitude	37.3833; 37.6167; 38.0667; 37.6167	
+latitude	34.05;-33.0167	
+latitude	47.1	
+latitude	39.605688	
+latitude	41.211722	
+latitude	21.339	
+latitude	45.379	
+latitude	-34.854383	
+latitude	45.422432	
+latitude	-41.1333	
+latitude	33.48	
+latitude	-37.678	
+latitude	40.498202	
+latitude	-38	
+latitude	19.872643	
+latitude	30.021023	
+latitude	49.89	
+latitude	44.51	
+latitude	-32.35	
+latitude	-43.0317	
+latitude	39.712997	
+latitude	38.88	
+latitude	42.513108	
+latitude	34.73	
+latitude	40.501498	
+latitude	38.225775	
+latitude	37.51633; 37.511428; 37.512075	
+latitude	39.508345	
+latitude	43.591333	
+latitude	43.606748	
+latitude	53.852527	
+latitude	47.13	
+latitude	39	
+latitude	22.05;-21.04	
+latitude	-38.080528	
+latitude	-33.865356	
+latitude	34.419655	
+latitude	45.406887	
+latitude	43.614205	
+latitude	-46.92	
+latitude	19	
+latitude	44	
+latitude	-4.173855	
+latitude	-44	
+latitude	38.24573	
+latitude	43.1833;42.9667;42.6833	
+latitude	41.618394	
+latitude	34	
+latitude	19.352611	
+latitude	-43.977005	
+latitude	46.748801	
+latitude	0.22	
+latitude	-35.272532	
+latitude	-40.06;-40.48;-40.48	
+latitude	-37.170713	
+latitude	-36	
+latitude	38.23818	
+latitude	22.273847	
+latitude	41.2597	
+latitude	42.690764	
+latitude	-46.411825	
+latitude	-33.895497	
+latitude	38.4	
+latitude	25.336579	
+latitude	32.99023	
+latitude	36.022447	
+latitude	36.36	
+latitude	41.21	
+latitude	39.10369	
+latitude	40.816667	
+latitude	53.25	
+latitude	-35.18	
+latitude	33.36	
+latitude	43.46	
+latitude	49.188	
+latitude	44.043007	
+latitude	-37.251	
+latitude	-12.3833	
+latitude	41.31	
+latitude	-28.255	
+latitude	44.93	
+latitude	46.59	
+latitude	21.502	
+latitude	45.7	
+latitude	46.918	
+latitude	36.3333	
+latitude	36.5833;37.25	
+latitude	35.4167	
+latitude	38.68	
+latitude	49.788	
+latitude	37.6	
+latitude	43.610974	
+latitude	35.094631	
+latitude	45.406646	
+latitude	-33.8333	
+latitude	-42.9333	
+latitude	37.909669	
+latitude	18.5	
+latitude	35.125;34.6917;35.2417	
+latitude	-6.75;-6.5667	
+latitude	38.493302	
+latitude	46.5	
+latitude	44.215925	
+latitude	-31.57	
+latitude	44.478809	
+latitude	42.41	
+latitude	19.55	
+latitude	45.403633	
+latitude	27.6667	
+latitude	42.454874	
+latitude	46.857315	
+latitude	8.56	
+latitude	44.504586	
+latitude	-37.788081	
+latitude	46.762443	
+latitude	46.442115	
+latitude	39.436193	
+latitude	-17.33	
+latitude	44.01	
+latitude	54.081297	
+latitude	-42.02	
+latitude	-37.555737	
+latitude	40.777422;43.578401; 43.731414; 45.131196	
+latitude	35.027747	
+latitude	40.49	
+latitude	41.25	
+latitude	37.780484	
+latitude	18.229351	
+latitude	-37.35	
+latitude	42.442073	
+latitude	-27.420538	
+latitude	43.12	
+latitude	38.19	
+latitude	-19.20; -11.45	
+latitude	-34.350097	
+latitude	40.722283	
+latitude	-28.136107;-27.52616	
+latitude	-26.273714	
+latitude	38.13	
+latitude	56.27	
+latitude	32.04	
+latitude	35.286265	
+latitude	37.04	
+latitude	41.91	
+latitude	31.217499	
+latitude	40.90521	
+latitude	43.144702	
+latitude	-26.463	
+latitude	37.300275	
+latitude	40.13	
+latitude	42.11	
+latitude	-44.26	
+latitude	-49.37	
+latitude	-30	
+latitude	-38.8833;-39.0333	
+latitude	22.5063;22.5151;22.4508;22.5056	
+latitude	31.219167	
+latitude	-31.7614	
+latitude	28.3775;28.2431	
+latitude	44.5667	
+latitude	34.89	
+latitude	36.1168	
+latitude	33.8878	
+latitude	50.999119	
+latitude	-40.998298	
+latitude	46.9212	
+latitude	38.208; 38.288	
+latitude	36.45	
+latitude	42.853	
+latitude	48.325;48.5793	
+latitude	25.398	
+latitude	-28.0022	
+latitude	45.0839;45.9844	
+latitude	42.7	
+latitude	38.0017;38.0011;37.0019	
+latitude	42.4606	
+latitude	49.256532	
+latitude	37.6708;37.6328;37.9065;37.9235	
+latitude	-33.6167	
+latitude	40.59	
+latitude	52.037709	
+latitude	46.585;39.5047;45.9161;43.3853	
+latitude	38.0367;33.9649	
+latitude	39.9167	
+latitude	33.308151	
+latitude	45.2203	
+latitude	63.636504	
+latitude	41.626461	
+latitude	39.589286	
+latitude	-34.1667	
+latitude	47.207558	
+latitude	48.3544	
+latitude	45.369032	
+latitude	50.9167	
+latitude	-40.957086	
+latitude	43.2167	
+latitude	39.45	
+latitude	26.078988	
+latitude	36	
+latitude	-36.8383	
+latitude	36.791691; 37.509726; 38.694085	
+latitude	39.77	
+latitude	44.007509	
+latitude	40.8683	
+latitude	37.6467	
+latitude	49.3667	
+latitude	-33.853025;-33.97383	
+latitude	18.778916	
+latitude	-17.5333	
+latitude	-4.75;-4.3333	
+latitude	-33.3333	
+latitude	-28.1333	
+latitude	32.6431	
+latitude	-45.89861	
+latitude	43.22	
+latitude	30.25	
+latitude	37.8;35.7667	
+latitude	37.65	
+latitude	43.06	
+longitude	8.6167	
+longitude	-77.246418	
+longitude	-76.139545	
+longitude	7.3333	
+longitude	142.01	
+longitude	-3.20;-1.26	
+longitude	-16.202259	
+longitude	-74.5667	
+longitude	-116.157475	
+longitude	3.217163	
+longitude	-90.123	
+longitude	-73.803864	
+longitude	-70.5	
+longitude	-123.383603	
+longitude	-6.710358	
+longitude	-104	
+longitude	3.568954	
+longitude	25.651245	
+longitude	-88.925171	
+longitude	-2.04071	
+longitude	-81.5667	
+longitude	-123.056467	
+longitude	-69.27; -69.51	
+longitude	-87.9167	
+longitude	-82.2333; -82.3; -82.3833	
+longitude	-83.787231	
+longitude	31.9063	
+longitude	-122.54	
+longitude	-87.0011	
+longitude	38.6361	
+longitude	-82.2554	
+longitude	-97.310368	
+longitude	142.1333	
+longitude	2.1698	
+longitude	-80.82	
+longitude	-112.147	
+longitude	11.961178	
+longitude	-116.7	
+longitude	6.5802	
+longitude	-8.795	
+longitude	6.0167	
+longitude	9.35;9.35;9.35;9.3167	
+longitude	101.25	
+longitude	101.0014	
+longitude	-70	
+longitude	115.772252	
+longitude	-86.412536	
+longitude	-155.3167	
+longitude	-154.7333	
+longitude	30.4019	
+longitude	-59.083333	
+longitude	-5.6578	
+longitude	-120.005556	
+longitude	-70.42	
+longitude	-70.866667	
+longitude	-72.6449;-72.7322;-72.7145;-73.1517;-73.2105;-72.9491	
+longitude	-139.3333;-148.8833	
+longitude	-96.5833	
+longitude	57.4658	
+longitude	118.8375	
+longitude	-90.5603	
+longitude	-121.630554	
+longitude	-25.2167	
+longitude	7.7388	
+longitude	-69.85	
+longitude	-58	
+longitude	-79.5167	
+longitude	9.465866	
+longitude	151.9	
+longitude	120.4847	
+longitude	-88.020744	
+longitude	142.4333	
+longitude	-119.055061	
+longitude	121.58	
+longitude	-88.487549	
+longitude	8.35	
+longitude	29.3539	
+longitude	142.16	
+longitude	-84.347878	
+longitude	12.941895	
+longitude	-80.503	
+longitude	55	
+longitude	-107.1	
+longitude	-70.4333;-71.25;-70.7	
+longitude	-93.2	
+longitude	-3.88	
+longitude	131.01	
+longitude	-123.0006	
+longitude	57.75	
+longitude	-71.050884	
+longitude	112.8333	
+longitude	-94.5667;-96.4	
+longitude	-80.216846	
+longitude	-64.03	
+longitude	-79.29	
+longitude	-89.429927	
+longitude	-121.75	
+longitude	-75.58333	
+longitude	-84.5	
+longitude	-171.58333	
+longitude	-88.0105	
+longitude	-76.83	
+longitude	-77.74	
+longitude	-73.2167	
+longitude	5.29; 4.23	
+longitude	-76.943736	
+longitude	-71.33	
+longitude	-100.228271	
+longitude	-71.55	
+longitude	2.94	
+longitude	7;-117	
+longitude	-113.9781	
+longitude	-5.99	
+longitude	-4.99	
+longitude	4.0011	
+longitude	-85.49	
+longitude	-115.16	
+longitude	80.4394	
+longitude	-72.7735	
+longitude	153.1894	
+longitude	11.5833	
+longitude	11.83	
+longitude	24.07	
+longitude	131.49	
+longitude	127.45	
+longitude	55.45	
+longitude	55.27	
+longitude	-90.560303	
+longitude	-75.61	
+longitude	-122	
+longitude	83.59	
+longitude	-122.48	
+longitude	-80.686684	
+longitude	148.5	
+longitude	-5.5413	
+longitude	142.2167	
+longitude	114.420333	
+longitude	135.5819	
+longitude	-113.75	
+longitude	4.5108;4.3875	
+longitude	114.391537	
+longitude	-83.8419	
+longitude	151.08; 151.30	
+longitude	153.32	
+longitude	-155.22;-156.126	
+longitude	-96.41; -96.34; -96.34; -96.31; -96.30; -96.46; -96.28; -96.29	
+longitude	121.18	
+longitude	121.5	
+longitude	114.33	
+longitude	118.3	
+longitude	118.5	
+longitude	-75.76	
+longitude	-114.062119	
+longitude	13.01	
+longitude	-13	
+longitude	18.06	
+longitude	57	
+longitude	-122.058306	
+longitude	148.2333	
+longitude	-105.51	
+longitude	-74.4375	
+longitude	5.2	
+longitude	-117.26; -117.43; -117.43	
+longitude	151.27; 151.27	
+longitude	-96.994171	
+longitude	-2	
+longitude	-73.1883;-122.69;-72.185;-113.9717	
+longitude	24.7667	
+longitude	14.4536	
+longitude	-84.3333	
+longitude	26.7812	
+longitude	5.1833	
+longitude	-2.85	
+longitude	27.1667	
+longitude	-109.632568	
+longitude	142.12	
+longitude	18.4333	
+longitude	14.586181	
+longitude	-113.9742	
+longitude	-121.3;-64.8	
+longitude	-78.15	
+longitude	150.4467	
+longitude	-106.1167	
+longitude	-155.9386	
+longitude	-112.868042	
+longitude	-93.856201	
+longitude	6.38	
+longitude	-17.002716	
+longitude	138.6189	
+longitude	-5.7667	
+longitude	-120.0667	
+longitude	18.3972;18.4111;18.4478	
+longitude	-9.9; -9.9	
+longitude	-36.6667	
+longitude	-122.56073	
+longitude	-123.0019	
+longitude	-74.57	
+longitude	-86.024666	
+longitude	-122.290878	
+longitude	135.764923	
+longitude	-91.120605	
+longitude	-93.195992	
+longitude	22.9167	
+longitude	-72.572465	
+longitude	-76.494198	
+longitude	-82.33326	
+longitude	9.935331	
+longitude	-114.021606	
+longitude	-88.968658	
+longitude	3.85	
+longitude	-93.316498	
+longitude	-123.0655	
+longitude	-117.21983	
+longitude	12.8	
+longitude	-156.226273	
+longitude	173.8667	
+longitude	-77.260666	
+longitude	-0.245991	
+longitude	-155.528126	
+longitude	-121.743965	
+longitude	-121.55	
+longitude	144.84	
+longitude	-77.03	
+longitude	69.139709	
+longitude	-12.8667;-12.5333	
+longitude	-119.345169	
+longitude	-2.95	
+longitude	-87.816811	
+longitude	-63.63	
+longitude	19.1285	
+longitude	130.842161	
+longitude	-71.6333	
+longitude	-120.6	
+longitude	-71.499968	
+longitude	-105.75	
+longitude	-156.153488	
+longitude	-122.260838; -122.395248	
+longitude	-155.25	
+longitude	27.970734	
+longitude	36.3506	
+longitude	-99.5	
+longitude	145.86	
+longitude	117.75845	
+longitude	166.642656; 166.664972; 166.674585	
+longitude	-35.5;-38.5	
+longitude	-96.3778	
+longitude	171.8333	
+longitude	13.3	
+longitude	-123	
+longitude	-74	
+longitude	115.9667	
+longitude	-117.802134	
+longitude	-109.4208	
+longitude	-74.950333	
+longitude	-103.470726	
+longitude	144.1167;139.3667	
+longitude	19; -72	
+longitude	-124	
+longitude	-1.516142	
+longitude	-111.026659; -111.830635	
+longitude	150.0333	
+longitude	-76.75	
+longitude	-109.569855	
+longitude	-65.8333	
+longitude	-114.0067;-114.0247	
+longitude	-84.628744	
+longitude	-3.1;-2.9333	
+longitude	-111.6833	
+longitude	-119.2167	
+longitude	-84.6167	
+longitude	121.279	
+longitude	102.616754	
+longitude	-111.209135;-111.77639	
+longitude	-111.2;-111	
+longitude	170.105209	
+longitude	-123.673096	
+longitude	153.0767;153.1138	
+longitude	-1.559801	
+longitude	-74.029427	
+longitude	55.526047	
+longitude	-70.35	
+longitude	-118.1336	
+longitude	-99.0833	
+longitude	-123.6444	
+longitude	15.197753	
+longitude	-76.50816	
+longitude	-89.7	
+longitude	-62.976837	
+longitude	-7.510071	
+longitude	-63.735353	
+longitude	-76.667519	
+longitude	-122.424145	
+longitude	-75.8167	
+longitude	14.674072	
+longitude	152.973948	
+longitude	-75.444174	
+longitude	-81.113462	
+longitude	-113.857169	
+longitude	-122.429695	
+longitude	-105.692139	
+longitude	150.75428	
+longitude	-82.829905	
+longitude	144.48801	
+longitude	-80.590324	
+longitude	-71.532898	
+longitude	-69.899368	
+longitude	-155.504151	
+longitude	-16.636505	
+longitude	7.909241	
+longitude	146.864319	
+longitude	-1.519776	
+longitude	-118.81897	
+longitude	5.250549	
+longitude	-100.028229	
+longitude	-118.084717	
+longitude	4.395676	
+longitude	-116.300011	
+longitude	-81.3167	
+longitude	-111.752357	
+longitude	-90.35316	
+longitude	13.756027	
+longitude	3.891678	
+longitude	-109.811554	
+longitude	-79.4833	
+longitude	-95.042152	
+longitude	-74.56667	
+longitude	2.893066	
+longitude	-8.269044	
+longitude	-1.714783	
+longitude	-83.980408	
+longitude	-116.4936	
+longitude	-75.649967	
+longitude	-121.754122	
+longitude	-122.680428	
+longitude	-106.898804	
+longitude	-93.319702	
+longitude	10.452576	
+longitude	170.112076	
+longitude	-6.770783	
+longitude	4.819334	
+longitude	-2.651369; 15.190428	
+longitude	0.892181	
+longitude	24.997558	
+longitude	-71.7334	
+longitude	-123.958168	
+longitude	5.57373	
+longitude	35.3333;34.8833	
+longitude	-87.9167;-83.6667	
+longitude	150.803375	
+longitude	33.000069	
+longitude	-122.25	
+longitude	-96.572685	
+longitude	-90; -90	
+longitude	12.797241	
+longitude	-91.8	
+longitude	144.933929	
+longitude	151.182804	
+longitude	-123.90049	
+longitude	6.562157	
+longitude	-113.9761	
+longitude	-123.937118; 175.225525; 146.628571	
+longitude	-74.238288	
+longitude	-118.41362	
+longitude	16.610584	
+longitude	151.213145	
+longitude	-122.006149	
+longitude	7.132416	
+longitude	149.663084	
+longitude	101.6	
+longitude	-111.0011	
+longitude	-156.319428; -155.528412	
+longitude	117.1636	
+longitude	105.641556	
+longitude	-155.440979	
+longitude	-121.97; -73.77; -73.71; -76.74; -82.44; -81.38	
+longitude	-123.066216	
+longitude	-83.815; -81.850	
+longitude	8.402	
+longitude	6.87	
+longitude	-71.1833	
+longitude	-72.93	
+longitude	-122.35	
+longitude	-57.75	
+longitude	-81.73	
+longitude	79.2333;79.15;83.8;84.0167	
+longitude	-115.6	
+longitude	3.07	
+longitude	151.19	
+longitude	30.32	
+longitude	73.1333	
+longitude	6.4	
+longitude	-51.22	
+longitude	134.15	
+longitude	148.88	
+longitude	-83.22	
+longitude	151.22	
+longitude	2.355	
+longitude	150.2	
+longitude	-114.74	
+longitude	-116.85;  -110.86; -123.92	
+longitude	138.5992	
+longitude	150.7833	
+longitude	7.42	
+longitude	-95.91	
+longitude	169.11	
+longitude	-57.72	
+longitude	84.75	
+longitude	-122.25; -122.95	
+longitude	-72.26	
+longitude	105.629	
+longitude	75.7167	
+longitude	-80.79	
+longitude	-113.948	
+longitude	-119.685	
+longitude	-116.612	
+longitude	152.345	
+longitude	13.61	
+longitude	-72.507	
+longitude	-89.15	
+longitude	-155.1333	
+longitude	-82.749091; -84.001994; -83.607559; -155.135422; -155.141144; -154.894581	
+longitude	-93.086	
+longitude	114.4	
+longitude	-84.25	
+longitude	-92.48	
+longitude	-110.47	
+longitude	21.22	
+longitude	6.2	
+longitude	-113.9958	
+longitude	-1.3	
+longitude	-95.034	
+longitude	-84.315	
+longitude	149.11	
+longitude	36.5167	
+longitude	-87.75	
+longitude	175.49	
+longitude	19.794502	
+longitude	-94.94545;-158.050804	
+longitude	-122.224288	
+longitude	8.5833	
+longitude	145.6833;145.8	
+longitude	138.573117	
+longitude	-86.5147;-86.5127;5.8385;5.8001	
+longitude	-95.0408	
+longitude	-5.91	
+longitude	-0.5833	
+longitude	14.5656	
+longitude	-82.529297	
+longitude	-103.526230;-103.474045	
+longitude	-80.1965	
+longitude	-72.517	
+longitude	6.04	
+longitude	-86.4328	
+longitude	48.55	
+longitude	149.6667;149.8	
+longitude	5.7747	
+longitude	-97.347965	
+longitude	-88.6667; -88.6667; -89.4667; -88.8	
+longitude	-118.2333;-71.6333	
+longitude	2.8	
+longitude	-119.816895	
+longitude	-81.334534	
+longitude	-157.969	
+longitude	-79.136	
+longitude	-122.2333	
+longitude	138.614502	
+longitude	field-observational;meta-analysis	
+longitude	-93.194103	
+longitude	-71.2833	
+longitude	-106.53	
+longitude	175.232	
+longitude	-74.565754	
+longitude	145	
+longitude	-155.986633	
+longitude	-84.978862	
+longitude	15.06	
+longitude	-93.36	
+longitude	145.35	
+longitude	171.7317	
+longitude	-123.712921	
+longitude	-122.44	
+longitude	12.082901	
+longitude	-120.53	
+longitude	-74.562793	
+longitude	-85.764084	
+longitude	-89.340391; -88.693013; -88.610058	
+longitude	-84.745102	
+longitude	-103.476105	
+longitude	3.873217	
+longitude	-2.06543	
+longitude	-119.28	
+longitude	8.3	
+longitude	106.38;55.4	
+longitude	144.740067	
+longitude	151.207323	
+longitude	-119.848309	
+longitude	-93.200111	
+longitude	3.882294	
+longitude	37.82	
+longitude	-155	
+longitude	79	
+longitude	39.493103	
+longitude	82	
+longitude	-155.33	
+longitude	170.771484	
+longitude	-109.90036	
+longitude	-70.6;-70.6167;-70.6167	
+longitude	-83.224525	
+longitude	111	
+longitude	-155.379639	
+longitude	170.090332	
+longitude	7.121372	
+longitude	33.1	
+longitude	148.222046	
+longitude	175.28;175.11;175.1	
+longitude	-72.934799	
+longitude	-61.0833	
+longitude	-122.066345	
+longitude	-159.631348	
+longitude	81.5211	
+longitude	-114.820347	
+longitude	51.738052	
+longitude	18.428192	
+longitude	-80.906067	
+longitude	-79.94751	
+longitude	-112.203369	
+longitude	-123.07	
+longitude	-72.55	
+longitude	-96.60862	
+longitude	-107.783333	
+longitude	-2.2	
+longitude	149.08	
+longitude	22.06	
+longitude	-120.5	
+longitude	-80.11	
+longitude	9.921	
+longitude	-79.456	
+longitude	174.964	
+longitude	89.1833	
+longitude	72.9236	
+longitude	32.427	
+longitude	-93.1	
+longitude	96.5833	
+longitude	-117.07	
+longitude	-158.149	
+longitude	-111.0167	
+longitude	-103.528	
+longitude	140.6667	
+longitude	115.9167;116.5833	
+longitude	119.05	
+longitude	-96.5	
+longitude	9.915	
+longitude	-82.8	
+longitude	3.879204	
+longitude	-106.65184	
+longitude	-93.200798	
+longitude	151.3333	
+longitude	171.55	
+longitude	-122.677374	
+longitude	-66.3667	
+longitude	-117.1292;-117.9583;-117.8542	
+longitude	146.7833;147.0333	
+longitude	-122.028451	
+longitude	-88.1	
+longitude	-122.254829	
+longitude	115.52	
+longitude	-73.194952	
+longitude	-86.12	
+longitude	-155.52	
+longitude	-93.201656	
+longitude	-98.2	
+longitude	-71.090298	
+longitude	-113.969078	
+longitude	9.85	
+longitude	-67.25	
+longitude	-72.997842	
+longitude	175.275879	
+longitude	-66.544189	
+longitude	-84.025841	
+longitude	-123.134766	
+longitude	-115.1	
+longitude	-149.25	
+longitude	3.38	
+longitude	-6.779594	
+longitude	173.26	
+longitude	145.466881	
+longitude	-104.547272;-103.474731;-101.982651;-108.172073	
+longitude	135.780716	
+longitude	107.47	
+longitude	-122.419968	
+longitude	-66.950684	
+longitude	144.44	
+longitude	-76.554909	
+longitude	150.595093	
+longitude	-123.4	
+longitude	146.46; 142.35	
+longitude	139.614	
+longitude	-124.242496	
+longitude	153.488574;152.974663	
+longitude	32.080078	
+longitude	-122.57	
+longitude	-5.24	
+longitude	118.78	
+longitude	-120.659065	
+longitude	-6.21	
+longitude	14.73	
+longitude	-89.184265	
+longitude	-73.116417	
+longitude	-70.947139	
+longitude	-48.3634	
+longitude	-117.773437	
+longitude	-8.53	
+longitude	-93.11	
+longitude	168.39	
+longitude	-69.5	
+longitude	30.5	
+longitude	146.2333;146.3167	
+longitude	114.0814;114.1226;114.1432;114.1112	
+longitude	-86.541389	
+longitude	-64.4585	
+longitude	16.8492;16.4053	
+longitude	-76.3333	
+longitude	-115.87	
+longitude	-97.061462	
+longitude	-83.3655	
+longitude	5.766878	
+longitude	-71.499023	
+longitude	7.5024	
+longitude	-122.028; 121.408	
+longitude	-6.2333	
+longitude	-112.402	
+longitude	-123.5425;-123.5217	
+longitude	-80.644	
+longitude	152.0025	
+longitude	-74.2525;-73.9858	
+longitude	-76.6	
+longitude	-75.0022;-75.0017;-75.0014	
+longitude	-71.3483	
+longitude	-123.250294	
+longitude	-122.0003;-122;-122.0026;-122.0004	
+longitude	-78.8833	
+longitude	-105.35	
+longitude	8.494835	
+longitude	-120.4592;-102.5503;-119.5586;-107.0625	
+longitude	-122.963;-117.3454	
+longitude	-105.2	
+longitude	-117.315788	
+longitude	7.6881	
+longitude	-150.611572	
+longitude	-72.536087	
+longitude	-119.929504	
+longitude	140.75	
+longitude	8.409948	
+longitude	3.5	
+longitude	15.4089	
+longitude	-73.852844	
+longitude	-71.536102	
+longitude	-77.0833	
+longitude	-76.2667	
+longitude	-80.238669	
+longitude	-84.2167	
+longitude	-73.0478	
+longitude	-82.705078; -80.15625; -79.93103	
+longitude	-84.02	
+longitude	-122.979412	
+longitude	-72.8617	
+longitude	-122.1433	
+longitude	2.9	
+longitude	151.222687;151.207581	
+longitude	-110.98732	
+longitude	146.0333	
+longitude	55.5;55.6667	
+longitude	-70.2667	
+longitude	153.1	
+longitude	-117.0208	
+longitude	169.988022	
+longitude	-88.01	
+longitude	-94.44	
+longitude	111.7333;109.2667	
+longitude	8.1333	
+longitude	-70.71	
+research_type	Greenhouse;Garden	
+research_type	Field - Observational	
+research_type	Field - Experimental;Greenhouse	
+research_type	Lab	
+research_type	Field - Experimental	
+research_type	Field - Observational;Lab	
+research_type	Field - Experimental;Greenhouse;Garden	
+research_type	Field - Observational;Review	
+research_type	Field - Experimental;Field - Observational;Greenhouse	
+research_type	Theoretical/Modeling	
+research_type	Greenhouse	
+research_type	Field - Experimental;Field - Observational;Theoretical/Modeling	
+research_type	Statistical/Meta-analysis	
+research_type	Field - Observational;Theoretical/Modeling;Statistical/Meta-analysis	
+research_type	Garden	
+research_type	Greenhouse;Lab	
+research_type	Review	
+research_type	Field - Experimental;Field - Observational	
+research_type	Field - Observational;Statistical/Meta-analysis	
+research_type	Field - Observational;Theoretical/Modeling	
+research_type	Field - Observational;Greenhouse	
+research_type	Garden;Lab	
+research_type	Field - Experimental;Lab	
+research_type	Theoretical/Modeling;Review	
+research_type	Theoretical/Modeling;Garden	
+research_type	Field - Observational;Garden	
+research_type	Field - Observational;Greenhouse;Garden	
+research_type	Field - Experimental;Greenhouse;Lab	
+research_type	Statistical/Meta-analysis;Review	
+research_type	Review/Meta-analysis	
+research_type	Field - Experimental;Garden	
+research_type	Field - Experimental;Statistical/Meta-analysis	
+research_type	Theoretical/Modeling;Statistical/Meta-analysis	
+research_type	Garden;Review	
+research_type	Field - Experimental;Field - Observational;Lab	
+research_type	Field - Experimental;Theoretical/Modeling	
+research_type	Field - Observational;Greenhouse;Lab	
+research_type	Field - Observational;Statistical/Meta-analysis;Review	
+research_type	Field - Observational;Review;Meta-analysis	
+research_type	Review;Meta-analysis	
+ecosystem	terrestrial	
+ecosystem	marine	
+ecosystem	estuarine	
+ecosystem	lotic	
+ecosystem	lentic	
+ecosystem	terrestrial;lentic;lotic	
+ecosystem	terrestrial;lotic	
+ecosystem	wetland	
+ecosystem	lentic;lotic	
+ecosystem	terrestrial;marine	
+ecosystem	marine;estuarine	
+ecosystem	marine;lentic;lotic;estuarine	
+ecosystem	lotic;estuarine	
+ecosystem	estuarine;wetland	
+ecosystem	terrestrial;lentic	
+ecosystem	marine;lotic	
+ecosystem	terrestrial;wetland	
+ecosystem	marine;lentic	
+ecosystem	terrestrial;estuarine;wetland	
+biome	Deciduous Forest	
+biome	Coral Reef	
+biome	Mountain	
+biome	Tropical Forest	
+biome	Urban;Old Field	
+biome	Chaparral/Shrublands	
+biome	Desert	
+biome	Grassland	
+biome	Wetland	
+biome	Savanna	
+biome	Intertidal/Near Shore	
+biome	Savanna;Chaparral/Shrublands	
+biome	Riparian	
+biome	Deciduous Forest;Coniferous Forest	
+biome	Grassland;Deciduous Forest;Coniferous Forest	
+biome	Urban	
+biome	Deciduous Forest;Old Field	
+biome	Grassland;Deciduous Forest;Chaparral/Shrublands	
+biome	Deciduous Forest;Riparian	
+biome	Grassland;Deciduous Forest;Coniferous Forest;Mountain;Tundra;Chaparral/Shrublands;Urban	
+biome	Benthic	
+biome	Coniferous Forest	
+biome	Tropical Forest;Subtropical Forest	
+biome	Intertidal/Near Shore;Pelagic/Open Ocean	
+biome	Deciduous Forest;Coniferous Forest;Riparian;Chaparral/Shrublands	
+biome	Subtropical Forest	
+biome	Deciduous Forest;Chaparral/Shrublands	
+biome	Deciduous Forest;Subtropical Forest	
+biome	Grassland;Deciduous Forest;Coniferous Forest;Mountain;Chaparral/Shrublands;Urban;Old Field	
+biome	Grassland;Chaparral/Shrublands	
+biome	Old Field	
+biome	Coniferous Forest;Urban	
+biome	Grassland;Deciduous Forest	
+biome	Pelagic/Open Ocean	
+biome	Grassland;Deciduous Forest;Wetland;Chaparral/Shrublands;Old Field;Intertidal/Near Shore	
+biome	Subtropical Forest;Broadleaf Evergreen Forest	
+biome	Deciduous Forest;Coniferous Forest;Old Field	
+biome	Grassland;Deciduous Forest;Urban;Old Field	
+biome	Wetland;Urban	
+biome	Broadleaf Evergreen Forest	
+biome	Coniferous Forest;Riparian;Old Field	
+biome	Wetland;Riparian	
+biome	Chaparral/Shrublands;Old Field	
+biome	Grassland;Coniferous Forest;Riparian;Mountain	
+biome	Intertidal/Near Shore;Benthic	
+biome	Tropical Forest;Subtropical Forest;Chaparral/Shrublands	
+biome	Deciduous Forest;Tropical Forest	
+biome	Riparian;Chaparral/Shrublands	
+biome	Broadleaf Evergreen Forest;Old Field	
+biome	Grassland;Old Field	
+biome	Grassland;Urban	
+biome	Grassland;Deciduous Forest;Coniferous Forest;Riparian;Chaparral/Shrublands;Old Field	
+biome	Grassland;Subtropical Forest;Chaparral/Shrublands	
+biome	Subtropical Forest;Savanna	
+biome	Tundra	
+biome	Coniferous Forest;Riparian	
+biome	Grassland;Desert	
+biome	Mountain;Chaparral/Shrublands	
+biome	Broadleaf Evergreen Forest;Chaparral/Shrublands;Old Field	
+biome	Intertidal/Near Shore;Benthic;Pelagic/Open Ocean	
+biome	Grassland;Coniferous Forest;Riparian;Mountain;Chaparral/Shrublands	
+biome	Deciduous Forest;Coniferous Forest;Chaparral/Shrublands	
+biome	Grassland;Wetland;Riparian	
+biome	Deciduous Forest;Mountain	
+biome	Grassland;Deciduous Forest;Coniferous Forest;Riparian;Mountain;Urban;Old Field	
+biome	Grassland;Coniferous Forest	
+biome	Riparian;Old Field	
+biome	Wetland;Chaparral/Shrublands	
+biome	Grassland;Deciduous Forest;Coniferous Forest;Broadleaf Evergreen Forest;Savanna;Wetland;Riparian	
+biome	Coniferous Forest;Savanna	
+biome	Grassland;Tundra	
+biome	Deciduous Forest;Savanna	
+biome	Grassland;Mountain	
+biome	Broadleaf Evergreen Forest;Intertidal/Near Shore	
+biome	Grassland;Riparian	
+biome	Grassland;Deciduous Forest;Old Field	
+biome	Deciduous Forest;Urban;Old Field	
+biome	Deciduous Forest;Coniferous Forest;Subtropical Forest	
+biome	Grassland;Savanna	
+biome	Grassland;Subtropical Forest	
+biome	Deciduous Forest;Urban	
+biome	Riparian;Urban;Old Field	
+biome	Grassland;Deciduous Forest;Wetland	
+focus	Invasion Hyp.	
+focus	Impacts;Invasion Hyp.	
+focus	Impacts;Fundamentals	
+focus	Impacts	
+focus	Fundamentals;Invasion Hyp.	
+focus	Fundamentals	
+focus	Impacts;Fundamentals;Invasion Hyp.	
+hypothesis	Enemy Release;Evolution of Increased Competitive Ability;Novel Weapons;Preadaptation to Climate	
+hypothesis	Novel Weapons	
+hypothesis	Enemy Release	
+hypothesis	Evolution in General	
+hypothesis	Other	
+hypothesis	Evolution in General;Inherent Superiority	
+hypothesis	Evolution in General;Other	
+hypothesis	Preadaptation to Climate	
+hypothesis	Hybridization	
+hypothesis	Inherent Superiority	
+hypothesis	Mutualism Facilitation;Other	
+hypothesis	Mutualism Facilitation	
+hypothesis	Mutualism Facilitation;Propagule Pressure;Ecosystem Engineers	
+hypothesis	Enemy Release;Disturbance	
+hypothesis	Plasticity	
+hypothesis	Propagule Pressure;Preadaptation to Climate;Disturbance	
+hypothesis	Climate Change	
+hypothesis	Evolution of Increased Competitive Ability	
+hypothesis	Inherent Superiority;Disturbance	
+hypothesis	Enemy Release;Evolution in General;Inherent Superiority	
+hypothesis	Mutualism Facilitation;Disturbance	
+hypothesis	Disturbance	
+hypothesis	Evolution in General;Plasticity	
+hypothesis	Community Species Richness;Disturbance	
+hypothesis	Propagule Pressure	
+hypothesis	Inherent Superiority;Community Species Richness	
+hypothesis	Inherent Superiority;Propagule Pressure;Preadaptation to Climate	
+hypothesis	Community Species Richness;Propagule Pressure	
+hypothesis	Inherent Superiority;Propagule Pressure;Disturbance	
+hypothesis	Enemy Release;Community Species Richness;Propagule Pressure;Disturbance	
+hypothesis	Community Species Richness	
+hypothesis	Preadaptation to Climate;Other	
+hypothesis	Preadaptation to Climate;Climate Change	
+hypothesis	Disturbance;Other	
+hypothesis	Empty Niche	
+hypothesis	Inherent Superiority;Community Species Richness;Preadaptation to Climate;Disturbance;Climate Change	
+hypothesis	Inherent Superiority;Preadaptation to Climate	
+hypothesis	Inherent Superiority;Fluctuating Resources;Other	
+hypothesis	Inherent Superiority;Preadaptation to Climate;Disturbance	
+hypothesis	Inherent Superiority;Other	
+hypothesis	Fluctuating Resources;Disturbance	
+hypothesis	Evolution of Increased Competitive Ability;Inherent Superiority;Preadaptation to Climate	
+hypothesis	Mutualism Facilitation;Inherent Superiority	
+hypothesis	Evolution of Increased Competitive Ability;Novel Weapons	
+hypothesis	Community Species Richness;Propagule Pressure;Other	
+hypothesis	Evolution in General;Preadaptation to Climate	
+hypothesis	Enemy Release;Other	
+hypothesis	Propagule Pressure;Disturbance	
+hypothesis	Mutualism Facilitation;Inherent Superiority;Other	
+hypothesis	Propagule Pressure;Other	
+hypothesis	Community Species Richness;Preadaptation to Climate;Disturbance	
+hypothesis	Inherent Superiority;Fluctuating Resources	
+hypothesis	Inherent Superiority;Empty Niche	
+hypothesis	Inherent Superiority;Propagule Pressure	
+hypothesis	Evolution in General;Hybridization	
+hypothesis	Evolution of Increased Competitive Ability;Disturbance	
+hypothesis	Evolution of Increased Competitive Ability;Plasticity	
+hypothesis	Evolution of Increased Competitive Ability;Evolution in General	
+hypothesis	Fluctuating Resources	
+hypothesis	Inherent Superiority;Hybridization	
+hypothesis	Evolution in General;Preadaptation to Climate;Other	
+hypothesis	Evolution of Increased Competitive Ability;Hybridization	
+hypothesis	Enemy Release;Fluctuating Resources	
+hypothesis	Community Species Richness;Propagule Pressure;Preadaptation to Climate	
+hypothesis	Inherent Superiority;Plasticity	
+hypothesis	Preadaptation to Climate;Disturbance	
+hypothesis	Enemy Release;Evolution of Increased Competitive Ability	
+hypothesis	Community Species Richness;Fluctuating Resources	
+hypothesis	Empty Niche;Fluctuating Resources	
+hypothesis	Enemy Release;Novel Weapons	
+hypothesis	Disturbance;Climate Change;Other	
+hypothesis	Mutualism Facilitation;Empty Niche	
+hypothesis	Empty Niche;Propagule Pressure;Preadaptation to Climate;Disturbance	
+hypothesis	Inherent Superiority;Propagule Pressure;Other	
+hypothesis	Empty Niche;Community Species Richness	
+hypothesis	Inherent Superiority;Community Species Richness;Disturbance	
+hypothesis	Community Species Richness;Plasticity	
+hypothesis	Inherent Superiority;Disturbance;Other	
+hypothesis	Enemy Release;Community Species Richness;Disturbance;Other	
+hypothesis	Community Species Richness;Propagule Pressure;Disturbance;Other	
+hypothesis	Inherent Superiority;Novel Weapons	
+hypothesis	Community Species Richness;Disturbance;Other	
+hypothesis	Enemy Release;Inherent Superiority;Plasticity;Fluctuating Resources;Disturbance	
+hypothesis	Ecosystem Engineers	
+hypothesis	Enemy Of My Enemy	
+hypothesis	Novel Weapons;Other	
+hypothesis	Enemy Release;Inherent Superiority;Disturbance	
+hypothesis	Enemy Release;Plasticity	
+hypothesis	Community Species Richness;Other	
+hypothesis	Propagule Pressure;Fluctuating Resources	
+hypothesis	Enemy Release;Inherent Superiority;Propagule Pressure;Fluctuating Resources	
+hypothesis	Disturbance;Ecosystem Engineers	
+hypothesis	Empty Niche;Propagule Pressure;Disturbance	
+hypothesis	Enemy Release;Community Species Richness	
+hypothesis	Inherent Superiority;Climate Change	
+hypothesis	Preadaptation to Climate;Disturbance;Other	
+hypothesis	Enemy Of My Enemy;Preadaptation to Climate;Disturbance	
+hypothesis	Fluctuating Resources;Disturbance;Climate Change	
+hypothesis	Hybridization;Plasticity	
+hypothesis	Enemy Release;Evolution in General	
+hypothesis	Evolution of Increased Competitive Ability;Hybridization;Other	
+hypothesis	Evolution in General;Disturbance	
+hypothesis	Evolution in General;Inherent Superiority;Community Species Richness	
+hypothesis	Inherent Superiority;Preadaptation to Climate;Other	
+hypothesis	Climate Change;Other	
+hypothesis	Empty Niche;Other	
+hypothesis	Empty Niche;Disturbance;Other	
+hypothesis	Community Species Richness;Disturbance;Ecosystem Engineers	
+hypothesis	Enemy Release;Inherent Superiority	
+hypothesis	Propagule Pressure;Disturbance;Other	
+hypothesis	Enemy Release;Hybridization	
+hypothesis	Enemy Release;Evolution of Increased Competitive Ability;Other	
+hypothesis	Inherent Superiority;Community Species Richness;Propagule Pressure	
+hypothesis	Enemy Release;Empty Niche	
+hypothesis	Mutualism Facilitation;Inherent Superiority;Novel Weapons;Ecosystem Engineers	
+hypothesis	Plasticity;Disturbance	
+hypothesis	Novel Weapons;Plasticity;Ecosystem Engineers	
+hypothesis	Mutualism Facilitation;Ecosystem Engineers	
+hypothesis	Evolution in General;Novel Weapons	
+hypothesis	Evolution in General;Climate Change	
+hypothesis	Community Species Richness;Climate Change	
+hypothesis	Empty Niche;Climate Change	
+hypothesis	Mutualism Facilitation;Propagule Pressure	
+hypothesis	Plasticity;Preadaptation to Climate	
+hypothesis	Community Species Richness;Hybridization;Plasticity	
+hypothesis	Community Species Richness;Propagule Pressure;Disturbance	
+hypothesis	Fluctuating Resources;Climate Change	
+hypothesis	Enemy Release;Evolution of Increased Competitive Ability;Empty Niche;Novel Weapons	
+hypothesis	Mutualism Facilitation;Enemy Of My Enemy	
+superior_character	Effective Disperser	
+superior_character	Broad Tolerances	
+superior_character	Superior Competitor	
+superior_character	Rapid Growth	
+superior_character	Superior Competitor;Broad Tolerances	
+superior_character	High Reprod. Output	
+superior_character	Rapid Growth;High Reprod. Output	
+superior_character	Superior Competitor;High Reprod. Output	
+superior_character	High Reprod. Output;Effective Disperser	
+superior_character	Self Compatible	
+superior_character	High Reprod. Output;Clonal Reproduction	
+superior_character	Superior Competitor;Clonal Reproduction	
+superior_character	Superior Competitor;Rapid Growth	
+superior_character	Rapid Growth;Effective Disperser	
+superior_character	Broad Tolerances;High Reprod. Output	
+superior_character	Broad Tolerances;Rapid Growth;Clonal Reproduction	
+superior_character	Clonal Reproduction	
+superior_character	Superior Competitor;Effective Disperser	
+superior_character	Effective Disperser;Clonal Reproduction	
+superior_character	Broad Tolerances;Rapid Growth	
+superior_character	High Reprod. Output;Self Compatible;Clonal Reproduction	
+superior_character	Broad Tolerances;Self Compatible;Clonal Reproduction	
+superior_character	Broad Tolerances;High Reprod. Output;Clonal Reproduction	
+superior_character	Rapid Growth;Effective Disperser;Clonal Reproduction	
+superior_character	Rapid Growth;High Reprod. Output;Clonal Reproduction	
+superior_character	Broad Tolerances;Rapid Growth;High Reprod. Output;Effective Disperser;Clonal Reproduction	
+superior_character	Rapid Growth;High Reprod. Output;Self Compatible	
+superior_character	Superior Competitor;High Reprod. Output;Clonal Reproduction	
+superior_character	Superior Competitor;Rapid Growth;Effective Disperser	
+superior_character	Broad Tolerances;Clonal Reproduction	
+superior_character	Rapid Growth;Clonal Reproduction	
+superior_character	High Reprod. Output;Self Compatible	
+superior_character	Superior Competitor;Rapid Growth;Effective Disperser;Clonal Reproduction	
+superior_character	Superior Competitor;High Reprod. Output;Self Compatible	
+superior_character	Self Compatible;Effective Disperser	
+superior_character	Broad Tolerances;Rapid Growth;High Reprod. Output	
+superior_character	Rapid Growth;Self Compatible;Clonal Reproduction	
+superior_character	High Reprod. Output;Effective Disperser;Clonal Reproduction	
+superior_character	Superior Competitor;Broad Tolerances;Effective Disperser	
+superior_character	Superior Competitor;Broad Tolerances;High Reprod. Output	
+superior_character	Self Compatible;Clonal Reproduction	
+superior_character	Broad Tolerances;Self Compatible	
+trophic_level	primary;herbivore	
+trophic_level	primary	
+trophic_level	predator	
+trophic_level	omnivore	
+trophic_level	herbivore;omnivore;predator	
+trophic_level	herbivore	
+trophic_level	filter	
+trophic_level	omnivore;predator	
+trophic_level	decomposer	
+trophic_level	herbivore;omnivore;filter	
+trophic_level	herbivore;omnivore;decomposer	
+trophic_level	primary;decomposer	
+trophic_level	primary;omnivore	
+trophic_level	omnivore;predator;decomposer	
+trophic_level	parasite	
+trophic_level	primary;predator	
+trophic_level	pathogen	
+trophic_level	primary;parasite	
+trophic_level	primary;herbivore;omnivore;predator;decomposer;filter	
+trophic_level	herbivore;decomposer	
+trophic_level	primary;herbivore;filter	
+trophic_level	primary;herbivore;omnivore;predator	
+trophic_level	herbivore;decomposer;filter	
+trophic_level	primary;filter	
+trophic_level	herbivore;pathogen;parasite	
+trophic_level	herbivore;omnivore	
+trophic_level	predator;filter	
+trophic_level	primary;decomposer;filter	
+trophic_level	herbivore;omnivore;predator;parasite	
+trophic_level	primary;herbivore;omnivore;predator;filter	
+trophic_level	herbivore;omnivore;predator;decomposer;filter	
+trophic_level	herbivore;parasite	
+trophic_level	primary;pathogen	
+trophic_level	herbivore;omnivore;predator;decomposer	
+trophic_level	herbivore;omnivore;predator;filter	
+trophic_level	herbivore;predator	
+trophic_level	primary;herbivore;predator	
+trophic_level	omnivore;parasite	
+trophic_level	primary;herbivore;omnivore	
+trophic_level	predator;decomposer;filter	
+trophic_level	primary;herbivore;pathogen	

@@ -1,0 +1,27 @@
+attributeName	attributeDefinition	class	unit	dateTimeFormatString	missingValueCode	missingValueCodeExplanation
+record_id		numeric	!Add units here!			
+author		character				
+year		Date		!Add datetime specifier here!		
+title		character				
+type		categorical				
+journal		categorical				
+volume		numeric	!Add units here!			
+issue		numeric	!Add units here!			
+firstpage		character				
+lastpage		character				
+abstract		character				
+database		categorical				
+excluded		numeric	!Add units here!			
+species		categorical				
+country		categorical				
+state		categorical				
+locality		categorical				
+latitude		categorical				
+longitude		categorical				
+research_type		categorical				
+ecosystem		categorical				
+biome		categorical				
+focus		categorical				
+hypothesis		categorical				
+superior_character		categorical				
+trophic_level		categorical				
