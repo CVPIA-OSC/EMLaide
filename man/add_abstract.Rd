@@ -2,17 +2,20 @@
 % Please edit documentation in R/abstract-element.R
 \name{add_abstract}
 \alias{add_abstract}
-\title{Add Title Elements}
+\title{Add Abstract Element}
 \usage{
 add_abstract(parent_element, abstract)
 }
 \arguments{
-\item{abstract}{Abstract paragraphs, minimum of 20 words.}
+\item{abstract}{Abstract paragraphs, which have a minimum of 20 words.}
 
 \item{parament_element}{a list representing the EML project or dataset}
 }
+\value{
+the dataset or project with abstract appended
+}
 \description{
-Add Title Elements
+adds the abstract of a dataset according to EML standards
 }
 \details{
 For	a	dataset,	the	abstract	element	can	appear	at	the	resource	level	or	the	project level.
@@ -24,4 +27,43 @@ general	methods	description	is	appropriate,	and	broad	classes	of	measured	parame
 should	also	be	included.		For	a	large	number	of	parameters,	use	categories	instead	of	listing
 all	parameters	(e.g.	use	the	term	“nutrients”	instead	of	nitrate,	phosphate,	calcium,	etc.),	in
 combination	with	the	parameters	that	seem	most	relevant	for	searches.
+}
+\examples{
+add_abstract(parent_element = list(),
+            abstract = "Reported water chemistry data are from the intensive lake chemistry survey
+            conducted between the months of July and August from 1984 – 1987 as part of
+            the larger Adirondack lakes survey of chemistry and fish. This intensive
+            sampling took place in the summer when most Adirondack waters are typically 
+            stratified. When possible, the middle or deepest part of the lake was sampled
+            to avoid the effects of littoral zones and inlet streams. Samples in
+            isothermal waters were collected 1.5 meters below the surface or at mid-depth
+            when the waters were less than 1.5 meters deep. In stratified waters, a
+            sample was collected at 1.5 meters below the surface and also half way
+            between the thermocline and the bottom. Chemical analysis was conducted
+            at the Adirondack Lakes Survey Corporation (ALSC) laboratory in Ray Brook
+            following EPA guidelines.")
+            
+add_abstract(parent_element = list(),
+             abstract = "Largely supported by the Interagency Ecological Program (IEP), 
+             the California Department of Water Resources (DWR) has operated a fisheries 
+             and invertebrate monitoring program in the Yolo Bypass since 1998. The main 
+             objectives of the Yolo Bypass Fish Monitoring Program (YBFMP) are to collect
+             baseline data on lower trophic levels (phytoplankton, zooplankton and insect drift), 
+             juvenile and adult fish, hydrology, and water quality parameters. As the 
+             Yolo Bypass has been identified as a high restoration priority by numerous
+             regulatory agencies, these baseline data are critical for evaluating success
+             of future restoration projects. In addition, the data have already served to
+             increase our understanding of the role of the Yolo Bypass in the life history
+             of native fishes, and its ecological function in the San Francisco Estuary.
+             Zooplankton are an important component in the diet of larval, juvenile, and
+             small adult fishes within the San Francisco Estuary, including Delta Smelt,
+             juvenile Chinook Salmon, Striped Bass, and Sacramento Splittail. The YBFMP
+             collects zooplankton year-round from two sites. Since 2011, samples have been
+             collected biweekly (every other week) to weekly (during floodplain inundation)
+             using 150- and 50- micrometer mesh plankton nets. Zooplankton are identified
+             and enumerated by contractors (currently BSA Environmental Services). The goals
+             of the zooplankton monitoring program are to compare the seasonal variation in
+             species densities and trends between (1) the Sacramento River channel, and (2)
+             the Yolo Bypass, the river’s seasonal floodplain. Data on zooplankton catch and
+             associated water quality parameters are presented in this dataset.")
 }
