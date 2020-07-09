@@ -24,8 +24,23 @@ test_that('dataset title length is between 7 and 20 words long', {
     "Short name should not be longer than the dataset's title."
   )
   
+ 
 })
 
+test_that('dataset title function is producing the expected values',{
+  
+  parent_element <- list()
+  title <- "This title will work because it is of a sufficient length"
+  short_name <- "This is the short name"
+  
+  title_1 <- add_title(parent_element = parent_element, title = title, short_name = short_name)
+  
+  expect_equal(add_title(parent_element = parent_element, title = title, short_name = short_name),
+               list(title = "This title will work because it is of a sufficient length", 
+                    shortName = "This is the short name")
+  )
+  
+})
 
 test_that('dataset abstract warns if abstract is too short',  {
   expect_warning(add_abstract(list(), abstract = "A not very specific abstract"))
@@ -34,3 +49,5 @@ test_that('dataset abstract warns if abstract is too short',  {
 test_that('warn when there is at less than one keyword within the keywordSets', {
   expect_warning(add_keyword_set(list(), keyword_set = c()))
 })
+
+
