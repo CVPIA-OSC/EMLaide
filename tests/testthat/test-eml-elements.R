@@ -47,7 +47,7 @@ test_that('dataset abstract warns if abstract is too short',  {
 })
 
 
-test_that('the dataset abstract function is producing the expected values', {
+test_that('the dataset add_abstract function is producing the expected values', {
   parent_element <- list()
   abstract <- "This is the abstract for my test. It needs to have twenty or more words for it to pass. It informs the users if this dataset relates to what they are studying or not."
   abstract_1 <- add_abstract(parent_element = parent_element, abstract = abstract)
@@ -59,5 +59,18 @@ test_that('the dataset abstract function is producing the expected values', {
 
 test_that('warn when there is at less than one keyword within the keywordSets', {
   expect_warning(add_keyword_set(list(), keyword_set = c()))
+})
+
+
+test_that('the dataset add_keyword_set function is producing the expected values',{
+          parent_element <- list()
+          keyword_set <- list(keyword = list("dog", "cat", "cow", "pig"),
+                              keywordThesaurus = "LTER Controlled Vocabulary")
+          keyword_set_1 <- add_keyword_set(parent_element = parent_element, keyword_set = keyword_set)
+          
+          expect_equal(add_keyword_set(parent_element = parent_element, keyword_set = keyword_set),
+                       list(KeywordSet = list(keyword = list("dog", "cat", "cow", "pig"), 
+                                              keywordThesaurus = "LTER Controlled Vocabulary")))
+
 })
 
