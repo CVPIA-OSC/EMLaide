@@ -27,11 +27,6 @@ is covering the 'what', 'where', and 'when'. If the title is too long, attempt
 to make it as concise as possible.
 }
 \examples{
-add_title(parent_element = list(),
-          title = "Eight Mile Lake Research Watershed, Carbon in Permafrost 
-          Experimental Heating Research (CiPEHR): Aboveground plant biomass, 2009-2017.",
-          short_name = "knb-lter-bnz.501.17") 
-          
 add_title(parent_element = list(), 
           title = "Long-term Ground Arthropod Monitoring Dataset at Ficity, 
           USA from 1998 to 2003" ,

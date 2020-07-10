@@ -7,7 +7,7 @@
 add_abstract(parent_element, abstract)
 }
 \arguments{
-\item{abstract}{Abstract paragraphs, which have a minimum of 20 words.}
+\item{abstract}{Abstract paragraphs, requires a minimum of 20 words.}
 
 \item{parament_element}{a list representing the EML project or dataset}
 }
