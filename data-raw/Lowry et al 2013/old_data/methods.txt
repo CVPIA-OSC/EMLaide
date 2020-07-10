@@ -1,0 +1,222 @@
+﻿We began with the same literature search for both the field synopsis and systematic review. The systematic review was a subset of the literature gathered in the field synopsis, which was examined in greater detail. We initiated a literature search for both the field synopsis and systematic review using the ISI Web of Science database and search engine by employing the following search string to identify relevant papers:
+
+Topic = (invasi* OR invader OR alien OR exotic OR ruderal OR weed OR non‐native OR introduced OR naturaliz) AND topic = (plant OR invertebrate OR ecolog* OR evolut* OR marine OR terrestrial OR freshwater OR aquatic) NOT Topic = (cancer* OR cardio* OR surg* OR carcin* OR engineer* OR operation OR medic* OR crop OR rotation OR ovar* OR polynom* OR purif* OR respirat* OR “invasive technique”).
+
+Next, we limited our database to relevant fields of study by using the “refine” function in the Web of Science to exclude non‐relevant subjects such as medicine, agriculture, engineering, astronomy, or physics. We only searched for English language publications. We did not attempt to redefine “invasive” or “invaded”, but left those categorizations and definitions to the authors of the published papers (i.e., we accepted authors' categorization of species as invasive). The initial search included records from 1911 to June 6, 2010. The search was updated on September 29, 2011.
+
+Ideally, field synopses and systematic reviews should search several databases. Because of the large scope of our review, we were not able to do so. As an alternative, we used the search engine SCOPUS to analyze a more limited sample of papers, to determine the extent to which the results would vary with the search engine and to gauge the inclusiveness of our search results from the Web of Science database. The search and exclusion options are not identical between the two databases, but we used the same search terms. We carried out the SCOPUS search on March 8, 2011. Unlike Web of Science, SCOPUS does not include a categorical exclusion feature (i.e., ability to exclude categories such as cancer studies). The records resulting from the SCOPUS search were compared with our Web of Science records by comparing the primary author, first characters of the title, source title, volume, issue, and beginning page number of the record (using a program we wrote), and identical records were discarded. We then narrowed the results to a subset of studies, those on field experiments, to compare with the Web of Science results by including only those articles identified in the SCOPUS search that had “field” or “experiment” in the abstract. For these papers, we categorized the focus of the work, the invasion hypotheses examined, invasive species identities, trophic levels, locations (to country and state), ecosystems, and biomes.
+
+Field synopsis
+
+We next used the title and abstract (when available) of each paper identified above to assess if the study was relevant according to the criteria below. Further selection was carried out by examining the text of the articles. We defined relevant studies as those concerned with fundamental understanding of biological invasions and we excluded research on agricultural systems, studies concerned primarily with chemical or biological control or management, methods for the eradication of invasive species, papers recording the identification and location of invaders, those focused on predicting potentially invasive species, invasive pathogens, and on the economic impacts of invasions.
+
+We then categorized the studies by date and research focus. The research foci were papers concerned with invasion hypotheses, fundamental questions in ecology and evolution, studies on impacts of invasions, and combinations of one or more of these categories. For subsets of the papers first identified, we had two readers make eligibility and categorization decisions; these were checked, discussed, and rectified until readers were trained. All decisions were reviewed by EL.
+
+Systematic review
+
+The systematic review was a more detailed analysis of a subset of the papers identified in the field synopsis. We excluded papers concerned with invasion impacts. Studies were then categorized as follows: by type of research, invasive species being studied, trophic level of the invader, invaded ecosystem and biome, and hypothesis being evaluated (as detailed in methods table 1). For studies carried out in the field or in gardens, we identified the location of the study where possible (i.e., where the invasion was located), by country (and state if relevant) and latitude/longitude (when reported). Recent papers reviewing invasive species research (e.g., Inderjit et al. 2005; Catford et al. 2009) have enumerated the common hypotheses attempting to explain biological invasions, and for those papers whose focus was on testing invasion hypotheses, we relied on the lists of hypotheses in these reviews to categorize the hypotheses being tested in the literature.
+
+Methods table 1: Information collected from records found in the search, and categories used in classifying studies. The ﬁrst item was used in categorizing studies in the ﬁeld synopsis (focus and type of research) and the remaining items were used in the systematic review.
+
+Information collected from studies:
+
+- Classifications within each category of information
+
+Focus of the work:
+
+- Hypothesis about invasions examined (implicitly or explicitly)
+
+- Impacts of invasions
+
+- Testing fundamental ecological ideas with invasive systems
+
+Type of research:
+
+- Field –experimental
+
+- Field – observational
+
+- Theoretical/modeling
+
+- Statistical/meta-analysis
+
+- Greenhouse
+
+- Garden
+
+- Lab
+
+- Review
+
+Invader species name:
+
+Trophic level of invader:
+
+- Primary producer
+
+- Herbivore
+
+- Predator
+
+- Omnivore
+
+- Decomposer
+
+- Filter feeder
+
+- Pathogen
+
+- Parasite
+
+Location of invasion under study:
+
+- Country, state, local area name(i.e. parkland, lake or river)
+
+- If given: Latitude and Longitude
+
+Ecosystem:
+
+- Terrestrial
+
+- Marine
+
+- Lentic
+
+- Lotic
+
+Biome:
+
+- Wetland
+
+- Estuarine
+
+- Grassland
+
+- Deciduous forest
+
+- Coniferous forest
+
+- Tropical forest
+
+- Subtropical forest
+
+- Urban/old field
+
+- Savanna
+
+- Chapparal/shrublands
+
+- Wetland/riparian
+
+- Mountain/alpine
+
+- Tundra
+
+- Intertidal/near shore
+
+- Pelagic/open ocean
+
+- Coral reef
+
+- Benthic
+
+Hypothesis considered by study (see “explanation of hypotheses” section below for explanations):
+
+- Climate Change
+
+- Community Species Richness
+
+- Disturbance
+
+- Ecosystem Engineers
+
+- Empty Niche
+
+- Enemy Of My Enemy
+
+- Enemy Release
+
+- Evolution of Increased Competitive Ability (EICA)
+
+- Evolution in General
+
+- Fluctuating Resources
+
+- Hybridization
+
+- Inherent Superiority (Ideal Weed)
+
+- Mutualism, Facilitation, or Invasional
+
+- Meltdown
+
+- Novel Weapons/Allelopathy
+
+- Plasticity
+
+- Preadaptation to Climate
+
+- Propagule Pressure
+
+- Other
+
+If the hypothesis being considered is the “inherent superiority” of the invader, mechanism postulated for superiority:
+
+- Broad Tolerances
+
+- Clonal reproduction
+
+- Effective disperser
+
+- High Reproductive output
+
+- Rapid Growth
+
+- Self-compatible
+
+- Superior competitor
+
+Explanation of hypotheses 
+
+Explanations of hypotheses listed in methods table 1 and the in the data tables are given below. Note that authors may not have explicitly identified a hypothesis, and that we generalized specific ideas being tested so that we could categorize the literature. For example, a study hypothesizing that the success of an invading species was due to higher photosynthetic rates or superior competitive abilities would be categorized as evaluating its “inherent superiority” (Hypothesis 12).
+
+Methods table 2: List of hypotheses with explanations
+
+Hypothesis: Explanation
+
+Climate Change: Changing climate patterns contribute to invasion.
+
+Community Species Richness: The process of invasion is affected by community species richness.
+
+Disturbance: Alteration of the habitat due to natural phenomena (fire, mudslides, flooding etc.) or due to human disturbances contributes to invasion.
+
+Ecosystem Engineers: The invasive species alters the environment in a way alters ecosystem function, niche structure or the competitive landscape.
+
+Empty Niche: The invasive species uses resources that are unexploited in the invaded range.
+
+Enemy Of My Enemy: A third species interacts with a negative effect on native species in the introduced range, contributing to the success of an invasive species.
+
+Enemy Release: The invasive range of a species may not include the natural enemies or similar organisms that limited its populations in the native habitat.
+
+Evolution of Increased Competitive Ability (EICA): Due to the relaxation of predation or herbivory, the invading species may evolve traits that permit it to become a better competitor in the invasive range than in the native range.
+
+Evolution in General: The invasive species evolves to become different from the native ancestor (due to various responses to selection or other evolutionary changes, but distinct from EICA and other specific evolutionary hypotheses listed here).
+
+Fluctuating Resources: Ability to exploit repeated changes in resource levels permits an introduced species to become an invader.
+
+Hybridization: The invasive species may be the product of intraspecific hybridization between populations from different parts of the native range, or interspecific hybridization with other species native to the invaded or any other area.
+
+Inherent Superiority (Ideal Weed): The invasive species possesses traits that make it superior (due to particular traits may be specified).
+
+Mutualism, Facilitation, or Invasional Meltdown: Another organism in the novel environment facilitates the success of the invasion.
+
+Novel Weapons/Allelopathy: The invasive species has characteristics that negatively affect the species it interacts with in the introduced range in the specific ways identified explicitly by this hypothesis.
+
+Plasticity: An invasive species has a highly plastic phenotype that is capable of enhanced response to environmental conditions (often resource levels) found in an introduced range, that contributes to its establishment or competitive success.
+
+Preadaptation to Climate: The existing environmental tolerances of an introduced species allow it to become invasive in the matching environmental conditions in a new range.
+
+Propagule Pressure: Invasion is the result of a large number of propagules being introduced to the invaded environment.
+
+Other: Any other hypothesis on invasions not defined above
+

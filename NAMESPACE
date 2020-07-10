@@ -2,4 +2,5 @@
 
 export(add_abstract)
 export(add_keyword_set)
+export(add_personnel)
 export(add_title)

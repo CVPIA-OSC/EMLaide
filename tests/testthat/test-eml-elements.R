@@ -74,3 +74,68 @@ test_that('the dataset add_keyword_set function is producing the expected values
 
 })
 
+test_that('personnel function errors when missing mandatory identifier inputs',  {
+  parent_element <- list()
+  role1 <- "Creator"
+  role2 <- "Data Manager"
+  first_name <- "Susan"
+  last_name <- "Susanton"
+  email <- "susanton@fake.com"
+  orcid <- "00110011"
+  organization <- "USFWS"
+  
+  expect_error(add_personnel(parent_element = parent_element, role = role1, 
+                             first_name = first_name, last_name = last_name),
+               "Please supply a email.")
+  expect_error(add_personnel(parent_element = parent_element, role = role1, 
+                             first_name = first_name, email = email),
+               "Please supply a last name.")
+  expect_error(add_personnel(parent_element = parent_element, role = role1, 
+                             last_name = last_name, email = email), 
+               "Please supply a first name.")
+  expect_error(add_personnel(parent_element = parent_element, first_name = first_name, 
+                             last_name = last_name, email = email), 
+               "Please supply a role. Use 'Creator' if you are the main originator of the dataset or project")
+  
+  expect_equal(add_personnel(parent_element = parent_element, first_name = first_name, 
+                             last_name = last_name, email = email, role = role1),
+               list(creator = list(individualName = list(givenName = "Susan", 
+                                                         surName = "Susanton"), 
+                                   electronicMailAddress = "susanton@fake.com")))
+  
+  expect_equal(add_personnel(parent_element = parent_element, first_name = first_name, 
+                             last_name = last_name, email = email, role = role2, orcid = orcid, 
+                             organization = organization),
+               list(associatedParty = list(individualName = 
+                                             list(givenName = "Susan", surName = "Susanton"),
+                                           electronicMailAddress = "susanton@fake.com", 
+                                           userid = list(directory = "https://orcid.org", "https://orcid.org/00110011"), 
+                                           organizationName = "USFWS", 
+                                           role = "Data Manager")))
+  
+  creator_1 <- add_personnel(parent_element = parent_element, first_name = first_name, 
+                             last_name = last_name, email = email, role = role1)
+  
+  expect_equal(add_personnel(parent_element = creator_1, first_name = "Not Susan", 
+                             last_name = "Smith", email = "free_cats@aol.com", role = role1),
+               list(creator = list(list(individualName = list(givenName = "Susan", 
+                                                              surName = "Susanton"), 
+                                        electronicMailAddress = "susanton@fake.com"), 
+                                   list(individualName = list(givenName = "Not Susan", surName = "Smith"), 
+                                        electronicMailAddress = "free_cats@aol.com"))))
+  
+  data_manager_1 <- add_personnel(parent_element = parent_element, first_name = first_name, 
+                                  last_name = last_name, email = email, role = role2)
+  
+  expect_equal(add_personnel(parent_element = data_manager_1, first_name = "Not Susan", 
+                             last_name = "Smith", email = "free_cats@aol.com", role = role2),
+               list(associatedParty = list(list(individualName = list(givenName = "Susan", 
+                                                                      surName = "Susanton"), 
+                                                electronicMailAddress = "susanton@fake.com", 
+                                                role = "Data Manager"), 
+                                           list(individualName = list(givenName = "Not Susan", surName = "Smith"), 
+                                                electronicMailAddress = "free_cats@aol.com", 
+                                                role = "Data Manager"))))
+  
+  
+})
