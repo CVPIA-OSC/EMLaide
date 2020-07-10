@@ -100,3 +100,33 @@ test_that('personnel function errors when missing mandatory identifier inputs', 
   
   
 })
+
+test_that('Intellectual rights function errors when missing mandatory identifier inputs', {
+  
+  expect_error(add_license(parent_element = list(), default_license = NULL, license_name = "Creative Commons",
+                           license_identifier = "CC-BY-NC-SA-4.0",
+                           intellectual_rights_descripiton = "The description goes here"), 
+               "Please provide a url for the license.")
+  
+  expect_error(add_license(parent_element = list(), default_license = NULL, license_name = "Creative Commons",
+                           license_url = "https://spdx.org/licenses/CC-BY-NC-SA-4.0.html",
+                           intellectual_rights_descripiton = "The description goes here"), 
+               "Please provide the license identifier.")
+  
+  expect_error(add_license(parent_element = list(), default_license = NULL, license_name = "Creative Commons",
+                           license_identifier = "CC-BY-NC-SA-4.0",
+                           license_url = "https://spdx.org/licenses/CC-BY-NC-SA-4.0.html"), 
+               "Please provide a simplified description of the license.")
+  parent_element <- list()
+  default_license <- "CCO"
+  license_name <- "Creative Commons Zero v1.0 Universal"
+  license_url <- "https://spdx.org/licenses/CC0-1.0.html"
+  license_identifier <- "CC0-1.0"
+  intellectual_rights_description <- "This data package is released to the \"public domain\" under Creative Commons CC0 1.0 \"No Rights Reserved\" (see: https://creativecommons.org/publicdomain/zero/1.0/). It is considered professional etiquette to provide attribution of the original work if this data package is shared in whole or by individual components. A generic citation is provided for this data package on the website https://portal.edirepository.org (herein \"website\") in the summary metadata page. Communication (and collaboration) with the creators of this data package is recommended to prevent duplicate research or publication. This data package (and its components) is made available \"as is\" and with no warranty of accuracy or fitness for use. The creators of this data package and the website shall not be liable for any damages resulting from misinterpretation or misuse of the data package or its components. Periodic updates of this data package may be available from the website. Thank you.&#13;"
+  CCO <- add_license(parent_element = parent_element)
+  
+  expect_equal(add_license(list()), 
+               list(intellectualRights = list(para = "This data package is released to the \"public domain\" under Creative Commons CC0 1.0 \"No Rights Reserved\" (see: https://creativecommons.org/publicdomain/zero/1.0/). It is considered professional etiquette to provide attribution of the original work if this data package is shared in whole or by individual components. A generic citation is provided for this data package on the website https://portal.edirepository.org (herein \"website\") in the summary metadata page. Communication (and collaboration) with the creators of this data package is recommended to prevent duplicate research or publication. This data package (and its components) is made available \"as is\" and with no warranty of accuracy or fitness for use. The creators of this data package and the website shall not be liable for any damages resulting from misinterpretation or misuse of the data package or its components. Periodic updates of this data package may be available from the website. Thank you.&#13;"), 
+                    licensed = list(licensedName = "Creative Commons Zero v1.0 Universal", 
+                                    url = "https://spdx.org/licenses/CC0-1.0.html", identifier = "CC0-1.0")))
+})
