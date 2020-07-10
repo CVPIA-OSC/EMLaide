@@ -1,0 +1,70 @@
+name	name_type	name_resolved	authority_system	authority_id
+	scientific	NA	NA	NA
+Acer platanoides	scientific	Acer platanoides	ITIS	28755
+Acer rubrum	scientific	Acer rubrum	ITIS	28728
+Acer saccharum	scientific	Acer saccharum	ITIS	28731
+Ailanthus altissima	scientific	Ailanthus altissima	ITIS	28827
+Alliaria alliaria	scientific	Alliaria alliaria	ITIS	184482
+Ampelopis brevipedunculata	scientific	Ampelopsis brevipedunculata	ITIS	NA
+Arctostaphylos uva-ursi	scientific	Arctostaphylos uva-ursi	ITIS	23530
+Aster divaricatus	scientific	Aster divaricatus	ITIS	35558
+Arisaema triphyllum	scientific	Arisaema triphyllum	ITIS	42525
+Betula alleghaniensis	scientific	Betula alleghaniensis	ITIS	19481
+Betula nigra	scientific	Betula nigra	ITIS	19480
+Berberis vulgaris	scientific	Berberis vulgaris	ITIS	18837
+Carya pallida	scientific	Carya pallida	ITIS	19244
+Celastrus orbiculatus	scientific	Celastrus orbiculatus	ITIS	506068
+Chimaphila maculata	scientific	Chimaphila maculata	ITIS	23767
+Circaea quadrisulcata	scientific	Circaea quadrisulcata	GBIF Backbone Taxonomy	NA
+Clethra alnifolia	scientific	Clethra alnifolia	ITIS	23454
+Cornus florida	scientific	Cornus florida	ITIS	27806
+Commelina japonica	scientific	Commelina japonica	GBIF Backbone Taxonomy	8786288
+Comptonia peregrina	scientific	Comptonia peregrina	ITIS	501619
+Dennstaedtia punctilobula	scientific	Dennstaedtia punctilobula	ITIS	17491
+Eleagnus angustifolia	scientific	NA	NA	NA
+Euonymus atropurpureus	scientific	Euonymus atropurpureus	ITIS	27948
+Fragaria sp.	scientific	Fragaria	ITIS	24624
+Galium asprellum	scientific	Galium asprellum	ITIS	34798
+Gaylussacia baccata	scientific	Gaylussacia baccata	ITIS	23660
+Gaultheria procumbens	scientific	Gaultheria procumbens	ITIS	23657
+Hamamelis virginiana	scientific	Hamamelis virginiana	ITIS	19033
+Ilex aquifolium	scientific	Ilex aquifolium	ITIS	503154
+Impatiens capensis	scientific	Impatiens capensis	ITIS	29182
+Juniperus virginiana	scientific	Juniperus virginiana	ITIS	18048
+Lindera benzoin	scientific	Lindera benzoin	ITIS	18147
+Liriodendron tulipifera	scientific	Liriodendron tulipifera	ITIS	18086
+Lonicera japonica	scientific	Lonicera japonica	ITIS	35283
+Lonicera mackii	scientific	Lonicera maackii	ITIS	35298
+Lyonia mariana	scientific	Lyonia mariana	ITIS	23564
+Morus alba	scientific	Morus alba	ITIS	19066
+Myrica carolinensis	scientific	Myrica carolinensis	GBIF Backbone Taxonomy	NA
+Parthenocissus quinquefolia	scientific	Parthenocissus quinquefolia	ITIS	28602
+Pinus alba	scientific	Pinus alba	GBIF Backbone Taxonomy	NA
+Pinus rigida	scientific	Pinus rigida	ITIS	183376
+Polystichum acrostichoides	scientific	Polystichum acrostichoides	ITIS	17675
+Polygonum persicaria	scientific	Polygonum persicaria	ITIS	20915
+Prunus serotina	scientific	Prunus serotina	ITIS	24764
+Pteridium aquilinum	scientific	Pteridium aquilinum	ITIS	17224
+Quecus alba	scientific	Quercus alba	ITIS	19290
+Quercus ilicifolia	scientific	Quercus ilicifolia	ITIS	19358
+Quercus nigrum	scientific	Quercus	ITIS	19276
+Quercus prinus	scientific	Quercus prinus	ITIS	19398
+Quercus rubrum	scientific	Quercus	ITIS	19276
+Quercus velutina	scientific	Quercus velutina	ITIS	19447
+Rhus toxicodendron	scientific	Rhus toxicodendron	ITIS	520068
+Rosa multiflora	scientific	Rosa multiflora	ITIS	24833
+Robinia pseudoacacia	scientific	Robinia pseudoacacia	ITIS	504804
+Rubus procumbens	scientific	Rubus procumbens	ITIS	837255
+Rubus strigosus	scientific	Rubus strigosus	ITIS	25056
+Sassafras albidum	scientific	Sassafras albidum	ITIS	18158
+Smilax glauca	scientific	Smilax glauca	ITIS	43342
+Smilacena racemosa	scientific	Smilacina racemosa	ITIS	43036
+Solidago nemoralis	scientific	Solidago nemoralis	ITIS	36281
+Polygonatum sp.	scientific	Polygonatum	ITIS	43005
+Taxus canadensis	scientific	Taxus canadensis	ITIS	194885
+Taraxacum officinale	scientific	Taraxacum officinale	ITIS	36213
+Tsuga canadensis	scientific	Tsuga canadensis	ITIS	183397
+Vaccinium angustifolium	scientific	Vaccinium angustifolium	ITIS	23579
+Viburnum acerifolium	scientific	Viburnum acerifolium	ITIS	35255
+Viburnum dentatum	scientific	Viburnum dentatum	ITIS	35251
+Vitis vulpina	scientific	Vitis vulpina	ITIS	28610

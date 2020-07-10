@@ -1,0 +1,1422 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<eml:eml xmlns:eml="https://eml.ecoinformatics.org/eml-2.2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:stmml="http://www.xml-cml.org/schema/stmml-1.2" packageId="edi.540.1" xsi:schemaLocation="eml://ecoinformatics.org/eml-2.2.0  https://nis.lternet.edu/schemas/EML/eml-2.2.0/xsd/eml.xsd" system="edi">
+  <access authSystem="https://pasta.edirepository.org/authentication" order="allowFirst" scope="document">
+    <allow>
+      <principal>uid=edi,o=EDI,dc=edirepository,dc=org</principal>
+      <permission>all</permission>
+    </allow>
+    <allow>
+      <principal>public</principal>
+      <permission>read</permission>
+    </allow>
+  </access>
+  <dataset>
+    <title>Biological invasions: a field synopsis, systematic review, and database of the literature</title>
+    <creator>
+      <individualName>
+        <givenName>Edward</givenName>
+        <surName>Lowry</surName>
+      </individualName>
+      <organizationName>Department of Biology, Hampden-Sidney College, Hampden-Sidney, VA, USA</organizationName>
+      <electronicMailAddress>delowry@hsc.edu</electronicMailAddress>
+    </creator>
+    <creator>
+      <individualName>
+        <givenName>Emily</givenName>
+        <givenName>J.</givenName>
+        <surName>Rollinson</surName>
+      </individualName>
+      <organizationName>Department of Biological Sciences?, East Stroudsburg University, East Stroudsburg, PA, USA</organizationName>
+      <electronicMailAddress>erollinson@esu.edu</electronicMailAddress>
+      <userId directory="https://orcid.org">https://orcid.org/0000-0003-3428-2352</userId>
+    </creator>
+    <creator>
+      <individualName>
+        <givenName>Adam</givenName>
+        <givenName>J.</givenName>
+        <surName>Laybourn</surName>
+      </individualName>
+      <organizationName>Lautec ApS</organizationName>
+    </creator>
+    <creator>
+      <individualName>
+        <givenName>Tracy</givenName>
+        <givenName>E.</givenName>
+        <surName>Scott</surName>
+      </individualName>
+      <organizationName>Department of Ecology and Evolution, Stony Brook University, Stony Brook, NY, USA</organizationName>
+    </creator>
+    <creator>
+      <individualName>
+        <givenName>Matthew</givenName>
+        <givenName>E.</givenName>
+        <surName>Aiello-Lammens</surName>
+      </individualName>
+      <organizationName>Dyson College of Arts and Sciences, PACE university – Westchester campus, Pleasantville, NY, USA</organizationName>
+      <electronicMailAddress>maiellolammens@pace.edu</electronicMailAddress>
+      <userId directory="https://orcid.org">https://orcid.org/0000-0002-6180-5959</userId>
+    </creator>
+    <creator>
+      <individualName>
+        <givenName>Sarah</givenName>
+        <givenName>M.</givenName>
+        <surName>Gray</surName>
+      </individualName>
+      <organizationName>Department of Biology, University of Fribourg, Breisgau, Germany</organizationName>
+    </creator>
+    <creator>
+      <individualName>
+        <givenName>James</givenName>
+        <surName>Mickley</surName>
+      </individualName>
+      <organizationName>Department of Ecology and Evolutionary Biology, University of Connecticut, Storrs, CT, USA</organizationName>
+      <electronicMailAddress>james.mickley@uconn.edu</electronicMailAddress>
+      <userId directory="https://orcid.org">https://orcid.org/0000-0002-5988-5275</userId>
+    </creator>
+    <creator>
+      <individualName>
+        <givenName>Jessica</givenName>
+        <surName>Gurevitch</surName>
+      </individualName>
+      <organizationName>Department of Ecology and Evolution, Stony Brook University, Stony Brook, NY, USA</organizationName>
+      <electronicMailAddress>jessica.gurevitch@stonybrook.edu</electronicMailAddress>
+      <userId directory="https://orcid.org">https://orcid.org/0000-0003-0157-4332</userId>
+    </creator>
+    <pubDate>2020-06-15</pubDate>
+    <abstract>
+      <para>Species introductions of anthropogenic origins are a major aspect of rapid ecological change globally. Research on biological invasions has generated literature on many different aspects of this phenomenon. This literature is enormous and has grown rapidly since the mid‐twentieth century. Therefore, we created this dataset in order to describe and categorize some aspects of this literature, to better understand what has been studied and what we know, mapping well‐studied areas and important gaps. To do so, we employed the techniques of systematic reviewing widely adopted in other scientific disciplines. We identified 2398 relevant studies in a field synopsis of the biological invasions literature. The purpose of the field synopsis was to map and categorize the scope of available information (and what is not known) from the literature addressing a fundamental understanding of biological invasions. We then examined 1537 papers in greater detail in a systematic review. The systematic review addressed the state of our knowledge about the mechanisms that permit species to invade novel environments. We carried this out by attempting to identify and characterize the literature, including what hypotheses have been tested, and what organisms and systems have been studied. A secondary goal of our work was to create a publicly accessible database of this literature for future research.</para>
+    </abstract>
+    <keywordSet>
+      <keyword>Invasive species</keyword>
+      <keyword>invasion hypotheses</keyword>
+      <keyword>systematic review</keyword>
+    </keywordSet>
+    <keywordSet>
+      <keyword>disturbance</keyword>
+      <keyword>competition</keyword>
+      <keyword>species richness</keyword>
+      <keywordThesaurus>LTER Controlled Vocabulary</keywordThesaurus>
+    </keywordSet>
+    <intellectualRights>
+      <para>This information is released under the Creative Commons license - Attribution - CC BY (https://creativecommons.org/licenses/by/4.0/). The consumer of these data (\"Data User\" herein) is required to cite it appropriately in any publication that results from its use. The Data User should realize that these data may be actively used by others for ongoing research and that coordination may be necessary to prevent duplicate publication. The Data User is urged to contact the authors of these data if any questions about methodology or results occur. Where appropriate, the Data User is encouraged to consider collaboration or co-authorship with the authors. The Data User should realize that misinterpretation of data may occur if used out of context of the original study. While substantial efforts are made to ensure the accuracy of data and associated documentation, complete accuracy of data sets cannot be guaranteed. All data are made available \"as is.\" The Data User should be aware, however, that data are updated periodically and it is the responsibility of the Data User to check for new versions of the data. The data authors and the repository where these data were obtained shall not be liable for damages resulting from any use or misinterpretation of the data. Thank you.
+</para>
+    </intellectualRights>
+    <coverage>
+      <geographicCoverage>
+        <geographicDescription>Global</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-180</westBoundingCoordinate>
+          <eastBoundingCoordinate>180</eastBoundingCoordinate>
+          <northBoundingCoordinate>80</northBoundingCoordinate>
+          <southBoundingCoordinate>-80</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <temporalCoverage>
+        <rangeOfDates>
+          <beginDate>
+            <calendarDate>2010-06-06</calendarDate>
+          </beginDate>
+          <endDate>
+            <calendarDate>2012-12-31</calendarDate>
+          </endDate>
+        </rangeOfDates>
+      </temporalCoverage>
+    </coverage>
+    <maintenance>
+      <description>completed</description>
+    </maintenance>
+    <contact>
+      <individualName>
+        <givenName>Jessica</givenName>
+        <surName>Gurevitch</surName>
+      </individualName>
+      <organizationName>Department of Ecology and Evolution, Stony Brook University, Stony Brook, NY, USA</organizationName>
+      <electronicMailAddress>jessica.gurevitch@stonybrook.edu</electronicMailAddress>
+      <userId directory="https://orcid.org">https://orcid.org/0000-0003-0157-4332</userId>
+    </contact>
+    <methods>
+      <methodStep>
+        <description>
+          <para>We began with the same literature search for both the field synopsis and systematic review. The systematic review was a subset of the literature gathered in the field synopsis, which was examined in greater detail. We initiated a literature search for both the field synopsis and systematic review using the ISI Web of Science database and search engine by employing the following search string to identify relevant papers:</para>
+          <para>Topic = (invasi* OR invader OR alien OR exotic OR ruderal OR weed OR non‐native OR introduced OR naturaliz) AND topic = (plant OR invertebrate OR ecolog* OR evolut* OR marine OR terrestrial OR freshwater OR aquatic) NOT Topic = (cancer* OR cardio* OR surg* OR carcin* OR engineer* OR operation OR medic* OR crop OR rotation OR ovar* OR polynom* OR purif* OR respirat* OR “invasive technique”).</para>
+          <para>Next, we limited our database to relevant fields of study by using the “refine” function in the Web of Science to exclude non‐relevant subjects such as medicine, agriculture, engineering, astronomy, or physics. We only searched for English language publications. We did not attempt to redefine “invasive” or “invaded”, but left those categorizations and definitions to the authors of the published papers (i.e., we accepted authors' categorization of species as invasive). The initial search included records from 1911 to June 6, 2010. The search was updated on September 29, 2011.</para>
+          <para>Ideally, field synopses and systematic reviews should search several databases. Because of the large scope of our review, we were not able to do so. As an alternative, we used the search engine SCOPUS to analyze a more limited sample of papers, to determine the extent to which the results would vary with the search engine and to gauge the inclusiveness of our search results from the Web of Science database. The search and exclusion options are not identical between the two databases, but we used the same search terms. We carried out the SCOPUS search on March 8, 2011. Unlike Web of Science, SCOPUS does not include a categorical exclusion feature (i.e., ability to exclude categories such as cancer studies). The records resulting from the SCOPUS search were compared with our Web of Science records by comparing the primary author, first characters of the title, source title, volume, issue, and beginning page number of the record (using a program we wrote), and identical records were discarded. We then narrowed the results to a subset of studies, those on field experiments, to compare with the Web of Science results by including only those articles identified in the SCOPUS search that had “field” or “experiment” in the abstract. For these papers, we categorized the focus of the work, the invasion hypotheses examined, invasive species identities, trophic levels, locations (to country and state), ecosystems, and biomes.</para>
+          <para>Field synopsis</para>
+          <para>We next used the title and abstract (when available) of each paper identified above to assess if the study was relevant according to the criteria below. Further selection was carried out by examining the text of the articles. We defined relevant studies as those concerned with fundamental understanding of biological invasions and we excluded research on agricultural systems, studies concerned primarily with chemical or biological control or management, methods for the eradication of invasive species, papers recording the identification and location of invaders, those focused on predicting potentially invasive species, invasive pathogens, and on the economic impacts of invasions.</para>
+          <para>We then categorized the studies by date and research focus. The research foci were papers concerned with invasion hypotheses, fundamental questions in ecology and evolution, studies on impacts of invasions, and combinations of one or more of these categories. For subsets of the papers first identified, we had two readers make eligibility and categorization decisions; these were checked, discussed, and rectified until readers were trained. All decisions were reviewed by EL.</para>
+          <para>Systematic review</para>
+          <para>The systematic review was a more detailed analysis of a subset of the papers identified in the field synopsis. We excluded papers concerned with invasion impacts. Studies were then categorized as follows: by type of research, invasive species being studied, trophic level of the invader, invaded ecosystem and biome, and hypothesis being evaluated (as detailed in methods table 1). For studies carried out in the field or in gardens, we identified the location of the study where possible (i.e., where the invasion was located), by country (and state if relevant) and latitude/longitude (when reported). Recent papers reviewing invasive species research (e.g., Inderjit et al. 2005; Catford et al. 2009) have enumerated the common hypotheses attempting to explain biological invasions, and for those papers whose focus was on testing invasion hypotheses, we relied on the lists of hypotheses in these reviews to categorize the hypotheses being tested in the literature.</para>
+          <para>Methods table 1: Information collected from records found in the search, and categories used in classifying studies. The ﬁrst item was used in categorizing studies in the ﬁeld synopsis (focus and type of research) and the remaining items were used in the systematic review.</para>
+          <para>Information collected from studies:</para>
+          <para>- Classifications within each category of information</para>
+          <para>Focus of the work:</para>
+          <para>- Hypothesis about invasions examined (implicitly or explicitly)</para>
+          <para>- Impacts of invasions</para>
+          <para>- Testing fundamental ecological ideas with invasive systems</para>
+          <para>Type of research:</para>
+          <para>- Field –experimental</para>
+          <para>- Field – observational</para>
+          <para>- Theoretical/modeling</para>
+          <para>- Statistical/meta-analysis</para>
+          <para>- Greenhouse</para>
+          <para>- Garden</para>
+          <para>- Lab</para>
+          <para>- Review</para>
+          <para>Invader species name:</para>
+          <para>Trophic level of invader:</para>
+          <para>- Primary producer</para>
+          <para>- Herbivore</para>
+          <para>- Predator</para>
+          <para>- Omnivore</para>
+          <para>- Decomposer</para>
+          <para>- Filter feeder</para>
+          <para>- Pathogen</para>
+          <para>- Parasite</para>
+          <para>Location of invasion under study:</para>
+          <para>- Country, state, local area name(i.e. parkland, lake or river)</para>
+          <para>- If given: Latitude and Longitude</para>
+          <para>Ecosystem:</para>
+          <para>- Terrestrial</para>
+          <para>- Marine</para>
+          <para>- Lentic</para>
+          <para>- Lotic</para>
+          <para>Biome:</para>
+          <para>- Wetland</para>
+          <para>- Estuarine</para>
+          <para>- Grassland</para>
+          <para>- Deciduous forest</para>
+          <para>- Coniferous forest</para>
+          <para>- Tropical forest</para>
+          <para>- Subtropical forest</para>
+          <para>- Urban/old field</para>
+          <para>- Savanna</para>
+          <para>- Chapparal/shrublands</para>
+          <para>- Wetland/riparian</para>
+          <para>- Mountain/alpine</para>
+          <para>- Tundra</para>
+          <para>- Intertidal/near shore</para>
+          <para>- Pelagic/open ocean</para>
+          <para>- Coral reef</para>
+          <para>- Benthic</para>
+          <para>Hypothesis considered by study (see “explanation of hypotheses” section below for explanations):</para>
+          <para>- Climate Change</para>
+          <para>- Community Species Richness</para>
+          <para>- Disturbance</para>
+          <para>- Ecosystem Engineers</para>
+          <para>- Empty Niche</para>
+          <para>- Enemy Of My Enemy</para>
+          <para>- Enemy Release</para>
+          <para>- Evolution of Increased Competitive Ability (EICA)</para>
+          <para>- Evolution in General</para>
+          <para>- Fluctuating Resources</para>
+          <para>- Hybridization</para>
+          <para>- Inherent Superiority (Ideal Weed)</para>
+          <para>- Mutualism, Facilitation, or Invasional</para>
+          <para>- Meltdown</para>
+          <para>- Novel Weapons/Allelopathy</para>
+          <para>- Plasticity</para>
+          <para>- Preadaptation to Climate</para>
+          <para>- Propagule Pressure</para>
+          <para>- Other</para>
+          <para>If the hypothesis being considered is the “inherent superiority” of the invader, mechanism postulated for superiority:</para>
+          <para>- Broad Tolerances</para>
+          <para>- Clonal reproduction</para>
+          <para>- Effective disperser</para>
+          <para>- High Reproductive output</para>
+          <para>- Rapid Growth</para>
+          <para>- Self-compatible</para>
+          <para>- Superior competitor</para>
+          <para>Explanation of hypotheses </para>
+          <para>Explanations of hypotheses listed in methods table 1 and the in the data tables are given below. Note that authors may not have explicitly identified a hypothesis, and that we generalized specific ideas being tested so that we could categorize the literature. For example, a study hypothesizing that the success of an invading species was due to higher photosynthetic rates or superior competitive abilities would be categorized as evaluating its “inherent superiority” (Hypothesis 12).</para>
+          <para>Methods table 2: List of hypotheses with explanations</para>
+          <para>Hypothesis: Explanation</para>
+          <para>Climate Change: Changing climate patterns contribute to invasion.</para>
+          <para>Community Species Richness: The process of invasion is affected by community species richness.</para>
+          <para>Disturbance: Alteration of the habitat due to natural phenomena (fire, mudslides, flooding etc.) or due to human disturbances contributes to invasion.</para>
+          <para>Ecosystem Engineers: The invasive species alters the environment in a way alters ecosystem function, niche structure or the competitive landscape.</para>
+          <para>Empty Niche: The invasive species uses resources that are unexploited in the invaded range.</para>
+          <para>Enemy Of My Enemy: A third species interacts with a negative effect on native species in the introduced range, contributing to the success of an invasive species.</para>
+          <para>Enemy Release: The invasive range of a species may not include the natural enemies or similar organisms that limited its populations in the native habitat.</para>
+          <para>Evolution of Increased Competitive Ability (EICA): Due to the relaxation of predation or herbivory, the invading species may evolve traits that permit it to become a better competitor in the invasive range than in the native range.</para>
+          <para>Evolution in General: The invasive species evolves to become different from the native ancestor (due to various responses to selection or other evolutionary changes, but distinct from EICA and other specific evolutionary hypotheses listed here).</para>
+          <para>Fluctuating Resources: Ability to exploit repeated changes in resource levels permits an introduced species to become an invader.</para>
+          <para>Hybridization: The invasive species may be the product of intraspecific hybridization between populations from different parts of the native range, or interspecific hybridization with other species native to the invaded or any other area.</para>
+          <para>Inherent Superiority (Ideal Weed): The invasive species possesses traits that make it superior (due to particular traits may be specified).</para>
+          <para>Mutualism, Facilitation, or Invasional Meltdown: Another organism in the novel environment facilitates the success of the invasion.</para>
+          <para>Novel Weapons/Allelopathy: The invasive species has characteristics that negatively affect the species it interacts with in the introduced range in the specific ways identified explicitly by this hypothesis.</para>
+          <para>Plasticity: An invasive species has a highly plastic phenotype that is capable of enhanced response to environmental conditions (often resource levels) found in an introduced range, that contributes to its establishment or competitive success.</para>
+          <para>Preadaptation to Climate: The existing environmental tolerances of an introduced species allow it to become invasive in the matching environmental conditions in a new range.</para>
+          <para>Propagule Pressure: Invasion is the result of a large number of propagules being introduced to the invaded environment.</para>
+          <para>Other: Any other hypothesis on invasions not defined above</para>
+          <para/>
+        </description>
+      </methodStep>
+    </methods>
+    <project>
+      <title>[support for teaching/research postdoctoral position]</title>
+      <personnel>
+        <individualName>
+          <givenName>Edward</givenName>
+          <surName>Lowry</surName>
+        </individualName>
+        <role>Principal Investigator</role>
+      </personnel>
+      <funding>Department of Ecology and Evolution, Stony Brook University, Stony Brook, NY, USA</funding>
+    </project>
+    <dataTable>
+      <entityName>all database records</entityName>
+      <entityDescription>Database of all the publication records that were collected. This includes all results after an initial screening of title and abstract, but before evaluation using the full text, and includes the SCOPUS record.</entityDescription>
+      <physical>
+        <objectName>all-database-records.csv</objectName>
+        <size unit="bytes">6069028</size>
+        <authentication method="MD5">c419a79357d8cf1b77f54b93a310ae64</authentication>
+        <dataFormat>
+          <textFormat>
+            <numHeaderLines>1</numHeaderLines>
+            <recordDelimiter>\r\n</recordDelimiter>
+            <attributeOrientation>column</attributeOrientation>
+            <simpleDelimited>
+              <fieldDelimiter>,</fieldDelimiter>
+              <quoteCharacter>"</quoteCharacter>
+            </simpleDelimited>
+          </textFormat>
+        </dataFormat>
+      </physical>
+      <attributeList>
+        <attribute>
+          <attributeName>record_id</attributeName>
+          <attributeDefinition>Unique identification number assigned by our group to each publication record we considered for inclusion</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Unique identification number assigned by our group to each publication record we considered for inclusion</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>author</attributeName>
+          <attributeDefinition>the authors of the publication</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>the authors of the publication</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>year</attributeName>
+          <attributeDefinition>the year the publication was published</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>nominalYear</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>natural</numberType>
+                <bounds>
+                  <minimum exclusive="false">1915</minimum>
+                  <maximum exclusive="false">2011</maximum>
+                </bounds>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>title</attributeName>
+          <attributeDefinition>the title of the publication</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>the title of the publication</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>type</attributeName>
+          <attributeDefinition>the type of publication (e.g. journal article)</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>the type of publication (e.g. journal article)</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>journal</attributeName>
+          <attributeDefinition>the title of the journal in which the publication appeared</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>the title of the journal in which the publication appeared</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>volume</attributeName>
+          <attributeDefinition>the volume of the journal in which the publication appeared</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>the volume of the journal in which the publication appeared</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>issue</attributeName>
+          <attributeDefinition>the issue of the journal in which the publication appeared</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>the issue of the journal in which the publication appeared</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>firstpage</attributeName>
+          <attributeDefinition>the number of the first page of the publication in the journal</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>the number of the first page of the publication in the journal</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>lastpage</attributeName>
+          <attributeDefinition>the number of the last page of the publication in the journal</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>the number of the last page of the publication in the journal</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>abstract</attributeName>
+          <attributeDefinition>the abstract of the publication, if there is one</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>the abstract of the publication, if there is one</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>database</attributeName>
+          <attributeDefinition>the online database from which the publication was drawn from to include in our study (e.g. Web of Science)</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>the online database from which the publication was drawn from to include in our study (e.g. Web of Science)</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>excluded</attributeName>
+          <attributeDefinition>after inclusion in our database, if the paper was considered inappropriate for our purpose it was marked for exclusion</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <enumeratedDomain>
+                  <codeDefinition>
+                    <code>1</code>
+                    <definition>excluded</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>0</code>
+                    <definition>not excluded</definition>
+                  </codeDefinition>
+                </enumeratedDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>species</attributeName>
+          <attributeDefinition>the species considered as an invasive in the publication</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>the species considered as an invasive in the publication</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>country</attributeName>
+          <attributeDefinition>the country where the process of invasion occurred (when this could be determined) for the publication</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>the country where the process of invasion occurred (when this could be determined) for the publication</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>state</attributeName>
+          <attributeDefinition>the state within country (when this was appropriate) where the process of invasion occurred</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>the state within country (when this was appropriate) where the process of invasion occurred</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>locality</attributeName>
+          <attributeDefinition>the locality (when this could be determined and was an appropriate category) where the process of invasion occurred</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>the locality (when this could be determined and was an appropriate category) where the process of invasion occurred</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>latitude</attributeName>
+          <attributeDefinition>the latitude where the study took place, when this could be determined</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>the latitude where the study took place, when this could be determined</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>longitude</attributeName>
+          <attributeDefinition>the longitude where the study took place, when this could be determined</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>the longitude where the study took place, when this could be determined</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>research_type</attributeName>
+          <attributeDefinition>the methods of the study in the publication (e.g. field experiment, theoretical study, etc.)</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>the methods of the study in the publication (e.g. field experiment, theoretical study, etc.)</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>ecosystem</attributeName>
+          <attributeDefinition>the ecosystem where the process of invasion</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>the ecosystem where the process of invasion</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>biome</attributeName>
+          <attributeDefinition>the biome where the process of invasion occurred</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>the biome where the process of invasion occurred</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>focus</attributeName>
+          <attributeDefinition>the focus of the publication (e.g. evaluate an invasion hypothesis, evaluate the impacts of invasion, etc.)</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>the focus of the publication (e.g. evaluate an invasion hypothesis, evaluate the impacts of invasion, etc.)</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>hypothesis</attributeName>
+          <attributeDefinition>the hypothesis(es) considered by the publication (if any)</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>the hypothesis(es) considered by the publication (if any)</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>superior_character</attributeName>
+          <attributeDefinition>If the hypothesis considered was the superior fitness characteristics of a invader, which one</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>If the hypothesis considered was the superior fitness characteristics of a invader, which one</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>trophic_level</attributeName>
+          <attributeDefinition>the trophic level of the invasive species considered by the publication</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>the trophic level of the invasive species considered by the publication</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+      </attributeList>
+      <numberOfRecords>3595</numberOfRecords>
+    </dataTable>
+    <dataTable>
+      <entityName>papers in the field synopsis</entityName>
+      <entityDescription>database of the publication records that were used in the ﬁeld synopsis</entityDescription>
+      <physical>
+        <objectName>papers-in-the-field-synopsis.csv</objectName>
+        <size unit="bytes">4357494</size>
+        <authentication method="MD5">21f8b6866af301b54f375aaab322dec5</authentication>
+        <dataFormat>
+          <textFormat>
+            <numHeaderLines>1</numHeaderLines>
+            <recordDelimiter>\r\n</recordDelimiter>
+            <attributeOrientation>column</attributeOrientation>
+            <simpleDelimited>
+              <fieldDelimiter>,</fieldDelimiter>
+              <quoteCharacter>"</quoteCharacter>
+            </simpleDelimited>
+          </textFormat>
+        </dataFormat>
+      </physical>
+      <attributeList>
+        <attribute>
+          <attributeName>record_id</attributeName>
+          <attributeDefinition>Unique identification number assigned by our group to each publication record we considered for inclusion</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Unique identification number assigned by our group to each publication record we considered for inclusion</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>author</attributeName>
+          <attributeDefinition>the authors of the publication</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>the authors of the publication</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>year</attributeName>
+          <attributeDefinition>the year the publication was published</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>nominalYear</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>natural</numberType>
+                <bounds>
+                  <minimum exclusive="false">1966</minimum>
+                  <maximum exclusive="false">2011</maximum>
+                </bounds>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>title</attributeName>
+          <attributeDefinition>the title of the publication</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>the title of the publication</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>type</attributeName>
+          <attributeDefinition>the type of publication (e.g. journal article)</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>the type of publication (e.g. journal article)</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>journal</attributeName>
+          <attributeDefinition>the title of the journal in which the publication appeared</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>the title of the journal in which the publication appeared</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>volume</attributeName>
+          <attributeDefinition>the volume of the journal in which the publication appeared</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>the volume of the journal in which the publication appeared</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>issue</attributeName>
+          <attributeDefinition>the issue of the journal in which the publication appeared</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>the issue of the journal in which the publication appeared</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>firstpage</attributeName>
+          <attributeDefinition>the number of the first page of the publication in the journal</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>the number of the first page of the publication in the journal</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>lastpage</attributeName>
+          <attributeDefinition>the number of the last page of the publication in the journal</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>the number of the last page of the publication in the journal</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>abstract</attributeName>
+          <attributeDefinition>the abstract of the publication, if there is one</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>the abstract of the publication, if there is one</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>database</attributeName>
+          <attributeDefinition>the online database from which the publication was drawn from to include in our study (e.g. Web of Science)</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>the online database from which the publication was drawn from to include in our study (e.g. Web of Science)</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>species</attributeName>
+          <attributeDefinition>the species considered as an invasive in the publication</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>the species considered as an invasive in the publication</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>country</attributeName>
+          <attributeDefinition>the country where the process of invasion occurred (when this could be determined) for the publication</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>the country where the process of invasion occurred (when this could be determined) for the publication</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>state</attributeName>
+          <attributeDefinition>the state within country (when this was appropriate) where the process of invasion occurred</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>the state within country (when this was appropriate) where the process of invasion occurred</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>locality</attributeName>
+          <attributeDefinition>the locality (when this could be determined and was an appropriate category) where the process of invasion occurred</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>the locality (when this could be determined and was an appropriate category) where the process of invasion occurred</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>latitude</attributeName>
+          <attributeDefinition>the latitude where the study took place, when this could be determined</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>the latitude where the study took place, when this could be determined</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>longitude</attributeName>
+          <attributeDefinition>the longitude where the study took place, when this could be determined</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>the longitude where the study took place, when this could be determined</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>research_type</attributeName>
+          <attributeDefinition>the methods of the study in the publication (e.g. field experiment, theoretical study, etc.)</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>the methods of the study in the publication (e.g. field experiment, theoretical study, etc.)</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>ecosystem</attributeName>
+          <attributeDefinition>the ecosystem where the process of invasion</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>the ecosystem where the process of invasion</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>biome</attributeName>
+          <attributeDefinition>the biome where the process of invasion occurred</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>the biome where the process of invasion occurred</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>focus</attributeName>
+          <attributeDefinition>the focus of the publication (e.g. evaluate an invasion hypothesis, evaluate the impacts of invasion, etc.)</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>the focus of the publication (e.g. evaluate an invasion hypothesis, evaluate the impacts of invasion, etc.)</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>hypothesis</attributeName>
+          <attributeDefinition>the hypothesis(es) considered by the publication (if any)</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>the hypothesis(es) considered by the publication (if any)</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>superior_character</attributeName>
+          <attributeDefinition>If the hypothesis considered was the superior fitness characteristics of a invader, which one</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>If the hypothesis considered was the superior fitness characteristics of a invader, which one</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>trophic_level</attributeName>
+          <attributeDefinition>the trophic level of the invasive species considered by the publication</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>the trophic level of the invasive species considered by the publication</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+      </attributeList>
+      <numberOfRecords>2398</numberOfRecords>
+    </dataTable>
+    <dataTable>
+      <entityName>paper in the systematic review</entityName>
+      <entityDescription>database of the publication records that were used in the systematic review</entityDescription>
+      <physical>
+        <objectName>papers-in-the-systematic-review.csv</objectName>
+        <size unit="bytes">2915018</size>
+        <authentication method="MD5">232fdcdeff8f5d5243627b54e9b0298a</authentication>
+        <dataFormat>
+          <textFormat>
+            <numHeaderLines>1</numHeaderLines>
+            <recordDelimiter>\r\n</recordDelimiter>
+            <attributeOrientation>column</attributeOrientation>
+            <simpleDelimited>
+              <fieldDelimiter>,</fieldDelimiter>
+              <quoteCharacter>"</quoteCharacter>
+            </simpleDelimited>
+          </textFormat>
+        </dataFormat>
+      </physical>
+      <attributeList>
+        <attribute>
+          <attributeName>record_id</attributeName>
+          <attributeDefinition>Unique identification number assigned by our group to each publication record we considered for inclusion</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Unique identification number assigned by our group to each publication record we considered for inclusion</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>author</attributeName>
+          <attributeDefinition>the authors of the publication</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>the authors of the publication</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>year</attributeName>
+          <attributeDefinition>the year the publication was published</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>nominalYear</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>natural</numberType>
+                <bounds>
+                  <minimum exclusive="false">1966</minimum>
+                  <maximum exclusive="false">2011</maximum>
+                </bounds>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>title</attributeName>
+          <attributeDefinition>the title of the publication</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>the title of the publication</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>type</attributeName>
+          <attributeDefinition>the type of publication (e.g. journal article)</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>the type of publication (e.g. journal article)</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>journal</attributeName>
+          <attributeDefinition>the title of the journal in which the publication appeared</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>the title of the journal in which the publication appeared</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>volume</attributeName>
+          <attributeDefinition>the volume of the journal in which the publication appeared</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>the volume of the journal in which the publication appeared</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>issue</attributeName>
+          <attributeDefinition>the issue of the journal in which the publication appeared</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>the issue of the journal in which the publication appeared</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>firstpage</attributeName>
+          <attributeDefinition>the number of the first page of the publication in the journal</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>the number of the first page of the publication in the journal</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>lastpage</attributeName>
+          <attributeDefinition>the number of the last page of the publication in the journal</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>the number of the last page of the publication in the journal</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>abstract</attributeName>
+          <attributeDefinition>the abstract of the publication, if there is one</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>the abstract of the publication, if there is one</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>database</attributeName>
+          <attributeDefinition>the online database from which the publication was drawn from to include in our study (e.g. Web of Science)</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>the online database from which the publication was drawn from to include in our study (e.g. Web of Science)</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>species</attributeName>
+          <attributeDefinition>the species considered as an invasive in the publication</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>the species considered as an invasive in the publication</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>country</attributeName>
+          <attributeDefinition>the country where the process of invasion occurred (when this could be determined) for the publication</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>the country where the process of invasion occurred (when this could be determined) for the publication</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>state</attributeName>
+          <attributeDefinition>the state within country (when this was appropriate) where the process of invasion occurred</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>the state within country (when this was appropriate) where the process of invasion occurred</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>locality</attributeName>
+          <attributeDefinition>the locality (when this could be determined and was an appropriate category) where the process of invasion occurred</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>the locality (when this could be determined and was an appropriate category) where the process of invasion occurred</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>latitude</attributeName>
+          <attributeDefinition>the latitude where the study took place, when this could be determined</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>the latitude where the study took place, when this could be determined</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>longitude</attributeName>
+          <attributeDefinition>the longitude where the study took place, when this could be determined</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>the longitude where the study took place, when this could be determined</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>research_type</attributeName>
+          <attributeDefinition>the methods of the study in the publication (e.g. field experiment, theoretical study, etc.)</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>the methods of the study in the publication (e.g. field experiment, theoretical study, etc.)</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>ecosystem</attributeName>
+          <attributeDefinition>the ecosystem where the process of invasion</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>the ecosystem where the process of invasion</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>biome</attributeName>
+          <attributeDefinition>the biome where the process of invasion occurred</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>the biome where the process of invasion occurred</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>focus</attributeName>
+          <attributeDefinition>the focus of the publication (e.g. evaluate an invasion hypothesis, evaluate the impacts of invasion, etc.)</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>the focus of the publication (e.g. evaluate an invasion hypothesis, evaluate the impacts of invasion, etc.)</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>hypothesis</attributeName>
+          <attributeDefinition>the hypothesis(es) considered by the publication (if any)</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>the hypothesis(es) considered by the publication (if any)</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>superior_character</attributeName>
+          <attributeDefinition>If the hypothesis considered was the superior fitness characteristics of a invader, which one</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>If the hypothesis considered was the superior fitness characteristics of a invader, which one</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>trophic_level</attributeName>
+          <attributeDefinition>the trophic level of the invasive species considered by the publication</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>the trophic level of the invasive species considered by the publication</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+      </attributeList>
+      <numberOfRecords>1537</numberOfRecords>
+    </dataTable>
+  </dataset>
+</eml:eml>
