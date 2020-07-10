@@ -1,3 +1,5 @@
+parent_element <- list()
+
 test_that('dataset title length is between 7 and 20 words long', {
   
   passing_dataset <- list() %>% 
@@ -27,9 +29,8 @@ test_that('dataset title length is between 7 and 20 words long', {
  
 })
 
-test_that('dataset title function is producing the expected values',{
+test_that('dataset title function adds title and short name.',{
   
-  parent_element <- list()
   title <- "This title will work because it is of a sufficient length"
   short_name <- "This is the short name"
   
@@ -47,8 +48,7 @@ test_that('dataset abstract warns if abstract is too short',  {
 })
 
 
-test_that('the dataset add_abstract function is producing the expected values', {
-  parent_element <- list()
+test_that('the dataset add_abstract function adds abstract', {
   abstract <- "This is the abstract for my test. It needs to have twenty or more words for it to pass. It informs the users if this dataset relates to what they are studying or not."
   abstract_1 <- add_abstract(parent_element = parent_element, abstract = abstract)
   
@@ -62,20 +62,26 @@ test_that('warn when there is at less than one keyword within the keywordSets', 
 })
 
 
-test_that('the dataset add_keyword_set function is producing the expected values',{
-          parent_element <- list()
+test_that('the dataset add_keyword_set function adds the keyword set',{
           keyword_set <- list(keyword = list("dog", "cat", "cow", "pig"),
                               keywordThesaurus = "LTER Controlled Vocabulary")
-          keyword_set_1 <- add_keyword_set(parent_element = parent_element, keyword_set = keyword_set)
           
-          expect_equal(add_keyword_set(parent_element = parent_element, keyword_set = keyword_set),
+          #keyword_set <- add_keyword_set(parent_element = parent_element, keyword_set = keyword_set)
+          
+          expect_equal(add_keyword_set(parent_element, keyword_set),
                        list(KeywordSet = list(keyword = list("dog", "cat", "cow", "pig"), 
                                               keywordThesaurus = "LTER Controlled Vocabulary")))
+          
+          keyword_set_1<- list(keyword = list("stream discharge", "discharge"))
+         #keyword_set_1 <- add_keyword_set(parent_element = parent_element, keyword_set = keyword_set_1)
+          
+          
+          expect_equal(add_keyword_set(parent_element, keyword_set_1), 
+                       list(KeywordSet = list(keyword = list("stream discharge", "discharge"))))
 
 })
 
 test_that('personnel function errors when missing mandatory identifier inputs',  {
-  parent_element <- list()
   role1 <- "Creator"
   role2 <- "Data Manager"
   first_name <- "Susan"

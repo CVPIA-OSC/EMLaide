@@ -1,7 +1,7 @@
 #' @title Add Abstract Element
 #' @description adds the abstract of a dataset according to EML standards 
 #' @param parament_element a list representing the EML project or dataset
-#' @param abstract Abstract paragraphs, which have a minimum of 20 words.
+#' @param abstract Abstract paragraphs, requires a minimum of 20 words.
 #' @details 
 #' For	a	dataset,	the	abstract	element	can	appear	at	the	resource	level	or	the	project level.		
 #' The	<abstract>	element	will	be	used	for	full-text	searches,	and	it	should	be	rich	with	
