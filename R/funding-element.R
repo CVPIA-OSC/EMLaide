@@ -1,15 +1,22 @@
-#' @title Adds Funding Element
-#' @description 
-#' @param 
-#' @param 
-#' @param 
-#' @param 
-#' @param 
-#' @param 
-#' @param 
+#' @title Add Funding Element
+#' @description Adds the funding information of a dataset based off of EML standards 
+#' @param parent_element A list representing the EML project or dataset
+#' @param funder_name Organization or individual providing the funding 
+#' @param funder_identifier This is where the funding organization is listed in the registry. The funder identifier must be registered. Follow the instructions at 
+#' \url{https://ror.org/curation/} to get registered. 
+#' @param award_number The identifier assigned by the funding agency to identify this funding award.
+#' @param award_title Title of the dataset or project which recieved funding
+#' @param award_url A link to information about the funding award on the funding organization's webpage.
+#' @param funding_description A short description of the funding recieved.
 #' @details 
-#' @return 
+#' @return The dataset or project with funding information appended 
 #' @examples 
+#' add_funding(parent_element = list(), funder_name = "National Science Foundation",
+#'             funder_identifier = "http://dx.doi.org/10.13039/100000001",
+#'             award_number = "1656026",
+#'             award_title = "LTER: Beaufort Sea Lagoons: An Arctic Coastal Ecosystem in Transition",
+#'             award_url = "https://www.nsf.gov/awardsearch/showAward?AWD_ID=1656026",
+#'             funding_description = "BLE LTER is supported by the National Science Foundation under award #1656026 (2017-08-01 to 2022-07-31)." )
 #' @export
 
 add_funding <- function(parent_element, funder_name, funder_identifier,
@@ -32,24 +39,10 @@ add_funding <- function(parent_element, funder_name, funder_identifier,
                                awardNumber = award_number, 
                                title = award_title,
                                awardUrl = award_url)
-  
-  
+
   
 }
   
   
   
   
-  
-#<funding>
-#   <section>
-#     <para>BLE LTER is supported by the National Science Foundation under award #1656026 (2017-08-01 to 2022-07-31).</para>
-#   </section>
-# </funding>
-# <award>
-#   <funderName>National Science Foundation</funderName>
-#   <funderIdentifier>http://dx.doi.org/10.13039/100000001</funderIdentifier>
-#   <awardNumber>1656026</awardNumber>
-#   <title>LTER: Beaufort Sea Lagoons: An Arctic Coastal Ecosystem in Transition</title>
-#   <awardUrl>https://www.nsf.gov/awardsearch/showAward?AWD_ID=1656026</awardUrl>
-# </award>
