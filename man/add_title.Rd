@@ -14,6 +14,21 @@ add_title(parent_element, title, short_name)
 
 \item{parament_element}{a list representing the EML project or dataset}
 }
+\value{
+the project or dataset list with title and short name appended
+}
 \description{
-Add Title Elements
+adds title elements according to EML standards
+}
+\details{
+For a dataset, the title should be between 7 and 20 words long, with a short
+name which is shorter than the title. If the title is too short, ensure that it
+is covering the 'what', 'where', and 'when'. If the title is too long, attempt
+to make it as concise as possible.
+}
+\examples{
+add_title(parent_element = list(), 
+          title = "Long-term Ground Arthropod Monitoring Dataset at Ficity, 
+          USA from 1998 to 2003" ,
+          short_name = "Arthropods")
 }
