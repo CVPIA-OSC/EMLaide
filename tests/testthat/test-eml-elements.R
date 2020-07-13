@@ -154,6 +154,67 @@ test_that('personnel function errors when missing mandatory identifier inputs', 
   
 })
 
+
+test_that('funding function errors when missing mandatory identifier inputs', {
+  
+  expect_warning(add_funding(parent_element = list(), 
+                             funder_identifier = "http://dx.doi.org/10.13039/100000001",
+                             award_number = "1656026",
+                             award_title = "LTER: Beaufort Sea Lagoons: An Arctic Coastal Ecosystem in Transition",
+                             award_url = "https://www.nsf.gov/awardsearch/showAward?AWD_ID=1656026",
+                             funding_description = "BLE LTER is supported by the National Science Foundation under award #1656026 (2017-08-01 to 2022-07-31)." ), 
+                 "Please provide funders name.")
+
+expect_warning(add_funding(parent_element = list(), funder_name = "National Science Foundation",
+                           award_number = "1656026",
+                           award_title = "LTER: Beaufort Sea Lagoons: An Arctic Coastal Ecosystem in Transition",
+                           award_url = "https://www.nsf.gov/awardsearch/showAward?AWD_ID=1656026",
+                           funding_description = "BLE LTER is supported by the National Science Foundation under award #1656026 (2017-08-01 to 2022-07-31)." ),
+               "Please provide funder identifier link.")
+
+expect_warning(add_funding(parent_element = list(), funder_name = "National Science Foundation",
+                           funder_identifier = "http://dx.doi.org/10.13039/100000001",
+                           award_title = "LTER: Beaufort Sea Lagoons: An Arctic Coastal Ecosystem in Transition",
+                           award_url = "https://www.nsf.gov/awardsearch/showAward?AWD_ID=1656026",
+                           funding_description = "BLE LTER is supported by the National Science Foundation under award #1656026 (2017-08-01 to 2022-07-31)." ),
+               "Please provide your award number.")
+
+expect_warning(add_funding(parent_element = list(), funder_name = "National Science Foundation",
+                           funder_identifier = "http://dx.doi.org/10.13039/100000001",
+                           award_number = "1656026",
+                           award_url = "https://www.nsf.gov/awardsearch/showAward?AWD_ID=1656026",
+                           funding_description = "BLE LTER is supported by the National Science Foundation under award #1656026 (2017-08-01 to 2022-07-31)." ),
+               "Please provide the title of your project.")
+
+expect_warning(add_funding(parent_element = list(), funder_name = "National Science Foundation",
+                           funder_identifier = "http://dx.doi.org/10.13039/100000001",
+                           award_number = "1656026",
+                           award_title = "LTER: Beaufort Sea Lagoons: An Arctic Coastal Ecosystem in Transition",
+                           funding_description = "BLE LTER is supported by the National Science Foundation under award #1656026 (2017-08-01 to 2022-07-31)." ),
+               "Please provide the award url.")
+
+expect_warning(add_funding(parent_element = list(), funder_name = "National Science Foundation",
+                           funder_identifier = "http://dx.doi.org/10.13039/100000001",
+                           award_number = "1656026",
+                           award_title = "LTER: Beaufort Sea Lagoons: An Arctic Coastal Ecosystem in Transition",
+                           award_url = "https://www.nsf.gov/awardsearch/showAward?AWD_ID=1656026"),
+               "Please provide the description of the funding recieved.")
+
+
+})
+
+test_that(' The add_funding function adds the funding elements', {
+  
+  expect_equal(add_funding(parent_element = list(), funder_name = "National Science Foundation", 
+                           funder_identifier = "http://dx.doi.org/10.13039/100000001",
+                           award_number = "1656026",
+                           award_title = "LTER: Beaufort Sea Lagoons: An Arctic Coastal Ecosystem in Transition",
+                           award_url = "https://www.nsf.gov/awardsearch/showAward?AWD_ID=1656026",
+                           funding_description = "BLE LTER is supported by the National Science Foundation under award #1656026 (2017-08-01 to 2022-07-31)."),
+               list(funderName = "National Science Foundation", funderIdentifier = "http://dx.doi.org/10.13039/100000001", 
+                    awardNumber = "1656026", title = "LTER: Beaufort Sea Lagoons: An Arctic Coastal Ecosystem in Transition", 
+                    awardUrl = "https://www.nsf.gov/awardsearch/showAward?AWD_ID=1656026"))
+})
 test_that('Intellectual rights function errors when missing mandatory identifier inputs', {
   
   expect_error(add_license(parent_element = list(), default_license = NULL, license_name = "Creative Commons",
