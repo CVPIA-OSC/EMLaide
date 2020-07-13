@@ -6,12 +6,12 @@
 \usage{
 add_funding(
   parent_element,
-  funder_name,
-  funder_identifier,
-  award_number,
-  award_title,
-  award_url,
-  funding_description
+  funder_name = NULL,
+  funder_identifier = NULL,
+  award_number = NULL,
+  award_title = NULL,
+  award_url = NULL,
+  funding_description = NULL
 )
 }
 \arguments{
