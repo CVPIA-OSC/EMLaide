@@ -50,34 +50,42 @@ test_that('dataset abstract warns if abstract is too short',  {
 
 test_that('the dataset add_abstract function adds abstract', {
   abstract <- "This is the abstract for my test. It needs to have twenty or more words for it to pass. It informs the users if this dataset relates to what they are studying or not."
-  abstract_1 <- add_abstract(parent_element = parent_element, abstract = abstract)
+  #abstract <- add_abstract(parent_element = parent_element, abstract = abstract)
   
   expect_equal(add_abstract(parent_element = parent_element, abstract = abstract),
                list(abstract = list(para = "This is the abstract for my test. It needs to have twenty or more words for it to pass. It informs the users if this dataset relates to what they are studying or not.")))
 })
 
 
-test_that('warn when there is at less than one keyword within the keywordSets', {
+test_that('warn when there is less than one keyword within the keywordSets', {
   expect_warning(add_keyword_set(list(), keyword_set = c()))
 })
 
 
 test_that('the dataset add_keyword_set function adds the keyword set',{
-          keyword_set <- list(keyword = list("dog", "cat", "cow", "pig"),
+          keyword_set_1 <- list(keyword = list("dog", "cat", "cow", "pig"),
                               keywordThesaurus = "LTER Controlled Vocabulary")
           
-          #keyword_set <- add_keyword_set(parent_element = parent_element, keyword_set = keyword_set)
+          first <- add_keyword_set(parent_element = parent_element, keyword_set = keyword_set_1)
           
-          expect_equal(add_keyword_set(parent_element, keyword_set),
+          expect_equal(add_keyword_set(parent_element, keyword_set_1),
                        list(KeywordSet = list(keyword = list("dog", "cat", "cow", "pig"), 
                                               keywordThesaurus = "LTER Controlled Vocabulary")))
           
-          keyword_set_1<- list(keyword = list("stream discharge", "discharge"))
-         #keyword_set_1 <- add_keyword_set(parent_element = parent_element, keyword_set = keyword_set_1)
+          keyword_set_2<- list(keyword = list("bear", "lion"))
+          #keyword_set_2 <- add_keyword_set(parent_element = parent_element, keyword_set = keyword_set_2)
           
           
-          expect_equal(add_keyword_set(parent_element, keyword_set_1), 
-                       list(KeywordSet = list(keyword = list("stream discharge", "discharge"))))
+          expect_equal(add_keyword_set(parent_element, keyword_set_2), 
+                       list(KeywordSet = list(keyword = list("bear", "lion"))))
+          
+          first <- add_keyword_set(parent_element, keyword_set_1)
+          second <- add_keyword_set(first, keyword_set_2)
+          
+          expect_equal(second, list(KeywordSet = list(list(keyword = list("dog", "cat", "cow", "pig"), 
+                                                 keywordThesaurus = "LTER Controlled Vocabulary"), 
+                                                 list(keyword = list("bear", "lion"))))
+          )
 
 })
 
