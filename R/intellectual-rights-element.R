@@ -28,13 +28,13 @@
 #'            intellectual_rights_descripiton = "This information is released under the Creative Commons license - Attribution - CC BY-NC-SA (https://creativecommons.org/licenses/by-nc-sa/4.0/). The consumer of these data (\"Data User\" herein) is required to cite it appropriately in any publication that results from its use. The Data User should realize that these data may be actively used by others for ongoing research and that coordination may be necessary to prevent duplicate publication. The Data User is urged to contact the authors of these data if any questions about methodology or results occur. Where appropriate, the Data User is encouraged to consider collaboration or co-authorship with the authors. The Data User should realize that misinterpretation of data may occur if used out of context of the original study. While substantial efforts are made to ensure the accuracy of data and associated documentation, complete accuracy of data sets cannot be guaranteed. All data are made available \"as is.\" The Data User should be aware, however, that data are updated periodically and it is the responsibility of the Data User to check for new versions of the data. The data authors and the repository where these data were obtained shall not be liable for damages resulting from any use or misinterpretation of the data. You may not use the material for commercial purposes and you must distribute your contributions on this same license. Thank you.&#13;")
 #' 
 #' @export
-add_license <- function(parent_element, default_license, license_name = "CCO", license_url = NULL, license_identifier = NULL,
+add_license <- function(parent_element, default_license, license_name = NULL, license_url = NULL, license_identifier = NULL,
                         intellectual_rights_descripiton = NULL) {
   
   if (is.null(default_license)) {
-    if (missing(license_url)) {stop("Please provide a url for the license.")}
-    if (missing(license_identifier)) {stop("Please provide the license identifier.")}
-    if (missing(intellectual_rights_descripiton)) {stop("Please provide a simplified description of the license.")}
+    if (missing(license_url)) {stop("Please provide a url for the license.", call. = FALSE)}
+    if (missing(license_identifier)) {stop("Please provide the license identifier.", call. = FALSE)}
+    if (missing(intellectual_rights_descripiton)) {stop("Please provide a simplified description of the license.", call. = FALSE)}
     
     parent_element$intellectualRights <- list(para = intellectual_rights_descripiton)
     parent_element$licensed <- list(licensedName = license_name, 

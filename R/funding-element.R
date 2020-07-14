@@ -18,8 +18,8 @@
 #'             funding_description = "BLE LTER is supported by the National Science Foundation under award #1656026 (2017-08-01 to 2022-07-31)." )
 #' @export
 
-add_funding <- function(parent_element, funder_name, funder_identifier,
-                        award_number, award_title, award_url = NULL, funding_description = NULL)  {
+add_funding <- function(parent_element, funder_name, funder_identifier, award_number,
+                        award_title, award_url = NULL, funding_description = NULL)  {
 
   if (missing(funder_name)) {stop("Please provide funders name.", call. = FALSE)}
   if (missing(funder_identifier)) {stop("Please provide funder identifier link.", call. = FALSE)}
