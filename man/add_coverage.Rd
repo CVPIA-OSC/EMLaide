@@ -7,10 +7,10 @@
 add_coverage(
   parent_element,
   geographic_description,
-  west_bounding_coordinate,
-  east_bounding_coordinate,
-  north_bounding_coordinate,
-  south_bounding_coordinate,
+  west_bounding_coordinate = NULL,
+  east_bounding_coordinate = NULL,
+  north_bounding_coordinate = NULL,
+  south_bounding_coordinate = NULL,
   begin_date,
   end_date
 )
