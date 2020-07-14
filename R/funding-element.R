@@ -6,9 +6,8 @@
 #' \url{https://ror.org/curation/} to get registered. 
 #' @param award_number The identifier assigned by the funding agency to identify this funding award.
 #' @param award_title Title of the dataset or project which recieved funding
-#' @param award_url A link to information about the funding award on the funding organization's webpage.
-#' @param funding_description A short description of the funding recieved.
-#' @details 
+#' @param award_url Optional to include a link to information about the funding award on the funding organization's webpage.
+#' @param funding_description Optional to provide a short description of the funding recieved.
 #' @return The dataset or project with funding information appended 
 #' @examples 
 #' add_funding(parent_element = list(), funder_name = "National Science Foundation",
@@ -19,25 +18,25 @@
 #'             funding_description = "BLE LTER is supported by the National Science Foundation under award #1656026 (2017-08-01 to 2022-07-31)." )
 #' @export
 
-add_funding <- function(parent_element, funder_name = NULL, funder_identifier = NULL,
-                        award_number = NULL, award_title = NULL, award_url = NULL, funding_description = NULL)  {
+add_funding <- function(parent_element, funder_name, funder_identifier,
+                        award_number, award_title, award_url = NULL, funding_description = NULL)  {
 
-  if (missing(funder_name)) {warning("Please provide funders name.")}
-  if (missing(funder_identifier)) {warning("Please provide funder identifier link.")}
-  if (missing(award_number)) {warning("Please provide your award number.")}
-  if (missing(award_title)) {warning("Please provide the title of your project.")}
-  if (missing(award_url)) {warning("Please provide the award url.")}
-  if (missing(funding_description)) {warning("Please provide the description of the funding recieved.")}
+  if (missing(funder_name)) {stop("Please provide funders name.", call. = FALSE)}
+  if (missing(funder_identifier)) {stop("Please provide funder identifier link.", call. = FALSE)}
+  if (missing(award_number)) {stop("Please provide your award number.", call. = FALSE)}
+  if (missing(award_title)) {stop("Please provide the title of your project.", call. = FALSE)}
+  if (missing(award_url)) {warning("Please provide the award url.", call. = FALSE)}
+  if (missing(funding_description)) {warning("Please provide the description of the funding recieved.", call. = FALSE)}
   
   
-  parent_element$funding$section <- list(para = funding_description)
+  parent_element$funding <- list(section = list(para = funding_description))
   parent_element$award <- list(funderName = funder_name,
                                funderIdentifier = funder_identifier,
                                awardNumber = award_number, 
                                title = award_title,
                                awardUrl = award_url)
 
-  
+  return(parent_element)
 }
   
   

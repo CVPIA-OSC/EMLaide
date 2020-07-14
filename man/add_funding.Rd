@@ -10,8 +10,8 @@ add_funding(
   funder_identifier,
   award_number,
   award_title,
-  award_url,
-  funding_description
+  award_url = NULL,
+  funding_description = NULL
 )
 }
 \arguments{
@@ -26,9 +26,9 @@ add_funding(
 
 \item{award_title}{Title of the dataset or project which recieved funding}
 
-\item{award_url}{A link to information about the funding award on the funding organization's webpage.}
+\item{award_url}{Optional to include a link to information about the funding award on the funding organization's webpage.}
 
-\item{funding_description}{A short description of the funding recieved.}
+\item{funding_description}{Optional to provide a short description of the funding recieved.}
 }
 \value{
 The dataset or project with funding information appended

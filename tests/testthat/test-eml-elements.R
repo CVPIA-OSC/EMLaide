@@ -50,7 +50,7 @@ test_that('dataset abstract warns if abstract is too short',  {
 
 test_that('the dataset add_abstract function adds abstract', {
   abstract <- "This is the abstract for my test. It needs to have twenty or more words for it to pass. It informs the users if this dataset relates to what they are studying or not."
-  #abstract <- add_abstract(parent_element = parent_element, abstract = abstract)
+  
   
   expect_equal(add_abstract(parent_element = parent_element, abstract = abstract),
                list(abstract = list(para = "This is the abstract for my test. It needs to have twenty or more words for it to pass. It informs the users if this dataset relates to what they are studying or not.")))
@@ -73,7 +73,7 @@ test_that('the dataset add_keyword_set function adds the keyword set',{
                                               keywordThesaurus = "LTER Controlled Vocabulary")))
           
           keyword_set_2<- list(keyword = list("bear", "lion"))
-          #keyword_set_2 <- add_keyword_set(parent_element = parent_element, keyword_set = keyword_set_2)
+          
           
           
           expect_equal(add_keyword_set(parent_element, keyword_set_2), 
@@ -157,7 +157,7 @@ test_that('personnel function errors when missing mandatory identifier inputs', 
 
 test_that('funding function errors when missing mandatory identifier inputs', {
   
-  expect_warning(add_funding(parent_element = list(), 
+  expect_error(add_funding(parent_element = list(), 
                              funder_identifier = "http://dx.doi.org/10.13039/100000001",
                              award_number = "1656026",
                              award_title = "LTER: Beaufort Sea Lagoons: An Arctic Coastal Ecosystem in Transition",
@@ -165,21 +165,21 @@ test_that('funding function errors when missing mandatory identifier inputs', {
                              funding_description = "BLE LTER is supported by the National Science Foundation under award #1656026 (2017-08-01 to 2022-07-31)." ), 
                  "Please provide funders name.")
 
-expect_warning(add_funding(parent_element = list(), funder_name = "National Science Foundation",
+expect_error(add_funding(parent_element = list(), funder_name = "National Science Foundation",
                            award_number = "1656026",
                            award_title = "LTER: Beaufort Sea Lagoons: An Arctic Coastal Ecosystem in Transition",
                            award_url = "https://www.nsf.gov/awardsearch/showAward?AWD_ID=1656026",
                            funding_description = "BLE LTER is supported by the National Science Foundation under award #1656026 (2017-08-01 to 2022-07-31)." ),
                "Please provide funder identifier link.")
 
-expect_warning(add_funding(parent_element = list(), funder_name = "National Science Foundation",
+expect_error(add_funding(parent_element = list(), funder_name = "National Science Foundation",
                            funder_identifier = "http://dx.doi.org/10.13039/100000001",
                            award_title = "LTER: Beaufort Sea Lagoons: An Arctic Coastal Ecosystem in Transition",
                            award_url = "https://www.nsf.gov/awardsearch/showAward?AWD_ID=1656026",
                            funding_description = "BLE LTER is supported by the National Science Foundation under award #1656026 (2017-08-01 to 2022-07-31)." ),
                "Please provide your award number.")
 
-expect_warning(add_funding(parent_element = list(), funder_name = "National Science Foundation",
+expect_error(add_funding(parent_element = list(), funder_name = "National Science Foundation",
                            funder_identifier = "http://dx.doi.org/10.13039/100000001",
                            award_number = "1656026",
                            award_url = "https://www.nsf.gov/awardsearch/showAward?AWD_ID=1656026",
@@ -203,7 +203,7 @@ expect_warning(add_funding(parent_element = list(), funder_name = "National Scie
 
 })
 
-test_that(' The add_funding function adds the funding elements', {
+test_that('The add_funding function adds the funding elements', {
   
   expect_equal(add_funding(parent_element = list(), funder_name = "National Science Foundation", 
                            funder_identifier = "http://dx.doi.org/10.13039/100000001",
@@ -211,9 +211,13 @@ test_that(' The add_funding function adds the funding elements', {
                            award_title = "LTER: Beaufort Sea Lagoons: An Arctic Coastal Ecosystem in Transition",
                            award_url = "https://www.nsf.gov/awardsearch/showAward?AWD_ID=1656026",
                            funding_description = "BLE LTER is supported by the National Science Foundation under award #1656026 (2017-08-01 to 2022-07-31)."),
-               list(funderName = "National Science Foundation", funderIdentifier = "http://dx.doi.org/10.13039/100000001", 
-                    awardNumber = "1656026", title = "LTER: Beaufort Sea Lagoons: An Arctic Coastal Ecosystem in Transition", 
-                    awardUrl = "https://www.nsf.gov/awardsearch/showAward?AWD_ID=1656026"))
+               list(funding = list(section = list(para = "BLE LTER is supported by the National Science Foundation under award #1656026 (2017-08-01 to 2022-07-31).")), 
+                    award = list(funderName = "National Science Foundation", 
+                                 funderIdentifier = "http://dx.doi.org/10.13039/100000001", 
+                                 awardNumber = "1656026", title = "LTER: Beaufort Sea Lagoons: An Arctic Coastal Ecosystem in Transition", 
+                                 awardUrl = "https://www.nsf.gov/awardsearch/showAward?AWD_ID=1656026"))
+  )
+               
 })
 test_that('Intellectual rights function errors when missing mandatory identifier inputs', {
   
@@ -235,8 +239,7 @@ test_that('Intellectual rights function errors when missing mandatory identifier
 
 test_that('Intellectual rights function outputs the correct values when given the default inputs of "CCO" and "CCBY', {
   
-  #CCO <- add_license(parent_element = parent_element)
-  #CCBY <- add_license(list(), "CCBY")
+  
   expect_equal(add_license(list(), "CCO"), 
                list(intellectualRights = list(para = "This data package is released to the \"public domain\" under Creative Commons CC0 1.0 \"No Rights Reserved\" (see: https://creativecommons.org/publicdomain/zero/1.0/). It is considered professional etiquette to provide attribution of the original work if this data package is shared in whole or by individual components. A generic citation is provided for this data package on the website https://portal.edirepository.org (herein \"website\") in the summary metadata page. Communication (and collaboration) with the creators of this data package is recommended to prevent duplicate research or publication. This data package (and its components) is made available \"as is\" and with no warranty of accuracy or fitness for use. The creators of this data package and the website shall not be liable for any damages resulting from misinterpretation or misuse of the data package or its components. Periodic updates of this data package may be available from the website. Thank you.&#13;"), 
                     licensed = list(licensedName = "Creative Commons Zero v1.0 Universal", 
