@@ -327,15 +327,23 @@ test_that('The coverage function adds the coverage elements', {
                             begin_date = "1980-01-01", end_date = "2010-12-31"),
                list(geographicCoverage = list(geographicDescription = "North Slope drainage basin:Bounding box encompasses 42 drainage basins totaling the North Slope drainage basin, Alaska, USA.", 
                                               boundingCoordinates = list(westBoundingCoordinate = "-160.594000", 
-                                                                         eastBoundingCoordinate = "-134.104800",
-                                                                         northBoundingCoordinate = "71.238300", 
-                                                                         southBoundingCoordinate = "67.865000")),
-                    temporalCoverage = list(rangeOfDates = list(beginDate = list(calendarDate = "1980-01-01"), 
-                                                                endDate = list(calendarDate = "2010-12-31"))))
+                                                                         eastBoundingCoordinate = "-134.104800", northBoundingCoordinate = "71.238300", 
+                                                                         southBoundingCoordinate = "67.865000")), temporalCoverage = list(
+                                                                           rangeOfDates = list(beginDate = list(calendarDate = "1980-01-01"), 
+                                                                                               endDate = list(calendarDate = "2010-12-31"))))
+    
                )
   
   
   
   
 })
-
+list(geographicCoverage =
+       list(geographicDescription = "North Slope drainage basin:Bounding box encompasses 42 drainage basins totaling the North Slope drainage basin, Alaska, USA.",
+            boundingCoordinates =
+              list(westBoundingCoordinate = "-160.594000",
+                   eastBoundingCoordinate = "-134.104800",
+                   northBoundingCoordinate = "71.238300",
+                   southBoundingCoordinate = "67.865000")),
+     temporalCoverage = list(rangeOfDates = list(beginDate = list(calendarDate = "1980-01-01"),
+                                                 endDate = list(calendarDate = "2010-12-31"))))
