@@ -18,26 +18,30 @@ add_coverage(
 \arguments{
 \item{parent_element}{A list representing the EML project or dataset}
 
-\item{geographic_description}{#TODO}
+\item{geographic_description}{A description of the locations    of research sites    and    areas    related    to the    data.}
 
-\item{west_bounding_coordinate}{#TODO}
+\item{west_bounding_coordinate}{The west cardinality limit}
 
-\item{east_bounding_coordinate}{#TODO}
+\item{east_bounding_coordinate}{The east cardinality limit.}
 
-\item{north_bounding_coordinate}{#TODO}
+\item{north_bounding_coordinate}{The north cardinality limit.}
 
-\item{south_bounding_coordinate}{#TODO}
+\item{south_bounding_coordinate}{The south cardinality limit.}
 
-\item{begin_date}{#TODO}
+\item{begin_date}{The starting date for the dataset or project.}
 
-\item{end_date}{#TODO}
+\item{end_date}{The projected or actual end date for the dataset or project.}
 }
 \value{
 The dataset or project with coverage information appended
 }
 \description{
-Adds coverage element #TODO
+Adds the coverage information of a dataset based off of EML standards.
 }
 \examples{
-#TODO
+add_coverage(parent_element = list(), geographic_description = "North Slope drainage basin:
+             Bounding box encompasses 42 drainage basins totaling the North Slope drainage basin, Alaska, USA.",
+             west_bounding_coordinate = "-160.594000", east_bounding_coordinate = "-134.104800",
+             north_bounding_coordinate = "71.238300", south_bounding_coordinate = "67.865000", 
+             begin_date = "1980-01-01", end_date = "2010-12-31")
 }
