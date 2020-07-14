@@ -1,5 +1,7 @@
 parent_element <- list()
 
+#Tests for add_title function 
+
 test_that('dataset title length is between 7 and 20 words long', {
   
   passing_dataset <- list() %>% 
@@ -43,6 +45,8 @@ test_that('dataset title function adds title and short name.',{
   
 })
 
+#Tests for add_abstract function 
+
 test_that('dataset abstract warns if abstract is too short',  {
   expect_warning(add_abstract(list(), abstract = "A not very specific abstract"))
 })
@@ -56,6 +60,7 @@ test_that('the dataset add_abstract function adds abstract', {
                list(abstract = list(para = "This is the abstract for my test. It needs to have twenty or more words for it to pass. It informs the users if this dataset relates to what they are studying or not.")))
 })
 
+#Tests for add_keyword_set function 
 
 test_that('warn when there is less than one keyword within the keywordSets', {
   expect_warning(add_keyword_set(list(), keyword_set = c()))
@@ -88,6 +93,8 @@ test_that('the dataset add_keyword_set function adds the keyword set',{
           )
 
 })
+
+#Tests for add_personnel function 
 
 test_that('personnel function errors when missing mandatory identifier inputs',  {
   role1 <- "Creator"
@@ -154,6 +161,7 @@ test_that('personnel function errors when missing mandatory identifier inputs', 
   
 })
 
+#Tests for add_funding function 
 
 test_that('funding function errors when missing mandatory identifier inputs', {
   
@@ -215,6 +223,9 @@ test_that(' The add_funding function adds the funding elements', {
                     awardNumber = "1656026", title = "LTER: Beaufort Sea Lagoons: An Arctic Coastal Ecosystem in Transition", 
                     awardUrl = "https://www.nsf.gov/awardsearch/showAward?AWD_ID=1656026"))
 })
+
+#Tests for add_license function 
+
 test_that('Intellectual rights function errors when missing mandatory identifier inputs', {
   
   expect_error(add_license(parent_element = list(), default_license = NULL, license_name = "Creative Commons",
