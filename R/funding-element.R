@@ -32,18 +32,14 @@ add_funding <- function(parent_element, funder_name, funder_identifier, award_nu
   if (!is.null(funding_description)) {
     parent_element$funding = list(section = list(para = funding_description))
   }
+  
+  parent_element$award <- list(funderName = funder_name,
+                               funderIdentifier = funder_identifier,
+                               awardNumber = award_number, 
+                               title = award_title)
+  
  if (!is.null(award_url)) {
-   parent_element$award <- list(funderName = funder_name,
-                                funderIdentifier = funder_identifier,
-                                awardNumber = award_number, 
-                                title = award_title,
-                                awardUrl = award_url)
-   
- }else{
-   parent_element$award <- list(funderName = funder_name,
-                                funderIdentifier = funder_identifier,
-                                awardNumber = award_number, 
-                                title = award_title)
+   parent_element$award$awardUrl <- award_url
  }
 
   return(parent_element)
