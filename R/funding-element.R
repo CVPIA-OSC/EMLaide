@@ -30,7 +30,7 @@ add_funding <- function(parent_element, funder_name, funder_identifier, award_nu
   
   
   if (!is.null(funding_description)) {
-    parent_element$funding = list(section = list(para = funding_description))
+    parent_element$funding = list(para = funding_description)
   }
   
   parent_element$award <- list(funderName = funder_name,

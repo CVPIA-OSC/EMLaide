@@ -11,19 +11,27 @@ d <- function() {
               short_name = "shorter name dur") %>% 
     add_abstract(a) %>%
     add_funding(funder_name = "National Science Foundation", 
-              funder_identifier = "http://dx.doi.org/10.13039/100000001",
-              award_number = "1656026",
-              award_title = "LTER: Beaufort Sea Lagoons: An Arctic Coastal Ecosystem in Transition",
-              award_url = "https://www.nsf.gov/awardsearch/showAward?AWD_ID=1656026",
-              funding_description = "BLE LTER is supported by the National Science") %>%
-  #The add_funding doesn't have the exact nesting structure as in the example 
-  add_license(default_license = "CCO")
+                funder_identifier = "http://dx.doi.org/10.13039/100000001",
+                award_number = "1656026",
+                award_title = "LTER: Beaufort Sea Lagoons: An Arctic Coastal Ecosystem in Transition",
+                award_url = "https://www.nsf.gov/awardsearch/showAward?AWD_ID=1656026",
+                funding_description = "BLE LTER is supported by the National Science") %>%
+    #The add_funding doesn't have the exact nesting structure as in the example 
+    add_license(default_license = "CCO")
   list(dataset = dataset) %>% 
     as_xml() %>% 
     xml2::write_xml('dogee.xml')
   
   return(NULL)
 }
+
+add_funding(list(),funder_name = "National Science Foundation", funder_identifier = "http://dx.doi.org/10.13039/100000001",
+            award_number = "1656026",
+            award_title = "LTER: Beaufort Sea Lagoons: An Arctic Coastal Ecosystem in Transition",
+            award_url = "https://www.nsf.gov/awardsearch/showAward?AWD_ID=1656026",
+            funding_description = "BLE LTER is supported by the National Science Foundation under award") %>%
+  as_xml() %>%
+  write_xml('dogeee.xml')
 
 #add_license(list()) %>% as_xml() %>% write_xml('doge.xml')
 # <intellectualRights>
