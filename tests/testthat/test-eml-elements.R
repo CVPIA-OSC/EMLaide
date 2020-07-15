@@ -271,28 +271,28 @@ test_that('Coverage function errors when missing mandatory identifier inputs', {
                             begin_date = "1980-01-01", end_date = "2010-12-31"), 
                "Please supply a brief description of the locations of research sites and areas related to this dataset.")
   
-  expect_warning(add_coverage(parent_element = list(), geographic_description = "North Slope drainage basin:Bounding box encompasses 42 drainage basins totaling the North Slope drainage basin, Alaska, USA.",
+  expect_error(add_coverage(parent_element = list(), geographic_description = "North Slope drainage basin:Bounding box encompasses 42 drainage basins totaling the North Slope drainage basin, Alaska, USA.",
                             east_bounding_coordinate = "-134.104800",
                             north_bounding_coordinate = "71.238300",
                             south_bounding_coordinate = "67.865000",
                             begin_date = "1980-01-01", end_date = "2010-12-31"),
                "Please supply the west cardinality limit if applicable.")
   
-  expect_warning(add_coverage(parent_element = list(), geographic_description = "North Slope drainage basin:Bounding box encompasses 42 drainage basins totaling the North Slope drainage basin, Alaska, USA.",
+  expect_error(add_coverage(parent_element = list(), geographic_description = "North Slope drainage basin:Bounding box encompasses 42 drainage basins totaling the North Slope drainage basin, Alaska, USA.",
                             west_bounding_coordinate = "-160.594000",
                             north_bounding_coordinate = "71.238300",
                             south_bounding_coordinate = "67.865000",
                             begin_date = "1980-01-01", end_date = "2010-12-31"),
                  "Please supply the east cardinality limit if applicable.")
   
-  expect_warning(add_coverage(parent_element = list(), geographic_description = "North Slope drainage basin:Bounding box encompasses 42 drainage basins totaling the North Slope drainage basin, Alaska, USA.",
+  expect_error(add_coverage(parent_element = list(), geographic_description = "North Slope drainage basin:Bounding box encompasses 42 drainage basins totaling the North Slope drainage basin, Alaska, USA.",
                             west_bounding_coordinate = "-160.594000",
                             east_bounding_coordinate = "-134.104800",
                             south_bounding_coordinate = "67.865000",
                             begin_date = "1980-01-01", end_date = "2010-12-31"),
                "Please supply the north cardinality limit if applicable.")
   
-  expect_warning(add_coverage(parent_element = list(), geographic_description = "North Slope drainage basin:Bounding box encompasses 42 drainage basins totaling the North Slope drainage basin, Alaska, USA.",
+  expect_error(add_coverage(parent_element = list(), geographic_description = "North Slope drainage basin:Bounding box encompasses 42 drainage basins totaling the North Slope drainage basin, Alaska, USA.",
                             west_bounding_coordinate = "-160.594000",
                             east_bounding_coordinate = "-134.104800",
                             north_bounding_coordinate = "71.238300",

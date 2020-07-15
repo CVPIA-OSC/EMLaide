@@ -16,15 +16,15 @@
 #'              north_bounding_coordinate = "71.238300", south_bounding_coordinate = "67.865000", 
 #'              begin_date = "1980-01-01", end_date = "2010-12-31")
 #' @export
-add_coverage <- function(parent_element, geographic_description, west_bounding_coordinate = NULL,
-                         east_bounding_coordinate = NULL, north_bounding_coordinate = NULL,
-                         south_bounding_coordinate = NULL, begin_date, end_date) {
+add_coverage <- function(parent_element, geographic_description, west_bounding_coordinate,
+                         east_bounding_coordinate, north_bounding_coordinate,
+                         south_bounding_coordinate, begin_date, end_date) {
   
   if (missing(geographic_description)) {stop("Please supply a brief description of the locations of research sites and areas related to this dataset.", call. = FALSE)}
-  if (missing(west_bounding_coordinate)) {warning("Please supply the west cardinality limit if applicable.", call. = FALSE)}
-  if (missing(east_bounding_coordinate)) {warning("Please supply the east cardinality limit if applicable.", call. = FALSE)}
-  if (missing(north_bounding_coordinate)) {warning("Please supply the north cardinality limit if applicable.", call. = FALSE)}
-  if (missing(south_bounding_coordinate)) {warning("Please supply the south cardinality limit if applicable.", call. = FALSE)}
+  if (missing(west_bounding_coordinate)) {stop("Please supply the west cardinality limit if applicable.", call. = FALSE)}
+  if (missing(east_bounding_coordinate)) {stop("Please supply the east cardinality limit if applicable.", call. = FALSE)}
+  if (missing(north_bounding_coordinate)) {stop("Please supply the north cardinality limit if applicable.", call. = FALSE)}
+  if (missing(south_bounding_coordinate)) {stop("Please supply the south cardinality limit if applicable.", call. = FALSE)}
   if (missing(begin_date)) {stop("Please suppply the starting date of this project.", call. = FALSE)}
   if (missing(end_date)) {stop("Please supply the end or projected end date for this project.", call. = FALSE)}
   
