@@ -7,10 +7,10 @@
 add_coverage(
   parent_element,
   geographic_description,
-  west_bounding_coordinate = NULL,
-  east_bounding_coordinate = NULL,
-  north_bounding_coordinate = NULL,
-  south_bounding_coordinate = NULL,
+  west_bounding_coordinate,
+  east_bounding_coordinate,
+  north_bounding_coordinate,
+  south_bounding_coordinate,
   begin_date,
   end_date
 )
@@ -18,7 +18,7 @@ add_coverage(
 \arguments{
 \item{parent_element}{A list representing the EML project or dataset}
 
-\item{geographic_description}{A description of the locations    of research sites    and    areas    related    to the    data.}
+\item{geographic_description}{A description of the locations    of research sites and areas related to the data.}
 
 \item{west_bounding_coordinate}{The west cardinality limit}
 
@@ -28,9 +28,9 @@ add_coverage(
 
 \item{south_bounding_coordinate}{The south cardinality limit.}
 
-\item{begin_date}{The starting date for the dataset or project.}
+\item{begin_date}{The starting date for the dataset or project. Dates must be provided in ISO 8601 format, YYYY-MM-DD.}
 
-\item{end_date}{The projected or actual end date for the dataset or project.}
+\item{end_date}{The projected or actual end date for the dataset or project. Dates must be provided in ISO 8601 format, YYYY-MM-DD.}
 }
 \value{
 The dataset or project with coverage information appended
