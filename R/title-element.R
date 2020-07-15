@@ -11,10 +11,10 @@
 #'to make it as concise as possible.
 #' @return the project or dataset list with title and short name appended 
 #' @examples 
-#' add_title(parent_element = list(), 
-#'           title = "Long-term Ground Arthropod Monitoring Dataset at Ficity, 
-#'           USA from 1998 to 2003" ,
-#'           short_name = "Arthropods")
+#' add_title(parent_element = list(),
+#'           title = "Eight Mile Lake Research Watershed, Carbon in Permafrost 
+#'           Experimental Heating Research (CiPEHR): Aboveground plant biomass, 2009-2017.",
+#'           short_name = "knb-lter-bnz.501.17") 
 #' @export 
 add_title <- function(parent_element, title, short_name) {
   

@@ -9,18 +9,19 @@ d <- function() {
   dataset <- list() %>%
     add_title(title = "OMG it is a title of sufficient length, WOW!", 
               short_name = "shorter name dur") %>% 
-    add_abstract(a) 
-  
+    add_abstract(a) %>%
+    add_funding(funder_name = "National Science Foundation", 
+                funder_identifier = "http://dx.doi.org/10.13039/100000001",
+                award_number = "1656026",
+                award_title = "LTER: Beaufort Sea Lagoons: An Arctic Coastal Ecosystem in Transition",
+                award_url = "https://www.nsf.gov/awardsearch/showAward?AWD_ID=1656026",
+                funding_description = "BLE LTER is supported by the National Science") %>%
+    #The add_funding doesn't have the exact nesting structure as in the example 
+    add_license(default_license = "CCO")
   list(dataset = dataset) %>% 
     as_xml() %>% 
-    xml2::write_xml('doge.xml')
+    xml2::write_xml('dogee.xml')
   
   return(NULL)
 }
 
-# add_coverage(list(), geographic_description = "North Slope drainage basin:Bounding box encompasses 42 drainage basins totaling the North Slope drainage basin, Alaska, USA.",
-#              west_bounding_coordinate = "-160.594000", east_bounding_coordinate = "-134.104800",
-#              north_bounding_coordinate = "71.238300", south_bounding_coordinate = "67.865000",
-#              begin_date = "1980-01-01", end_date = "2010-12-31") %>%
-#   as_xml() %>%
-#   write_xml('dogeee.xml')
