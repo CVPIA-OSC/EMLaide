@@ -6,7 +6,7 @@
 \usage{
 add_license(
   parent_element,
-  default_license,
+  default_license = "CCO",
   license_name = NULL,
   license_url = NULL,
   license_identifier = NULL,

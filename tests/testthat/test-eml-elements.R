@@ -1,5 +1,7 @@
 parent_element <- list()
 
+#Tests for add_title function 
+
 test_that('dataset title length is between 7 and 20 words long', {
   
   passing_dataset <- list() %>% 
@@ -43,6 +45,8 @@ test_that('dataset title function adds title and short name.',{
   
 })
 
+#Tests for add_abstract function 
+
 test_that('dataset abstract warns if abstract is too short',  {
   expect_warning(add_abstract(list(), abstract = "A not very specific abstract"))
 })
@@ -56,6 +60,7 @@ test_that('the dataset add_abstract function adds abstract', {
                list(abstract = list(para = "This is the abstract for my test. It needs to have twenty or more words for it to pass. It informs the users if this dataset relates to what they are studying or not.")))
 })
 
+#Tests for add_keyword_set function 
 
 test_that('warn when there is less than one keyword within the keywordSets', {
   expect_warning(add_keyword_set(list(), keyword_set = c()))
@@ -63,7 +68,7 @@ test_that('warn when there is less than one keyword within the keywordSets', {
 
 
 test_that('the dataset add_keyword_set function adds the keyword set',{
-  
+
   keyword_set_1 <- list(keyword = list("dog", "cat", "cow", "pig"),
                         keywordThesaurus = "LTER Controlled Vocabulary")
   
@@ -82,6 +87,8 @@ test_that('the dataset add_keyword_set function adds the keyword set',{
   )
   
 })
+
+#Tests for add_personnel function 
 
 test_that('personnel function errors when missing mandatory identifier inputs',  {
   role1 <- "Creator"
@@ -148,6 +155,7 @@ test_that('personnel function errors when missing mandatory identifier inputs', 
   
 })
 
+#Tests for add_funding function 
 
 test_that('funding function errors when missing mandatory identifier inputs', {
   
@@ -198,21 +206,24 @@ test_that('funding function errors when missing mandatory identifier inputs', {
 })
 
 test_that('The add_funding function adds the funding elements', {
-  
-  expect_equal(add_funding(parent_element = list(), funder_name = "National Science Foundation", 
+
+  expect_equal(add_funding(parent_element = list(), funder_name = "National Science Foundation",
                            funder_identifier = "http://dx.doi.org/10.13039/100000001",
                            award_number = "1656026",
                            award_title = "LTER: Beaufort Sea Lagoons: An Arctic Coastal Ecosystem in Transition",
                            award_url = "https://www.nsf.gov/awardsearch/showAward?AWD_ID=1656026",
                            funding_description = "BLE LTER is supported by the National Science Foundation under award #1656026 (2017-08-01 to 2022-07-31)."),
-               list(funding = list(section = list(para = "BLE LTER is supported by the National Science Foundation under award #1656026 (2017-08-01 to 2022-07-31).")), 
+               list(funding = list(para = "BLE LTER is supported by the National Science Foundation under award #1656026 (2017-08-01 to 2022-07-31)."), 
                     award = list(funderName = "National Science Foundation", 
                                  funderIdentifier = "http://dx.doi.org/10.13039/100000001", 
                                  awardNumber = "1656026", title = "LTER: Beaufort Sea Lagoons: An Arctic Coastal Ecosystem in Transition", 
                                  awardUrl = "https://www.nsf.gov/awardsearch/showAward?AWD_ID=1656026"))
   )
-  
+
 })
+
+#Tests for add_license function 
+
 test_that('Intellectual rights function errors when missing mandatory identifier inputs', {
   
   expect_error(add_license(parent_element = list(), default_license = NULL, license_name = "Creative Commons",
@@ -244,4 +255,86 @@ test_that('Intellectual rights function outputs the correct values when given th
                list(intellectualRights = list(para = "This information is released under the Creative Commons license - Attribution - CC BY (https://creativecommons.org/licenses/by/4.0/). The consumer of these data (\"Data User\" herein) is required to cite it appropriately in any publication that results from its use. The Data User should realize that these data may be actively used by others for ongoing research and that coordination may be necessary to prevent duplicate publication. The Data User is urged to contact the authors of these data if any questions about methodology or results occur. Where appropriate, the Data User is encouraged to consider collaboration or co-authorship with the authors. The Data User should realize that misinterpretation of data may occur if used out of context of the original study. While substantial efforts are made to ensure the accuracy of data and associated documentation, complete accuracy of data sets cannot be guaranteed. All data are made available \"as is.\" The Data User should be aware, however, that data are updated periodically and it is the responsibility of the Data User to check for new versions of the data. The data authors and the repository where these data were obtained shall not be liable for damages resulting from any use or misinterpretation of the data. Thank you.&#13;"), 
                     licensed = list(licensedName = "Creative Commons Attribution 4.0 International", 
                                     url = "https://spdx.org/licenses/CC-BY-4.0.html", identifier = "CC-BY-4.0")))
+})
+
+#Tests for add_coverage function 
+
+test_that('Coverage function errors when missing mandatory identifier inputs', {
+  
+  expect_error(add_coverage(parent_element = list(), west_bounding_coordinate = "-160.594000",
+                            east_bounding_coordinate = "-134.104800",
+                            north_bounding_coordinate = "71.238300",
+                            south_bounding_coordinate = "67.865000",
+                            begin_date = "1980-01-01", end_date = "2010-12-31"), 
+               "Please supply a brief description of the locations of research sites and areas related to this dataset.")
+  
+  expect_error(add_coverage(parent_element = list(), geographic_description = "North Slope drainage basin:Bounding box encompasses 42 drainage basins totaling the North Slope drainage basin, Alaska, USA.",
+                            east_bounding_coordinate = "-134.104800",
+                            north_bounding_coordinate = "71.238300",
+                            south_bounding_coordinate = "67.865000",
+                            begin_date = "1980-01-01", end_date = "2010-12-31"),
+               "Please supply the west cardinality limit if applicable.")
+  
+  expect_error(add_coverage(parent_element = list(), geographic_description = "North Slope drainage basin:Bounding box encompasses 42 drainage basins totaling the North Slope drainage basin, Alaska, USA.",
+                            west_bounding_coordinate = "-160.594000",
+                            north_bounding_coordinate = "71.238300",
+                            south_bounding_coordinate = "67.865000",
+                            begin_date = "1980-01-01", end_date = "2010-12-31"),
+               "Please supply the east cardinality limit if applicable.")
+  
+  expect_error(add_coverage(parent_element = list(), geographic_description = "North Slope drainage basin:Bounding box encompasses 42 drainage basins totaling the North Slope drainage basin, Alaska, USA.",
+                            west_bounding_coordinate = "-160.594000",
+                            east_bounding_coordinate = "-134.104800",
+                            south_bounding_coordinate = "67.865000",
+                            begin_date = "1980-01-01", end_date = "2010-12-31"),
+               "Please supply the north cardinality limit if applicable.")
+  
+  expect_error(add_coverage(parent_element = list(), geographic_description = "North Slope drainage basin:Bounding box encompasses 42 drainage basins totaling the North Slope drainage basin, Alaska, USA.",
+                            west_bounding_coordinate = "-160.594000",
+                            east_bounding_coordinate = "-134.104800",
+                            north_bounding_coordinate = "71.238300",
+                            begin_date = "1980-01-01", end_date = "2010-12-31"),
+               "Please supply the south cardinality limit if applicable.")
+  
+  expect_error(add_coverage(parent_element = list(), geographic_description = "North Slope drainage basin:Bounding box encompasses 42 drainage basins totaling the North Slope drainage basin, Alaska, USA.",
+                            west_bounding_coordinate = "-160.594000",
+                            east_bounding_coordinate = "-134.104800",
+                            north_bounding_coordinate = "71.238300",
+                            south_bounding_coordinate = "67.865000",
+                            end_date = "2010-12-31"),
+               "Please suppply the starting date of this project.")
+  
+  expect_error(add_coverage(parent_element = list(), geographic_description = "North Slope drainage basin:Bounding box encompasses 42 drainage basins totaling the North Slope drainage basin, Alaska, USA.",
+                            west_bounding_coordinate = "-160.594000",
+                            east_bounding_coordinate = "-134.104800",
+                            north_bounding_coordinate = "71.238300",
+                            south_bounding_coordinate = "67.865000",
+                            begin_date = "1980-01-01"),
+               "Please supply the end or projected end date for this project.")
+  
+  
+})
+
+test_that('The coverage function adds the coverage elements', {
+  expect_equal(add_coverage(parent_element = list(), geographic_description = "Description",
+                            west_bounding_coordinate = "-160.594000", 
+                            east_bounding_coordinate = "-134.104800",
+                            north_bounding_coordinate = "71.238300",
+                            south_bounding_coordinate = "67.865000",
+                            begin_date = "1980-01-01", end_date = "2010-12-31"),
+               list(coverage = list(geographicCoverage = list(geographicDescription = "Description", 
+                                                              boundingCoordinates = list(
+                                                                westBoundingCoordinate = "-160.594000", 
+                                                                eastBoundingCoordinate = "-134.104800",
+                                                                northBoundingCoordinate = "71.238300", 
+                                                                southBoundingCoordinate = "67.865000")),
+                                    temporalCoverage = list(rangeOfDates = list(
+                                      beginDate = list(calendarDate = "1980-01-01"), 
+                                      endDate = list(calendarDate = "2010-12-31")))))
+               
+  )
+  
+  
+  
+  
 })
