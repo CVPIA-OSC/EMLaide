@@ -1,13 +1,13 @@
 #' @title Add Coverage Element
 #' @description Adds the coverage information of a dataset based off of EML standards.
 #' @param parent_element A list representing the EML project or dataset
-#' @param geographic_description A description of the locations	of research sites	and	areas	related	to the	data.
+#' @param geographic_description A description of the locations	of research sites and areas related to the data.
 #' @param west_bounding_coordinate The west cardinality limit 
 #' @param east_bounding_coordinate The east cardinality limit.
 #' @param north_bounding_coordinate The north cardinality limit.
 #' @param south_bounding_coordinate The south cardinality limit.
-#' @param begin_date The starting date for the dataset or project.
-#' @param end_date The projected or actual end date for the dataset or project. 
+#' @param begin_date The starting date for the dataset or project. Dates must be provided in ISO 8601 format, YYYY-MM-DD.
+#' @param end_date The projected or actual end date for the dataset or project. Dates must be provided in ISO 8601 format, YYYY-MM-DD.
 #' @return The dataset or project with coverage information appended
 #' @examples 
 #' add_coverage(parent_element = list(), geographic_description = "North Slope drainage basin:
