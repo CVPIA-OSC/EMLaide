@@ -2,10 +2,10 @@
 #' @description 
 #' @param parent_element a list representing the EML project or dataset
 #' @param default_license Use "CCO" or "CCBY" as argument value to use one of the CVPIA default licenses. Supply NULL if using another license.
-#' @param license_name Optional if using default_license = "CCO" or "CCBY" as default values are provided.
-#' @param license_url Optional if using default_license = "CCO" or "CCBY" as default values are provided.
-#' @param license_identifier Optional if using default_license = "CCO" or "CCBY" as default values are provided.
-#' @param intellectual_rights_descripiton Optional if using default_license = "CCO" or "CCBY" as default values are provided.
+#' @param license_name Optional if using default_license = "CCO" or "CCBY" as default values are provided. Otherwise, please provide the appropriate license name. Other possible license examples include "MIT License" and "Creative Commons Attribution Non Commercial Share Alike 4.0 International". 
+#' @param license_url Optional if using default_license = "CCO" or "CCBY" as default values are provided. Otherwise, please provide the correct license url to view further license information.
+#' @param license_identifier Optional if using default_license = "CCO" or "CCBY" as default values are provided. Otherwise, please provide the appropriate identifier. Other possible identifiers include "MIT" and "CC-BY-NC-SA". 
+#' @param intellectual_rights_descripiton Optional if using default_license = "CCO" or "CCBY" as default values are provided. Otherwise, please provide a short description of the license being used and its regulations. 
 #' @details 
 #' Learn more about the default CVPIA licese options from Creative Commons:
 #' \itemize{
@@ -16,6 +16,8 @@
 #' To understand the difference between license choice or to use another Creative Commons license
 #' \href{https://en.wikipedia.org/wiki/Creative_Commons_license}{this} wikipedia page is helpful.
 #' 
+#' To view more license choices and find the appropriate url and identifier visit
+#' \href{https://spdx.org/licenses/CC0-1.0.html}{this} link. 
 #' @examples 
 #' add_license(parent_element = list()) # defaults to CCO
 #' 

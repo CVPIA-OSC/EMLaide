@@ -7,7 +7,7 @@
 add_license(
   parent_element,
   default_license,
-  license_name = "CCO",
+  license_name = NULL,
   license_url = NULL,
   license_identifier = NULL,
   intellectual_rights_descripiton = NULL
@@ -18,13 +18,13 @@ add_license(
 
 \item{default_license}{Use "CCO" or "CCBY" as argument value to use one of the CVPIA default licenses. Supply NULL if using another license.}
 
-\item{license_name}{Optional if using default_license = "CCO" or "CCBY" as default values are provided.}
+\item{license_name}{Optional if using default_license = "CCO" or "CCBY" as default values are provided. Otherwise, please provide the appropriate license name. Other possible license examples include "MIT License" and "Creative Commons Attribution Non Commercial Share Alike 4.0 International".}
 
-\item{license_url}{Optional if using default_license = "CCO" or "CCBY" as default values are provided.}
+\item{license_url}{Optional if using default_license = "CCO" or "CCBY" as default values are provided. Otherwise, please provide the correct license url to view further license information.}
 
-\item{license_identifier}{Optional if using default_license = "CCO" or "CCBY" as default values are provided.}
+\item{license_identifier}{Optional if using default_license = "CCO" or "CCBY" as default values are provided. Otherwise, please provide the appropriate identifier. Other possible identifiers include "MIT" and "CC-BY-NC-SA".}
 
-\item{intellectual_rights_descripiton}{Optional if using default_license = "CCO" or "CCBY" as default values are provided.}
+\item{intellectual_rights_descripiton}{Optional if using default_license = "CCO" or "CCBY" as default values are provided. Otherwise, please provide a short description of the license being used and its regulations.}
 }
 \description{
 Add License and Intellectual Rights
@@ -38,6 +38,9 @@ Learn more about the default CVPIA licese options from Creative Commons:
 
 To understand the difference between license choice or to use another Creative Commons license
 \href{https://en.wikipedia.org/wiki/Creative_Commons_license}{this} wikipedia page is helpful.
+
+To view more license choices and find the appropriate url and identifier visit
+\href{https://spdx.org/licenses/CC0-1.0.html}{this} link.
 }
 \examples{
 add_license(parent_element = list()) # defaults to CCO
