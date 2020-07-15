@@ -18,3 +18,9 @@ d <- function() {
   return(NULL)
 }
 
+# add_coverage(list(), geographic_description = "North Slope drainage basin:Bounding box encompasses 42 drainage basins totaling the North Slope drainage basin, Alaska, USA.",
+#              west_bounding_coordinate = "-160.594000", east_bounding_coordinate = "-134.104800",
+#              north_bounding_coordinate = "71.238300", south_bounding_coordinate = "67.865000",
+#              begin_date = "1980-01-01", end_date = "2010-12-31") %>%
+#   as_xml() %>%
+#   write_xml('dogeee.xml')

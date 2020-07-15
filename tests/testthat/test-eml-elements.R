@@ -319,13 +319,13 @@ test_that('Coverage function errors when missing mandatory identifier inputs', {
 })
 
 test_that('The coverage function adds the coverage elements', {
-  expect_equal(add_coverage(parent_element = list(), geographic_description = "North Slope drainage basin:Bounding box encompasses 42 drainage basins totaling the North Slope drainage basin, Alaska, USA.",
+  expect_equal(add_coverage(parent_element = list(), geographic_description = "Description",
                             west_bounding_coordinate = "-160.594000", 
                             east_bounding_coordinate = "-134.104800",
                             north_bounding_coordinate = "71.238300",
                             south_bounding_coordinate = "67.865000",
                             begin_date = "1980-01-01", end_date = "2010-12-31"),
-               list(geographicCoverage = list(geographicDescription = "North Slope drainage basin:Bounding box encompasses 42 drainage basins totaling the North Slope drainage basin, Alaska, USA.", 
+               list(geographicCoverage = list(geographicDescription = "Description", 
                                               boundingCoordinates = list(westBoundingCoordinate = "-160.594000", 
                                                                          eastBoundingCoordinate = "-134.104800", northBoundingCoordinate = "71.238300", 
                                                                          southBoundingCoordinate = "67.865000")), temporalCoverage = list(

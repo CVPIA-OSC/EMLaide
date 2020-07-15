@@ -45,24 +45,3 @@ add_coverage <- function(parent_element, geographic_description, west_bounding_c
 
 
 
-# <coverage>
-#   <geographicCoverage>
-#     <geographicDescription>North Slope drainage basin: Bounding box encompasses 42 drainage basins totaling the North Slope drainage basin, Alaska, USA.</geographicDescription>
-#     <boundingCoordinates>
-#       <westBoundingCoordinate>-160.594000</westBoundingCoordinate>
-#       <eastBoundingCoordinate>-134.104800</eastBoundingCoordinate>
-#       <northBoundingCoordinate>71.238300</northBoundingCoordinate>
-#       <southBoundingCoordinate>67.865000</southBoundingCoordinate>
-#     </boundingCoordinates>
-#   </geographicCoverage>
-#   <temporalCoverage>
-#     <rangeOfDates>
-#       <beginDate>
-#         <calendarDate>1980-01-01</calendarDate>
-#       </beginDate>
-#       <endDate>
-#         <calendarDate>2010-12-31</calendarDate>
-#       </endDate>
-#     </rangeOfDates>
-#   </temporalCoverage>
-# </coverage>
