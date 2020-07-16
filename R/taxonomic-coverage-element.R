@@ -160,16 +160,6 @@ if(is.null(default_species)){
                                                             commonName = "Smelt"))))))))
     
   }
-
-  
 }
-  
-  
-  
-  
-  
-  
-  
-  
-  
+  return(parent_element)
 }
