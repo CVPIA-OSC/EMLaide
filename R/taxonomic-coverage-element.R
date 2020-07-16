@@ -1,23 +1,23 @@
-#' @title Add Taxonomic coverage 
-#' @description TODO
-#' @param parent_element
-#' @param default_species TODO
-#' @param kingdom TODO
-#' @param kingdom_value TODO
-#' @param phylum TODO
-#' @param phylum_value TODO
-#' @param class TODO
-#' @param class_value TODO
-#' @param order TODO
-#' @param order_value TODO
-#' @param family TODO
-#' @param family_value TODO
-#' @param genus TODO
-#' @param genus_value TODO 
-#' @param species TODO
-#' @param species_value TODO
-#' @param common_name TODO
-#' @return TODO
+#' @title Add Taxonomic Coverage 
+#' @description Adds the taxonomic coverage information of a dataset based off of EML standards. The addition of taxonomic coverage is optional, however defaults of chinook, sturgeon, smelt, and steelhead are provided. Multiple Taxonomies can be applied. 
+#' @param parent_element A list representing the EML project or dataset
+#' @param default_species A list of common CVPIA species can be set as the default species so that taxonomic coverage does not need to be inputted in manually. These species include: chinook, steelhead, smelt, and sturgeon. 
+#' @param kingdom Kingdom level present
+#' @param kingdom_value The kingdom level of the taxonomy. 
+#' @param phylum Phylum level present
+#' @param phylum_value The phylum level of the taxonomy.
+#' @param class Class level present 
+#' @param class_value The class level of the taxonomy.
+#' @param order Order level present
+#' @param order_value The order level of the taxonomy.
+#' @param family Family level present
+#' @param family_value The family level of the taxonomy.
+#' @param genus Genus level present 
+#' @param genus_value The genus level of the taxonomy. 
+#' @param species Species level present
+#' @param species_value The species level of the taxonomy.
+#' @param common_name The common name of the organism 
+#' @return The dataset or project with taxonomic coverage information appended
 #' @examples TODO
 #' @export
 

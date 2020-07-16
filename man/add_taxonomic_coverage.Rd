@@ -2,7 +2,7 @@
 % Please edit documentation in R/taxonomic-coverage-element.R
 \name{add_taxonomic_coverage}
 \alias{add_taxonomic_coverage}
-\title{Add Taxonomic coverage}
+\title{Add Taxonomic Coverage}
 \usage{
 add_taxonomic_coverage(
   parent_element,
@@ -25,43 +25,45 @@ add_taxonomic_coverage(
 )
 }
 \arguments{
-\item{default_species}{TODO}
+\item{parent_element}{A list representing the EML project or dataset}
 
-\item{kingdom}{TODO}
+\item{default_species}{A list of common CVPIA species can be set as the default species so that taxonomic coverage does not need to be inputted in manually. These species include: chinook, steelhead, smelt, and sturgeon.}
 
-\item{kingdom_value}{TODO}
+\item{kingdom}{Kingdom level present}
 
-\item{phylum}{TODO}
+\item{kingdom_value}{The kingdom level of the taxonomy.}
 
-\item{phylum_value}{TODO}
+\item{phylum}{Phylum level present}
 
-\item{class}{TODO}
+\item{phylum_value}{The phylum level of the taxonomy.}
 
-\item{class_value}{TODO}
+\item{class}{Class level present}
 
-\item{order}{TODO}
+\item{class_value}{The class level of the taxonomy.}
 
-\item{order_value}{TODO}
+\item{order}{Order level present}
 
-\item{family}{TODO}
+\item{order_value}{The order level of the taxonomy.}
 
-\item{family_value}{TODO}
+\item{family}{Family level present}
 
-\item{genus}{TODO}
+\item{family_value}{The family level of the taxonomy.}
 
-\item{genus_value}{TODO}
+\item{genus}{Genus level present}
 
-\item{species}{TODO}
+\item{genus_value}{The genus level of the taxonomy.}
 
-\item{species_value}{TODO}
+\item{species}{Species level present}
 
-\item{common_name}{TODO}
+\item{species_value}{The species level of the taxonomy.}
+
+\item{common_name}{The common name of the organism}
 }
 \value{
-TODO
+The dataset or project with taxonomic coverage information appended
 }
 \description{
-TODO
+Adds the taxonomic coverage information of a dataset based off of EML standards. The addition of taxonomic coverage is optional, however defaults of chinook, sturgeon, smelt, and steelhead are provided. Multiple Taxonomies can be applied.
 }
 \examples{
 TODO
