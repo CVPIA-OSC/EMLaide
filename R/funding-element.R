@@ -20,7 +20,7 @@
 
 add_funding <- function(parent_element, funder_name, funder_identifier, award_number,
                         award_title, award_url = NULL, funding_description = NULL)  {
-
+  
   if (missing(funder_name)) {stop("Please provide funders name.", call. = FALSE)}
   if (missing(funder_identifier)) {stop("Please provide funder identifier link.", call. = FALSE)}
   if (missing(award_number)) {stop("Please provide your award number.", call. = FALSE)}
@@ -41,10 +41,10 @@ add_funding <- function(parent_element, funder_name, funder_identifier, award_nu
  if (!is.null(award_url)) {
    parent_element$award$awardUrl <- award_url
  }
-
+  
   return(parent_element)
 }
-  
-  
-  
-  
+
+
+
+
