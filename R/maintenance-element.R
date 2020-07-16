@@ -8,7 +8,7 @@
 #' @export 
 add_maintenance <- function(parent_element, status) {
   
-  if (missing(status)){stop('Please provide the status of your project or dataset', call. = FALSE)}
+  if (missing(status)){stop('Please provide the status of your project or dataset.', call. = FALSE)}
   
   parent_element$maintenance <- list(description = status)
   

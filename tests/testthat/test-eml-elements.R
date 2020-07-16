@@ -338,3 +338,20 @@ test_that('The coverage function adds the coverage elements', {
   
   
 })
+
+
+#Tests for add_maintenance function 
+
+test_that('The maintenance function errors when missing mandatory identifier inputs.', {
+  
+  expect_error(add_maintenance(parent_element = parent_element), 
+               "Please provide the status of your project or dataset.")
+  
+})
+
+test_that('The maintenance function adds the maintenance elements', {
+  
+  expect_equal(add_maintenance(parent_element = list(), status = "ongoing"), 
+               list(maintenance = list(description = "ongoing")))
+  
+})
