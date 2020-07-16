@@ -68,7 +68,7 @@ test_that('warn when there is less than one keyword within the keywordSets', {
 
 
 test_that('the dataset add_keyword_set function adds the keyword set',{
-
+  
   keyword_set_1 <- list(keyword = list("dog", "cat", "cow", "pig"),
                         keywordThesaurus = "LTER Controlled Vocabulary")
   
@@ -206,7 +206,7 @@ test_that('funding function errors when missing mandatory identifier inputs', {
 })
 
 test_that('The add_funding function adds the funding elements', {
-
+  
   expect_equal(add_funding(parent_element = list(), funder_name = "National Science Foundation",
                            funder_identifier = "http://dx.doi.org/10.13039/100000001",
                            award_number = "1656026",
@@ -219,7 +219,7 @@ test_that('The add_funding function adds the funding elements', {
                                  awardNumber = "1656026", title = "LTER: Beaufort Sea Lagoons: An Arctic Coastal Ecosystem in Transition", 
                                  awardUrl = "https://www.nsf.gov/awardsearch/showAward?AWD_ID=1656026"))
   )
-
+  
 })
 
 #Tests for add_license function 
