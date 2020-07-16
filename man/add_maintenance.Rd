@@ -9,7 +9,7 @@ add_maintenance(parent_element, status)
 \arguments{
 \item{parent_element}{A list representing the EML project or dataset.}
 
-\item{status}{Provide the status of your project or dataset as either complete or ongoing.}
+\item{status}{Provide the status of your project or dataset as either complete or ongoing. If ongoing please describe the frequency of which your project or dataset is updated.}
 }
 \value{
 The dataset or project with maintenance information appended.

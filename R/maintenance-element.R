@@ -1,7 +1,7 @@
 #' @title Add Maintenance Element 
 #' @description Adds the maintenance information of a dataset based off of EML standards.
 #' @param parent_element A list representing the EML project or dataset.
-#' @param status Provide the status of your project or dataset as either complete or ongoing. 
+#' @param status Provide the status of your project or dataset as either complete or ongoing. If ongoing please describe the frequency of which your project or dataset is updated. 
 #' @return The dataset or project with maintenance information appended.
 #' @examples 
 #' add_maintenance(parent_element = list(), status = ongoing)
