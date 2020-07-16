@@ -32,9 +32,13 @@ d <- function() {
 #                         order = "ORDER", order_value = "is",
 #                         family = "FAMILY", family_value = "Elizabeth",
 #                         genus = "GENUS", genus_value = "Grace",
-#                        species = "SPECIES", species_value = "Shaw",
-#                        common_name = "Lizzy") %>%
+#                         species = "SPECIES", species_value = "Shaw",
+#                         common_name = "Lizzy"
+#                        ) %>%
+#   as_xml() %>%
+#   write_xml('dogggggggggg.xml')
 
-# add_taxonomic_coverage(list(), default_species = "steelhead") %>%
+
+# add_taxonomic_coverage(list(), default_species = "smelt") %>%
 #   as_xml() %>%
 #   write_xml('dogggggggggg.xml')

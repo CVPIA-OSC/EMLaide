@@ -66,5 +66,21 @@ The dataset or project with taxonomic coverage information appended
 Adds the taxonomic coverage information of a dataset based off of EML standards. The addition of taxonomic coverage is optional, however defaults of chinook, sturgeon, smelt, and steelhead are provided. Multiple Taxonomies can be applied.
 }
 \examples{
-TODO
+add_taxonomic_coverage(parent_element = list(), default_species = "chinook")
+
+add_taxonomic_coverage(parent_element = list(), default_species = "smelt")
+
+add_taxonomic_coverage(parent_element = list(), default_species = "sturgeon")
+
+add_taxonomic_coverage(parent_element = list(), default_species = "steelhead")
+
+add_taxonomic_coverage(parent_element = list(),
+                       kingdom = "KINGDOM", kingdom_value = "Animalia",
+                       phylum = "PHYLUM", phylum_value = "Chordata",
+                       class = "CLASS", class_value = "Mammalia",
+                       order = "ORDER", order_value = "Carnivora",
+                       family = "FAMILY", family_value = "Felidae",
+                       genus = "GENUS", genus_value = "Panthera", 
+                       species = "SPECIES", species_value = "Panthera Leo",
+                       common_name = "Lion")
 }

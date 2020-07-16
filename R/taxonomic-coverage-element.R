@@ -18,10 +18,28 @@
 #' @param species_value The species level of the taxonomy.
 #' @param common_name The common name of the organism 
 #' @return The dataset or project with taxonomic coverage information appended
-#' @examples TODO
+#' @examples 
+#' add_taxonomic_coverage(parent_element = list(), default_species = "chinook")
+#' 
+#' add_taxonomic_coverage(parent_element = list(), default_species = "smelt")
+#' 
+#' add_taxonomic_coverage(parent_element = list(), default_species = "sturgeon")
+#' 
+#' add_taxonomic_coverage(parent_element = list(), default_species = "steelhead")
+#' 
+#' add_taxonomic_coverage(parent_element = list(),
+#'                        kingdom = "KINGDOM", kingdom_value = "Animalia",
+#'                        phylum = "PHYLUM", phylum_value = "Chordata",
+#'                        class = "CLASS", class_value = "Mammalia",
+#'                        order = "ORDER", order_value = "Carnivora",
+#'                        family = "FAMILY", family_value = "Felidae",
+#'                        genus = "GENUS", genus_value = "Panthera", 
+#'                        species = "SPECIES", species_value = "Panthera Leo",
+#'                        common_name = "Lion")
 #' @export
 
 #taxon id provider??
+#general taxonomic coverage?? 
 add_taxonomic_coverage <- function(parent_element, default_species = NULL,
                                    kingdom = "KINGDOM", kingdom_value = NULL,
                                    phylum = "PHYLUM", phylum_value = NULL,
@@ -31,135 +49,131 @@ add_taxonomic_coverage <- function(parent_element, default_species = NULL,
                                    genus = "GENUS", genus_value = NULL, 
                                    species = "SPECIES", species_value = NULL,
                                    common_name = NULL ) {
-if(is.null(default_species)){
-  parent_element$taxonomicCoverage <-
-    list(TaxonomicClassification = 
-           list(TaxonRankName = kingdom,
-                TaxonRankValue = kingdom_value,
-                TaxonomicClassification =
-                  list(TaxonRankName = phylum,
-                       TaxonRankValue = phylum_value,
-                       TaxonomicClassification =
-                         list(TaxonRankName = class,
-                              TaxonRankValue = class_value,
-                              TaxonomicClassification =
-                                list(TaxonRankName = order,
-                                     TaxonRankValue = order_value,
-                                     TaxonomicClassification =
-                                       list(TaxonRankName = family,
-                                            TaxonRankValue = family_value,
-                                            TaxonomicClassification =
-                                              list(TaxonRankName = genus,
-                                                   TaxonRankValue = genus_value,
-                                                   TaxonomicClassification =
-                                                     list(TaxonRankName = species,
-                                                          TaxonRankValue = species_value,
-                                                          commonName = common_name))))))))
-  
-  
-}else {
-  if (default_species == "chinook"){
+  if(is.null(default_species)){
     parent_element$taxonomicCoverage <-
       list(TaxonomicClassification = 
              list(TaxonRankName = kingdom,
-                  TaxonRankValue = "Animalia",
+                  TaxonRankValue = kingdom_value,
                   TaxonomicClassification =
                     list(TaxonRankName = phylum,
-                         TaxonRankValue = "Chordata",
+                         TaxonRankValue = phylum_value,
                          TaxonomicClassification =
                            list(TaxonRankName = class,
-                                TaxonRankValue = "Actinopterygii",
+                                TaxonRankValue = class_value,
                                 TaxonomicClassification =
                                   list(TaxonRankName = order,
-                                       TaxonRankValue = "Salmoniformes",
+                                       TaxonRankValue = order_value,
                                        TaxonomicClassification =
                                          list(TaxonRankName = family,
-                                              TaxonRankValue = "Salmonidae",
+                                              TaxonRankValue = family_value,
                                               TaxonomicClassification =
                                                 list(TaxonRankName = genus,
-                                                     TaxonRankValue = "Oncorhynchus",
+                                                     TaxonRankValue = genus_value,
                                                      TaxonomicClassification =
                                                        list(TaxonRankName = species,
-                                                            TaxonRankValue = "Oncorhynchus tshawytscha",
-                                                            commonName = "Chinook Salmon"))))))))
-    
+                                                            TaxonRankValue = species_value,
+                                                            commonName = common_name))))))))
+  }else {
+    if (default_species == "chinook"){
+      parent_element$taxonomicCoverage <-
+        list(TaxonomicClassification = 
+               list(TaxonRankName = kingdom,
+                    TaxonRankValue = "Animalia",
+                    TaxonomicClassification =
+                      list(TaxonRankName = phylum,
+                           TaxonRankValue = "Chordata",
+                           TaxonomicClassification =
+                             list(TaxonRankName = class,
+                                  TaxonRankValue = "Actinopterygii",
+                                  TaxonomicClassification =
+                                    list(TaxonRankName = order,
+                                         TaxonRankValue = "Salmoniformes",
+                                         TaxonomicClassification =
+                                           list(TaxonRankName = family,
+                                                TaxonRankValue = "Salmonidae",
+                                                TaxonomicClassification =
+                                                  list(TaxonRankName = genus,
+                                                       TaxonRankValue = "Oncorhynchus",
+                                                       TaxonomicClassification =
+                                                         list(TaxonRankName = species,
+                                                              TaxonRankValue = "Oncorhynchus tshawytscha",
+                                                              commonName = "Chinook Salmon"))))))))
+    }
+    if (default_species == "steelhead"){
+      parent_element$taxonomicCoverage <-
+        list(TaxonomicClassification = 
+               list(TaxonRankName = kingdom,
+                    TaxonRankValue = "Animalia",
+                    TaxonomicClassification =
+                      list(TaxonRankName = phylum,
+                           TaxonRankValue = "Chordata",
+                           TaxonomicClassification =
+                             list(TaxonRankName = class,
+                                  TaxonRankValue = "Osteichthyes",
+                                  TaxonomicClassification =
+                                    list(TaxonRankName = order,
+                                         TaxonRankValue = "Salmoniformes",
+                                         TaxonomicClassification =
+                                           list(TaxonRankName = family,
+                                                TaxonRankValue = "Salmonidae",
+                                                TaxonomicClassification =
+                                                  list(TaxonRankName = genus,
+                                                       TaxonRankValue = "Oncorhynchus",
+                                                       TaxonomicClassification =
+                                                         list(TaxonRankName = species,
+                                                              TaxonRankValue = "Oncorhynchus mykiss",
+                                                              commonName = "Steelhead Trout"))))))))
+    }
+    if (default_species == "sturgeon") {
+      parent_element$taxonomicCoverage <-
+        list(TaxonomicClassification = 
+               list(TaxonRankName = kingdom,
+                    TaxonRankValue = "Animalia",
+                    TaxonomicClassification =
+                      list(TaxonRankName = phylum,
+                           TaxonRankValue = "Chordata",
+                           TaxonomicClassification =
+                             list(TaxonRankName = class,
+                                  TaxonRankValue = "Actinopterygii",
+                                  TaxonomicClassification =
+                                    list(TaxonRankName = order,
+                                         TaxonRankValue = "Acipenseriformes",
+                                         TaxonomicClassification =
+                                           list(TaxonRankName = family,
+                                                TaxonRankValue = "Acipenseridae",
+                                                TaxonomicClassification =
+                                                  list(TaxonRankName = genus,
+                                                       TaxonRankValue = "Acipenser",
+                                                       TaxonomicClassification =
+                                                         list(TaxonRankName = species,
+                                                              TaxonRankValue = "TODO!!",
+                                                              commonName = "Sturgeon"))))))))
+    }
+    if (default_species == "smelt") {
+      parent_element$taxonomicCoverage <-
+        list(TaxonomicClassification = 
+               list(TaxonRankName = kingdom,
+                    TaxonRankValue = "Animalia",
+                    TaxonomicClassification =
+                      list(TaxonRankName = phylum,
+                           TaxonRankValue = "Chordata",
+                           TaxonomicClassification =
+                             list(TaxonRankName = class,
+                                  TaxonRankValue = "Actinopterygii",
+                                  TaxonomicClassification =
+                                    list(TaxonRankName = order,
+                                         TaxonRankValue = "Osmeriformes",
+                                         TaxonomicClassification =
+                                           list(TaxonRankName = family,
+                                                TaxonRankValue = "Osmeridae",
+                                                TaxonomicClassification =
+                                                  list(TaxonRankName = genus,
+                                                       TaxonRankValue = "TODO!!",
+                                                       TaxonomicClassification =
+                                                         list(TaxonRankName = species,
+                                                              TaxonRankValue = "TODO!!",
+                                                              commonName = "Smelt"))))))))
+    }
   }
-  if (default_species == "steelhead"){
-    parent_element$taxonomicCoverage <-
-      list(TaxonomicClassification = 
-             list(TaxonRankName = kingdom,
-                  TaxonRankValue = "Animalia",
-                  TaxonomicClassification =
-                    list(TaxonRankName = phylum,
-                         TaxonRankValue = "Chordata",
-                         TaxonomicClassification =
-                           list(TaxonRankName = class,
-                                TaxonRankValue = "Osteichthyes",
-                                TaxonomicClassification =
-                                  list(TaxonRankName = order,
-                                       TaxonRankValue = "Salmoniformes",
-                                       TaxonomicClassification =
-                                         list(TaxonRankName = family,
-                                              TaxonRankValue = "Salmonidae",
-                                              TaxonomicClassification =
-                                                list(TaxonRankName = genus,
-                                                     TaxonRankValue = "Oncorhynchus",
-                                                     TaxonomicClassification =
-                                                       list(TaxonRankName = species,
-                                                            TaxonRankValue = "Oncorhynchus mykiss",
-                                                            commonName = "Steelhead Trout"))))))))
-  }
-  if (default_species == "sturgeon") {
-    parent_element$taxonomicCoverage <-
-      list(TaxonomicClassification = 
-             list(TaxonRankName = kingdom,
-                  TaxonRankValue = "Animalia",
-                  TaxonomicClassification =
-                    list(TaxonRankName = phylum,
-                         TaxonRankValue = "Chordata",
-                         TaxonomicClassification =
-                           list(TaxonRankName = class,
-                                TaxonRankValue = "Actinopterygii",
-                                TaxonomicClassification =
-                                  list(TaxonRankName = order,
-                                       TaxonRankValue = "Acipenseriformes",
-                                       TaxonomicClassification =
-                                         list(TaxonRankName = family,
-                                              TaxonRankValue = "Acipenseridae",
-                                              TaxonomicClassification =
-                                                list(TaxonRankName = genus,
-                                                     TaxonRankValue = "Acipenser",
-                                                     TaxonomicClassification =
-                                                       list(TaxonRankName = species,
-                                                            TaxonRankValue = "TODO!!",
-                                                            commonName = "Sturgeon"))))))))
-  }
-  if (default_species == "smelt") {
-    parent_element$taxonomicCoverage <-
-      list(TaxonomicClassification = 
-             list(TaxonRankName = kingdom,
-                  TaxonRankValue = "Animalia",
-                  TaxonomicClassification =
-                    list(TaxonRankName = phylum,
-                         TaxonRankValue = "Chordata",
-                         TaxonomicClassification =
-                           list(TaxonRankName = class,
-                                TaxonRankValue = "Actinopterygii",
-                                TaxonomicClassification =
-                                  list(TaxonRankName = order,
-                                       TaxonRankValue = "Osmeriformes",
-                                       TaxonomicClassification =
-                                         list(TaxonRankName = family,
-                                              TaxonRankValue = "Osmeridae",
-                                              TaxonomicClassification =
-                                                list(TaxonRankName = genus,
-                                                     TaxonRankValue = "TODO!!",
-                                                     TaxonomicClassification =
-                                                       list(TaxonRankName = species,
-                                                            TaxonRankValue = "TODO!!",
-                                                            commonName = "Smelt"))))))))
-    
-  }
-}
   return(parent_element)
 }

@@ -338,3 +338,64 @@ test_that('The coverage function adds the coverage elements', {
   
   
 })
+
+# Tests for add_taxonomic_coverage function
+
+test_that('The taxonomic coverage function adds the taxonomic coverage elements', {
+  
+  expect_equal(add_taxonomic_coverage(list(), default_species = "chinook"),
+               list(taxonomicCoverage = list(TaxonomicClassification = list(
+                 TaxonRankName = "KINGDOM", TaxonRankValue = "Animalia", TaxonomicClassification = list(
+                   TaxonRankName = "PHYLUM", TaxonRankValue = "Chordata", 
+                   TaxonomicClassification = list(TaxonRankName = "CLASS", 
+                                                  TaxonRankValue = "Actinopterygii", TaxonomicClassification = list(
+                                                    TaxonRankName = "ORDER", TaxonRankValue = "Salmoniformes", 
+                                                    TaxonomicClassification = list(TaxonRankName = "FAMILY", 
+                                                                                   TaxonRankValue = "Salmonidae", TaxonomicClassification = list(
+                                                                                     TaxonRankName = "GENUS", TaxonRankValue = "Oncorhynchus", 
+                                                                                     TaxonomicClassification = list(TaxonRankName = "SPECIES", 
+                                                                                                                    TaxonRankValue = "Oncorhynchus tshawytscha", 
+                                                                                                                    commonName = "Chinook Salmon"))))))))))
+  
+  expect_equal(add_taxonomic_coverage(list(), default_species = "sturgeon"),
+               list(taxonomicCoverage = list(TaxonomicClassification = list(
+                 TaxonRankName = "KINGDOM", TaxonRankValue = "Animalia", TaxonomicClassification = list(
+                   TaxonRankName = "PHYLUM", TaxonRankValue = "Chordata", 
+                   TaxonomicClassification = list(TaxonRankName = "CLASS", 
+                                                  TaxonRankValue = "Actinopterygii", TaxonomicClassification = list(
+                                                    TaxonRankName = "ORDER", TaxonRankValue = "Acipenseriformes", 
+                                                    TaxonomicClassification = list(TaxonRankName = "FAMILY", 
+                                                                                   TaxonRankValue = "Acipenseridae", TaxonomicClassification = list(
+                                                                                     TaxonRankName = "GENUS", TaxonRankValue = "Acipenser", 
+                                                                                     TaxonomicClassification = list(TaxonRankName = "SPECIES", 
+                                                                                                                    TaxonRankValue = "TODO!!", commonName = "Sturgeon"))))))))))
+  
+  expect_equal(add_taxonomic_coverage(list(), default_species = "steelhead"),
+               list(taxonomicCoverage = list(TaxonomicClassification = list(
+                 TaxonRankName = "KINGDOM", TaxonRankValue = "Animalia", TaxonomicClassification = list(
+                   TaxonRankName = "PHYLUM", TaxonRankValue = "Chordata", 
+                   TaxonomicClassification = list(TaxonRankName = "CLASS", 
+                                                  TaxonRankValue = "Osteichthyes", TaxonomicClassification = list(
+                                                    TaxonRankName = "ORDER", TaxonRankValue = "Salmoniformes", 
+                                                    TaxonomicClassification = list(TaxonRankName = "FAMILY", 
+                                                                                   TaxonRankValue = "Salmonidae", TaxonomicClassification = list(
+                                                                                     TaxonRankName = "GENUS", TaxonRankValue = "Oncorhynchus", 
+                                                                                     TaxonomicClassification = list(TaxonRankName = "SPECIES", 
+                                                                                                                    TaxonRankValue = "Oncorhynchus mykiss", 
+                                                                                                                    commonName = "Steelhead Trout"))))))))))
+  
+  expect_equal(add_taxonomic_coverage(list(), default_species = "smelt"),
+               list(taxonomicCoverage = list(TaxonomicClassification = list(
+                 TaxonRankName = "KINGDOM", TaxonRankValue = "Animalia", TaxonomicClassification = list(
+                   TaxonRankName = "PHYLUM", TaxonRankValue = "Chordata", 
+                   TaxonomicClassification = list(TaxonRankName = "CLASS", 
+                                                  TaxonRankValue = "Actinopterygii", TaxonomicClassification = list(
+                                                    TaxonRankName = "ORDER", TaxonRankValue = "Osmeriformes", 
+                                                    TaxonomicClassification = list(TaxonRankName = "FAMILY", 
+                                                                                   TaxonRankValue = "Osmeridae", TaxonomicClassification = list(
+                                                                                     TaxonRankName = "GENUS", TaxonRankValue = "TODO!!", 
+                                                                                     TaxonomicClassification = list(TaxonRankName = "SPECIES", 
+                                                                                                                    TaxonRankValue = "TODO!!", commonName = "Smelt"))))))))))
+  
+  
+})
