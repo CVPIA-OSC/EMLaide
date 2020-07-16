@@ -40,6 +40,8 @@
 
 #taxon id provider??
 #general taxonomic coverage?? 
+#taxonomic system??
+#references?? 
 add_taxonomic_coverage <- function(parent_element, default_species = NULL,
                                    kingdom = "KINGDOM", kingdom_value = NULL,
                                    phylum = "PHYLUM", phylum_value = NULL,
