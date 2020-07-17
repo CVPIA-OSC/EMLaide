@@ -6,28 +6,28 @@
 \usage{
 add_taxonomic_coverage(
   parent_element,
-  default_species = NULL,
+  CVPIA_common_species = NULL,
   kingdom = "KINGDOM",
-  kingdom_value = NULL,
+  kingdom_value,
   phylum = "PHYLUM",
-  phylum_value = NULL,
+  phylum_value,
   class = "CLASS",
-  class_value = NULL,
+  class_value,
   order = "ORDER",
-  order_value = NULL,
+  order_value,
   family = "FAMILY",
-  family_value = NULL,
+  family_value,
   genus = "GENUS",
-  genus_value = NULL,
+  genus_value,
   species = "SPECIES",
-  species_value = NULL,
-  common_name = NULL
+  species_value,
+  common_name
 )
 }
 \arguments{
 \item{parent_element}{A list representing the EML project or dataset}
 
-\item{default_species}{A list of common CVPIA species can be set as the default species so that taxonomic coverage does not need to be inputted in manually. These species include: chinook, steelhead, smelt, and sturgeon.}
+\item{CVPIA_common_species}{A list of common CVPIA species can be set as the default species so that taxonomic coverage does not need to be inputted in manually. These species include: chinook, steelhead, smelt, and sturgeon.}
 
 \item{kingdom}{Kingdom level present}
 
@@ -63,16 +63,16 @@ add_taxonomic_coverage(
 The dataset or project with taxonomic coverage information appended
 }
 \description{
-Adds the taxonomic coverage information of a dataset based off of EML standards. The addition of taxonomic coverage is optional, however defaults of chinook, sturgeon, smelt, and steelhead are provided. Multiple Taxonomies can be applied.
+Adds the taxonomic coverage information of a dataset based off of EML standards. The addition of taxonomic coverage is optional, however defaults of chinook, sturgeon, smelt, and steelhead are provided. While single or multiple taxonomies can be applied, the full set of information must be provided if chosen to be included.
 }
 \examples{
-add_taxonomic_coverage(parent_element = list(), default_species = "chinook")
+add_taxonomic_coverage(parent_element = list(), CVPIA_common_species = "chinook")
 
-add_taxonomic_coverage(parent_element = list(), default_species = "smelt")
+add_taxonomic_coverage(parent_element = list(), CVPIA_common_species = "smelt")
 
-add_taxonomic_coverage(parent_element = list(), default_species = "sturgeon")
+add_taxonomic_coverage(parent_element = list(), CVPIA_common_species = "sturgeon")
 
-add_taxonomic_coverage(parent_element = list(), default_species = "steelhead")
+add_taxonomic_coverage(parent_element = list(), CVPIA_common_species = "steelhead")
 
 add_taxonomic_coverage(parent_element = list(),
                        kingdom = "KINGDOM", kingdom_value = "Animalia",
