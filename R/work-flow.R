@@ -26,15 +26,15 @@ d <- function() {
 }
 
 # add_taxonomic_coverage(list(),
-#                         kingdom = "KINGDOM", kingdom_value = "Hi",
-#                         phylum = "PHYLUM", phylum_value = "My",
-#                         class = "CLASS", class_value = "name",
-#                         order = "ORDER", order_value = "is",
-#                         family = "FAMILY", family_value = "Elizabeth",
-#                         genus = "GENUS", genus_value = "Grace",
-#                         species = "SPECIES", species_value = "Shaw",
-#                         common_name = "Lizzy"
-#                        ) %>%
+#                        kingdom = "KINGDOM", kingdom_value = "Hi",
+#                        phylum = "PHYLUM", phylum_value = "My",
+#                        class = "CLASS", class_value = "name",
+#                        order = "ORDER", order_value = "is",
+#                        family = "FAMILY", family_value = "Elizabeth",
+#                        genus = "GENUS", genus_value = "Grace",
+#                        species = "SPECIES", species_value = "Shaw",
+#                        common_name = "Lizzy"
+# ) %>%
 #   as_xml() %>%
 #   write_xml('dogggggggggg.xml')
 

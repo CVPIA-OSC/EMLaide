@@ -52,7 +52,19 @@ add_taxonomic_coverage <- function(parent_element, CVPIA_common_species = NULL,
                                    species = "SPECIES", species_value,
                                    common_name) {
   
-  if (default_species == "chinook") {
+  if (is.null(CVPIA_common_species)) {
+    kingdom_value <- kingdom_value
+    phylum_value <- phylum_value
+    class_value <- class_value
+    order_value <- order_value
+    family_value <- family_value
+    genus_value <- genus_value
+    species_value <- species_value
+    commonName <- common_name
+    
+  }else{
+  
+  if (CVPIA_common_species == "chinook") {
     kingdom_value <- "Animalia"
     phylum_value <- "Chordata"
     class_value <- "Teleostei"
@@ -63,7 +75,7 @@ add_taxonomic_coverage <- function(parent_element, CVPIA_common_species = NULL,
     commonName <- "Chinook Salmon"
   }
   
-  if (default_species == "steelhead") {
+  if (CVPIA_common_species == "steelhead") {
     kingdom_value <- "Animalia"
     phylum_value <- "Chordata"
     class_value <- "Teleostei"
@@ -74,7 +86,7 @@ add_taxonomic_coverage <- function(parent_element, CVPIA_common_species = NULL,
     commonName <- "Steelhead Trout"
   }
   
-  if (default_species == "delta_smelt") {
+  if (CVPIA_common_species == "delta_smelt") {
     kingdom_value <- "Animalia"
     phylum_value <- "Chordata"
     class_value <- "Teleostei"
@@ -85,7 +97,7 @@ add_taxonomic_coverage <- function(parent_element, CVPIA_common_species = NULL,
     commonName <- "Delta Smelt"
   }
   
-  if (default_species == "white_sturgeon") {
+  if (CVPIA_common_species == "white_sturgeon") {
     kingdom_value <- "Animalia"
     phylum_value <- "Chordata"
     class_value <- "Chondrostei"
@@ -96,7 +108,7 @@ add_taxonomic_coverage <- function(parent_element, CVPIA_common_species = NULL,
     commonName <- "White Sturgeon"
   }
   
-  if (default_species == "green_sturgeon") {
+  if (CVPIA_common_species == "green_sturgeon") {
     kingdom_value <- "Animalia"
     phylum_value <- "Chordata"
     class_value <- "Chondrostei"
@@ -106,7 +118,8 @@ add_taxonomic_coverage <- function(parent_element, CVPIA_common_species = NULL,
     species_value <- "Acipenser medirostris"
     commonName <- "Green Sturgeon"
   }
-  
+} 
+ 
     parent_element$taxonomicCoverage <-
       list(TaxonomicClassification = 
                   list(TaxonRankName = kingdom,
