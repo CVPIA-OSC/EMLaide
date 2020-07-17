@@ -41,3 +41,7 @@ d <- function() {
 # add_taxonomic_coverage(list(), CVPIA_common_species = "delta_smelt") %>%
 #   as_xml() %>%
 #   write_xml('dogggggggggg.xml')
+
+#taxize::classification(sci_id = "161980", db = "itis")
+#If you put in the ITIS ID number (listed as the taxonomic serial number on their website), the command will identify kingdom thru species for you. 
+

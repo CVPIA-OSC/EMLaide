@@ -411,30 +411,30 @@ test_that('The taxonomic coverage function adds the taxonomic coverage elements'
                                                                                                                     commonName = "Green Sturgeon"))))))))))
   
   expect_equal(add_taxonomic_coverage( parent_element = list(),
-                                                   kingdom_value = "Animalia",
-                                                   phylum_value = "Chordata",
-                                                   class_value = "Mammalia",
-                                                   order_value = "Carnivora",
-                                                   family_value = "Felidae",
-                                                   genus_value = "Panthera",
-                                                   species_value = "Panthera Leo",
-                                                   common_name = "Lion"),
-    list(taxonomicCoverage = list(TaxonomicClassification = list(
-                                                     TaxonRankName = "kingdom", TaxonRankValue = "Animalia", TaxonomicClassification = list(
-                                                       TaxonRankName = "phylum", TaxonRankValue = "Chordata", 
-                                                       TaxonomicClassification = list(TaxonRankName = "class", 
-                                                                                      TaxonRankValue = "Mammalia", TaxonomicClassification = list(
-                                                                                        TaxonRankName = "order", TaxonRankValue = "Carnivora", 
-                                                                                        TaxonomicClassification = list(TaxonRankName = "family", 
-                                                                                                                       TaxonRankValue = "Felidae", TaxonomicClassification = list(
-                                                                                                                         TaxonRankName = "genus", TaxonRankValue = "Panthera", 
-                                                                                                                         TaxonomicClassification = list(TaxonRankName = "species", 
-                                                                                                                                                        TaxonRankValue = "Panthera Leo", commonName = "Lion"))))))))))
-
+                                       kingdom_value = "Animalia",
+                                       phylum_value = "Chordata",
+                                       class_value = "Mammalia",
+                                       order_value = "Carnivora",
+                                       family_value = "Felidae",
+                                       genus_value = "Panthera",
+                                       species_value = "Panthera Leo",
+                                       common_name = "Lion"),
+               list(taxonomicCoverage = list(TaxonomicClassification = list(
+                 TaxonRankName = "kingdom", TaxonRankValue = "Animalia", TaxonomicClassification = list(
+                   TaxonRankName = "phylum", TaxonRankValue = "Chordata", 
+                   TaxonomicClassification = list(TaxonRankName = "class", 
+                                                  TaxonRankValue = "Mammalia", TaxonomicClassification = list(
+                                                    TaxonRankName = "order", TaxonRankValue = "Carnivora", 
+                                                    TaxonomicClassification = list(TaxonRankName = "family", 
+                                                                                   TaxonRankValue = "Felidae", TaxonomicClassification = list(
+                                                                                     TaxonRankName = "genus", TaxonRankValue = "Panthera", 
+                                                                                     TaxonomicClassification = list(TaxonRankName = "species", 
+                                                                                                                    TaxonRankValue = "Panthera Leo", commonName = "Lion"))))))))))
+  
 })
 
 test_that('The taxonomic coverage function errors when missing mandatory identifier inputs.', {
-
+  
   expect_error(add_taxonomic_coverage(parent_element = list(), 
                                       phylum_value = "Chordata",
                                       class_value = "Mammalia",
