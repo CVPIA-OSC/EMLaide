@@ -12,7 +12,8 @@ add_coverage(
   north_bounding_coordinate,
   south_bounding_coordinate,
   begin_date,
-  end_date
+  end_date,
+  taxonomic_coverage = NULL
 )
 }
 \arguments{
@@ -31,6 +32,8 @@ add_coverage(
 \item{begin_date}{The starting date for the dataset or project. Dates must be provided in ISO 8601 format, YYYY-MM-DD.}
 
 \item{end_date}{The projected or actual end date for the dataset or project. Dates must be provided in ISO 8601 format, YYYY-MM-DD.}
+
+\item{taxonomic_coverage}{TODO}
 }
 \value{
 The dataset or project with coverage information appended

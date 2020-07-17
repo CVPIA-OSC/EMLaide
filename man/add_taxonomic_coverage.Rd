@@ -5,7 +5,6 @@
 \title{Add Taxonomic Coverage}
 \usage{
 add_taxonomic_coverage(
-  parent_element,
   CVPIA_common_species = NULL,
   kingdom = "kingdom",
   kingdom_value,
@@ -25,8 +24,6 @@ add_taxonomic_coverage(
 )
 }
 \arguments{
-\item{parent_element}{A list representing the EML project or dataset}
-
 \item{CVPIA_common_species}{A list of common CVPIA species can be set as the default species so that taxonomic coverage does not need to be inputted in manually. These species include: chinook salmon, steelhead, delta smelt, white sturgeon and green sturgeon. If one of these species are applicable, use the CVPIA_common_species inputs of "chinook", "steelhead", "delta_smelt", "white_sturgeon", and "green_sturgeon".}
 
 \item{kingdom}{Kingdom level present}
@@ -58,6 +55,8 @@ add_taxonomic_coverage(
 \item{species_value}{The species level name.}
 
 \item{common_name}{The common name of the organism}
+
+\item{parent_element}{A list representing the EML project or dataset}
 }
 \value{
 The dataset or project with taxonomic coverage information appended

@@ -42,7 +42,7 @@
 #general taxonomic coverage?? 
 #taxonomic system??
 #references?? 
-add_taxonomic_coverage <- function(parent_element, CVPIA_common_species = NULL,
+add_taxonomic_coverage <- function(CVPIA_common_species = NULL,
                                    kingdom = "kingdom", kingdom_value,
                                    phylum = "phylum", phylum_value,
                                    class = "class", class_value,
@@ -128,7 +128,7 @@ add_taxonomic_coverage <- function(parent_element, CVPIA_common_species = NULL,
     }
   } 
   
-  parent_element$taxonomicCoverage <-
+  taxonomicCoverage <-
     list(TaxonomicClassification = 
            list(TaxonRankName = kingdom,
                 TaxonRankValue = kingdom_value,
@@ -152,5 +152,4 @@ add_taxonomic_coverage <- function(parent_element, CVPIA_common_species = NULL,
                                                           TaxonRankValue = species_value,
                                                           commonName = common_name))))))))
   
-  return(parent_element)
 }
