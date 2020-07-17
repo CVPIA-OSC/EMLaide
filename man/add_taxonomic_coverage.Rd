@@ -27,35 +27,35 @@ add_taxonomic_coverage(
 \arguments{
 \item{parent_element}{A list representing the EML project or dataset}
 
-\item{CVPIA_common_species}{A list of common CVPIA species can be set as the default species so that taxonomic coverage does not need to be inputted in manually. These species include: chinook, steelhead, smelt, and sturgeon.}
+\item{CVPIA_common_species}{A list of common CVPIA species can be set as the default species so that taxonomic coverage does not need to be inputted in manually. These species include: chinook salmon, steelhead, delta smelt, white sturgeon and green sturgeon. If one of these species are applicable, use the CVPIA_common_species inputs of "chinook", "steelhead", "delta_smelt", "white_sturgeon", and "green_sturgeon".}
 
 \item{kingdom}{Kingdom level present}
 
-\item{kingdom_value}{The kingdom level of the taxonomy.}
+\item{kingdom_value}{The kingdom name.}
 
 \item{phylum}{Phylum level present}
 
-\item{phylum_value}{The phylum level of the taxonomy.}
+\item{phylum_value}{The phylum name.}
 
 \item{class}{Class level present}
 
-\item{class_value}{The class level of the taxonomy.}
+\item{class_value}{The class level name.}
 
 \item{order}{Order level present}
 
-\item{order_value}{The order level of the taxonomy.}
+\item{order_value}{The order level name.}
 
 \item{family}{Family level present}
 
-\item{family_value}{The family level of the taxonomy.}
+\item{family_value}{The family level name.}
 
 \item{genus}{Genus level present}
 
-\item{genus_value}{The genus level of the taxonomy.}
+\item{genus_value}{The genus level name.}
 
 \item{species}{Species level present}
 
-\item{species_value}{The species level of the taxonomy.}
+\item{species_value}{The species level name.}
 
 \item{common_name}{The common name of the organism}
 }
