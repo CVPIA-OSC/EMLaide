@@ -24,4 +24,3 @@ d <- function() {
   
   return(NULL)
 }
-
