@@ -54,14 +54,21 @@ add_taxonomic_coverage <- function(parent_element, CVPIA_common_species = NULL,
   
   if (is.null(CVPIA_common_species)) {
     kingdom_value <- kingdom_value
+    if (missing(kingdom_value)) {stop("Please provide a kingdom.", call. = FALSE)}
     phylum_value <- phylum_value
+    if (missing(phylum_value)) {stop("Please provide a phylum.", call. = FALSE)}
     class_value <- class_value
+    if (missing(class_value)) {stop("Please provide a class.", call. = FALSE)}
     order_value <- order_value
+    if (missing(order_value)) {stop("Please provide an order.", call. = FALSE)}
     family_value <- family_value
+    if (missing(family_value)) {stop("Please provide a family.", call. = FALSE)}
     genus_value <- genus_value
+    if (missing(genus_value)) {stop("Please provide a genus.", call. = FALSE)}
     species_value <- species_value
-    commonName <- common_name
-    
+    if (missing(species_value)) {stop("Please provide a species.", call. = FALSE)}
+    common_name <- common_name
+    if (missing(common_name)) {stop("Please provide a common name.", call. = FALSE)}
   }else{
   
   if (CVPIA_common_species == "chinook") {
@@ -72,7 +79,7 @@ add_taxonomic_coverage <- function(parent_element, CVPIA_common_species = NULL,
     family_value <- "Salmonidae"
     genus_value <- "Oncorhynchus"
     species_value <- "Oncorhynchus tshawytscha"
-    commonName <- "Chinook Salmon"
+    common_name <- "Chinook Salmon"
   }
   
   if (CVPIA_common_species == "steelhead") {
@@ -83,7 +90,7 @@ add_taxonomic_coverage <- function(parent_element, CVPIA_common_species = NULL,
     family_value <- "Salmonidae"
     genus_value <- "Oncorhynchus"
     species_value <- "Oncorhynchus mykiss"
-    commonName <- "Steelhead Trout"
+    common_name <- "Steelhead Trout"
   }
   
   if (CVPIA_common_species == "delta_smelt") {
@@ -94,7 +101,7 @@ add_taxonomic_coverage <- function(parent_element, CVPIA_common_species = NULL,
     family_value <- "Osmeridae"
     genus_value <- "Hypomesus"
     species_value <- "Hypomesus transpacificus"
-    commonName <- "Delta Smelt"
+    common_name <- "Delta Smelt"
   }
   
   if (CVPIA_common_species == "white_sturgeon") {
@@ -105,7 +112,7 @@ add_taxonomic_coverage <- function(parent_element, CVPIA_common_species = NULL,
     family_value <- "Acipenseridae"
     genus_value <- "Acipenser"
     species_value <- "Acipenser transmontanus"
-    commonName <- "White Sturgeon"
+    common_name <- "White Sturgeon"
   }
   
   if (CVPIA_common_species == "green_sturgeon") {
@@ -116,7 +123,7 @@ add_taxonomic_coverage <- function(parent_element, CVPIA_common_species = NULL,
     family_value <- "Acipenseridae"
     genus_value <- "Acipenser"
     species_value <- "Acipenser medirostris"
-    commonName <- "Green Sturgeon"
+    common_name <- "Green Sturgeon"
   }
 } 
  
