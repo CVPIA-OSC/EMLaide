@@ -7,19 +7,19 @@
 add_taxonomic_coverage(
   parent_element,
   CVPIA_common_species = NULL,
-  kingdom = "KINGDOM",
+  kingdom = "kingdom",
   kingdom_value,
-  phylum = "PHYLUM",
+  phylum = "phylum",
   phylum_value,
-  class = "CLASS",
+  class = "class",
   class_value,
-  order = "ORDER",
+  order = "order",
   order_value,
-  family = "FAMILY",
+  family = "family",
   family_value,
-  genus = "GENUS",
+  genus = "genus",
   genus_value,
-  species = "SPECIES",
+  species = "species",
   species_value,
   common_name
 )
@@ -75,12 +75,12 @@ add_taxonomic_coverage(parent_element = list(), CVPIA_common_species = "sturgeon
 add_taxonomic_coverage(parent_element = list(), CVPIA_common_species = "steelhead")
 
 add_taxonomic_coverage(parent_element = list(),
-                       kingdom = "KINGDOM", kingdom_value = "Animalia",
-                       phylum = "PHYLUM", phylum_value = "Chordata",
-                       class = "CLASS", class_value = "Mammalia",
-                       order = "ORDER", order_value = "Carnivora",
-                       family = "FAMILY", family_value = "Felidae",
-                       genus = "GENUS", genus_value = "Panthera", 
-                       species = "SPECIES", species_value = "Panthera Leo",
+                       kingdom_value = "Animalia",
+                       phylum_value = "Chordata",
+                       class_value = "Mammalia",
+                       order_value = "Carnivora",
+                       family_value = "Felidae",
+                       genus_value = "Panthera", 
+                       species_value = "Panthera Leo",
                        common_name = "Lion")
 }

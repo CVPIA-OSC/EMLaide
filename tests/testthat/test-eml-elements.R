@@ -345,57 +345,174 @@ test_that('The taxonomic coverage function adds the taxonomic coverage elements'
   
   expect_equal(add_taxonomic_coverage(list(), CVPIA_common_species = "chinook"),
                list(taxonomicCoverage = list(TaxonomicClassification = list(
-                 TaxonRankName = "KINGDOM", TaxonRankValue = "Animalia", TaxonomicClassification = list(
-                   TaxonRankName = "PHYLUM", TaxonRankValue = "Chordata", 
-                   TaxonomicClassification = list(TaxonRankName = "CLASS", 
+                 TaxonRankName = "kingdom", TaxonRankValue = "Animalia", TaxonomicClassification = list(
+                   TaxonRankName = "phylum", TaxonRankValue = "Chordata", 
+                   TaxonomicClassification = list(TaxonRankName = "class", 
                                                   TaxonRankValue = "Teleostei", TaxonomicClassification = list(
-                                                    TaxonRankName = "ORDER", TaxonRankValue = "Salmoniformes", 
-                                                    TaxonomicClassification = list(TaxonRankName = "FAMILY", 
+                                                    TaxonRankName = "order", TaxonRankValue = "Salmoniformes", 
+                                                    TaxonomicClassification = list(TaxonRankName = "family", 
                                                                                    TaxonRankValue = "Salmonidae", TaxonomicClassification = list(
-                                                                                     TaxonRankName = "GENUS", TaxonRankValue = "Oncorhynchus", 
-                                                                                     TaxonomicClassification = list(TaxonRankName = "SPECIES", 
+                                                                                     TaxonRankName = "genus", TaxonRankValue = "Oncorhynchus", 
+                                                                                     TaxonomicClassification = list(TaxonRankName = "species", 
                                                                                                                     TaxonRankValue = "Oncorhynchus tshawytscha", 
                                                                                                                     commonName = "Chinook Salmon"))))))))))
-  
   expect_equal(add_taxonomic_coverage(list(), CVPIA_common_species = "white_sturgeon"),
                list(taxonomicCoverage = list(TaxonomicClassification = list(
-                 TaxonRankName = "KINGDOM", TaxonRankValue = "Animalia", TaxonomicClassification = list(
-                   TaxonRankName = "PHYLUM", TaxonRankValue = "Chordata", 
-                   TaxonomicClassification = list(TaxonRankName = "CLASS", 
+                 TaxonRankName = "kingdom", TaxonRankValue = "Animalia", TaxonomicClassification = list(
+                   TaxonRankName = "phylum", TaxonRankValue = "Chordata", 
+                   TaxonomicClassification = list(TaxonRankName = "class", 
                                                   TaxonRankValue = "Chondrostei", TaxonomicClassification = list(
-                                                    TaxonRankName = "ORDER", TaxonRankValue = "Acipenseriformes", 
-                                                    TaxonomicClassification = list(TaxonRankName = "FAMILY", 
+                                                    TaxonRankName = "order", TaxonRankValue = "Acipenseriformes", 
+                                                    TaxonomicClassification = list(TaxonRankName = "family", 
                                                                                    TaxonRankValue = "Acipenseridae", TaxonomicClassification = list(
-                                                                                     TaxonRankName = "GENUS", TaxonRankValue = "Acipenser", 
-                                                                                     TaxonomicClassification = list(TaxonRankName = "SPECIES", 
+                                                                                     TaxonRankName = "genus", TaxonRankValue = "Acipenser", 
+                                                                                     TaxonomicClassification = list(TaxonRankName = "species", 
                                                                                                                     TaxonRankValue = "Acipenser transmontanus", 
                                                                                                                     commonName = "White Sturgeon"))))))))))
   
   expect_equal(add_taxonomic_coverage(list(), CVPIA_common_species = "steelhead"),
                list(taxonomicCoverage = list(TaxonomicClassification = list(
-                 TaxonRankName = "KINGDOM", TaxonRankValue = "Animalia", TaxonomicClassification = list(
-                   TaxonRankName = "PHYLUM", TaxonRankValue = "Chordata", 
-                   TaxonomicClassification = list(TaxonRankName = "CLASS", 
+                 TaxonRankName = "kingdom", TaxonRankValue = "Animalia", TaxonomicClassification = list(
+                   TaxonRankName = "phylum", TaxonRankValue = "Chordata", 
+                   TaxonomicClassification = list(TaxonRankName = "class", 
                                                   TaxonRankValue = "Teleostei", TaxonomicClassification = list(
-                                                    TaxonRankName = "ORDER", TaxonRankValue = "Salmoniformes", 
-                                                    TaxonomicClassification = list(TaxonRankName = "FAMILY", 
+                                                    TaxonRankName = "order", TaxonRankValue = "Salmoniformes", 
+                                                    TaxonomicClassification = list(TaxonRankName = "family", 
                                                                                    TaxonRankValue = "Salmonidae", TaxonomicClassification = list(
-                                                                                     TaxonRankName = "GENUS", TaxonRankValue = "Oncorhynchus", 
-                                                                                     TaxonomicClassification = list(TaxonRankName = "SPECIES", 
+                                                                                     TaxonRankName = "genus", TaxonRankValue = "Oncorhynchus", 
+                                                                                     TaxonomicClassification = list(TaxonRankName = "species", 
                                                                                                                     TaxonRankValue = "Oncorhynchus mykiss", 
                                                                                                                     commonName = "Steelhead Trout"))))))))))
   expect_equal(add_taxonomic_coverage(list(), CVPIA_common_species = "delta_smelt"),
                list(taxonomicCoverage = list(TaxonomicClassification = list(
-                 TaxonRankName = "KINGDOM", TaxonRankValue = "Animalia", TaxonomicClassification = list(
-                   TaxonRankName = "PHYLUM", TaxonRankValue = "Chordata", 
-                   TaxonomicClassification = list(TaxonRankName = "CLASS", 
+                 TaxonRankName = "kingdom", TaxonRankValue = "Animalia", TaxonomicClassification = list(
+                   TaxonRankName = "phylum", TaxonRankValue = "Chordata", 
+                   TaxonomicClassification = list(TaxonRankName = "class", 
                                                   TaxonRankValue = "Teleostei", TaxonomicClassification = list(
-                                                    TaxonRankName = "ORDER", TaxonRankValue = "Osmeriformes", 
-                                                    TaxonomicClassification = list(TaxonRankName = "FAMILY", 
+                                                    TaxonRankName = "order", TaxonRankValue = "Osmeriformes", 
+                                                    TaxonomicClassification = list(TaxonRankName = "family", 
                                                                                    TaxonRankValue = "Osmeridae", TaxonomicClassification = list(
-                                                                                     TaxonRankName = "GENUS", TaxonRankValue = "Hypomesus", 
-                                                                                     TaxonomicClassification = list(TaxonRankName = "SPECIES", 
+                                                                                     TaxonRankName = "genus", TaxonRankValue = "Hypomesus", 
+                                                                                     TaxonomicClassification = list(TaxonRankName = "species", 
                                                                                                                     TaxonRankValue = "Hypomesus transpacificus", 
                                                                                                                     commonName = "Delta Smelt"))))))))))
+  expect_equal(add_taxonomic_coverage(list(), CVPIA_common_species = "green_sturgeon"),
+               list(taxonomicCoverage = list(TaxonomicClassification = list(
+                 TaxonRankName = "kingdom", TaxonRankValue = "Animalia", TaxonomicClassification = list(
+                   TaxonRankName = "phylum", TaxonRankValue = "Chordata", 
+                   TaxonomicClassification = list(TaxonRankName = "class", 
+                                                  TaxonRankValue = "Chondrostei", TaxonomicClassification = list(
+                                                    TaxonRankName = "order", TaxonRankValue = "Acipenseriformes", 
+                                                    TaxonomicClassification = list(TaxonRankName = "family", 
+                                                                                   TaxonRankValue = "Acipenseridae", TaxonomicClassification = list(
+                                                                                     TaxonRankName = "genus", TaxonRankValue = "Acipenser", 
+                                                                                     TaxonomicClassification = list(TaxonRankName = "species", 
+                                                                                                                    TaxonRankValue = "Acipenser medirostris", 
+                                                                                                                    commonName = "Green Sturgeon"))))))))))
+  
+  expect_equal(add_taxonomic_coverage( parent_element = list(),
+                                                   kingdom_value = "Animalia",
+                                                   phylum_value = "Chordata",
+                                                   class_value = "Mammalia",
+                                                   order_value = "Carnivora",
+                                                   family_value = "Felidae",
+                                                   genus_value = "Panthera",
+                                                   species_value = "Panthera Leo",
+                                                   common_name = "Lion"),
+    list(taxonomicCoverage = list(TaxonomicClassification = list(
+                                                     TaxonRankName = "kingdom", TaxonRankValue = "Animalia", TaxonomicClassification = list(
+                                                       TaxonRankName = "phylum", TaxonRankValue = "Chordata", 
+                                                       TaxonomicClassification = list(TaxonRankName = "class", 
+                                                                                      TaxonRankValue = "Mammalia", TaxonomicClassification = list(
+                                                                                        TaxonRankName = "order", TaxonRankValue = "Carnivora", 
+                                                                                        TaxonomicClassification = list(TaxonRankName = "family", 
+                                                                                                                       TaxonRankValue = "Felidae", TaxonomicClassification = list(
+                                                                                                                         TaxonRankName = "genus", TaxonRankValue = "Panthera", 
+                                                                                                                         TaxonomicClassification = list(TaxonRankName = "species", 
+                                                                                                                                                        TaxonRankValue = "Panthera Leo", commonName = "Lion"))))))))))
+
+})
+
+test_that('The taxonomic coverage function errors when missing mandatory identifier inputs.', {
+
+  expect_error(add_taxonomic_coverage(parent_element = list(), 
+                                      phylum_value = "Chordata",
+                                      class_value = "Mammalia",
+                                      order_value = "Carnivora",
+                                      family_value = "Felidae",
+                                      genus_value = "Panthera",
+                                      species_value = "Panthera Leo",
+                                      common_name = "Lion"),
+               "Please provide a kingdom.")
+  
+  expect_error(add_taxonomic_coverage(parent_element = list(), 
+                                      kingdom_value = "Animalia",
+                                      class_value = "Mammalia",
+                                      order_value = "Carnivora",
+                                      family_value = "Felidae",
+                                      genus_value = "Panthera",
+                                      species_value = "Panthera Leo",
+                                      common_name = "Lion"),
+               "Please provide a phylum.")
+  
+  expect_error(add_taxonomic_coverage(parent_element = list(), 
+                                      kingdom_value = "Animalia",
+                                      phylum_value = "Chordata",
+                                      order_value = "Carnivora",
+                                      family_value = "Felidae",
+                                      genus_value = "Panthera",
+                                      species_value = "Panthera Leo",
+                                      common_name = "Lion"),
+               "Please provide a class.")
+  
+  expect_error(add_taxonomic_coverage(parent_element = list(), 
+                                      kingdom_value = "Animalia",
+                                      phylum_value = "Chordata",
+                                      class_value = "Mammalia",
+                                      family_value = "Felidae",
+                                      genus_value = "Panthera",
+                                      species_value = "Panthera Leo",
+                                      common_name = "Lion"),
+               "Please provide an order.")
+  
+  expect_error(add_taxonomic_coverage(parent_element = list(), 
+                                      kingdom_value = "Animalia",
+                                      phylum_value = "Chordata",
+                                      class_value = "Mammalia",
+                                      order_value = "Carnivora",
+                                      genus_value = "Panthera",
+                                      species_value = "Panthera Leo",
+                                      common_name = "Lion"),
+               "Please provide a family.")
+  
+  expect_error(add_taxonomic_coverage(parent_element = list(), 
+                                      kingdom_value = "Animalia",
+                                      phylum_value = "Chordata",
+                                      class_value = "Mammalia",
+                                      order_value = "Carnivora",
+                                      family_value = "Felidae",
+                                      species_value = "Panthera Leo",
+                                      common_name = "Lion"),
+               "Please provide a genus.")
+  
+  expect_error(add_taxonomic_coverage(parent_element = list(), 
+                                      kingdom_value = "Animalia",
+                                      phylum_value = "Chordata",
+                                      class_value = "Mammalia",
+                                      order_value = "Carnivora",
+                                      family_value = "Felidae",
+                                      genus_value = "Panthera",
+                                      common_name = "Lion"),
+               "Please provide a species.")
+  
+  expect_error(add_taxonomic_coverage(parent_element = list(), 
+                                      kingdom_value = "Animalia",
+                                      phylum_value = "Chordata",
+                                      class_value = "Mammalia",
+                                      order_value = "Carnivora",
+                                      family_value = "Felidae",
+                                      genus_value = "Panthera",
+                                      species_value = "Panthera Leo"),
+               "Please provide a common name")
   
 })

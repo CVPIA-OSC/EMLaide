@@ -28,13 +28,13 @@
 #' add_taxonomic_coverage(parent_element = list(), CVPIA_common_species = "steelhead")
 #' 
 #' add_taxonomic_coverage(parent_element = list(),
-#'                        kingdom = "KINGDOM", kingdom_value = "Animalia",
-#'                        phylum = "PHYLUM", phylum_value = "Chordata",
-#'                        class = "CLASS", class_value = "Mammalia",
-#'                        order = "ORDER", order_value = "Carnivora",
-#'                        family = "FAMILY", family_value = "Felidae",
-#'                        genus = "GENUS", genus_value = "Panthera", 
-#'                        species = "SPECIES", species_value = "Panthera Leo",
+#'                        kingdom_value = "Animalia",
+#'                        phylum_value = "Chordata",
+#'                        class_value = "Mammalia",
+#'                        order_value = "Carnivora",
+#'                        family_value = "Felidae",
+#'                        genus_value = "Panthera", 
+#'                        species_value = "Panthera Leo",
 #'                        common_name = "Lion")
 #' @export
 
@@ -43,113 +43,114 @@
 #taxonomic system??
 #references?? 
 add_taxonomic_coverage <- function(parent_element, CVPIA_common_species = NULL,
-                                   kingdom = "KINGDOM", kingdom_value,
-                                   phylum = "PHYLUM", phylum_value,
-                                   class = "CLASS", class_value,
-                                   order = "ORDER", order_value,
-                                   family = "FAMILY", family_value,
-                                   genus = "GENUS", genus_value, 
-                                   species = "SPECIES", species_value,
+                                   kingdom = "kingdom", kingdom_value,
+                                   phylum = "phylum", phylum_value,
+                                   class = "class", class_value,
+                                   order = "order", order_value,
+                                   family = "family", family_value,
+                                   genus = "genus", genus_value, 
+                                   species = "species", species_value,
                                    common_name) {
   
   if (is.null(CVPIA_common_species)) {
-    kingdom_value <- kingdom_value
     if (missing(kingdom_value)) {stop("Please provide a kingdom.", call. = FALSE)}
-    phylum_value <- phylum_value
+    kingdom_value <- kingdom_value
     if (missing(phylum_value)) {stop("Please provide a phylum.", call. = FALSE)}
-    class_value <- class_value
+    phylum_value <- phylum_value
     if (missing(class_value)) {stop("Please provide a class.", call. = FALSE)}
-    order_value <- order_value
+    class_value <- class_value
     if (missing(order_value)) {stop("Please provide an order.", call. = FALSE)}
-    family_value <- family_value
+    order_value <- order_value
     if (missing(family_value)) {stop("Please provide a family.", call. = FALSE)}
-    genus_value <- genus_value
+    family_value <- family_value
     if (missing(genus_value)) {stop("Please provide a genus.", call. = FALSE)}
-    species_value <- species_value
+    genus_value <- genus_value
     if (missing(species_value)) {stop("Please provide a species.", call. = FALSE)}
-    common_name <- common_name
+    species_value <- species_value
     if (missing(common_name)) {stop("Please provide a common name.", call. = FALSE)}
-  }else{
-  
-  if (CVPIA_common_species == "chinook") {
-    kingdom_value <- "Animalia"
-    phylum_value <- "Chordata"
-    class_value <- "Teleostei"
-    order_value <- "Salmoniformes"
-    family_value <- "Salmonidae"
-    genus_value <- "Oncorhynchus"
-    species_value <- "Oncorhynchus tshawytscha"
-    common_name <- "Chinook Salmon"
-  }
-  
-  if (CVPIA_common_species == "steelhead") {
-    kingdom_value <- "Animalia"
-    phylum_value <- "Chordata"
-    class_value <- "Teleostei"
-    order_value <- "Salmoniformes"
-    family_value <- "Salmonidae"
-    genus_value <- "Oncorhynchus"
-    species_value <- "Oncorhynchus mykiss"
-    common_name <- "Steelhead Trout"
-  }
-  
-  if (CVPIA_common_species == "delta_smelt") {
-    kingdom_value <- "Animalia"
-    phylum_value <- "Chordata"
-    class_value <- "Teleostei"
-    order_value <- "Osmeriformes"
-    family_value <- "Osmeridae"
-    genus_value <- "Hypomesus"
-    species_value <- "Hypomesus transpacificus"
-    common_name <- "Delta Smelt"
-  }
-  
-  if (CVPIA_common_species == "white_sturgeon") {
-    kingdom_value <- "Animalia"
-    phylum_value <- "Chordata"
-    class_value <- "Chondrostei"
-    order_value <- "Acipenseriformes"
-    family_value <- "Acipenseridae"
-    genus_value <- "Acipenser"
-    species_value <- "Acipenser transmontanus"
-    common_name <- "White Sturgeon"
-  }
-  
-  if (CVPIA_common_species == "green_sturgeon") {
-    kingdom_value <- "Animalia"
-    phylum_value <- "Chordata"
-    class_value <- "Chondrostei"
-    order_value <- "Acipenseriformes"
-    family_value <- "Acipenseridae"
-    genus_value <- "Acipenser"
-    species_value <- "Acipenser medirostris"
-    common_name <- "Green Sturgeon"
-  }
-} 
- 
-    parent_element$taxonomicCoverage <-
-      list(TaxonomicClassification = 
-                  list(TaxonRankName = kingdom,
-                  TaxonRankValue = kingdom_value,
-                  TaxonomicClassification =
-                    list(TaxonRankName = phylum,
-                         TaxonRankValue = phylum_value,
-                         TaxonomicClassification =
-                           list(TaxonRankName = class,
-                                TaxonRankValue = class_value,
-                                TaxonomicClassification =
-                                  list(TaxonRankName = order,
-                                       TaxonRankValue = order_value,
-                                       TaxonomicClassification =
-                                         list(TaxonRankName = family,
-                                              TaxonRankValue = family_value,
-                                              TaxonomicClassification =
-                                                list(TaxonRankName = genus,
-                                                     TaxonRankValue = genus_value,
-                                                     TaxonomicClassification =
-                                                       list(TaxonRankName = species,
-                                                            TaxonRankValue = species_value,
-                                                            commonName = common_name))))))))
+    common_name <- common_name
     
+  }else{
+    
+    if (CVPIA_common_species == "chinook") {
+      kingdom_value <- "Animalia"
+      phylum_value <- "Chordata"
+      class_value <- "Teleostei"
+      order_value <- "Salmoniformes"
+      family_value <- "Salmonidae"
+      genus_value <- "Oncorhynchus"
+      species_value <- "Oncorhynchus tshawytscha"
+      common_name <- "Chinook Salmon"
+    }
+    
+    if (CVPIA_common_species == "steelhead") {
+      kingdom_value <- "Animalia"
+      phylum_value <- "Chordata"
+      class_value <- "Teleostei"
+      order_value <- "Salmoniformes"
+      family_value <- "Salmonidae"
+      genus_value <- "Oncorhynchus"
+      species_value <- "Oncorhynchus mykiss"
+      common_name <- "Steelhead Trout"
+    }
+    
+    if (CVPIA_common_species == "delta_smelt") {
+      kingdom_value <- "Animalia"
+      phylum_value <- "Chordata"
+      class_value <- "Teleostei"
+      order_value <- "Osmeriformes"
+      family_value <- "Osmeridae"
+      genus_value <- "Hypomesus"
+      species_value <- "Hypomesus transpacificus"
+      common_name <- "Delta Smelt"
+    }
+    
+    if (CVPIA_common_species == "white_sturgeon") {
+      kingdom_value <- "Animalia"
+      phylum_value <- "Chordata"
+      class_value <- "Chondrostei"
+      order_value <- "Acipenseriformes"
+      family_value <- "Acipenseridae"
+      genus_value <- "Acipenser"
+      species_value <- "Acipenser transmontanus"
+      common_name <- "White Sturgeon"
+    }
+    
+    if (CVPIA_common_species == "green_sturgeon") {
+      kingdom_value <- "Animalia"
+      phylum_value <- "Chordata"
+      class_value <- "Chondrostei"
+      order_value <- "Acipenseriformes"
+      family_value <- "Acipenseridae"
+      genus_value <- "Acipenser"
+      species_value <- "Acipenser medirostris"
+      common_name <- "Green Sturgeon"
+    }
+  } 
+  
+  parent_element$taxonomicCoverage <-
+    list(TaxonomicClassification = 
+           list(TaxonRankName = kingdom,
+                TaxonRankValue = kingdom_value,
+                TaxonomicClassification =
+                  list(TaxonRankName = phylum,
+                       TaxonRankValue = phylum_value,
+                       TaxonomicClassification =
+                         list(TaxonRankName = class,
+                              TaxonRankValue = class_value,
+                              TaxonomicClassification =
+                                list(TaxonRankName = order,
+                                     TaxonRankValue = order_value,
+                                     TaxonomicClassification =
+                                       list(TaxonRankName = family,
+                                            TaxonRankValue = family_value,
+                                            TaxonomicClassification =
+                                              list(TaxonRankName = genus,
+                                                   TaxonRankValue = genus_value,
+                                                   TaxonomicClassification =
+                                                     list(TaxonRankName = species,
+                                                          TaxonRankValue = species_value,
+                                                          commonName = common_name))))))))
+  
   return(parent_element)
 }

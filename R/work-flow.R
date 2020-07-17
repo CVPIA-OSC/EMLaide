@@ -25,20 +25,19 @@ d <- function() {
   return(NULL)
 }
 
-# add_taxonomic_coverage(list(),
-#                        kingdom = "KINGDOM", kingdom_value = "Hi",
-#                        phylum = "PHYLUM", phylum_value = "My",
-#                        class = "CLASS", class_value = "name",
-#                        order = "ORDER", order_value = "is",
-#                        family = "FAMILY", family_value = "Elizabeth",
-#                        genus = "GENUS", genus_value = "Grace",
-#                        species = "SPECIES", species_value = "Shaw",
-#                        common_name = "Lizzy"
-# ) %>%
+# add_taxonomic_coverage(list(),parent_element, CVPIA_common_species = NULL,
+#                        kingdom = "kingdom", kingdom_value,
+#                        phylum = "phylum", phylum_value,
+#                        class = "class", class_value,
+#                        order = "order", order_value,
+#                        family = "family", family_value,
+#                        genus = "genus", genus_value,
+#                        species = "species", species_value,
+#                        common_name) %>%
 #   as_xml() %>%
 #   write_xml('dogggggggggg.xml')
 
 
-# add_taxonomic_coverage(list(), default_species = "smelt") %>%
+# add_taxonomic_coverage(list(), CVPIA_common_species = "delta_smelt") %>%
 #   as_xml() %>%
 #   write_xml('dogggggggggg.xml')
