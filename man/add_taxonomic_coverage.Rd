@@ -55,8 +55,6 @@ add_taxonomic_coverage(
 \item{species_value}{The species level name.}
 
 \item{common_name}{The common name of the organism}
-
-\item{parent_element}{A list representing the EML project or dataset}
 }
 \value{
 The dataset or project with taxonomic coverage information appended
@@ -65,16 +63,15 @@ The dataset or project with taxonomic coverage information appended
 Adds the taxonomic coverage information of a dataset based off of EML standards. The addition of taxonomic coverage is optional, however defaults of chinook, sturgeon, smelt, and steelhead are provided. While single or multiple taxonomies can be applied, the full set of information must be provided if chosen to be included.
 }
 \examples{
-add_taxonomic_coverage(parent_element = list(), CVPIA_common_species = "chinook")
+add_taxonomic_coverage(CVPIA_common_species = "chinook")
 
-add_taxonomic_coverage(parent_element = list(), CVPIA_common_species = "smelt")
+add_taxonomic_coverage(CVPIA_common_species = "smelt")
 
-add_taxonomic_coverage(parent_element = list(), CVPIA_common_species = "sturgeon")
+add_taxonomic_coverage(CVPIA_common_species = "sturgeon")
 
-add_taxonomic_coverage(parent_element = list(), CVPIA_common_species = "steelhead")
+add_taxonomic_coverage(CVPIA_common_species = "steelhead")
 
-add_taxonomic_coverage(parent_element = list(),
-                       kingdom_value = "Animalia",
+add_taxonomic_coverage(kingdom_value = "Animalia",
                        phylum_value = "Chordata",
                        class_value = "Mammalia",
                        order_value = "Carnivora",

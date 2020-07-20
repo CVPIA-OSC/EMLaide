@@ -8,7 +8,7 @@
 #' @param south_bounding_coordinate The south cardinality limit.
 #' @param begin_date The starting date for the dataset or project. Dates must be provided in ISO 8601 format, YYYY-MM-DD.
 #' @param end_date The projected or actual end date for the dataset or project. Dates must be provided in ISO 8601 format, YYYY-MM-DD.
-#' @param taxonomic_coverage TODO
+#' @param taxonomic_coverage Addition of taxonomic coverage is optional. Can be appended using the add_taxonomic_coverage function. Assign this function a name and then set it as the taxonomic_coverage parameter input. An example is given down below.  
 #' @return The dataset or project with coverage information appended
 #' @examples 
 #' add_coverage(parent_element = list(), geographic_description = "North Slope drainage basin:
@@ -16,6 +16,12 @@
 #'              west_bounding_coordinate = "-160.594000", east_bounding_coordinate = "-134.104800",
 #'              north_bounding_coordinate = "71.238300", south_bounding_coordinate = "67.865000", 
 #'              begin_date = "1980-01-01", end_date = "2010-12-31")
+#'              
+#' taxonomic_coverage <- add_taxonomic_coverage(CVPIA_common_species = "chinook")
+#' add_coverage(parent_element = list(), geographic_description = "Description",
+#               west_bounding_coordinate = "-160.594000", east_bounding_coordinate = "-134.104800",
+#               north_bounding_coordinate = "71.238300", south_bounding_coordinate = "67.865000",
+#               begin_date = "1980-01-01", end_date = "2010-12-31", taxonomic_coverage = taxonomic_coverage) 
 #' @export
 add_coverage <- function(parent_element, geographic_description, west_bounding_coordinate,
                          east_bounding_coordinate, north_bounding_coordinate,

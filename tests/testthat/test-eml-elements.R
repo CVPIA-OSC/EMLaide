@@ -407,13 +407,13 @@ test_that('The taxonomic coverage function adds the taxonomic coverage elements'
                                                                                                                                                       TaxonRankValue = "Acipenser medirostris", 
                                                                                                                                                       commonName = "Green Sturgeon")))))))))
   expect_equal(add_taxonomic_coverage(kingdom_value = "Animalia",
-                                       phylum_value = "Chordata",
-                                       class_value = "Mammalia",
-                                       order_value = "Carnivora",
-                                       family_value = "Felidae",
-                                       genus_value = "Panthera",
-                                       species_value = "Panthera Leo",
-                                       common_name = "Lion"),
+                                      phylum_value = "Chordata",
+                                      class_value = "Mammalia",
+                                      order_value = "Carnivora",
+                                      family_value = "Felidae",
+                                      genus_value = "Panthera",
+                                      species_value = "Panthera Leo",
+                                      common_name = "Lion"),
                list(TaxonomicClassification = list(TaxonRankName = "kingdom", 
                                                    TaxonRankValue = "Animalia", TaxonomicClassification = list(
                                                      TaxonRankName = "phylum", TaxonRankValue = "Chordata", 
@@ -506,17 +506,45 @@ test_that('The taxonomic coverage function errors when missing mandatory identif
 test_that('The coverage function works appropriately with the taxonomic function.', {
   taxonomic_coverage <- add_taxonomic_coverage(CVPIA_common_species = "chinook")
   expect_equal(add_coverage(parent_element = list(), geographic_description = "Description",
-                             west_bounding_coordinate = "-160.594000", 
-                             east_bounding_coordinate = "-134.104800",
-                             north_bounding_coordinate = "71.238300",
-                             south_bounding_coordinate = "67.865000",
-                             begin_date = "1980-01-01", end_date = "2010-12-31", taxonomic_coverage = "taxonomic_coverage"), 
-  list(coverage = list(geographicCoverage = list(geographicDescription = "Description", 
-                                                 boundingCoordinates = list(westBoundingCoordinate = "-160.594000", 
-                                                                            eastBoundingCoordinate = "-134.104800", northBoundingCoordinate = "71.238300", 
-                                                                            southBoundingCoordinate = "67.865000")), temporalCoverage = list(
-                                                                              rangeOfDates = list(beginDate = list(calendarDate = "1980-01-01"), 
-                                                                                                  endDate = list(calendarDate = "2010-12-31"))), taxonomicCoverage = "taxonomic_coverage")))
+                            west_bounding_coordinate = "-160.594000", 
+                            east_bounding_coordinate = "-134.104800",
+                            north_bounding_coordinate = "71.238300",
+                            south_bounding_coordinate = "67.865000",
+                            begin_date = "1980-01-01", end_date = "2010-12-31", taxonomic_coverage = taxonomic_coverage), 
+               list(coverage =
+                      list(geographicCoverage =
+                             list(geographicDescription = "Description",
+                                  boundingCoordinates = 
+                                    list(westBoundingCoordinate = "-160.594000",
+                                         eastBoundingCoordinate = "-134.104800",
+                                         northBoundingCoordinate = "71.238300",
+                                         southBoundingCoordinate = "67.865000")),
+                           temporalCoverage = 
+                             list(rangeOfDates = 
+                                    list(beginDate = list(calendarDate = "1980-01-01"),
+                                         endDate = list(calendarDate = "2010-12-31"))),
+                           taxonomicCoverage = list(TaxonomicClassification = 
+                                                      list(TaxonRankName = "kingdom",
+                                                           TaxonRankValue = "Animalia",
+                                                           TaxonomicClassification =
+                                                             list(TaxonRankName = "phylum",
+                                                                  TaxonRankValue = "Chordata",
+                                                                  TaxonomicClassification = 
+                                                                    list(TaxonRankName = "class",
+                                                                         TaxonRankValue = "Teleostei",
+                                                                         TaxonomicClassification = list(
+                                                                           TaxonRankName = "order",
+                                                                           TaxonRankValue = "Salmoniformes",
+                                                                           TaxonomicClassification = 
+                                                                             list(TaxonRankName = "family", 
+                                                                                  TaxonRankValue = "Salmonidae",
+                                                                                  TaxonomicClassification = 
+                                                                                    list(TaxonRankName = "genus",
+                                                                                         TaxonRankValue = "Oncorhynchus",
+                                                                                         TaxonomicClassification =
+                                                                                           list(TaxonRankName = "species",
+                                                                                                TaxonRankValue = "Oncorhynchus tshawytscha",
+                                                                                                commonName = "Chinook Salmon")))))))))))
   
   
   

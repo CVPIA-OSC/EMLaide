@@ -1,6 +1,5 @@
 #' @title Add Taxonomic Coverage 
 #' @description Adds the taxonomic coverage information of a dataset based off of EML standards. The addition of taxonomic coverage is optional, however defaults of chinook, sturgeon, smelt, and steelhead are provided. While single or multiple taxonomies can be applied, the full set of information must be provided if chosen to be included. 
-#' @param parent_element A list representing the EML project or dataset
 #' @param CVPIA_common_species A list of common CVPIA species can be set as the default species so that taxonomic coverage does not need to be inputted in manually. These species include: chinook salmon, steelhead, delta smelt, white sturgeon and green sturgeon. If one of these species are applicable, use the CVPIA_common_species inputs of "chinook", "steelhead", "delta_smelt", "white_sturgeon", and "green_sturgeon". 
 #' @param kingdom Kingdom level present
 #' @param kingdom_value The kingdom name. 
@@ -19,16 +18,15 @@
 #' @param common_name The common name of the organism 
 #' @return The dataset or project with taxonomic coverage information appended
 #' @examples 
-#' add_taxonomic_coverage(parent_element = list(), CVPIA_common_species = "chinook")
+#' add_taxonomic_coverage(CVPIA_common_species = "chinook")
 #' 
-#' add_taxonomic_coverage(parent_element = list(), CVPIA_common_species = "smelt")
+#' add_taxonomic_coverage(CVPIA_common_species = "smelt")
 #' 
-#' add_taxonomic_coverage(parent_element = list(), CVPIA_common_species = "sturgeon")
+#' add_taxonomic_coverage(CVPIA_common_species = "sturgeon")
 #' 
-#' add_taxonomic_coverage(parent_element = list(), CVPIA_common_species = "steelhead")
+#' add_taxonomic_coverage(CVPIA_common_species = "steelhead")
 #' 
-#' add_taxonomic_coverage(parent_element = list(),
-#'                        kingdom_value = "Animalia",
+#' add_taxonomic_coverage(kingdom_value = "Animalia",
 #'                        phylum_value = "Chordata",
 #'                        class_value = "Mammalia",
 #'                        order_value = "Carnivora",
@@ -38,10 +36,6 @@
 #'                        common_name = "Lion")
 #' @export
 
-#taxon id provider??
-#general taxonomic coverage?? 
-#taxonomic system??
-#references?? 
 add_taxonomic_coverage <- function(CVPIA_common_species = NULL,
                                    kingdom = "kingdom", kingdom_value,
                                    phylum = "phylum", phylum_value,
