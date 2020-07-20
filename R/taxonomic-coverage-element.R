@@ -16,17 +16,17 @@
 #' @param species Species level present
 #' @param species_value The species level name.
 #' @param common_name The common name of the organism 
-#' @return The dataset or project with taxonomic coverage information appended
+#' @return Taxonomic coverage information. The function should be assigned to the name taxonomic_coverage to append it to the dataset or project. Example of how to incorporate it into the add_coverage function is seen below. 
 #' @examples 
-#' add_taxonomic_coverage(CVPIA_common_species = "chinook")
+#' taxonomic_coverage <- add_taxonomic_coverage(CVPIA_common_species = "chinook")
 #' 
-#' add_taxonomic_coverage(CVPIA_common_species = "smelt")
+#' taxonomic_coverage <- add_taxonomic_coverage(CVPIA_common_species = "smelt")
 #' 
-#' add_taxonomic_coverage(CVPIA_common_species = "sturgeon")
+#' taxonomic_coverage <- add_taxonomic_coverage(CVPIA_common_species = "sturgeon")
 #' 
-#' add_taxonomic_coverage(CVPIA_common_species = "steelhead")
+#' taxonomic_coverage <- add_taxonomic_coverage(CVPIA_common_species = "steelhead")
 #' 
-#' add_taxonomic_coverage(kingdom_value = "Animalia",
+#' taxonomic_coverage <- add_taxonomic_coverage(kingdom_value = "Animalia",
 #'                        phylum_value = "Chordata",
 #'                        class_value = "Mammalia",
 #'                        order_value = "Carnivora",
@@ -34,6 +34,12 @@
 #'                        genus_value = "Panthera", 
 #'                        species_value = "Panthera Leo",
 #'                        common_name = "Lion")
+#'                        
+#' To append this information to the dataset or project:                        
+#'     add_coverage(parent_element = list(), geographic_description = "Description",
+#                   west_bounding_coordinate = "-160.594000", east_bounding_coordinate = "-134.104800",
+#                   north_bounding_coordinate = "71.238300", south_bounding_coordinate = "67.865000",
+#                   begin_date = "1980-01-01", end_date = "2010-12-31", taxonomic_coverage = taxonomic_coverage)
 #' @export
 
 add_taxonomic_coverage <- function(CVPIA_common_species = NULL,

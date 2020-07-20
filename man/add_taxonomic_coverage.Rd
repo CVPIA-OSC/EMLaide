@@ -57,21 +57,21 @@ add_taxonomic_coverage(
 \item{common_name}{The common name of the organism}
 }
 \value{
-The dataset or project with taxonomic coverage information appended
+Taxonomic coverage information. The function should be assigned to the name taxonomic_coverage to append it to the dataset or project. Example of how to incorporate it into the add_coverage function is seen below.
 }
 \description{
 Adds the taxonomic coverage information of a dataset based off of EML standards. The addition of taxonomic coverage is optional, however defaults of chinook, sturgeon, smelt, and steelhead are provided. While single or multiple taxonomies can be applied, the full set of information must be provided if chosen to be included.
 }
 \examples{
-add_taxonomic_coverage(CVPIA_common_species = "chinook")
+taxonomic_coverage <- add_taxonomic_coverage(CVPIA_common_species = "chinook")
 
-add_taxonomic_coverage(CVPIA_common_species = "smelt")
+taxonomic_coverage <- add_taxonomic_coverage(CVPIA_common_species = "smelt")
 
-add_taxonomic_coverage(CVPIA_common_species = "sturgeon")
+taxonomic_coverage <- add_taxonomic_coverage(CVPIA_common_species = "sturgeon")
 
-add_taxonomic_coverage(CVPIA_common_species = "steelhead")
+taxonomic_coverage <- add_taxonomic_coverage(CVPIA_common_species = "steelhead")
 
-add_taxonomic_coverage(kingdom_value = "Animalia",
+taxonomic_coverage <- add_taxonomic_coverage(kingdom_value = "Animalia",
                        phylum_value = "Chordata",
                        class_value = "Mammalia",
                        order_value = "Carnivora",
@@ -79,4 +79,7 @@ add_taxonomic_coverage(kingdom_value = "Animalia",
                        genus_value = "Panthera", 
                        species_value = "Panthera Leo",
                        common_name = "Lion")
+                       
+To append this information to the dataset or project:                        
+    add_coverage(parent_element = list(), geographic_description = "Description",
 }
