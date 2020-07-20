@@ -28,17 +28,7 @@ add_coverage <- function(parent_element, geographic_description, west_bounding_c
   if (missing(south_bounding_coordinate)) {stop("Please supply the south cardinality limit if applicable.", call. = FALSE)}
   if (missing(begin_date)) {stop("Please suppply the starting date of this project.", call. = FALSE)}
   if (missing(end_date)) {stop("Please supply the end or projected end date for this project.", call. = FALSE)}
-  if (!is.null(taxonomic_coverage)){
-    add_taxonomic_coverage(CVPIA_common_species = NULL,
-                                                 kingdom = "kingdom", kingdom_value,
-                                                 phylum = "phylum", phylum_value,
-                                                 class = "class", class_value,
-                                                 order = "order", order_value,
-                                                 family = "family", family_value,
-                                                 genus = "genus", genus_value, 
-                                                 species = "species", species_value,
-                                                 common_name)
-  }
+
   
   parent_element$coverage <- list(geographicCoverage = 
                                     list(geographicDescription = geographic_description,
@@ -48,9 +38,11 @@ add_coverage <- function(parent_element, geographic_description, west_bounding_c
                                                 northBoundingCoordinate = north_bounding_coordinate,
                                                 southBoundingCoordinate = south_bounding_coordinate)),
                                   temporalCoverage = list(rangeOfDates = list(beginDate = list(calendarDate = begin_date),
-                                                                         endDate = list(calendarDate = end_date))),
-                                  taxonomicCoverage = list(taxonomic_coverage)
-                                  )
+                                                                         endDate = list(calendarDate = end_date))))
+                                  
+  if (!is.null(taxonomic_coverage)) {
+    parent_element$coverage$taxonomicCoverage = taxonomic_coverage
+  }
   return(parent_element)
 }
 
