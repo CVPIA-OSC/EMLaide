@@ -36,4 +36,3 @@ d <- function() {
 
 #taxize::classification(sci_id = "161980", db = "itis")
 #If you put in the ITIS ID number (listed as the taxonomic serial number on their website), the command will identify kingdom thru species for you. 
-

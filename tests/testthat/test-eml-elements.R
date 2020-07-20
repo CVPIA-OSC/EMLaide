@@ -550,3 +550,27 @@ test_that('The coverage function works appropriately with the taxonomic function
   
 })
 
+
+#Tests for add_maintenance function 
+
+test_that('The maintenance function errors when missing mandatory identifier inputs.', {
+  
+  expect_error(add_maintenance(parent_element = parent_element), 
+               "Please provide the status of your project or dataset.")
+  
+  expect_error(add_maintenance(parent_element = parent_element, status = "ongoing"),
+               "Please provide the frequency of when this project or dataset is updated.")
+  
+})
+
+test_that('The maintenance function adds the maintenance elements', {
+  
+  expect_equal(add_maintenance(parent_element = list(), status = "complete"), 
+               list(maintenance = list(description = "complete")))
+  
+  expect_equal(add_maintenance(parent_element = list(), status = "ongoing",
+                               update_frequency = "Data are updated annually at the end of the calendar year."),
+               list(maintenance = list(description = list(para = "Data are updated annually at the end of the calendar year.")))
+               )
+  
+})
