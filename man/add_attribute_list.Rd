@@ -10,14 +10,16 @@ add_attribute_list(
   attribute_definition,
   storage_type,
   measurement_scale,
-  measurement_scale_definition = NULL,
+  nominal_scale_definition = NULL,
   units = NULL,
   number_type = NULL,
-  code = NULL,
-  precision = NULL,
+  code_number = NULL,
+  code_number_definition = NULL,
+  unit_precision = NULL,
+  ISO_date_time = NULL,
+  date_time_precision = NULL,
   minimum = NULL,
-  maximum = NULL,
-  date_time_precision = NULL
+  maximum = NULL
 )
 }
 \arguments{
@@ -29,30 +31,40 @@ add_attribute_list(
 
 \item{measurement_scale}{The    type of    scale    from which values are    drawn    for    the    attribute. Must use one of the following types: nominal, ordinal, interval, ratio, or dateTime.}
 
-\item{measurement_scale_definition}{TODO}
+\item{nominal_scale_definition}{Description for nominal measurement scale values.}
 
-\item{units}{TODO}
+\item{units}{The units assigned to this particular attributes values.}
 
-\item{number_type}{TODO}
+\item{number_type}{Can be defined as: real, natural, whole, or integer}
 
-\item{code}{TODO}
+\item{code_number}{The reference number to the code definition.}
 
-\item{precision}{TODO}
+\item{code_number_definition}{The explaination of a listed code number}
 
-\item{minimum}{TODO}
+\item{unit_precision}{How precise units are measured}
 
-\item{maximum}{TODO}
+\item{ISO_date_time}{YYYY-MM-DDThh:mm:ssTZD format}
 
-\item{date_time_precision}{TODO}
+\item{date_time_precision}{What level of time is being measured.}
+
+\item{minimum}{Theoretical or allowable minimum value.}
+
+\item{maximum}{Theoretical or allowable maximum value.}
 
 \item{attribute_defenition}{A precise and complete    definition of the attribute    being    documented.}
 }
 \value{
-the project or dataset list with an attribute list appended
+The project or dataset list with an attribute list appended
 }
 \description{
 adds the attribute list element according to EML standards. Multiple attributes can be created.
 }
 \examples{
 TODO
+Different measurement scale values will indicate different inputs: 
+   Nominal: Please provide measurement_scale_definition
+   Ordinal: Please provide code_number and code_number_definition 
+   Interval: Please provide units, unit_precision, number_type, minimum, and maximum
+   Ratio: Please provide units and number_type
+   dateTime: Please provide ISO_date_time, date_time_precision, minimum, and maximum
 }

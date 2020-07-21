@@ -5,22 +5,31 @@
 #' @param attribute_defenition A precise and complete	definition of the attribute	being	documented.
 #' @param storage_type An indicator	to processing	systems	as to	how	the	attribute	might	be represented in	a	system or	language,	but	is distinct	from the actual	expression of	the	domain of	the	attribute. Non system-specific examples	include: float,	integer	and	string.
 #' @param measurement_scale The	type of	scale	from which values are	drawn	for	the	attribute. Must use one of the following types: nominal, ordinal, interval, ratio, or dateTime.
-#' @param measurement_scale_definition TODO
-#' @param units TODO
-#' @param number_type TODO
-#' @param code TODO
-#' @param precision TODO
-#' @param minimum TODO
-#' @param maximum TODO 
-#' @param date_time_precision TODO 
-#' @return the project or dataset list with an attribute list appended
+#' @param nominal_scale_definition Description for nominal measurement scale values. 
+#' @param units The units assigned to this particular attributes values. 
+#' @param number_type Can be defined as: real, natural, whole, or integer 
+#' @param code_number The reference number to the code definition.
+#' @param code_number_definition The explaination of a listed code number 
+#' @param unit_precision How precise units are measured 
+#' @param ISO_date_time YYYY-MM-DDThh:mm:ssTZD format 
+#' @param date_time_precision What level of time is being measured. 
+#' @param minimum Theoretical or allowable minimum value. 
+#' @param maximum Theoretical or allowable maximum value.
+#' @return The project or dataset list with an attribute list appended
 #' @examples TODO
+#' Different measurement scale values will indicate different inputs: 
+#'    Nominal: Please provide measurement_scale_definition
+#'    Ordinal: Please provide code_number and code_number_definition 
+#'    Interval: Please provide units, unit_precision, number_type, minimum, and maximum
+#'    Ratio: Please provide units and number_type
+#'    dateTime: Please provide ISO_date_time, date_time_precision, minimum, and maximum
 #' @export
 
 add_attribute_list <- function(attribute_name, attribute_label, attribute_definition,
-                               storage_type, measurement_scale, measurement_scale_definition = NULL,
-                               units = NULL, number_type = NULL, code = NULL, precision = NULL,
-                               minimum = NULL, maximum = NULL, date_time_precision = NULL) {
+                               storage_type, measurement_scale, nominal_scale_definition = NULL,
+                               units = NULL, number_type = NULL, code_number = NULL,
+                               code_number_definition = NULL, unit_precision = NULL, ISO_date_time = NULL,
+                               date_time_precision = NULL, minimum = NULL, maximum = NULL) {
   
   attributeList <- list(attribute = list(attributeName = attribute_name,
                                          attributeLabel = attribute_label,
@@ -30,7 +39,7 @@ add_attribute_list <- function(attribute_name, attribute_label, attribute_defini
   
   if (measurement_scale == "nominal") {
     attributeList$attribute$measurementScale <- list(nominal = list(nonNumericDomain = list(textDomain =
-                                                list(domain = measurement_scale_definition))))
+                                                list(domain = nominal_scale_definition))))
   }
   
   if (measurement_scale == "ratio") {
@@ -41,20 +50,20 @@ add_attribute_list <- function(attribute_name, attribute_label, attribute_defini
   if (measurement_scale == "ordinal") {
     attributeList$attribute$measurementScale <- list(ordinal = list(nonNumericDomain =
                                                                list(enumeratedDomain =
-                                                               list(codeDefinition = list(code = code,
-                                                                                          definition = measurement_scale_definition)))))
+                                                               list(codeDefinition = list(code = code_number,
+                                                                                          definition = code_number_definition)))))
   }
   
   if (measurement_scale == "interval") {
     attributeList$attribute$measurementScale <- list(interval = list(unit = list(standardUnit = units),
-                                                                     precision = precision,
+                                                                     precision = unit_precision,
                                                                      numericDomain = list(numberType = number_type,
                                                                                           bounds = list(minimum = minimum,
                                                                                                         maximum = maximum))))
   }
   
   if (measurement_scale == "dateTime") {
-    attributeList$attribute$measurementScale <- list(dateTime = list(formatString = years,
+    attributeList$attribute$measurementScale <- list(dateTime = list(formatString = ISO_date_time,
                                                                      dateTimePrecision = date_time_precision,
                                                                      dateTimeDomain = list(bounds = list(minimum = minimum,
                                                                                                          maximum = maximum))))
