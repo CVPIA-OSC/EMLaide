@@ -16,16 +16,44 @@
 #' @param minimum Theoretical or allowable minimum value. 
 #' @param maximum Theoretical or allowable maximum value.
 #' @return The project or dataset list with an attribute list appended
-#' @examples TODO
+#' @examples
 #' Different measurement scale values will indicate different inputs: 
-#'    Nominal: Please provide measurement_scale_definition
-#'    Ordinal: Please provide code_number and code_number_definition 
-#'    Interval: Please provide units, unit_precision, number_type, minimum, and maximum
-#'    Ratio: Please provide units and number_type
-#'    dateTime: Please provide ISO_date_time, date_time_precision, minimum, and maximum
+#' 
+#' Nominal: Please provide measurement_scale_definition.
+#' 
+#' add_attribute_list(attribute_name = "site_id", attribute_definition = "Site id as used in sites table",
+#'                    storage_type = "typeSystem = 'http://www.w3.org/2001/XMLSchema-datatypes'>string<",
+#'                    measurement_scale = "nominal", nominal_scale_definition = "Site id as used in sites table.")
+#' 
+#' Ordinal: Please provide code_number and code_number_definition.
+#' 
+#' add_attribute_list(attribute_name = "q110", attribute_definition = "Q110 - preference for front yard",
+#'                    storage_type = "typeSystem = 'http://www.w3.org/2001/XMLSchema-datatypes'>float<",
+#'                    measurement_scale = "ordinal", code_number = "1.00", code_number_definition = "A desert landscape.",
+#'                    code_number = "2.00", code_number_definition = "Mostly lawn.",
+#'                    code_number = "3.00", code_number_definition = "Some lawn.")
+#'  
+#' Interval: Please provide units, unit_precision, number_type, minimum, and maximum.
+#' 
+#' add_attribute_list(attribute_name = "Count", attribute_definition = "Number of individuals observed",
+#'                    measurement_scale = "interval",  storage_type = "integer", units = "number", unit_precision = "1",
+#'                    number_type = "whole", minimum = "0")
+#'                    
+#' Ratio: Please provide units, unit_precision, and number_type.
+#' 
+#' add_attribute_list(attribute_name = "pH", attribute_definition = "pH of soil solution",
+#'                    storage_type = "typeSystem = 'http://www.w3.org/2001/XMLSchema-datatypes'>float<",
+#'                    measurement_scale = "ratio", units = "dimensionless", unit_precision = "0.01",
+#'                    number_type = "real")
+#'                    
+#' dateTime: Please provide ISO_date_time, date_time_precision, minimum, and maximum
+#' 
+#' add_attribute_list(attribute_name = "Year", attribute_definition = "Calendar year of the observation from years 1990 - 2010.",
+#'                    storage_type = "integer", measurement_scale = "dateTime", ISO_date_time = "YYYY",
+#'                    date_time_precision = "1", minimum = "1993", maximum = "2003")
 #' @export
 
-add_attribute_list <- function(attribute_name, attribute_label, attribute_definition,
+add_attribute_list <- function(attribute_name, attribute_label = NULL, attribute_definition,
                                storage_type, measurement_scale, nominal_scale_definition = NULL,
                                units = NULL, number_type = NULL, code_number = NULL,
                                code_number_definition = NULL, unit_precision = NULL, ISO_date_time = NULL,
@@ -43,7 +71,8 @@ add_attribute_list <- function(attribute_name, attribute_label, attribute_defini
   }
   
   if (measurement_scale == "ratio") {
-    attributeList$attribute$measurementScale <- list(ratio = list(unit = list(standardUnit = units),
+    attributeList$attribute$measurementScale <- list(ratio = list(unit = list(standardUnit = units,
+                                                                              precision = unit_precision),
                                                                   numericDomain = list(numberType = number_type)))
   }
   
