@@ -16,13 +16,13 @@ add_attribute_list(
 )
 }
 \arguments{
-\item{attribute_name}{TODO}
+\item{attribute_name}{The name    of a field in    a    data table. This is    often    a short    and/or cryptic name. It is recommended that the attribute names    be suitable    for    use    as a    variable,    e.g.,    composed of ASCII    characters,    and    that the    attribute names    match    the    column headers of    a    CSV    or other text table.}
 
-\item{attribute_label}{TODO}
+\item{attribute_label}{Optional. Used to provide    a    less ambiguous or    less cryptic alternative identification    than what    is provided    in attribute_name}
 
-\item{storage_type}{TODO}
+\item{storage_type}{An indicator    to processing    systems    as to    how    the    attribute    might    be represented in    a    system or    language,    but    is distinct    from the actual    expression of    the    domain of    the    attribute. Non system-specific examples    include: float,    integer    and    string.}
 
-\item{measurement_scale}{TODO}
+\item{measurement_scale}{The    type of    scale    from which values are    drawn    for    the    attribute. Must use one of the following types: nominal, ordinal, interval, ratio, or dateTime.}
 
 \item{measurement_scale_description}{TODO}
 
@@ -30,13 +30,13 @@ add_attribute_list(
 
 \item{number_type}{TODO}
 
-\item{attribute_defenition}{TODO}
+\item{attribute_defenition}{A precise and complete    definition of the attribute    being    documented.}
 }
 \value{
 the project or dataset list with an attribute list appended
 }
 \description{
-adds the attribute list element according to EML standards
+adds the attribute list element according to EML standards. Multiple attributes can be created.
 }
 \examples{
 TODO
