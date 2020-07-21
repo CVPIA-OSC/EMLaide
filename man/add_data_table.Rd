@@ -16,15 +16,18 @@ add_data_table(
   attribute_orientation,
   field_delimiter,
   online_url,
-  attribute_list
+  attribute_list,
+  case_sensitivity,
+  number_of_records,
+  constraint
 )
 }
 \arguments{
-\item{entity_name}{TODO}
+\item{entity_name}{The name of the table, file, or database table. Often thought of as the original ascii file name.}
 
-\item{entity_description}{TODO}
+\item{entity_description}{A longer, more descriptive explination of the data in the entity.}
 
-\item{object_name}{TODO}
+\item{object_name}{The name of the file when downloaded or exported as text from a database.}
 
 \item{number_of_headers}{TODO}
 
@@ -34,9 +37,15 @@ add_data_table(
 
 \item{field_delimiter}{TODO}
 
-\item{online_url}{TODO}
+\item{online_url}{A link to access the data.}
 
-\item{attribute_list}{TODO}
+\item{attribute_list}{Describes all variables in a data entity in individual attribute elements. These descriptions include the name and definition of each attribute, its domain, definition of coded values, and other pertinent information. It is further explained in the add_attribute_list function.}
+
+\item{case_sensitivity}{Designates the data table as case sensitive or not. Please provide "yes" or "no".}
+
+\item{number_of_records}{A count of the number of records in the data table.}
+
+\item{constraint}{Describes any integrity constraints between entities (e.g.tables), as they would    be maintained    in a relational    management system.}
 
 \item{parament_element}{a list representing the EML project or dataset}
 
