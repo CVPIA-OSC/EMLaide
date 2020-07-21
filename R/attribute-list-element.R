@@ -60,33 +60,61 @@ add_attribute_list <- function(attribute_name, attribute_label = NULL, attribute
                                code_number_definition = NULL, unit_precision = NULL, ISO_date_time = NULL,
                                date_time_precision = NULL, minimum = NULL, maximum = NULL) {
   
-  attributeList <- list(attribute = list(attributeName = attribute_name,
-                                         attributeLabel = attribute_label,
-                                         attributeDefinition = attribute_definition,
-                                         storageType = storage_type))
-  
-  if (!is.null(attribute_label)) { 
-    attributeList$attribute$attributeLabel <- attribute_label
-  }
+  # if (!is.null(attribute_label)) { 
+  #   attributeList$attribute$attributeLabel <- attribute_label
+  # }
+  # 
+  # if (measurement_scale == "nominal") {
+  #   attributeList$attribute$measurementScale <- list(nominal = list(nonNumericDomain = list(textDomain =
+  #                                               list(domain = nominal_scale_definition))))
+  # }else{
+  # if (measurement_scale == "ratio") {
+  #   attributeList$attribute$measurementScale <- list(ratio = list(unit = list(standardUnit = units,
+  #                                                                             precision = unit_precision),
+  #                                                                 numericDomain = list(numberType = number_type)))
+  # }else{
+  # if (measurement_scale == "ordinal") {
+  #   attributeList$attribute$measurementScale <- list(ordinal = list(nonNumericDomain =
+  #                                                              list(enumeratedDomain =
+  #                                                              list(codeDefinition = list(code = code_number,
+  #                                                                                         definition = code_number_definition)))))
+  # }else{
+  # if (measurement_scale == "interval") {
+  #   attributeList$attribute$measurementScale <- list(interval = list(unit = list(standardUnit = units),
+  #                                                                    precision = unit_precision,
+  #                                                                    numericDomain = list(numberType = number_type,
+  #                                                                                         bounds = list(minimum = minimum,
+  #                                                                                                       maximum = maximum))))
+  # }else{
+  # if (measurement_scale == "dateTime") {
+  #   attributeList$attribute$measurementScale <- list(dateTime = list(formatString = ISO_date_time,
+  #                                                                    dateTimePrecision = date_time_precision,
+  #                                                                    dateTimeDomain = list(bounds = list(minimum = minimum,
+  #                                                                                                        maximum = maximum))))
+  # }
+  # }}}}
+
+  if (missing(measurement_scale)) {stop('Please list one of the approved measurement scales.',
+                                       call. = FALSE)}else{
   
   if (measurement_scale == "nominal") {
     attributeList$attribute$measurementScale <- list(nominal = list(nonNumericDomain = list(textDomain =
                                                 list(domain = nominal_scale_definition))))
   }
-  
+                                         
   if (measurement_scale == "ratio") {
     attributeList$attribute$measurementScale <- list(ratio = list(unit = list(standardUnit = units,
                                                                               precision = unit_precision),
                                                                   numericDomain = list(numberType = number_type)))
   }
-  
+    
   if (measurement_scale == "ordinal") {
     attributeList$attribute$measurementScale <- list(ordinal = list(nonNumericDomain =
                                                                list(enumeratedDomain =
                                                                list(codeDefinition = list(code = code_number,
                                                                                           definition = code_number_definition)))))
   }
-  
+    
   if (measurement_scale == "interval") {
     attributeList$attribute$measurementScale <- list(interval = list(unit = list(standardUnit = units),
                                                                      precision = unit_precision,
@@ -94,13 +122,16 @@ add_attribute_list <- function(attribute_name, attribute_label = NULL, attribute
                                                                                           bounds = list(minimum = minimum,
                                                                                                         maximum = maximum))))
   }
-  
+    
   if (measurement_scale == "dateTime") {
     attributeList$attribute$measurementScale <- list(dateTime = list(formatString = ISO_date_time,
                                                                      dateTimePrecision = date_time_precision,
                                                                      dateTimeDomain = list(bounds = list(minimum = minimum,
                                                                                                          maximum = maximum))))
   }
-  
-
-}
+                                       }
+  attributeList <- list(attribute = list(attributeName = attribute_name,
+                                         attributeLabel = attribute_label,
+                                         attributeDefinition = attribute_definition,
+                                         storageType = storage_type))
+  }

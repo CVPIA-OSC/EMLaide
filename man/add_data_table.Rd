@@ -45,11 +45,11 @@ add_data_table(
 
 \item{number_of_records}{A count of the number of records in the data table.}
 
-\item{constraint}{Describes any integrity constraints between entities (e.g.tables), as they would    be maintained    in a relational    management system.}
+\item{constraint}{TODO. Describes any integrity constraints between entities (e.g.tables), as they would    be maintained    in a relational    management system.}
 
 \item{parament_element}{a list representing the EML project or dataset}
 
-\item{alternate_identifer}{TODO}
+\item{alternate_identifer}{Optional. Provide when a dataset or project belongs to more than the contributing organization. Please include each additional individual ID with its own alternate_identifier.}
 
 \item{physical_line_delimiter}{TODO}
 }
