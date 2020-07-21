@@ -10,9 +10,14 @@ add_attribute_list(
   attribute_definition,
   storage_type,
   measurement_scale,
-  measurement_scale_description,
-  units,
-  number_type
+  measurement_scale_definition = NULL,
+  units = NULL,
+  number_type = NULL,
+  code = NULL,
+  precision = NULL,
+  minimum = NULL,
+  maximum = NULL,
+  date_time_precision = NULL
 )
 }
 \arguments{
@@ -24,11 +29,21 @@ add_attribute_list(
 
 \item{measurement_scale}{The    type of    scale    from which values are    drawn    for    the    attribute. Must use one of the following types: nominal, ordinal, interval, ratio, or dateTime.}
 
-\item{measurement_scale_description}{TODO}
+\item{measurement_scale_definition}{TODO}
 
 \item{units}{TODO}
 
 \item{number_type}{TODO}
+
+\item{code}{TODO}
+
+\item{precision}{TODO}
+
+\item{minimum}{TODO}
+
+\item{maximum}{TODO}
+
+\item{date_time_precision}{TODO}
 
 \item{attribute_defenition}{A precise and complete    definition of the attribute    being    documented.}
 }
