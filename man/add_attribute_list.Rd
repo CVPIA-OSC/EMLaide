@@ -91,7 +91,8 @@ add_attribute_list(attribute_name = "pH", attribute_definition = "pH of soil sol
                    
 dateTime: Please provide ISO_date_time, date_time_precision, minimum, and maximum
 
-add_attribute_list(attribute_name = "Year", attribute_definition = "Calendar year of the observation from years 1990 - 2010.",
+add_attribute_list(attribute_name = "Yrs", attribute_label = "Years",
+                   attribute_definition = "Calendar year of the observation from years 1990 - 2010.",
                    storage_type = "integer", measurement_scale = "dateTime", ISO_date_time = "YYYY",
                    date_time_precision = "1", minimum = "1993", maximum = "2003")
 }
