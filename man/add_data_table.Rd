@@ -12,7 +12,7 @@ add_data_table(
   object_name,
   number_of_headers,
   record_delimiter,
-  physcial_line_delimiter,
+  physical_line_delimiter,
   attribute_orientation,
   field_delimiter,
   online_url,
@@ -33,6 +33,8 @@ add_data_table(
 
 \item{record_delimiter}{TODO}
 
+\item{physical_line_delimiter}{TODO}
+
 \item{attribute_orientation}{TODO}
 
 \item{field_delimiter}{TODO}
@@ -50,8 +52,6 @@ add_data_table(
 \item{parament_element}{a list representing the EML project or dataset}
 
 \item{alternate_identifer}{Optional. Provide when a dataset or project belongs to more than the contributing organization. Please include each additional individual ID with its own alternate_identifier.}
-
-\item{physical_line_delimiter}{TODO}
 }
 \value{
 the project or dataset list with a data table appended
@@ -60,5 +60,11 @@ the project or dataset list with a data table appended
 adds the data table elements according to EML standards
 }
 \examples{
-TODO
+add_data_table(parent_element = list(), entity_name = "692_EML_IncubationByDepth_SoilCO2Fluxes.csv",
+               entity_description = "Soil CO2 Fluxes 2013-2014", object_name = "692_EML_IncubationByDepth_SoilCO2Fluxes.csv",
+               number_of_headers = "1", record_delimiter = "n", physical_line_delimiter = "n", 
+               attribute_orientation = "column", field_delimiter = ",",
+               online_url = "function='download'>https://pasta.lternet.edu/package/data/eml/knb-lter-bnz/692/2/b52b9d6ab39ff0b903bdb375d7debc69",
+               attribute_list = "attribute_list", case_sensitivity = "yes", number_of_records = "1", 
+               constraint = "TODO")
 }

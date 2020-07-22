@@ -42,14 +42,11 @@ add_data_table <- function(parent_element, alternate_identifier = NULL, entity_n
                                                    distribution = list(online = list(url = online_url))),
                                    caseSensitive = list(case_sensitivity),
                                    numberOfRecords = list(number_of_records),
-                                   constraint = list(constraint))
+                                   constraint = list(constraint),
+                                   attributeList =list(attribute_list))
   
   if (!is.null(alternate_identifier)) {
     parent_element$dataTable$alternateIdentifier <- alternate_identifier
-  }
-  
-  if (!is.null(attribute_list)) { 
-    parent_element$dataTable$attributeList <- attribute_list
   }
   
   return(parent_element)
