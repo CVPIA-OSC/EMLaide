@@ -20,7 +20,8 @@ add_taxonomic_coverage(
   genus_value,
   species = "species",
   species_value,
-  common_name
+  common_name,
+  taxon_id
 )
 }
 \arguments{
@@ -55,6 +56,8 @@ add_taxonomic_coverage(
 \item{species_value}{The species level name.}
 
 \item{common_name}{The common name of the organism}
+
+\item{taxon_id}{The given taxonomic serial number as determined by ITIS. You can search for the relevant taxonomic id at \url{https://www.itis.gov/}.}
 }
 \value{
 Taxonomic coverage information. The function should be assigned to the name taxonomic_coverage to append it to the dataset or project. Example of how to incorporate it into the add_coverage function is seen below.
