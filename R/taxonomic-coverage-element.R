@@ -70,11 +70,12 @@ add_taxonomic_coverage <- function(CVPIA_common_species = NULL,
     if (missing(common_name)) {stop("Please provide a common name.", call. = FALSE)}
     common_name <- common_name
     
-  }else{
+  } else {
+    
+    kingdom_value <- "Animalia"
+    phylum_value <- "Chordata"
     
     if (CVPIA_common_species == "chinook") {
-      kingdom_value <- "Animalia"
-      phylum_value <- "Chordata"
       class_value <- "Teleostei"
       order_value <- "Salmoniformes"
       family_value <- "Salmonidae"
@@ -84,8 +85,6 @@ add_taxonomic_coverage <- function(CVPIA_common_species = NULL,
     }
     
     if (CVPIA_common_species == "steelhead") {
-      kingdom_value <- "Animalia"
-      phylum_value <- "Chordata"
       class_value <- "Teleostei"
       order_value <- "Salmoniformes"
       family_value <- "Salmonidae"
@@ -95,8 +94,6 @@ add_taxonomic_coverage <- function(CVPIA_common_species = NULL,
     }
     
     if (CVPIA_common_species == "delta_smelt") {
-      kingdom_value <- "Animalia"
-      phylum_value <- "Chordata"
       class_value <- "Teleostei"
       order_value <- "Osmeriformes"
       family_value <- "Osmeridae"
@@ -106,8 +103,6 @@ add_taxonomic_coverage <- function(CVPIA_common_species = NULL,
     }
     
     if (CVPIA_common_species == "white_sturgeon") {
-      kingdom_value <- "Animalia"
-      phylum_value <- "Chordata"
       class_value <- "Chondrostei"
       order_value <- "Acipenseriformes"
       family_value <- "Acipenseridae"
@@ -117,8 +112,6 @@ add_taxonomic_coverage <- function(CVPIA_common_species = NULL,
     }
     
     if (CVPIA_common_species == "green_sturgeon") {
-      kingdom_value <- "Animalia"
-      phylum_value <- "Chordata"
       class_value <- "Chondrostei"
       order_value <- "Acipenseriformes"
       family_value <- "Acipenseridae"

@@ -8,7 +8,7 @@
 #' @param south_bounding_coordinate The south cardinality limit.
 #' @param begin_date The starting date for the dataset or project. Dates must be provided in ISO 8601 format, YYYY-MM-DD.
 #' @param end_date The projected or actual end date for the dataset or project. Dates must be provided in ISO 8601 format, YYYY-MM-DD.
-#' @param taxonomic_coverage Addition of taxonomic coverage is optional. Can be appended using the add_taxonomic_coverage function. Assign this function a name and then set it as the taxonomic_coverage parameter input. An example is given down below.  
+#' @param taxonomic_coverage Addition of taxonomic coverage is optional. The taxonomic information for all organisms relevant to the study should be included and mandates the input of the taxonomy levels of kingdom-species. An example of how to append this information using the add_taxonomic_coverage function is given down below.  
 #' @return The dataset or project with coverage information appended
 #' @examples 
 #' add_coverage(parent_element = list(), geographic_description = "North Slope drainage basin:
