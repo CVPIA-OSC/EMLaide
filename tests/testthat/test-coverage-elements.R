@@ -93,7 +93,7 @@ test_that('The taxonomic coverage function adds the taxonomic coverage elements'
                                                                                                                        TaxonRankName = "genus", TaxonRankValue = "Oncorhynchus", 
                                                                                                                        TaxonomicClassification = list(TaxonRankName = "species", 
                                                                                                                                                       TaxonRankValue = "Oncorhynchus tshawytscha", 
-                                                                                                                                                      commonName = "Chinook Salmon")))))))))
+                                                                                                                                                      commonName = "Chinook Salmon", taxon_id = "Provider = 'https://itis.gov' 161980")))))))))
   expect_equal(add_taxonomic_coverage(CVPIA_common_species = "white_sturgeon"),
                list(TaxonomicClassification = list(TaxonRankName = "kingdom", 
                                                    TaxonRankValue = "Animalia", TaxonomicClassification = list(
@@ -106,7 +106,7 @@ test_that('The taxonomic coverage function adds the taxonomic coverage elements'
                                                                                                                        TaxonRankName = "genus", TaxonRankValue = "Acipenser", 
                                                                                                                        TaxonomicClassification = list(TaxonRankName = "species", 
                                                                                                                                                       TaxonRankValue = "Acipenser transmontanus", 
-                                                                                                                                                      commonName = "White Sturgeon")))))))))
+                                                                                                                                                      commonName = "White Sturgeon", taxon_id = "Provider = 'https://itis.gov' 161068")))))))))
   
   expect_equal(add_taxonomic_coverage(CVPIA_common_species = "steelhead"),
                list(TaxonomicClassification = list(TaxonRankName = "kingdom", 
@@ -120,7 +120,7 @@ test_that('The taxonomic coverage function adds the taxonomic coverage elements'
                                                                                                                        TaxonRankName = "genus", TaxonRankValue = "Oncorhynchus", 
                                                                                                                        TaxonomicClassification = list(TaxonRankName = "species", 
                                                                                                                                                       TaxonRankValue = "Oncorhynchus mykiss", 
-                                                                                                                                                      commonName = "Steelhead Trout")))))))))
+                                                                                                                                                      commonName = "Steelhead Trout", taxon_id = "Provider = 'https://itis.gov' 161989")))))))))
   expect_equal(add_taxonomic_coverage(CVPIA_common_species = "delta_smelt"),
                list(TaxonomicClassification = list(TaxonRankName = "kingdom", 
                                                    TaxonRankValue = "Animalia", TaxonomicClassification = list(
@@ -133,7 +133,7 @@ test_that('The taxonomic coverage function adds the taxonomic coverage elements'
                                                                                                                        TaxonRankName = "genus", TaxonRankValue = "Hypomesus", 
                                                                                                                        TaxonomicClassification = list(TaxonRankName = "species", 
                                                                                                                                                       TaxonRankValue = "Hypomesus transpacificus", 
-                                                                                                                                                      commonName = "Delta Smelt")))))))))
+                                                                                                                                                      commonName = "Delta Smelt", taxon_id = "Provider = 'https://itis.gov' 162032")))))))))
   expect_equal(add_taxonomic_coverage(CVPIA_common_species = "green_sturgeon"),
                list(TaxonomicClassification = list(TaxonRankName = "kingdom", 
                                                    TaxonRankValue = "Animalia", TaxonomicClassification = list(
@@ -146,7 +146,7 @@ test_that('The taxonomic coverage function adds the taxonomic coverage elements'
                                                                                                                        TaxonRankName = "genus", TaxonRankValue = "Acipenser", 
                                                                                                                        TaxonomicClassification = list(TaxonRankName = "species", 
                                                                                                                                                       TaxonRankValue = "Acipenser medirostris", 
-                                                                                                                                                      commonName = "Green Sturgeon")))))))))
+                                                                                                                                                      commonName = "Green Sturgeon", taxon_id = "Provider = 'https://itis.gov' 161067")))))))))
   expect_equal(add_taxonomic_coverage(kingdom_value = "Animalia",
                                       phylum_value = "Chordata",
                                       class_value = "Mammalia",
@@ -154,7 +154,8 @@ test_that('The taxonomic coverage function adds the taxonomic coverage elements'
                                       family_value = "Felidae",
                                       genus_value = "Panthera",
                                       species_value = "Panthera Leo",
-                                      common_name = "Lion"),
+                                      common_name = "Lion",
+                                      taxon_id = "Provider = 'https://itis.gov' 183803"),
                list(TaxonomicClassification = list(TaxonRankName = "kingdom", 
                                                    TaxonRankValue = "Animalia", TaxonomicClassification = list(
                                                      TaxonRankName = "phylum", TaxonRankValue = "Chordata", 
@@ -165,7 +166,8 @@ test_that('The taxonomic coverage function adds the taxonomic coverage elements'
                                                                                                                      TaxonRankValue = "Felidae", TaxonomicClassification = list(
                                                                                                                        TaxonRankName = "genus", TaxonRankValue = "Panthera", 
                                                                                                                        TaxonomicClassification = list(TaxonRankName = "species", 
-                                                                                                                                                      TaxonRankValue = "Panthera Leo", commonName = "Lion")))))))))
+                                                                                                                                                      TaxonRankValue = "Panthera Leo", commonName = "Lion", 
+                                                                                                                                                      taxon_id = "Provider = 'https://itis.gov' 183803")))))))))
 })
 
 test_that('The taxonomic coverage function errors when missing mandatory identifier inputs.', {
@@ -176,7 +178,8 @@ test_that('The taxonomic coverage function errors when missing mandatory identif
                                       family_value = "Felidae",
                                       genus_value = "Panthera",
                                       species_value = "Panthera Leo",
-                                      common_name = "Lion"),
+                                      common_name = "Lion",
+                                      taxon_id = "Provider = 'https://itis.gov' 183803"),
                "Please provide a kingdom.")
   
   expect_error(add_taxonomic_coverage(kingdom_value = "Animalia",
@@ -185,7 +188,8 @@ test_that('The taxonomic coverage function errors when missing mandatory identif
                                       family_value = "Felidae",
                                       genus_value = "Panthera",
                                       species_value = "Panthera Leo",
-                                      common_name = "Lion"),
+                                      common_name = "Lion",
+                                      taxon_id = "Provider = 'https://itis.gov' 183803"),
                "Please provide a phylum.")
   
   expect_error(add_taxonomic_coverage(kingdom_value = "Animalia",
@@ -194,7 +198,8 @@ test_that('The taxonomic coverage function errors when missing mandatory identif
                                       family_value = "Felidae",
                                       genus_value = "Panthera",
                                       species_value = "Panthera Leo",
-                                      common_name = "Lion"),
+                                      common_name = "Lion",
+                                      taxon_id = "Provider = 'https://itis.gov' 183803"),
                "Please provide a class.")
   
   expect_error(add_taxonomic_coverage(kingdom_value = "Animalia",
@@ -203,7 +208,8 @@ test_that('The taxonomic coverage function errors when missing mandatory identif
                                       family_value = "Felidae",
                                       genus_value = "Panthera",
                                       species_value = "Panthera Leo",
-                                      common_name = "Lion"),
+                                      common_name = "Lion",
+                                      taxon_id = "Provider = 'https://itis.gov' 183803"),
                "Please provide an order.")
   
   expect_error(add_taxonomic_coverage(kingdom_value = "Animalia",
@@ -212,7 +218,8 @@ test_that('The taxonomic coverage function errors when missing mandatory identif
                                       order_value = "Carnivora",
                                       genus_value = "Panthera",
                                       species_value = "Panthera Leo",
-                                      common_name = "Lion"),
+                                      common_name = "Lion",
+                                      taxon_id = "Provider = 'https://itis.gov' 183803"),
                "Please provide a family.")
   
   expect_error(add_taxonomic_coverage(kingdom_value = "Animalia",
@@ -221,7 +228,8 @@ test_that('The taxonomic coverage function errors when missing mandatory identif
                                       order_value = "Carnivora",
                                       family_value = "Felidae",
                                       species_value = "Panthera Leo",
-                                      common_name = "Lion"),
+                                      common_name = "Lion",
+                                      taxon_id = "Provider = 'https://itis.gov' 183803"),
                "Please provide a genus.")
   
   expect_error(add_taxonomic_coverage(kingdom_value = "Animalia",
@@ -230,7 +238,8 @@ test_that('The taxonomic coverage function errors when missing mandatory identif
                                       order_value = "Carnivora",
                                       family_value = "Felidae",
                                       genus_value = "Panthera",
-                                      common_name = "Lion"),
+                                      common_name = "Lion",
+                                      taxon_id = "Provider = 'https://itis.gov' 183803"),
                "Please provide a species.")
   
   expect_error(add_taxonomic_coverage(kingdom_value = "Animalia",
@@ -239,8 +248,19 @@ test_that('The taxonomic coverage function errors when missing mandatory identif
                                       order_value = "Carnivora",
                                       family_value = "Felidae",
                                       genus_value = "Panthera",
-                                      species_value = "Panthera Leo"),
+                                      species_value = "Panthera Leo",
+                                      taxon_id = "Provider = 'https://itis.gov' 183803"),
                "Please provide a common name")
+  
+  expect_error(add_taxonomic_coverage(kingdom_value = "Animalia",
+                                      phylum_value = "Chordata",
+                                      class_value = "Mammalia",
+                                      order_value = "Carnivora",
+                                      family_value = "Felidae",
+                                      genus_value = "Panthera",
+                                      common_name = "Lion",
+                                      species_value = "Panthera Leo"),
+               "Please provide the ITIS taxon id.")
   
 })
 
@@ -285,7 +305,8 @@ test_that('The coverage function works appropriately with the taxonomic function
                                                                                          TaxonomicClassification =
                                                                                            list(TaxonRankName = "species",
                                                                                                 TaxonRankValue = "Oncorhynchus tshawytscha",
-                                                                                                commonName = "Chinook Salmon")))))))))))
+                                                                                                commonName = "Chinook Salmon",
+                                                                                                taxon_id = "Provider = 'https://itis.gov' 161980")))))))))))
   
   
   

@@ -16,7 +16,7 @@
 #' @param species Species level present
 #' @param species_value The species level name.
 #' @param common_name The common name of the organism 
-#' @param taxon_id The given taxonomic serial number as determined by ITIS. You can search for the relevant taxonomic id at \url{https://www.itis.gov/}. 
+#' @param taxon_id The given taxonomic serial number as determined by ITIS. You can search for the relevant taxonomic id at \url{https://www.itis.gov/}. Please input as seen in example below with provider included in the parameter. 
 #' @return Taxonomic coverage information. The function should be assigned to the name taxonomic_coverage to append it to the dataset or project. Example of how to incorporate it into the add_coverage function is seen below. 
 #' @examples 
 #' taxonomic_coverage <- add_taxonomic_coverage(CVPIA_common_species = "chinook")
@@ -34,7 +34,8 @@
 #'                        family_value = "Felidae",
 #'                        genus_value = "Panthera", 
 #'                        species_value = "Panthera Leo",
-#'                        common_name = "Lion")
+#'                        common_name = "Lion", 
+#'                        taxon_id = "Provider = 'https://itis.gov' 183803")
 #'                        
 #' To append this information to the dataset or project:                        
 #'     add_coverage(parent_element = list(), geographic_description = "Description",
@@ -71,7 +72,7 @@ add_taxonomic_coverage <- function(CVPIA_common_species = NULL,
     if (missing(common_name)) {stop("Please provide a common name.", call. = FALSE)}
     common_name <- common_name
     if (missing(taxon_id)) {stop("Please provide the ITIS taxon id.", call. = FALSE)}
-    
+    taxon_id <- taxon_id
   } else {
     
     kingdom_value <- "Animalia"
@@ -84,7 +85,8 @@ add_taxonomic_coverage <- function(CVPIA_common_species = NULL,
       genus_value <- "Oncorhynchus"
       species_value <- "Oncorhynchus tshawytscha"
       common_name <- "Chinook Salmon"
-      taxon_id <- "161980"
+      taxon_id <- "Provider = 'https://itis.gov' 161980"
+
     }
     
     if (CVPIA_common_species == "steelhead") {
@@ -94,7 +96,7 @@ add_taxonomic_coverage <- function(CVPIA_common_species = NULL,
       genus_value <- "Oncorhynchus"
       species_value <- "Oncorhynchus mykiss"
       common_name <- "Steelhead Trout"
-      taxon_id <- "161989"
+      taxon_id <- "Provider = 'https://itis.gov' 161989"
     }
     
     if (CVPIA_common_species == "delta_smelt") {
@@ -104,7 +106,7 @@ add_taxonomic_coverage <- function(CVPIA_common_species = NULL,
       genus_value <- "Hypomesus"
       species_value <- "Hypomesus transpacificus"
       common_name <- "Delta Smelt"
-      taxon_id <- "162032"
+      taxon_id <- "Provider = 'https://itis.gov' 162032"
     }
     
     if (CVPIA_common_species == "white_sturgeon") {
@@ -114,7 +116,7 @@ add_taxonomic_coverage <- function(CVPIA_common_species = NULL,
       genus_value <- "Acipenser"
       species_value <- "Acipenser transmontanus"
       common_name <- "White Sturgeon"
-      taxon_id <- "161068"
+      taxon_id <- "Provider = 'https://itis.gov' 161068"
     }
     
     if (CVPIA_common_species == "green_sturgeon") {
@@ -124,7 +126,7 @@ add_taxonomic_coverage <- function(CVPIA_common_species = NULL,
       genus_value <- "Acipenser"
       species_value <- "Acipenser medirostris"
       common_name <- "Green Sturgeon"
-      taxon_id <- "161067"
+      taxon_id <- "Provider = 'https://itis.gov' 161067"
     }
   } 
   
@@ -150,7 +152,8 @@ add_taxonomic_coverage <- function(CVPIA_common_species = NULL,
                                                    TaxonomicClassification =
                                                      list(TaxonRankName = species,
                                                           TaxonRankValue = species_value,
-                                                          commonName = common_name, 
-                                                          taxonId = taxon_id))))))))
-  #Still need to format like this <taxonId provider="https://itis.gov">11274</taxonId> 
+                                                          commonName = common_name,
+                                                          taxon_id = taxon_id))))))))
+
+
 }

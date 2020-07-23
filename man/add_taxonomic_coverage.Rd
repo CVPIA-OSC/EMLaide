@@ -57,7 +57,7 @@ add_taxonomic_coverage(
 
 \item{common_name}{The common name of the organism}
 
-\item{taxon_id}{The given taxonomic serial number as determined by ITIS. You can search for the relevant taxonomic id at \url{https://www.itis.gov/}.}
+\item{taxon_id}{The given taxonomic serial number as determined by ITIS. You can search for the relevant taxonomic id at \url{https://www.itis.gov/}. Please input as seen in example below with provider included in the parameter.}
 }
 \value{
 Taxonomic coverage information. The function should be assigned to the name taxonomic_coverage to append it to the dataset or project. Example of how to incorporate it into the add_coverage function is seen below.
@@ -81,7 +81,8 @@ taxonomic_coverage <- add_taxonomic_coverage(kingdom_value = "Animalia",
                        family_value = "Felidae",
                        genus_value = "Panthera", 
                        species_value = "Panthera Leo",
-                       common_name = "Lion")
+                       common_name = "Lion", 
+                       taxon_id = "Provider = 'https://itis.gov' 183803")
                        
 To append this information to the dataset or project:                        
     add_coverage(parent_element = list(), geographic_description = "Description",
