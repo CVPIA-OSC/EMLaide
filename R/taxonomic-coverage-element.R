@@ -19,9 +19,18 @@
 #' @section CVPIA Common Species: 
 #' By using a CVPIA common species, the appropriate taxonomy is appended based off of the Integrated Taxonomic Information System (ITIS). 
 #' 
-#' Select "chinook" to append the taxonomy of Oncorhynchus tshawytscha (Also known as Chinook Salmon or King Salmon) from the ITIS database. For further taxonomic coverage on the Chinook Salmon, you can visit: \href{https://www.itis.gov/servlet/SingleRpt/SingleRpt?search_topic=TSN&search_value=161980#null}{ITIS}'s webpage with full coverage.
+#' Select "chinook" to append the taxonomy of Oncorhynchus tshawytscha (Also known as Chinook Salmon or King Salmon) from the ITIS database. 
 #' 
-#' Select "delta_smelt" to append the taxonomy of 
+#' Select "delta_smelt" to append the taxonomy of Hypomesus transpacificus (Also known as Delta Smelt) from the ITIS database.
+#' 
+#' Select "white_sturgeon" to append the taxonomy of Acipenser transmontanus (Also known as White Sturgeon) from the ITIS database.
+#' 
+#' Select "green_sturgeon" to append the taxonomy of Acipenser medirostris (Also known as Green Sturgeon) from the ITIS database.
+#' 
+#' Select "steelhead" to append the taxonomy of Oncorhynchus mykiss (Also known as Steelhead, Rainbow Trout, or Redband Trout) from the ITIS database. 
+#' 
+#' For further taxonomic coverage (i.e subkingdom, infrakingdom, etc.) on any of these species, you can visit: \href{https://www.itis.gov/}{ITIS}'s webpage for full coverage information.
+#' 
 #' @return Taxonomic coverage information. The function should be assigned to the name taxonomic_coverage to append it to the dataset or project. Example of how to incorporate it into the add_coverage function is seen below. 
 #' @examples 
 #' taxonomic_coverage <- add_taxonomic_coverage(CVPIA_common_species = "chinook")
