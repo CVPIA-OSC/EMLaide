@@ -24,7 +24,7 @@ add_taxonomic_coverage(
 )
 }
 \arguments{
-\item{CVPIA_common_species}{A list of common CVPIA species can be set as the default species so that taxonomic coverage does not need to be inputted in manually. These species include: chinook salmon, steelhead, delta smelt, white sturgeon and green sturgeon. If one of these species are applicable, use the CVPIA_common_species inputs of "chinook", "steelhead", "delta_smelt", "white_sturgeon", and "green_sturgeon".}
+\item{CVPIA_common_species}{Use one of the following: "chinook", "delta_smelt", "white_sturgeon", "green_sturgeon", or "steelhead" to get pre-selected information from ITIS}
 
 \item{kingdom}{Kingdom level present}
 
@@ -62,12 +62,23 @@ Taxonomic coverage information. The function should be assigned to the name taxo
 \description{
 Adds the taxonomic coverage information of a dataset based off of EML standards. The addition of taxonomic coverage is optional, however defaults of chinook, sturgeon, smelt, and steelhead are provided. While single or multiple taxonomies can be applied, the full set of information must be provided if chosen to be included.
 }
+\section{CVPIA Common Species}{
+
+By using a CVPIA common species, the appropriate taxonomy is appended based off of the Integrated Taxonomic Information System (ITIS).
+
+Select "chinook" to append the taxonomy of Oncorhynchus tshawytscha (Also known as Chinook Salmon or King Salmon) from the ITIS database. For further taxonomic coverage on the Chinook Salmon, you can visit: \href{https://www.itis.gov/servlet/SingleRpt/SingleRpt?search_topic=TSN&search_value=161980#null}{ITIS's} webpage with full coverage.
+
+Hi
+}
+
 \examples{
 taxonomic_coverage <- add_taxonomic_coverage(CVPIA_common_species = "chinook")
 
-taxonomic_coverage <- add_taxonomic_coverage(CVPIA_common_species = "smelt")
+taxonomic_coverage <- add_taxonomic_coverage(CVPIA_common_species = "delta_smelt")
 
-taxonomic_coverage <- add_taxonomic_coverage(CVPIA_common_species = "sturgeon")
+taxonomic_coverage <- add_taxonomic_coverage(CVPIA_common_species = "white_sturgeon")
+
+taxonomic_coverage <- add_taxonomic_coverage(CVPIA_common_species = "green_sturgeon")
 
 taxonomic_coverage <- add_taxonomic_coverage(CVPIA_common_species = "steelhead")
 
