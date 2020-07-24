@@ -19,15 +19,15 @@
 #' @section CVPIA Common Species: 
 #' By using a CVPIA common species, the appropriate taxonomy is appended based off of the Integrated Taxonomic Information System (ITIS). 
 #' 
-#' Select "chinook" to append the taxonomy of Oncorhynchus tshawytscha (Also known as Chinook Salmon or King Salmon) from the ITIS database. 
+#' Select "chinook" to append the taxonomy of Oncorhynchus tshawytscha (Also known as Chinook Salmon or King Salmon) from the ITIS database. The correspoinding ITIS taxonomic id number is 161980.
 #' 
-#' Select "delta_smelt" to append the taxonomy of Hypomesus transpacificus (Also known as Delta Smelt) from the ITIS database.
+#' Select "delta_smelt" to append the taxonomy of Hypomesus transpacificus (Also known as Delta Smelt) from the ITIS database. The correspoinding ITIS taxonomic id number is 162032. 
 #' 
-#' Select "white_sturgeon" to append the taxonomy of Acipenser transmontanus (Also known as White Sturgeon) from the ITIS database.
+#' Select "white_sturgeon" to append the taxonomy of Acipenser transmontanus (Also known as White Sturgeon) from the ITIS database. The correspoinding ITIS taxonomic id number is 161068.
 #' 
-#' Select "green_sturgeon" to append the taxonomy of Acipenser medirostris (Also known as Green Sturgeon) from the ITIS database.
+#' Select "green_sturgeon" to append the taxonomy of Acipenser medirostris (Also known as Green Sturgeon) from the ITIS database. The correspoinding ITIS taxonomic id number is 161067.
 #' 
-#' Select "steelhead" to append the taxonomy of Oncorhynchus mykiss (Also known as Steelhead, Rainbow Trout, or Redband Trout) from the ITIS database. 
+#' Select "steelhead" to append the taxonomy of Oncorhynchus mykiss (Also known as Steelhead, Rainbow Trout, or Redband Trout) from the ITIS database. The correspoinding ITIS taxonomic id number is 161989.
 #' 
 #' For further taxonomic coverage (i.e subkingdom, infrakingdom, etc.) on any of these species, you can visit: \href{https://www.itis.gov/}{ITIS}'s webpage for full coverage information.
 #' 
