@@ -15,7 +15,6 @@ add_attribute(
   domain = NULL,
   units = NULL,
   number_type = NULL,
-  code = NULL,
   code_definition = NULL,
   unit_precision = NULL,
   date_time_format = NULL,
@@ -43,9 +42,7 @@ add_attribute(
 
 \item{number_type}{Can be defined as: real, natural, whole, or integer.}
 
-\item{code}{The reference for the code definition.}
-
-\item{code_definition}{The explaination of the listed code.}
+\item{code_definition}{A list of lists of your code, including all codes and their meanings. An example of how to append this is seen below}
 
 \item{unit_precision}{How precise units are measured.}
 
@@ -74,14 +71,12 @@ Different measurement scale values will indicate different inputs:
 \strong{Nominal:}
 Used to define categorical scale attributes. If your attribute falls
 under the domain of text, please provide the inputs of text_definition and text_pattern.
-If your attribute falls under the domain of enumerated, please provide the inputs
-of code and code_definition.
+If your attribute falls under the domain of enumerated, please provide the input of code_definition.
 
 \strong{Ordinal:}
 Used to define ordered scale attributes. If your attribute falls under the domain
 of text, please provide the inputs of text_definition and text_pattern. If your
-attribute falls under the domain of enumerated, please provide the inputs of
-code and code_definition.
+attribute falls under the domain of enumerated, please provide the input of code_definition.
 
 \subsection{Numeric:}
 
@@ -105,9 +100,12 @@ add_attribute(attribute_name = "site_id", attribute_definition = "Site id as use
               text_definition = "Site id as used in sites table.")
 
 Nominal(enumerated):
+code_def_1 = list(code = "yes", definition = "has been captured previously")
+code_def_2 = list(code = "no", definition = "has not been captured previously")
+code_definition = list(code_def_1, code_def_2)
 add_attribute(attribute_name = "Recap", attribute_definition = "Has the Turtle been captured and tagged previously",
               storage_type = "text", measurement_scale = "nominal", domain = "enumerated",
-              code = "yes", code_definition = "captured previously, No")
+              code_definition = code_definition)
               
 Ordinal(text):
 add_attribute(attribute_name = "LatitudeDD", attribute_definition = "Latitude",
@@ -115,11 +113,14 @@ add_attribute(attribute_name = "LatitudeDD", attribute_definition = "Latitude",
               domain= "text", text_definition = "Latitude")
               
 Ordinal(enumerated): 
+code_def_1 = list(code = "0", definition = "0 insects per meter of branch")
+code_def_2 = list(code = "1", definition = "1-10 insects per meter")
+code_def_3 = list(code = "2", definition = "11 – 100 insects per meter")
+code_def_2 = list(code = "3", definition = "more than 100 insects per meter")
+code_definition = list(code_def_1, code_def_2, code_def_3, code_def_4)
 add_attribute(attribute_name = "hwa", attribute_definition = "Hemlock woolly adelgid density per meter of branch",
               storage_type = "number", measurement_scale = "ordinal",
-              domain = "enumerated", code = c("0", "1", "2", "3"),
-              code_definition = c("0 insects per meter of branch", "1-10 insects per meter",
-                                  "11 – 100 insects per meter", "more than 100 insects per meter")
+              domain = "enumerated", code_definition = code_definition)
               
 Interval:
 add_attribute(attribute_name = "Count", attribute_definition = "Number of individuals observed",

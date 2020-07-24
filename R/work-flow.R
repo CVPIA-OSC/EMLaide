@@ -27,11 +27,13 @@ d <- function() {
 # attribute <- add_attribute(attribute_name = "Count", attribute_definition = "Number of individuals observed",
 #                    measurement_scale = "interval",  storage_type = "integer", units = "number", unit_precision = "1",
 #                    number_type = "whole", minimum = "0", maximum = "10")%>%
+# code = c("1.00", "2.00", "3.00"), code_definition = c("A desert landscape.", "Mostly lawn.", "Some Lawn"))
+# codeDef1 = list(code = "0", definition = "0 insects per meter of branch")
+# codeDef2 = list(code = "1", definition = "1-10 insects per meter")
+# code_definition = list(codeDef1, codeDef2)
+# 
+# attribute <- add_attribute(attribute_name = "q110", attribute_definition = "Q110 - preference for front yard",
+#                              storage_type = "float", domain = "enumerated",
+#                              measurement_scale = "ordinal", code_definition = code_definition) %>%
 #   as_xml() %>%
 #   write_xml('doggggg.xml')
-# cool <- add_attribute(attribute_list = list(), attribute_name = "q110", attribute_definition = "Q110 - preference for front yard",
-#                      storage_type = "typeSystem = 'http://www.w3.org/2001/XMLSchema-datatypes'>float<",
-#                      measurement_scale = "ordinal", code_number = c("1.00", "2.00", "3.00"),
-#                      code_number_definition = c("A desert landscape.", "Mostly lawn.", "Some Lawn"))
-# 
-
