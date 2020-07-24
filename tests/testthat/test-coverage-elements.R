@@ -290,3 +290,100 @@ test_that('The coverage function works appropriately with the taxonomic function
   
   
 })
+
+test_that('The coverage function can append multiple taxonomic coverages.', {
+  delta <- add_taxonomic_coverage(CVPIA_common_species = "delta_smelt")
+  chinook <- add_taxonomic_coverage(CVPIA_common_species = "chinook")
+  white <- add_taxonomic_coverage(CVPIA_common_species = "white_sturgeon")
+  taxonomic_coverage <- list(delta, chinook, white)
+  expect_equal(add_coverage(parent_element = list(), geographic_description = "Description",
+                            west_bounding_coordinate = "-160.594000", 
+                            east_bounding_coordinate = "-134.104800",
+                            north_bounding_coordinate = "71.238300",
+                            south_bounding_coordinate = "67.865000",
+                            begin_date = "1980-01-01", end_date = "2010-12-31",
+                            taxonomic_coverage = taxonomic_coverage),
+               list(
+                 coverage = list(
+                   geographicCoverage = list(
+                     geographicDescription = "Description",
+                     boundingCoordinates = list(
+                       westBoundingCoordinate = "-160.594000",
+                       eastBoundingCoordinate = "-134.104800",
+                       northBoundingCoordinate = "71.238300",
+                       southBoundingCoordinate = "67.865000")),
+                   temporalCoverage = list(rangeOfDates = list(
+                     beginDate = list(calendarDate = "1980-01-01"),
+                     endDate = list(calendarDate = "2010-12-31"))),
+                   taxonomicCoverage = list(
+                     list(
+                       TaxonomicClassification = list(
+                         TaxonRankName = "kingdom",
+                         TaxonRankValue = "Animalia",
+                         TaxonomicClassification = list(
+                           TaxonRankName = "phylum",
+                           TaxonRankValue = "Chordata",
+                           TaxonomicClassification = list(
+                             TaxonRankName = "class",
+                             TaxonRankValue = "Teleostei",
+                             TaxonomicClassification = list(
+                               TaxonRankName = "order",
+                               TaxonRankValue = "Osmeriformes",
+                               TaxonomicClassification = list(
+                                 TaxonRankName = "family",
+                                 TaxonRankValue = "Osmeridae",
+                                 TaxonomicClassification = list(
+                                   TaxonRankName = "genus",
+                                   TaxonRankValue = "Hypomesus",
+                                   TaxonomicClassification = list(
+                                     TaxonRankName = "species",
+                                     TaxonRankValue = "Hypomesus transpacificus",
+                                     commonName = "Delta Smelt")))))))),
+                     list(
+                       TaxonomicClassification = list(
+                         TaxonRankName = "kingdom",
+                         TaxonRankValue = "Animalia",
+                         TaxonomicClassification = list(
+                           TaxonRankName = "phylum",
+                           TaxonRankValue = "Chordata",
+                           TaxonomicClassification = list(
+                             TaxonRankName = "class",
+                             TaxonRankValue = "Teleostei",
+                             TaxonomicClassification = list(
+                               TaxonRankName = "order",
+                               TaxonRankValue = "Salmoniformes",
+                               TaxonomicClassification = list(
+                                 TaxonRankName = "family",
+                                 TaxonRankValue = "Salmonidae",
+                                 TaxonomicClassification = list(
+                                   TaxonRankName = "genus",
+                                   TaxonRankValue = "Oncorhynchus",
+                                   TaxonomicClassification = list(
+                                     TaxonRankName = "species",
+                                     TaxonRankValue = "Oncorhynchus tshawytscha",
+                                     commonName = "Chinook Salmon")))))))),
+                     list(
+                       TaxonomicClassification = list(
+                         TaxonRankName = "kingdom",
+                         TaxonRankValue = "Animalia",
+                         TaxonomicClassification = list(
+                           TaxonRankName = "phylum",
+                           TaxonRankValue = "Chordata",
+                           TaxonomicClassification = list(
+                             TaxonRankName = "class",
+                             TaxonRankValue = "Chondrostei",
+                             TaxonomicClassification = list(
+                               TaxonRankName = "order",
+                               TaxonRankValue = "Acipenseriformes",
+                               TaxonomicClassification = list(
+                                 TaxonRankName = "family",
+                                 TaxonRankValue = "Acipenseridae",
+                                 TaxonomicClassification = list(
+                                   TaxonRankName = "genus",
+                                   TaxonRankValue = "Acipenser",
+                                   TaxonomicClassification = list(
+                                     TaxonRankName = "species",
+                                     TaxonRankValue = "Acipenser transmontanus",
+                                     commonName = "White Sturgeon"))))))))))))
+  
+})
