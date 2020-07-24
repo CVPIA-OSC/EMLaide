@@ -15,8 +15,8 @@ add_attribute(
   domain = NULL,
   units = NULL,
   number_type = NULL,
-  code_number = NULL,
-  code_number_definition = NULL,
+  code = NULL,
+  code_definition = NULL,
   unit_precision = NULL,
   date_time_format = NULL,
   date_time_precision = NULL,
@@ -31,27 +31,27 @@ add_attribute(
 
 \item{storage_type}{An indicator    to processing    systems    as to    how    the    attribute    might    be represented in    a    system or    language,    but    is distinct    from the actual    expression of    the    domain of    the    attribute. Non system-specific examples    include: float,    integer    and    string.}
 
-\item{measurement_scale}{The    type of    scale    from which values are    drawn    for    the    attribute. Must use one of the following types: nominal, ordinal, interval, ratio, or dateTime.}
+\item{measurement_scale}{The    type of    scale    from which values are    drawn    for    the    attribute. Must use one of the following types: nominal, ordinal, interval, ratio, or dateTime. Further explination of the choices and required inputs are described below.}
 
-\item{text_definition}{Description for nominal measurement scale values.}
+\item{text_definition}{Description for non-numeric, text, measurement scale values.}
 
-\item{text_pattern}{TODO}
+\item{text_pattern}{A regular expression pattern constraining the attribute.}
 
-\item{domain}{TODO}
+\item{domain}{Input for the non-numeric measurement scales only. Please list either "text" or "enumerated".}
 
-\item{units}{The units assigned to this particular attributes values.}
+\item{units}{The units assigned to this attribute's values.}
 
-\item{number_type}{Can be defined as: real, natural, whole, or integer}
+\item{number_type}{Can be defined as: real, natural, whole, or integer.}
 
-\item{code_number}{The reference number to the code definition.}
+\item{code}{The reference for the code definition.}
 
-\item{code_number_definition}{The explaination of a listed code number}
+\item{code_definition}{The explaination of the listed code.}
 
-\item{unit_precision}{How precise units are measured}
+\item{unit_precision}{How precise units are measured.}
 
-\item{date_time_format}{YYYY-MM-DDThh:mm:ssTZD format}
+\item{date_time_format}{The format your date/time attribute is recorded in.}
 
-\item{date_time_precision}{What level of time is being measured.}
+\item{date_time_precision}{To what level time is being measured.}
 
 \item{minimum}{Theoretical or allowable minimum value.}
 
@@ -63,53 +63,77 @@ add_attribute(
 The project or dataset list with an attribute list appended
 }
 \description{
-adds an attribute element according to EML standards. Multiple attributes can be created. Will be appended to the attribute list.
+Adds an attribute element according to EML standards. Multiple attributes can be created. Will be appended to the attribute list.
 }
 \section{Measurement Scales}{
 
 Different measurement scale values will indicate different inputs:
 
-\subsection{Non-numeric}
-Please provide a domain to indicate if your attribute is text or enumerated.
-\subsubsection{Nominal:}
-Used to define nominal (categorical) scale attributes. If your attribute falls
+\subsection{Non-numeric:} Please provide a domain to indicate if your attribute is text or enumerated.
+
+\strong{Nominal:}
+Used to define categorical scale attributes. If your attribute falls
 under the domain of text, please provide the inputs of text_definition and text_pattern.
 If your attribute falls under the domain of enumerated, please provide the inputs
-of code number and code number definition.
-\subsubsection{ordinal}
-1.Nominal: Please provide measurement_scale_definition.
-2.Ordinal: Please provide code_number and code_number_definition.
-3.Interval: Please provide units, unit_precision, number_type, minimum, and maximum.
-4.Ratio: Please provide units, unit_precision, and number_type.
-5.dateTime: Please provide ISO_date_time, date_time_precision, minimum, and maximum
+of code and code_definition.
+
+\strong{Ordinal:}
+Used to define ordered scale attributes. If your attribute falls under the domain
+of text, please provide the inputs of text_definition and text_pattern. If your
+attribute falls under the domain of enumerated, please provide the inputs of
+code and code_definition.
+
+\subsection{Numeric:}
+
+\strong{Interval:}
+Used to define interval scale attributes. Please provide the inputs of units,
+unit_precision, number_type, minimum, and maximum.
+
+\strong{Ratio:}
+Used to define ratio scale attributes. Please provide the inputs of units,
+unit_precision, number_type, minimum, and maximum.
+
+\strong{dateTime:}
+Used to define date and time attributes. Please provide the inputs of date_time_format,
+date_time_precision, minimum, and maximum.
 }
 
 \examples{
-Nominal:
+Nominal(text):
 add_attribute(attribute_name = "site_id", attribute_definition = "Site id as used in sites table",
-                   storage_type = "typeSystem = 'http://www.w3.org/2001/XMLSchema-datatypes'>string<",
-                   measurement_scale = "nominal", nominal_scale_definition = "Site id as used in sites table.")
+              storage_type = "string",measurement_scale = "nominal", domain= "text"
+              text_definition = "Site id as used in sites table.")
 
-Ordinal:
-add_attribute(attribute_name = "q110", attribute_definition = "Q110 - preference for front yard",
-              storage_type = "typeSystem = 'http://www.w3.org/2001/XMLSchema-datatypes'>float<",
-              measurement_scale = "ordinal", code_number = c("1.00", "2.00", "3.00"),
-              code_number_definition = c("A desert landscape.", "Mostly lawn.", "Some lawn.")
- 
+Nominal(enumerated):
+add_attribute(attribute_name = "Recap", attribute_definition = "Has the Turtle been captured and tagged previously",
+              storage_type = "text", measurement_scale = "nominal", domain = "enumerated",
+              code = "yes", code_definition = "captured previously, No")
+              
+Ordinal(text):
+add_attribute(attribute_name = "LatitudeDD", attribute_definition = "Latitude",
+              storage_type = "coordinate", measurement_scale = "ordinal",
+              domain= "text", text_definition = "Latitude")
+              
+Ordinal(enumerated): 
+add_attribute(attribute_name = "hwa", attribute_definition = "Hemlock woolly adelgid density per meter of branch",
+              storage_type = "number", measurement_scale = "ordinal",
+              domain = "enumerated", code = c("0", "1", "2", "3"),
+              code_definition = c("0 insects per meter of branch", "1-10 insects per meter",
+                                  "11 – 100 insects per meter", "more than 100 insects per meter")
+              
 Interval:
 add_attribute(attribute_name = "Count", attribute_definition = "Number of individuals observed",
-                   measurement_scale = "interval",  storage_type = "integer", units = "number", unit_precision = "1",
-                   number_type = "whole", minimum = "0")
+                   measurement_scale = "interval",  storage_type = "integer", units = "number",
+                   unit_precision = "1", number_type = "whole", minimum = "0")
                    
 Ratio: 
 add_attribute(attribute_name = "pH", attribute_definition = "pH of soil solution",
-                   storage_type = "typeSystem = 'http://www.w3.org/2001/XMLSchema-datatypes'>float<",
-                   measurement_scale = "ratio", units = "dimensionless", unit_precision = "0.01",
-                   number_type = "real")
+                   storage_type = "float", measurement_scale = "ratio",
+                   units = "dimensionless", unit_precision = "0.01", number_type = "real")
                    
 dateTime:
 add_attribute(attribute_name = "Yrs", attribute_label = "Years",
-                   attribute_definition = "Calendar year of the observation from years 1990 - 2010.",
-                   storage_type = "integer", measurement_scale = "dateTime", ISO_date_time = "YYYY",
-                   date_time_precision = "1", minimum = "1993", maximum = "2003")
+              attribute_definition = "Calendar year of the observation from years 1990 - 2010.",
+              storage_type = "integer", measurement_scale = "dateTime", date_time_format = "YYYY",
+              date_time_precision = "1", minimum = "1993", maximum = "2003")
 }
