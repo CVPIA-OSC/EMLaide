@@ -24,10 +24,8 @@ d <- function() {
   
   return(NULL)
 }
-# para1 <- "This is the first paragraph"
-# para2 <- "This is the second paragraph"
-# description = list(para1, para2)
-# add_methods(method_step_title = "This is the title.", method_step_description = "This is the description",
+
+# add_method_step(method_step_title = "This is the title.", method_step_description = "This is the description",
 #             instrumentation = "scale") %>%
 #   as_xml() %>%
 #   write_xml('doggggg.xml')
