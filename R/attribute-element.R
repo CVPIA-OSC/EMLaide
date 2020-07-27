@@ -48,7 +48,7 @@
 #' @examples
 #' Nominal(text):
 #' add_attribute(attribute_name = "site_id", attribute_definition = "Site id as used in sites table",
-#'               storage_type = "string",measurement_scale = "nominal", domain= "text"
+#'               storage_type = "string", measurement_scale = "nominal", domain= "text",
 #'               text_definition = "Site id as used in sites table.")
 #'
 #' Nominal(enumerated):
@@ -60,9 +60,9 @@
 #'               code_definition = code_definition)
 #'               
 #' Ordinal(text):
-#' add_attribute(attribute_name = "LatitudeDD", attribute_definition = "Latitude",
-#'               storage_type = "coordinate", measurement_scale = "ordinal",
-#'               domain= "text", text_definition = "Latitude")
+# add_attribute(attribute_name = "LatitudeDD", attribute_definition = "Latitude",
+#               storage_type = "coordinate", measurement_scale = "ordinal",
+#               domain= "text", text_definition = "Latitude")
 #'               
 #' Ordinal(enumerated): 
 #' code_def_1 = list(code = "0", definition = "0 insects per meter of branch")
@@ -104,11 +104,15 @@ add_attribute <- function(attribute_name, attribute_label = NULL, attribute_defi
   if (missing(attribute_definition))
     {stop('Please provide a brief definition of the attribute you are including.', call. = FALSE)}
   if (missing(storage_type)) {stop('Please provide a storage type.', call. = FALSE)}
-  if (missing(measurement_scale)) {stop('Please provide a measurement scale', call. = FALSE)} 
+  if (missing(measurement_scale)) {stop('Please provide a measurement scale.', call. = FALSE)} 
   
   attribute <- list(attributeName = attribute_name,
                     attributeDefinition = attribute_definition,
                     storageType = storage_type)
+  
+  if (!is.null(attribute_label)){
+    attribute$attributeLabel <- attribute_label
+  }
   
   text <- list(nonNumericDesign = list(textDomain = list(definition = text_definition,
                                                          pattern = text_pattern)))
@@ -121,6 +125,8 @@ add_attribute <- function(attribute_name, attribute_label = NULL, attribute_defi
                                      bounds = list(minimum = minimum,
                                                    maximum = maximum)))
 if (measurement_scale == "nominal") {
+  if (missing(domain))
+    {stop('Please provide a domain of text or enumerated and supply the remaining applicable inputs.', call. = FALSE)}
   if (domain == "text") {
     if (missing(text_definition))
       {stop('Please provide the description for your nominal measurment scale.', call. = FALSE)}
@@ -139,6 +145,8 @@ if (measurement_scale == "nominal") {
   }
 } else { 
 if (measurement_scale == "ordinal") {
+  if (missing(domain))
+  {stop('Please provide a domain of text or enumerated and supply the remaining applicable inputs.', call. = FALSE)}
   if (domain == "text") {
     if (missing(text_definition))
       {stop('Please provide the description for your ordinal measurment scale.', call. = FALSE)}
@@ -161,11 +169,11 @@ if (measurement_scale == "interval") {
   if (missing(unit_precision))
     {stop('Please provide what level of precision your interval measurments use.', call. = FALSE)}
   if (missing(number_type))
-    {stop('Please provide what type of numbers (whole, integer, real, etc.) are being used.', call. = FALSE)}
+    {stop('Please provide what type of numbers are being used.', call. = FALSE)}
   if (missing(minimum))
     {warning('Please provide a minimum theoretical value if applicable.', call. = FALSE)}
   if (missing(maximum))
-    {warning('Please provide a maximum theoretical value if applicable', call. = FALSE)}
+    {warning('Please provide a maximum theoretical value if applicable.', call. = FALSE)}
   
   attribute$measurementScale$interval <- unit
 } else {
@@ -176,7 +184,7 @@ if (measurement_scale == "ratio") {
   if (missing(unit_precision))
     {stop('Please provide what level of precision your ratio measurments use.', call. = FALSE)}
   if (missing(number_type))
-    {stop('Please provide what type of numbers (whole, integer, real, etc.) are being used.', call. = FALSE)}
+    {stop('Please provide what type of numbers are being used.', call. = FALSE)}
   if (missing(minimum))
     {warning('Please provide a minimum theoretical value if applicable.', call. = FALSE)}
   if (missing(maximum))
