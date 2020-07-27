@@ -157,3 +157,71 @@ test_that('Correct error and warning messages are produced.', {
                'Please provide the latest date time used.')
 
 })
+
+
+test_that('The attribute function adds attribute elements.', {
+  expect_equal(add_attribute(attribute_name = "site_id", attribute_definition = "Site id as used in sites table",
+                             attribute_label = "NA", storage_type = "string", measurement_scale = "nominal", domain= "text",
+                             text_definition = "Site id as used in sites table.", text_pattern = "NA"),
+               list(attributeName = "site_id", attributeDefinition = "Site id as used in sites table", 
+                    storageType = "string", attributeLabel = "NA", measurementScale = list(
+                      nominal = list(nonNumericDesign = list(textDomain = list(
+                        definition = "Site id as used in sites table.", pattern = "NA"))))))
+  
+  expect_equal(add_attribute(attribute_name = "Recap", attribute_definition = "Has the Turtle been captured and tagged previously",
+                             attribute_label = "NS", storage_type = "text", measurement_scale = "nominal",
+                             domain = "enumerated", code_definition = "code_definition"),
+               list(attributeName = "Recap", attributeDefinition = "Has the Turtle been captured and tagged previously", 
+                    storageType = "text", attributeLabel = "NS", measurementScale = list(
+                      nonNumericDesign = list(enumeratedDomain = list(codeDefinition = "code_definition")))))
+  
+  expect_equal(add_attribute(attribute_name = "LatitudeDD", attribute_definition = "Latitude",
+                             attribute_label = "NA", storage_type = "coordinate", measurement_scale = "ordinal",
+                             domain= "text", text_definition = "Latitude", text_pattern = "NA"),
+               list(attributeName = "LatitudeDD", attributeDefinition = "Latitude", 
+                    storageType = "coordinate", attributeLabel = "NA", measurementScale = list(
+                      ordinal = list(nonNumericDesign = list(textDomain = list(
+                        definition = "Latitude", pattern = "NA"))))))
+  
+  expect_equal(add_attribute(attribute_name = "hwa", attribute_definition = "Hemlock woolly adelgid density per meter of branch",
+                             attribute_label = "NA", storage_type = "number", measurement_scale = "ordinal",
+                             domain = "enumerated", code_definition = "code_definition"),
+               list(attributeName = "hwa", attributeDefinition = "Hemlock woolly adelgid density per meter of branch", 
+                    storageType = "number", attributeLabel = "NA", measurementScale = list(
+                      nonNumericDesign = list(enumeratedDomain = list(codeDefinition = "code_definition")))))
+  
+  expect_equal(add_attribute(attribute_name = "Count", attribute_definition = "Number of individuals observed",
+                             attribute_label = "NA", measurement_scale = "interval",  storage_type = "integer", units = "number",
+                             unit_precision = "1", number_type = "whole", minimum = "0", maximum = "10"),
+               list(attributeName = "Count", attributeDefinition = "Number of individuals observed", 
+                    storageType = "integer", attributeLabel = "NA", measurementScale = list(
+                      interval = list(standardUnit = "number", precision = "1", 
+                                      numericDomain = list(numberType = "whole", bounds = list(
+                                        minimum = "0", maximum = "10"))))))
+  
+  expect_equal(add_attribute(attribute_name = "pH", attribute_definition = "pH of soil solution",
+                             attribute_label = "NA", storage_type = "float", measurement_scale = "ratio",
+                             units = "dimensionless", unit_precision = "0.01", number_type = "real",
+                             minimum = "NA", maximum = "NA"),
+               list(attributeName = "pH", attributeDefinition = "pH of soil solution", 
+                    storageType = "float", attributeLabel = "NA", measurementScale = list(
+                      ratio = list(standardUnit = "dimensionless", precision = "0.01", 
+                                   numericDomain = list(numberType = "real", bounds = list(
+                                     minimum = "NA", maximum = "NA"))))))
+  
+  expect_equal(add_attribute(attribute_name = "Yrs", attribute_label = "Years",
+                             attribute_definition = "Calendar year of the observation from years 1990 - 2010.",
+                             storage_type = "integer", measurement_scale = "dateTime", date_time_format = "YYYY",
+                             date_time_precision = "1", minimum = "1993", maximum = "2003"),
+               list(attributeName = "Yrs", attributeDefinition = "Calendar year of the observation from years 1990 - 2010.", 
+                    storageType = "integer", attributeLabel = "Years", measurementScale = list(
+                      dateTime = list(formatString = "YYYY", dateTimePrecision = "1", 
+                                      dateTimeDomain = list(bounds = list(minimum = "1993", 
+                                                                          maximum = "2003"))))))
+})
+
+
+
+
+
+
