@@ -4,14 +4,18 @@
 \alias{add_method_step}
 \title{Add Method Step Element}
 \usage{
-add_method_step(method_step_title, method_step_description, instrumentation)
+add_method_step(
+  method_step_title = NULL,
+  method_step_description,
+  instrumentation = NULL
+)
 }
 \arguments{
-\item{method_step_title}{What the particular method is accomplishing.}
+\item{method_step_title}{Optional. What the particular method is accomplishing.}
 
 \item{method_step_description}{How this method is being conducted.}
 
-\item{instrumentation}{What is being used to conduct the method.}
+\item{instrumentation}{Optional. What is being used to conduct the method.}
 }
 \description{
 Adds the method step information of a dataset based off of EML standards.

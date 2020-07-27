@@ -1,8 +1,8 @@
 #' @title Add Method Step Element 
 #' @description Adds the method step information of a dataset based off of EML standards. 
-#' @param method_step_title What the particular method is accomplishing. 
+#' @param method_step_title Optional. What the particular method is accomplishing. 
 #' @param method_step_description How this method is being conducted. 
-#' @param instrumentation What is being used to conduct the method. 
+#' @param instrumentation Optional. What is being used to conduct the method. 
 #' @reutn The dataset or project with methods information appended.
 #' @examples 
 #' add_method_step(method_step_title = "Climate Data",
@@ -22,11 +22,11 @@
 #'                 instrumentation = "The applicable instrument")
 #' @export 
 #' 
-add_method_step <- function(method_step_title, method_step_description, instrumentation) {
-  if (missing(method_step_title)) {warning("No title inputed. Provide one for easier organization.", call. = FALSE)}
-  if (missing(method_step_description)) {stop("Please provide the description of the method you are recording.", call. = FALSE)}
+add_method_step <- function(method_step_title = NULL, method_step_description, instrumentation = NULL) {
+  if (missing(method_step_title)) {warning('No title inputed. Provide one for easier organization.', call. = FALSE)}
+  if (missing(method_step_description)) {stop('Please provide the description of the method you are recording.', call. = FALSE)}
   if (missing(instrumentation))
-  {warning('Provide the insrumentation device used if beneficial to understanding the dataset', call. = FALSE)}
+  {warning('Provide the insrumentation device used if beneficial to understanding the dataset.', call. = FALSE)}
   
   methods <- list(methodStep = list(description = list(seciton = list(title = method_step_title, 
                                                        para = method_step_description)),
