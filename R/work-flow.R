@@ -24,14 +24,11 @@ d <- function() {
   
   return(NULL)
 }
-# attribute <- add_attribute(attribute_name = "Count", attribute_definition = "Number of individuals observed",
-#                    measurement_scale = "interval",  storage_type = "integer", units = "number", unit_precision = "1",
-#                    number_type = "whole", minimum = "0", maximum = "10")%>%
-# code = c("1.00", "2.00", "3.00"), code_definition = c("A desert landscape.", "Mostly lawn.", "Some Lawn"))
-# codeDef1 = list(code = "0", definition = "0 insects per meter of branch")
-# codeDef2 = list(code = "1", definition = "1-10 insects per meter")
-# code_definition = list(codeDef1, codeDef2)
-# 
+
+# codeDef1 = list(code = "1.00", definition = "A desesrt landscape")
+# codeDef2 = list(code = "2.00", definition = "Mostly Lawn")
+# codeDef3 = list(code = "3.00", definition = "Some Lawn")
+# code_definition = list(codeDef1, codeDef2, codeDef3)
 # attribute <- add_attribute(attribute_name = "q110", attribute_definition = "Q110 - preference for front yard",
 #                              storage_type = "float", domain = "enumerated",
 #                              measurement_scale = "ordinal", code_definition = code_definition) %>%

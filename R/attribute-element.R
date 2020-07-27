@@ -101,7 +101,8 @@ add_attribute <- function(attribute_name, attribute_label = NULL, attribute_defi
   
   if (missing(attribute_name)) {stop('Please provide attribute name.', call. = FALSE)}
   if (missing(attribute_label)) {warning('No attribute label provided.', call. = FALSE)}
-  if (missing(attribute_definition)) {stop('Please provide a brief definition of the attribute you are including.', call. = FALSE)}
+  if (missing(attribute_definition))
+    {stop('Please provide a brief definition of the attribute you are including.', call. = FALSE)}
   if (missing(storage_type)) {stop('Please provide a storage type.', call. = FALSE)}
   if (missing(measurement_scale)) {stop('Please provide a measurement scale', call. = FALSE)} 
   
@@ -110,41 +111,90 @@ add_attribute <- function(attribute_name, attribute_label = NULL, attribute_defi
                     storageType = storage_type)
   
   text <- list(nonNumericDesign = list(textDomain = list(definition = text_definition,
-                                                       pattern = text_pattern)))
+                                                         pattern = text_pattern)))
   
   enumerated <- list(nonNumericDesign = list(enumeratedDomain = list(codeDefinition = code_definition)))
+  
   unit <-  list(standardUnit = units,
-              precision = unit_precision,
-              numericDomain = list(numberType = number_type,
-                                   bounds = list(minimum = minimum,
-                                                 maximum = maximum)))
+                precision = unit_precision,
+                numericDomain = list(numberType = number_type,
+                                     bounds = list(minimum = minimum,
+                                                   maximum = maximum)))
 if (measurement_scale == "nominal") {
   if (domain == "text") {
+    if (missing(text_definition))
+      {stop('Please provide the description for your nominal measurment scale.', call. = FALSE)}
+    if (missing(text_pattern))
+      {warning('No text pattern is provided. Please add if applicable.', call. = FALSE)}
+    
   attribute$measurementScale$nominal <- text
+  
   } else {
     if (domain == "enumerated"){
+      if (missing(code_definition))
+        {stop('Please provide a list of your enumerated, nominal codes and their definitions.', call. = FALSE)}
+      
       attribute$measurementScale <- enumerated
     }
   }
 } else { 
 if (measurement_scale == "ordinal") {
   if (domain == "text") {
+    if (missing(text_definition))
+      {stop('Please provide the description for your ordinal measurment scale.', call. = FALSE)}
+    if (missing(text_pattern))
+      {warning('No text pattern is provided. Please add if applicable.', call. = FALSE)}
+    
     attribute$measurementScale$ordinal <- text
   } else {
     if (domain == "enumerated"){
+      if (missing(code_definition))
+        {stop('Please provide a list of your enumerated, ordinal codes and their definitions.', call. = FALSE)}
+      
       attribute$measurementScale <- enumerated
     }
   }
 } else {
 if (measurement_scale == "interval") {
+  if (missing(units))
+    {stop('Please provide what units your interval measurement scale uses.', call. = FALSE)}
+  if (missing(unit_precision))
+    {stop('Please provide what level of precision your interval measurments use.', call. = FALSE)}
+  if (missing(number_type))
+    {stop('Please provide what type of numbers (whole, integer, real, etc.) are being used.', call. = FALSE)}
+  if (missing(minimum))
+    {warning('Please provide a minimum theoretical value if applicable.', call. = FALSE)}
+  if (missing(maximum))
+    {warning('Please provide a maximum theoretical value if applicable', call. = FALSE)}
+  
   attribute$measurementScale$interval <- unit
 } else {
   
 if (measurement_scale == "ratio") {
+  if (missing(units))
+    {stop('Please provide what units your ratio measurement scale uses.', call. = FALSE)}
+  if (missing(unit_precision))
+    {stop('Please provide what level of precision your ratio measurments use.', call. = FALSE)}
+  if (missing(number_type))
+    {stop('Please provide what type of numbers (whole, integer, real, etc.) are being used.', call. = FALSE)}
+  if (missing(minimum))
+    {warning('Please provide a minimum theoretical value if applicable.', call. = FALSE)}
+  if (missing(maximum))
+    {warning('Please provide a maximum theoretical value if applicable', call. = FALSE)}
+  
   attribute$measurementScale$ratio <- unit
 } else {
   
 if (measurement_scale == "dateTime") {
+  if (missing(date_time_format))
+    {stop('Please provide the correct format of which your date time attribute is in.', call. = FALSE)}
+  if (missing(date_time_precision))
+    {stop('Please provide the level of precision your date time attribute has.', call. = FALSE)}
+  if (missing(minimum))
+    {stop('Please provide the earliest date time used.', call. = FALSE)}
+  if (missing(maximum))
+    {stop('Please provide the latest date time used.', call. = FALSE)}
+  
   attribute$measurementScale <- list(dateTime = list(formatString = date_time_format, 
                                                      dateTimePrecision = date_time_precision,
                                                      dateTimeDomain = list(bounds = list(minimum = minimum,
