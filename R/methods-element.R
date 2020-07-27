@@ -23,6 +23,10 @@
 #' @export 
 #' 
 add_method_step <- function(method_step_title, method_step_description, instrumentation) {
+  if (missing(method_step_title)) {warning("No title inputed. Provide one for easier organization.", call. = FALSE)}
+  if (missing(method_step_description)) {stop("Please provide the description of the method you are recording.", call. = FALSE)}
+  if (missing(instrumentation))
+  {warning('Provide the insrumentation device used if beneficial to understanding the dataset', call. = FALSE)}
   
   methods <- list(methodStep = list(description = list(seciton = list(title = method_step_title, 
                                                        para = method_step_description)),
