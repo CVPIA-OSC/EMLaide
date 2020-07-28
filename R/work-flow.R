@@ -24,10 +24,3 @@ d <- function() {
   
   return(NULL)
 }
-# des <- "This is 1"
-# des1 <- "This is 2"
-# description <- list(des, des1)
-# add_method_step(method_step_title = "This is the title.", method_step_description = description,
-#             instrumentation = "scale") %>%
-#   as_xml() %>%
-#   write_xml('doggggg.xml')
