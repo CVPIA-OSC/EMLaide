@@ -38,9 +38,9 @@ add_funding <- function(parent_element, funder_name, funder_identifier, award_nu
                                awardNumber = award_number, 
                                title = award_title)
   
- if (!is.null(award_url)) {
-   parent_element$award$awardUrl <- award_url
- }
+  if (!is.null(award_url)) {
+    parent_element$award$awardUrl <- award_url
+  }
   
   return(parent_element)
 }

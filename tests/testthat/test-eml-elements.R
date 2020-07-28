@@ -68,7 +68,7 @@ test_that('warn when there is less than one keyword within the keywordSets', {
 
 
 test_that('the dataset add_keyword_set function adds the keyword set',{
-
+  
   keyword_set_1 <- list(keyword = list("dog", "cat", "cow", "pig"),
                         keywordThesaurus = "LTER Controlled Vocabulary")
   
@@ -206,7 +206,7 @@ test_that('funding function errors when missing mandatory identifier inputs', {
 })
 
 test_that('The add_funding function adds the funding elements', {
-
+  
   expect_equal(add_funding(parent_element = list(), funder_name = "National Science Foundation",
                            funder_identifier = "http://dx.doi.org/10.13039/100000001",
                            award_number = "1656026",
@@ -219,7 +219,7 @@ test_that('The add_funding function adds the funding elements', {
                                  awardNumber = "1656026", title = "LTER: Beaufort Sea Lagoons: An Arctic Coastal Ecosystem in Transition", 
                                  awardUrl = "https://www.nsf.gov/awardsearch/showAward?AWD_ID=1656026"))
   )
-
+  
 })
 
 #Tests for add_license function 
@@ -257,84 +257,28 @@ test_that('Intellectual rights function outputs the correct values when given th
                                     url = "https://spdx.org/licenses/CC-BY-4.0.html", identifier = "CC-BY-4.0")))
 })
 
-#Tests for add_coverage function 
 
-test_that('Coverage function errors when missing mandatory identifier inputs', {
+
+#Tests for add_maintenance function 
+
+test_that('The maintenance function errors when missing mandatory identifier inputs.', {
   
-  expect_error(add_coverage(parent_element = list(), west_bounding_coordinate = "-160.594000",
-                            east_bounding_coordinate = "-134.104800",
-                            north_bounding_coordinate = "71.238300",
-                            south_bounding_coordinate = "67.865000",
-                            begin_date = "1980-01-01", end_date = "2010-12-31"), 
-               "Please supply a brief description of the locations of research sites and areas related to this dataset.")
+  expect_error(add_maintenance(parent_element = parent_element), 
+               "Please provide the status of your project or dataset.")
   
-  expect_error(add_coverage(parent_element = list(), geographic_description = "North Slope drainage basin:Bounding box encompasses 42 drainage basins totaling the North Slope drainage basin, Alaska, USA.",
-                            east_bounding_coordinate = "-134.104800",
-                            north_bounding_coordinate = "71.238300",
-                            south_bounding_coordinate = "67.865000",
-                            begin_date = "1980-01-01", end_date = "2010-12-31"),
-               "Please supply the west cardinality limit if applicable.")
-  
-  expect_error(add_coverage(parent_element = list(), geographic_description = "North Slope drainage basin:Bounding box encompasses 42 drainage basins totaling the North Slope drainage basin, Alaska, USA.",
-                            west_bounding_coordinate = "-160.594000",
-                            north_bounding_coordinate = "71.238300",
-                            south_bounding_coordinate = "67.865000",
-                            begin_date = "1980-01-01", end_date = "2010-12-31"),
-               "Please supply the east cardinality limit if applicable.")
-  
-  expect_error(add_coverage(parent_element = list(), geographic_description = "North Slope drainage basin:Bounding box encompasses 42 drainage basins totaling the North Slope drainage basin, Alaska, USA.",
-                            west_bounding_coordinate = "-160.594000",
-                            east_bounding_coordinate = "-134.104800",
-                            south_bounding_coordinate = "67.865000",
-                            begin_date = "1980-01-01", end_date = "2010-12-31"),
-               "Please supply the north cardinality limit if applicable.")
-  
-  expect_error(add_coverage(parent_element = list(), geographic_description = "North Slope drainage basin:Bounding box encompasses 42 drainage basins totaling the North Slope drainage basin, Alaska, USA.",
-                            west_bounding_coordinate = "-160.594000",
-                            east_bounding_coordinate = "-134.104800",
-                            north_bounding_coordinate = "71.238300",
-                            begin_date = "1980-01-01", end_date = "2010-12-31"),
-               "Please supply the south cardinality limit if applicable.")
-  
-  expect_error(add_coverage(parent_element = list(), geographic_description = "North Slope drainage basin:Bounding box encompasses 42 drainage basins totaling the North Slope drainage basin, Alaska, USA.",
-                            west_bounding_coordinate = "-160.594000",
-                            east_bounding_coordinate = "-134.104800",
-                            north_bounding_coordinate = "71.238300",
-                            south_bounding_coordinate = "67.865000",
-                            end_date = "2010-12-31"),
-               "Please suppply the starting date of this project.")
-  
-  expect_error(add_coverage(parent_element = list(), geographic_description = "North Slope drainage basin:Bounding box encompasses 42 drainage basins totaling the North Slope drainage basin, Alaska, USA.",
-                            west_bounding_coordinate = "-160.594000",
-                            east_bounding_coordinate = "-134.104800",
-                            north_bounding_coordinate = "71.238300",
-                            south_bounding_coordinate = "67.865000",
-                            begin_date = "1980-01-01"),
-               "Please supply the end or projected end date for this project.")
-  
+  expect_error(add_maintenance(parent_element = parent_element, status = "ongoing"),
+               "Please provide the frequency of when this project or dataset is updated.")
   
 })
 
-test_that('The coverage function adds the coverage elements', {
-  expect_equal(add_coverage(parent_element = list(), geographic_description = "Description",
-                            west_bounding_coordinate = "-160.594000", 
-                            east_bounding_coordinate = "-134.104800",
-                            north_bounding_coordinate = "71.238300",
-                            south_bounding_coordinate = "67.865000",
-                            begin_date = "1980-01-01", end_date = "2010-12-31"),
-               list(coverage = list(geographicCoverage = list(geographicDescription = "Description", 
-                                                              boundingCoordinates = list(
-                                                                westBoundingCoordinate = "-160.594000", 
-                                                                eastBoundingCoordinate = "-134.104800",
-                                                                northBoundingCoordinate = "71.238300", 
-                                                                southBoundingCoordinate = "67.865000")),
-                                    temporalCoverage = list(rangeOfDates = list(
-                                      beginDate = list(calendarDate = "1980-01-01"), 
-                                      endDate = list(calendarDate = "2010-12-31")))))
-               
-  )
+test_that('The maintenance function adds the maintenance elements', {
   
+  expect_equal(add_maintenance(parent_element = list(), status = "complete"), 
+               list(maintenance = list(description = "complete")))
   
-  
+  expect_equal(add_maintenance(parent_element = list(), status = "ongoing",
+                               update_frequency = "Data are updated annually at the end of the calendar year."),
+               list(maintenance = list(description = list(para = "Data are updated annually at the end of the calendar year.")))
+               )
   
 })
