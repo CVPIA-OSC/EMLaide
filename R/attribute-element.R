@@ -1,10 +1,10 @@
 #' @title Add Atribute  
 #' @description Adds an attribute element according to EML standards. Multiple attributes can be created. Will be appended to the attribute list.  
 #' @param attribute_name The name	of a field in	a	data table. This is	often	a short	and/or cryptic name. It is recommended that the attribute names	be suitable	for	use	as a	variable,	e.g.,	composed of ASCII	characters,	and	that the	attribute names	match	the	column headers of	a	CSV	or other text table.	
-#' @param attribute_label Optional. Used to provide	a	less ambiguous or	less cryptic alternative identification	than what	is provided	in attribute_name
 #' @param attribute_defenition A precise and complete	definition of the attribute	being	documented.
 #' @param storage_type An indicator	to processing	systems	as to	how	the	attribute	might	be represented in	a	system or	language,	but	is distinct	from the actual	expression of	the	domain of	the	attribute. Non system-specific examples	include: float,	integer	and	string.
 #' @param measurement_scale The	type of	scale	from which values are	drawn	for	the	attribute. Must use one of the following types: nominal, ordinal, interval, ratio, or dateTime. Further explination of the choices and required inputs are described below.
+#' @param attribute_label Optional. Used to provide	a	less ambiguous or	less cryptic alternative identification	than what	is provided	in attribute_name
 #' @param text_definition Description for non-numeric, text, measurement scale values. 
 #' @param text_pattern A regular expression pattern constraining the attribute.
 #' @param domain Input for the non-numeric measurement scales only. Please list either "text" or "enumerated".
@@ -85,14 +85,13 @@
 #'                    units = "dimensionless", unit_precision = "0.01", number_type = "real")
 #'                    
 #' dateTime:
-#' add_attribute(attribute_name = "Yrs", attribute_label = "Years",
-#'               attribute_definition = "Calendar year of the observation from years 1990 - 2010.",
-#'               storage_type = "integer", measurement_scale = "dateTime", date_time_format = "YYYY",
-#'               date_time_precision = "1", minimum = "1993", maximum = "2003")
+#' add_attribute(attribute_name = "Yrs", attribute_definition = "Calendar year of the observation from years 1990 - 2010.",
+#'               storage_type = "integer", measurement_scale = "dateTime", attribute_label = "Years",
+#'               date_time_format = "YYYY", date_time_precision = "1", minimum = "1993", maximum = "2003")
 #' @export
 
-add_attribute <- function(attribute_name, attribute_label = NULL, attribute_definition,
-                          storage_type, measurement_scale, text_definition = NULL,
+add_attribute <- function(attribute_name, attribute_definition, storage_type,
+                          measurement_scale, attribute_label = NULL, text_definition = NULL,
                           text_pattern = NULL, domain = NULL, units = NULL,
                           number_type = NULL, code_definition = NULL,
                           unit_precision = NULL, date_time_format = NULL,
@@ -100,11 +99,11 @@ add_attribute <- function(attribute_name, attribute_label = NULL, attribute_defi
   
   
   if (missing(attribute_name)) {stop('Please provide attribute name.', call. = FALSE)}
-  if (missing(attribute_label)) {warning('No attribute label provided.', call. = FALSE)}
   if (missing(attribute_definition))
     {stop('Please provide a brief definition of the attribute you are including.', call. = FALSE)}
   if (missing(storage_type)) {stop('Please provide a storage type.', call. = FALSE)}
   if (missing(measurement_scale)) {stop('Please provide a measurement scale.', call. = FALSE)} 
+  if (missing(attribute_label)) {warning('No attribute label provided.', call. = FALSE)}
   
   attribute <- list(attributeName = attribute_name,
                     attributeDefinition = attribute_definition,

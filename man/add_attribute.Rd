@@ -6,10 +6,10 @@
 \usage{
 add_attribute(
   attribute_name,
-  attribute_label = NULL,
   attribute_definition,
   storage_type,
   measurement_scale,
+  attribute_label = NULL,
   text_definition = NULL,
   text_pattern = NULL,
   domain = NULL,
@@ -26,11 +26,11 @@ add_attribute(
 \arguments{
 \item{attribute_name}{The name    of a field in    a    data table. This is    often    a short    and/or cryptic name. It is recommended that the attribute names    be suitable    for    use    as a    variable,    e.g.,    composed of ASCII    characters,    and    that the    attribute names    match    the    column headers of    a    CSV    or other text table.}
 
-\item{attribute_label}{Optional. Used to provide    a    less ambiguous or    less cryptic alternative identification    than what    is provided    in attribute_name}
-
 \item{storage_type}{An indicator    to processing    systems    as to    how    the    attribute    might    be represented in    a    system or    language,    but    is distinct    from the actual    expression of    the    domain of    the    attribute. Non system-specific examples    include: float,    integer    and    string.}
 
 \item{measurement_scale}{The    type of    scale    from which values are    drawn    for    the    attribute. Must use one of the following types: nominal, ordinal, interval, ratio, or dateTime. Further explination of the choices and required inputs are described below.}
+
+\item{attribute_label}{Optional. Used to provide    a    less ambiguous or    less cryptic alternative identification    than what    is provided    in attribute_name}
 
 \item{text_definition}{Description for non-numeric, text, measurement scale values.}
 
@@ -133,8 +133,7 @@ add_attribute(attribute_name = "pH", attribute_definition = "pH of soil solution
                    units = "dimensionless", unit_precision = "0.01", number_type = "real")
                    
 dateTime:
-add_attribute(attribute_name = "Yrs", attribute_label = "Years",
-              attribute_definition = "Calendar year of the observation from years 1990 - 2010.",
-              storage_type = "integer", measurement_scale = "dateTime", date_time_format = "YYYY",
-              date_time_precision = "1", minimum = "1993", maximum = "2003")
+add_attribute(attribute_name = "Yrs", attribute_definition = "Calendar year of the observation from years 1990 - 2010.",
+              storage_type = "integer", measurement_scale = "dateTime", attribute_label = "Years",
+              date_time_format = "YYYY", date_time_precision = "1", minimum = "1993", maximum = "2003")
 }
