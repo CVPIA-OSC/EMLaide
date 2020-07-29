@@ -46,7 +46,7 @@ add_attribute(
 
 \item{unit_precision}{How precise units are measured.}
 
-\item{date_time_format}{The format your date/time attribute is recorded in.}
+\item{date_time_format}{The format your date/time attribute is recorded in. ISO 8601 standard should be used (YYYY-MM-DD)}
 
 \item{date_time_precision}{To what level time is being measured.}
 
@@ -70,33 +70,33 @@ Different measurement scale values will indicate different inputs:
 
 \strong{Nominal:}
 Used to define categorical scale attributes. If your attribute falls
-under the domain of text, please provide the inputs of text_definition and text_pattern.
-If your attribute falls under the domain of enumerated, please provide the input of code_definition.
+under the domain of text, please provide the inputs of \code{text_definition} and \code{text_pattern}.
+If your attribute falls under the domain of enumerated, please provide the input of \code{code_definition}.
 
 \strong{Ordinal:}
 Used to define ordered scale attributes. If your attribute falls under the domain
-of text, please provide the inputs of text_definition and text_pattern. If your
-attribute falls under the domain of enumerated, please provide the input of code_definition.
+of text, please provide the inputs of \code{text_definition} and \code{text_pattern}. If your
+attribute falls under the domain of enumerated, please provide the input of \code{code_definition}.
 
 \subsection{Numeric:}
 
 \strong{Interval:}
-Used to define interval scale attributes. Please provide the inputs of units,
-unit_precision, number_type, minimum, and maximum.
+Used to define interval scale attributes. Please provide the inputs of \code{units},
+\code{unit_precision}, \code{number_type}, \code{minimum}, and \code{maximum}.
 
 \strong{Ratio:}
-Used to define ratio scale attributes. Please provide the inputs of units,
-unit_precision, number_type, minimum, and maximum.
+Used to define ratio scale attributes. Please provide the inputs of \code{units},
+\code{unit_precision}, \code{number_type}, \code{minimum}, and \code{maximum}.
 
 \strong{dateTime:}
-Used to define date and time attributes. Please provide the inputs of date_time_format,
-date_time_precision, minimum, and maximum.
+Used to define date and time attributes. Please provide the inputs of \code{date_time_format},
+\code{date_time_precision}, \code{minimum}, and \code{maximum}.
 }
 
 \examples{
 Nominal(text):
 add_attribute(attribute_name = "site_id", attribute_definition = "Site id as used in sites table",
-              storage_type = "string",measurement_scale = "nominal", domain= "text"
+              storage_type = "string", measurement_scale = "nominal", domain= "text",
               text_definition = "Site id as used in sites table.")
 
 Nominal(enumerated):

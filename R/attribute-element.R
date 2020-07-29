@@ -12,7 +12,7 @@
 #' @param number_type Can be defined as: real, natural, whole, or integer. 
 #' @param code_definition A list of lists of your code, including all codes and their meanings. An example of how to append this is seen below 
 #' @param unit_precision How precise units are measured.
-#' @param date_time_format The format your date/time attribute is recorded in. ISO 8601 standard should be used 
+#' @param date_time_format The format your date/time attribute is recorded in. ISO 8601 standard should be used (YYYY-MM-DD)
 #' @param date_time_precision To what level time is being measured. 
 #' @param minimum Theoretical or allowable minimum value. 
 #' @param maximum Theoretical or allowable maximum value.
@@ -23,27 +23,27 @@
 #' 
 #' \strong{Nominal:}
 #' Used to define categorical scale attributes. If your attribute falls
-#' under the domain of text, please provide the inputs of text_definition and text_pattern.
-#' If your attribute falls under the domain of enumerated, please provide the input of code_definition.
+#' under the domain of text, please provide the inputs of \code{text_definition} and \code{text_pattern}.
+#' If your attribute falls under the domain of enumerated, please provide the input of \code{code_definition}.
 #' 
 #' \strong{Ordinal:}
 #' Used to define ordered scale attributes. If your attribute falls under the domain 
-#' of text, please provide the inputs of text_definition and text_pattern. If your
-#' attribute falls under the domain of enumerated, please provide the input of code_definition. 
+#' of text, please provide the inputs of \code{text_definition} and \code{text_pattern}. If your
+#' attribute falls under the domain of enumerated, please provide the input of \code{code_definition}. 
 #'
 #'\subsection{Numeric:}
 #'
 #'\strong{Interval:}
-#' Used to define interval scale attributes. Please provide the inputs of units, 
-#' unit_precision, number_type, minimum, and maximum.
+#' Used to define interval scale attributes. Please provide the inputs of \code{units}, 
+#' \code{unit_precision}, \code{number_type}, \code{minimum}, and \code{maximum}.
 #' 
 #' \strong{Ratio:}
-#' Used to define ratio scale attributes. Please provide the inputs of units, 
-#' unit_precision, number_type, minimum, and maximum.
+#' Used to define ratio scale attributes. Please provide the inputs of \code{units}, 
+#' \code{unit_precision}, \code{number_type}, \code{minimum}, and \code{maximum}.
 #' 
 #' \strong{dateTime:}
-#' Used to define date and time attributes. Please provide the inputs of date_time_format, 
-#' date_time_precision, minimum, and maximum.
+#' Used to define date and time attributes. Please provide the inputs of \code{date_time_format}, 
+#' \code{date_time_precision}, \code{minimum}, and \code{maximum}.
 #' @return The project or dataset list with an attribute list appended
 #' @examples
 #' Nominal(text):
@@ -60,9 +60,9 @@
 #'               code_definition = code_definition)
 #'               
 #' Ordinal(text):
-# add_attribute(attribute_name = "LatitudeDD", attribute_definition = "Latitude",
-#               storage_type = "coordinate", measurement_scale = "ordinal",
-#               domain= "text", text_definition = "Latitude")
+#' add_attribute(attribute_name = "LatitudeDD", attribute_definition = "Latitude",
+#'               storage_type = "coordinate", measurement_scale = "ordinal",
+#'               domain= "text", text_definition = "Latitude")
 #'               
 #' Ordinal(enumerated): 
 #' code_def_1 = list(code = "0", definition = "0 insects per meter of branch")
