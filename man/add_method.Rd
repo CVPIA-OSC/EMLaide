@@ -4,16 +4,12 @@
 \alias{add_method}
 \title{Add Data Collection Method Element}
 \usage{
-add_method(
-  data_collection_method_title = NULL,
-  method_description,
-  instrumentation = NULL
-)
+add_method(description, title = NULL, instrumentation = NULL)
 }
 \arguments{
-\item{data_collection_method_title}{Optional. What the particular method is accomplishing.}
+\item{description}{How this method is being conducted.}
 
-\item{method_description}{How this method is being conducted.}
+\item{title}{Optional. What the particular method is accomplishing.}
 
 \item{instrumentation}{Optional. What is being used to conduct the method.}
 }
@@ -24,8 +20,8 @@ The dataset or project with methods information appended.
 Adds the data collection method information of a dataset based off of EML standards.
 }
 \examples{
-add_method(data_collection_method_title = "Climate Data",
-           method_description = "Daily temperature (maximum/minimum) and
+add_method(title = "Climate Data",
+           description = "Daily temperature (maximum/minimum) and
            precipitation data were obtained for each stand from 1996 to 2011
            from the online PRISM Gridded Climate database (PRISM Climate Group,
            Oregon State University, http://prism.oregonstate.edu, created 26 Mar 2015)
@@ -37,6 +33,6 @@ If the method has a longer description than one paragraph:
 description1 <- "This is the first paragraph" 
 description2 <- "This is the second paragraph." 
 description = list(description1 description2)
-add_method(data_collection_method_title = "The Data", method_description = description,
+add_method(title = "The Data", description = description,
                 instrumentation = "The applicable instrument")
 }
