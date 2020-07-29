@@ -24,3 +24,13 @@ d <- function() {
   
   return(NULL)
 }
+# add_attribute(attribute_name = "site_id", attribute_definition = "Site id as used in sites table",
+#               attribute_label = "hi", storage_type = "string", measurement_scale = "nominal", domain= "text",
+#               text_definition = "Site id as used in sites table.")
+
+
+# add_attribute(attribute_name = "Count", attribute_definition = "Number of individuals observed",
+#               measurement_scale = "interval",  storage_type = "integer", units = "number",
+#               unit_precision = "1", number_type = "whole", minimum = "0")
+
+

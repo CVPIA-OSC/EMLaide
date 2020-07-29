@@ -97,18 +97,25 @@ add_attribute <- function(attribute_name, attribute_definition, storage_type,
                           unit_precision = NULL, date_time_format = NULL,
                           date_time_precision = NULL, minimum = NULL, maximum = NULL) {
   
+#error messages for mandatory inputs ---------
   
-  if (missing(attribute_name)) {stop('Please provide attribute name.', call. = FALSE)}
-  if (missing(attribute_definition))
-    {stop('Please provide a brief definition of the attribute you are including.', call. = FALSE)}
-  if (missing(storage_type)) {stop('Please provide a storage type.', call. = FALSE)}
-  if (missing(measurement_scale)) {stop('Please provide a measurement scale.', call. = FALSE)} 
-  if (missing(attribute_label)) {warning('No attribute label provided.', call. = FALSE)}
+    mandatory_missing_arg <- c("attribute_name", "attribute_definition", "storage_type", "measurement_scale")
+    which_missing <- which(c(missing(attribute_name), missing(attribute_definition), missing(storage_type), missing(measurement_scale)))
+    
+    if (length(which_missing) > 0) {
+      missing <- mandatory_missing_arg[which_missing][1]
+      warning_message <- switch(missing, attribute_name = "Please provide attribute name.",
+                                attribute_definition = "Please provide a brief definition of the attribute you are including.",
+                                storage_type = "Please provide a storage type.",
+                                measurement_scale = "Please provide a measurement scale.")
+      stop(warning_message, call. = FALSE)
+    }
   
   attribute <- list(attributeName = attribute_name,
                     attributeDefinition = attribute_definition,
                     storageType = storage_type)
   
+  if (missing(attribute_label)) {warning('No attribute label provided.', call. = FALSE)}
   if (!is.null(attribute_label)){
     attribute$attributeLabel <- attribute_label
   }
@@ -127,11 +134,23 @@ if (measurement_scale == "nominal") {
   if (missing(domain))
     {stop('Please provide a domain of text or enumerated and supply the remaining applicable inputs.', call. = FALSE)}
   if (domain == "text") {
+    
+      # text_missing_arg <- c("text_definition", "text_pattern")
+      # which_missing <- which(c(missing(text_definition), missing(text_pattern)))
+      # 
+      # if (length(which_missing) > 0) {
+      #   missing <- missing_arg[which_missing][1]
+      #   error_message <- switch(missing,  text_definition = "x is missing")
+      #   stop(error_message, call. = FALSE)
+      #   warning_message <- switch(missing, text_pattern = "y is missing.")
+      #   warning(warning_message, call. = FALSE)
+      # }
+      # 
     if (missing(text_definition))
       {stop('Please provide the description for your nominal measurment scale.', call. = FALSE)}
     if (missing(text_pattern))
       {warning('No text pattern is provided. Please add if applicable.', call. = FALSE)}
-    
+
   attribute$measurementScale$nominal <- text
   
   } else {
@@ -164,15 +183,31 @@ if (measurement_scale == "ordinal") {
 } else {
 if (measurement_scale == "interval") {
   if (missing(units))
-    {stop('Please provide what units your interval measurement scale uses.', call. = FALSE)}
+  {stop('Please provide what units your interval measurement scale uses.', call. = FALSE)}
   if (missing(unit_precision))
-    {stop('Please provide what level of precision your interval measurments use.', call. = FALSE)}
+  {stop('Please provide what level of precision your interval measurments use.', call. = FALSE)}
   if (missing(number_type))
-    {stop('Please provide what type of numbers are being used.', call. = FALSE)}
+  {stop('Please provide what type of numbers are being used.', call. = FALSE)}
   if (missing(minimum))
-    {warning('Please provide a minimum theoretical value if applicable.', call. = FALSE)}
+  {warning('Please provide a minimum theoretical value if applicable.', call. = FALSE)}
   if (missing(maximum))
-    {warning('Please provide a maximum theoretical value if applicable.', call. = FALSE)}
+  {warning('Please provide a maximum theoretical value if applicable.', call. = FALSE)}
+  
+  # interval_missing_arg <- c("units", "unit_precision", "number_type", "minimum", "maximum")
+  # interval_which_missing <- which(c(missing(units), missing(unit_precision),
+  #                                   missing(number_type), missing(minimum), missing(maximum)))
+  # 
+  # if (length(interval_which_missing) > 0) {
+  #   interval_missing <- interval_missing_arg[interval_which_missing][1]
+  #   interval_error_message <- switch(interval_missing, units = "Please provide attribute name.",
+  #                             unit_precision = "Please provide a brief definition of the attribute you are including.",
+  #                             number_type = "Please provide a storage type.")
+  #   stop(interval_error_message, call. = FALSE)
+  #   interval_warning_message <- switch(interval_missing, minimum = "hi",
+  #                                      maximum = "hi")
+  #   warning(interval_warning_message, call. = FALSE)
+  # }
+  
   
   attribute$measurementScale$interval <- unit
 } else {
@@ -206,7 +241,11 @@ if (measurement_scale == "dateTime") {
                                                      dateTimePrecision = date_time_precision,
                                                      dateTimeDomain = list(bounds = list(minimum = minimum,
                                                                                          maximum = maximum))))
-}}}}}
+}
+  }
+    }
+      }
+        }
   
  return(attribute) 
 }
