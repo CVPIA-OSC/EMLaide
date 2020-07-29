@@ -12,7 +12,7 @@
 #' @param number_type Can be defined as: real, natural, whole, or integer. 
 #' @param code_definition A list of lists of your code, including all codes and their meanings. An example of how to append this is seen below 
 #' @param unit_precision How precise units are measured.
-#' @param date_time_format The format your date/time attribute is recorded in.
+#' @param date_time_format The format your date/time attribute is recorded in. ISO 8601 standard should be used 
 #' @param date_time_precision To what level time is being measured. 
 #' @param minimum Theoretical or allowable minimum value. 
 #' @param maximum Theoretical or allowable maximum value.

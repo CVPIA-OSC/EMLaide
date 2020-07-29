@@ -24,13 +24,3 @@ d <- function() {
   
   return(NULL)
 }
-
-# codeDef1 = list(code = "1.00", definition = "A desesrt landscape")
-# codeDef2 = list(code = "2.00", definition = "Mostly Lawn")
-# codeDef3 = list(code = "3.00", definition = "Some Lawn")
-# code_definition = list(codeDef1, codeDef2, codeDef3)
-# attribute <- add_attribute(attribute_name = "q110", attribute_definition = "Q110 - preference for front yard",
-#                              storage_type = "float", domain = "enumerated",
-#                              measurement_scale = "ordinal", code_definition = code_definition) %>%
-#   as_xml() %>%
-#   write_xml('doggggg.xml')
