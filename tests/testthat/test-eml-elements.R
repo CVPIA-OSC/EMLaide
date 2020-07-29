@@ -364,11 +364,11 @@ test_that('The maintenance function adds the maintenance elements', {
   
 })
 
-#Tests for add_method_step function 
+#Tests for add_method function 
 
-test_that('The method step function errors when missing mandatory identifier inputs.', {
+test_that('The method function errors when missing mandatory identifier inputs.', {
   
-  expect_warning(add_method_step(method_step_description = "Daily temperature (maximum/minimum) and
+  expect_warning(add_method(method_description = "Daily temperature (maximum/minimum) and
                                                           precipitation data were obtained for each stand from 1996 to 2011
                                                           from the online PRISM Gridded Climate database (PRISM Climate Group,
                                                           Oregon State University, http://prism.oregonstate.edu, created 26 Mar 2015)
@@ -378,12 +378,12 @@ test_that('The method step function errors when missing mandatory identifier inp
                                instrumentation = "Thermometer"),
                'No title inputed. Provide one for easier organization.')
   
-  expect_error(add_method_step(method_step_title = "Climate Data",
+  expect_error(add_method(data_collection_method_title = "Climate Data",
                                instrumentation = "Thermometer"),
                'Please provide the description of the method you are recording.')
   
-  expect_warning(add_method_step(method_step_title = "Climate Data",
-                               method_step_description = "Daily temperature (maximum/minimum) and
+  expect_warning(add_method(data_collection_method_title = "Climate Data",
+                               method_description = "Daily temperature (maximum/minimum) and
                                                           precipitation data were obtained for each stand from 1996 to 2011
                                                           from the online PRISM Gridded Climate database (PRISM Climate Group,
                                                           Oregon State University, http://prism.oregonstate.edu, created 26 Mar 2015)
@@ -393,9 +393,9 @@ test_that('The method step function errors when missing mandatory identifier inp
                  'Provide the insrumentation device used if beneficial to understanding the dataset.')
 })
 
-test_that('The method step function adds the method elements', {
-  expect_equal(add_method_step(method_step_title = "Climate Data",
-                               method_step_description = "The description for this method step.",
+test_that('The method function adds the method elements', {
+  expect_equal(add_method(data_collection_method_title = "Climate Data",
+                               method_description = "The description for this method step.",
                                instrumentation = "Thermometer"),
                list(methodStep = list(description = list(seciton = list(title = "Climate Data", 
                                                                         para = "The description for this method step.")),
