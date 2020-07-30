@@ -19,7 +19,7 @@
 #' @section Measurement Scales: 
 #' Different measurement scale values will indicate different inputs: 
 #' 
-#' \subsection{Non-numeric:} Please provide a domain to indicate if your attribute is text or enumerated.
+#' \subsection {Non-numeric:} Please provide a domain to indicate if your attribute is text or enumerated.
 #' 
 #' \strong{Nominal:}
 #' Used to define categorical scale attributes. If your attribute falls
@@ -31,7 +31,7 @@
 #' of text, please provide the inputs of \code{text_definition} and \code{text_pattern}. If your
 #' attribute falls under the domain of enumerated, please provide the input of \code{code_definition}. 
 #'
-#'\subsection{Numeric:}
+#'\subsection {Numeric:}
 #'
 #'\strong{Interval:}
 #' Used to define interval scale attributes. Please provide the inputs of \code{units}, 
@@ -134,108 +134,90 @@ if (measurement_scale == "nominal") {
   if (missing(domain))
     {stop('Please provide a domain of text or enumerated and supply the remaining applicable inputs.', call. = FALSE)}
   if (domain == "text") {
-    
-      # text_missing_arg <- c("text_definition", "text_pattern")
-      # which_missing <- which(c(missing(text_definition), missing(text_pattern)))
-      # 
-      # if (length(which_missing) > 0) {
-      #   missing <- missing_arg[which_missing][1]
-      #   error_message <- switch(missing,  text_definition = "x is missing")
-      #   stop(error_message, call. = FALSE)
-      #   warning_message <- switch(missing, text_pattern = "y is missing.")
-      #   warning(warning_message, call. = FALSE)
-      # }
-      # 
     if (missing(text_definition))
-      {stop('Please provide the description for your nominal measurment scale.', call. = FALSE)}
+      {stop('Please provide the description for your measurement scale.', call. = FALSE)}
     if (missing(text_pattern))
       {warning('No text pattern is provided. Please add if applicable.', call. = FALSE)}
-
   attribute$measurementScale$nominal <- text
-  
   } else {
     if (domain == "enumerated"){
       if (missing(code_definition))
-        {stop('Please provide a list of your enumerated, nominal codes and their definitions.', call. = FALSE)}
-      
-      attribute$measurementScale <- enumerated
+        {stop('Please provide a list of your enumerated codes and their definitions.', call. = FALSE)}
+ 
+      attribute$measurementScale$nominal <- enumerated
+} 
     }
-  }
-} else { 
+  } else {
 if (measurement_scale == "ordinal") {
   if (missing(domain))
   {stop('Please provide a domain of text or enumerated and supply the remaining applicable inputs.', call. = FALSE)}
   if (domain == "text") {
     if (missing(text_definition))
-      {stop('Please provide the description for your ordinal measurment scale.', call. = FALSE)}
+      {stop('Please provide the description for your measurement scale.', call. = FALSE)}
     if (missing(text_pattern))
       {warning('No text pattern is provided. Please add if applicable.', call. = FALSE)}
-    
+
     attribute$measurementScale$ordinal <- text
   } else {
     if (domain == "enumerated"){
       if (missing(code_definition))
-        {stop('Please provide a list of your enumerated, ordinal codes and their definitions.', call. = FALSE)}
-      
+        {stop('Please provide a list of your enumerated codes and their definitions.', call. = FALSE)}
+
       attribute$measurementScale <- enumerated
     }
   }
 } else {
+if (measurement_scale == "interval" | measurement_scale == "ratio") {
+  error_arg <- c("units", "unit_precision", "number_type")
+  warn_arg <- c("minimum", "maximum")
+  which_error <- which(c(missing(units), missing(unit_precision), missing(number_type)))
+  which_warn <- which(c(missing(minimum), missing(maximum)))
+
+  if (length(which_error) > 0) {
+    error <- error_arg[which_error][1]
+    error_message <- switch(error, units = "Please provide what units your measurement scale uses.",
+                              unit_precision = "Please provide what level of precision your measurements use.",
+                              number_type = "Please provide what type of numbers are being used.")
+    stop(error_message, call. = FALSE)}
+  
+   if (length(which_warn) > 0) {
+     warn <- warn_arg[which_warn][1]
+     warning_message <- switch(warn, minimum = "Please provide a minimum theoretical value if applicable.",
+                                       maximum = "Please provide a maximum theoretical value if applicable.")
+     warning(warning_message, call. = FALSE)}
 if (measurement_scale == "interval") {
-  if (missing(units))
-  {stop('Please provide what units your interval measurement scale uses.', call. = FALSE)}
-  if (missing(unit_precision))
-  {stop('Please provide what level of precision your interval measurments use.', call. = FALSE)}
-  if (missing(number_type))
-  {stop('Please provide what type of numbers are being used.', call. = FALSE)}
-  if (missing(minimum))
-  {warning('Please provide a minimum theoretical value if applicable.', call. = FALSE)}
-  if (missing(maximum))
-  {warning('Please provide a maximum theoretical value if applicable.', call. = FALSE)}
-  
-  # interval_missing_arg <- c("units", "unit_precision", "number_type", "minimum", "maximum")
-  # interval_which_missing <- which(c(missing(units), missing(unit_precision),
-  #                                   missing(number_type), missing(minimum), missing(maximum)))
-  # 
-  # if (length(interval_which_missing) > 0) {
-  #   interval_missing <- interval_missing_arg[interval_which_missing][1]
-  #   interval_error_message <- switch(interval_missing, units = "Please provide attribute name.",
-  #                             unit_precision = "Please provide a brief definition of the attribute you are including.",
-  #                             number_type = "Please provide a storage type.")
-  #   stop(interval_error_message, call. = FALSE)
-  #   interval_warning_message <- switch(interval_missing, minimum = "hi",
-  #                                      maximum = "hi")
-  #   warning(interval_warning_message, call. = FALSE)
-  # }
-  
-  
   attribute$measurementScale$interval <- unit
 } else {
-  
-if (measurement_scale == "ratio") {
-  if (missing(units))
-    {stop('Please provide what units your ratio measurement scale uses.', call. = FALSE)}
-  if (missing(unit_precision))
-    {stop('Please provide what level of precision your ratio measurments use.', call. = FALSE)}
-  if (missing(number_type))
-    {stop('Please provide what type of numbers are being used.', call. = FALSE)}
-  if (missing(minimum))
-    {warning('Please provide a minimum theoretical value if applicable.', call. = FALSE)}
-  if (missing(maximum))
-    {warning('Please provide a maximum theoretical value if applicable', call. = FALSE)}
-  
-  attribute$measurementScale$ratio <- unit
+  attribute$measurmentScale$ratio <- unit
+}
+# } else {
+#   
+# if (measurement_scale == "ratio") {
+#   if (missing(units))
+#     {stop('Please provide what units your ratio measurement scale uses.', call. = FALSE)}
+#   if (missing(unit_precision))
+#     {stop('Please provide what level of precision your ratio measurments use.', call. = FALSE)}
+#   if (missing(number_type))
+#     {stop('Please provide what type of numbers are being used.', call. = FALSE)}
+#   if (missing(minimum))
+#     {warning('Please provide a minimum theoretical value if applicable.', call. = FALSE)}
+#   if (missing(maximum))
+#     {warning('Please provide a maximum theoretical value if applicable', call. = FALSE)}
+#   
+#   attribute$measurementScale$ratio <- unit
 } else {
   
 if (measurement_scale == "dateTime") {
-  if (missing(date_time_format))
-    {stop('Please provide the correct format of which your date time attribute is in.', call. = FALSE)}
-  if (missing(date_time_precision))
-    {stop('Please provide the level of precision your date time attribute has.', call. = FALSE)}
-  if (missing(minimum))
-    {stop('Please provide the earliest date time used.', call. = FALSE)}
-  if (missing(maximum))
-    {stop('Please provide the latest date time used.', call. = FALSE)}
+  dt_error_arg <- c("date_time_format", "date_time_precision", "minimum", "maximum")
+  dt_which_error <- which(c(missing(date_time_format), missing(date_time_precision), missing(minimum), missing(maximum)))
+  
+  if (length(dt_which_error) >0) {
+    dt_error <- dt_error_arg[dt_which_error][1]
+    dt_error_message <- switch(dt_error, date_time_format = "Please provide the correct format of which your date time attribute is in.",
+                               date_time_precision = "Please provide the level of precision your date time attribute has.",
+                               minimum = "Please provide the earliest date time used.",
+                               maximum = "Please provide the latest date time used.")
+    stop(dt_error_message, call. = FALSE)}
   
   attribute$measurementScale <- list(dateTime = list(formatString = date_time_format, 
                                                      dateTimePrecision = date_time_precision,
@@ -243,9 +225,9 @@ if (measurement_scale == "dateTime") {
                                                                                          maximum = maximum))))
 }
   }
-    }
-      }
-        }
+}
+}     
+        
   
  return(attribute) 
 }

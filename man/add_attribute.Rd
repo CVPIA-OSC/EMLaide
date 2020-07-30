@@ -66,7 +66,7 @@ Adds an attribute element according to EML standards. Multiple attributes can be
 
 Different measurement scale values will indicate different inputs:
 
-\subsection{Non-numeric:} Please provide a domain to indicate if your attribute is text or enumerated.
+\subsection {Non-numeric:} Please provide a domain to indicate if your attribute is text or enumerated.
 
 \strong{Nominal:}
 Used to define categorical scale attributes. If your attribute falls
@@ -78,7 +78,7 @@ Used to define ordered scale attributes. If your attribute falls under the domai
 of text, please provide the inputs of \code{text_definition} and \code{text_pattern}. If your
 attribute falls under the domain of enumerated, please provide the input of \code{code_definition}.
 
-\subsection{Numeric:}
+\subsection {Numeric:}
 
 \strong{Interval:}
 Used to define interval scale attributes. Please provide the inputs of \code{units},
