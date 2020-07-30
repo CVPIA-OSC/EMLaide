@@ -189,7 +189,8 @@ test_that('The attribute function adds attribute elements.', {
                              domain = "enumerated", code_definition = "code_definition"),
                list(attributeName = "hwa", attributeDefinition = "Hemlock woolly adelgid density per meter of branch", 
                     storageType = "number", attributeLabel = "NA", measurementScale = list(
-                      nonNumericDesign = list(enumeratedDomain = list(codeDefinition = "code_definition")))))
+                      ordinal = list(nonNumericDesign = list(enumeratedDomain = list(
+                        codeDefinition = "code_definition"))))))
   
   expect_equal(add_attribute(attribute_name = "Count", attribute_definition = "Number of individuals observed",
                              attribute_label = "NA", measurement_scale = "interval",  storage_type = "integer", units = "number",
