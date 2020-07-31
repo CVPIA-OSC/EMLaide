@@ -10,12 +10,11 @@ add_attribute(
   storage_type,
   measurement_scale,
   attribute_label = NULL,
-  text_definition = NULL,
-  text_pattern = NULL,
   domain = NULL,
+  definition = NULL,
+  text_pattern = NULL,
   units = NULL,
   number_type = NULL,
-  code_definition = NULL,
   unit_precision = NULL,
   date_time_format = NULL,
   date_time_precision = NULL,
@@ -24,29 +23,39 @@ add_attribute(
 )
 }
 \arguments{
-\item{attribute_name}{The name    of a field in    a    data table. This is    often    a short    and/or cryptic name. It is recommended that the attribute names    be suitable    for    use    as a    variable,    e.g.,    composed of ASCII    characters,    and    that the attribute names match the column headers of a CSV or other text table.}
+\item{attribute_name}{The name    of a field in    a    data table. This is    often    a short
+and/or cryptic name. It is recommended that the attribute names    be suitable    for
+use    as a    variable,    e.g.,    composed of ASCII    characters,    and    that the attribute
+names match the column headers of a CSV or other text table.}
 
-\item{storage_type}{An indicator    to processing    systems    as to    how    the    attribute    might    be represented in    a    system or    language,    but    is distinct    from the actual    expression of    the    domain of    the    attribute. Non system-specific examples    include: float,    integer    and    string.}
+\item{storage_type}{An indicator    to processing    systems    as to    how    the    attribute
+might be represented in    a    system or    language,    but    is distinct    from the actual
+expression of    the    domain of    the    attribute. Non system-specific examples
+include: float, integer    and    string.}
 
-\item{measurement_scale}{The    type of    scale    from which values are    drawn    for    the    attribute. Must use one of the following types: nominal, ordinal, interval, ratio, or dateTime. Further explination of the choices and required inputs are described below.}
+\item{measurement_scale}{The    type of    scale    from which values are    drawn    for    the
+attribute. Must use one of the following types: nominal, ordinal, interval, ratio,
+or dateTime. Further explination of the choices and required inputs are described below.}
 
-\item{attribute_label}{Optional. Used to provide    a    less ambiguous or    less cryptic alternative identification    than what    is provided    in \code{attribute_name}.}
+\item{attribute_label}{Optional. Used to provide    a    less ambiguous or    less cryptic
+alternative identification    than what    is provided    in \code{attribute_name}.}
 
-\item{text_definition}{Description for non-numeric, text, measurement scale values.}
+\item{domain}{Input for the non-numeric measurement scales only.
+Please list either "text" or "enumerated".}
+
+\item{definition}{Either the text definition or code definition. Both are appended
+using this parameter, but have different applications. Examples of both are listed below.}
 
 \item{text_pattern}{A regular expression pattern constraining the attribute.}
-
-\item{domain}{Input for the non-numeric measurement scales only. Please list either "text" or "enumerated".}
 
 \item{units}{The units assigned to this attribute's values.}
 
 \item{number_type}{Can be defined as: real, natural, whole, or integer.}
 
-\item{code_definition}{A list of lists of your code, including all codes and their meanings. An example of how to append this is seen below.}
-
 \item{unit_precision}{How precise units are measured.}
 
-\item{date_time_format}{The format your date/time attribute is recorded in. ISO 8601 standard should be used (YYYY-MM-DD).}
+\item{date_time_format}{The format your date/time attribute is recorded in.
+ISO 8601 standard should be used (YYYY-MM-DD).}
 
 \item{date_time_precision}{To what level time is being measured.}
 
@@ -60,80 +69,107 @@ add_attribute(
 The project or dataset list with an attribute list appended
 }
 \description{
-Adds an attribute element according to EML standards. Multiple attributes can be created. Will be appended to the attribute list.
+Adds an attribute element according to EML standards. Multiple
+attributes can be created. Will be appended to the attribute list.
 }
 \section{Measurement Scales}{
 
 Different measurement scale values will indicate different inputs:
 
-\subsection {Non-numeric:} Please provide a domain to indicate if your attribute is text or enumerated.
-
-\strong{Nominal:}
+\subsection{Non-numeric:} Please provide a domain to indicate if your attribute is text or enumerated.
+\emph{Nominal:}
 Used to define categorical scale attributes. If your attribute falls
-under the domain of "text", please provide the inputs of \code{text_definition} and \code{text_pattern}.
-If your attribute falls under the domain of "enumerated", please provide the input of \code{code_definition}.
+under the domain of "text", please provide the inputs of \code{definition} and \code{text_pattern}.
+If your attribute falls under the domain of "enumerated", please provide the input of \code{definition}.
 
-\strong{Ordinal:}
+\emph{Ordinal:}
 Used to define ordered scale attributes. If your attribute falls under the domain
-of "text", please provide the inputs of \code{text_definition} and \code{text_pattern}. If your
-attribute falls under the domain of "enumerated", please provide the input of \code{code_definition}.
+of "text", please provide the inputs of \code{definition} and \code{text_pattern}. If your
+attribute falls under the domain of "enumerated", please provide the input of \code{definition}.
 
-\subsection {Numeric:}
+\subsection{Numeric:}
 
-\strong{Interval:}
+\emph{Interval:}
 Used to define interval scale attributes. Please provide the inputs of \code{units},
 \code{unit_precision}, \code{number_type}, \code{minimum}, and \code{maximum}.
 
-\strong{Ratio:}
+\emph{Ratio:}
 Used to define ratio scale attributes. Please provide the inputs of \code{units},
 \code{unit_precision}, \code{number_type}, \code{minimum}, and \code{maximum}.
 
-\strong{dateTime:}
+\emph{dateTime:}
 Used to define date and time attributes. Please provide the inputs of \code{date_time_format},
 \code{date_time_precision}, \code{minimum}, and \code{maximum}.
 }
 
 \examples{
 Nominal(text):
-add_attribute(attribute_name = "site_id", attribute_definition = "Site id as used in sites table",
-              storage_type = "string", measurement_scale = "nominal", domain= "text",
-              text_definition = "Site id as used in sites table.")
+add_attribute(attribute_name = "site_id",
+              attribute_definition = "Site id as used in sites table",
+              storage_type = "string",
+              measurement_scale = "nominal",
+              domain= "text",
+              definition = "Site id as used in sites table.")
 
 Nominal(enumerated):
 code_def_1 = list(code = "yes", definition = "has been captured previously")
 code_def_2 = list(code = "no", definition = "has not been captured previously")
 code_definition = list(code_def_1, code_def_2)
-add_attribute(attribute_name = "Recap", attribute_definition = "Has the Turtle been captured and tagged previously",
-              storage_type = "text", measurement_scale = "nominal", domain = "enumerated",
-              code_definition = code_definition)
+add_attribute(attribute_name = "Recap", 
+              attribute_definition = "Has the Turtle been captured and tagged previously",
+              storage_type = "text", 
+              measurement_scale = "nominal", 
+              domain = "enumerated",
+              definition = code_definition)
               
 Ordinal(text):
-add_attribute(attribute_name = "LatitudeDD", attribute_definition = "Latitude",
-              storage_type = "coordinate", measurement_scale = "ordinal",
-              domain= "text", text_definition = "Latitude")
+add_attribute(attribute_name = "LatitudeDD", 
+              attribute_definition = "Latitude",
+              storage_type = "coordinate",
+              measurement_scale = "ordinal",
+              domain= "text", 
+              definition = "Latitude")
               
 Ordinal(enumerated): 
-code_def_1 = list(code = "0", definition = "0 insects per meter of branch")
-code_def_2 = list(code = "1", definition = "1-10 insects per meter")
-code_def_3 = list(code = "2", definition = "11 – 100 insects per meter")
-code_def_2 = list(code = "3", definition = "more than 100 insects per meter")
-code_definition = list(code_def_1, code_def_2, code_def_3, code_def_4)
-add_attribute(attribute_name = "hwa", attribute_definition = "Hemlock woolly adelgid density per meter of branch",
-              storage_type = "number", measurement_scale = "ordinal",
-              domain = "enumerated", code_definition = code_definition)
+code_def_0 = list(code = "0", definition = "0 insects per meter of branch")
+code_def_1 = list(code = "1", definition = "1-10 insects per meter")
+code_def_2 = list(code = "2", definition = "11 – 100 insects per meter")
+code_def_3 = list(code = "3", definition = "more than 100 insects per meter")
+code_definition = list(code_def_0, code_def_1, code_def_2, code_def_3)
+add_attribute(attribute_name = "hwa",
+              attribute_definition = "Hemlock woolly adelgid density per meter of branch",
+              storage_type = "number",
+              measurement_scale = "ordinal",
+              domain = "enumerated",
+              definition = code_definition)
               
 Interval:
-add_attribute(attribute_name = "Count", attribute_definition = "Number of individuals observed",
-                   measurement_scale = "interval",  storage_type = "integer", units = "number",
-                   unit_precision = "1", number_type = "whole", minimum = "0")
+add_attribute(attribute_name = "Count",
+              attribute_definition = "Number of individuals observed",
+                   measurement_scale = "interval", 
+                   storage_type = "integer",
+                   units = "number",
+                   unit_precision = "1",
+                   number_type = "whole", 
+                   minimum = "0")
                    
 Ratio: 
-add_attribute(attribute_name = "pH", attribute_definition = "pH of soil solution",
-                   storage_type = "float", measurement_scale = "ratio",
-                   units = "dimensionless", unit_precision = "0.01", number_type = "real")
+add_attribute(attribute_name = "pH",
+              attribute_definition = "pH of soil solution",
+              storage_type = "float",
+              measurement_scale = "ratio",
+              units = "dimensionless",
+              unit_precision = "0.01",
+              number_type = "real")
                    
 dateTime:
-add_attribute(attribute_name = "Yrs", attribute_definition = "Calendar year of the observation from years 1990 - 2010.",
-              storage_type = "integer", measurement_scale = "dateTime", attribute_label = "Years",
-              date_time_format = "YYYY", date_time_precision = "1", minimum = "1993", maximum = "2003")
+add_attribute(attribute_name = "Yrs",
+              attribute_definition = "Calendar year of the observation from years 1990 - 2010.",
+              storage_type = "integer",
+              measurement_scale = "dateTime",
+              attribute_label = "Years",
+              date_time_format = "YYYY", 
+              date_time_precision = "1", 
+              minimum = "1993", 
+              maximum = "2003")
 }
