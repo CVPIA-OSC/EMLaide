@@ -197,11 +197,17 @@ add_attribute <- function(attribute_name, attribute_definition, storage_type,
   
   return(attribute) 
 }
-#nominal------
+#' @title Add Nominal Measurment Scale 
+#' @param domain Either "text" or "enumerated". 
+#' @param definition If domain is "text", provide a word description of your attribute.
+#' If the domain is "enumerated", provide a list of the attributes code definitions. 
+#' Examples are seen in exported documentation. 
+#' @param text_pattern Optional. Only needed if applicable and the domain given is "text".
+#' @keywords internal  
 add_nominal <- function(domain = c("text", "enumerated"), definition, text_pattern = NULL) {
   
   if (is.null(domain)) {
-    stop('Please provide a domain of text or enumerated and supply the remaining applicable inputs.', call. = FALSE)
+    stop('Please provide a domain of "text" or "enumerated" and supply the remaining applicable inputs.', call. = FALSE)
   }
   domain <- match.arg(domain)
   
@@ -225,11 +231,17 @@ add_nominal <- function(domain = c("text", "enumerated"), definition, text_patte
     } 
   return(measurementScale)
 }
-#ordinal------
+#' @title Add Ordinal Measurment Scale 
+#' @param domain Either "text" or "enumerated". 
+#' @param definition If domain is "text", provide a word description of your attribute.
+#' If the domain is "enumerated", provide a list of the attributes code definitions. 
+#' Examples are seen in exported documentation. 
+#' @param text_pattern Optional. Only needed if applicable and the domain given is "text".
+#' @keywords internal
 add_ordinal <- function(domain = c("text", "enumerated"), definition, text_pattern = NULL) {
   
   if (is.null(domain)) {
-    stop('Please provide a domain of text or enumerated and supply the remaining applicable inputs.', call. = FALSE)
+    stop('Please provide a domain of "text" or "enumerated" and supply the remaining applicable inputs.', call. = FALSE)
   }
   domain <- match.arg(domain)
   if (is.null(definition)) {
@@ -252,7 +264,13 @@ add_ordinal <- function(domain = c("text", "enumerated"), definition, text_patte
   } 
   return(measurementScale)
 }
-#interval------
+#' @title Add Interval Measurement Scale 
+#' @param units The units assigned to this attribute. 
+#' @param unit_precision How precise this attirbutes' measurements are recorded. 
+#' @param number_type What type of number. Examples given in exported documentation. 
+#' @param minimum Optional. A theoreical minimum.
+#' @param maximum Optional. A theoretical maximum. 
+#' @keywords internal
 add_interval <- function(units, unit_precision, number_type, minimum = NULL, maximum = NULL) {
   interval_error_arg <- c("units", "unit_precision", "number_type", "minimum", "maximum")
   interval_which_error <- which(c(is.null(units), is.null(unit_precision), is.null(number_type),
@@ -286,7 +304,13 @@ add_interval <- function(units, unit_precision, number_type, minimum = NULL, max
 }
 
 
-#ratio-----
+#' @title Add Ratio Measurement Scale 
+#' @param units The units assigned to this attribute. 
+#' @param unit_precision How precise this attirbutes' measurements are recorded. 
+#' @param number_type What type of number. Examples given in exported documentation. 
+#' @param minimum Optional. A theoreical minimum.
+#' @param maximum Optional. A theoretical maximum. 
+#' @keywords internal
 add_ratio <- function(units, unit_precision, number_type, minimum = NULL, maximum = NULL) {
   ratio_error_arg <- c("units", "unit_precision", "number_type", "minimum", "maximum")
   ratio_which_error <- which(c(is.null(units), is.null(unit_precision), is.null(number_type),
@@ -321,7 +345,12 @@ add_ratio <- function(units, unit_precision, number_type, minimum = NULL, maximu
 
 
 
-#dateTime ------
+#' @title Add dateTime Measurement Scale 
+#' @param date_time_format ISO 8601 format should be used. 
+#' @param date_time_precision To what level of time your attribute is recorded. 
+#' @param minimum The earliest dateTime recorded.
+#' @param maximum The latest dateTime recorded. 
+#' @keywords internal
 add_datetime <- function(date_time_format, date_time_precision, minimum, maximum) {
   
   dt_error_arg <- c("date_time_format", "date_time_precision", "minimum", "maximum")

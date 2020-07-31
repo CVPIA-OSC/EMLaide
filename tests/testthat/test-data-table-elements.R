@@ -47,7 +47,7 @@ test_that('Correct error and warning messages are produced.', {
                              attribute_definition = "Site id as used in sites table",
                              storage_type = "string", measurement_scale = "nominal",
                              definition = "Sites", text_pattern = "ids"),
-               'Please provide a domain of text or enumerated and supply the remaining applicable inputs.')
+               'Please provide a domain of "text" or "enumerated" and supply the remaining applicable inputs.')
   
   expect_warning(add_attribute(attribute_name = "site_id", attribute_definition = "Site id as used in sites table",
                                storage_type = "string", measurement_scale = "nominal",
@@ -64,7 +64,7 @@ test_that('Correct error and warning messages are produced.', {
                              attribute_label = "Latitude", storage_type = "coordinate",
                              measurement_scale = "ordinal", definition = "Latitude",
                              text_pattern = "NA"),
-               'Please provide a domain of text or enumerated and supply the remaining applicable inputs.')
+               'Please provide a domain of "text" or "enumerated" and supply the remaining applicable inputs.')
   
   expect_error(add_attribute(attribute_name = "LatitudeDD", attribute_definition = "Latitude",
                              attribute_label = "Latitude", storage_type = "coordinate",
