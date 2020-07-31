@@ -24,13 +24,13 @@ add_attribute(
 )
 }
 \arguments{
-\item{attribute_name}{The name    of a field in    a    data table. This is    often    a short    and/or cryptic name. It is recommended that the attribute names    be suitable    for    use    as a    variable,    e.g.,    composed of ASCII    characters,    and    that the    attribute names    match    the    column headers of    a    CSV    or other text table.}
+\item{attribute_name}{The name    of a field in    a    data table. This is    often    a short    and/or cryptic name. It is recommended that the attribute names    be suitable    for    use    as a    variable,    e.g.,    composed of ASCII    characters,    and    that the attribute names match the column headers of a CSV or other text table.}
 
 \item{storage_type}{An indicator    to processing    systems    as to    how    the    attribute    might    be represented in    a    system or    language,    but    is distinct    from the actual    expression of    the    domain of    the    attribute. Non system-specific examples    include: float,    integer    and    string.}
 
 \item{measurement_scale}{The    type of    scale    from which values are    drawn    for    the    attribute. Must use one of the following types: nominal, ordinal, interval, ratio, or dateTime. Further explination of the choices and required inputs are described below.}
 
-\item{attribute_label}{Optional. Used to provide    a    less ambiguous or    less cryptic alternative identification    than what    is provided    in attribute_name}
+\item{attribute_label}{Optional. Used to provide    a    less ambiguous or    less cryptic alternative identification    than what    is provided    in \code{attribute_name}.}
 
 \item{text_definition}{Description for non-numeric, text, measurement scale values.}
 
@@ -42,11 +42,11 @@ add_attribute(
 
 \item{number_type}{Can be defined as: real, natural, whole, or integer.}
 
-\item{code_definition}{A list of lists of your code, including all codes and their meanings. An example of how to append this is seen below}
+\item{code_definition}{A list of lists of your code, including all codes and their meanings. An example of how to append this is seen below.}
 
 \item{unit_precision}{How precise units are measured.}
 
-\item{date_time_format}{The format your date/time attribute is recorded in. ISO 8601 standard should be used (YYYY-MM-DD)}
+\item{date_time_format}{The format your date/time attribute is recorded in. ISO 8601 standard should be used (YYYY-MM-DD).}
 
 \item{date_time_precision}{To what level time is being measured.}
 
@@ -70,13 +70,13 @@ Different measurement scale values will indicate different inputs:
 
 \strong{Nominal:}
 Used to define categorical scale attributes. If your attribute falls
-under the domain of text, please provide the inputs of \code{text_definition} and \code{text_pattern}.
-If your attribute falls under the domain of enumerated, please provide the input of \code{code_definition}.
+under the domain of "text", please provide the inputs of \code{text_definition} and \code{text_pattern}.
+If your attribute falls under the domain of "enumerated", please provide the input of \code{code_definition}.
 
 \strong{Ordinal:}
 Used to define ordered scale attributes. If your attribute falls under the domain
-of text, please provide the inputs of \code{text_definition} and \code{text_pattern}. If your
-attribute falls under the domain of enumerated, please provide the input of \code{code_definition}.
+of "text", please provide the inputs of \code{text_definition} and \code{text_pattern}. If your
+attribute falls under the domain of "enumerated", please provide the input of \code{code_definition}.
 
 \subsection {Numeric:}
 
