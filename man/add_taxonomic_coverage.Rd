@@ -24,7 +24,9 @@ add_taxonomic_coverage(
 )
 }
 \arguments{
-\item{CVPIA_common_species}{Use one of the following: "chinook", "delta_smelt", "white_sturgeon", "green_sturgeon", or "steelhead" to get pre-selected information from ITIS}
+\item{CVPIA_common_species}{Use one of the following: "chinook", "delta_smelt",
+"white_sturgeon", "green_sturgeon", or "steelhead" to get pre-selected
+information from ITIS}
 
 \item{kingdom}{Kingdom level present}
 
@@ -57,26 +59,45 @@ add_taxonomic_coverage(
 \item{common_name}{The common name of the organism}
 }
 \value{
-Taxonomic coverage information. The function should be assigned to the name taxonomic_coverage to append it to the dataset or project. Example of how to incorporate it into the add_coverage function is seen below.
+Taxonomic coverage information. The function should be assigned to the
+name taxonomic_coverage to append it to the dataset or project. Example of how
+to incorporate it into the add_coverage function is seen below.
 }
 \description{
-Adds the taxonomic coverage information of a dataset based off of EML standards. The addition of taxonomic coverage is optional, however defaults of chinook, sturgeon, smelt, and steelhead are provided. While single or multiple taxonomies can be applied, the full set of information must be provided if chosen to be included.
+Adds the taxonomic coverage information of a dataset based off of
+EML standards. The addition of taxonomic coverage is optional, however defaults
+of chinook, sturgeon, smelt, and steelhead are provided. While single or
+multiple taxonomies can be applied, the full set of information must be
+provided if chosen to be included.
 }
 \section{CVPIA Common Species}{
 
-By using a CVPIA common species, the appropriate taxonomy is appended based off of the Integrated Taxonomic Information System (ITIS).
+By using a CVPIA common species, the appropriate taxonomy is appended based off
+of the Integrated Taxonomic Information System (ITIS).
 
-Select "chinook" to append the taxonomy of Oncorhynchus tshawytscha (Also known as Chinook Salmon or King Salmon) from the ITIS database. The correspoinding ITIS taxonomic id number is 161980.
+Select "chinook" to append the taxonomy of Oncorhynchus tshawytscha
+(Also known as Chinook Salmon or King Salmon) from the ITIS database.
+The correspoinding ITIS taxonomic id number is 161980.
 
-Select "delta_smelt" to append the taxonomy of Hypomesus transpacificus (Also known as Delta Smelt) from the ITIS database. The correspoinding ITIS taxonomic id number is 162032.
+Select "delta_smelt" to append the taxonomy of Hypomesus transpacificus
+(Also known as Delta Smelt) from the ITIS database. The correspoinding ITIS
+taxonomic id number is 162032.
 
-Select "white_sturgeon" to append the taxonomy of Acipenser transmontanus (Also known as White Sturgeon) from the ITIS database. The correspoinding ITIS taxonomic id number is 161068.
+Select "white_sturgeon" to append the taxonomy of Acipenser transmontanus
+(Also known as White Sturgeon) from the ITIS database. The correspoinding ITIS
+taxonomic id number is 161068.
 
-Select "green_sturgeon" to append the taxonomy of Acipenser medirostris (Also known as Green Sturgeon) from the ITIS database. The correspoinding ITIS taxonomic id number is 161067.
+Select "green_sturgeon" to append the taxonomy of Acipenser medirostris (Also
+known as Green Sturgeon) from the ITIS database. The correspoinding ITIS
+taxonomic id number is 161067.
 
-Select "steelhead" to append the taxonomy of Oncorhynchus mykiss (Also known as Steelhead, Rainbow Trout, or Redband Trout) from the ITIS database. The correspoinding ITIS taxonomic id number is 161989.
+Select "steelhead" to append the taxonomy of Oncorhynchus mykiss
+(Also known as Steelhead, Rainbow Trout, or Redband Trout) from the ITIS database.
+The correspoinding ITIS taxonomic id number is 161989.
 
-For further taxonomic coverage (i.e subkingdom, infrakingdom, etc.) on any of these species, you can visit: \href{https://www.itis.gov/}{ITIS}'s webpage for full coverage information.
+For further taxonomic coverage (i.e subkingdom, infrakingdom, etc.) on any of
+these species, you can visit: \href{https://www.itis.gov/}{ITIS}'s webpage for
+full coverage information.
 }
 
 \examples{
@@ -101,4 +122,11 @@ taxonomic_coverage <- add_taxonomic_coverage(kingdom_value = "Animalia",
                                             
 To append this information to the dataset or project:                        
     add_coverage(parent_element = list(), geographic_description = "Description",
+                 west_bounding_coordinate = "-160.594000", 
+                 east_bounding_coordinate = "-134.104800",
+                 north_bounding_coordinate = "71.238300", 
+                 south_bounding_coordinate = "67.865000",
+                 begin_date = "1980-01-01", 
+                 end_date = "2010-12-31", 
+                 taxonomic_coverage = taxonomic_coverage)
 }
