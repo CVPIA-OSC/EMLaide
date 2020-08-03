@@ -60,8 +60,8 @@
 #' Nominal(text):
 #' add_attribute(attribute_name = "site_id",
 #'               attribute_definition = "Site id as used in sites table",
-#'               storage_type = "string",
-#'               measurement_scale = "nominal",
+#'               storage_type = "cvpiaEDIutils::storage_type$integer",
+#'               measurement_scale = "cvpiaEDIutils::measurement_scale$nominal",
 #'               domain= "text",
 #'               definition = "Site id as used in sites table.")
 #'
@@ -71,16 +71,16 @@
 #' code_definition = list(code_def_1, code_def_2)
 #' add_attribute(attribute_name = "Recap", 
 #'               attribute_definition = "Has the Turtle been captured and tagged previously",
-#'               storage_type = "text", 
-#'               measurement_scale = "nominal", 
+#'               storage_type = cvpiaEDIutils::storage_type$text, 
+#'               measurement_scale = cvpiaEDIutils::measurement_scale$nominal, 
 #'               domain = "enumerated",
 #'               definition = code_definition)
 #'               
 #' Ordinal(text):
 #' add_attribute(attribute_name = "LatitudeDD", 
 #'               attribute_definition = "Latitude",
-#'               storage_type = "coordinate",
-#'               measurement_scale = "ordinal",
+#'               storage_type = cvpiaEDIutils::storage_type$string,
+#'               measurement_scale = cvpiaEDIutils::measurement_scale$ordinal,
 #'               domain= "text", 
 #'               definition = "Latitude")
 #'               
@@ -92,16 +92,16 @@
 #' code_definition = list(code_def_0, code_def_1, code_def_2, code_def_3)
 #' add_attribute(attribute_name = "hwa",
 #'               attribute_definition = "Hemlock woolly adelgid density per meter of branch",
-#'               storage_type = "number",
-#'               measurement_scale = "ordinal",
+#'               storage_type = cvpiaEDIutils::storage_type$decimal,
+#'               measurement_scale = cvpiaEDIutils::measurement_scale$ordinal,
 #'               domain = "enumerated",
 #'               definition = code_definition)
 #'               
 #' Interval:
 #' add_attribute(attribute_name = "Count",
 #'               attribute_definition = "Number of individuals observed",
-#'                    measurement_scale = "interval", 
-#'                    storage_type = "integer",
+#'                    measurement_scale = cvpiaEDIutils::measurement_scale$interval, 
+#'                    storage_type = cvpiaEDIutils::storage_type$integer",
 #'                    units = "number",
 #'                    unit_precision = "1",
 #'                    number_type = "whole", 
@@ -110,8 +110,8 @@
 #' Ratio: 
 #' add_attribute(attribute_name = "pH",
 #'               attribute_definition = "pH of soil solution",
-#'               storage_type = "float",
-#'               measurement_scale = "ratio",
+#'               storage_type = cvpiaEDIutils::storage_type$float,
+#'               measurement_scale = cvpiaEDIutils::measurement_scale$ratio,
 #'               units = "dimensionless",
 #'               unit_precision = "0.01",
 #'               number_type = "real")
@@ -119,8 +119,8 @@
 #' dateTime:
 #' add_attribute(attribute_name = "Yrs",
 #'               attribute_definition = "Calendar year of the observation from years 1990 - 2010.",
-#'               storage_type = "integer",
-#'               measurement_scale = "dateTime",
+#'               storage_type = cvpiaEDIutils::storage_type$integer,
+#'               measurement_scale = cvpiaEDIutils::measurement_scale$dateTime,
 #'               attribute_label = "Years",
 #'               date_time_format = "YYYY", 
 #'               date_time_precision = "1", 
@@ -153,8 +153,9 @@ add_attribute <- function(attribute_name, attribute_definition, storage_type,
                     attributeDefinition = attribute_definition,
                     storageType = storage_type)
   
-  if (missing(attribute_label)) {warning('No attribute label provided.', call. = FALSE)}
-  if (!is.null(attribute_label)) {
+  if (missing(attribute_label)) {
+    warning('No attribute label provided.', call. = FALSE)
+  } else {
     attribute$attributeLabel <- attribute_label
   }
   
@@ -264,14 +265,19 @@ add_ordinal <- function(domain = c("text", "enumerated"), definition, text_patte
   } 
   return(measurementScale)
 }
-#' @title Add Interval Measurement Scale 
+
+#' @title Add Interval or Ratio Measurement Scales
+#' @param type Either "interval" or "ratio". Use "interval" to define 
+#' data which consist of equidistant points on a scale. Use "ratio" to define data 
+#' which consists not only of equidistant points but also has a meaningful zero 
+#' point, which allows the ratio to have meaning.
 #' @param units The units assigned to this attribute. 
 #' @param unit_precision How precise this attirbutes' measurements are recorded. 
 #' @param number_type What type of number. Examples given in exported documentation. 
 #' @param minimum Optional. A theoreical minimum.
 #' @param maximum Optional. A theoretical maximum. 
 #' @keywords internal
-add_interval <- function(units, unit_precision, number_type, minimum = NULL, maximum = NULL) {
+add_interval_ratio <- function(units, unit_precision, number_type, minimum = NULL, maximum = NULL) {
   interval_error_arg <- c("units", "unit_precision", "number_type", "minimum", "maximum")
   interval_which_error <- which(c(is.null(units), is.null(unit_precision), is.null(number_type),
                                   is.null(minimum), is.null(maximum)))
@@ -292,58 +298,21 @@ add_interval <- function(units, unit_precision, number_type, minimum = NULL, max
     } 
   } 
   
-  measurementScale <- list(interval =
-                             list(standardUnit = units,
-                                  precision = unit_precision,
-                                  numericDomain =
-                                    list(numberType = number_type,
-                                         bounds = 
-                                           list(minimum = minimum,
-                                                maximum = maximum))))
-  return(measurementScale)
-}
-
-
-#' @title Add Ratio Measurement Scale 
-#' @param units The units assigned to this attribute. 
-#' @param unit_precision How precise this attirbutes' measurements are recorded. 
-#' @param number_type What type of number. Examples given in exported documentation. 
-#' @param minimum Optional. A theoreical minimum.
-#' @param maximum Optional. A theoretical maximum. 
-#' @keywords internal
-add_ratio <- function(units, unit_precision, number_type, minimum = NULL, maximum = NULL) {
-  ratio_error_arg <- c("units", "unit_precision", "number_type", "minimum", "maximum")
-  ratio_which_error <- which(c(is.null(units), is.null(unit_precision), is.null(number_type),
-                               is.null(minimum), is.null(maximum)))
+  interval_ratio <- list(standardUnit = units,
+                         precision = unit_precision,
+                         numericDomain =
+                           list(numberType = number_type,
+                                bounds = 
+                                  list(minimum = minimum,
+                                       maximum = maximum)))
   
-  if (length(ratio_which_error) > 0) {
-    ratio_error <- ratio_error_arg[ratio_which_error][1]
-    ratio_error_message <- switch(ratio_error, units = "Please provide what units your measurement scale uses.",
-                                  unit_precision = "Please provide what level of precision your measurements use.",
-                                  number_type = "Please provide what type of numbers are being used.", 
-                                  minimum = "Please provide a minimum theoretical value if applicable.",
-                                  maximum = "Please provide a maximum theoretical value if applicable.")
-    if (is.null(units) | is.null(unit_precision) | is.null(number_type)) {
-      do.call(stop, list(ratio_error_message, call. = FALSE))
-    } else{
-      if (is.null(minimum) | is.null(maximum)) {
-        do.call(warning, list(ratio_error_message, call. = FALSE))
-      } 
-    }
+  if (type == "interval") {
+    measurementScale$interval <- interval_ratio
+  } else {
+    measurementScale$ratio <- interval_ratio 
   }
-  measurementScale <- list(ratio =
-                             list(standardUnit = units,
-                                  precision = unit_precision,
-                                  numericDomain = 
-                                    list(numberType = number_type,
-                                         bounds = 
-                                           list(minimum = minimum,
-                                                maximum = maximum))))
-  
   return(measurementScale)
 }
-
-
 
 #' @title Add dateTime Measurement Scale 
 #' @param date_time_format ISO 8601 format should be used. 
