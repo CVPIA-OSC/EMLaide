@@ -8,11 +8,11 @@
 #' @param attribute_defenition A precise and complete	definition of the attribute	being	documented.
 #' @param storage_type An indicator	to processing	systems	as to	how	the	attribute
 #' might be represented in	a	system or	language,	but	is distinct	from the actual
-#' expression of	the	domain of	the	attribute. Non system-specific examples
-#' include: float, integer	and	string.
+#' expression of	the	domain of	the	attribute. A list of approved storage types can be found at 
+#' \code{\link{storage_type}}
 #' @param measurement_scale The	type of	scale	from which values are	drawn	for	the
-#' attribute. Must use one of the following types: nominal, ordinal, interval, ratio,
-#' or dateTime. Further explination of the choices and required inputs are described below.
+#' attribute. A list of approved measurment scales can be viewed at \code{\link{measurement_scale}}.
+#' Further explination of the choices and required inputs are described below.
 #' @param attribute_label Optional. Used to provide	a	less ambiguous or	less cryptic
 #' alternative identification	than what	is provided	in \code{attribute_name}.
 #' @param domain Input for the non-numeric measurement scales only.

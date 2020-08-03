@@ -82,5 +82,6 @@ Use \href{https://www.w3.org/TR/xmlschema-2/#gMonth}{this} link for more informa
 
 \examples{
 storage_type$integer #"integer"
+
 }
 \keyword{datasets}

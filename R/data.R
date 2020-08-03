@@ -1,4 +1,4 @@
-#' Attribute Storage Types
+#' @title Attribute Storage Types
 #' @description A set of common options for different attribute storage types. 
 #' A helper data object to be used with \code{\link{add_attribute}}
 #' @format A named list, keys are named the same as values.
@@ -58,4 +58,22 @@
 #'   Use \href{https://www.w3.org/TR/xmlschema-2/#gMonth}{this} link for more information.
 #' @examples 
 #' storage_type$integer #"integer"
+#' 
 "storage_type"
+
+#' @title Attribute Measurement Scales
+#' @description The 5 options for measurement scales which can be appended to the dataset. 
+#' A helper data object to be used with \code{\link{add_attribute}}
+#' @format A named list, keys are named the same as values.
+#' @section Measurement Scales:
+#' \itemize 
+#'   \item{\strong{nominal}}: Used to define categorical scale attributes.
+#'   \item{\strong{ordinal}}: Used to define ordered scale attributes.
+#'   \item{\strong{interval}}: Used to define interval scale attributes.
+#'   \item{\strong{ratio}}: Used to define ratio scale attributes.
+#'   \item{\strong{dateTime}}: Used to define date and time attributes.
+#' @examples
+#' measurement_scale$nominal #"nominal"
+#' 
+"measurement_scale"
+
