@@ -9,3 +9,7 @@ measurement_scale <- list(nominal = "nominal", ordinal = "ordinal",
                           interval = "interval", ratio = "ratio",
                           dateTime = "dateTime")
 usethis::use_data(measurement_scale)
+
+number_type <- list(natural = "natural", whole = "whole", integer = "integer",
+                    real = "real")
+usethis::use_data(number_type)

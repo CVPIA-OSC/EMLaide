@@ -50,7 +50,7 @@ using this parameter, but have different applications. Examples of both are list
 
 \item{units}{The units assigned to this attribute's values.}
 
-\item{number_type}{Can be defined as: real, natural, whole, or integer.}
+\item{number_type}{A list of possible options can be viewed at \code{\link{storage_type}}.}
 
 \item{unit_precision}{How precise units are measured.}
 

@@ -21,7 +21,7 @@
 #' using this parameter, but have different applications. Examples of both are listed below.  
 #' @param text_pattern A regular expression pattern constraining the attribute.
 #' @param units The units assigned to this attribute's values. 
-#' @param number_type Can be defined as: real, natural, whole, or integer. 
+#' @param number_type A list of possible options can be viewed at \code{\link{storage_type}}. 
 #' @param unit_precision How precise units are measured.
 #' @param date_time_format The format your date/time attribute is recorded in.
 #' ISO 8601 standard should be used (YYYY-MM-DD).

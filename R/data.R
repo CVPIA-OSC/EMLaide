@@ -63,7 +63,7 @@
 
 #' @title Attribute Measurement Scales
 #' @description The 5 options for measurement scales which can be appended to the dataset. 
-#' A helper data object to be used with \code{\link{add_attribute}}
+#' A helper data object to be used with \code{\link{add_attribute}}.
 #' @format A named list, keys are named the same as values.
 #' @section Measurement Scales:
 #' \itemize 
@@ -72,8 +72,33 @@
 #'   \item{\strong{interval}}: Used to define interval scale attributes.
 #'   \item{\strong{ratio}}: Used to define ratio scale attributes.
 #'   \item{\strong{dateTime}}: Used to define date and time attributes.
+#' 
 #' @examples
 #' measurement_scale$nominal #"nominal"
 #' 
 "measurement_scale"
 
+
+#' @title Attribute Number Types 
+#' @description The 4 options for number types that can be appended to the dataset.
+#' A helper data object to be used with \code{\link{add_attribute}}.
+#' @format A named list, keys are named the same as values. 
+#' @section Number Types: 
+#' \itemize 
+#'   \item{\strong{natural}}:The number type for this attribute consists of the 
+#'   'natural' numbers, otherwise known as the counting numbers: 1, 2, 3, 4, etc.
+#'   \item{\strong{whole}}: The number type for this attribute consists of the 
+#'   'whole' numbers, which are the natural numbers plus the zero value: 
+#'   0, 1, 2, 3, 4, etc.
+#'   \item{\strong{integer}}: The number type for this attribute consists of the
+#'   'integer' numbers, which are the natural numbers, plus the zero value, plus
+#'   the negatives of the natural numbers: ..., -4, -3, -2, -1, 0, 1, 2, 3, 4, etc.
+#'   \item{\strong{real}}: The number type for this attribute consists of the
+#'   'real' numbers, which contains both the rational numbers that can be expressed
+#'   as fractions and the irrational numbers that can not be expressed as 
+#'   fractions (such as the square root of 2).
+#'  
+#' @examples 
+#' number_type$natural #"natural"
+#'   
+"number_type"
