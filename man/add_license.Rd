@@ -16,15 +16,25 @@ add_license(
 \arguments{
 \item{parent_element}{a list representing the EML project or dataset}
 
-\item{default_license}{Use "CCO" or "CCBY" as argument value to use one of the CVPIA default licenses. Supply NULL if using another license.}
+\item{default_license}{Use "CCO" or "CCBY" as argument value to use one of the
+CVPIA default licenses. Supply NULL if using another license.}
 
-\item{license_name}{Optional if using default_license = "CCO" or "CCBY" as default values are provided. Otherwise, please provide the appropriate license name. Other possible license examples include "MIT License" and "Creative Commons Attribution Non Commercial Share Alike 4.0 International".}
+\item{license_name}{Optional if using default_license = "CCO" or "CCBY" as
+default values are provided. Otherwise, please provide the appropriate license
+name. Other possible license examples include "MIT License" and "Creative Commons
+Attribution Non Commercial Share Alike 4.0 International".}
 
-\item{license_url}{Optional if using default_license = "CCO" or "CCBY" as default values are provided. Otherwise, please provide the correct license url to view further license information.}
+\item{license_url}{Optional if using default_license = "CCO" or "CCBY" as default
+values are provided. Otherwise, please provide the correct license url
+to view further license information.}
 
-\item{license_identifier}{Optional if using default_license = "CCO" or "CCBY" as default values are provided. Otherwise, please provide the appropriate identifier. Other possible identifiers include "MIT" and "CC-BY-NC-SA".}
+\item{license_identifier}{Optional if using default_license = "CCO" or "CCBY"
+as default values are provided. Otherwise, please provide the appropriate
+identifier. Other possible identifiers include "MIT" and "CC-BY-NC-SA".}
 
-\item{intellectual_rights_descripiton}{Optional if using default_license = "CCO" or "CCBY" as default values are provided. Otherwise, please provide a short description of the license being used and its regulations.}
+\item{intellectual_rights_descripiton}{Optional if using default_license = "CCO"
+or "CCBY" as default values are provided. Otherwise, please provide a short
+description of the license being used and its regulations.}
 }
 \description{
 Adds the intellectual rights information of a dataset based off of EML standards.
@@ -32,7 +42,8 @@ Adds the intellectual rights information of a dataset based off of EML standards
 \details{
 Learn more about the default CVPIA licese options from Creative Commons:
 \itemize{
-\item \href{https://creativecommons.org/publicdomain/zero/1.0/}{CCO} - The most premissive license, appropriate for data in the public domain.
+\item \href{https://creativecommons.org/publicdomain/zero/1.0/}{CCO} -
+The most premissive license, appropriate for data in the public domain.
 \item \href{https://creativecommons.org/licenses/by/4.0/}{CC BY} - Attribution required
 }
 
@@ -51,6 +62,27 @@ add_license(parent_element = list(), default_license = NULL,
            license_name = "Creative Commons Attribution Non Commercial Share Alike 4.0 International", 
            license_url = "https://spdx.org/licenses/CC-BY-NC-SA-4.0.html", 
            license_identifier = "CC-BY-NC-SA-4.0", 
-           intellectual_rights_descripiton = "This information is released under the Creative Commons license - Attribution - CC BY-NC-SA (https://creativecommons.org/licenses/by-nc-sa/4.0/). The consumer of these data (\"Data User\" herein) is required to cite it appropriately in any publication that results from its use. The Data User should realize that these data may be actively used by others for ongoing research and that coordination may be necessary to prevent duplicate publication. The Data User is urged to contact the authors of these data if any questions about methodology or results occur. Where appropriate, the Data User is encouraged to consider collaboration or co-authorship with the authors. The Data User should realize that misinterpretation of data may occur if used out of context of the original study. While substantial efforts are made to ensure the accuracy of data and associated documentation, complete accuracy of data sets cannot be guaranteed. All data are made available \"as is.\" The Data User should be aware, however, that data are updated periodically and it is the responsibility of the Data User to check for new versions of the data. The data authors and the repository where these data were obtained shall not be liable for damages resulting from any use or misinterpretation of the data. You may not use the material for commercial purposes and you must distribute your contributions on this same license. Thank you.&#13;")
+           intellectual_rights_descripiton = "This information is released under 
+           the Creative Commons license - Attribution - CC BY-NC-SA 
+           (https://creativecommons.org/licenses/by-nc-sa/4.0/). The consumer 
+           of these data (\"Data User\" herein) is required to cite it 
+           appropriately in any publication that results from its use. 
+           The Data User should realize that these data may be actively 
+           used by others for ongoing research and that coordination may be 
+           necessary to prevent duplicate publication. The Data User is urged 
+           to contact the authors of these data if any questions about 
+           methodology or results occur. Where appropriate, the Data User is 
+           encouraged to consider collaboration or co-authorship with the authors. 
+           The Data User should realize that misinterpretation of data may occur 
+           if used out of context of the original study. While substantial efforts 
+           are made to ensure the accuracy of data and associated documentation, 
+           complete accuracy of data sets cannot be guaranteed. All data are made 
+           available \"as is.\" The Data User should be aware, however, that 
+           data are updated periodically and it is the responsibility of the
+           Data User to check for new versions of the data. The data authors and
+           the repository where these data were obtained shall not be liable for 
+           damages resulting from any use or misinterpretation of the data. 
+           You may not use the material for commercial purposes and you must 
+           distribute your contributions on this same license. Thank you.&#13;")
 
 }

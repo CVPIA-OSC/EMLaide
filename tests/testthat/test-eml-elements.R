@@ -101,7 +101,7 @@ test_that('personnel function errors when missing mandatory identifier inputs', 
   
   expect_error(add_personnel(parent_element = parent_element, role = role1, 
                              first_name = first_name, last_name = last_name),
-               "Please supply a email.")
+               "Please supply an email.")
   expect_error(add_personnel(parent_element = parent_element, role = role1, 
                              first_name = first_name, email = email),
                "Please supply a last name.")
