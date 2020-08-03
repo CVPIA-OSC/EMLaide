@@ -7,22 +7,42 @@
 #' @param first_name Person's given name
 #' @param last_name Person's surname
 #' @param email Person's email address
-#' @param orcid ORCID iD is a persistent digital identifier for researchers, register at \url{http://orcid.org/}
-#' @param organization Person's employer or the entity they are associated with for this dataset or project
+#' @param orcid ORCID iD is a persistent digital identifier for researchers,
+#' register at \url{http://orcid.org/}
+#' @param organization Person's employer or the entity they are associated
+#' with for this dataset or project
 #' @examples 
-#' add_personnel(parent_element = list(), first_name = 'Katherine', 
-#'               last_name = "Johnson", email = 'kjohnson@nasa.gov', role = 'Creator', organization = 'NASA')
+#' add_personnel(parent_element = list(),
+#'               first_name = 'Katherine', 
+#'               last_name = "Johnson", 
+#'               email = 'kjohnson@nasa.gov', 
+#'               role = 'Creator', 
+#'               organization = 'NASA')
 #' 
-#' add_personnel(parent_element = list(), first_name = "Edith", last_name = "Windsor", 
-#'               email = 'ewindsor@ibm.com', role = 'Data Manager', organization = 'IBM')
+#' add_personnel(parent_element = list(), 
+#'               first_name = "Edith", 
+#'               last_name = "Windsor", 
+#'               email = 'ewindsor@ibm.com', 
+#'               role = 'Data Manager', 
+#'               organization = 'IBM')
 #' @export
 add_personnel <- function(parent_element, first_name, last_name, email, 
                           role, orcid = NULL, organization = NULL) {
   
-  if (missing(first_name)) {stop("Please supply a first name.")}
-  if (missing(last_name)) {stop("Please supply a last name.")}
-  if (missing(email)) {stop("Please supply a email.")}
-  if (missing(role)) {stop("Please supply a role. Use 'Creator' if you are the main originator of the dataset or project")}
+  person_error_arg <- c("first_name", "last_name", "email", "role")
+  person_which_error <- which(c(missing(first_name), missing(last_name), 
+                                missing(email), missing(role)))
+  
+  if (length(person_which_error) > 0) {
+    person_error <- person_error_arg[person_which_error][1]
+    person_error_message <- switch(person_error,
+                                   first_name = "Please supply a first name.",
+                                   last_name = "Please supply a last name.",
+                                   email = "Please supply an email.",
+                                   role =
+                                     "Please supply a role. Use 'Creator' if you are the main originator of the dataset or project")
+    stop(person_error_message, call. = FALSE)
+  } 
   
   person <- list(individualName = 
                    list(givenName = first_name, 
