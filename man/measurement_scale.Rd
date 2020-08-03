@@ -18,10 +18,30 @@ A helper data object to be used with \code{\link{add_attribute}}.
 
 \itemize
 \item{\strong{nominal}}: Used to define categorical scale attributes.
-\item{\strong{ordinal}}: Used to define ordered scale attributes.
-\item{\strong{interval}}: Used to define interval scale attributes.
-\item{\strong{ratio}}: Used to define ratio scale attributes.
-\item{\strong{dateTime}}: Used to define date and time attributes.
+Nominal is used when numbers have only been assigned to a variable for the
+purpose of categorizing the variable. An example of a nominal scale is
+assigning the number 1 for male and 2 for female.
+\item{\strong{ordinal}}: Used to define ordered scale attributes. Ordinal is
+used when the categories have a logical or ordered relationship to each other.
+These types of scale allow one to distinguish the order of values, but not
+the magnitude of the difference between values. An example of an ordinal
+scale is a categorical survey where you rank a variable 1=good, 2=fair, 3=poor.
+\item{\strong{interval}}: Used to define interval scale attributes. Intervals
+define data which consist of equidistant points on a scale. For example
+temperature data, mark grading, IQ scale, etc. Intervals can be negative
+while ratios cannot
+\item{\strong{ratio}}: Used to define ratio scale attributes. Ratios define
+data which consists not only of equidistant points but also has a meaningful zero
+point, which allows the ratio to have meaning. For example measurment heights,
+flow rates, weight, length, etc.
+\item{\strong{dateTime}}: Used to define date and time attributes. DateTime
+is used when the values fall on the Gregorian calendar system.  DateTime values
+are special because they have properties of interval values (most of the
+time it is legitimate to treat them as interval values by converting them
+to a duration from a fixed point) but they sometimes only behave as ordinals
+(because the calendar is not predetermined, for some dateTime values one can
+only find out the order of the points and not the magnitude of the duration
+between those points). The most encompassing format is: YYYY-MM-DDThh:mm:ss.
 }
 
 \examples{
