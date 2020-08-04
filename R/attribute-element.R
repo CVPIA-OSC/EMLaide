@@ -55,13 +55,15 @@
 #' \emph{dateTime:}
 #' Used to define date and time attributes. Please provide the inputs of \code{date_time_format}, 
 #' \code{date_time_precision}, \code{minimum}, and \code{maximum}.
+#' 
 #' @return The project or dataset list with an attribute list appended
-#' @examples
+#' 
+#' @examples 
 #' Nominal(text):
 #' add_attribute(attribute_name = "site_id",
 #'               attribute_definition = "Site id as used in sites table",
-#'               storage_type = "cvpiaEDIutils::storage_type$integer",
-#'               measurement_scale = "cvpiaEDIutils::measurement_scale$nominal",
+#'               storage_type = cvpiaEDIutils::storage_type$integer,
+#'               measurement_scale = cvpiaEDIutils::measurement_scale$nominal,
 #'               domain= "text",
 #'               definition = "Site id as used in sites table.")
 #'
@@ -101,7 +103,7 @@
 #' add_attribute(attribute_name = "Count",
 #'               attribute_definition = "Number of individuals observed",
 #'                    measurement_scale = cvpiaEDIutils::measurement_scale$interval, 
-#'                    storage_type = cvpiaEDIutils::storage_type$integer",
+#'                    storage_type = cvpiaEDIutils::storage_type$integer,
 #'                    units = "number",
 #'                    unit_precision = "1",
 #'                    number_type = "whole", 

@@ -41,7 +41,7 @@ time it is legitimate to treat them as interval values by converting them
 to a duration from a fixed point) but they sometimes only behave as ordinals
 (because the calendar is not predetermined, for some dateTime values one can
 only find out the order of the points and not the magnitude of the duration
-between those points). The most encompassing format is: YYYY-MM-DDThh:mm:ss.
+between those points). The most encompassing format is: YYYY-MM-DDThh:mm:ss. ?measu
 }
 
 \examples{
