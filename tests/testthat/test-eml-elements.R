@@ -279,6 +279,50 @@ test_that('The maintenance function adds the maintenance elements', {
   expect_equal(add_maintenance(parent_element = list(), status = "ongoing",
                                update_frequency = "Data are updated annually at the end of the calendar year."),
                list(maintenance = list(description = list(para = "Data are updated annually at the end of the calendar year.")))
-               )
+  )
   
 })
+
+#Tests for add_method function 
+
+test_that('The method function errors when missing mandatory identifier inputs.', {
+  
+  expect_warning(add_method(description = "Daily temperature (maximum/minimum) and
+                                                          precipitation data were obtained for each stand from 1996 to 2011
+                                                          from the online PRISM Gridded Climate database (PRISM Climate Group,
+                                                          Oregon State University, http://prism.oregonstate.edu, created 26 Mar 2015)
+                                                          by interpolating 4km2 resolution climate data at the centroid of each
+                                                          eastern hemlock stand using values from surrounding grid cell centers 
+                                                          and inverse-distance squared weighting.",
+                            instrumentation = "Thermometer"),
+                 'No title inputed. Provide one for easier organization.')
+  
+  expect_error(add_method(title = "Climate Data",
+                          instrumentation = "Thermometer"),
+               'Please provide the description of the method you are recording.')
+  
+  expect_warning(add_method(title = "Climate Data",
+                            description = "Daily temperature (maximum/minimum) and
+                                                          precipitation data were obtained for each stand from 1996 to 2011
+                                                          from the online PRISM Gridded Climate database (PRISM Climate Group,
+                                                          Oregon State University, http://prism.oregonstate.edu, created 26 Mar 2015)
+                                                          by interpolating 4km2 resolution climate data at the centroid of each
+                                                          eastern hemlock stand using values from surrounding grid cell centers 
+                                                          and inverse-distance squared weighting."),
+                 'Provide the insrumentation device used if beneficial to understanding the dataset.')
+})
+
+test_that('The method function adds the method elements', {
+  expect_equal(add_method(title = "Climate Data",
+                          description = "The description for this method step.",
+                          instrumentation = "Thermometer"),
+               list(methodStep = list(description = list(seciton = list(title = "Climate Data", 
+                                                                        para = "The description for this method step.")),
+                                      instrumentation = "Thermometer")))
+})
+
+
+
+
+
+
