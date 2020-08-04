@@ -48,7 +48,7 @@
 #'   with integer-valued year, month, day, hour and minute properties, a 
 #'   decimal-valued second property, and a boolean timezoned property. Use 
 #'   \href{https://www.w3.org/TR/xmlschema-2/#dateTime}{this} link for more information.
-#'   The typical format is: yyyy '-' mm '-' dd 'T' hh ':' mm ':' ss. An example 
+#'   The typical format is: YYYY '-' MM '-' DD 'T' hh ':' mm ':' ss. An example 
 #'   of this format is: 2002-10-10T12:00:00-05:00 .
 #'   \item{\strong{time}}: The time datatype represents an instant of time that recurs every day.
 #'   Use \href{https://www.w3.org/TR/xmlschema-2/#time}{this} link for more information.
@@ -58,7 +58,7 @@
 #'   beginning moment of each day (in each timezone), i.e. '00:00:00', up to but not 
 #'   including '24:00:00'. Use \href{https://www.w3.org/TR/xmlschema-2/#date}{this} 
 #'   link for more information. The date datatype follows the format 
-#'   yyyy '-' mm '-' dd, i.e 2012-02-02.  
+#'   YYYY '-' MM '-' DD, i.e 2012-02-02.  
 #'   \item{\strong{gYearMonth}}: The gYearMonth datatype represents a specific 
 #'   gregorian month in a specific gregorian year. Use \href{https://www.w3.org/TR/xmlschema-2/#gYearMonth}{this}
 #'   link for more information. The datatype gYearMonth follows the format of CCYY-MM.
