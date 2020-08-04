@@ -18,4 +18,15 @@ add_datetime(date_time_format, date_time_precision, minimum, maximum)
 \description{
 Add dateTime Measurement Scale
 }
+\examples{
+add_attribute(attribute_name = "Yrs",
+              attribute_definition = "Calendar year of the observation from years 1990 - 2010.",
+              storage_type = cvpiaEDIutils::storage_type$integer,
+              measurement_scale = cvpiaEDIutils::measurement_scale$dateTime,
+              attribute_label = "Years",
+              date_time_format = "YYYY", 
+              date_time_precision = "1", 
+              minimum = "1993", 
+              maximum = "2003")
+}
 \keyword{internal}
