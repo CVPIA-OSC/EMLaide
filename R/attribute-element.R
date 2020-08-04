@@ -137,13 +137,13 @@ add_attribute <- function(attribute_name, attribute_definition, storage_type,
                           date_time_format = NULL, date_time_precision = NULL,
                           minimum = NULL, maximum = NULL) {
   
-  mandatory_missing_arg <- c("attribute_name", "attribute_definition", "storage_type", 
+  required_arguments <- c("attribute_name", "attribute_definition", "storage_type", 
                              "measurement_scale")
-  which_missing <- which(c(missing(attribute_name), missing(attribute_definition),
+  missing_argument_index <- which(c(missing(attribute_name), missing(attribute_definition),
                            missing(storage_type), missing(measurement_scale)))
   
-  if (length(which_missing) > 0) {
-    missing <- mandatory_missing_arg[which_missing][1]
+  if (length(missing_argument_index) > 0) {
+    missing <- required_arguments[missing_argument_index][1]
     error_message <- switch(missing, attribute_name = "Please provide attribute name.",
                               attribute_definition = "Please provide a brief definition of the attribute you are including.",
                               storage_type = "Please provide a storage type.",
@@ -292,10 +292,10 @@ add_interval_ratio <- function(units, unit_precision, number_type, minimum = NUL
                                      minimum = "Please provide a minimum theoretical value if applicable.",
                                      maximum = "Please provide a maximum theoretical value if applicable.")
     if (is.null(units) | is.null(unit_precision) | is.null(number_type)) {
-      do.call(stop, list(interval_error_message, call. = FALSE))
+      stop(interval_error_message, call. = FALSE)
     } else {
       if (is.null(minimum) | is.null(maximum)) {
-        do.call(warning, list(interval_error_message, call. = FALSE))
+       warning(interval_error_message, call. = FALSE)
       }
     } 
   } 
