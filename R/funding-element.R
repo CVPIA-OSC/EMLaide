@@ -42,12 +42,12 @@ add_funding <- function(parent_element, funder_name, funder_identifier, award_nu
                                  funding_description = "Please provide the description of the funding recieved.")
     if (missing(funder_name) | missing(funder_identifier) |
         missing(award_number) | missing(award_title)) {
-      do.call(stop, list(fund_error_message, call. = FALSE))
-    } else {
-      if (missing(award_url) | missing(funding_description)) {
-        do.call(warning, list(fund_error_message, call. = FALSE))
-      }
+      stop(fund_error_message, call. = FALSE)
     } 
+    
+    if (missing(award_url) | missing(funding_description)) {
+      warning(fund_error_message, call. = FALSE)
+    }
   }
   if (!is.null(funding_description)) {
     parent_element$funding = list(para = funding_description)

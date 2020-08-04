@@ -54,9 +54,5 @@ add_method <- function(description, title = NULL, instrumentation = NULL) {
     if (!is.null(instrumentation)) {
       methods$methodStep$instrumentation = instrumentation
     }
-
-
-  
-  
   return(methods)
 }

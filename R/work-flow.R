@@ -24,15 +24,3 @@ d <- function() {
   
   return(NULL)
 }
-
-# add_method(title = "Climate Data",
-#            description = "Daily temperature (maximum/minimum) and
-#            precipitation data were obtained for each stand from 1996 to 2011
-#            from the online PRISM Gridded Climate database (PRISM Climate Group,
-#            Oregon State University, http://prism.oregonstate.edu, created 26 Mar 2015)
-#            by interpolating 4km2 resolution climate data at the centroid of each
-#            eastern hemlock stand using values from surrounding grid cell centers
-#            and inverse-distance squared weighting.",
-#            instrumentation = "Thermometer") %>%
-#   as_xml() %>%
-#   write_xml('doggggg.xml')

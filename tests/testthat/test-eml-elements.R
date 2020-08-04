@@ -316,8 +316,8 @@ test_that('The method function adds the method elements', {
   expect_equal(add_method(title = "Climate Data",
                           description = "The description for this method step.",
                           instrumentation = "Thermometer"),
-               list(methodStep = list(description = list(seciton = list(title = "Climate Data", 
-                                                                        para = "The description for this method step.")),
+               list(methodStep = list(description = list(para = "The description for this method step.", 
+                                                         title = "Climate Data"),
                                       instrumentation = "Thermometer")))
 })
 
