@@ -14,15 +14,18 @@
 #'                 update_frequency = "Data are updated 
 #'                 annually at the end of the calendar year.")
 #' @export 
-add_maintenance <- function(parent_element, status, update_frequency = NULL) {
+add_maintenance <- function(parent_element, 
+                            status = c("complete", "ongoing"), 
+                            update_frequency = NULL) {
   
   if (missing(status)) {stop('Please provide the status of your project or dataset.', call. = FALSE)}
+  status <- match.arg(status)
   
-  if(status == "complete") {
+  if (status == "complete") {
     parent_element$maintenance <- list(description = status)
   }
   
-  if(status == "ongoing") {
+  if (status == "ongoing") {
     if (is.null(update_frequency))
       {stop('Please provide the frequency of when this project or dataset is updated.', call. = FALSE)}
     
