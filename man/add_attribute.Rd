@@ -13,6 +13,7 @@ add_attribute(
   domain = NULL,
   definition = NULL,
   text_pattern = NULL,
+  type = NULL,
   units = NULL,
   number_type = NULL,
   unit_precision = NULL,
@@ -47,6 +48,8 @@ Please list either "text" or "enumerated".}
 using this parameter, but have different applications. Examples of both are listed below.}
 
 \item{text_pattern}{A regular expression pattern constraining the attribute.}
+
+\item{type}{Either "ratio" or "interval".}
 
 \item{units}{The units assigned to this attribute's values.}
 
@@ -90,12 +93,12 @@ attribute falls under the domain of "enumerated", please provide the input of \c
 \subsection{Numeric:}
 
 \emph{Interval:}
-Used to define interval scale attributes. Please provide the inputs of \code{units},
-\code{unit_precision}, \code{number_type}, \code{minimum}, and \code{maximum}.
+Used to define interval scale attributes. Please provide the inputs of \code{type},
+\code{units}, \code{unit_precision}, \code{number_type}, \code{minimum}, and \code{maximum}.
 
 \emph{Ratio:}
-Used to define ratio scale attributes. Please provide the inputs of \code{units},
-\code{unit_precision}, \code{number_type}, \code{minimum}, and \code{maximum}.
+Used to define ratio scale attributes. Please provide the inputs of \code{type},
+\code{units}, \code{unit_precision}, \code{number_type}, \code{minimum}, and \code{maximum}.
 
 \emph{dateTime:}
 Used to define date and time attributes. Please provide the inputs of \code{date_time_format},
@@ -148,6 +151,7 @@ add_attribute(attribute_name = "Count",
               attribute_definition = "Number of individuals observed",
                    measurement_scale = cvpiaEDIutils::measurement_scale$interval, 
                    storage_type = cvpiaEDIutils::storage_type$integer,
+                   type = "interval"
                    units = "number",
                    unit_precision = "1",
                    number_type = "whole", 
@@ -158,6 +162,7 @@ add_attribute(attribute_name = "pH",
               attribute_definition = "pH of soil solution",
               storage_type = cvpiaEDIutils::storage_type$float,
               measurement_scale = cvpiaEDIutils::measurement_scale$ratio,
+              type = "ratio",
               units = "dimensionless",
               unit_precision = "0.01",
               number_type = "real")

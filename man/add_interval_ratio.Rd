@@ -5,6 +5,7 @@
 \title{Add Interval or Ratio Measurement Scales}
 \usage{
 add_interval_ratio(
+  type = c("interval", "ratio"),
   units,
   unit_precision,
   number_type,
@@ -13,6 +14,11 @@ add_interval_ratio(
 )
 }
 \arguments{
+\item{type}{Either "interval" or "ratio". Use "interval" to define
+data which consist of equidistant points on a scale. Use "ratio" to define data
+which consists not only of equidistant points but also has a meaningful zero
+point, which allows the ratio to have meaning.}
+
 \item{units}{The units assigned to this attribute.}
 
 \item{unit_precision}{How precise this attirbutes' measurements are recorded.}
@@ -22,11 +28,6 @@ add_interval_ratio(
 \item{minimum}{Optional. A theoreical minimum.}
 
 \item{maximum}{Optional. A theoretical maximum.}
-
-\item{type}{Either "interval" or "ratio". Use "interval" to define
-data which consist of equidistant points on a scale. Use "ratio" to define data
-which consists not only of equidistant points but also has a meaningful zero
-point, which allows the ratio to have meaning.}
 }
 \description{
 Add Interval or Ratio Measurement Scales

@@ -84,61 +84,73 @@ test_that('Correct error and warning messages are produced.', {
   
   expect_error(add_attribute(attribute_name = "Count", attribute_definition = "Number of individuals observed",
                              attribute_label = "NA", measurement_scale = "interval",
-                             storage_type = "integer", unit_precision = "1",
+                             storage_type = "integer", type = "interval", unit_precision = "1",
                              number_type = "whole", minimum = "0", maximum = "10"),
                'Please provide what units your measurement scale uses.')
   
   expect_error(add_attribute(attribute_name = "Count", attribute_definition = "Number of individuals observed",
                              attribute_label = "NA", measurement_scale = "interval",
-                             storage_type = "integer", units = "number",
+                             storage_type = "integer", type = "interval", units = "number",
                              number_type = "whole", minimum = "0", maximum = "10"),
                'Please provide what level of precision your measurements use.')
+  
+  expect_error(add_attribute(attribute_name = "Count", attribute_definition = "Number of individuals observed",
+                             attribute_label = "NA", measurement_scale = "interval",
+                             storage_type = "integer", type = "interval", units = "number",
+                             unit_precision = "1", minimum = "0", maximum = "10"),
+               'Please provide what type of numbers are being used.')
   
   expect_error(add_attribute(attribute_name = "Count", attribute_definition = "Number of individuals observed",
                              attribute_label = "NA", measurement_scale = "interval",
                              storage_type = "integer", units = "number",
                              unit_precision = "1", minimum = "0", maximum = "10"),
-               'Please provide what type of numbers are being used.')
+               "Please provide a type of 'interval' or 'ratio'.")
   
   expect_warning(add_attribute(attribute_name = "Count", attribute_definition = "Number of individuals observed",
                                attribute_label = "NA", measurement_scale = "interval",
-                               storage_type = "integer", units = "number",
+                               storage_type = "integer", type = "interval", units = "number",
                                unit_precision = "1", number_type = "whole", maximum = "10"),
                  'Please provide a minimum theoretical value if applicable.')
   
   expect_warning(add_attribute(attribute_name = "Count", attribute_definition = "Number of individuals observed",
                                attribute_label = "NA", measurement_scale = "interval",
-                               storage_type = "integer", units = "number",
+                               storage_type = "integer", type = "interval", units = "number",
                                unit_precision = "1", number_type = "whole", minimum = "0"),
                  'Please provide a maximum theoretical value if applicable.')
   
   expect_error(add_attribute(attribute_name = "pH", attribute_definition = "pH of soil solution",
                              attribute_label = "NA", storage_type = "float",
-                             measurement_scale = "ratio", unit_precision = "0.01",
+                             measurement_scale = "ratio", type = "ratio", unit_precision = "0.01",
                              number_type = "real", minimum = "0", maximum = "14"),
                'Please provide what units your measurement scale uses.')
   
   expect_error(add_attribute(attribute_name = "pH", attribute_definition = "pH of soil solution",
                              attribute_label = "NA", storage_type = "float",
-                             measurement_scale = "ratio", units = "dimensionless",
+                             measurement_scale = "ratio", type = "ratio", units = "dimensionless",
                              number_type = "real", minimum = "0", maximum = "14"),
                'Please provide what level of precision your measurements use.')
   
   expect_error(add_attribute(attribute_name = "pH", attribute_definition = "pH of soil solution",
                              attribute_label = "NA", storage_type = "float",
-                             measurement_scale = "ratio", units = "dimensionless",
+                             measurement_scale = "ratio", type = "ratio", units = "dimensionless",
                              unit_precision = "0.01", minimum = "0", maximum = "14"),
                'Please provide what type of numbers are being used.')
   
+  expect_error(add_attribute(attribute_name = "pH", attribute_definition = "pH of soil solution",
+                             attribute_label = "NA", storage_type = "float",
+                             measurement_scale = "ratio", units = "dimensionless",
+                             unit_precision = "0.01", minimum = "0", maximum = "14"),
+               "Please provide a type of 'interval' or 'ratio'.")
+  
   expect_warning(add_attribute(attribute_name = "pH", attribute_definition = "pH of soil solution",
                                attribute_label = "NA", storage_type = "float",
-                               measurement_scale = "ratio", units = "dimensionless",
+                               measurement_scale = "ratio", type = "ratio", units = "dimensionless",
                                unit_precision = "0.01", number_type = "real", maximum = "14"),
                  'Please provide a minimum theoretical value if applicable.')
   
   expect_warning(add_attribute(attribute_name = "pH", attribute_definition = "pH of soil solution",
                                attribute_label = "NA", storage_type = "float",
-                               measurement_scale = "ratio", units = "dimensionless",
+                               measurement_scale = "ratio", type = "ratio", units = "dimensionless",
                                unit_precision = "0.01", number_type = "real", minimum = "0"),
                  'Please provide a maximum theoretical value if applicable')
   
@@ -211,7 +223,7 @@ test_that('The attribute function adds attribute elements.', {
   
   expect_equal(add_attribute(attribute_name = "Count", attribute_definition = "Number of individuals observed",
                              attribute_label = "NA", measurement_scale = "interval",
-                             storage_type = "integer", units = "number", unit_precision = "1",
+                             storage_type = "integer", type = "interval", units = "number", unit_precision = "1",
                              number_type = "whole", minimum = "0", maximum = "10"),
                list(attributeName = "Count", attributeDefinition = "Number of individuals observed", 
                     storageType = "integer", attributeLabel = "NA", measurementScale = list(
@@ -221,7 +233,7 @@ test_that('The attribute function adds attribute elements.', {
   
   expect_equal(add_attribute(attribute_name = "pH", attribute_definition = "pH of soil solution",
                              attribute_label = "NA", storage_type = "float",
-                             measurement_scale = "ratio", units = "dimensionless",
+                             measurement_scale = "ratio", type = "ratio", units = "dimensionless",
                              unit_precision = "0.01", number_type = "real",
                              minimum = "NA", maximum = "NA"),
                list(attributeName = "pH", attributeDefinition = "pH of soil solution", 

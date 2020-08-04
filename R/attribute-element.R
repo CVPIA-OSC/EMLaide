@@ -20,6 +20,7 @@
 #' @param definition Either the text definition or code definition. Both are appended
 #' using this parameter, but have different applications. Examples of both are listed below.  
 #' @param text_pattern A regular expression pattern constraining the attribute.
+#' @param type Either "ratio" or "interval". 
 #' @param units The units assigned to this attribute's values. 
 #' @param number_type A list of possible options can be viewed at \code{\link{storage_type}}. 
 #' @param unit_precision How precise units are measured.
@@ -45,12 +46,12 @@
 #'\subsection{Numeric:}
 #'
 #'\emph{Interval:}
-#' Used to define interval scale attributes. Please provide the inputs of \code{units}, 
-#' \code{unit_precision}, \code{number_type}, \code{minimum}, and \code{maximum}.
+#' Used to define interval scale attributes. Please provide the inputs of \code{type},
+#'  \code{units}, \code{unit_precision}, \code{number_type}, \code{minimum}, and \code{maximum}.
 #' 
 #' \emph{Ratio:}
-#' Used to define ratio scale attributes. Please provide the inputs of \code{units}, 
-#' \code{unit_precision}, \code{number_type}, \code{minimum}, and \code{maximum}.
+#' Used to define ratio scale attributes. Please provide the inputs of \code{type}, 
+#' \code{units}, \code{unit_precision}, \code{number_type}, \code{minimum}, and \code{maximum}.
 #' 
 #' \emph{dateTime:}
 #' Used to define date and time attributes. Please provide the inputs of \code{date_time_format}, 
@@ -104,6 +105,7 @@
 #'               attribute_definition = "Number of individuals observed",
 #'                    measurement_scale = cvpiaEDIutils::measurement_scale$interval, 
 #'                    storage_type = cvpiaEDIutils::storage_type$integer,
+#'                    type = "interval"
 #'                    units = "number",
 #'                    unit_precision = "1",
 #'                    number_type = "whole", 
@@ -114,6 +116,7 @@
 #'               attribute_definition = "pH of soil solution",
 #'               storage_type = cvpiaEDIutils::storage_type$float,
 #'               measurement_scale = cvpiaEDIutils::measurement_scale$ratio,
+#'               type = "ratio",
 #'               units = "dimensionless",
 #'               unit_precision = "0.01",
 #'               number_type = "real")
@@ -132,8 +135,8 @@
 
 add_attribute <- function(attribute_name, attribute_definition, storage_type,
                           measurement_scale, attribute_label = NULL, domain = NULL,
-                          definition = NULL, text_pattern = NULL, units = NULL,
-                          number_type = NULL, unit_precision = NULL,
+                          definition = NULL, text_pattern = NULL, type = NULL, 
+                          units = NULL, number_type = NULL, unit_precision = NULL,
                           date_time_format = NULL, date_time_precision = NULL,
                           minimum = NULL, maximum = NULL) {
   
@@ -173,21 +176,23 @@ add_attribute <- function(attribute_name, attribute_definition, storage_type,
                                     text_pattern = text_pattern)
   } 
   
-  if (measurement_scale == "interval") {
-    measurementScale <- add_interval(units = units, 
-                                     unit_precision = unit_precision, 
-                                     number_type = number_type,
-                                     minimum = minimum, 
-                                     maximum = maximum)
+  if (measurement_scale == "interval" | measurement_scale == "ratio") {
+    measurementScale <- add_interval_ratio(type = type,
+                                           units = units, 
+                                           unit_precision = unit_precision, 
+                                           number_type = number_type,
+                                           minimum = minimum, 
+                                           maximum = maximum)
   } 
   
-  if (measurement_scale == "ratio") {
-    measurementScale <- add_ratio(units = units, 
-                                  unit_precision = unit_precision, 
-                                  number_type = number_type,
-                                  minimum = minimum, 
-                                  maximum = maximum)
-  } 
+  # if (measurement_scale == "ratio") {
+  #   measurementScale <- add_interval_ratio(type = "ratio",
+  #                                          units = units, 
+  #                                          unit_precision = unit_precision, 
+  #                                          number_type = number_type,
+  #                                          minimum = minimum, 
+  #                                          maximum = maximum)
+  # } 
   
   if (measurement_scale == "dateTime") {
     measurementScale <- add_datetime(date_time_format = date_time_format, 
@@ -279,39 +284,57 @@ add_ordinal <- function(domain = c("text", "enumerated"), definition, text_patte
 #' @param minimum Optional. A theoreical minimum.
 #' @param maximum Optional. A theoretical maximum. 
 #' @keywords internal
-add_interval_ratio <- function(units, unit_precision, number_type, minimum = NULL, maximum = NULL) {
-  interval_error_arg <- c("units", "unit_precision", "number_type", "minimum", "maximum")
-  interval_which_error <- which(c(is.null(units), is.null(unit_precision), is.null(number_type),
+add_interval_ratio <- function(type = c("interval", "ratio"), units, unit_precision, 
+                               number_type, minimum = NULL, maximum = NULL) {
+  
+  interval_error_arg <- c("type", "units", "unit_precision", "number_type", "minimum", "maximum")
+  interval_which_error <- which(c(is.null(type), is.null(units), is.null(unit_precision), is.null(number_type),
                                   is.null(minimum), is.null(maximum)))
   
   if (length(interval_which_error) > 0) {
     interval_error <- interval_error_arg[interval_which_error][1]
-    interval_error_message <- switch(interval_error, units = "Please provide what units your measurement scale uses.",
+    interval_error_message <- switch(interval_error, 
+                                     type = "Please provide a type of 'interval' or 'ratio'.",
+                                     units = "Please provide what units your measurement scale uses.",
                                      unit_precision = "Please provide what level of precision your measurements use.",
                                      number_type = "Please provide what type of numbers are being used.", 
                                      minimum = "Please provide a minimum theoretical value if applicable.",
                                      maximum = "Please provide a maximum theoretical value if applicable.")
-    if (is.null(units) | is.null(unit_precision) | is.null(number_type)) {
+    if (is.null(type) | is.null(units) | is.null(unit_precision) | is.null(number_type)) {
       stop(interval_error_message, call. = FALSE)
-    } else {
-      if (is.null(minimum) | is.null(maximum)) {
-       warning(interval_error_message, call. = FALSE)
-      }
     } 
   } 
+  type <- match.arg(type)
   
   interval_ratio <- list(standardUnit = units,
                          precision = unit_precision,
                          numericDomain =
-                           list(numberType = number_type,
-                                bounds = 
-                                  list(minimum = minimum,
-                                       maximum = maximum)))
+                           list(numberType = number_type))
   
   if (type == "interval") {
-    measurementScale$interval <- interval_ratio
+    measurementScale <- list(interval = interval_ratio)
   } else {
-    measurementScale$ratio <- interval_ratio 
+    measurementScale <- list(ratio = interval_ratio)
+  }
+  
+  if (is.null(minimum)) {
+    warning(interval_error_message, call. = FALSE)
+  } else { 
+    if (type == "interval") {
+      measurementScale$interval$numericDomain$bounds$minimum <- minimum 
+    } else {
+      measurementScale$ratio$numericDomain$bounds$minimum <- minimum
+    } 
+  }
+  
+  if (is.null(maximum)) {
+    warning(interval_error_message, call. = FALSE)
+  } else { 
+    if (type == "interval") {
+      measurementScale$interval$numericDomain$bounds$maximum <- maximum 
+    } else {
+      measurementScale$ratio$numericDomain$bounds$maximum <- maximum
+    } 
   }
   return(measurementScale)
 }
