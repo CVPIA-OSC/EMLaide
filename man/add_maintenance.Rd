@@ -4,7 +4,11 @@
 \alias{add_maintenance}
 \title{Add Maintenance Element}
 \usage{
-add_maintenance(parent_element, status, update_frequency = NULL)
+add_maintenance(
+  parent_element,
+  status = c("complete", "ongoing"),
+  update_frequency = NULL
+)
 }
 \arguments{
 \item{parent_element}{A list representing the EML project or dataset.}

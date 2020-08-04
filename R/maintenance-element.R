@@ -26,8 +26,9 @@ add_maintenance <- function(parent_element,
   }
   
   if (status == "ongoing") {
-    if (is.null(update_frequency))
-      {stop('Please provide the frequency of when this project or dataset is updated.', call. = FALSE)}
+    if (is.null(update_frequency)) {
+      stop('Please provide the frequency of when this project or dataset is updated.', call. = FALSE)
+      }
     
     parent_element$maintenance$description = list(para = update_frequency)
   }

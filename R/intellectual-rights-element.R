@@ -68,14 +68,13 @@ add_license <- function(parent_element, default_license = "CCO",
   
   if (is.null(default_license)) {
     
-    
     if (is.null(default_license)) {
-      ir_error_arg <- c("license_url", "license_identifier", "intellectual_rights_descripiton")
-      ir_which_error <- which(c(missing(license_url), missing(license_identifier), 
+      required_arguments <- c("license_url", "license_identifier", "intellectual_rights_descripiton")
+      missing_argument_index <- which(c(missing(license_url), missing(license_identifier), 
                                 missing(intellectual_rights_descripiton)))
       
-      if (length(ir_which_error) > 0) {
-        ir_error <- ir_error_arg[ir_which_error][1]
+      if (length(missing_argument_index) > 0) {
+        ir_error <- required_arguments[missing_argument_index][1]
         ir_error_message <- switch(ir_error,
                                    license_url = "Please provide a url for the license.",
                                    license_identifier = "Please provide the license identifier.",

@@ -55,18 +55,18 @@ add_coverage <- function(parent_element, geographic_description, west_bounding_c
                          east_bounding_coordinate, north_bounding_coordinate,
                          south_bounding_coordinate, begin_date, end_date, taxonomic_coverage = NULL
                          ) {
-  coverage_error_arg <- c("geographic_description", "west_bounding_coordinate",
+  required_arguments <- c("geographic_description", "west_bounding_coordinate",
                           "east_bounding_coordinate", "north_bounding_coordinate",
                           "south_bounding_coordinate", "begin_date", "end_date")
-  coverage_which_error <- which(c(missing(geographic_description),
+  missing_argument_index <- which(c(missing(geographic_description),
                             missing(west_bounding_coordinate),
                             missing(east_bounding_coordinate),
                             missing(north_bounding_coordinate),
                             missing(south_bounding_coordinate),
                             missing(begin_date), missing(end_date)))
   
-  if (length(coverage_which_error) > 0) {
-    coverage_error <- coverage_error_arg[coverage_which_error][1]
+  if (length(missing_argument_index) > 0) {
+    coverage_error <- required_arguments[missing_argument_index][1]
     coverage_error_message <- switch(coverage_error,
                                geographic_description = 
                                  "Please supply a brief description of the locations of research sites and areas related to this dataset.",

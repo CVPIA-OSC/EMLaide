@@ -95,15 +95,15 @@ add_taxonomic_coverage <- function(CVPIA_common_species = NULL,
                                    common_name) {
   
   if (is.null(CVPIA_common_species)) {
-    tax_error_arg <- c("kingdom_value", "phylum_value", "class_value", "order_value",
+    required_arguments <- c("kingdom_value", "phylum_value", "class_value", "order_value",
                        "family_value", "genus_value", "species_value", "common_name")
-    tax_which_error <- which(c(missing(kingdom_value), missing(phylum_value),
+    missing_argument_index <- which(c(missing(kingdom_value), missing(phylum_value),
                                missing(class_value), missing(order_value),
                                missing(family_value), missing(genus_value),
                                missing(species_value), missing(common_name)))
     
-    if (length(tax_which_error) > 0) {
-      tax_error <- tax_error_arg[tax_which_error][1]
+    if (length(missing_argument_index) > 0) {
+      tax_error <- required_arguments[missing_argument_index][1]
       tax_error_message <- switch(tax_error,
                                  kingdom_value = "Please provide a kingdom.",
                                  phylum_value = "Please provide a phylum.",

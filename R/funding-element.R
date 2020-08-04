@@ -26,14 +26,14 @@ add_funding <- function(parent_element, funder_name, funder_identifier, award_nu
                         award_title, award_url = NULL, funding_description = NULL)  {
   
   
-  fund_error_arg <- c("funder_name", "funder_identifier", "award_number",
+  required_arguments <- c("funder_name", "funder_identifier", "award_number",
                       "award_title", "award_url", "funding_description")
-  fund_which_error <- which(c(missing(funder_name), missing(funder_identifier),
+  missing_argument_index <- which(c(missing(funder_name), missing(funder_identifier),
                               missing(award_number), missing(award_title), 
                               missing(award_url), missing(funding_description)))
   
-  if (length(fund_which_error) > 0) {
-    fund_error <- fund_error_arg[fund_which_error][1]
+  if (length(missing_argument_index) > 0) {
+    fund_error <- required_arguments[missing_argument_index][1]
     fund_error_message <- switch(fund_error, funder_name = "Please provide funders name.",
                                  funder_identifier = "Please provide funder identifier link.",
                                  award_number = "Please provide your award number.", 

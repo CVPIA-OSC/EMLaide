@@ -29,18 +29,17 @@
 add_personnel <- function(parent_element, first_name, last_name, email, 
                           role, orcid = NULL, organization = NULL) {
   
-  person_error_arg <- c("first_name", "last_name", "email", "role")
-  person_which_error <- which(c(missing(first_name), missing(last_name), 
+  required_arguments <- c("first_name", "last_name", "email", "role")
+  missing_argument_index <- which(c(missing(first_name), missing(last_name), 
                                 missing(email), missing(role)))
   
-  if (length(person_which_error) > 0) {
-    person_error <- person_error_arg[person_which_error][1]
+  if (length(missing_argument_index) > 0) {
+    person_error <- required_arguments[missing_argument_index][1]
     person_error_message <- switch(person_error,
                                    first_name = "Please supply a first name.",
                                    last_name = "Please supply a last name.",
                                    email = "Please supply an email.",
-                                   role =
-                                     "Please supply a role. Use 'Creator' if you are the main originator of the dataset or project")
+                                   role = "Please supply a role. Use 'Creator' if you are the main originator of the dataset or project")
     stop(person_error_message, call. = FALSE)
   } 
   
