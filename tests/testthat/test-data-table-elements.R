@@ -258,8 +258,7 @@ test_that('The attribute function adds attribute elements.', {
 
 test_that('Correct error and warning messages are produced for the add_physical function', {
   
-  expect_error(add_physical(object_size = "36516 bytes",
-                            authentication = "2317c6d849b8c5c8e80a39691d544fe2",
+  expect_error(add_physical(authentication = "2317c6d849b8c5c8e80a39691d544fe2",
                             number_of_headers = "1",
                             number_of_footers = "1",
                             record_delimiter = "\ r\ n",
@@ -268,16 +267,6 @@ test_that('Correct error and warning messages are produced for the add_physical 
                "Please provide the name of the data object.")
   
   expect_error(add_physical(object_name = "hf289-02-stand-year.csv",
-                            authentication = "2317c6d849b8c5c8e80a39691d544fe2",
-                            number_of_headers = "1",
-                            number_of_footers = "1",
-                            record_delimiter = "\ r\ n",
-                            attribute_orientation = "column",
-                            field_delimiter = ","),
-               "Please provide the physical size of the data object.")
-  
-  expect_error(add_physical(object_name = "hf289-02-stand-year.csv",
-                            object_size = "36516 bytes",
                             number_of_headers = "1",
                             number_of_footers = "1",
                             record_delimiter = "\ r\ n",
@@ -286,7 +275,6 @@ test_that('Correct error and warning messages are produced for the add_physical 
                "Please provide the necessary inputs to authenticate that what is delivered to the user is identical to the original.")
   
   expect_error(add_physical(object_name = "hf289-02-stand-year.csv",
-                            object_size = "36516 bytes",
                             authentication = "2317c6d849b8c5c8e80a39691d544fe2",
                             number_of_footers = "1",
                             record_delimiter = "\ r\ n",
@@ -295,7 +283,6 @@ test_that('Correct error and warning messages are produced for the add_physical 
                "Please provide the number of headers preceeding the data.")
   
   expect_error(add_physical(object_name = "hf289-02-stand-year.csv",
-                            object_size = "36516 bytes",
                             authentication = "2317c6d849b8c5c8e80a39691d544fe2",
                             number_of_headers = "1",
                             record_delimiter = "\ r\ n",
@@ -304,16 +291,14 @@ test_that('Correct error and warning messages are produced for the add_physical 
                "Please provide the number of footers concluding the data.")
   
   expect_warning(add_physical(object_name = "hf289-02-stand-year.csv",
-                              object_size = "36516 bytes",
                               authentication = "2317c6d849b8c5c8e80a39691d544fe2",
                               number_of_headers = "1",
                               number_of_footers = "1",
                               attribute_orientation = "column",
                               field_delimiter = ","),
-               "The default value of '\ r\ n' has been assigned. Please input a different value for record_delimiter if this is the wrong input.")
+               "The default value of '\r\n' has been assigned. Please input a different value for record_delimiter if this is the wrong input.")
   
   expect_error(add_physical(object_name = "hf289-02-stand-year.csv",
-                            object_size = "36516 bytes",
                             authentication = "2317c6d849b8c5c8e80a39691d544fe2",
                             number_of_headers = "1",
                             number_of_footers = "1",
@@ -322,7 +307,6 @@ test_that('Correct error and warning messages are produced for the add_physical 
                "Please provide the orientation of the attributes.")
   
   expect_error(add_physical(object_name = "hf289-02-stand-year.csv",
-                            object_size = "36516 bytes",
                             authentication = "2317c6d849b8c5c8e80a39691d544fe2",
                             number_of_headers = "1",
                             number_of_footers = "1",
@@ -331,7 +315,6 @@ test_that('Correct error and warning messages are produced for the add_physical 
                "Please provide the character used to delimit the end of an attribute.")
   
   expect_error(add_physical(object_name = "hf289-02-stand-year.csv",
-                            object_size = "36516 bytes",
                             authentication = "2317c6d849b8c5c8e80a39691d544fe2",
                             number_of_headers = "1",
                             number_of_footers = "1",

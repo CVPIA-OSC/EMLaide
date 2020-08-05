@@ -5,22 +5,15 @@
 \title{Add Physical Element}
 \usage{
 add_physical(
-  object_name,
-  object_size,
+  file_path,
   authentication,
-  number_of_headers,
-  number_of_footers,
-  record_delimiter = "\\r\\n",
-  attribute_orientation,
-  field_delimiter
+  number_of_headers = "1",
+  record_delimiter = "\\\\r\\\\n",
+  attribute_orientation = "column",
+  field_delimiter = ","
 )
 }
 \arguments{
-\item{object_name}{The name of the data object, often the file name.}
-
-\item{object_size}{The physical size of the data object. This is typically
-represented in bytes.}
-
 \item{authentication}{A value, typically a checksum, used to authenticate that
 the bitstream delivered to the user is identical to the original. This also
 descirbes authentication procedures or techniques. Can be used to describe
@@ -29,14 +22,19 @@ for the object.}
 
 \item{number_of_headers}{Number of header lines preceeding the data.}
 
-\item{number_of_footers}{Number of footer lines succeeding the data.}
-
 \item{record_delimiter}{Character used to delimit records. If no value is
-inputted the default value of '\ r\ n' is assigned.}
+inputted the default value of '\\r\\n' is assigned.}
 
 \item{attribute_orientation}{The orientation of the attributes.}
 
 \item{field_delimiter}{Character used to delimit the end of an attribute.}
+
+\item{object_name}{The name of the data object, often the file name.}
+
+\item{object_size}{The physical size of the data object. This is typically
+represented in bytes.}
+
+\item{number_of_footers}{Number of footer lines succeeding the data.}
 }
 \value{
 A complete set of information on the physical format.
@@ -50,7 +48,7 @@ add_physical(object_name = "hf289-02-stand-year.csv",
              authentication = "2317c6d849b8c5c8e80a39691d544fe2",
              number_of_headers = "1",
              number_of_footers = "1",
-             record_delimiter = "\ r\ n", 
+             record_delimiter = "\\\\r\\\\n", 
              attribute_orientation = "column", 
              field_delimiter = ",")
 }
