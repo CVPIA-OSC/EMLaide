@@ -16,13 +16,16 @@ add_physical(
 )
 }
 \arguments{
-\item{object_name}{The name of the data object.}
+\item{object_name}{The name of the data object, often the file name.}
 
-\item{object_size}{The physical size of the data object.}
+\item{object_size}{The physical size of the data object. This is typically
+represented in bytes.}
 
 \item{authentication}{A value, typically a checksum, used to authenticate that
 the bitstream delivered to the user is identical to the original. This also
-descirbes authentication procedures or techniques.}
+descirbes authentication procedures or techniques. Can be used to describe
+authentication procedures or techniques, typically by giving a checksum value
+for the object.}
 
 \item{number_of_headers}{Number of header lines preceeding the data.}
 

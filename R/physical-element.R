@@ -1,10 +1,13 @@
 #' @title Add Physical Element 
 #' @description Adds the information of the physical format of the dataset based off of EML standards.
-#' @param object_name The name of the data object.
-#' @param object_size The physical size of the data object. 
+#' @param object_name The name of the data object, often the file name.  
+#' @param object_size The physical size of the data object. This is typically 
+#' represented in bytes.
 #' @param authentication A value, typically a checksum, used to authenticate that 
 #' the bitstream delivered to the user is identical to the original. This also 
-#' descirbes authentication procedures or techniques. 
+#' descirbes authentication procedures or techniques. Can be used to describe
+#' authentication procedures or techniques, typically by giving a checksum value
+#' for the object.
 #' @param number_of_headers Number of header lines preceeding the data.
 #' @param number_of_footers Number of footer lines succeeding the data. 
 #' @param record_delimiter Character used to delimit records. If no value is
