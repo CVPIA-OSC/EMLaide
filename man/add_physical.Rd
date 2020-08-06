@@ -6,33 +6,35 @@
 \usage{
 add_physical(
   file_path,
-  authentication,
   number_of_headers = "1",
   record_delimiter = "\\\\r\\\\n",
   attribute_orientation = "column",
-  field_delimiter = ","
+  field_delimiter = c(",", " ", "\\t", ":"),
+  authentication = NULL
 )
 }
 \arguments{
+\item{file_path}{The full name of the file of which your data is being read.
+From this, the \code{object_name} and \code{object_size} will be calculated.}
+
+\item{number_of_headers}{Number of header lines preceeding the data. A default
+of "1" is assigned if no input given as it is bad practice to provide anything
+greater than 1.}
+
+\item{record_delimiter}{Character used to delimit records. If no value is
+inputted the default value of '\\r\\n' is assigned.}
+
+\item{attribute_orientation}{The orientation of the attributes. A default of
+"column" will be assigned if no input is given.}
+
+\item{field_delimiter}{Character used to delimit each field. The options that
+can be used are commas (","), space (" "), tab ("\t"), or colon (":").}
+
 \item{authentication}{A value, typically a checksum, used to authenticate that
 the bitstream delivered to the user is identical to the original. This also
 descirbes authentication procedures or techniques. Can be used to describe
 authentication procedures or techniques, typically by giving a checksum value
 for the object.}
-
-\item{number_of_headers}{Number of header lines preceeding the data.}
-
-\item{record_delimiter}{Character used to delimit records. If no value is
-inputted the default value of '\\r\\n' is assigned.}
-
-\item{attribute_orientation}{The orientation of the attributes.}
-
-\item{field_delimiter}{Character used to delimit the end of an attribute.}
-
-\item{object_name}{The name of the data object, often the file name.}
-
-\item{object_size}{The physical size of the data object. This is typically
-represented in bytes.}
 
 \item{number_of_footers}{Number of footer lines succeeding the data.}
 }
@@ -43,8 +45,7 @@ A complete set of information on the physical format.
 Adds the information of the physical format of the dataset based off of EML standards.
 }
 \examples{
-add_physical(object_name = "hf289-02-stand-year.csv",
-             object_size = "36516 bytes", 
+add_physical(file_path = "/Users/lizzyshaw/FlowWest/cvpiaEDIutils/data-raw/Lowry et al 2013/all-database-records.csv", 
              authentication = "2317c6d849b8c5c8e80a39691d544fe2",
              number_of_headers = "1",
              number_of_footers = "1",
