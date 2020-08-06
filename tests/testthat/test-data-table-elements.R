@@ -258,72 +258,115 @@ test_that('The attribute function adds attribute elements.', {
 
 test_that('Correct error and warning messages are produced for the add_physical function', {
   
-  expect_error(add_physical(authentication = "2317c6d849b8c5c8e80a39691d544fe2",
-                            number_of_headers = "1",
-                            number_of_footers = "1",
-                            record_delimiter = "\ r\ n",
-                            attribute_orientation = "column",
-                            field_delimiter = ","),
-               "Please provide the name of the data object.")
+  # expect_error(add_physical(authentication = "2317c6d849b8c5c8e80a39691d544fe2",
+  #                           number_of_headers = "1",
+  #                           number_of_footers = "1",
+  #                           record_delimiter = "\ r\ n",
+  #                           attribute_orientation = "column",
+  #                           field_delimiter = ","),
+  #              "Please provide the name of the data object.")
+  # 
+  # expect_error(add_physical(object_name = "hf289-02-stand-year.csv",
+  #                           number_of_headers = "1",
+  #                           number_of_footers = "1",
+  #                           record_delimiter = "\ r\ n",
+  #                           attribute_orientation = "column",
+  #                           field_delimiter = ","),
+  #              "Please provide the necessary inputs to authenticate that what is delivered to the user is identical to the original.")
+  # 
+  # expect_error(add_physical(object_name = "hf289-02-stand-year.csv",
+  #                           authentication = "2317c6d849b8c5c8e80a39691d544fe2",
+  #                           number_of_footers = "1",
+  #                           record_delimiter = "\ r\ n",
+  #                           attribute_orientation = "column",
+  #                           field_delimiter = ","),
+  #              "Please provide the number of headers preceeding the data.")
+  # 
+  # expect_error(add_physical(object_name = "hf289-02-stand-year.csv",
+  #                           authentication = "2317c6d849b8c5c8e80a39691d544fe2",
+  #                           number_of_headers = "1",
+  #                           record_delimiter = "\ r\ n",
+  #                           attribute_orientation = "column",
+  #                           field_delimiter = ","),
+  #              "Please provide the number of footers concluding the data.")
+  # 
+  # expect_warning(add_physical(object_name = "hf289-02-stand-year.csv",
+  #                             authentication = "2317c6d849b8c5c8e80a39691d544fe2",
+  #                             number_of_headers = "1",
+  #                             number_of_footers = "1",
+  #                             attribute_orientation = "column",
+  #                             field_delimiter = ","),
+  #              "The default value of '\r\n' has been assigned. Please input a different value for record_delimiter if this is the wrong input.")
+  # 
+  # expect_error(add_physical(object_name = "hf289-02-stand-year.csv",
+  #                           authentication = "2317c6d849b8c5c8e80a39691d544fe2",
+  #                           number_of_headers = "1",
+  #                           number_of_footers = "1",
+  #                           record_delimiter = "\ r\ n",
+  #                           field_delimiter = ","),
+  #              "Please provide the orientation of the attributes.")
+  # 
+  # expect_error(add_physical(object_name = "hf289-02-stand-year.csv",
+  #                           authentication = "2317c6d849b8c5c8e80a39691d544fe2",
+  #                           number_of_headers = "1",
+  #                           number_of_footers = "1",
+  #                           record_delimiter = "\ r\ n",
+  #                           attribute_orientation = "column"),
+  #              "Please provide the character used to delimit the end of an attribute.")
+  # 
+  # expect_error(add_physical(object_name = "hf289-02-stand-year.csv",
+  #                           authentication = "2317c6d849b8c5c8e80a39691d544fe2",
+  #                           number_of_headers = "1",
+  #                           number_of_footers = "1",
+  #                           record_delimiter = "\ r\ n",
+  #                           attribute_orientation = "column",
+  #                           field_delimiter = ", ."),
+  #              "field_delimiter can only be one character long.")
   
-  expect_error(add_physical(object_name = "hf289-02-stand-year.csv",
-                            number_of_headers = "1",
-                            number_of_footers = "1",
-                            record_delimiter = "\ r\ n",
-                            attribute_orientation = "column",
-                            field_delimiter = ","),
-               "Please provide the necessary inputs to authenticate that what is delivered to the user is identical to the original.")
-  
-  expect_error(add_physical(object_name = "hf289-02-stand-year.csv",
-                            authentication = "2317c6d849b8c5c8e80a39691d544fe2",
-                            number_of_footers = "1",
-                            record_delimiter = "\ r\ n",
-                            attribute_orientation = "column",
-                            field_delimiter = ","),
-               "Please provide the number of headers preceeding the data.")
-  
-  expect_error(add_physical(object_name = "hf289-02-stand-year.csv",
-                            authentication = "2317c6d849b8c5c8e80a39691d544fe2",
-                            number_of_headers = "1",
-                            record_delimiter = "\ r\ n",
-                            attribute_orientation = "column",
-                            field_delimiter = ","),
-               "Please provide the number of footers concluding the data.")
-  
-  expect_warning(add_physical(object_name = "hf289-02-stand-year.csv",
-                              authentication = "2317c6d849b8c5c8e80a39691d544fe2",
-                              number_of_headers = "1",
-                              number_of_footers = "1",
-                              attribute_orientation = "column",
-                              field_delimiter = ","),
-               "The default value of '\r\n' has been assigned. Please input a different value for record_delimiter if this is the wrong input.")
-  
-  expect_error(add_physical(object_name = "hf289-02-stand-year.csv",
-                            authentication = "2317c6d849b8c5c8e80a39691d544fe2",
-                            number_of_headers = "1",
-                            number_of_footers = "1",
-                            record_delimiter = "\ r\ n",
-                            field_delimiter = ","),
-               "Please provide the orientation of the attributes.")
-  
-  expect_error(add_physical(object_name = "hf289-02-stand-year.csv",
-                            authentication = "2317c6d849b8c5c8e80a39691d544fe2",
-                            number_of_headers = "1",
-                            number_of_footers = "1",
-                            record_delimiter = "\ r\ n",
-                            attribute_orientation = "column"),
-               "Please provide the character used to delimit the end of an attribute.")
-  
-  expect_error(add_physical(object_name = "hf289-02-stand-year.csv",
-                            authentication = "2317c6d849b8c5c8e80a39691d544fe2",
-                            number_of_headers = "1",
-                            number_of_footers = "1",
-                            record_delimiter = "\ r\ n",
-                            attribute_orientation = "column",
-                            field_delimiter = ", ."),
-               "field_delimiter can only be one character long.")
+  expect_warning(add_physical(file_path = "/Users/lizzyshaw/FlowWest/cvpiaEDIutils/data-raw/Lowry et al 2013/all-database-records.csv"),
+                 'No url has been provided. Please input a url to which the data file can be downloaded if possible.')
 })
 
+test_that('The add_physical function adds the physical elements', {
+  
+  expect_equal(add_physical(file_path = "/Users/lizzyshaw/FlowWest/cvpiaEDIutils/data-raw/Lowry et al 2013/all-database-records.csv",
+                            data_url = "https://mydata.org/etc"),
+               list(objectName = "all-database-records.csv", 
+                    size = list(unit = "bytes",
+                                size = "6069028"), 
+                    authentication = list(method = "MD5", 
+                                          authentication = "c419a79357d8cf1b77f54b93a310ae64"), 
+                    dataFormat = list(textFormat = 
+                                        list(numHeaderLines = "1", 
+                                             recordDelimiter = "\\r\\n", 
+                                             attributeOrientation = "column", 
+                                             simpleDelimited = list(fieldDelimiter = ","))), 
+                    distribution = list(online = 
+                                          list(url = 
+                                                 list(url = "https://mydata.org/etc", 
+                                                      `function` = "download")))))
+  
+  expect_equal(add_physical(file_path = "/Users/lizzyshaw/FlowWest/cvpiaEDIutils/data-raw/Lowry et al 2013/all-database-records.csv",
+                            number_of_headers = "1",
+                            record_delimiter = "\\r\\n",
+                            attribute_orientation = "column",
+                            field_delimiter = ",",
+                            data_url = "https://mydata.org/etc"),
+               list(objectName = "all-database-records.csv", 
+                    size = list(unit = "bytes", 
+                                size = "6069028"), 
+                    authentication = list(method = "MD5", 
+                                          authentication = "c419a79357d8cf1b77f54b93a310ae64"), 
+                    dataFormat = list(textFormat = 
+                                        list(numHeaderLines = "1", 
+                                             recordDelimiter = "\\r\\n",
+                                             attributeOrientation = "column", 
+                                             simpleDelimited = list(fieldDelimiter = ","))), 
+                    distribution = list(online = 
+                                          list(url = 
+                                                 list(url = "https://mydata.org/etc", 
+                                                      `function` = "download")))))
+})
 
 
 
