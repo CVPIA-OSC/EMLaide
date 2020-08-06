@@ -62,13 +62,14 @@
 #'            distribute your contributions on this same license. Thank you.&#13;")
 #' 
 #' @export
-add_license <- function(parent_element, default_license = "CCO", 
+add_license <- function(parent_element, default_license = c("CCO", "CCBY"), 
                         license_name = NULL, license_url = NULL, 
                         license_identifier = NULL, intellectual_rights_descripiton = NULL) {
   
-  if (is.null(default_license)) {
+  default_license <- match.arg(default_license)
+  
+  if (!is.null(license_name)) {
     
-    if (is.null(default_license)) {
       required_arguments <- c("license_url", "license_identifier", "intellectual_rights_descripiton")
       missing_argument_index <- which(c(missing(license_url), missing(license_identifier), 
                                 missing(intellectual_rights_descripiton)))
@@ -81,7 +82,6 @@ add_license <- function(parent_element, default_license = "CCO",
                                    intellectual_rights_descripiton = 
                                      "Please provide a simplified description of the license.")
         stop(ir_error_message, call. = FALSE)
-      } 
     }
     
     parent_element$intellectualRights <- list(para = intellectual_rights_descripiton)
