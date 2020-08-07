@@ -27,17 +27,27 @@ add_personnel(
 Other possible roles "Data Manager", "Field Technician", or "Assistant Researcher".
 There can be multiple personnel on a project with the same role.}
 
-\item{orcid}{ORCID iD is a persistent digital identifier for researchers, register at \url{http://orcid.org/}}
+\item{orcid}{ORCID iD is a persistent digital identifier for researchers,
+register at \url{http://orcid.org/}}
 
-\item{organization}{Person's employer or the entity they are associated with for this dataset or project}
+\item{organization}{Person's employer or the entity they are associated
+with for this dataset or project}
 }
 \description{
 adds personel according to EML standards
 }
 \examples{
-add_personnel(parent_element = list(), first_name = 'Katherine', 
-              last_name = "Johnson", email = 'kjohnson@nasa.gov', role = 'Creator', organization = 'NASA')
+add_personnel(parent_element = list(),
+              first_name = 'Katherine', 
+              last_name = "Johnson", 
+              email = 'kjohnson@nasa.gov', 
+              role = 'Creator', 
+              organization = 'NASA')
 
-add_personnel(parent_element = list(), first_name = "Edith", last_name = "Windsor", 
-              email = 'ewindsor@ibm.com', role = 'Data Manager', organization = 'IBM')
+add_personnel(parent_element = list(), 
+              first_name = "Edith", 
+              last_name = "Windsor", 
+              email = 'ewindsor@ibm.com', 
+              role = 'Data Manager', 
+              organization = 'IBM')
 }
