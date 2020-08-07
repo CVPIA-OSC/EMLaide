@@ -42,13 +42,13 @@ A complete set of information on the physical format.
 Adds the information of the physical format of the dataset based off of EML standards.
 }
 \examples{
-add_physical(file_path = "/Users/lizzyshaw/FlowWest/cvpiaEDIutils/data-raw/Lowry et al 2013/all-database-records.csv", 
+add_physical(file_path = "User/data/example.csv", 
              number_of_headers = "1",
              record_delimiter = "\\\\r\\\\n", 
              attribute_orientation = "column", 
              field_delimiter = ",",
              data_url = "https://mydata.org/etc")
              
-add_physical(file_path = "/Users/lizzyshaw/FlowWest/cvpiaEDIutils/data-raw/Lowry et al 2013/all-database-records.csv",
+add_physical(file_path = "User/data/example.csv",
              data_url = "https://mydata.org/etc")
 }

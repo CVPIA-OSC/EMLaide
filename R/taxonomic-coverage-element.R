@@ -163,5 +163,5 @@ add_taxonomic_coverage <- function(CVPIA_common_species = NULL,
                                                           TaxonRankValue = species_value,
                                                           commonName = common_name))))))))
 
-
+  return(taxonomicCoverage)
 }
