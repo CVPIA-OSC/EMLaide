@@ -1,53 +1,72 @@
 #' @title Add Data Table 
 #' @description adds the data table elements according to EML standards 
 #' @param parament_element a list representing the EML project or dataset
-#' @param alternate_identifer Optional. Provide when a dataset or project belongs to more than the contributing organization. Please include each additional individual ID with its own alternate_identifier.
-#' @param entity_name The name of the table, file, or database table. Often thought of as the original ascii file name. 
+#' @param alternate_identifer Optional. Provide when a dataset or project belongs 
+#' to more than the contributing organization. Please include each additional 
+#' individual ID with its own alternate_identifier.
+#' @param entity_name The name of the table, file, or database table. Often 
+#' thought of as the original ascii file name. 
 #' @param entity_description A longer, more descriptive explination of the data in the entity. 
-#' @param object_name The name of the file when downloaded or exported as text from a database.
-#' @param number_of_headers TODO
-#' @param record_delimiter TODO
-#' @param physical_line_delimiter TODO
-#' @param attribute_orientation TODO
-#' @param field_delimiter TODO
-#' @param online_url A link to access the data.
-#' @param attribute_list Describes all variables in a data entity in individual attribute elements. These descriptions include the name and definition of each attribute, its domain, definition of coded values, and other pertinent information. It is further explained in the add_attribute_list function. 
-#' @param case_sensitivity Designates the data table as case sensitive or not. Please provide "yes" or "no". 
-#' @param number_of_records A count of the number of records in the data table. 
-#' @param constraint TODO. Describes any integrity constraints between entities (e.g.tables), as they would	be maintained	in a relational	management system.	 
+#' @param physical A description of the physical format of the entity.
+#' This includes it file name, authentication code, and data format. Further information
+#' can be seen at \link{\code{add_physical}}. 
+#' @param attribute_list Describes all variables in a data entity in individual 
+#' attribute elements. These descriptions include the name and definition of each 
+#' attribute, its domain, definition of coded values, and other pertinent information. 
+#' It is further explained and can be appended with the \link{\code{add_attribute}} function. 
+#' @param number_of_records Optionl. A count of the number of records in the data table. 
 #' @return the project or dataset list with a data table appended
 #' @examples
-#' add_data_table(parent_element = list(), entity_name = "692_EML_IncubationByDepth_SoilCO2Fluxes.csv",
-#'                entity_description = "Soil CO2 Fluxes 2013-2014", object_name = "692_EML_IncubationByDepth_SoilCO2Fluxes.csv",
-#'                number_of_headers = "1", record_delimiter = "n", physical_line_delimiter = "n", 
-#'                attribute_orientation = "column", field_delimiter = ",",
-#'                online_url = "function='download'>https://pasta.lternet.edu/package/data/eml/knb-lter-bnz/692/2/b52b9d6ab39ff0b903bdb375d7debc69",
-#'                attribute_list = "attribute_list", case_sensitivity = "yes", number_of_records = "1", 
-#'                constraint = "TODO")
+#' attribute_list <- add_attribute(attribute_name = "site_id",
+#'                                 attribute_definition = "Site id as used in sites table",
+#'                                 storage_type = cvpiaEDIutils::storage_type$integer,
+#'                                 measurement_scale = cvpiaEDIutils::measurement_scale$nominal,
+#'                                 domain= "text",
+#'                                 definition = "Site id as used in sites table.")
+#' physical <- add_physical(file_path = "User/data/example.csv",
+#'                          data_url = "https://mydata.org/etc")
+#' add_data_table(parent_element = list(), 
+#'                entity_name = "692_EML_IncubationByDepth_SoilCO2Fluxes.csv",
+#'                entity_description = "Soil CO2 Fluxes 2013-2014", 
+#'                physical = physical 
+#'                attribute_list = attribute_list, 
+#'                number_of_records = "1")
 #' @export
 #' 
-add_data_table <- function(parent_element, alternate_identifier = NULL, entity_name,
-                           entity_description, object_name, number_of_headers, record_delimiter,
-                           physical_line_delimiter, attribute_orientation, field_delimiter,
-                           online_url, attribute_list, case_sensitivity, number_of_records, constraint) {
+add_data_table <- function(parent_element, entity_name, entity_description, physical, 
+                           attribute_list, number_of_records = NULL, alternate_identifier = NULL) {
+  
+  required_arguments <- c("entity_name", "entity_description", "physical", 
+                          "attribute_list")
+  missing_argument_index <- which(c(missing(entity_name), missing(entity_description),
+                                    missing(physical), missing(attribute_list)))
+  
+  if (length(missing_argument_index) > 0) {
+    missing <- required_arguments[missing_argument_index][1]
+    error_message <- switch(missing,
+                            entity_name = "Please provide an entity name i.e. a file name, name of database table, etc.",
+                            entity_description = "Please provide a brief description of the entity and its contents.",
+                            physical = "Please provide a full description of the full format of the physical element of your entity using the add_physical function.",
+                            attribute_list = "Please provide a list of attributes which were used in this data table.")
+    stop(error_message, call. = FALSE)
+  }
   
   parent_element$dataTable <- list(entityName = entity_name,
                                    entityDescription = entity_description,
-                                   physical = list(objectName = object_name,
-                                                   dataFormat = list(textFormat = list(numHeaderLines = number_of_headers,
-                                                                                  recordDelimiter = record_delimiter,
-                                                                                  physicalLineDelimiter = physical_line_delimiter,
-                                                                                  attributeOrientation = attribute_orientation,
-                                                                                  simpleDelimited = list(fieldDelimiter = field_delimiter))),
-                                                   distribution = list(online = list(url = online_url))),
-                                   caseSensitive = list(case_sensitivity),
-                                   numberOfRecords = list(number_of_records),
-                                   constraint = list(constraint),
-                                   attributeList =list(attribute_list))
+                                   physical = physical,
+                                   attributeList = attribute_list)
   
-  if (!is.null(alternate_identifier)) {
-    parent_element$dataTable$alternateIdentifier <- alternate_identifier
+
+  if (is.null(number_of_records)) {
+    warning('The number of records was not provided.', call. = FALSE)
+  } else {
+    parent_element$dataTable$numberOfRecords <- number_of_records
   }
   
+  if (is.null(alternate_identifier)) {
+    warning('An alternate identifier was not provided.', call. = FALSE)
+  } else {
+    parent_element$dataTable$alternateIdentifier <- alternate_identifier
+  }
   return(parent_element)
 }

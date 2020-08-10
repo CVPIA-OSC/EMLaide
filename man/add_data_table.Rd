@@ -6,52 +6,36 @@
 \usage{
 add_data_table(
   parent_element,
-  alternate_identifier = NULL,
   entity_name,
   entity_description,
-  object_name,
-  number_of_headers,
-  record_delimiter,
-  physical_line_delimiter,
-  attribute_orientation,
-  field_delimiter,
-  online_url,
+  physical,
   attribute_list,
-  case_sensitivity,
-  number_of_records,
-  constraint
+  number_of_records = NULL,
+  alternate_identifier = NULL
 )
 }
 \arguments{
-\item{entity_name}{The name of the table, file, or database table. Often thought of as the original ascii file name.}
+\item{entity_name}{The name of the table, file, or database table. Often
+thought of as the original ascii file name.}
 
 \item{entity_description}{A longer, more descriptive explination of the data in the entity.}
 
-\item{object_name}{The name of the file when downloaded or exported as text from a database.}
+\item{physical}{A description of the physical format of the entity.
+This includes it file name, authentication code, and data format. Further information
+can be seen at \link{\code{add_physical}}.}
 
-\item{number_of_headers}{TODO}
+\item{attribute_list}{Describes all variables in a data entity in individual
+attribute elements. These descriptions include the name and definition of each
+attribute, its domain, definition of coded values, and other pertinent information.
+It is further explained and can be appended with the \link{\code{add_attribute}} function.}
 
-\item{record_delimiter}{TODO}
-
-\item{physical_line_delimiter}{TODO}
-
-\item{attribute_orientation}{TODO}
-
-\item{field_delimiter}{TODO}
-
-\item{online_url}{A link to access the data.}
-
-\item{attribute_list}{Describes all variables in a data entity in individual attribute elements. These descriptions include the name and definition of each attribute, its domain, definition of coded values, and other pertinent information. It is further explained in the add_attribute_list function.}
-
-\item{case_sensitivity}{Designates the data table as case sensitive or not. Please provide "yes" or "no".}
-
-\item{number_of_records}{A count of the number of records in the data table.}
-
-\item{constraint}{TODO. Describes any integrity constraints between entities (e.g.tables), as they would    be maintained    in a relational    management system.}
+\item{number_of_records}{Optionl. A count of the number of records in the data table.}
 
 \item{parament_element}{a list representing the EML project or dataset}
 
-\item{alternate_identifer}{Optional. Provide when a dataset or project belongs to more than the contributing organization. Please include each additional individual ID with its own alternate_identifier.}
+\item{alternate_identifer}{Optional. Provide when a dataset or project belongs
+to more than the contributing organization. Please include each additional
+individual ID with its own alternate_identifier.}
 }
 \value{
 the project or dataset list with a data table appended
@@ -60,11 +44,18 @@ the project or dataset list with a data table appended
 adds the data table elements according to EML standards
 }
 \examples{
-add_data_table(parent_element = list(), entity_name = "692_EML_IncubationByDepth_SoilCO2Fluxes.csv",
-               entity_description = "Soil CO2 Fluxes 2013-2014", object_name = "692_EML_IncubationByDepth_SoilCO2Fluxes.csv",
-               number_of_headers = "1", record_delimiter = "n", physical_line_delimiter = "n", 
-               attribute_orientation = "column", field_delimiter = ",",
-               online_url = "function='download'>https://pasta.lternet.edu/package/data/eml/knb-lter-bnz/692/2/b52b9d6ab39ff0b903bdb375d7debc69",
-               attribute_list = "attribute_list", case_sensitivity = "yes", number_of_records = "1", 
-               constraint = "TODO")
+attribute_list <- add_attribute(attribute_name = "site_id",
+                                attribute_definition = "Site id as used in sites table",
+                                storage_type = cvpiaEDIutils::storage_type$integer,
+                                measurement_scale = cvpiaEDIutils::measurement_scale$nominal,
+                                domain= "text",
+                                definition = "Site id as used in sites table.")
+physical <- add_physical(file_path = "User/data/example.csv",
+                         data_url = "https://mydata.org/etc")
+add_data_table(parent_element = list(), 
+               entity_name = "692_EML_IncubationByDepth_SoilCO2Fluxes.csv",
+               entity_description = "Soil CO2 Fluxes 2013-2014", 
+               physical = physical 
+               attribute_list = attribute_list, 
+               number_of_records = "1")
 }
