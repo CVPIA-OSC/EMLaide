@@ -257,87 +257,6 @@ test_that('Intellectual rights function outputs the correct values when given th
                                     url = "https://spdx.org/licenses/CC-BY-4.0.html", identifier = "CC-BY-4.0")))
 })
 
-#Tests for add_coverage function 
-
-test_that('Coverage function errors when missing mandatory identifier inputs', {
-  
-  expect_error(add_coverage(parent_element = list(), west_bounding_coordinate = "-160.594000",
-                            east_bounding_coordinate = "-134.104800",
-                            north_bounding_coordinate = "71.238300",
-                            south_bounding_coordinate = "67.865000",
-                            begin_date = "1980-01-01", end_date = "2010-12-31"), 
-               "Please supply a brief description of the locations of research sites and areas related to this dataset.")
-  
-  expect_error(add_coverage(parent_element = list(), geographic_description = "North Slope drainage basin:Bounding box encompasses 42 drainage basins totaling the North Slope drainage basin, Alaska, USA.",
-                            east_bounding_coordinate = "-134.104800",
-                            north_bounding_coordinate = "71.238300",
-                            south_bounding_coordinate = "67.865000",
-                            begin_date = "1980-01-01", end_date = "2010-12-31"),
-               "Please supply the west cardinality limit if applicable.")
-  
-  expect_error(add_coverage(parent_element = list(), geographic_description = "North Slope drainage basin:Bounding box encompasses 42 drainage basins totaling the North Slope drainage basin, Alaska, USA.",
-                            west_bounding_coordinate = "-160.594000",
-                            north_bounding_coordinate = "71.238300",
-                            south_bounding_coordinate = "67.865000",
-                            begin_date = "1980-01-01", end_date = "2010-12-31"),
-               "Please supply the east cardinality limit if applicable.")
-  
-  expect_error(add_coverage(parent_element = list(), geographic_description = "North Slope drainage basin:Bounding box encompasses 42 drainage basins totaling the North Slope drainage basin, Alaska, USA.",
-                            west_bounding_coordinate = "-160.594000",
-                            east_bounding_coordinate = "-134.104800",
-                            south_bounding_coordinate = "67.865000",
-                            begin_date = "1980-01-01", end_date = "2010-12-31"),
-               "Please supply the north cardinality limit if applicable.")
-  
-  expect_error(add_coverage(parent_element = list(), geographic_description = "North Slope drainage basin:Bounding box encompasses 42 drainage basins totaling the North Slope drainage basin, Alaska, USA.",
-                            west_bounding_coordinate = "-160.594000",
-                            east_bounding_coordinate = "-134.104800",
-                            north_bounding_coordinate = "71.238300",
-                            begin_date = "1980-01-01", end_date = "2010-12-31"),
-               "Please supply the south cardinality limit if applicable.")
-  
-  expect_error(add_coverage(parent_element = list(), geographic_description = "North Slope drainage basin:Bounding box encompasses 42 drainage basins totaling the North Slope drainage basin, Alaska, USA.",
-                            west_bounding_coordinate = "-160.594000",
-                            east_bounding_coordinate = "-134.104800",
-                            north_bounding_coordinate = "71.238300",
-                            south_bounding_coordinate = "67.865000",
-                            end_date = "2010-12-31"),
-               "Please suppply the starting date of this project.")
-  
-  expect_error(add_coverage(parent_element = list(), geographic_description = "North Slope drainage basin:Bounding box encompasses 42 drainage basins totaling the North Slope drainage basin, Alaska, USA.",
-                            west_bounding_coordinate = "-160.594000",
-                            east_bounding_coordinate = "-134.104800",
-                            north_bounding_coordinate = "71.238300",
-                            south_bounding_coordinate = "67.865000",
-                            begin_date = "1980-01-01"),
-               "Please supply the end or projected end date for this project.")
-  
-  
-})
-
-test_that('The coverage function adds the coverage elements', {
-  expect_equal(add_coverage(parent_element = list(), geographic_description = "Description",
-                            west_bounding_coordinate = "-160.594000", 
-                            east_bounding_coordinate = "-134.104800",
-                            north_bounding_coordinate = "71.238300",
-                            south_bounding_coordinate = "67.865000",
-                            begin_date = "1980-01-01", end_date = "2010-12-31"),
-               list(coverage = list(geographicCoverage = list(geographicDescription = "Description", 
-                                                              boundingCoordinates = list(
-                                                                westBoundingCoordinate = "-160.594000", 
-                                                                eastBoundingCoordinate = "-134.104800",
-                                                                northBoundingCoordinate = "71.238300", 
-                                                                southBoundingCoordinate = "67.865000")),
-                                    temporalCoverage = list(rangeOfDates = list(
-                                      beginDate = list(calendarDate = "1980-01-01"), 
-                                      endDate = list(calendarDate = "2010-12-31")))))
-               
-  )
-  
-  
-  
-  
-})
 
 
 #Tests for add_maintenance function 
@@ -360,6 +279,50 @@ test_that('The maintenance function adds the maintenance elements', {
   expect_equal(add_maintenance(parent_element = list(), status = "ongoing",
                                update_frequency = "Data are updated annually at the end of the calendar year."),
                list(maintenance = list(description = list(para = "Data are updated annually at the end of the calendar year.")))
-               )
+  )
   
 })
+
+#Tests for add_method function 
+
+test_that('The method function errors when missing mandatory identifier inputs.', {
+  
+  expect_warning(add_method(description = "Daily temperature (maximum/minimum) and
+                                                          precipitation data were obtained for each stand from 1996 to 2011
+                                                          from the online PRISM Gridded Climate database (PRISM Climate Group,
+                                                          Oregon State University, http://prism.oregonstate.edu, created 26 Mar 2015)
+                                                          by interpolating 4km2 resolution climate data at the centroid of each
+                                                          eastern hemlock stand using values from surrounding grid cell centers 
+                                                          and inverse-distance squared weighting.",
+                            instrumentation = "Thermometer"),
+                 'No title inputed. Provide one for easier organization.')
+  
+  expect_error(add_method(title = "Climate Data",
+                          instrumentation = "Thermometer"),
+               'Please provide the description of the method you are recording.')
+  
+  expect_warning(add_method(title = "Climate Data",
+                            description = "Daily temperature (maximum/minimum) and
+                                                          precipitation data were obtained for each stand from 1996 to 2011
+                                                          from the online PRISM Gridded Climate database (PRISM Climate Group,
+                                                          Oregon State University, http://prism.oregonstate.edu, created 26 Mar 2015)
+                                                          by interpolating 4km2 resolution climate data at the centroid of each
+                                                          eastern hemlock stand using values from surrounding grid cell centers 
+                                                          and inverse-distance squared weighting."),
+                 'Provide the insrumentation device used if beneficial to understanding the dataset.')
+})
+
+test_that('The method function adds the method elements', {
+  expect_equal(add_method(title = "Climate Data",
+                          description = "The description for this method step.",
+                          instrumentation = "Thermometer"),
+               list(methodStep = list(description = list(seciton = list(title = "Climate Data", 
+                                                                        para = "The description for this method step.")),
+                                      instrumentation = "Thermometer")))
+})
+
+
+
+
+
+

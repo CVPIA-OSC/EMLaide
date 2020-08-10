@@ -23,6 +23,7 @@ d <- function() {
     xml2::write_xml('dogee.xml')
   
   return(NULL)
+<<<<<<< HEAD
 }
 
 # attribute_list <- add_attribute_list(attribute_name = "site_id", attribute_definition = "Site id as used in sites table",
@@ -43,3 +44,6 @@ d <- function() {
 
   
   
+=======
+}
+>>>>>>> d6a9da23d4823ccedb9076e27ed731468dd1abdb

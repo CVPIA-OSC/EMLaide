@@ -27,7 +27,7 @@ add_license(
 \item{intellectual_rights_descripiton}{Optional if using default_license = "CCO" or "CCBY" as default values are provided. Otherwise, please provide a short description of the license being used and its regulations.}
 }
 \description{
-Add License and Intellectual Rights
+Adds the intellectual rights information of a dataset based off of EML standards.
 }
 \details{
 Learn more about the default CVPIA licese options from Creative Commons:

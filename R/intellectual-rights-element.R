@@ -1,5 +1,5 @@
 #' Add License and Intellectual Rights
-#' @description 
+#' @description Adds the intellectual rights information of a dataset based off of EML standards.
 #' @param parent_element a list representing the EML project or dataset
 #' @param default_license Use "CCO" or "CCBY" as argument value to use one of the CVPIA default licenses. Supply NULL if using another license.
 #' @param license_name Optional if using default_license = "CCO" or "CCBY" as default values are provided. Otherwise, please provide the appropriate license name. Other possible license examples include "MIT License" and "Creative Commons Attribution Non Commercial Share Alike 4.0 International". 
