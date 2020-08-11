@@ -254,8 +254,58 @@ test_that('The attribute function adds attribute elements.', {
                                                                           maximum = "2003"))))))
 })
 
+# Tests for add_data_table function 
 
-
+test_that('Correct error and warning messages are produced', {
+  
+  expect_error(add_data_table(parent_element = list(), 
+                              entity_description = "Soil CO2 Fluxes 2013-2014",
+                              physical = "physical",
+                              attribute_list = "attribute_list",
+                              number_of_records = 1, 
+                              alternate_identifier = "NA"),
+  'Please provide an entity name i.e. a file name, name of database table, etc.')
+  
+  expect_error(add_data_table(parent_element = list(), 
+                              entity_name = "692_EML_IncubationByDepth_SoilCO2Fluxes.csv",
+                              physical = "physical",
+                              attribute_list = "attribute_list",
+                              number_of_records = 1,
+                              alternate_identifier = "NA"),
+               'Please provide a brief description of the entity and its contents.')
+  
+  expect_error(add_data_table(parent_element = list(), 
+                              entity_name = "692_EML_IncubationByDepth_SoilCO2Fluxes.csv",
+                              entity_description = "Soil CO2 Fluxes 2013-2014",
+                              attribute_list = "attribute_list",
+                              number_of_records = 1,
+                              alternate_identifier = "NA"),
+               'Please provide a full description of the full format of the physical element of your entity using the add_physical function.')
+  
+  expect_error(add_data_table(parent_element = list(), 
+                              entity_name = "692_EML_IncubationByDepth_SoilCO2Fluxes.csv",
+                              entity_description = "Soil CO2 Fluxes 2013-2014",
+                              physical = "physical",
+                              number_of_records = 1,
+                              alternate_identifier = "NA"),
+               'Please provide a list of attributes which were used in this data table.')
+  expect_warning(add_data_table(parent_element = list(), 
+                              entity_name = "692_EML_IncubationByDepth_SoilCO2Fluxes.csv",
+                              entity_description = "Soil CO2 Fluxes 2013-2014",
+                              physical = "physical",
+                              attribute_list = "attribute_list",
+                              alternate_identifier = "NA"),
+               'The number of records was not provided.')
+  
+  expect_warning(add_data_table(parent_element = list(), 
+                              entity_name = "692_EML_IncubationByDepth_SoilCO2Fluxes.csv",
+                              entity_description = "Soil CO2 Fluxes 2013-2014",
+                              physical = "physical",
+                              attribute_list = "attribute_list",
+                              number_of_records = 1),
+               'An alternate identifier was not provided.')
+  
+})
 
 
 

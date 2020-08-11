@@ -21,14 +21,14 @@
 #'                                 attribute_definition = "Site id as used in sites table",
 #'                                 storage_type = cvpiaEDIutils::storage_type$integer,
 #'                                 measurement_scale = cvpiaEDIutils::measurement_scale$nominal,
-#'                                 domain= "text",
+#'                                 domain = "text",
 #'                                 definition = "Site id as used in sites table.")
 #' physical <- add_physical(file_path = "User/data/example.csv",
 #'                          data_url = "https://mydata.org/etc")
 #' add_data_table(parent_element = list(), 
 #'                entity_name = "692_EML_IncubationByDepth_SoilCO2Fluxes.csv",
 #'                entity_description = "Soil CO2 Fluxes 2013-2014", 
-#'                physical = physical 
+#'                physical = physical, 
 #'                attribute_list = attribute_list, 
 #'                number_of_records = "1")
 #' @export
