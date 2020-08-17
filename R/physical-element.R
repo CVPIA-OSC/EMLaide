@@ -53,7 +53,7 @@ add_physical <- function(file_path,
                                             simpleDelimited = list(fieldDelimiter = field_delimiter))))
   
   if (missing(data_url)) {
-    message('No url has been provided. Please input a url to which the data file can be downloaded if possible.', call. = FALSE)
+    message('No url has been provided. Please input a url to which the data file can be downloaded if possible.')
   } else {
     physical$distribution = list(online = list(url = list(url = data_url,
                                                           "function" = "download")))

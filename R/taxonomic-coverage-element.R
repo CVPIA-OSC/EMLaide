@@ -210,7 +210,7 @@ add_taxonomic_coverage <- function(CVPIA_common_species = NULL,
                                                           commonName = common_name))))))))
   
   if (is.null(taxon_id)) {
-    message("No taxon id has been provided. This number can be found at ITIS.gov if you wish to append it.", call. = FALSE )
+    message("No taxon id has been provided. This number can be found at ITIS.gov if you wish to append it.")
   } else {
     taxonomicCoverage$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonId <-
       list("provider" = "https://itis.gov",
