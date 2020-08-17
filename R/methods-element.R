@@ -12,25 +12,47 @@
 #'            Oregon State University, http://prism.oregonstate.edu, created 26 Mar 2015)
 #'            by interpolating 4km2 resolution climate data at the centroid of each
 #'            eastern hemlock stand using values from surrounding grid cell centers
-#'            and inverse-distance squared weighting.", instrumentation = "Thermometer")
+#'            and inverse-distance squared weighting.",
+#'            instrumentation = "Thermometer")
 #'                 
 #' If the method has a longer description than one paragraph:
-#' description1 <- "This is the first paragraph" 
+#' description1 <- "This is the first paragraph." 
 #' description2 <- "This is the second paragraph." 
 #' description = list(description1 description2)
-#' add_method(title = "The Data", description = description,
-#'                 instrumentation = "The applicable instrument")
+#' add_method(title = "The Data",
+#'            description = description,
+#'            instrumentation = "The applicable instrument")
 #' @export 
 #' 
 add_method <- function(description, title = NULL, instrumentation = NULL) {
-  if (missing(description)) {stop('Please provide the description of the method you are recording.', call. = FALSE)}
-  if (missing(title)) {warning('No title inputed. Provide one for easier organization.', call. = FALSE)}
-  if (missing(instrumentation))
-  {warning('Provide the insrumentation device used if beneficial to understanding the dataset.', call. = FALSE)}
   
-  methods <- list(methodStep = list(description = list(seciton = list(title = title, 
-                                                       para = description)),
-                                    instrumentation = instrumentation))
+  required_arguments <- c("description", "title", "instrumentation")
+  missing_argument_index <- which(c(missing(description), missing(title), 
+                                    missing(instrumentation)))
   
+  if (length(missing_argument_index) > 0) {
+    methods_error <- required_arguments[missing_argument_index][1]
+    methods_error_message <- switch(methods_error, 
+                                    description = "Please provide the description of the method you are recording.",
+                                    title = "No title inputed. Provide one for easier organization.",
+                                    instrumentation = "Provide the insrumentation device used if beneficial to understanding the dataset.")
+    if (missing(description)) {
+      stop(methods_error_message, call. = FALSE)
+    } 
+  }
+  
+    methods <- list(methodStep = list(description = list(para = description)))
+    
+    if (missing(title) | missing(instrumentation)) {
+      warning(methods_error_message, call. = FALSE)
+    }
+    
+    if (!is.null(title)) {
+      methods$methodStep$description$title <-  title
+    }
+    
+    if (!is.null(instrumentation)) {
+      methods$methodStep$instrumentation = instrumentation
+    }
   return(methods)
 }
