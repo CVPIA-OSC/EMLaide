@@ -153,11 +153,15 @@
 #' @description A list of CVPIA common species that can be appended to the taxonomic
 #' coverage.
 #' @format A named list, keys are named the same as values. 
-#' @param chinook
-#' @param steelhead
-#' @param delta_smelt 
-#' @param white_sturgeon 
-#' @param green_sturgeon
+#' 
+#' @section CVPIA Common Species:
+#' \itemize
+#'  \item{\strong{chinook}}
+#'  \item{\strong{steelhead}}
+#'  \item{\strong{delta_smelt}}
+#'  \item{\strong{white_sturgeon}}
+#'  \item{\strong{green_sturgeon}}
+#'
 #' @examples 
 #' CVPIA_common_species$chinook #"chinook"
 #' 

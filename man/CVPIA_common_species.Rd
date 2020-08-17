@@ -10,15 +10,20 @@ A named list, keys are named the same as values.
 \usage{
 CVPIA_common_species
 }
-\arguments{
-\item{delta_smelt}{}
-
-\item{white_sturgeon}{}
-}
 \description{
 A list of CVPIA common species that can be appended to the taxonomic
 coverage.
 }
+\section{CVPIA Common Species}{
+
+\itemize
+\item{\strong{chinook}}
+\item{\strong{steelhead}}
+\item{\strong{delta_smelt}}
+\item{\strong{white_sturgeon}}
+\item{\strong{green_sturgeon}}
+}
+
 \examples{
 CVPIA_common_species$chinook #"chinook"
 
