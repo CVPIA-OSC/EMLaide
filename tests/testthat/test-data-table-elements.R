@@ -257,50 +257,38 @@ test_that('The attribute function adds attribute elements.', {
 #Tests for add_physical function
 
 test_that('Correct error and warning messages are produced for the add_physical function', {
-  
-  expect_warning(add_physical(file_path = "/Users/lizzyshaw/FlowWest/cvpiaEDIutils/data-raw/Lowry et al 2013/all-database-records.csv"),
+
+    expect_warning(add_physical(file_path = "tests/testthat/test_data.csv"),
                  'No url has been provided. Please input a url to which the data file can be downloaded if possible.')
 })
 
 test_that('The add_physical function adds the physical elements', {
   
-  expect_equal(add_physical(file_path = "/Users/lizzyshaw/FlowWest/cvpiaEDIutils/data-raw/Lowry et al 2013/all-database-records.csv",
+  expect_equal(add_physical(file_path = "tests/testthat/test_data.csv",
                             data_url = "https://mydata.org/etc"),
-               list(objectName = "all-database-records.csv", 
-                    size = list(unit = "bytes",
-                                size = "6069028"), 
-                    authentication = list(method = "MD5", 
-                                          authentication = "c419a79357d8cf1b77f54b93a310ae64"), 
-                    dataFormat = list(textFormat = 
-                                        list(numHeaderLines = "1", 
-                                             recordDelimiter = "\\r\\n", 
-                                             attributeOrientation = "column", 
-                                             simpleDelimited = list(fieldDelimiter = ","))), 
-                    distribution = list(online = 
-                                          list(url = 
-                                                 list(url = "https://mydata.org/etc", 
-                                                      `function` = "download")))))
+               list(objectName = "test_data.csv", size = list(unit = "bytes", 
+                                                              size = "322"), authentication = list(method = "MD5", 
+                                                                                                   authentication = "ee28a90141e061821c891e1172f2eec1"), 
+                    dataFormat = list(textFormat = list(numHeaderLines = "1", 
+                                                        recordDelimiter = "\\r\\n", attributeOrientation = "column", 
+                                                        simpleDelimited = list(fieldDelimiter = ","))), distribution = list(
+                                                          online = list(url = list(url = "https://mydata.org/etc", 
+                                                                                   `function` = "download")))))
   
-  expect_equal(add_physical(file_path = "/Users/lizzyshaw/FlowWest/cvpiaEDIutils/data-raw/Lowry et al 2013/all-database-records.csv",
+  expect_equal(add_physical(file_path = "tests/testthat/test_data.csv",
                             number_of_headers = "1",
                             record_delimiter = "\\r\\n",
                             attribute_orientation = "column",
                             field_delimiter = ",",
                             data_url = "https://mydata.org/etc"),
-               list(objectName = "all-database-records.csv", 
-                    size = list(unit = "bytes", 
-                                size = "6069028"), 
-                    authentication = list(method = "MD5", 
-                                          authentication = "c419a79357d8cf1b77f54b93a310ae64"), 
-                    dataFormat = list(textFormat = 
-                                        list(numHeaderLines = "1", 
-                                             recordDelimiter = "\\r\\n",
-                                             attributeOrientation = "column", 
-                                             simpleDelimited = list(fieldDelimiter = ","))), 
-                    distribution = list(online = 
-                                          list(url = 
-                                                 list(url = "https://mydata.org/etc", 
-                                                      `function` = "download")))))
+               list(objectName = "test_data.csv", size = list(unit = "bytes", 
+                                                              size = "322"), authentication = list(method = "MD5",
+                                                                                                   authentication = "ee28a90141e061821c891e1172f2eec1"), 
+                    dataFormat = list(textFormat = list(numHeaderLines = "1", 
+                                                        recordDelimiter = "\\r\\n", attributeOrientation = "column", 
+                                                        simpleDelimited = list(fieldDelimiter = ","))), distribution = list(
+                                                          online = list(url = list(url = "https://mydata.org/etc", 
+                                                                                   `function` = "download")))))
 })
 
 

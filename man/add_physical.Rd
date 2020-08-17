@@ -14,9 +14,8 @@ add_physical(
 )
 }
 \arguments{
-\item{file_path}{The full name of the file of which your data is being read.
-From this, the \code{object_name}, \code{object_size}, and \code{authentication}
-will be extracted.}
+\item{file_path}{The file path of the data set being documented. The file size
+and authentication checksums will be generated from this input.}
 
 \item{number_of_headers}{Number of header lines preceeding the data. A default
 of "1" is assigned if no input is given. Please refrain from inputting any other value
