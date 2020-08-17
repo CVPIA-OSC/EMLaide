@@ -20,7 +20,8 @@ add_taxonomic_coverage(
   genus_value,
   species = "species",
   species_value,
-  common_name
+  common_name,
+  taxon_id
 )
 }
 \arguments{
@@ -57,6 +58,8 @@ information from ITIS}
 \item{species_value}{The species level name.}
 
 \item{common_name}{The common name of the organism}
+
+\item{taxon_id}{The taxonomic saerial number provided by ITIS}
 }
 \value{
 Taxonomic coverage information. The function should be assigned to the
@@ -118,7 +121,8 @@ taxonomic_coverage <- add_taxonomic_coverage(kingdom_value = "Animalia",
                        family_value = "Felidae",
                        genus_value = "Panthera", 
                        species_value = "Panthera Leo",
-                       common_name = "Lion")   
+                       common_name = "Lion", 
+                       taxon_id = "183803")   
                                             
 To append this information to the dataset or project:                        
     add_coverage(parent_element = list(), geographic_description = "Description",

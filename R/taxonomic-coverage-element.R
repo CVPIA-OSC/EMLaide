@@ -22,6 +22,7 @@
 #' @param species Species level present
 #' @param species_value The species level name.
 #' @param common_name The common name of the organism 
+#' @param taxon_id The taxonomic saerial number provided by ITIS 
 #' @section CVPIA Common Species: 
 #' By using a CVPIA common species, the appropriate taxonomy is appended based off 
 #' of the Integrated Taxonomic Information System (ITIS). 
@@ -71,7 +72,8 @@
 #'                        family_value = "Felidae",
 #'                        genus_value = "Panthera", 
 #'                        species_value = "Panthera Leo",
-#'                        common_name = "Lion")   
+#'                        common_name = "Lion", 
+#'                        taxon_id = "183803")   
 #'                                             
 #' To append this information to the dataset or project:                        
 #'     add_coverage(parent_element = list(), geographic_description = "Description",
@@ -92,15 +94,16 @@ add_taxonomic_coverage <- function(CVPIA_common_species = NULL,
                                    family = "family", family_value,
                                    genus = "genus", genus_value, 
                                    species = "species", species_value,
-                                   common_name) {
+                                   common_name, taxon_id) {
   
   if (is.null(CVPIA_common_species)) {
     required_arguments <- c("kingdom_value", "phylum_value", "class_value", "order_value",
-                       "family_value", "genus_value", "species_value", "common_name")
+                       "family_value", "genus_value", "species_value", "common_name", "taxon_id")
     missing_argument_index <- which(c(missing(kingdom_value), missing(phylum_value),
                                missing(class_value), missing(order_value),
                                missing(family_value), missing(genus_value),
-                               missing(species_value), missing(common_name)))
+                               missing(species_value), missing(common_name),
+                               missing(taxon_id)))
     
     if (length(missing_argument_index) > 0) {
       tax_error <- required_arguments[missing_argument_index][1]
@@ -112,7 +115,8 @@ add_taxonomic_coverage <- function(CVPIA_common_species = NULL,
                                  family_value = "Please provide a family.",
                                  genus_value = "Please provide a genus.",
                                  species_value = "Please provide a species.",
-                                 common_name = "Please provide a common name.")
+                                 common_name = "Please provide a common name.", 
+                                 taxon_id = "Please provide the given ITIS taxonomic serial number.")
       stop(tax_error_message, call. = FALSE)
     } 
     
@@ -124,6 +128,7 @@ add_taxonomic_coverage <- function(CVPIA_common_species = NULL,
     genus_value <- genus_value
     species_value <- species_value
     common_name <- common_name
+    taxon_id <- taxon_id 
     
   } else {
     
@@ -137,7 +142,7 @@ add_taxonomic_coverage <- function(CVPIA_common_species = NULL,
       genus_value <- "Oncorhynchus"
       species_value <- "Oncorhynchus tshawytscha"
       common_name <- "Chinook Salmon"
-
+      taxon_id <- "161980"
     }
     
     if (CVPIA_common_species == "steelhead") {
@@ -147,6 +152,7 @@ add_taxonomic_coverage <- function(CVPIA_common_species = NULL,
       genus_value <- "Oncorhynchus"
       species_value <- "Oncorhynchus mykiss"
       common_name <- "Steelhead Trout"
+      taxon_id <- "161989"
     }
     
     if (CVPIA_common_species == "delta_smelt") {
@@ -156,6 +162,7 @@ add_taxonomic_coverage <- function(CVPIA_common_species = NULL,
       genus_value <- "Hypomesus"
       species_value <- "Hypomesus transpacificus"
       common_name <- "Delta Smelt"
+      taxon_id <- "162032"
     }
     
     if (CVPIA_common_species == "white_sturgeon") {
@@ -165,6 +172,7 @@ add_taxonomic_coverage <- function(CVPIA_common_species = NULL,
       genus_value <- "Acipenser"
       species_value <- "Acipenser transmontanus"
       common_name <- "White Sturgeon"
+      taxon_id <- "161068"
     }
     
     if (CVPIA_common_species == "green_sturgeon") {
@@ -174,32 +182,34 @@ add_taxonomic_coverage <- function(CVPIA_common_species = NULL,
       genus_value <- "Acipenser"
       species_value <- "Acipenser medirostris"
       common_name <- "Green Sturgeon"
+      taxon_id <- 161067
     }
   } 
   
   taxonomicCoverage <-
-    list(TaxonomicClassification = 
-           list(TaxonRankName = kingdom,
-                TaxonRankValue = kingdom_value,
-                TaxonomicClassification =
-                  list(TaxonRankName = phylum,
-                       TaxonRankValue = phylum_value,
-                       TaxonomicClassification =
-                         list(TaxonRankName = class,
-                              TaxonRankValue = class_value,
-                              TaxonomicClassification =
-                                list(TaxonRankName = order,
-                                     TaxonRankValue = order_value,
-                                     TaxonomicClassification =
-                                       list(TaxonRankName = family,
-                                            TaxonRankValue = family_value,
-                                            TaxonomicClassification =
-                                              list(TaxonRankName = genus,
-                                                   TaxonRankValue = genus_value,
-                                                   TaxonomicClassification =
-                                                     list(TaxonRankName = species,
-                                                          TaxonRankValue = species_value,
-                                                          commonName = common_name))))))))
-
-
+    list(taxonomicClassification = 
+           list(taxonRankName = kingdom,
+                taxonRankValue = kingdom_value,
+                taxonomicClassification =
+                  list(taxonRankName = phylum,
+                       taxonRankValue = phylum_value,
+                       taxonomicClassification =
+                         list(taxonRankName = class,
+                              taxonRankValue = class_value,
+                              taxonomicClassification =
+                                list(taxonRankName = order,
+                                     taxonRankValue = order_value,
+                                     taxonomicClassification =
+                                       list(taxonRankName = family,
+                                            taxonRankValue = family_value,
+                                            taxonomicClassification =
+                                              list(taxonRankName = genus,
+                                                   taxonRankValue = genus_value,
+                                                   taxonomicClassification =
+                                                     list(taxonRankName = species,
+                                                          taxonRankValue = species_value,
+                                                          commonName = common_name,
+                                                          taxonId = list("provider" = "https://itis.gov",
+                                                                         taxonId = taxon_id)))))))))
+  return(taxonomicCoverage)
 }
