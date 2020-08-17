@@ -6,23 +6,23 @@
 #' provided if chosen to be included. 
 #' @param CVPIA_common_species Use one of the following: "chinook", "delta_smelt", 
 #' "white_sturgeon", "green_sturgeon", or "steelhead" to get pre-selected 
-#' information from ITIS
-#' @param kingdom Kingdom level present
+#' information from ITIS.
+#' @param kingdom Kingdom level present.
 #' @param kingdom_value The kingdom name. 
-#' @param phylum Phylum level present
+#' @param phylum Phylum level present.
 #' @param phylum_value The phylum name.
-#' @param class Class level present 
+#' @param class Class level present. 
 #' @param class_value The class level name.
-#' @param order Order level present
+#' @param order Order level present.
 #' @param order_value The order level name.
-#' @param family Family level present
+#' @param family Family level present.
 #' @param family_value The family level name.
-#' @param genus Genus level present 
+#' @param genus Genus level present. 
 #' @param genus_value The genus level name. 
-#' @param species Species level present
+#' @param species Species level present.
 #' @param species_value The species level name.
-#' @param common_name The common name of the organism 
-#' @param taxon_id The taxonomic saerial number provided by ITIS 
+#' @param common_name The common name of the organism. 
+#' @param taxon_id Optional. The taxonomic serial number provided by ITIS.
 #' @section CVPIA Common Species: 
 #' By using a CVPIA common species, the appropriate taxonomy is appended based off 
 #' of the Integrated Taxonomic Information System (ITIS). 
@@ -94,16 +94,15 @@ add_taxonomic_coverage <- function(CVPIA_common_species = NULL,
                                    family = "family", family_value,
                                    genus = "genus", genus_value, 
                                    species = "species", species_value,
-                                   common_name, taxon_id) {
+                                   common_name, taxon_id = NULL) {
   
   if (is.null(CVPIA_common_species)) {
     required_arguments <- c("kingdom_value", "phylum_value", "class_value", "order_value",
-                       "family_value", "genus_value", "species_value", "common_name", "taxon_id")
+                       "family_value", "genus_value", "species_value", "common_name")
     missing_argument_index <- which(c(missing(kingdom_value), missing(phylum_value),
                                missing(class_value), missing(order_value),
                                missing(family_value), missing(genus_value),
-                               missing(species_value), missing(common_name),
-                               missing(taxon_id)))
+                               missing(species_value), missing(common_name)))
     
     if (length(missing_argument_index) > 0) {
       tax_error <- required_arguments[missing_argument_index][1]
@@ -115,10 +114,10 @@ add_taxonomic_coverage <- function(CVPIA_common_species = NULL,
                                  family_value = "Please provide a family.",
                                  genus_value = "Please provide a genus.",
                                  species_value = "Please provide a species.",
-                                 common_name = "Please provide a common name.", 
-                                 taxon_id = "Please provide the given ITIS taxonomic serial number.")
+                                 common_name = "Please provide a common name.")
       stop(tax_error_message, call. = FALSE)
     } 
+    
     
     kingdom_value <- kingdom_value
     phylum_value <- phylum_value
@@ -128,7 +127,6 @@ add_taxonomic_coverage <- function(CVPIA_common_species = NULL,
     genus_value <- genus_value
     species_value <- species_value
     common_name <- common_name
-    taxon_id <- taxon_id 
     
   } else {
     
@@ -208,8 +206,14 @@ add_taxonomic_coverage <- function(CVPIA_common_species = NULL,
                                                    taxonomicClassification =
                                                      list(taxonRankName = species,
                                                           taxonRankValue = species_value,
-                                                          commonName = common_name,
-                                                          taxonId = list("provider" = "https://itis.gov",
-                                                                         taxonId = taxon_id)))))))))
+                                                          commonName = common_name))))))))
+  
+  if (is.null(taxon_id)) {
+    message("No taxon id has been provided. This number can be found at ITIS.gov if you wish to append it.", call. = FALSE )
+  } else {
+    taxonomicCoverage$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonId <-
+      list("provider" = "https://itis.gov",
+            taxonId = taxon_id)
+  }
   return(taxonomicCoverage)
 }
