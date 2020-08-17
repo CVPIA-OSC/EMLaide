@@ -159,7 +159,7 @@ add_attribute <- function(attribute_name, attribute_definition, storage_type,
                     storageType = storage_type)
   
   if (missing(attribute_label)) {
-    warning('No attribute label provided.', call. = FALSE)
+    message('No attribute label provided.', call. = FALSE)
   } else {
     attribute$attributeLabel <- attribute_label
   }
@@ -237,7 +237,7 @@ add_nominal <- function(domain = c("text", "enumerated"), definition, text_patte
     measurementScale$nominal$nonNumericDesign$textDomain$definition <- definition
     
     if (is.null(text_pattern)) {
-      warning('No text pattern is provided. Please add if applicable.', call. = FALSE)
+      message('No text pattern is provided. Please add if applicable.', call. = FALSE)
     } else { 
       measurementScale$nominal$nonNumericDesign$textDomain$pattern <- text_pattern
     }
@@ -291,7 +291,7 @@ add_ordinal <- function(domain = c("text", "enumerated"), definition, text_patte
     measurementScale$ordinal$nonNumericDesign$textDomain$definition <- definition
     
     if (is.null(text_pattern)) {
-      warning('No text pattern is provided. Please add if applicable.', call. = FALSE)
+      message('No text pattern is provided. Please add if applicable.', call. = FALSE)
     } else { 
       measurementScale$ordinal$nonNumericDesign$textDomain$pattern <- text_pattern
     }

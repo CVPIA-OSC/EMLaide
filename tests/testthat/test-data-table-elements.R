@@ -12,7 +12,7 @@ test_that('Correct error and warning messages are produced.', {
                              domain = "text", definition = "Latitude", text_pattern = "Latitudes"),
                'Please provide a brief definition of the attribute you are including.')
   
-  expect_warning(add_attribute(attribute_name = "LatitudeDD", attribute_definition = "Latitude",
+  expect_message(add_attribute(attribute_name = "LatitudeDD", attribute_definition = "Latitude",
                                storage_type = "coordinate", measurement_scale = "ordinal",
                                domain = "text", definition = "Latitude", text_pattern = "Latitudes"),
                  'No attribute label provided.')
@@ -32,7 +32,7 @@ test_that('Correct error and warning messages are produced.', {
                              domain = "text", text_pattern = "Latitudes"),
                'Please provide the description for your measurement scale.')
   
-  expect_warning(add_attribute(attribute_name = "LatitudeDD", attribute_definition = "Latitude",
+  expect_message(add_attribute(attribute_name = "LatitudeDD", attribute_definition = "Latitude",
                                attribute_label = "Lat", storage_type = "coordinate", measurement_scale = "ordinal",
                                domain = "text", definition = "Latitude"),
                  'No text pattern is provided. Please add if applicable.')
@@ -49,7 +49,7 @@ test_that('Correct error and warning messages are produced.', {
                              definition = "Sites", text_pattern = "ids"),
                'Please provide a domain of "text" or "enumerated" and supply the remaining applicable inputs.')
   
-  expect_warning(add_attribute(attribute_name = "site_id", attribute_definition = "Site id as used in sites table",
+  expect_message(add_attribute(attribute_name = "site_id", attribute_definition = "Site id as used in sites table",
                                storage_type = "string", measurement_scale = "nominal",
                                domain = "text", attribute_label = "sites",
                                definition = "Site id as used in sites table."),
@@ -71,7 +71,7 @@ test_that('Correct error and warning messages are produced.', {
                              measurement_scale = "ordinal", domain = "text", text_pattern = "NA"),
                'Please provide the description for your measurement scale.')
   
-  expect_warning(add_attribute(attribute_name = "LatitudeDD", attribute_definition = "Latitude",
+  expect_message(add_attribute(attribute_name = "LatitudeDD", attribute_definition = "Latitude",
                                attribute_label = "Latitude", storage_type = "coordinate",
                                measurement_scale = "ordinal",
                                domain = "text", definition = "Latitude"),
@@ -258,7 +258,7 @@ test_that('The attribute function adds attribute elements.', {
 
 test_that('Correct error and warning messages are produced for the add_physical function', {
 
-    expect_warning(add_physical(file_path = "tests/testthat/test_data.csv"),
+    expect_message(add_physical(file_path = "tests/testthat/test_data.csv"),
                  'No url has been provided. Please input a url to which the data file can be downloaded if possible.')
 })
 
