@@ -38,7 +38,8 @@ A controlled vocabulary covering all areas of interest of the Food and Agricultu
 Organization (FAO) of the United Nations, including food, nutrition, agriculture,
 fisheries, forestry, environment
 
-\href{https://geonames.usgs.gov/apex/f?p=138:1:5668294677959}{U.S. Board on Geographic Names} - USGS place names dictionary
+\href{https://geonames.usgs.gov/apex/f?p=138:1:5668294677959}{U.S. Board on Geographic Names} -
+USGS place names dictionary
 }
 
 \examples{

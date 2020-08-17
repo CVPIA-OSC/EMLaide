@@ -19,14 +19,16 @@ add_funding(
 
 \item{funder_name}{Organization or individual providing the funding}
 
-\item{funder_identifier}{This is where the funding organization is listed in the registry. The funder identifier must be registered. Follow the instructions at
+\item{funder_identifier}{This is where the funding organization is listed in
+the registry. The funder identifier must be registered. Follow the instructions at
 \url{https://ror.org/curation/} to get registered.}
 
 \item{award_number}{The identifier assigned by the funding agency to identify this funding award.}
 
 \item{award_title}{Title of the dataset or project which recieved funding}
 
-\item{award_url}{Optional to include a link to information about the funding award on the funding organization's webpage.}
+\item{award_url}{Optional to include a link to information about the funding
+award on the funding organization's webpage.}
 
 \item{funding_description}{Optional to provide a short description of the funding recieved.}
 }
@@ -42,5 +44,7 @@ add_funding(parent_element = list(), funder_name = "National Science Foundation"
             award_number = "1656026",
             award_title = "LTER: Beaufort Sea Lagoons: An Arctic Coastal Ecosystem in Transition",
             award_url = "https://www.nsf.gov/awardsearch/showAward?AWD_ID=1656026",
-            funding_description = "BLE LTER is supported by the National Science Foundation under award #1656026 (2017-08-01 to 2022-07-31)." )
+            funding_description = "BLE LTER is supported by the National Science 
+                                   Foundation under award #1656026 
+                                   (2017-08-01 to 2022-07-31)." )
 }

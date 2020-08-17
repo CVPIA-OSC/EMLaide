@@ -24,3 +24,11 @@ d <- function() {
   
   return(NULL)
 }
+
+# add_physical(file_path = "tests/testthat/test_data.csv",
+#              number_of_headers = "1",
+#              record_delimiter = "\\r\\n",
+#              attribute_orientation = "column",
+#              field_delimiter = ",",
+#              data_url = "https://mydata.org/etc") %>%
+#   EML::write_eml('dogge.xml')

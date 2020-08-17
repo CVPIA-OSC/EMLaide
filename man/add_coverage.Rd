@@ -19,7 +19,8 @@ add_coverage(
 \arguments{
 \item{parent_element}{A list representing the EML project or dataset}
 
-\item{geographic_description}{A description of the locations    of research sites and areas related to the data.}
+\item{geographic_description}{A description of the locations    of research sites
+and areas related to the data.}
 
 \item{west_bounding_coordinate}{The west cardinality limit}
 
@@ -29,11 +30,17 @@ add_coverage(
 
 \item{south_bounding_coordinate}{The south cardinality limit.}
 
-\item{begin_date}{The starting date for the dataset or project. Dates must be provided in ISO 8601 format, YYYY-MM-DD.}
+\item{begin_date}{The starting date for the dataset or project. Dates must be
+provided in ISO 8601 format, YYYY-MM-DD.}
 
-\item{end_date}{The projected or actual end date for the dataset or project. Dates must be provided in ISO 8601 format, YYYY-MM-DD.}
+\item{end_date}{The projected or actual end date for the dataset or project.
+Dates must be provided in ISO 8601 format, YYYY-MM-DD.}
 
-\item{taxonomic_coverage}{Addition of taxonomic coverage is optional. The taxonomic information for all organisms relevant to the study should be included and mandates the input of the taxonomy levels of kingdom-species. An example of how to append this information using the add_taxonomic_coverage function is given down below.}
+\item{taxonomic_coverage}{Addition of taxonomic coverage is optional. The
+taxonomic information for all organisms relevant to the study should be included
+and mandates the input of the taxonomy levels of kingdom-species. An example
+of how to append this information using the add_taxonomic_coverage
+function is given down below.}
 }
 \value{
 The dataset or project with coverage information appended
@@ -42,24 +49,36 @@ The dataset or project with coverage information appended
 Adds the coverage information of a dataset based off of EML standards.
 }
 \examples{
-add_coverage(parent_element = list(), geographic_description = "North Slope drainage basin:
-             Bounding box encompasses 42 drainage basins totaling the North Slope drainage basin, Alaska, USA.",
-             west_bounding_coordinate = "-160.594000", east_bounding_coordinate = "-134.104800",
-             north_bounding_coordinate = "71.238300", south_bounding_coordinate = "67.865000", 
-             begin_date = "1980-01-01", end_date = "2010-12-31")
+add_coverage(parent_element = list(), geographic_description = "North Slope
+             drainage basin: Bounding box encompasses 42 drainage basins
+             totaling the North Slope drainage basin, Alaska, USA.",
+             west_bounding_coordinate = "-160.594000",
+             east_bounding_coordinate = "-134.104800",
+             north_bounding_coordinate = "71.238300",
+             south_bounding_coordinate = "67.865000", 
+             begin_date = "1980-01-01",
+             end_date = "2010-12-31")
              
-taxonomic_coverage <- add_taxonomic_coverage(CVPIA_common_species = "chinook")
+taxonomic_coverage <- add_taxonomic_coverage(CVPIA_common_species = cvpiaEDIutils::CVPIA_common_species$chinook)
 add_coverage(parent_element = list(), geographic_description = "Description",
-             west_bounding_coordinate = "-160.594000", east_bounding_coordinate = "-134.104800",
-             north_bounding_coordinate = "71.238300", south_bounding_coordinate = "67.865000",
-             begin_date = "1980-01-01", end_date = "2010-12-31", taxonomic_coverage = taxonomic_coverage) 
+             west_bounding_coordinate = "-160.594000", 
+             east_bounding_coordinate = "-134.104800",
+             north_bounding_coordinate = "71.238300", 
+             south_bounding_coordinate = "67.865000",
+             begin_date = "1980-01-01", 
+             end_date = "2010-12-31", 
+             taxonomic_coverage = taxonomic_coverage) 
 
 For adding multiple taxonomies to the coverage: 
-chinook <- add_taxonomic_coverage(CVPIA_common_species = "chinook")
-delta <- add_taxonomic_coverage(CVPIA_common_species = "delta_smelt")
+chinook <- add_taxonomic_coverage(CVPIA_common_species = cvpiaEDIutils::CVPIA_common_species$chinook)
+delta <- add_taxonomic_coverage(CVPIA_common_species = cvpiaEDIutils::CVPIA_common_species$delta_smelt)
 taxonomic_coverage <- list(chinook, delta)
 add_coverage(parent_element = list(), geographic_description = "Description",
-             west_bounding_coordinate = "-160.594000", east_bounding_coordinate = "-134.104800",
-             north_bounding_coordinate = "71.238300", south_bounding_coordinate = "67.865000",
-             begin_date = "1980-01-01", end_date = "2010-12-31", taxonomic_coverage = taxonomic_coverage)
+             west_bounding_coordinate = "-160.594000", 
+             east_bounding_coordinate = "-134.104800",
+             north_bounding_coordinate = "71.238300", 
+             south_bounding_coordinate = "67.865000",
+             begin_date = "1980-01-01", 
+             end_date = "2010-12-31", 
+             taxonomic_coverage = taxonomic_coverage)
 }

@@ -1,6 +1,12 @@
 #' @title Add Taxonomic Coverage 
-#' @description Adds the taxonomic coverage information of a dataset based off of EML standards. The addition of taxonomic coverage is optional, however defaults of chinook, sturgeon, smelt, and steelhead are provided. While single or multiple taxonomies can be applied, the full set of information must be provided if chosen to be included. 
-#' @param CVPIA_common_species Use one of the following: "chinook", "delta_smelt", "white_sturgeon", "green_sturgeon", or "steelhead" to get pre-selected information from ITIS
+#' @description Adds the taxonomic coverage information of a dataset based off of 
+#' EML standards. The addition of taxonomic coverage is optional, however defaults 
+#' of chinook, sturgeon, smelt, and steelhead are provided. While single or 
+#' multiple taxonomies can be applied, the full set of information must be 
+#' provided if chosen to be included. 
+#' @param CVPIA_common_species Use one of the following: "chinook", "delta_smelt", 
+#' "white_sturgeon", "green_sturgeon", or "steelhead" to get pre-selected 
+#' information from ITIS
 #' @param kingdom Kingdom level present
 #' @param kingdom_value The kingdom name. 
 #' @param phylum Phylum level present
@@ -17,31 +23,46 @@
 #' @param species_value The species level name.
 #' @param common_name The common name of the organism 
 #' @section CVPIA Common Species: 
-#' By using a CVPIA common species, the appropriate taxonomy is appended based off of the Integrated Taxonomic Information System (ITIS). 
+#' By using a CVPIA common species, the appropriate taxonomy is appended based off 
+#' of the Integrated Taxonomic Information System (ITIS). 
 #' 
-#' Select "chinook" to append the taxonomy of Oncorhynchus tshawytscha (Also known as Chinook Salmon or King Salmon) from the ITIS database. The correspoinding ITIS taxonomic id number is 161980.
+#' Select "chinook" to append the taxonomy of Oncorhynchus tshawytscha 
+#' (Also known as Chinook Salmon or King Salmon) from the ITIS database. 
+#' The correspoinding ITIS taxonomic id number is 161980.
 #' 
-#' Select "delta_smelt" to append the taxonomy of Hypomesus transpacificus (Also known as Delta Smelt) from the ITIS database. The correspoinding ITIS taxonomic id number is 162032. 
+#' Select "delta_smelt" to append the taxonomy of Hypomesus transpacificus 
+#' (Also known as Delta Smelt) from the ITIS database. The correspoinding ITIS 
+#' taxonomic id number is 162032. 
 #' 
-#' Select "white_sturgeon" to append the taxonomy of Acipenser transmontanus (Also known as White Sturgeon) from the ITIS database. The correspoinding ITIS taxonomic id number is 161068.
+#' Select "white_sturgeon" to append the taxonomy of Acipenser transmontanus 
+#' (Also known as White Sturgeon) from the ITIS database. The correspoinding ITIS 
+#' taxonomic id number is 161068.
 #' 
-#' Select "green_sturgeon" to append the taxonomy of Acipenser medirostris (Also known as Green Sturgeon) from the ITIS database. The correspoinding ITIS taxonomic id number is 161067.
+#' Select "green_sturgeon" to append the taxonomy of Acipenser medirostris (Also
+#' known as Green Sturgeon) from the ITIS database. The correspoinding ITIS 
+#' taxonomic id number is 161067.
 #' 
-#' Select "steelhead" to append the taxonomy of Oncorhynchus mykiss (Also known as Steelhead, Rainbow Trout, or Redband Trout) from the ITIS database. The correspoinding ITIS taxonomic id number is 161989.
+#' Select "steelhead" to append the taxonomy of Oncorhynchus mykiss 
+#' (Also known as Steelhead, Rainbow Trout, or Redband Trout) from the ITIS database. 
+#' The correspoinding ITIS taxonomic id number is 161989.
 #' 
-#' For further taxonomic coverage (i.e subkingdom, infrakingdom, etc.) on any of these species, you can visit: \href{https://www.itis.gov/}{ITIS}'s webpage for full coverage information.
+#' For further taxonomic coverage (i.e subkingdom, infrakingdom, etc.) on any of 
+#' these species, you can visit: \href{https://www.itis.gov/}{ITIS}'s webpage for 
+#' full coverage information.
 #' 
-#' @return Taxonomic coverage information. The function should be assigned to the name taxonomic_coverage to append it to the dataset or project. Example of how to incorporate it into the add_coverage function is seen below. 
+#' @return Taxonomic coverage information. The function should be assigned to the 
+#' name taxonomic_coverage to append it to the dataset or project. Example of how 
+#' to incorporate it into the add_coverage function is seen below. 
 #' @examples 
-#' taxonomic_coverage <- add_taxonomic_coverage(CVPIA_common_species = "chinook")
+#' taxonomic_coverage <- add_taxonomic_coverage(CVPIA_common_species = cvpiaEDIutils::CVPIA_common_species$chinook)
 #' 
-#' taxonomic_coverage <- add_taxonomic_coverage(CVPIA_common_species = "delta_smelt")
+#' taxonomic_coverage <- add_taxonomic_coverage(CVPIA_common_species = cvpiaEDIutils::CVPIA_common_species$delta_smelt)
 #' 
-#' taxonomic_coverage <- add_taxonomic_coverage(CVPIA_common_species = "white_sturgeon")
+#' taxonomic_coverage <- add_taxonomic_coverage(CVPIA_common_species = cvpiaEDIutils::CVPIA_common_species$white_sturgeon)
 #' 
-#' taxonomic_coverage <- add_taxonomic_coverage(CVPIA_common_species = "green_sturgeon")
+#' taxonomic_coverage <- add_taxonomic_coverage(CVPIA_common_species = cvpiaEDIutils::CVPIA_common_species$green_sturgeon)
 #' 
-#' taxonomic_coverage <- add_taxonomic_coverage(CVPIA_common_species = "steelhead")
+#' taxonomic_coverage <- add_taxonomic_coverage(CVPIA_common_species = cvpiaEDIutils::CVPIA_common_species$steelhead)
 #' 
 #' taxonomic_coverage <- add_taxonomic_coverage(kingdom_value = "Animalia",
 #'                        phylum_value = "Chordata",
@@ -54,9 +75,13 @@
 #'                                             
 #' To append this information to the dataset or project:                        
 #'     add_coverage(parent_element = list(), geographic_description = "Description",
-#                   west_bounding_coordinate = "-160.594000", east_bounding_coordinate = "-134.104800",
-#                   north_bounding_coordinate = "71.238300", south_bounding_coordinate = "67.865000",
-#                   begin_date = "1980-01-01", end_date = "2010-12-31", taxonomic_coverage = taxonomic_coverage)
+#'                  west_bounding_coordinate = "-160.594000", 
+#'                  east_bounding_coordinate = "-134.104800",
+#'                  north_bounding_coordinate = "71.238300", 
+#'                  south_bounding_coordinate = "67.865000",
+#'                  begin_date = "1980-01-01", 
+#'                  end_date = "2010-12-31", 
+#'                  taxonomic_coverage = taxonomic_coverage)
 #' @export
 
 add_taxonomic_coverage <- function(CVPIA_common_species = NULL,
@@ -70,21 +95,34 @@ add_taxonomic_coverage <- function(CVPIA_common_species = NULL,
                                    common_name) {
   
   if (is.null(CVPIA_common_species)) {
-    if (missing(kingdom_value)) {stop("Please provide a kingdom.", call. = FALSE)}
+    required_arguments <- c("kingdom_value", "phylum_value", "class_value", "order_value",
+                       "family_value", "genus_value", "species_value", "common_name")
+    missing_argument_index <- which(c(missing(kingdom_value), missing(phylum_value),
+                               missing(class_value), missing(order_value),
+                               missing(family_value), missing(genus_value),
+                               missing(species_value), missing(common_name)))
+    
+    if (length(missing_argument_index) > 0) {
+      tax_error <- required_arguments[missing_argument_index][1]
+      tax_error_message <- switch(tax_error,
+                                 kingdom_value = "Please provide a kingdom.",
+                                 phylum_value = "Please provide a phylum.",
+                                 class_value = "Please provide a class.",
+                                 order_value = "Please provide an order.", 
+                                 family_value = "Please provide a family.",
+                                 genus_value = "Please provide a genus.",
+                                 species_value = "Please provide a species.",
+                                 common_name = "Please provide a common name.")
+      stop(tax_error_message, call. = FALSE)
+    } 
+    
     kingdom_value <- kingdom_value
-    if (missing(phylum_value)) {stop("Please provide a phylum.", call. = FALSE)}
     phylum_value <- phylum_value
-    if (missing(class_value)) {stop("Please provide a class.", call. = FALSE)}
     class_value <- class_value
-    if (missing(order_value)) {stop("Please provide an order.", call. = FALSE)}
     order_value <- order_value
-    if (missing(family_value)) {stop("Please provide a family.", call. = FALSE)}
     family_value <- family_value
-    if (missing(genus_value)) {stop("Please provide a genus.", call. = FALSE)}
     genus_value <- genus_value
-    if (missing(species_value)) {stop("Please provide a species.", call. = FALSE)}
     species_value <- species_value
-    if (missing(common_name)) {stop("Please provide a common name.", call. = FALSE)}
     common_name <- common_name
     
   } else {
@@ -163,5 +201,5 @@ add_taxonomic_coverage <- function(CVPIA_common_species = NULL,
                                                           TaxonRankValue = species_value,
                                                           commonName = common_name))))))))
 
-
+  return(taxonomicCoverage)
 }
