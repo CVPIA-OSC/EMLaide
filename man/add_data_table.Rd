@@ -22,16 +22,16 @@ thought of as the original ascii file name.}
 
 \item{physical}{A description of the physical format of the entity.
 This includes it file name, authentication code, and data format. Further information
-can be seen at \link{\code{add_physical}}.}
+can be seen at \code{\link{add_physical}} .}
 
 \item{attribute_list}{Describes all variables in a data entity in individual
 attribute elements. These descriptions include the name and definition of each
 attribute, its domain, definition of coded values, and other pertinent information.
-It is further explained and can be appended with the \link{\code{add_attribute}} function.}
+It is further explained and can be appended with the \code{\link{add_attribute}} function.}
 
-\item{number_of_records}{Optionl. A count of the number of records in the data table.}
+\item{number_of_records}{Optional. A count of the number of records in the data table.}
 
-\item{parament_element}{a list representing the EML project or dataset}
+\item{parament_element}{A list representing the EML project or dataset.}
 
 \item{alternate_identifer}{Optional. Provide when a dataset or project belongs
 to more than the contributing organization. Please include each additional
@@ -41,21 +41,21 @@ individual ID with its own alternate_identifier.}
 the project or dataset list with a data table appended
 }
 \description{
-adds the data table elements according to EML standards
+Adds the data table elements according to EML standards.
 }
 \examples{
 attribute_list <- add_attribute(attribute_name = "site_id",
                                 attribute_definition = "Site id as used in sites table",
                                 storage_type = cvpiaEDIutils::storage_type$integer,
                                 measurement_scale = cvpiaEDIutils::measurement_scale$nominal,
-                                domain= "text",
+                                domain = "text",
                                 definition = "Site id as used in sites table.")
 physical <- add_physical(file_path = "User/data/example.csv",
                          data_url = "https://mydata.org/etc")
 add_data_table(parent_element = list(), 
                entity_name = "692_EML_IncubationByDepth_SoilCO2Fluxes.csv",
                entity_description = "Soil CO2 Fluxes 2013-2014", 
-               physical = physical 
+               physical = physical, 
                attribute_list = attribute_list, 
                number_of_records = "1")
 }

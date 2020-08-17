@@ -304,6 +304,7 @@ test_that('Correct error and warning messages are produced', {
                               attribute_list = "attribute_list",
                               number_of_records = 1),
                'An alternate identifier was not provided.')
+})
 
 #Tests for add_physical function
 

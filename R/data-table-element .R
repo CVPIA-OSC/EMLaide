@@ -1,6 +1,6 @@
 #' @title Add Data Table 
-#' @description adds the data table elements according to EML standards 
-#' @param parament_element a list representing the EML project or dataset
+#' @description Adds the data table elements according to EML standards. 
+#' @param parament_element A list representing the EML project or dataset.
 #' @param alternate_identifer Optional. Provide when a dataset or project belongs 
 #' to more than the contributing organization. Please include each additional 
 #' individual ID with its own alternate_identifier.
@@ -9,12 +9,12 @@
 #' @param entity_description A longer, more descriptive explination of the data in the entity. 
 #' @param physical A description of the physical format of the entity.
 #' This includes it file name, authentication code, and data format. Further information
-#' can be seen at \link{\code{add_physical}}. 
+#' can be seen at \code{\link{add_physical}} . 
 #' @param attribute_list Describes all variables in a data entity in individual 
 #' attribute elements. These descriptions include the name and definition of each 
 #' attribute, its domain, definition of coded values, and other pertinent information. 
-#' It is further explained and can be appended with the \link{\code{add_attribute}} function. 
-#' @param number_of_records Optionl. A count of the number of records in the data table. 
+#' It is further explained and can be appended with the \code{\link{add_attribute}} function. 
+#' @param number_of_records Optional. A count of the number of records in the data table. 
 #' @return the project or dataset list with a data table appended
 #' @examples
 #' attribute_list <- add_attribute(attribute_name = "site_id",
@@ -32,12 +32,11 @@
 #'                attribute_list = attribute_list, 
 #'                number_of_records = "1")
 #' @export
-#' 
 add_data_table <- function(parent_element, entity_name, entity_description, physical, 
                            attribute_list, number_of_records = NULL, alternate_identifier = NULL) {
   
-  required_arguments <- c("entity_name", "entity_description", "physical", 
-                          "attribute_list")
+  required_arguments <- c("entity_name", "entity_description", 
+                          "physical", "attribute_list")
   missing_argument_index <- which(c(missing(entity_name), missing(entity_description),
                                     missing(physical), missing(attribute_list)))
   
@@ -58,13 +57,13 @@ add_data_table <- function(parent_element, entity_name, entity_description, phys
   
 
   if (is.null(number_of_records)) {
-    warning('The number of records was not provided.', call. = FALSE)
+    message('The number of records was not provided.', call. = FALSE)
   } else {
     parent_element$dataTable$numberOfRecords <- number_of_records
   }
   
   if (is.null(alternate_identifier)) {
-    warning('An alternate identifier was not provided.', call. = FALSE)
+    message('An alternate identifier was not provided.', call. = FALSE)
   } else {
     parent_element$dataTable$alternateIdentifier <- alternate_identifier
   }
