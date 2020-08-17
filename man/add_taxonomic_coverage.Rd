@@ -21,45 +21,46 @@ add_taxonomic_coverage(
   species = "species",
   species_value,
   common_name,
-  taxon_id
+  taxon_id = NULL
 )
 }
 \arguments{
-\item{CVPIA_common_species}{Use one of the following: "chinook", "delta_smelt",
+\item{CVPIA_common_species}{Use one of the following from the helper data
+\code{\link{CVPIA_common_species}}: "chinook", "delta_smelt",
 "white_sturgeon", "green_sturgeon", or "steelhead" to get pre-selected
-information from ITIS}
+information from ITIS.}
 
-\item{kingdom}{Kingdom level present}
+\item{kingdom}{Kingdom level present.}
 
 \item{kingdom_value}{The kingdom name.}
 
-\item{phylum}{Phylum level present}
+\item{phylum}{Phylum level present.}
 
 \item{phylum_value}{The phylum name.}
 
-\item{class}{Class level present}
+\item{class}{Class level present.}
 
 \item{class_value}{The class level name.}
 
-\item{order}{Order level present}
+\item{order}{Order level present.}
 
 \item{order_value}{The order level name.}
 
-\item{family}{Family level present}
+\item{family}{Family level present.}
 
 \item{family_value}{The family level name.}
 
-\item{genus}{Genus level present}
+\item{genus}{Genus level present.}
 
 \item{genus_value}{The genus level name.}
 
-\item{species}{Species level present}
+\item{species}{Species level present.}
 
 \item{species_value}{The species level name.}
 
-\item{common_name}{The common name of the organism}
+\item{common_name}{The common name of the organism.}
 
-\item{taxon_id}{The taxonomic saerial number provided by ITIS}
+\item{taxon_id}{Optional. The taxonomic serial number provided by ITIS.}
 }
 \value{
 Taxonomic coverage information. The function should be assigned to the

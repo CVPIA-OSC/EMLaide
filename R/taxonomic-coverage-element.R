@@ -4,7 +4,8 @@
 #' of chinook, sturgeon, smelt, and steelhead are provided. While single or 
 #' multiple taxonomies can be applied, the full set of information must be 
 #' provided if chosen to be included. 
-#' @param CVPIA_common_species Use one of the following: "chinook", "delta_smelt", 
+#' @param CVPIA_common_species Use one of the following from the helper data 
+#' \code{\link{CVPIA_common_species}}: "chinook", "delta_smelt", 
 #' "white_sturgeon", "green_sturgeon", or "steelhead" to get pre-selected 
 #' information from ITIS.
 #' @param kingdom Kingdom level present.
