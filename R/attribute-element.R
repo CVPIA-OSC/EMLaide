@@ -32,7 +32,9 @@
 #' @section Measurement Scales: 
 #' Different measurement scale values will indicate different inputs: 
 #' 
-#' \subsection{Non-numeric:} Please provide a domain to indicate if your attribute is text or enumerated.
+#' ## Non-numeric: 
+#' Please provide a domain to indicate if your attribute is text or enumerated.
+#' 
 #' \emph{Nominal:}
 #' Used to define categorical scale attributes. If your attribute falls
 #' under the domain of "text", please provide the inputs of \code{definition} and \code{text_pattern}.
@@ -43,7 +45,7 @@
 #' of "text", please provide the inputs of \code{definition} and \code{text_pattern}. If your
 #' attribute falls under the domain of "enumerated", please provide the input of \code{definition}. 
 #'
-#'\subsection{Numeric:}
+#' ## Numeric:
 #'
 #'\emph{Interval:}
 #' Used to define interval scale attributes. Please provide the inputs of \code{type},
@@ -59,8 +61,9 @@
 #' 
 #' @return The project or dataset list with an attribute list appended
 #' 
-#' @examples 
-#' Nominal(text):
+#' @export
+#' @examples
+#' # Nominal(text):
 #' add_attribute(attribute_name = "site_id",
 #'               attribute_definition = "Site id as used in sites table",
 #'               storage_type = cvpiaEDIutils::storage_type$integer,
@@ -68,7 +71,7 @@
 #'               domain= "text",
 #'               definition = "Site id as used in sites table.")
 #'
-#' Nominal(enumerated):
+#' # Nominal(enumerated):
 #' code_def_1 = list(code = "yes", definition = "has been captured previously")
 #' code_def_2 = list(code = "no", definition = "has not been captured previously")
 #' code_definition = list(code_def_1, code_def_2)
@@ -79,7 +82,7 @@
 #'               domain = "enumerated",
 #'               definition = code_definition)
 #'               
-#' Ordinal(text):
+#' # Ordinal(text):
 #' add_attribute(attribute_name = "LatitudeDD", 
 #'               attribute_definition = "Latitude",
 #'               storage_type = cvpiaEDIutils::storage_type$string,
@@ -87,7 +90,7 @@
 #'               domain= "text", 
 #'               definition = "Latitude")
 #'               
-#' Ordinal(enumerated): 
+#' # Ordinal(enumerated): 
 #' code_def_0 = list(code = "0", definition = "0 insects per meter of branch")
 #' code_def_1 = list(code = "1", definition = "1-10 insects per meter")
 #' code_def_2 = list(code = "2", definition = "11 – 100 insects per meter")
@@ -100,18 +103,18 @@
 #'               domain = "enumerated",
 #'               definition = code_definition)
 #'               
-#' Interval:
+#' # Interval:
 #' add_attribute(attribute_name = "Count",
 #'               attribute_definition = "Number of individuals observed",
-#'                    measurement_scale = cvpiaEDIutils::measurement_scale$interval, 
-#'                    storage_type = cvpiaEDIutils::storage_type$integer,
-#'                    type = "interval"
-#'                    units = "number",
-#'                    unit_precision = "1",
-#'                    number_type = "whole", 
-#'                    minimum = "0")
+#'               measurement_scale = cvpiaEDIutils::measurement_scale$interval, 
+#'               storage_type = cvpiaEDIutils::storage_type$integer,
+#'               type = "interval",
+#'               units = "number",
+#'               unit_precision = "1",
+#'               number_type = "whole", 
+#'               minimum = "0")
 #'                    
-#' Ratio: 
+#' # Ratio: 
 #' add_attribute(attribute_name = "pH",
 #'               attribute_definition = "pH of soil solution",
 #'               storage_type = cvpiaEDIutils::storage_type$float,
@@ -121,8 +124,8 @@
 #'               unit_precision = "0.01",
 #'               number_type = "real")
 #'                    
-#' dateTime:
-#' add_attribute(attribute_name = "Yrs",
+#' # dateTime:
+#' add_attribute(attribute_name = "Yrs", 
 #'               attribute_definition = "Calendar year of the observation from years 1990 - 2010.",
 #'               storage_type = cvpiaEDIutils::storage_type$integer,
 #'               measurement_scale = cvpiaEDIutils::measurement_scale$dateTime,
@@ -131,8 +134,6 @@
 #'               date_time_precision = "1", 
 #'               minimum = "1993", 
 #'               maximum = "2003")
-#' @export
-
 add_attribute <- function(attribute_name, attribute_definition, storage_type,
                           measurement_scale, attribute_label = NULL, domain = NULL,
                           definition = NULL, text_pattern = NULL, type = NULL, 
@@ -314,18 +315,18 @@ add_ordinal <- function(domain = c("text", "enumerated"), definition, text_patte
 #' @param minimum Optional. A theoreical minimum.
 #' @param maximum Optional. A theoretical maximum. 
 #' @examples 
-#' Interval:
+#' #Interval:
 #' add_attribute(attribute_name = "Count",
 #'               attribute_definition = "Number of individuals observed",
 #'                    measurement_scale = cvpiaEDIutils::measurement_scale$interval, 
 #'                    storage_type = cvpiaEDIutils::storage_type$integer,
-#'                    type = "interval"
+#'                    type = "interval",
 #'                    units = "number",
 #'                    unit_precision = "1",
 #'                    number_type = "whole", 
 #'                    minimum = "0")
 #'                    
-#' Ratio: 
+#' #Ratio: 
 #' add_attribute(attribute_name = "pH",
 #'               attribute_definition = "pH of soil solution",
 #'               storage_type = cvpiaEDIutils::storage_type$float,

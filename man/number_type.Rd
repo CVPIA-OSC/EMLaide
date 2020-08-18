@@ -16,19 +16,20 @@ A helper data object to be used with \code{\link{add_attribute}}.
 }
 \section{Number Types}{
 
-\itemize
-\item{\strong{natural}}:The number type for this attribute consists of the
+\itemize{
+\item \strong{natural}:The number type for this attribute consists of the
 'natural' numbers, otherwise known as the counting numbers: 1, 2, 3, 4, etc.
-\item{\strong{whole}}: The number type for this attribute consists of the
+\item \strong{whole}: The number type for this attribute consists of the
 'whole' numbers, which are the natural numbers plus the zero value:
 0, 1, 2, 3, 4, etc.
-\item{\strong{integer}}: The number type for this attribute consists of the
+\item \strong{integer}: The number type for this attribute consists of the
 'integer' numbers, which are the natural numbers, plus the zero value, plus
 the negatives of the natural numbers: ..., -4, -3, -2, -1, 0, 1, 2, 3, 4, etc.
-\item{\strong{real}}: The number type for this attribute consists of the
+\item \strong{real}: The number type for this attribute consists of the
 'real' numbers, which contains both the rational numbers that can be expressed
 as fractions and the irrational numbers that can not be expressed as
 fractions (such as the square root of 2).
+}
 }
 
 \examples{

@@ -52,11 +52,11 @@
 #'                        species_value = "Panthera Leo",
 #'                        common_name = "Lion")   
 #'                                             
-#' To append this information to the dataset or project:                        
-#'     add_coverage(parent_element = list(), geographic_description = "Description",
-#                   west_bounding_coordinate = "-160.594000", east_bounding_coordinate = "-134.104800",
-#                   north_bounding_coordinate = "71.238300", south_bounding_coordinate = "67.865000",
-#                   begin_date = "1980-01-01", end_date = "2010-12-31", taxonomic_coverage = taxonomic_coverage)
+#' #To append this information to the dataset or project:                        
+#' add_coverage(parent_element = list(), geographic_description = "Description",
+#'              west_bounding_coordinate = "-160.594000", east_bounding_coordinate = "-134.104800",
+#'              north_bounding_coordinate = "71.238300", south_bounding_coordinate = "67.865000",
+#'              begin_date = "1980-01-01", end_date = "2010-12-31", taxonomic_coverage = taxonomic_coverage)
 #' @export
 
 add_taxonomic_coverage <- function(CVPIA_common_species = NULL,
@@ -162,6 +162,7 @@ add_taxonomic_coverage <- function(CVPIA_common_species = NULL,
                                                      list(TaxonRankName = species,
                                                           TaxonRankValue = species_value,
                                                           commonName = common_name))))))))
+  return(taxonomicCoverage)
 
 
 }
