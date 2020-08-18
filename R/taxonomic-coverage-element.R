@@ -208,12 +208,6 @@ add_taxonomic_coverage <- function(CVPIA_common_species = NULL,
                                                      list(taxonRankName = species,
                                                           taxonRankValue = species_value,
                                                           commonName = common_name))))))))
-<<<<<<< HEAD
-  return(taxonomicCoverage)
-
-
-=======
-  
   if (is.null(taxon_id)) {
     message("No taxon id has been provided. This number can be found at ITIS.gov if you wish to append it.")
   } else {
@@ -222,5 +216,4 @@ add_taxonomic_coverage <- function(CVPIA_common_species = NULL,
             taxonId = taxon_id)
   }
   return(taxonomicCoverage)
->>>>>>> b59529be58496d1b7b9661d74e233c51d5263fb9
 }

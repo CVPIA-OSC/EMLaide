@@ -125,14 +125,7 @@ taxonomic_coverage <- add_taxonomic_coverage(kingdom_value = "Animalia",
                        common_name = "Lion", 
                        taxon_id = "183803")   
                                             
-<<<<<<< HEAD
 #To append this information to the dataset or project:                        
-add_coverage(parent_element = list(), geographic_description = "Description",
-             west_bounding_coordinate = "-160.594000", east_bounding_coordinate = "-134.104800",
-             north_bounding_coordinate = "71.238300", south_bounding_coordinate = "67.865000",
-             begin_date = "1980-01-01", end_date = "2010-12-31", taxonomic_coverage = taxonomic_coverage)
-=======
-To append this information to the dataset or project:                        
     add_coverage(parent_element = list(), geographic_description = "Description",
                  west_bounding_coordinate = "-160.594000", 
                  east_bounding_coordinate = "-134.104800",
@@ -141,5 +134,4 @@ To append this information to the dataset or project:
                  begin_date = "1980-01-01", 
                  end_date = "2010-12-31", 
                  taxonomic_coverage = taxonomic_coverage)
->>>>>>> b59529be58496d1b7b9661d74e233c51d5263fb9
 }

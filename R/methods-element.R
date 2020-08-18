@@ -12,7 +12,6 @@
 #'            Oregon State University, http://prism.oregonstate.edu, created 26 Mar 2015)
 #'            by interpolating 4km2 resolution climate data at the centroid of each
 #'            eastern hemlock stand using values from surrounding grid cell centers
-<<<<<<< HEAD
 #'            and inverse-distance squared weighting.", 
 #'            instrumentation = "Thermometer")
 #'                 
@@ -21,16 +20,6 @@
 #' description2 <- "This is the second paragraph." 
 #' description = list(description1, description2)
 #' add_method(title = "The Data", 
-=======
-#'            and inverse-distance squared weighting.",
-#'            instrumentation = "Thermometer")
-#'                 
-#' If the method has a longer description than one paragraph:
-#' description1 <- "This is the first paragraph." 
-#' description2 <- "This is the second paragraph." 
-#' description = list(description1 description2)
-#' add_method(title = "The Data",
->>>>>>> b59529be58496d1b7b9661d74e233c51d5263fb9
 #'            description = description,
 #'            instrumentation = "The applicable instrument")
 #' @export 

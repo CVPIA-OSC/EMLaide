@@ -157,12 +157,13 @@
 #' @format A named list, keys are named the same as values. 
 #' 
 #' @section CVPIA Common Species:
-#' \itemize
-#'  \item{\strong{chinook}}
-#'  \item{\strong{steelhead}}
-#'  \item{\strong{delta_smelt}}
-#'  \item{\strong{white_sturgeon}}
-#'  \item{\strong{green_sturgeon}}
+#' \itemize{
+#'  \item \strong{chinook}
+#'  \item \strong{steelhead}
+#'  \item \strong{delta_smelt}
+#'  \item \strong{white_sturgeon}
+#'  \item \strong{green_sturgeon}
+#' }
 #'
 #' @examples 
 #' CVPIA_common_species$chinook #"chinook"
