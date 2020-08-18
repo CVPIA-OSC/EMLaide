@@ -1,6 +1,6 @@
 #' Add Personnel Element
-#' @description adds personel according to EML standards
-#' @param parent_element a list representing the EML project or dataset
+#' @description Adds personel according to EML standards
+#' @param parent_element A list representing the EML project or dataset
 #' @param role Use "Creator" if you are one of the primary originators of the data. 
 #' Other possible roles "Data Manager", "Field Technician", or "Assistant Researcher". 
 #' There can be multiple personnel on a project with the same role.

@@ -7,18 +7,18 @@
 add_keyword_set(parent_element, keyword_set)
 }
 \arguments{
-\item{parent_element}{a list representing the EML project or dataset}
+\item{parent_element}{A list representing the EML project or dataset}
 
-\item{keyword_set}{a keyword set or list of keyword sets}
+\item{keyword_set}{A keyword set or list of keyword sets}
 }
 \value{
 the project or dataset list with the keyword set appended
 }
 \description{
-adds keyword set according to EML standards
+Adds keyword set according to EML standards
 }
 \details{
-a keyword set is a list with two elements:
+A keyword set is a list with two elements:
 \enumerate{
 \item keyword - a list of keywords
 \item keywordThesauraus - (optional) a string identifying the controlled

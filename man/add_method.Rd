@@ -30,7 +30,7 @@ add_method(title = "Climate Data",
            and inverse-distance squared weighting.", 
            instrumentation = "Thermometer")
                 
-#If the method has a longer description than one paragraph:
+# If the method has a longer description than one paragraph:
 description1 <- "This is the first paragraph" 
 description2 <- "This is the second paragraph." 
 description = list(description1, description2)

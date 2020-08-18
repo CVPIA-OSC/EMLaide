@@ -12,13 +12,13 @@ add_title(parent_element, title, short_name)
 
 \item{short_name}{Short name or nickname you use to refer to this dataset.}
 
-\item{parament_element}{a list representing the EML project or dataset}
+\item{parament_element}{A list representing the EML project or dataset}
 }
 \value{
 the project or dataset list with title and short name appended
 }
 \description{
-adds title elements according to EML standards
+Adds title elements according to EML standards
 }
 \details{
 For a dataset, the title should be between 7 and 20 words long, with a short

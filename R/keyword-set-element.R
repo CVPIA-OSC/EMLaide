@@ -1,8 +1,8 @@
 #' Add Keyword Set Element
-#' @description adds keyword set according to EML standards
-#' @param parent_element a list representing the EML project or dataset
-#' @param keyword_set a keyword set or list of keyword sets 
-#' @details a keyword set is a list with two elements: 
+#' @description Adds keyword set according to EML standards
+#' @param parent_element A list representing the EML project or dataset
+#' @param keyword_set A keyword set or list of keyword sets 
+#' @details A keyword set is a list with two elements: 
 #' \enumerate{
 #'   \item keyword - a list of keywords
 #'   \item keywordThesauraus - (optional) a string identifying the controlled 

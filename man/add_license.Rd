@@ -14,7 +14,7 @@ add_license(
 )
 }
 \arguments{
-\item{parent_element}{a list representing the EML project or dataset}
+\item{parent_element}{A list representing the EML project or dataset}
 
 \item{default_license}{Use "CCO" or "CCBY" as argument value to use one of the
 CVPIA default licenses. Supply NULL if using another license.}
