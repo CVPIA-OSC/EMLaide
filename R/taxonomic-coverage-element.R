@@ -181,7 +181,7 @@ add_taxonomic_coverage <- function(CVPIA_common_species = NULL,
       genus_value <- "Acipenser"
       species_value <- "Acipenser medirostris"
       common_name <- "Green Sturgeon"
-      taxon_id <- 161067
+      taxon_id <- "161067"
     }
   } 
   
