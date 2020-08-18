@@ -2,5 +2,9 @@
 .Rhistory
 .RData
 .Ruserdata
+<<<<<<< HEAD
 work-flow.R
 docs
+=======
+work-flow.R
+>>>>>>> b59529be58496d1b7b9661d74e233c51d5263fb9
