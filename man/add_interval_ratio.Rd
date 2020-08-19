@@ -33,18 +33,18 @@ point, which allows the ratio to have meaning.}
 Add Interval or Ratio Measurement Scales
 }
 \examples{
-Interval:
+# Interval:
 add_attribute(attribute_name = "Count",
               attribute_definition = "Number of individuals observed",
                    measurement_scale = cvpiaEDIutils::measurement_scale$interval, 
                    storage_type = cvpiaEDIutils::storage_type$integer,
-                   type = "interval"
+                   type = "interval",
                    units = "number",
                    unit_precision = "1",
                    number_type = "whole", 
                    minimum = "0")
                    
-Ratio: 
+# Ratio: 
 add_attribute(attribute_name = "pH",
               attribute_definition = "pH of soil solution",
               storage_type = cvpiaEDIutils::storage_type$float,

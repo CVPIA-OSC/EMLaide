@@ -19,7 +19,7 @@ Examples are seen in exported documentation.}
 Add Ordinal Measurment Scale
 }
 \examples{
-Ordinal(text):
+# Ordinal(text):
 add_attribute(attribute_name = "LatitudeDD", 
               attribute_definition = "Latitude",
               storage_type = cvpiaEDIutils::storage_type$string,
@@ -27,7 +27,7 @@ add_attribute(attribute_name = "LatitudeDD",
               domain= "text", 
               definition = "Latitude")
               
-Ordinal(enumerated): 
+# Ordinal(enumerated): 
 code_def_0 = list(code = "0", definition = "0 insects per meter of branch")
 code_def_1 = list(code = "1", definition = "1-10 insects per meter")
 code_def_2 = list(code = "2", definition = "11 – 100 insects per meter")

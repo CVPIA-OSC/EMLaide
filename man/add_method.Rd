@@ -27,14 +27,14 @@ add_method(title = "Climate Data",
            Oregon State University, http://prism.oregonstate.edu, created 26 Mar 2015)
            by interpolating 4km2 resolution climate data at the centroid of each
            eastern hemlock stand using values from surrounding grid cell centers
-           and inverse-distance squared weighting.",
+           and inverse-distance squared weighting.", 
            instrumentation = "Thermometer")
                 
-If the method has a longer description than one paragraph:
-description1 <- "This is the first paragraph." 
+# If the method has a longer description than one paragraph:
+description1 <- "This is the first paragraph" 
 description2 <- "This is the second paragraph." 
-description = list(description1 description2)
-add_method(title = "The Data",
+description = list(description1, description2)
+add_method(title = "The Data", 
            description = description,
            instrumentation = "The applicable instrument")
 }
