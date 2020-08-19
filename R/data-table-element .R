@@ -27,7 +27,7 @@
 #'                              attribute_definition = "Latitude",
 #'                              storage_type = cvpiaEDIutils::storage_type$string,
 #'                              measurement_scale = cvpiaEDIutils::measurement_scale$ordinal,
-#'                              domain= "text", 
+#'                              domain = "text", 
 #'                              definition = "Latitude")
 #' attribute_list <- list(attribute_1, attribute_2)
 #' physical <- add_physical(file_path = "User/data/example.csv",
@@ -60,7 +60,7 @@ add_data_table <- function(parent_element, entity_name, entity_description, phys
   parent_element$dataTable <- list(entityName = entity_name,
                                    entityDescription = entity_description,
                                    physical = physical,
-                                   attributeList = attribute_list)
+                                   attributeList = list(attribute = attribute_list))
   
 
   if (is.null(number_of_records)) {

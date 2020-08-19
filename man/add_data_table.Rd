@@ -54,7 +54,7 @@ attribute_2 <- add_attribute(attribute_name = "LatitudeDD",
                              attribute_definition = "Latitude",
                              storage_type = cvpiaEDIutils::storage_type$string,
                              measurement_scale = cvpiaEDIutils::measurement_scale$ordinal,
-                             domain= "text", 
+                             domain = "text", 
                              definition = "Latitude")
 attribute_list <- list(attribute_1, attribute_2)
 physical <- add_physical(file_path = "User/data/example.csv",

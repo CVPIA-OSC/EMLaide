@@ -309,10 +309,20 @@ test_that('Correct error and warning messages are produced', {
 
 test_that('The add_data_table function adds the appropriate elements.', {
   # setwd("~/FlowWest/cvpiaEDIutils/tests/testthat")
-  attribute_list <- add_attribute(attribute_name = "site_id", attribute_definition = "Site id as used in sites table",
-                                  attribute_label = "NA", storage_type = "string",
-                                  measurement_scale = "nominal", domain = "text",
-                                  definition = "Site id as used in sites table.", text_pattern = "NA")
+  
+  attribute_1 <- add_attribute(attribute_name = "site_id",
+                               attribute_definition = "Site id as used in sites table",
+                               storage_type = cvpiaEDIutils::storage_type$integer,
+                               measurement_scale = cvpiaEDIutils::measurement_scale$nominal,
+                               domain = "text",
+                               definition = "Site id as used in sites table.")
+  attribute_2 <- add_attribute(attribute_name = "LatitudeDD",
+                               attribute_definition = "Latitude",
+                               storage_type = cvpiaEDIutils::storage_type$string,
+                               measurement_scale = cvpiaEDIutils::measurement_scale$ordinal,
+                               domain = "text",
+                               definition = "Latitude")
+  attribute_list <- list(attribute_1, attribute_2)
   physical <- add_physical(file_path = "test_data.csv",
                            data_url = "https://mydata.org/etc")
   expect_equal(add_data_table(parent_element = list(), 
@@ -322,36 +332,47 @@ test_that('The add_data_table function adds the appropriate elements.', {
                               attribute_list = attribute_list,
                               number_of_records = "1",
                               alternate_identifier = "NA"), 
-               list(dataTable = list(entityName = "692_EML_IncubationByDepth_SoilCO2Fluxes.csv", 
-                                     entityDescription = "Soil CO2 Fluxes 2013-2014", 
-                                     physical = list(objectName = "test_data.csv", 
-                                                     size = list(unit = "bytes", 
-                                                                 size = "322"),
-                                                     authentication = 
-                                                       list(method = "MD5", 
-                                                            authentication = "ee28a90141e061821c891e1172f2eec1"), 
-                                                     dataFormat = 
-                                                       list(textFormat = 
-                                                              list(numHeaderLines = "1", 
-                                                                   recordDelimiter = "\\r\\n", 
-                                                                   attributeOrientation = "column", 
-                                                                   simpleDelimited = 
-                                                                     list(fieldDelimiter = ","))), 
-                                                     distribution = list(online = list(url = 
-                                                                                         list(url = "https://mydata.org/etc", 
-                                                                                              `function` = "download")))),
-                                     attributeList = list(attributeName = "site_id", 
-                                                          attributeDefinition = "Site id as used in sites table", 
-                                                          storageType = "string",
-                                                          attributeLabel = "NA", 
-                                                          measurementScale = 
-                                                            list(nominal = 
-                                                                   list(nonNumericDesign =
-                                                                          list(textDomain = 
-                                                                                 list(definition = "Site id as used in sites table.", 
-                                                                                      pattern = "NA"))))), 
-                                     numberOfRecords = "1", 
-                                     alternateIdentifier = "NA")))
+               list(dataTable = 
+                      list(entityName = "692_EML_IncubationByDepth_SoilCO2Fluxes.csv", 
+                           entityDescription = "Soil CO2 Fluxes 2013-2014", 
+                           physical = 
+                             list(objectName = "test_data.csv", 
+                                  size = 
+                                    list(unit = "bytes", 
+                                         size = "322"), 
+                                  authentication = 
+                                    list(method = "MD5", 
+                                         authentication = "ee28a90141e061821c891e1172f2eec1"), 
+                                  dataFormat = 
+                                    list(textFormat = 
+                                           list(numHeaderLines = "1", 
+                                                recordDelimiter = "\\r\\n", 
+                                                attributeOrientation = "column", 
+                                                simpleDelimited = 
+                                                  list(fieldDelimiter = ","))),
+                                  distribution = 
+                                    list(online = list(url = 
+                                                         list(url = "https://mydata.org/etc", 
+                                                              `function` = "download")))), 
+                           attributeList = list(attribute = 
+                                                  list(list(attributeName = "site_id", 
+                                                            attributeDefinition = "Site id as used in sites table", 
+                                                            storageType = NULL,
+                                                            measurementScale =
+                                                              list(nominal = 
+                                                                     list(nonNumericDesign = 
+                                                                            list(textDomain = 
+                                                                                   list(definition = "Site id as used in sites table."))))), 
+                                                       list(attributeName = "LatitudeDD", 
+                                                            attributeDefinition = "Latitude", 
+                                                            storageType = "string", 
+                                                            measurementScale = 
+                                                              list(ordinal = 
+                                                                     list(nonNumericDesign = 
+                                                                            list(textDomain = 
+                                                                                   list(definition = "Latitude"))))))), 
+                           numberOfRecords = "1", 
+                           alternateIdentifier = "NA")))
   
 })
 
