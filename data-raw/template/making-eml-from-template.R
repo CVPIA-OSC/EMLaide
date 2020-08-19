@@ -1,0 +1,6 @@
+library(tidyverse)
+library(readxl)
+personnel_table <- read_excel("data-raw/template/template.xlsx", sheet = "personnel")
+glimpse(personnel_table)
+parent_element <- list()
+add_personnel(parent_element = parent_element, )
