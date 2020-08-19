@@ -1,6 +1,6 @@
 #' Add License and Intellectual Rights
 #' @description Adds the intellectual rights information of a dataset based off of EML standards.
-#' @param parent_element A list representing the EML project or dataset
+#' @param parent_element A list representing the EML project or dataset.
 #' @param default_license Use "CCO" or "CCBY" as argument value to use one of the 
 #' CVPIA default licenses. Supply NULL if using another license.
 #' @param license_name Optional if using default_license = "CCO" or "CCBY" as 
@@ -29,6 +29,9 @@
 #' 
 #' To view more license choices and find the appropriate url and identifier visit
 #' \href{https://spdx.org/licenses/CC0-1.0.html}{this} link. 
+#' 
+#' @return The project or dataset list with the intellectual rights appended.
+#' 
 #' @examples 
 #' add_license(parent_element = list()) # defaults to CCO
 #' 

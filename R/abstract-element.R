@@ -1,6 +1,6 @@
 #' @title Add Abstract Element
-#' @description Adds the abstract of a dataset according to EML standards 
-#' @param parament_element A list representing the EML project or dataset
+#' @description Adds the abstract of a dataset according to EML standards.
+#' @param parament_element A list representing the EML project or dataset.
 #' @param abstract Abstract paragraphs, requires a minimum of 20 words.
 #' @details 
 #' For	a	dataset,	the	abstract	element	can	appear	at	the	resource	level	or	the	project level.		
@@ -12,7 +12,7 @@
 #' should	also	be	included.		For	a	large	number	of	parameters,	use	categories	instead	of	listing	
 #' all	parameters	(e.g.	use	the	term	“nutrients”	instead	of	nitrate,	phosphate,	calcium,	etc.),	in	
 #' combination	with	the	parameters	that	seem	most	relevant	for	searches.
-#' @return the dataset or project with abstract appended 
+#' @return The dataset or project with abstract appended 
 #' @examples
 #' add_abstract(parent_element = list(),
 #'              abstract = "Reported water chemistry data are from the intensive...")

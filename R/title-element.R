@@ -1,6 +1,6 @@
 #' @title Add Title Elements
-#' @description Adds title elements according to EML standards 
-#' @param parament_element A list representing the EML project or dataset
+#' @description Adds title elements according to EML standards.
+#' @param parament_element A list representing the EML project or dataset.
 #' @param title The title of the project and/or dataset. A complete title is between 
 #' 7 and 20 words long and includes: What, Where, and When (and Who, if relevant).
 #' @param short_name Short name or nickname you use to refer to this dataset. 
@@ -9,11 +9,10 @@
 #'name which is shorter than the title. If the title is too short, ensure that it
 #'is covering the 'what', 'where', and 'when'. If the title is too long, attempt 
 #'to make it as concise as possible.
-#' @return the project or dataset list with title and short name appended 
+#' @return The project or dataset list with title and short name appended. 
 #' @examples 
 #' add_title(parent_element = list(),
-#'           title = "Eight Mile Lake Research Watershed, Carbon in Permafrost 
-#'           Experimental Heating Research (CiPEHR): Aboveground plant biomass, 2009-2017.",
+#'           title = "Eight Mile Lake Research Watershed, Carbon in Permafrost Experimental Heating Research.",
 #'           short_name = "knb-lter-bnz.501.17") 
 #' @export 
 add_title <- function(parent_element, title, short_name) {

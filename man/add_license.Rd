@@ -14,7 +14,7 @@ add_license(
 )
 }
 \arguments{
-\item{parent_element}{A list representing the EML project or dataset}
+\item{parent_element}{A list representing the EML project or dataset.}
 
 \item{default_license}{Use "CCO" or "CCBY" as argument value to use one of the
 CVPIA default licenses. Supply NULL if using another license.}
@@ -35,6 +35,9 @@ identifier. Other possible identifiers include "MIT" and "CC-BY-NC-SA".}
 \item{intellectual_rights_descripiton}{Optional if using default_license = "CCO"
 or "CCBY" as default values are provided. Otherwise, please provide a short
 description of the license being used and its regulations.}
+}
+\value{
+The project or dataset list with the intellectual rights appended.
 }
 \description{
 Adds the intellectual rights information of a dataset based off of EML standards.

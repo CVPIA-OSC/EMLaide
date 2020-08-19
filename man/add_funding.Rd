@@ -15,9 +15,9 @@ add_funding(
 )
 }
 \arguments{
-\item{parent_element}{A list representing the EML project or dataset}
+\item{parent_element}{A list representing the EML project or dataset.}
 
-\item{funder_name}{Organization or individual providing the funding}
+\item{funder_name}{Organization or individual providing the funding.}
 
 \item{funder_identifier}{This is where the funding organization is listed in
 the registry. The funder identifier must be registered. Follow the instructions at
@@ -25,7 +25,7 @@ the registry. The funder identifier must be registered. Follow the instructions 
 
 \item{award_number}{The identifier assigned by the funding agency to identify this funding award.}
 
-\item{award_title}{Title of the dataset or project which recieved funding}
+\item{award_title}{Title of the dataset or project which recieved funding.}
 
 \item{award_url}{Optional to include a link to information about the funding
 award on the funding organization's webpage.}
@@ -33,10 +33,10 @@ award on the funding organization's webpage.}
 \item{funding_description}{Optional to provide a short description of the funding recieved.}
 }
 \value{
-The dataset or project with funding information appended
+The dataset or project with funding information appended.
 }
 \description{
-Adds the funding information of a dataset based off of EML standards
+Adds the funding information of a dataset based off of EML standards.
 }
 \examples{
 add_funding(parent_element = list(), funder_name = "National Science Foundation",

@@ -59,7 +59,7 @@
 #' Used to define date and time attributes. Please provide the inputs of \code{date_time_format}, 
 #' \code{date_time_precision}, \code{minimum}, and \code{maximum}.
 #' 
-#' @return The project or dataset list with an attribute list appended
+#' @return The project or dataset list with an attribute list appended.
 #' 
 #' @export
 #' @examples

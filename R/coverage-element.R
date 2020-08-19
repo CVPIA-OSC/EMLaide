@@ -1,9 +1,9 @@
 #' @title Add Coverage Element
 #' @description Adds the coverage information of a dataset based off of EML standards.
-#' @param parent_element A list representing the EML project or dataset
+#' @param parent_element A list representing the EML project or dataset.
 #' @param geographic_description A description of the locations	of research sites
 #' and areas related to the data.
-#' @param west_bounding_coordinate The west cardinality limit 
+#' @param west_bounding_coordinate The west cardinality limit.
 #' @param east_bounding_coordinate The east cardinality limit.
 #' @param north_bounding_coordinate The north cardinality limit.
 #' @param south_bounding_coordinate The south cardinality limit.
@@ -16,7 +16,7 @@
 #' and mandates the input of the taxonomy levels of kingdom-species. An example 
 #' of how to append this information using the add_taxonomic_coverage
 #' function is given down below.  
-#' @return The dataset or project with coverage information appended
+#' @return The dataset or project with coverage information appended.
 #' @examples 
 #' add_coverage(parent_element = list(), geographic_description = "North Slope
 #'              drainage basin: Bounding box encompasses 42 drainage basins

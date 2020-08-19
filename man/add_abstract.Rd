@@ -9,13 +9,13 @@ add_abstract(parent_element, abstract)
 \arguments{
 \item{abstract}{Abstract paragraphs, requires a minimum of 20 words.}
 
-\item{parament_element}{A list representing the EML project or dataset}
+\item{parament_element}{A list representing the EML project or dataset.}
 }
 \value{
-the dataset or project with abstract appended
+The dataset or project with abstract appended
 }
 \description{
-Adds the abstract of a dataset according to EML standards
+Adds the abstract of a dataset according to EML standards.
 }
 \details{
 For	a	dataset,	the	abstract	element	can	appear	at	the	resource	level	or	the	project level.

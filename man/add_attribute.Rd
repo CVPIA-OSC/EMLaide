@@ -69,7 +69,7 @@ ISO 8601 standard should be used (YYYY-MM-DD).}
 \item{attribute_defenition}{A precise and complete    definition of the attribute    being    documented.}
 }
 \value{
-The project or dataset list with an attribute list appended
+The project or dataset list with an attribute list appended.
 }
 \description{
 Adds an attribute element according to EML standards. Multiple
