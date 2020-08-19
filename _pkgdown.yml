@@ -3,7 +3,14 @@ url: https://flowwest.github.io/cvpiaEDIutils/
 template:
   params:
     bootswatch: flatly
-
+    
+home:
+  links:
+  - text: EDI's Data Repositroy 
+    href: https://portal.edirepository.org/nis/home.jsp
+  - text: CVPIA Science Integration Team
+    href: http://cvpia.scienceintegrationteam.com/
+    
 reference:
 - title: EML EDI Functions
   desc: Functions for building EML metadata for EDI's data repository.
