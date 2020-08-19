@@ -76,7 +76,7 @@
 #'                        common_name = "Lion", 
 #'                        taxon_id = "183803")   
 #'                                             
-#' #To append this information to the dataset or project:                        
+#' # To append this information to the dataset or project:                        
 #'     add_coverage(parent_element = list(), geographic_description = "Description",
 #'                  west_bounding_coordinate = "-160.594000", 
 #'                  east_bounding_coordinate = "-134.104800",

@@ -48,8 +48,7 @@ add_keyword_set(parent_element = list(),
                                    keywordThesaurus = 'LTER Controlled Vocabulary'))
                                    
 add_keyword_set(parent_element = list(), 
-                keyword_set = list(
-                                   list(keyword = list('stream discharge', 'discharge'), 
+                keyword_set = list(list(keyword = list('stream discharge', 'discharge'), 
                                         keywordThesaurus = 'LTER Controlled Vocabulary'),
                                    list(keyword = list('Sacramento River'))))                                    
 }

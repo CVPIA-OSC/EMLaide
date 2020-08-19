@@ -18,7 +18,7 @@ If the domain is "enumerated", provide a list of the attributes code definitions
 Add Nominal Measurment Scale
 }
 \examples{
-Nominal(text):
+# Nominal(text):
 add_attribute(attribute_name = "site_id",
               attribute_definition = "Site id as used in sites table",
               storage_type = cvpiaEDIutils::storage_type$integer,
@@ -26,7 +26,7 @@ add_attribute(attribute_name = "site_id",
               domain= "text",
               definition = "Site id as used in sites table.")
 
-Nominal(enumerated):
+# Nominal(enumerated):
 code_def_1 = list(code = "yes", definition = "has been captured previously")
 code_def_2 = list(code = "no", definition = "has not been captured previously")
 code_definition = list(code_def_1, code_def_2)
