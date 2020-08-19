@@ -254,11 +254,133 @@ test_that('The attribute function adds attribute elements.', {
                                                                           maximum = "2003"))))))
 })
 
+# Tests for add_data_table function 
+
+test_that('Correct error and warning messages are produced', {
+  
+  expect_error(add_data_table(parent_element = list(), 
+                              entity_description = "Soil CO2 Fluxes 2013-2014",
+                              physical = "physical",
+                              attribute_list = "attribute_list",
+                              number_of_records = "1", 
+                              alternate_identifier = "NA"),
+  'Please provide an entity name i.e. a file name, name of database table, etc.')
+  
+  expect_error(add_data_table(parent_element = list(), 
+                              entity_name = "692_EML_IncubationByDepth_SoilCO2Fluxes.csv",
+                              physical = "physical",
+                              attribute_list = "attribute_list",
+                              number_of_records = "1",
+                              alternate_identifier = "NA"),
+               'Please provide a brief description of the entity and its contents.')
+  
+  expect_error(add_data_table(parent_element = list(), 
+                              entity_name = "692_EML_IncubationByDepth_SoilCO2Fluxes.csv",
+                              entity_description = "Soil CO2 Fluxes 2013-2014",
+                              attribute_list = "attribute_list",
+                              number_of_records = "1",
+                              alternate_identifier = "NA"),
+               'Please provide a full description of the full format of the physical element of your entity using the add_physical function.')
+  
+  expect_error(add_data_table(parent_element = list(), 
+                              entity_name = "692_EML_IncubationByDepth_SoilCO2Fluxes.csv",
+                              entity_description = "Soil CO2 Fluxes 2013-2014",
+                              physical = "physical",
+                              number_of_records = "1",
+                              alternate_identifier = "NA"),
+               'Please provide a list of attributes which were used in this data table.')
+  
+  expect_message(add_data_table(parent_element = list(), 
+                              entity_name = "692_EML_IncubationByDepth_SoilCO2Fluxes.csv",
+                              entity_description = "Soil CO2 Fluxes 2013-2014",
+                              physical = "physical",
+                              attribute_list = "attribute_list",
+                              alternate_identifier = "NA"),
+               'The number of records was not provided.')
+  
+  expect_message(add_data_table(parent_element = list(), 
+                              entity_name = "692_EML_IncubationByDepth_SoilCO2Fluxes.csv",
+                              entity_description = "Soil CO2 Fluxes 2013-2014",
+                              physical = "physical",
+                              attribute_list = "attribute_list",
+                              number_of_records = "1"),
+               'An alternate identifier was not provided.')
+})
+
+test_that('The add_data_table function adds the appropriate elements.', {
+  # setwd("~/FlowWest/cvpiaEDIutils/tests/testthat")
+  
+  attribute_1 <- add_attribute(attribute_name = "site_id",
+                               attribute_definition = "Site id as used in sites table",
+                               storage_type = cvpiaEDIutils::storage_type$integer,
+                               measurement_scale = cvpiaEDIutils::measurement_scale$nominal,
+                               domain = "text",
+                               definition = "Site id as used in sites table.")
+  attribute_2 <- add_attribute(attribute_name = "LatitudeDD",
+                               attribute_definition = "Latitude",
+                               storage_type = cvpiaEDIutils::storage_type$string,
+                               measurement_scale = cvpiaEDIutils::measurement_scale$ordinal,
+                               domain = "text",
+                               definition = "Latitude")
+  attribute_list <- list(attribute_1, attribute_2)
+  physical <- add_physical(file_path = "test_data.csv",
+                           data_url = "https://mydata.org/etc")
+  expect_equal(add_data_table(parent_element = list(), 
+                              entity_name = "692_EML_IncubationByDepth_SoilCO2Fluxes.csv",
+                              entity_description = "Soil CO2 Fluxes 2013-2014",
+                              physical = physical,
+                              attribute_list = attribute_list,
+                              number_of_records = "1",
+                              alternate_identifier = "NA"), 
+               list(dataTable = 
+                      list(entityName = "692_EML_IncubationByDepth_SoilCO2Fluxes.csv", 
+                           entityDescription = "Soil CO2 Fluxes 2013-2014", 
+                           physical = 
+                             list(objectName = "test_data.csv", 
+                                  size = 
+                                    list(unit = "bytes", 
+                                         size = "322"), 
+                                  authentication = 
+                                    list(method = "MD5", 
+                                         authentication = "ee28a90141e061821c891e1172f2eec1"), 
+                                  dataFormat = 
+                                    list(textFormat = 
+                                           list(numHeaderLines = "1", 
+                                                recordDelimiter = "\\r\\n", 
+                                                attributeOrientation = "column", 
+                                                simpleDelimited = 
+                                                  list(fieldDelimiter = ","))),
+                                  distribution = 
+                                    list(online = list(url = 
+                                                         list(url = "https://mydata.org/etc", 
+                                                              `function` = "download")))), 
+                           attributeList = list(attribute = 
+                                                  list(list(attributeName = "site_id", 
+                                                            attributeDefinition = "Site id as used in sites table", 
+                                                            storageType = NULL,
+                                                            measurementScale =
+                                                              list(nominal = 
+                                                                     list(nonNumericDesign = 
+                                                                            list(textDomain = 
+                                                                                   list(definition = "Site id as used in sites table."))))), 
+                                                       list(attributeName = "LatitudeDD", 
+                                                            attributeDefinition = "Latitude", 
+                                                            storageType = "string", 
+                                                            measurementScale = 
+                                                              list(ordinal = 
+                                                                     list(nonNumericDesign = 
+                                                                            list(textDomain = 
+                                                                                   list(definition = "Latitude"))))))), 
+                           numberOfRecords = "1", 
+                           alternateIdentifier = "NA")))
+  
+})
+
 #Tests for add_physical function
 
 test_that('Correct error and warning messages are produced for the add_physical function', {
-
-    expect_message(add_physical(file_path = "test_data.csv"),
+  
+  expect_message(add_physical(file_path = "test_data.csv"),
                  'No url has been provided. Please input a url to which the data file can be downloaded if possible.')
 })
 
