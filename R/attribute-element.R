@@ -202,7 +202,7 @@ add_attribute <- function(attribute_name, attribute_definition, storage_type,
 #' @param definition If domain is "text", provide a word description of your attribute.
 #' If the domain is "enumerated", provide a list of the attributes code definitions. 
 #' @examples 
-#' Nominal(text):
+#' # Nominal(text):
 #' add_attribute(attribute_name = "site_id",
 #'               attribute_definition = "Site id as used in sites table",
 #'               storage_type = cvpiaEDIutils::storage_type$integer,
@@ -210,7 +210,7 @@ add_attribute <- function(attribute_name, attribute_definition, storage_type,
 #'               domain= "text",
 #'               definition = "Site id as used in sites table.")
 #'
-#' Nominal(enumerated):
+#' # Nominal(enumerated):
 #' code_def_1 = list(code = "yes", definition = "has been captured previously")
 #' code_def_2 = list(code = "no", definition = "has not been captured previously")
 #' code_definition = list(code_def_1, code_def_2)
@@ -255,7 +255,7 @@ add_nominal <- function(domain = c("text", "enumerated"), definition, text_patte
 #' If the domain is "enumerated", provide a list of the attributes code definitions. 
 #' Examples are seen in exported documentation. 
 #' @examples 
-#' Ordinal(text):
+#' # Ordinal(text):
 #' add_attribute(attribute_name = "LatitudeDD", 
 #'               attribute_definition = "Latitude",
 #'               storage_type = cvpiaEDIutils::storage_type$string,
@@ -263,7 +263,7 @@ add_nominal <- function(domain = c("text", "enumerated"), definition, text_patte
 #'               domain= "text", 
 #'               definition = "Latitude")
 #'               
-#' Ordinal(enumerated): 
+#' # Ordinal(enumerated): 
 #' code_def_0 = list(code = "0", definition = "0 insects per meter of branch")
 #' code_def_1 = list(code = "1", definition = "1-10 insects per meter")
 #' code_def_2 = list(code = "2", definition = "11 – 100 insects per meter")
@@ -315,7 +315,7 @@ add_ordinal <- function(domain = c("text", "enumerated"), definition, text_patte
 #' @param minimum Optional. A theoreical minimum.
 #' @param maximum Optional. A theoretical maximum. 
 #' @examples 
-#' #Interval:
+#' # Interval:
 #' add_attribute(attribute_name = "Count",
 #'               attribute_definition = "Number of individuals observed",
 #'                    measurement_scale = cvpiaEDIutils::measurement_scale$interval, 
@@ -326,7 +326,7 @@ add_ordinal <- function(domain = c("text", "enumerated"), definition, text_patte
 #'                    number_type = "whole", 
 #'                    minimum = "0")
 #'                    
-#' #Ratio: 
+#' # Ratio: 
 #' add_attribute(attribute_name = "pH",
 #'               attribute_definition = "pH of soil solution",
 #'               storage_type = cvpiaEDIutils::storage_type$float,
