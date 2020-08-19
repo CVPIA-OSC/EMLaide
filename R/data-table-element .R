@@ -17,12 +17,19 @@
 #' @param number_of_records Optional. A count of the number of records in the data table. 
 #' @return the project or dataset list with a data table appended
 #' @examples
-#' attribute_list <- add_attribute(attribute_name = "site_id",
-#'                                 attribute_definition = "Site id as used in sites table",
-#'                                 storage_type = cvpiaEDIutils::storage_type$integer,
-#'                                 measurement_scale = cvpiaEDIutils::measurement_scale$nominal,
-#'                                 domain = "text",
-#'                                 definition = "Site id as used in sites table.")
+#' attribute_1 <- add_attribute(attribute_name = "site_id",
+#'                              attribute_definition = "Site id as used in sites table",
+#'                              storage_type = cvpiaEDIutils::storage_type$integer,
+#'                              measurement_scale = cvpiaEDIutils::measurement_scale$nominal,
+#'                              domain = "text",
+#'                              definition = "Site id as used in sites table.")
+#' attribute_2 <- add_attribute(attribute_name = "LatitudeDD", 
+#'                              attribute_definition = "Latitude",
+#'                              storage_type = cvpiaEDIutils::storage_type$string,
+#'                              measurement_scale = cvpiaEDIutils::measurement_scale$ordinal,
+#'                              domain= "text", 
+#'                              definition = "Latitude")
+#' attribute_list <- list(attribute_1, attribute_2)
 #' physical <- add_physical(file_path = "User/data/example.csv",
 #'                          data_url = "https://mydata.org/etc")
 #' add_data_table(parent_element = list(), 
