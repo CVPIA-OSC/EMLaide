@@ -82,8 +82,11 @@ to then append to the attribute list input in this function.
 #### Methods
 The `add_method` function allows you to append the different scientific methods 
 used in the collection process of your data. Multiple methods can be appended in 
-a simillar fashion as personnel. The function must be called individually for each 
-method, and then appended to a list, which will be inputed into the template. 
+a simillar fashion as personnel. The methods can also be applied at both the top 
+level, as well as in the data table element. Methods can describe how a particular csv 
+data was collected, or a particular method within your data table. The function 
+must be called individually for each method, and then appended to a list, 
+which will be inputed into the template. 
 
 #### Funding Information 
 The `add_funding` function allows you to append both the description of the funding 
