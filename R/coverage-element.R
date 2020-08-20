@@ -92,13 +92,12 @@ add_coverage <- function(parent_element, geographic_description, west_bounding_c
   
   if (is.null(parent_element$coverage)) {
     parent_element$coverage <- coverage
+    
+    if (!is.null(taxonomic_coverage)) {
+      parent_element$coverage$taxonomicCoverage <- taxonomic_coverage
+    }
   } else {
     parent_element$coverage <- list(parent_element$coverage, coverage)
   }
-  
-  if (!is.null(taxonomic_coverage)) {
-    parent_element$coverage$taxonomicCoverage = taxonomic_coverage
-  }
-  
   return(parent_element)
 }
