@@ -77,20 +77,25 @@ add_coverage <- function(parent_element, geographic_description, west_bounding_c
                                begin_date = "Please suppply the starting date of this project.",
                                end_date = "Please supply the end or projected end date for this project.")
     stop(coverage_error_message, call. = FALSE)
-  } 
-
+  }
   
-  parent_element$coverage <- list(geographicCoverage = 
-                                    list(geographicDescription = geographic_description,
-                                         boundingCoordinates = 
-                                           list(westBoundingCoordinate = west_bounding_coordinate,
-                                                eastBoundingCoordinate = east_bounding_coordinate,
-                                                northBoundingCoordinate = north_bounding_coordinate,
-                                                southBoundingCoordinate = south_bounding_coordinate)),
-                                  temporalCoverage = list(rangeOfDates = 
-                                                            list(beginDate = list(calendarDate = begin_date),
-                                                                 endDate = list(calendarDate = end_date))))
-                                  
+  coverage <- list(geographicCoverage = 
+                     list(geographicDescription = geographic_description,
+                          boundingCoordinates = 
+                            list(westBoundingCoordinate = west_bounding_coordinate,
+                                 eastBoundingCoordinate = east_bounding_coordinate,
+                                 northBoundingCoordinate = north_bounding_coordinate,
+                                 southBoundingCoordinate = south_bounding_coordinate)),
+                   temporalCoverage = list(rangeOfDates = 
+                                             list(beginDate = list(calendarDate = begin_date),
+                                                  endDate = list(calendarDate = end_date))))
+  
+  if (is.null(parent_element$coverage)) {
+    parent_element$coverage <- coverage
+  } else {
+    parent_element$coverage <- list(parent_element$coverage, coverage)
+  }
+  
   if (!is.null(taxonomic_coverage)) {
     parent_element$coverage$taxonomicCoverage = taxonomic_coverage
   }
