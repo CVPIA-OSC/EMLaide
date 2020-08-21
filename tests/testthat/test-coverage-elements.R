@@ -199,7 +199,7 @@ test_that('The taxonomic coverage function adds the taxonomic coverage elements'
                                                                      commonName = "Green Sturgeon", 
                                                                      taxonId = 
                                                                        list(provider = "https://itis.gov", 
-                                                                            taxonId = 161067))))))))))
+                                                                            taxonId = "161067"))))))))))
   expect_equal(add_taxonomic_coverage(kingdom_value = "Animalia",
                                       phylum_value = "Chordata",
                                       class_value = "Mammalia",
@@ -338,46 +338,25 @@ test_that('The coverage function works appropriately with the taxonomic function
                             north_bounding_coordinate = "71.238300",
                             south_bounding_coordinate = "67.865000",
                             begin_date = "1980-01-01", end_date = "2010-12-31", taxonomic_coverage = taxonomic_coverage), 
-               list(coverage = 
-                      list(geographicCoverage = 
-                             list(geographicDescription = "Description",
-                                  boundingCoordinates = 
-                                    list(westBoundingCoordinate = "-160.594000", 
-                                         eastBoundingCoordinate = "-134.104800", 
-                                         northBoundingCoordinate = "71.238300", 
-                                         southBoundingCoordinate = "67.865000")), 
-                           temporalCoverage = 
-                             list(rangeOfDates =
-                                    list(beginDate = 
-                                           list(calendarDate = "1980-01-01"), 
-                                         endDate = 
-                                           list(calendarDate = "2010-12-31"))), 
-                           taxonomicCoverage = 
-                             list(taxonomicClassification = 
-                                    list(taxonRankName = "kingdom", 
-                                         taxonRankValue = "Animalia",
-                                         taxonomicClassification = 
-                                           list(taxonRankName = "phylum", 
-                                                taxonRankValue = "Chordata", 
-                                                taxonomicClassification = 
-                                                  list(taxonRankName = "class", 
-                                                       taxonRankValue = "Teleostei", 
-                                                       taxonomicClassification = 
-                                                         list(taxonRankName = "order", 
-                                                              taxonRankValue = "Salmoniformes", 
-                                                              taxonomicClassification = 
-                                                                list(taxonRankName = "family", 
-                                                                     taxonRankValue = "Salmonidae", 
-                                                                     taxonomicClassification = 
-                                                                       list(taxonRankName = "genus", 
-                                                                            taxonRankValue = "Oncorhynchus", 
-                                                                            taxonomicClassification = 
-                                                                              list(taxonRankName = "species", 
-                                                                                   taxonRankValue = "Oncorhynchus tshawytscha", 
-                                                                                   commonName = "Chinook Salmon",
-                                                                                   taxonId = 
-                                                                                     list(provider = "https://itis.gov", 
-                                                                                          taxonId = "161980"))))))))))))
+               list(coverage = list(geographicCoverage = list(geographicDescription = "Description", 
+                                                              boundingCoordinates = list(westBoundingCoordinate = "-160.594000", 
+                                                                                         eastBoundingCoordinate = "-134.104800", northBoundingCoordinate = "71.238300", 
+                                                                                         southBoundingCoordinate = "67.865000")), temporalCoverage = list(
+                                                                                           rangeOfDates = list(beginDate = list(calendarDate = "1980-01-01"), 
+                                                                                                               endDate = list(calendarDate = "2010-12-31"))), taxonomicCoverage = list(
+                                                                                                                 list(taxonomicClassification = list(taxonRankName = "kingdom", 
+                                                                                                                                                     taxonRankValue = "Animalia", taxonomicClassification = list(
+                                                                                                                                                       taxonRankName = "phylum", taxonRankValue = "Chordata", 
+                                                                                                                                                       taxonomicClassification = list(taxonRankName = "class", 
+                                                                                                                                                                                      taxonRankValue = "Teleostei", taxonomicClassification = list(
+                                                                                                                                                                                        taxonRankName = "order", taxonRankValue = "Salmoniformes", 
+                                                                                                                                                                                        taxonomicClassification = list(taxonRankName = "family", 
+                                                                                                                                                                                                                       taxonRankValue = "Salmonidae", taxonomicClassification = list(
+                                                                                                                                                                                                                         taxonRankName = "genus", taxonRankValue = "Oncorhynchus", 
+                                                                                                                                                                                                                         taxonomicClassification = list(taxonRankName = "species", 
+                                                                                                                                                                                                                                                        taxonRankValue = "Oncorhynchus tshawytscha", 
+                                                                                                                                                                                                                                                        commonName = "Chinook Salmon", taxonId = list(
+                                                                                                                                                                                                                                                          provider = "https://itis.gov", taxonId = "161980")))))))))))))
   
   
   
@@ -395,90 +374,50 @@ test_that('The coverage function can append multiple taxonomic coverages.', {
                             south_bounding_coordinate = "67.865000",
                             begin_date = "1980-01-01", end_date = "2010-12-31",
                             taxonomic_coverage = taxonomic_coverage),
-               list(coverage = list(geographicCoverage = 
-                                      list(geographicDescription = "Description", 
-                                           boundingCoordinates = list(westBoundingCoordinate = "-160.594000", 
-                                                                      eastBoundingCoordinate = "-134.104800", 
-                                                                      northBoundingCoordinate = "71.238300", 
-                                                                      southBoundingCoordinate = "67.865000")), 
-                                    temporalCoverage = list(rangeOfDates = 
-                                                              list(beginDate = 
-                                                                     list(calendarDate = "1980-01-01"), 
-                                                                   endDate = list(calendarDate = "2010-12-31"))), 
-                                    taxonomicCoverage = list(list(taxonomicClassification = 
-                                                                    list(taxonRankName = "kingdom",
-                                                                         taxonRankValue = "Animalia",
-                                                                         taxonomicClassification = 
-                                                                           list(taxonRankName = "phylum", 
-                                                                                taxonRankValue = "Chordata", 
-                                                                                taxonomicClassification = 
-                                                                                  list(taxonRankName = "class", 
-                                                                                       taxonRankValue = "Teleostei", 
-                                                                                       taxonomicClassification = 
-                                                                                         list(taxonRankName = "order", 
-                                                                                              taxonRankValue = "Osmeriformes", 
-                                                                                              taxonomicClassification = 
-                                                                                                list(taxonRankName = "family", 
-                                                                                                     taxonRankValue = "Osmeridae", 
-                                                                                                     taxonomicClassification = 
-                                                                                                       list(taxonRankName = "genus", 
-                                                                                                            taxonRankValue = "Hypomesus", 
-                                                                                                            taxonomicClassification = 
-                                                                                                              list(taxonRankName = "species", 
-                                                                                                                   taxonRankValue = "Hypomesus transpacificus", 
-                                                                                                                   commonName = "Delta Smelt", 
-                                                                                                                   taxonId = 
-                                                                                                                     list(provider = "https://itis.gov", 
-                                                                                                                          taxonId = "162032"))))))))), 
-                                                             list(taxonomicClassification = 
-                                                                    list(taxonRankName = "kingdom", 
-                                                                         taxonRankValue = "Animalia", 
-                                                                         taxonomicClassification = 
-                                                                           list(taxonRankName = "phylum", 
-                                                                                taxonRankValue = "Chordata", 
-                                                                                taxonomicClassification = 
-                                                                                  list(taxonRankName = "class", 
-                                                                                       taxonRankValue = "Teleostei",
-                                                                                       taxonomicClassification = 
-                                                                                         list(taxonRankName = "order", 
-                                                                                              taxonRankValue = "Salmoniformes", 
-                                                                                              taxonomicClassification = 
-                                                                                                list(taxonRankName = "family", 
-                                                                                                     taxonRankValue = "Salmonidae",
-                                                                                                     taxonomicClassification = 
-                                                                                                       list(taxonRankName = "genus",
-                                                                                                            taxonRankValue = "Oncorhynchus", 
-                                                                                                            taxonomicClassification = 
-                                                                                                              list(taxonRankName = "species",
-                                                                                                                   taxonRankValue = "Oncorhynchus tshawytscha", 
-                                                                                                                   commonName = "Chinook Salmon", 
-                                                                                                                   taxonId = 
-                                                                                                                     list(provider = "https://itis.gov", 
-                                                                                                                          taxonId = "161980"))))))))), 
-                                                             list(taxonomicClassification = 
-                                                                    list(taxonRankName = "kingdom", 
-                                                                         taxonRankValue = "Animalia", 
-                                                                         taxonomicClassification =
-                                                                           list(taxonRankName = "phylum", 
-                                                                                taxonRankValue = "Chordata", 
-                                                                                taxonomicClassification = 
-                                                                                  list(taxonRankName = "class", 
-                                                                                       taxonRankValue = "Chondrostei",
-                                                                                       taxonomicClassification =
-                                                                                         list(taxonRankName = "order",
-                                                                                              taxonRankValue = "Acipenseriformes", 
-                                                                                              taxonomicClassification = 
-                                                                                                list(taxonRankName = "family", 
-                                                                                                     taxonRankValue = "Acipenseridae", 
-                                                                                                     taxonomicClassification = 
-                                                                                                       list(taxonRankName = "genus", 
-                                                                                                            taxonRankValue = "Acipenser", 
-                                                                                                            taxonomicClassification = 
-                                                                                                              list(taxonRankName = "species",
-                                                                                                                   taxonRankValue = "Acipenser transmontanus", 
-                                                                                                                   commonName = "White Sturgeon",
-                                                                                                                   taxonId = 
-                                                                                                                     list( provider = "https://itis.gov", 
-                                                                                                                           taxonId = "161068")))))))))))))
+               list(coverage = list(geographicCoverage = list(geographicDescription = "Description", 
+                                                              boundingCoordinates = list(westBoundingCoordinate = "-160.594000", 
+                                                                                         eastBoundingCoordinate = "-134.104800", northBoundingCoordinate = "71.238300", 
+                                                                                         southBoundingCoordinate = "67.865000")), temporalCoverage = list(
+                                                                                           rangeOfDates = list(beginDate = list(calendarDate = "1980-01-01"), 
+                                                                                                               endDate = list(calendarDate = "2010-12-31"))), taxonomicCoverage = list(
+                                                                                                                 list(list(taxonomicClassification = list(taxonRankName = "kingdom", 
+                                                                                                                                                          taxonRankValue = "Animalia", taxonomicClassification = list(
+                                                                                                                                                            taxonRankName = "phylum", taxonRankValue = "Chordata", 
+                                                                                                                                                            taxonomicClassification = list(taxonRankName = "class", 
+                                                                                                                                                                                           taxonRankValue = "Teleostei", taxonomicClassification = list(
+                                                                                                                                                                                             taxonRankName = "order", taxonRankValue = "Osmeriformes", 
+                                                                                                                                                                                             taxonomicClassification = list(taxonRankName = "family", 
+                                                                                                                                                                                                                            taxonRankValue = "Osmeridae", taxonomicClassification = list(
+                                                                                                                                                                                                                              taxonRankName = "genus", taxonRankValue = "Hypomesus", 
+                                                                                                                                                                                                                              taxonomicClassification = list(taxonRankName = "species", 
+                                                                                                                                                                                                                                                             taxonRankValue = "Hypomesus transpacificus", 
+                                                                                                                                                                                                                                                             commonName = "Delta Smelt", taxonId = list(
+                                                                                                                                                                                                                                                               provider = "https://itis.gov", taxonId = "162032"))))))))), 
+                                                                                                                      list(taxonomicClassification = list(taxonRankName = "kingdom", 
+                                                                                                                                                          taxonRankValue = "Animalia", taxonomicClassification = list(
+                                                                                                                                                            taxonRankName = "phylum", taxonRankValue = "Chordata", 
+                                                                                                                                                            taxonomicClassification = list(taxonRankName = "class", 
+                                                                                                                                                                                           taxonRankValue = "Teleostei", taxonomicClassification = list(
+                                                                                                                                                                                             taxonRankName = "order", taxonRankValue = "Salmoniformes", 
+                                                                                                                                                                                             taxonomicClassification = list(taxonRankName = "family", 
+                                                                                                                                                                                                                            taxonRankValue = "Salmonidae", taxonomicClassification = list(
+                                                                                                                                                                                                                              taxonRankName = "genus", taxonRankValue = "Oncorhynchus", 
+                                                                                                                                                                                                                              taxonomicClassification = list(taxonRankName = "species", 
+                                                                                                                                                                                                                                                             taxonRankValue = "Oncorhynchus tshawytscha", 
+                                                                                                                                                                                                                                                             commonName = "Chinook Salmon", taxonId = list(
+                                                                                                                                                                                                                                                               provider = "https://itis.gov", taxonId = "161980"))))))))), 
+                                                                                                                      list(taxonomicClassification = list(taxonRankName = "kingdom", 
+                                                                                                                                                          taxonRankValue = "Animalia", taxonomicClassification = list(
+                                                                                                                                                            taxonRankName = "phylum", taxonRankValue = "Chordata", 
+                                                                                                                                                            taxonomicClassification = list(taxonRankName = "class", 
+                                                                                                                                                                                           taxonRankValue = "Chondrostei", taxonomicClassification = list(
+                                                                                                                                                                                             taxonRankName = "order", taxonRankValue = "Acipenseriformes", 
+                                                                                                                                                                                             taxonomicClassification = list(taxonRankName = "family", 
+                                                                                                                                                                                                                            taxonRankValue = "Acipenseridae", taxonomicClassification = list(
+                                                                                                                                                                                                                              taxonRankName = "genus", taxonRankValue = "Acipenser", 
+                                                                                                                                                                                                                              taxonomicClassification = list(taxonRankName = "species", 
+                                                                                                                                                                                                                                                             taxonRankValue = "Acipenser transmontanus", 
+                                                                                                                                                                                                                                                             commonName = "White Sturgeon", taxonId = list(
+                                                                                                                                                                                                                                                               provider = "https://itis.gov", taxonId = "161068"))))))))))))))
   
 })
