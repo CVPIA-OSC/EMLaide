@@ -111,7 +111,7 @@
 #'               type = "interval",
 #'               units = "number",
 #'               unit_precision = "1",
-#'               number_type = "whole", 
+#'               number_type = cvpiaEDIutils::number_type$whole, 
 #'               minimum = "0")
 #'                    
 #' # Ratio: 
@@ -122,7 +122,7 @@
 #'               type = "ratio",
 #'               units = "dimensionless",
 #'               unit_precision = "0.01",
-#'               number_type = "real")
+#'               number_type = cvpiaEDIutils::number_type$real)
 #'                    
 #' # dateTime:
 #' add_attribute(attribute_name = "Yrs", 
@@ -323,7 +323,7 @@ add_ordinal <- function(domain = c("text", "enumerated"), definition, text_patte
 #'                    type = "interval",
 #'                    units = "number",
 #'                    unit_precision = "1",
-#'                    number_type = "whole", 
+#'                    number_type = cvpiaEDIutils::number_type$whole, 
 #'                    minimum = "0")
 #'                    
 #' # Ratio: 
@@ -334,7 +334,7 @@ add_ordinal <- function(domain = c("text", "enumerated"), definition, text_patte
 #'               type = "ratio",
 #'               units = "dimensionless",
 #'               unit_precision = "0.01",
-#'               number_type = "real")
+#'               number_type = cvpiaEDIutils::number_type$real)
 #' @keywords internal
 add_interval_ratio <- function(type = c("interval", "ratio"), units, unit_precision, 
                                number_type, minimum = NULL, maximum = NULL) {

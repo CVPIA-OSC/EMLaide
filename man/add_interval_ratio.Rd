@@ -41,7 +41,7 @@ add_attribute(attribute_name = "Count",
                    type = "interval",
                    units = "number",
                    unit_precision = "1",
-                   number_type = "whole", 
+                   number_type = cvpiaEDIutils::number_type$whole, 
                    minimum = "0")
                    
 # Ratio: 
@@ -52,6 +52,6 @@ add_attribute(attribute_name = "pH",
               type = "ratio",
               units = "dimensionless",
               unit_precision = "0.01",
-              number_type = "real")
+              number_type = cvpiaEDIutils::number_type$real)
 }
 \keyword{internal}

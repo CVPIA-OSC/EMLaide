@@ -103,38 +103,56 @@ physical_element_table_2 <- add_physical(file_path = "/Users/lizzyshaw/FlowWest/
 physical_list <- list(physical_element_table_1, physical_element_table_2)
 
 # Append Attribute Information  
+
+## For a  nominal or ordinal an enumerated measusrement scale, use this to create code definition:
+code_def_0 = list(code = "0", definition = "0 insects per meter of branch")
+code_def_1 = list(code = "1", definition = "1-10 insects per meter")
+code_def_2 = list(code = "2", definition = "11 – 100 insects per meter")
+code_def_3 = list(code = "3", definition = "more than 100 insects per meter")
+code_definition = list(code_def_0, code_def_1, code_def_2, code_def_3)
+
 nominal <- add_attribute(attribute_name = "site_id",
-                             attribute_definition = "Site id as used in sites table",
-                             storage_type = cvpiaEDIutils::storage_type$integer,
-                             measurement_scale = cvpiaEDIutils::measurement_scale$nominal,
-                             domain = "text",
-                             definition = "Site id as used in sites table.")
-ordinal <- add_attribute(attribute_name = "LatitudeDD",
-                             attribute_definition = "Latitude",
-                             storage_type = cvpiaEDIutils::storage_type$string,
-                             measurement_scale = cvpiaEDIutils::measurement_scale$ordinal,
-                             domain = "text",
-                             definition = "Latitude")
+                         attribute_definition = "Site id as used in sites table",
+                         storage_type = cvpiaEDIutils::storage_type$integer,
+                         attribute_label = "NA",
+                         measurement_scale = cvpiaEDIutils::measurement_scale$nominal,
+                         domain = "text",
+                         text_pattern = "NA",
+                         definition = "Site id as used in sites table.")
+
+ordinal <- add_attribute(attribute_name = "hwa",
+                         attribute_definition = "Hemlock woolly adelgid density per meter of branch",
+                         storage_type = cvpiaEDIutils::storage_type$decimal,
+                         attribute_label = "NA",
+                         measurement_scale = cvpiaEDIutils::measurement_scale$ordinal,
+                         domain = "enumerated",
+                         definition = code_definition)
+
 attribute_1_list <- list(nominal, ordinal)
 
 interval <- add_attribute(attribute_name = "Count",
                           attribute_definition = "Number of individuals observed",
                           measurement_scale = cvpiaEDIutils::measurement_scale$interval,
                           storage_type = cvpiaEDIutils::storage_type$integer,
+                          attribute_label = "NA",
                           type = "interval",
                           units = "number",
                           unit_precision = "1",
-                          number_type = "whole",
-                          minimum = "0")
+                          number_type = cvpiaEDIutils::number_type$whole,
+                          minimum = "0",
+                          maximum = "10")
 
 ratio <- add_attribute(attribute_name = "pH",
                        attribute_definition = "pH of soil solution",
                        storage_type = cvpiaEDIutils::storage_type$float,
                        measurement_scale = cvpiaEDIutils::measurement_scale$ratio,
+                       attribute_label = "NA",
                        type = "ratio",
                        units = "dimensionless",
                        unit_precision = "0.01",
-                       number_type = "real")
+                       number_type = cvpiaEDIutils::number_type$real,
+                       minimum = "0",
+                       maximum = "14")
 
 dateTime <- add_attribute(attribute_name = "Yrs",
                           attribute_definition = "Calendar year of the observation from years 1990 - 2010.",
