@@ -1,11 +1,15 @@
 #' @title Add Data Collection Method Element 
 #' @description Adds the data collection method information of a dataset based off of EML standards. 
+#' @param parent_element A list representing the EML project or dataset. If being 
+#' appended to a data table rather than the complete XML output, you can make the 
+#' parent_element an empty list to be appended to the data table seperately. 
 #' @param description How this method is being conducted. 
 #' @param title Optional. What the particular method is accomplishing.
 #' @param instrumentation Optional. What is being used to conduct the method. 
 #' @return The dataset or project with methods information appended.
 #' @examples 
-#' add_method(title = "Climate Data",
+#' add_method(parent_element = list(),
+#'            title = "Climate Data",
 #'            description = "Daily temperature (maximum/minimum) and
 #'            precipitation data were obtained for each stand from 1996 to 2011
 #'            from the online PRISM Gridded Climate database (PRISM Climate Group,
@@ -19,12 +23,14 @@
 #' description1 <- "This is the first paragraph" 
 #' description2 <- "This is the second paragraph." 
 #' description = list(description1, description2)
-#' add_method(title = "The Data", 
+#' add_method(parent_element = list(),
+#'            title = "The Data", 
 #'            description = description,
 #'            instrumentation = "The applicable instrument")
 #' @export 
 #' 
-add_method <- function(description, title = NULL, instrumentation = NULL) {
+add_method <- function(parent_element, description, title = NULL, 
+                       instrumentation = NULL) {
   
   required_arguments <- c("description", "title", "instrumentation")
   missing_argument_index <- which(c(missing(description), missing(title), 
@@ -41,18 +47,24 @@ add_method <- function(description, title = NULL, instrumentation = NULL) {
     } 
   }
   
-    methods <- list(methodStep = list(description = list(para = description)))
-    
-    if (missing(title) | missing(instrumentation)) {
-      warning(methods_error_message, call. = FALSE)
-    }
-    
-    if (!is.null(title)) {
-      methods$methodStep$description$title <-  title
-    }
-    
-    if (!is.null(instrumentation)) {
-      methods$methodStep$instrumentation = instrumentation
-    }
-  return(methods)
+  if (missing(title) | missing(instrumentation)) {
+    warning(methods_error_message, call. = FALSE)
+  }
+  
+  Method <- list(methodStep = list(description = list(para = description)))
+  
+  if (!is.null(title)) {
+    Method$methodStep$description$title <-  title
+  }
+  if (!is.null(instrumentation)) {
+    Method$methodStep$instrumentation <- instrumentation
+  } 
+
+  if (is.null(parent_element$methods)) {
+    parent_element$methods <- Method
+  } else {
+    parent_element$methods <- list(parent_element$methods, Method)
+  }
+  return(parent_element)
 }
+

@@ -4,9 +4,13 @@
 \alias{add_method}
 \title{Add Data Collection Method Element}
 \usage{
-add_method(description, title = NULL, instrumentation = NULL)
+add_method(parent_element, description, title = NULL, instrumentation = NULL)
 }
 \arguments{
+\item{parent_element}{A list representing the EML project or dataset. If being
+appended to a data table rather than the complete XML output, you can make the
+parent_element an empty list to be appended to the data table seperately.}
+
 \item{description}{How this method is being conducted.}
 
 \item{title}{Optional. What the particular method is accomplishing.}
@@ -20,7 +24,8 @@ The dataset or project with methods information appended.
 Adds the data collection method information of a dataset based off of EML standards.
 }
 \examples{
-add_method(title = "Climate Data",
+add_method(parent_element = list(),
+           title = "Climate Data",
            description = "Daily temperature (maximum/minimum) and
            precipitation data were obtained for each stand from 1996 to 2011
            from the online PRISM Gridded Climate database (PRISM Climate Group,
@@ -34,7 +39,8 @@ add_method(title = "Climate Data",
 description1 <- "This is the first paragraph" 
 description2 <- "This is the second paragraph." 
 description = list(description1, description2)
-add_method(title = "The Data", 
+add_method(parent_element = list(),
+           title = "The Data", 
            description = description,
            instrumentation = "The applicable instrument")
 }

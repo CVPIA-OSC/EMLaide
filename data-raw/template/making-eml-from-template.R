@@ -1,6 +1,7 @@
 library(tidyverse)
 library(readxl)
 parent_element <- list() 
+
 #Append Personnel Information 
 personnel_table <- read_excel("data-raw/template/template.xlsx", sheet = "personnel")
 for (i in 1:nrow(personnel_table)) {
@@ -15,20 +16,16 @@ for (i in 1:nrow(personnel_table)) {
 parent_element
 
 #Append Title Information
-
 parent_element <- add_title(parent_element = parent_element, title = "This is the title of the dataset and it fits the requirements.", 
                             short_name = "A shorter name than the title")
-parent_element
 
 #Append Keyword Set 
-
 parent_element <- add_keyword_set(parent_element = parent_element, 
                                  keyword_set = list(keyword = list("chinook", "salmon", "steelhead"), 
                                                     keywordThesauraus = "LTER controlled vocabulary"))
 parent_element <- add_keyword_set(parent_element = parent_element,
                                  keyword_set = list(keyword = list("water", "stream", "river"), 
                                                     keywordThesauraus = "LTER controlled vocabulary"))
-parent_element
 
 #Append Abstract 
 
@@ -50,10 +47,19 @@ parent_element <- add_funding(parent_element = parent_element, funder_name = "Na
 parent_element <- add_maintenance(parent_element = parent_element, status = "complete")
 
 #Append Method Information 
+method_table <- read_excel("data-raw/template/template.xlsx", sheet = "methods")
+for (i in 1:nrow(method_table)) {
+  current <- method_table[i, ]
+  parent_element <- add_method(title = current$title,
+                               description = current$description,
+                               instrumentation = current$instrumentation)
+  
+}
+parent_element
 
 #Append Coverage Information
-chinook <- add_taxonomic_coverage(CVPIA_common_species = "chinook")
-steelhead <- add_taxonomic_coverage(CVPIA_common_species = "steelhead")
+chinook <- add_taxonomic_coverage(CVPIA_common_species =  cvpiaEDIutils::CVPIA_common_species$chinook)
+steelhead <- add_taxonomic_coverage(CVPIA_common_species = cvpiaEDIutils::CVPIA_common_species$steelhead)
 taxonomic_coverage <- list(chinook, steelhead)
 coverage_table <- read_excel("data-raw/template/template.xlsx", sheet = "coverage")
 for (i in 1:nrow(coverage_table)) {
