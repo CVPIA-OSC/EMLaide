@@ -13,7 +13,9 @@
 #' @param attribute_list Describes all variables in a data entity in individual 
 #' attribute elements. These descriptions include the name and definition of each 
 #' attribute, its domain, definition of coded values, and other pertinent information. 
-#' It is further explained and can be appended with the \code{\link{add_attribute}} function. 
+#' It is further explained and can be appended with the \code{\link{add_attribute}} function.
+#' @param methods A set of information of the specific methods used to collect
+#' information in this entity.  
 #' @param number_of_records Optional. A count of the number of records in the data table. 
 #' @return the project or dataset list with a data table appended
 #' @examples
@@ -32,11 +34,16 @@
 #' attribute_list <- list(attribute_1, attribute_2)
 #' physical <- add_physical(file_path = "User/data/example.csv",
 #'                          data_url = "https://mydata.org/etc")
+#' method <- add_method(parent_element = method_list, 
+#'                      title = "First method",
+#'                      description = "Description of method",
+#'                      instrumentation = "Instrumentation used.")
 #' add_data_table(parent_element = list(), 
 #'                entity_name = "692_EML_IncubationByDepth_SoilCO2Fluxes.csv",
 #'                entity_description = "Soil CO2 Fluxes 2013-2014", 
 #'                physical = physical, 
 #'                attribute_list = attribute_list, 
+#'                methods = method
 #'                number_of_records = "1")
 #' @export
 add_data_table <- function(parent_element, entity_name, entity_description, 

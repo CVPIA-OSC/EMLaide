@@ -54,7 +54,8 @@ parent_element <- add_maintenance(parent_element = parent_element, status = "com
 method_table <- read_excel("data-raw/template/template.xlsx", sheet = "methods")
 for (i in 1:nrow(method_table)) {
   current <- method_table[i, ]
-  parent_element <- add_method(title = current$title,
+  parent_element <- add_method(parent_element = parent_element,
+                               title = current$title,
                                description = current$description,
                                instrumentation = current$instrumentation)
   
@@ -147,6 +148,18 @@ dateTime <- add_attribute(attribute_name = "Yrs",
 attribute_2_list <- list(interval, ratio, dateTime)
 
 all_attributes <- list(attribute_1_list, attribute_2_list)
+# Append Data Table Methods 
+method_list <- list()
+data_table_methods <- read_excel("data-raw/template/template.xlsx", sheet = "data_table_methods")
+for (i in 1:nrow(data_table_methods)) {
+  current <- data_table_methods[i, ]
+  method_list <- add_method(parent_element = method_list,
+                            title = current$title,
+                            description = current$description,
+                            instrumentation = current$instrumentation)
+  
+}
+method_list
 
 # Append Data Table 
 data_table <- read_excel("data-raw/template/template.xlsx", sheet = "data_table")
@@ -154,11 +167,13 @@ for (i in 1:nrow(data_table)) {
   current <- data_table[i, ]
   phy <- physical_list[i]
   att <- all_attributes[i]
+  method <- method_list$methods[i]
   parent_element <- add_data_table(parent_element = parent_element,
                                    entity_name = current$entity_name,
                                    entity_description = current$entity_description,
                                    physical = phy,
                                    attribute_list = att,
+                                   methods = method,
                                    number_of_records = current$number_of_records,
                                    alternate_identifier = current$alternate_identifier)
 }

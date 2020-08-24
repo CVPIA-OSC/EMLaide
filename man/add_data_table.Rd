@@ -10,6 +10,7 @@ add_data_table(
   entity_description,
   physical,
   attribute_list,
+  methods = NULL,
   number_of_records = NULL,
   alternate_identifier = NULL
 )
@@ -28,6 +29,9 @@ can be seen at \code{\link{add_physical}} .}
 attribute elements. These descriptions include the name and definition of each
 attribute, its domain, definition of coded values, and other pertinent information.
 It is further explained and can be appended with the \code{\link{add_attribute}} function.}
+
+\item{methods}{A set of information of the specific methods used to collect
+information in this entity.}
 
 \item{number_of_records}{Optional. A count of the number of records in the data table.}
 
@@ -59,10 +63,15 @@ attribute_2 <- add_attribute(attribute_name = "LatitudeDD",
 attribute_list <- list(attribute_1, attribute_2)
 physical <- add_physical(file_path = "User/data/example.csv",
                          data_url = "https://mydata.org/etc")
+method <- add_method(parent_element = method_list, 
+                     title = "First method",
+                     description = "Description of method",
+                     instrumentation = "Instrumentation used.")
 add_data_table(parent_element = list(), 
                entity_name = "692_EML_IncubationByDepth_SoilCO2Fluxes.csv",
                entity_description = "Soil CO2 Fluxes 2013-2014", 
                physical = physical, 
                attribute_list = attribute_list, 
+               methods = method
                number_of_records = "1")
 }
