@@ -5,7 +5,6 @@
 \title{Add Physical Element}
 \usage{
 add_physical(
-  physical_list,
   file_path,
   number_of_headers = "1",
   record_delimiter = "\\\\r\\\\n",
@@ -15,8 +14,6 @@ add_physical(
 )
 }
 \arguments{
-\item{physical_list}{An empty list in which the physical elements can be appended to.}
-
 \item{file_path}{The file path of the data set being documented. The file size
 and authentication checksums will be generated from this input.}
 
