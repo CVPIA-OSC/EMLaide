@@ -39,8 +39,9 @@
 #'                attribute_list = attribute_list, 
 #'                number_of_records = "1")
 #' @export
-add_data_table <- function(parent_element, entity_name, entity_description, physical, 
-                           attribute_list, number_of_records = NULL, alternate_identifier = NULL) {
+add_data_table <- function(parent_element, entity_name, entity_description, 
+                           physical, attribute_list, methods = NULL,
+                           number_of_records = NULL, alternate_identifier = NULL) {
   
   required_arguments <- c("entity_name", "entity_description", 
                           "physical", "attribute_list")
@@ -64,15 +65,21 @@ add_data_table <- function(parent_element, entity_name, entity_description, phys
   
 
   if (is.null(number_of_records)) {
-    message('The number of records was not provided.', call. = FALSE)
+    message('The number of records was not provided.')
   } else {
     Table$numberOfRecords <- number_of_records
   }
   
   if (is.null(alternate_identifier)) {
-    message('An alternate identifier was not provided.', call. = FALSE)
+    message('An alternate identifier was not provided.')
   } else {
     Table$alternateIdentifier <- alternate_identifier
+  }
+  
+  if (is.null(methods)) {
+    message('No method of data collection was provided.')
+  } else {
+    Table$methods <- methods
   }
   
   if (is.null(parent_element$dataTable)) {
