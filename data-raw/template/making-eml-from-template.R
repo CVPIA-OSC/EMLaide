@@ -49,7 +49,8 @@ parent_element <- add_funding(parent_element = parent_element, funder_name = "Na
 #Append Maintenance Information 
 
 parent_element <- add_maintenance(parent_element = parent_element, status = "complete")
-
+#parent_element <- add_maintenance(parent_element = parent_element, status = "ongoing", 
+#                                  update_frequency = "Every month")
 #Append Method Information 
 method_table <- read_excel("data-raw/template/template.xlsx", sheet = "methods")
 for (i in 1:nrow(method_table)) {
