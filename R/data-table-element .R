@@ -57,22 +57,28 @@ add_data_table <- function(parent_element, entity_name, entity_description, phys
     stop(error_message, call. = FALSE)
   }
   
-  parent_element$dataTable <- list(entityName = entity_name,
-                                   entityDescription = entity_description,
-                                   physical = physical,
-                                   attributeList = list(attribute = attribute_list))
+  Table <- list(entityName = entity_name,
+                entityDescription = entity_description,
+                physical = physical,
+                attributeList = list(attribute = attribute_list))
   
 
   if (is.null(number_of_records)) {
     message('The number of records was not provided.', call. = FALSE)
   } else {
-    parent_element$dataTable$numberOfRecords <- number_of_records
+    Table$numberOfRecords <- number_of_records
   }
   
   if (is.null(alternate_identifier)) {
     message('An alternate identifier was not provided.', call. = FALSE)
   } else {
-    parent_element$dataTable$alternateIdentifier <- alternate_identifier
+    Table$alternateIdentifier <- alternate_identifier
+  }
+  
+  if (is.null(parent_element$dataTable)) {
+    parent_element$dataTable <- Table 
+  } else {
+    parent_element$dataTable <- list(parent_element$dataTable, Table)
   }
   return(parent_element)
 }
