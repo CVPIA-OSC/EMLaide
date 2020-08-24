@@ -199,7 +199,7 @@ test_that('The taxonomic coverage function adds the taxonomic coverage elements'
                                                                      commonName = "Green Sturgeon", 
                                                                      taxonId = 
                                                                        list(provider = "https://itis.gov", 
-                                                                            taxonId = 161067))))))))))
+                                                                            taxonId = "161067"))))))))))
   expect_equal(add_taxonomic_coverage(kingdom_value = "Animalia",
                                       phylum_value = "Chordata",
                                       class_value = "Mammalia",

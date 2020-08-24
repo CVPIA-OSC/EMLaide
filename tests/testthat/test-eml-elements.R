@@ -321,7 +321,16 @@ test_that('The method function adds the method elements', {
                                       instrumentation = "Thermometer")))
 })
 
+# Tests for publication date 
 
+test_that('The publication date function adds the appropriate elements.', {
+  
+  expect_equal(add_pub_date(parent_element = list(), date = "2020-08-19"),
+               list(pubDate = "2020-08-19"))
+  
+  expect_equal(add_pub_date(parent_element = list()),
+               list(pubDate = Sys.Date()))
+})
 
 
 
