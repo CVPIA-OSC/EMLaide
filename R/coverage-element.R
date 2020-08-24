@@ -79,48 +79,25 @@ add_coverage <- function(parent_element, geographic_description, west_bounding_c
     stop(coverage_error_message, call. = FALSE)
   }
   
-  # Coverage <- list(geographicCoverage = 
-  #                    list(geographicDescription = geographic_description,
-  #                         boundingCoordinates = 
-  #                           list(westBoundingCoordinate = west_bounding_coordinate,
-  #                                eastBoundingCoordinate = east_bounding_coordinate,
-  #                                northBoundingCoordinate = north_bounding_coordinate,
-  #                                southBoundingCoordinate = south_bounding_coordinate)),
-  #                  temporalCoverage = list(rangeOfDates = 
-  #                                            list(beginDate = list(calendarDate = begin_date),
-  #                                                 endDate = list(calendarDate = end_date))))
-  # 
-  geographic_coverage <- list(geographicDescription = geographic_description,
-                              boundingCoordinates = 
-                                list(westBoundingCoordinate = west_bounding_coordinate,
-                                     eastBoundingCoordinate = east_bounding_coordinate,
-                                     northBoundingCoordinate = north_bounding_coordinate,
-                                     southBoundingCoordinate = south_bounding_coordinate))
-  temporal_coverage <- list(rangeOfDates = 
-                              list(beginDate = list(calendarDate = begin_date),
-                                   endDate = list(calendarDate = end_date)))
-  
+  Coverage <- list(geographicCoverage =
+                     list(geographicDescription = geographic_description,
+                          boundingCoordinates =
+                            list(westBoundingCoordinate = west_bounding_coordinate,
+                                 eastBoundingCoordinate = east_bounding_coordinate,
+                                 northBoundingCoordinate = north_bounding_coordinate,
+                                 southBoundingCoordinate = south_bounding_coordinate)),
+                   temporalCoverage = list(rangeOfDates =
+                                             list(beginDate = list(calendarDate = begin_date),
+                                                  endDate = list(calendarDate = end_date))))
+
   if (!is.null(taxonomic_coverage)) {
-    if (is.null(parent_element$coverage)) {
-      parent_element$coverage <- list(geographicCoverage = geographic_coverage,
-                                      temporalCoverage = temporal_coverage, 
-                                      taxonomicCoverage = list(taxonomic_coverage))
-    } else {
-      parent_element$coverage <- list(parent_element$coverage, 
-                                      list(geographicCoverage = geographic_coverage,
-                                           temporalCoverage = temporal_coverage,
-                                           taxonomicCoverage = list(taxonomic_coverage)))
-    } 
+    Coverage$taxonomcCoverage <- taxonomic_coverage
+  }
+  if (is.null(parent_element$coverage)) {
+    parent_element$coverage <- Coverage 
+  } else {
+    parent_element$coverage <- list(parent_element$coverage, Coverage)
+  }
     
-    } else {
-      if (is.null(parent_element$coverage)) {
-        parent_element$coverage <- list(geographicCoverage = geographic_coverage,
-                                        temporalCoverage = temporal_coverage)
-      } else {
-        parent_element$coverage <- list(parent_element$coverage, 
-                                        list(geographicCoverage = geographic_coverage,
-                                             temporalCoverage = temporal_coverage))
-      }
-    }
   return(parent_element)
 }
