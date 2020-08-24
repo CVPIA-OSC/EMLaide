@@ -1,5 +1,6 @@
 #' @title Add Physical Element 
 #' @description Adds the information of the physical format of the dataset based off of EML standards.
+#' @param physical_list An empty list in which the physical elements can be appended to.
 #' @param file_path The file path of the data set being documented. The file size 
 #' and authentication checksums will be generated from this input.
 #' @param number_of_headers Number of header lines preceeding the data. A default
@@ -26,7 +27,8 @@
 #' add_physical(file_path = "User/data/example.csv",
 #'              data_url = "https://mydata.org/etc")
 #' @export
-add_physical <- function(file_path,
+add_physical <- function(physical_list,
+                         file_path,
                          number_of_headers = "1", 
                          record_delimiter = "\\r\\n", 
                          attribute_orientation = "column", 
@@ -41,7 +43,7 @@ add_physical <- function(file_path,
   authentication <- paste(tools::md5sum(file_path))
   
   
-  physical <- list(objectName = object_name,
+  Physical <- list(objectName = object_name,
                    size = list(unit = "bytes",
                                size = object_size),
                    authentication = list(method = "MD5", 
@@ -55,9 +57,15 @@ add_physical <- function(file_path,
   if (missing(data_url)) {
     message('No url has been provided. Please input a url to which the data file can be downloaded if possible.')
   } else {
-    physical$distribution = list(online = list(url = list(url = data_url,
+    Physical$distribution = list(online = list(url = list(url = data_url,
                                                           "function" = "download")))
   }
   
-  return(physical)
+  if (is.null(physical_list$physical)) {
+    physical_list$physical <- Physical
+  } else {
+    physical_list$physical <- list(physical_list$physical, Physical)
+  }
+  
+  return(physical_list)
 }

@@ -81,6 +81,21 @@ parent_element
 parent_element %>%
   EML::write_eml('eml.xml')
 
+# Append physical Information 
+physical_list <- list()
+physical_table <- read_excel("data-raw/template/template.xlsx", sheet = "physical")
+for (i in 1:nrow(physical_table)) {
+  current <- physical_table[i,]
+  physical_list <- add_physical(physical_list = physical_list,
+                                file_path = current$file_path,
+                                number_of_headers = current$number_of_headers, 
+                                record_delimiter = current$record_delimiter, 
+                                attribute_orientation = current$attribute_orientation, 
+                                field_delimiter = current$field_delimiter,
+                                data_url = current$data_url)
+}
+physical_list 
+
 # Append Attribute Information 
 ## Nominal 
 attribute_list <- list()
