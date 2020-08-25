@@ -51,19 +51,19 @@ add_method <- function(parent_element, description, title = NULL,
     warning(methods_error_message, call. = FALSE)
   }
   
-  Method <- list(methodStep = list(description = list(para = description)))
+  method <- list(methodStep = list(description = list(para = description)))
   
   if (!is.null(title)) {
-    Method$methodStep$description$title <-  title
+    method$methodStep$description$title <-  title
   }
   if (!is.null(instrumentation)) {
-    Method$methodStep$instrumentation <- instrumentation
+    method$methodStep$instrumentation <- instrumentation
   } 
 
   if (is.null(parent_element$methods)) {
-    parent_element$methods <- Method
+    parent_element$methods <- method
   } else {
-    parent_element$methods <- list(parent_element$methods, Method)
+    parent_element$methods <- list(parent_element$methods, method)
   }
   return(parent_element)
 }
