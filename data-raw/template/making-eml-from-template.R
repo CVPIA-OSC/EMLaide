@@ -15,15 +15,16 @@ for (i in 1:nrow(personnel_table)) {
 }
 
 #Append Title Information
-parent_element <- add_title(parent_element = parent_element, title = "This is the title of the dataset and it fits the requirements.", 
-                            short_name = "A shorter name than the title")
+title <- read_excel("data-raw/template/template.xlsx", sheet = "title")
+parent_element <- add_title(parent_element = parent_element, title = title$title, 
+                            short_name = title$short_name)
 
 #Append Keyword Set 
 parent_element <- add_keyword_set(parent_element = parent_element, 
                                  keyword_set = list(keyword = list("chinook", "salmon", "steelhead"), 
-                                                    keywordThesauraus = "LTER controlled vocabulary"))
+                                                    keywordThesauraus = "CVPIA"))
 parent_element <- add_keyword_set(parent_element = parent_element,
-                                 keyword_set = list(keyword = list("water", "stream", "river"), 
+                                 keyword_set = list(keyword = list("brackish water"), 
                                                     keywordThesauraus = "LTER controlled vocabulary"))
 
 #Append Abstract 
@@ -34,17 +35,17 @@ abstract <- read_file('data-raw/template/abstract.md')
 parent_element <- add_abstract(parent_element = parent_element, abstract = abstract)
 
 #Append License and Intellectual Rights Information 
-
-parent_element <- add_license(parent_element = parent_element, default_license = "CCO")
+license <- read_excel("data-raw/template/template.xlsx", sheet = "license")
+parent_element <- add_license(parent_element = parent_element, default_license = license$default_license)
 
 #Append Funding Information
-
-parent_element <- add_funding(parent_element = parent_element, funder_name = "National Science Foundation",
-                              funder_identifier = "http://dx.doi.org/10.13039/100000001",
-                              award_number = "123456",
-                              award_title = "Example Data Title",
-                              award_url = "examplelink.org",
-                              funding_description = "The funding recieved was awarded in 2020.")
+funding <- read_excel("data-raw/template/template.xlsx", sheet = "funding")
+parent_element <- add_funding(parent_element = parent_element, funder_name = funding$funder,
+                              funder_identifier = funding$funder_identifier,
+                              award_number = funding$award_number,
+                              award_title = funding$award_title,
+                              award_url = funding$award_url,
+                              funding_description = funding$funding_description)
 
 #Append Maintenance Information 
 
@@ -198,9 +199,22 @@ for (i in 1:nrow(data_table)) {
 }
 parent_element
 
-parent_element %>%
-  EML::write_eml('eml.xml') %>%
-  EML::eml_validate('/data-raw/template/eml.xml')
+
+              
+
+
+
+# EML_doc <- function(eml = list(), parent_element) {
+#   eml$dataset <- parent_element 
+#   return(eml)
+# }
+# 
+# EML <- EML_doc(parent_element = parent_element)
+
+EML %>%
+  EML::write_eml('eml.xml')
+
+EML::eml_validate('eml.xml')
 
 
 # # Append Attribute Information 
