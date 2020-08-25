@@ -199,7 +199,8 @@ for (i in 1:nrow(data_table)) {
 parent_element
 
 parent_element %>%
-  EML::write_eml('eml.xml')
+  EML::write_eml('eml.xml') %>%
+  EML::eml_validate('/data-raw/template/eml.xml')
 
 
 # # Append Attribute Information 
