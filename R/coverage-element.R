@@ -79,7 +79,7 @@ add_coverage <- function(parent_element, geographic_description, west_bounding_c
     stop(coverage_error_message, call. = FALSE)
   }
   
-  Coverage <- list(geographicCoverage =
+  coverage <- list(geographicCoverage =
                      list(geographicDescription = geographic_description,
                           boundingCoordinates =
                             list(westBoundingCoordinate = west_bounding_coordinate,
@@ -91,12 +91,12 @@ add_coverage <- function(parent_element, geographic_description, west_bounding_c
                                                   endDate = list(calendarDate = end_date))))
 
   if (!is.null(taxonomic_coverage)) {
-    Coverage$taxonomcCoverage <- taxonomic_coverage
+    coverage$taxonomcCoverage <- taxonomic_coverage
   }
   if (is.null(parent_element$coverage)) {
-    parent_element$coverage <- Coverage 
+    parent_element$coverage <- coverage 
   } else {
-    parent_element$coverage <- list(parent_element$coverage, Coverage)
+    parent_element$coverage <- list(parent_element$coverage, coverage)
   }
     
   return(parent_element)
