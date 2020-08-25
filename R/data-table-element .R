@@ -65,7 +65,7 @@ add_data_table <- function(parent_element, entity_name, entity_description,
     stop(error_message, call. = FALSE)
   }
   
-  Table <- list(entityName = entity_name,
+  data_table <- list(entityName = entity_name,
                 entityDescription = entity_description,
                 physical = physical,
                 attributeList = list(attribute = attribute_list))
@@ -74,25 +74,25 @@ add_data_table <- function(parent_element, entity_name, entity_description,
   if (is.null(number_of_records)) {
     message('The number of records was not provided.')
   } else {
-    Table$numberOfRecords <- number_of_records
+    data_table$numberOfRecords <- number_of_records
   }
   
   if (is.null(alternate_identifier)) {
     message('An alternate identifier was not provided.')
   } else {
-    Table$alternateIdentifier <- alternate_identifier
+    data_table$alternateIdentifier <- alternate_identifier
   }
   
   if (is.null(methods)) {
     message('No method of data collection was provided.')
   } else {
-    Table$methods <- methods
+    data_table$methods <- methods
   }
   
   if (is.null(parent_element$dataTable)) {
-    parent_element$dataTable <- Table 
+    parent_element$dataTable <- data_table 
   } else {
-    parent_element$dataTable <- list(parent_element$dataTable, Table)
+    parent_element$dataTable <- list(parent_element$dataTable, data_table)
   }
   return(parent_element)
 }
