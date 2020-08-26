@@ -232,20 +232,20 @@ add_nominal <- function(domain = c("text", "enumerated"), definition, text_patte
   if (is.null(definition)) {
     stop('Please provide the description for your measurement scale.', call. = FALSE)
   }
-  measurementScale <- list(nominal = list(nonNumericDesign = list()))
+  measurementScale <- list(nominal = list(nonNumericDomain = list()))
   
   if (domain == "text") {
-    measurementScale$nominal$nonNumericDesign$textDomain$definition <- definition
+    measurementScale$nominal$nonNumericDomain$textDomain$definition <- definition
     
     if (is.null(text_pattern)) {
       message('No text pattern is provided. Please add if applicable.')
     } else { 
-      measurementScale$nominal$nonNumericDesign$textDomain$pattern <- text_pattern
+      measurementScale$nominal$nonNumericDomain$textDomain$pattern <- text_pattern
     }
     
   } else {
     #enumerated 
-    measurementScale$nominal$nonNumericDesign$enumeratedDomain$codeDefinition <- definition
+    measurementScale$nominal$nonNumericDomain$enumeratedDomain$codeDefinition <- definition
     } 
   return(measurementScale)
 }
@@ -286,20 +286,20 @@ add_ordinal <- function(domain = c("text", "enumerated"), definition, text_patte
   if (is.null(definition)) {
     stop('Please provide the description for your measurement scale.', call. = FALSE)
   }
-  measurementScale <- list(ordinal = list(nonNumericDesign = list()))
+  measurementScale <- list(ordinal = list(nonNumericDomain = list()))
   
   if (domain == "text") {
-    measurementScale$ordinal$nonNumericDesign$textDomain$definition <- definition
+    measurementScale$ordinal$nonNumericDomain$textDomain$definition <- definition
     
     if (is.null(text_pattern)) {
       message('No text pattern is provided. Please add if applicable.')
     } else { 
-      measurementScale$ordinal$nonNumericDesign$textDomain$pattern <- text_pattern
+      measurementScale$ordinal$nonNumericDomain$textDomain$pattern <- text_pattern
     }
     
   } else {
     #enumerated 
-    measurementScale$ordinal$nonNumericDesign$enumeratedDomain$codeDefinition <- definition
+    measurementScale$ordinal$nonNumericDomain$enumeratedDomain$codeDefinition <- definition
   } 
   return(measurementScale)
 }
@@ -358,7 +358,7 @@ add_interval_ratio <- function(type = c("interval", "ratio"), units, unit_precis
   } 
   type <- match.arg(type)
   
-  interval_ratio <- list(standardUnit = units,
+  interval_ratio <- list(unit = list(standardUnit = units),
                          precision = unit_precision,
                          numericDomain =
                            list(numberType = number_type))
@@ -373,9 +373,11 @@ add_interval_ratio <- function(type = c("interval", "ratio"), units, unit_precis
     warning(interval_error_message, call. = FALSE)
   } else { 
     if (type == "interval") {
-      measurementScale$interval$numericDomain$bounds$minimum <- minimum 
+      measurementScale$interval$numericDomain$bounds$minimum <- list("exclusive" = "false",
+                                                                     minimum = minimum) 
     } else {
-      measurementScale$ratio$numericDomain$bounds$minimum <- minimum
+      measurementScale$ratio$numericDomain$bounds$minimum <- list("exclusive" = "false",
+                                                                  minimum = minimum)
     } 
   }
   
@@ -383,9 +385,11 @@ add_interval_ratio <- function(type = c("interval", "ratio"), units, unit_precis
     warning(interval_error_message, call. = FALSE)
   } else { 
     if (type == "interval") {
-      measurementScale$interval$numericDomain$bounds$maximum <- maximum 
+      measurementScale$interval$numericDomain$bounds$maximum <- list("exclusive" = "false",
+                                                                     maximum = maximum) 
     } else {
-      measurementScale$ratio$numericDomain$bounds$maximum <- maximum
+      measurementScale$ratio$numericDomain$bounds$maximum <- list("exclusive" = "false",
+                                                                  maximum = maximum)
     } 
   }
   return(measurementScale)
@@ -428,8 +432,10 @@ add_datetime <- function(date_time_format, date_time_precision, minimum, maximum
                                   dateTimePrecision = date_time_precision,
                                   dateTimeDomain = 
                                     list(bounds = 
-                                           list(minimum = minimum,
-                                                maximum = maximum))))
+                                           list(minimum = list("exclusive" = "false",
+                                                               minimum = minimum),
+                                                maximum = list("exclusive" = "false",
+                                                               maximum = maximum)))))
   return(measurementScale)
 }
   

@@ -48,11 +48,16 @@ add_personnel <- function(parent_element, first_name, last_name, email,
                         surName = last_name),
                  electronicMailAddress = email)
   
-  if (!is.null(orcid)) {
-    person$userid = list(
-      directory = 'https://orcid.org',
-      paste0("https://orcid.org/", orcid))
-  }
+  # if (!is.null(orcid)) {
+  #   person$userid = list(
+  #     directory = 'https://orcid.org',
+  #     paste0("https://orcid.org/", orcid))
+  # }
+  # if (!is.null(orcid)) {
+  #   parent_element <- list(creator = orcid)
+  # }
+  
+  parent_element$contact <- person
   
   if (!is.null(organization)) {
     person$organizationName = organization

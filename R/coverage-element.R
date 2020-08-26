@@ -91,7 +91,7 @@ add_coverage <- function(parent_element, geographic_description, west_bounding_c
                                                   endDate = list(calendarDate = end_date))))
 
   if (!is.null(taxonomic_coverage)) {
-    coverage$taxonomcCoverage <- taxonomic_coverage
+    coverage$taxonomicCoverage <- taxonomic_coverage
   }
   if (is.null(parent_element$coverage)) {
     parent_element$coverage <- coverage 
