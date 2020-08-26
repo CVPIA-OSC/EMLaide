@@ -192,7 +192,7 @@ test_that('The attribute function adds attribute elements.', {
                              definition = "Site id as used in sites table.", text_pattern = "NA"),
                list(attributeName = "site_id", attributeDefinition = "Site id as used in sites table", 
                     storageType = "string", attributeLabel = "NA", measurementScale = list(
-                      nominal = list(nonNumericDesign = list(textDomain = list(
+                      nominal = list(nonNumericDomain = list(textDomain = list(
                         definition = "Site id as used in sites table.", pattern = "NA"))))))
   
   expect_equal(add_attribute(attribute_name = "Recap", attribute_definition = "Has the Turtle been captured and tagged previously",
@@ -201,7 +201,7 @@ test_that('The attribute function adds attribute elements.', {
                              definition = "code_definition"),
                list(attributeName = "Recap", attributeDefinition = "Has the Turtle been captured and tagged previously", 
                     storageType = "text", attributeLabel = "NS", measurementScale = list(
-                      nominal = list(nonNumericDesign = list(enumeratedDomain = list(
+                      nominal = list(nonNumericDomain = list(enumeratedDomain = list(
                         codeDefinition = "code_definition"))))))
   
   expect_equal(add_attribute(attribute_name = "LatitudeDD", attribute_definition = "Latitude",
@@ -209,7 +209,7 @@ test_that('The attribute function adds attribute elements.', {
                              domain = "text", definition = "Latitude", text_pattern = "NA"),
                list(attributeName = "LatitudeDD", attributeDefinition = "Latitude", 
                     storageType = "coordinate", attributeLabel = "NA", measurementScale = list(
-                      ordinal = list(nonNumericDesign = list(textDomain = list(
+                      ordinal = list(nonNumericDomain = list(textDomain = list(
                         definition = "Latitude", pattern = "NA"))))))
   
   expect_equal(add_attribute(attribute_name = "hwa", attribute_definition = "Hemlock woolly adelgid density per meter of branch",
@@ -218,7 +218,7 @@ test_that('The attribute function adds attribute elements.', {
                              definition = "code_definition"),
                list(attributeName = "hwa", attributeDefinition = "Hemlock woolly adelgid density per meter of branch", 
                     storageType = "number", attributeLabel = "NA", measurementScale = list(
-                      ordinal = list(nonNumericDesign = list(enumeratedDomain = list(
+                      ordinal = list(nonNumericDomain = list(enumeratedDomain = list(
                         codeDefinition = "code_definition"))))))
   
   expect_equal(add_attribute(attribute_name = "Count", attribute_definition = "Number of individuals observed",
@@ -227,9 +227,15 @@ test_that('The attribute function adds attribute elements.', {
                              number_type = "whole", minimum = "0", maximum = "10"),
                list(attributeName = "Count", attributeDefinition = "Number of individuals observed", 
                     storageType = "integer", attributeLabel = "NA", measurementScale = list(
-                      interval = list(standardUnit = "number", precision = "1", 
-                                      numericDomain = list(numberType = "whole", bounds = list(
-                                        minimum = "0", maximum = "10"))))))
+                      interval = list(unit = list(standardUnit = "number"), 
+                                      precision = "1", 
+                                      numericDomain = 
+                                        list(numberType = "whole",
+                                             bounds = list(minimum = 
+                                                             list(exclusive = "false",
+                                                                  minimum = "0"), 
+                                                           maximum = list(exclusive = "false",
+                                                                          maximum = "10")))))))
   
   expect_equal(add_attribute(attribute_name = "pH", attribute_definition = "pH of soil solution",
                              attribute_label = "NA", storage_type = "float",
@@ -238,9 +244,11 @@ test_that('The attribute function adds attribute elements.', {
                              minimum = "NA", maximum = "NA"),
                list(attributeName = "pH", attributeDefinition = "pH of soil solution", 
                     storageType = "float", attributeLabel = "NA", measurementScale = list(
-                      ratio = list(standardUnit = "dimensionless", precision = "0.01", 
-                                   numericDomain = list(numberType = "real", bounds = list(
-                                     minimum = "NA", maximum = "NA"))))))
+                      ratio = list(unit = list(standardUnit = "dimensionless"), 
+                                   precision = "0.01", numericDomain = list(numberType = "real", 
+                                                                            bounds = list(minimum = list(exclusive = "false", 
+                                                                                                         minimum = "NA"), maximum = list(exclusive = "false", 
+                                                                                                                                         maximum = "NA")))))))
   
   expect_equal(add_attribute(attribute_name = "Yrs", attribute_label = "Years",
                              attribute_definition = "Calendar year of the observation from years 1990 - 2010.",
@@ -250,15 +258,16 @@ test_that('The attribute function adds attribute elements.', {
                list(attributeName = "Yrs", attributeDefinition = "Calendar year of the observation from years 1990 - 2010.", 
                     storageType = "integer", attributeLabel = "Years", measurementScale = list(
                       dateTime = list(formatString = "YYYY", dateTimePrecision = "1", 
-                                      dateTimeDomain = list(bounds = list(minimum = "1993", 
-                                                                          maximum = "2003"))))))
+                                      dateTimeDomain = list(bounds = list(minimum = list(
+                                        exclusive = "false", minimum = "1993"), maximum = list(
+                                          exclusive = "false", maximum = "2003")))))))
 })
 
 # Tests for add_data_table function 
 
 test_that('Correct error and warning messages are produced', {
-  method <- add_method(parent_element = list(), description = "Dexcription of method",
-                       title = "Method 1", instrumentation = "ruler")
+  setwd("~/FlowWest/cvpiaEDIutils")
+  method <- add_method(methods_file = "tests/testthat/methods-test.docx")
   expect_error(add_data_table(parent_element = list(), 
                               entity_description = "Soil CO2 Fluxes 2013-2014",
                               physical = "physical",
@@ -323,9 +332,10 @@ test_that('Correct error and warning messages are produced', {
 })
 
 test_that('The add_data_table function adds the appropriate elements.', {
-  # setwd("~/FlowWest/cvpiaEDIutils/tests/testthat")
-  method <- add_method(parent_element = list(), description = "Dexcription of method",
-                       title = "Method 1", instrumentation = "ruler")
+  
+  setwd("~/FlowWest/cvpiaEDIutils")
+  method <- add_method(methods_file = "tests/testthat/methods-test.docx")
+
   attribute_1 <- add_attribute(attribute_name = "site_id",
                                attribute_definition = "Site id as used in sites table",
                                storage_type = cvpiaEDIutils::storage_type$integer,
@@ -339,6 +349,7 @@ test_that('The add_data_table function adds the appropriate elements.', {
                                domain = "text",
                                definition = "Latitude")
   attribute_list <- list(attribute_1, attribute_2)
+  setwd("~/FlowWest/cvpiaEDIutils/tests/testthat")
   physical <- add_physical(file_path = "test_data.csv",
                            data_url = "https://mydata.org/etc")
   
@@ -351,59 +362,34 @@ test_that('The add_data_table function adds the appropriate elements.', {
                               alternate_identifier = "NA", 
                               methods = method), 
                list(dataTable = list(entityName = "692_EML_IncubationByDepth_SoilCO2Fluxes.csv", 
-                                     entityDescription = "Soil CO2 Fluxes 2013-2014",
-                                     physical = list(objectName = "test_data.csv", 
-                                                     size = list(unit = "bytes", 
-                                                                 size = "322"), 
-                                                     authentication = 
-                                                       list(method = "MD5", 
-                                                            authentication = "ee28a90141e061821c891e1172f2eec1"), 
-                                                     dataFormat =
-                                                       list(textFormat =
-                                                              list(numHeaderLines = "1", 
-                                                                   recordDelimiter = "\\r\\n",
-                                                                   attributeOrientation = "column", 
-                                                                   simpleDelimited = 
-                                                                     list(fieldDelimiter = ","))), 
-                                                     distribution = 
-                                                       list(online = 
-                                                              list(url = 
-                                                                     list(url = "https://mydata.org/etc", 
-                                                                          `function` = "download")))), 
-                                     attributeList = 
-                                       list(attribute = 
-                                              list(list(attributeName = "site_id",
-                                                        attributeDefinition = "Site id as used in sites table", 
-                                                        storageType = NULL, 
-                                                        measurementScale = 
-                                                          list(nominal = 
-                                                                 list(nonNumericDesign = 
-                                                                        list(textDomain =
-                                                                               list(definition = "Site id as used in sites table."))))), 
-                                                   list(attributeName = "LatitudeDD", 
-                                                        attributeDefinition = "Latitude", 
-                                                        storageType = "string", 
-                                                        measurementScale = 
-                                                          list(ordinal = 
-                                                                 list(nonNumericDesign = 
-                                                                        list(textDomain = 
-                                                                               list(definition = "Latitude"))))))), 
-                                     numberOfRecords = "1", 
-                                     alternateIdentifier = "NA", 
-                                     methods = 
-                                       list(methods = 
-                                              list(methodStep = 
-                                                     list(description = 
-                                                            list(para = "Dexcription of method", 
-                                                                 title = "Method 1"), 
-                                                          instrumentation = "ruler"))))))
+                                     entityDescription = "Soil CO2 Fluxes 2013-2014", physical = list(
+                                       objectName = "test_data.csv", size = list(unit = "bytes", 
+                                                                                 size = "322"), authentication = list(method = "MD5", 
+                                                                                                                      authentication = "ee28a90141e061821c891e1172f2eec1"), 
+                                       dataFormat = list(textFormat = list(numHeaderLines = "1", 
+                                                                           recordDelimiter = "\\r\\n", attributeOrientation = "column", 
+                                                                           simpleDelimited = list(fieldDelimiter = ","))), distribution = list(
+                                                                             online = list(url = list(url = "https://mydata.org/etc", 
+                                                                                                      `function` = "download")))), attributeList = list(
+                                                                                                        attribute = list(list(attributeName = "site_id", attributeDefinition = "Site id as used in sites table", 
+                                                                                                                              storageType = NULL, measurementScale = list(nominal = list(
+                                                                                                                                nonNumericDomain = list(textDomain = list(definition = "Site id as used in sites table."))))), 
+                                                                                                                         list(attributeName = "LatitudeDD", attributeDefinition = "Latitude", 
+                                                                                                                              storageType = "string", measurementScale = list(
+                                                                                                                                ordinal = list(nonNumericDomain = list(textDomain = list(
+                                                                                                                                  definition = "Latitude"))))))), numberOfRecords = "1", 
+                                     alternateIdentifier = "NA", methods = list(sampling = NULL, 
+                                                                                methodStep = list(instrumentation = character(0), software = NULL, 
+                                                                                                  description = list(section = list("<title>Title 1</title>\n<para>\n    This is the first paragraph.\n  </para>\n<para>\n    This is the second paragraph.\n  </para>", 
+                                                                                                                                    "<title>Title 2 </title>\n<para>\n    This is the third paragraph.\n  </para>\n<para>\n    This is the fourth paragraph.\n  </para>"), 
+                                                                                                                     para = list()))))))
   
 })
 
 #Tests for add_physical function
 
 test_that('Correct error and warning messages are produced for the add_physical function', {
-  #setwd("~/FlowWest/cvpiaEDIutils/tests/testthat") 
+  setwd("~/FlowWest/cvpiaEDIutils/tests/testthat") 
   expect_message(add_physical(file_path = "test_data.csv"),
                  'No url has been provided. Please input a url to which the data file can be downloaded if possible.')
 })

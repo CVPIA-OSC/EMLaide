@@ -74,7 +74,7 @@ test_that('the dataset add_keyword_set function adds the keyword set',{
   
   keyword_set_2 <- list(keyword = list("bear", "lion"))
   
-  first <- add_keyword_set(parent_element = list(), keyword_set_1)
+  first <- add_keyword_set(parent_element, keyword_set_1)
   second <- add_keyword_set(first, keyword_set_2)
   
   expect_equal(first,
