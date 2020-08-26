@@ -44,7 +44,7 @@ add_keyword_set <- function(parent_element, keyword_set) {
   if (is.null(parent_element$keywordSet)) {
     parent_element$keywordSet <- keyword_set
   } else {
-    parent_element$keywordSet <- list(parent_element$KeywordSet, keyword_set)
+    parent_element$keywordSet <- list(parent_element$keywordSet, keyword_set)
   }
   
   return(parent_element)

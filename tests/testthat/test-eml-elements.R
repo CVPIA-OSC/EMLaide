@@ -72,16 +72,16 @@ test_that('the dataset add_keyword_set function adds the keyword set',{
   keyword_set_1 <- list(keyword = list("dog", "cat", "cow", "pig"),
                         keywordThesaurus = "LTER Controlled Vocabulary")
   
-  keyword_set_2<- list(keyword = list("bear", "lion"))
+  keyword_set_2 <- list(keyword = list("bear", "lion"))
   
-  first <- add_keyword_set(parent_element, keyword_set_1)
+  first <- add_keyword_set(parent_element = list(), keyword_set_1)
   second <- add_keyword_set(first, keyword_set_2)
   
   expect_equal(first,
-               list(KeywordSet = list(keyword = list("dog", "cat", "cow", "pig"), 
+               list(keywordSet = list(keyword = list("dog", "cat", "cow", "pig"), 
                                       keywordThesaurus = "LTER Controlled Vocabulary")))
   
-  expect_equal(second, list(KeywordSet = list(list(keyword = list("dog", "cat", "cow", "pig"), 
+  expect_equal(second, list(keywordSet = list(list(keyword = list("dog", "cat", "cow", "pig"), 
                                                    keywordThesaurus = "LTER Controlled Vocabulary"), 
                                               list(keyword = list("bear", "lion"))))
   )
@@ -287,44 +287,20 @@ test_that('The maintenance function adds the maintenance elements', {
 
 test_that('The method function errors when missing mandatory identifier inputs.', {
   
-  expect_warning(add_method(parent_element = list(),
-                            description = "Daily temperature (maximum/minimum) and
-                                           precipitation data were obtained for each stand from 1996 to 2011
-                                           from the online PRISM Gridded Climate database (PRISM Climate Group,
-                                           Oregon State University, http://prism.oregonstate.edu, created 26 Mar 2015)
-                                           by interpolating 4km2 resolution climate data at the centroid of each
-                                           eastern hemlock stand using values from surrounding grid cell centers 
-                                           and inverse-distance squared weighting.",
-                            instrumentation = "Thermometer"),
-                 'No title inputed. Provide one for easier organization.')
-  
-  expect_error(add_method(parent_element = list(), 
-                          title = "Climate Data",
-                          instrumentation = "Thermometer"),
-               'Please provide the description of the method you are recording.')
-  
-  expect_warning(add_method(parent_element = list(), 
-                            title = "Climate Data",
-                            description = "Daily temperature (maximum/minimum) and
-                                           precipitation data were obtained for each stand from 1996 to 2011
-                                           from the online PRISM Gridded Climate database (PRISM Climate Group,
-                                           Oregon State University, http://prism.oregonstate.edu, created 26 Mar 2015)
-                                           by interpolating 4km2 resolution climate data at the centroid of each
-                                           eastern hemlock stand using values from surrounding grid cell centers 
-                                           and inverse-distance squared weighting."),
-                 'Provide the insrumentation device used if beneficial to understanding the dataset.')
+  expect_error(add_method(),
+               'Please provide the document of which your methods information resides.')
+
 })
 
 test_that('The method function adds the method elements', {
-  expect_equal(add_method(parent_element = list(),
-                          title = "Climate Data",
-                          description = "The description for this method step.",
+  expect_equal(add_method(methods_file = "tests/testthat/methods-test.docx",
                           instrumentation = "Thermometer"),
-               list(methods = 
-                      list(methodStep = 
-                             list(description = list(para = "The description for this method step.", 
-                                                     title = "Climate Data"), 
-                                  instrumentation = "Thermometer"))))
+               list(sampling = NULL, 
+                    methodStep = list(instrumentation = "ruler", 
+                                                       software = NULL, 
+                                      description = list(section = list("<title>Title 1</title>\n<para>\n    This is the first paragraph.\n  </para>\n<para>\n    This is the second paragraph.\n  </para>", 
+                                                                                                          "<title>Title 2 </title>\n<para>\n    This is the third paragraph.\n  </para>\n<para>\n    This is the fourth paragraph.\n  </para>"), 
+                                                                                           para = list()))))
 })
 
 # Tests for publication date 
