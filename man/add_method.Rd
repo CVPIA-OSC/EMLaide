@@ -4,7 +4,15 @@
 \alias{add_method}
 \title{Add Data Collection Method Element}
 \usage{
-add_method(methods_file, instrumentation = character())
+add_method(
+  methods_file,
+  instrumentation = character(),
+  software = NULL,
+  sampling_file = NULL,
+  sampling_coverage = NULL,
+  sampling_citation = NULL,
+  qualityControl_file = NULL
+)
 }
 \arguments{
 \item{instrumentation}{Optional. What is being used to conduct the method.}

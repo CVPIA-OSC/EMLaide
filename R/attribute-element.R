@@ -27,8 +27,10 @@
 #' @param date_time_format The format your date/time attribute is recorded in.
 #' ISO 8601 standard should be used (YYYY-MM-DD).
 #' @param date_time_precision To what level time is being measured. 
-#' @param minimum Theoretical or allowable minimum value. 
-#' @param maximum Theoretical or allowable maximum value.
+#' @param minimum Theoretical or allowable minimum value. Values can be larger than 
+#' or equal to this number. 
+#' @param maximum Theoretical or allowable maximum value. Values can be less than 
+#' or equal to this number. 
 #' @section Measurement Scales: 
 #' Different measurement scale values will indicate different inputs: 
 #' 
@@ -312,8 +314,10 @@ add_ordinal <- function(domain = c("text", "enumerated"), definition, text_patte
 #' @param units The units assigned to this attribute. 
 #' @param unit_precision How precise this attirbutes' measurements are recorded. 
 #' @param number_type What type of number. Examples given in exported documentation. 
-#' @param minimum Optional. A theoreical minimum.
-#' @param maximum Optional. A theoretical maximum. 
+#' @param minimum Optional. Theoretical or allowable minimum value. Values can be larger than 
+#' or equal to this number. 
+#' @param maximum Optional. Theoretical or allowable maximum value. Values can be less than 
+#' or equal to this number.
 #' @examples 
 #' # Interval:
 #' add_attribute(attribute_name = "Count",
@@ -398,8 +402,10 @@ add_interval_ratio <- function(type = c("interval", "ratio"), units, unit_precis
 #' @title Add dateTime Measurement Scale 
 #' @param date_time_format ISO 8601 format should be used. 
 #' @param date_time_precision To what level of time your attribute is recorded. 
-#' @param minimum The earliest dateTime recorded.
-#' @param maximum The latest dateTime recorded.
+#' @param minimum The earliest dateTime recorded. Values can be larger than 
+#' or equal to this number. 
+#' @param maximum The latest dateTime recorded. Values can be less than 
+#' or equal to this number. 
 #' @examples 
 #' add_attribute(attribute_name = "Yrs",
 #'               attribute_definition = "Calendar year of the observation from years 1990 - 2010.",

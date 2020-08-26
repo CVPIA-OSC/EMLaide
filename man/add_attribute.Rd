@@ -62,9 +62,11 @@ ISO 8601 standard should be used (YYYY-MM-DD).}
 
 \item{date_time_precision}{To what level time is being measured.}
 
-\item{minimum}{Theoretical or allowable minimum value.}
+\item{minimum}{Theoretical or allowable minimum value. Values can be larger than
+or equal to this number.}
 
-\item{maximum}{Theoretical or allowable maximum value.}
+\item{maximum}{Theoretical or allowable maximum value. Values can be less than
+or equal to this number.}
 
 \item{attribute_defenition}{A precise and complete    definition of the attribute    being    documented.}
 }
