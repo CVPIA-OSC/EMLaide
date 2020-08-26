@@ -343,7 +343,7 @@ test_that('The coverage function works appropriately with the taxonomic function
                                                                                          eastBoundingCoordinate = "-134.104800", northBoundingCoordinate = "71.238300", 
                                                                                          southBoundingCoordinate = "67.865000")), temporalCoverage = list(
                                                                                            rangeOfDates = list(beginDate = list(calendarDate = "1980-01-01"), 
-                                                                                                               endDate = list(calendarDate = "2010-12-31"))), taxonomcCoverage = list(
+                                                                                                               endDate = list(calendarDate = "2010-12-31"))), taxonomicCoverage = list(
                                                                                                                  taxonomicClassification = list(taxonRankName = "kingdom", 
                                                                                                                                                 taxonRankValue = "Animalia", taxonomicClassification = list(
                                                                                                                                                   taxonRankName = "phylum", taxonRankValue = "Chordata", 
@@ -379,7 +379,7 @@ test_that('The coverage function can append multiple taxonomic coverages.', {
                                                                                          eastBoundingCoordinate = "-134.104800", northBoundingCoordinate = "71.238300", 
                                                                                          southBoundingCoordinate = "67.865000")), temporalCoverage = list(
                                                                                            rangeOfDates = list(beginDate = list(calendarDate = "1980-01-01"), 
-                                                                                                               endDate = list(calendarDate = "2010-12-31"))), taxonomcCoverage = list(
+                                                                                                               endDate = list(calendarDate = "2010-12-31"))), taxonomicCoverage = list(
                                                                                                                  list(taxonomicClassification = list(taxonRankName = "kingdom", 
                                                                                                                                                      taxonRankValue = "Animalia", taxonomicClassification = list(
                                                                                                                                                        taxonRankName = "phylum", taxonRankValue = "Chordata", 
