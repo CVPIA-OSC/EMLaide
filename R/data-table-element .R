@@ -66,9 +66,9 @@ add_data_table <- function(parent_element, entity_name, entity_description,
   }
   
   data_table <- list(entityName = entity_name,
-                entityDescription = entity_description,
-                physical = physical,
-                attributeList = list(attribute = attribute_list))
+                     entityDescription = entity_description,
+                     physical = physical,
+                     attributeList = attribute_list)
   
 
   if (is.null(number_of_records)) {
@@ -86,7 +86,7 @@ add_data_table <- function(parent_element, entity_name, entity_description,
   if (is.null(methods)) {
     message('No method of data collection was provided.')
   } else {
-    data_table$methods <- methods
+    data_table <- append(data_table, methods)
   }
   
   if (is.null(parent_element$dataTable)) {

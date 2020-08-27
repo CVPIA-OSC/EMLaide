@@ -49,9 +49,6 @@ add_personnel <- function(parent_element, first_name, last_name, email,
                         surName = last_name),
                  electronicMailAddress = email)
   
-  if (!is.null(orcid)) {
-    person$'@id' <- orcid 
-  }
   
   
   if (!is.null(organization)) {
@@ -60,6 +57,10 @@ add_personnel <- function(parent_element, first_name, last_name, email,
   
   if (role == "Creator") {
     parent_element$contact <- person
+    if (!is.null(orcid)) {
+      person$'@id' <- orcid 
+    }
+    
     if (is.null(parent_element$creator)) {
       parent_element$creator <- person
     } else {

@@ -267,7 +267,7 @@ test_that('The attribute function adds attribute elements.', {
 
 test_that('Correct error and warning messages are produced', {
   setwd("~/FlowWest/cvpiaEDIutils")
-  method <- add_method(methods_file = "tests/testthat/methods-test.docx")
+  method <- add_method(methods_file = "tests/testthat/methods_test.docx")
   expect_error(add_data_table(parent_element = list(), 
                               entity_description = "Soil CO2 Fluxes 2013-2014",
                               physical = "physical",
@@ -334,7 +334,7 @@ test_that('Correct error and warning messages are produced', {
 test_that('The add_data_table function adds the appropriate elements.', {
   
   setwd("~/FlowWest/cvpiaEDIutils")
-  method <- add_method(methods_file = "tests/testthat/methods-test.docx")
+  method <- add_method(methods_file = "tests/testthat/methods_test.docx")
 
   attribute_1 <- add_attribute(attribute_name = "site_id",
                                attribute_definition = "Site id as used in sites table",
@@ -371,18 +371,17 @@ test_that('The add_data_table function adds the appropriate elements.', {
                                                                            simpleDelimited = list(fieldDelimiter = ","))), distribution = list(
                                                                              online = list(url = list(url = "https://mydata.org/etc", 
                                                                                                       `function` = "download")))), attributeList = list(
-                                                                                                        attribute = list(list(attributeName = "site_id", attributeDefinition = "Site id as used in sites table", 
-                                                                                                                              storageType = NULL, measurementScale = list(nominal = list(
-                                                                                                                                nonNumericDomain = list(textDomain = list(definition = "Site id as used in sites table."))))), 
-                                                                                                                         list(attributeName = "LatitudeDD", attributeDefinition = "Latitude", 
-                                                                                                                              storageType = "string", measurementScale = list(
-                                                                                                                                ordinal = list(nonNumericDomain = list(textDomain = list(
-                                                                                                                                  definition = "Latitude"))))))), numberOfRecords = "1", 
-                                     alternateIdentifier = "NA", methods = list(sampling = NULL, 
-                                                                                methodStep = list(instrumentation = character(0), software = NULL, 
-                                                                                                  description = list(section = list("<title>Title 1</title>\n<para>\n    This is the first paragraph.\n  </para>\n<para>\n    This is the second paragraph.\n  </para>", 
-                                                                                                                                    "<title>Title 2 </title>\n<para>\n    This is the third paragraph.\n  </para>\n<para>\n    This is the fourth paragraph.\n  </para>"), 
-                                                                                                                     para = list()))))))
+                                                                                                        list(attributeName = "site_id", attributeDefinition = "Site id as used in sites table", 
+                                                                                                             storageType = NULL, measurementScale = list(nominal = list(
+                                                                                                               nonNumericDomain = list(textDomain = list(definition = "Site id as used in sites table."))))), 
+                                                                                                        list(attributeName = "LatitudeDD", attributeDefinition = "Latitude", 
+                                                                                                             storageType = "string", measurementScale = list(ordinal = list(
+                                                                                                               nonNumericDomain = list(textDomain = list(definition = "Latitude")))))), 
+                                     numberOfRecords = "1", alternateIdentifier = "NA", sampling = NULL, 
+                                     methodStep = list(instrumentation = character(0), software = NULL, 
+                                                       description = list(section = list("<title>Title 1</title>\n<para>\n    This is the first paragraph.\n  </para>\n<para>\n    This is the second paragraph.\n  </para>", 
+                                                                                         "<title>Title 2 </title>\n<para>\n    This is the third paragraph.\n  </para>\n<para>\n    This is the fourth paragraph.\n  </para>"), 
+                                                                          para = list())))))
   
 })
 

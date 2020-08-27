@@ -24,47 +24,8 @@ add_method <- function(parent_element,
   if (missing(methods_file)) {
     stop('Please provide the document of which your methods information resides.', call. = FALSE)
   }
-  parent_element$methods <- EML::set_methods(methods_file = methods_file,
+  
+  parent_element <- EML::set_methods(methods_file = methods_file,
                                              instrumentation = instrumentation)
   return(parent_element)
 }
-
-# add_method <- function(parent_element, description, title = NULL, 
-#                        instrumentation = NULL) {
-#   
-#   required_arguments <- c("description", "title", "instrumentation")
-#   missing_argument_index <- which(c(missing(description), missing(title), 
-#                                     missing(instrumentation)))
-#   
-#   if (length(missing_argument_index) > 0) {
-#     methods_error <- required_arguments[missing_argument_index][1]
-#     methods_error_message <- switch(methods_error, 
-#                                     description = "Please provide the description of the method you are recording.",
-#                                     title = "No title inputed. Provide one for easier organization.",
-#                                     instrumentation = "Provide the insrumentation device used if beneficial to understanding the dataset.")
-#     if (missing(description)) {
-#       stop(methods_error_message, call. = FALSE)
-#     } 
-#   }
-#   
-#   if (missing(title) | missing(instrumentation)) {
-#     warning(methods_error_message, call. = FALSE)
-#   }
-#   
-#   method <- list(methodStep = list(description = list(para = description)))
-#   
-#   if (!is.null(title)) {
-#     method$methodStep$description$title <-  title
-#   }
-#   if (!is.null(instrumentation)) {
-#     method$methodStep$instrumentation <- instrumentation
-#   } 
-# 
-#   if (is.null(parent_element$methods)) {
-#     parent_element$methods <- method
-#   } else {
-#     parent_element$methods <- list(parent_element$methods, method)
-#   }
-#   return(parent_element)
-# }
-

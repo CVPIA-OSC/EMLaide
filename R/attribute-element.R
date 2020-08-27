@@ -22,7 +22,7 @@
 #' @param text_pattern A regular expression pattern constraining the attribute.
 #' @param type Either "ratio" or "interval". 
 #' @param units The units assigned to this attribute's values. 
-#' @param number_type A list of possible options can be viewed at \code{\link{storage_type}}. 
+#' @param number_type A list of possible options can be viewed at \code{\link{number_type}}. 
 #' @param unit_precision How precise units are measured.
 #' @param date_time_format The format your date/time attribute is recorded in.
 #' ISO 8601 standard should be used (YYYY-MM-DD).
@@ -164,7 +164,7 @@ add_attribute <- function(attribute_name, attribute_definition, storage_type,
   if (missing(attribute_label)) {
     message('No attribute label provided.')
   } else {
-    attribute$attributeLabel <- attribute_label
+   attribute$attributeLabel <- attribute_label
   }
   
   if (measurement_scale == "nominal") {
@@ -196,6 +196,7 @@ add_attribute <- function(attribute_name, attribute_definition, storage_type,
   }
   
   attribute$measurementScale <- measurementScale
+  
   
   return(attribute) 
 }

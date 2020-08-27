@@ -46,18 +46,12 @@ test_that('dataset title function adds title and short name.',{
 })
 
 #Tests for add_abstract function 
-
-test_that('dataset abstract warns if abstract is too short',  {
-  expect_warning(add_abstract(list(), abstract = "A not very specific abstract"))
-})
-
+setwd("~/FlowWest/cvpiaEDIutils")
 
 test_that('the dataset add_abstract function adds abstract', {
-  abstract <- "This is the abstract for my test. It needs to have twenty or more words for it to pass. It informs the users if this dataset relates to what they are studying or not."
   
-  
-  expect_equal(add_abstract(parent_element = parent_element, abstract = abstract),
-               list(abstract = list(para = "This is the abstract for my test. It needs to have twenty or more words for it to pass. It informs the users if this dataset relates to what they are studying or not.")))
+  expect_equal(add_abstract(parent_element = list(), abstract = "tests/testthat/abstract_test.docx"),
+               list(abstract = list(section = list(), para = list("\n  This is a test for the abstract. This abstract is of sufficient\n  length. Please make sure your abstract meets the word limit of twenty\n  words or more.\n"))))
 })
 
 #Tests for add_keyword_set function 
@@ -113,29 +107,29 @@ test_that('personnel function errors when missing mandatory identifier inputs', 
                "Please supply a role. Use 'Creator' if you are the main originator of the dataset or project")
   
   expect_equal(add_personnel(parent_element = parent_element, first_name = first_name, 
-                             last_name = last_name, email = email, role = role1),
-               list(creator = list(individualName = list(givenName = "Susan", 
-                                                         surName = "Susanton"), 
-                                   electronicMailAddress = "susanton@fake.com")))
+                             last_name = last_name, email = email, role = role1, orcid = orcid),
+               list(contact = list(individualName = list(givenName = "Susan", 
+                                                         surName = "Susanton"), electronicMailAddress = "susanton@fake.com"), 
+                    creator = list(individualName = list(givenName = "Susan", 
+                                                         surName = "Susanton"), electronicMailAddress = "susanton@fake.com", 
+                                   `@id` = "00110011")))
   
-  # expect_equal(add_personnel(parent_element = parent_element, first_name = first_name, 
-  #                            last_name = last_name, email = email, role = role2, orcid = orcid, 
-  #                            organization = organization),
-  #              list(associatedParty = list(individualName = 
-  #                                            list(givenName = "Susan", surName = "Susanton"),
-  #                                          electronicMailAddress = "susanton@fake.com", 
-  #                                          userid = list(directory = "https://orcid.org", "https://orcid.org/00110011"), 
-  #                                          organizationName = "USFWS", 
-  #                                          role = "Data Manager")))
+  expect_equal(add_personnel(parent_element = parent_element, first_name = first_name,
+                             last_name = last_name, email = email, role = role2, orcid = orcid,
+                             organization = organization),
+               list(associatedParty = list(individualName = list(givenName = "Susan", 
+                                                                 surName = "Susanton"), electronicMailAddress = "susanton@fake.com", 
+                                           organizationName = "USFWS", role = "Data Manager")))
   
   creator_1 <- add_personnel(parent_element = parent_element, first_name = first_name, 
                              last_name = last_name, email = email, role = role1)
   
   expect_equal(add_personnel(parent_element = creator_1, first_name = "Not Susan", 
                              last_name = "Smith", email = "free_cats@aol.com", role = role1),
-               list(creator = list(list(individualName = list(givenName = "Susan", 
-                                                              surName = "Susanton"), 
-                                        electronicMailAddress = "susanton@fake.com"), 
+               list(contact = list(individualName = list(givenName = "Not Susan", 
+                                                         surName = "Smith"), electronicMailAddress = "free_cats@aol.com"), 
+                    creator = list(list(individualName = list(givenName = "Susan", 
+                                                              surName = "Susanton"), electronicMailAddress = "susanton@fake.com"), 
                                    list(individualName = list(givenName = "Not Susan", surName = "Smith"), 
                                         electronicMailAddress = "free_cats@aol.com"))))
   
@@ -278,8 +272,9 @@ test_that('The maintenance function adds the maintenance elements', {
   
   expect_equal(add_maintenance(parent_element = list(), status = "ongoing",
                                update_frequency = "Data are updated annually at the end of the calendar year."),
-               list(maintenance = list(description = list(para = "Data are updated annually at the end of the calendar year.")))
-  )
+               list(maintenance = list(description = "ongoing",
+                                       maintenanceUpdateFrequency = "Data are updated annually at the end of the calendar year."))
+)
   
 })
 
@@ -294,7 +289,7 @@ test_that('The method function errors when missing mandatory identifier inputs.'
 
 test_that('The method function adds the method elements', {
   setwd("~/FlowWest/cvpiaEDIutils")
-  expect_equal(add_method(methods_file = "tests/testthat/methods-test.docx",
+  expect_equal(add_method(methods_file = "tests/testthat/methods_test.docx",
                           instrumentation = "Thermometer"),
                list(sampling = NULL, 
                     methodStep = list(instrumentation = "Thermometer", 
