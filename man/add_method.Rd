@@ -5,6 +5,7 @@
 \title{Add Data Collection Method Element}
 \usage{
 add_method(
+  parent_element,
   methods_file,
   instrumentation = character(),
   software = NULL,
@@ -19,7 +20,7 @@ add_method(
 
 \item{method_file}{Please provide a word document with proper formatting. The
 function will then append it properly. An example word document can be found in
-"~/cvpiaEDIutils/data-raw/template/methods-template.docx". This file can be opened
+"~/cvpiaEDIutils/inst/extdata/methods-template.docx". This file can be opened
 and edited to include your proper methods section.}
 }
 \value{
@@ -29,7 +30,8 @@ The methods information.
 Adds the data collection method information of a dataset based off of EML standards.
 }
 \examples{
-add_method(method_file = "~/cvpiaEDIutils/data-raw/template/methods-template.docx",
+add_method(parent_element = list(), 
+           methods_file = word_example("methods-template.docx"),
            instrumentation = "Thermometer")
  
 }
