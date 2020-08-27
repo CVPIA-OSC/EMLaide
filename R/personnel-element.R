@@ -17,7 +17,8 @@
 #'               last_name = "Johnson", 
 #'               email = 'kjohnson@nasa.gov', 
 #'               role = 'Creator', 
-#'               organization = 'NASA')
+#'               organization = 'NASA',
+#'               orcid = '12345')
 #' 
 #' add_personnel(parent_element = list(), 
 #'               first_name = "Edith", 
@@ -48,22 +49,17 @@ add_personnel <- function(parent_element, first_name, last_name, email,
                         surName = last_name),
                  electronicMailAddress = email)
   
-  # if (!is.null(orcid)) {
-  #   person$userid = list(
-  #     directory = 'https://orcid.org',
-  #     paste0("https://orcid.org/", orcid))
-  # }
-  # if (!is.null(orcid)) {
-  #   parent_element <- list(creator = orcid)
-  # }
+  if (!is.null(orcid)) {
+    person$'@id' <- orcid 
+  }
   
-  parent_element$contact <- person
   
   if (!is.null(organization)) {
-    person$organizationName = organization
+    person$organizationName <- organization
   }
   
   if (role == "Creator") {
+    parent_element$contact <- person
     if (is.null(parent_element$creator)) {
       parent_element$creator <- person
     } else {

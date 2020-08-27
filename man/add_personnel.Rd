@@ -42,7 +42,8 @@ add_personnel(parent_element = list(),
               last_name = "Johnson", 
               email = 'kjohnson@nasa.gov', 
               role = 'Creator', 
-              organization = 'NASA')
+              organization = 'NASA',
+              orcid = '12345')
 
 add_personnel(parent_element = list(), 
               first_name = "Edith", 
