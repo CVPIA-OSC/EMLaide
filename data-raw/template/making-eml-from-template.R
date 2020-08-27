@@ -20,19 +20,25 @@ parent_element <- add_title(parent_element = parent_element, title = title$title
                             short_name = title$short_name)
 
 #Append Keyword Set 
-parent_element <- add_keyword_set(parent_element = parent_element, 
-                                 keyword_set = list(keyword = list("chinook", "salmon", "steelhead"), 
-                                                    keywordThesauraus = "CVPIA"))
-parent_element <- add_keyword_set(parent_element = parent_element,
-                                 keyword_set = list(keyword = list("brackish water"), 
-                                                    keywordThesauraus = "LTER controlled vocabulary"))
+
+keyword_set <- read_excel("data-raw/template/template.xlsx", sheet = "keyword")
+thesaurus <- unique(keyword_set$keywordThesaurus)
+for (i in 1:length(thesaurus)) {
+  keywords <- keyword_set$keyword[keyword_set$keywordThesaurus == thesaurus[i]]
+  parent_element <- add_keyword_set(parent_element = parent_element, 
+                                    keyword_set = list(keyword = keywords, 
+                                                       keywordThesaurus = thesaurus[i]))
+}
+
 
 #Append Abstract 
-rmarkdown::pandoc_convert('data-raw/template/abstract_template.docx', to = 'markdown', 
-                          wd = getwd(), output = 'data-raw/template/abstract.md')
-
-abstract <- read_file('data-raw/template/abstract.md')
-parent_element <- add_abstract(parent_element = parent_element, abstract = abstract)
+# rmarkdown::pandoc_convert('data-raw/template/abstract_template.docx', to = 'markdown', 
+#                           wd = getwd(), output = 'data-raw/template/abstract.md')
+# 
+# abstract <- read_file('data-raw/template/abstract.md')
+# parent_element <- add_abstract(parent_element = parent_element, abstract = abstract)
+parent_element <- add_abstract(parent_element = parent_element, 
+                               abstract = "/Users/lizzyshaw/FlowWest/cvpiaEDIutils/data-raw/template/abstract_template.docx")
 
 #Append License and Intellectual Rights Information 
 license <- read_excel("data-raw/template/template.xlsx", sheet = "license")
@@ -48,10 +54,10 @@ parent_element <- add_funding(parent_element = parent_element, funder_name = fun
                               funding_description = funding$funding_description)
 
 #Append Maintenance Information 
+maintenance <- read_excel("data-raw/template/template.xlsx", sheet = "maintenance")
+parent_element <- add_maintenance(parent_element = parent_element, status = maintenance$status,
+                                  update_frequency = maintenance$update_frequency)
 
-parent_element <- add_maintenance(parent_element = parent_element, status = "complete")
-#parent_element <- add_maintenance(parent_element = parent_element, status = "ongoing", 
-#                                  update_frequency = "Every month")
 #Append Method Information 
 method_table <- read_excel("data-raw/template/template.xlsx", sheet = "methods")
 for (i in 1:nrow(method_table)) {
@@ -64,17 +70,23 @@ for (i in 1:nrow(method_table)) {
 }
 
 #Append Coverage Information
-chinook <- add_taxonomic_coverage(CVPIA_common_species =  cvpiaEDIutils::CVPIA_common_species$chinook)
-lion <- add_taxonomic_coverage(kingdom_value = "Animalia",
-                               phylum_value = "Chordata",
-                               class_value = "Mammalia",
-                               order_value = "Carnivora",
-                               family_value = "Felidae",
-                               genus_value = "Panthera",
-                               species_value = "Panthera Leo",
-                               common_name = "Lion",
-                               taxon_id = "183803")
-taxonomic_coverage <- list(chinook, lion)
+taxonomic_coverage <- list()
+taxonomic_coverage <- add_taxonomic_coverage(CVPIA_common_species =  cvpiaEDIutils::CVPIA_common_species$chinook)
+taxonomic_coverage_table <- read_excel("data-raw/template/template.xlsx", sheet = "taxonomic_coverage")
+for (i in 1:nrow(taxonomic_coverage_table)) {
+  current <- taxonomic_coverage_table[i, ]
+  taxonomic_coverage <- add_coverage(kingdom_value = current$kingdom_value,
+                                     phylum_value = current$phylum_value,
+                                     class_value = current$class_value,
+                                     order_value = current$order_value,
+                                     family_value = current$family_value,
+                                     genus_value = current$genus_value,
+                                     species_value = current$species_value,
+                                     common_name = current$common_name,
+                                     taxon_id = current$taxon_id)
+}
+taxonomic_coverage
+
 coverage_table <- read_excel("data-raw/template/template.xlsx", sheet = "coverage")
 for (i in 1:nrow(coverage_table)) {
   current <- coverage_table[i, ]
@@ -113,62 +125,63 @@ code_def_2 = list(code = "2", definition = "11 – 100 insects per meter")
 code_def_3 = list(code = "3", definition = "more than 100 insects per meter")
 code_definition = list(code_def_0, code_def_1, code_def_2, code_def_3)
 
-nominal <- add_attribute(attribute_name = "site_id",
-                         attribute_definition = "Site id as used in sites table",
-                         storage_type = cvpiaEDIutils::storage_type$integer,
-                         attribute_label = "NA",
-                         measurement_scale = cvpiaEDIutils::measurement_scale$nominal,
-                         domain = "text",
-                         text_pattern = "NA",
-                         definition = "Site id as used in sites table.")
-
-ordinal <- add_attribute(attribute_name = "hwa",
-                         attribute_definition = "Hemlock woolly adelgid density per meter of branch",
-                         storage_type = cvpiaEDIutils::storage_type$decimal,
-                         attribute_label = "NA",
-                         measurement_scale = cvpiaEDIutils::measurement_scale$ordinal,
-                         domain = "enumerated",
-                         definition = code_definition)
-
-attribute_1_list <- list(nominal, ordinal)
-
-interval <- add_attribute(attribute_name = "Count",
-                          attribute_definition = "Number of individuals observed",
-                          measurement_scale = cvpiaEDIutils::measurement_scale$interval,
-                          storage_type = cvpiaEDIutils::storage_type$integer,
-                          attribute_label = "NA",
-                          type = "interval",
-                          units = "number",
-                          unit_precision = "1",
-                          number_type = cvpiaEDIutils::number_type$whole,
-                          minimum = "0",
-                          maximum = "10")
-
-ratio <- add_attribute(attribute_name = "pH",
-                       attribute_definition = "pH of soil solution",
-                       storage_type = cvpiaEDIutils::storage_type$float,
-                       measurement_scale = cvpiaEDIutils::measurement_scale$ratio,
-                       attribute_label = "NA",
-                       type = "ratio",
-                       units = "dimensionless",
-                       unit_precision = "0.01",
-                       number_type = cvpiaEDIutils::number_type$real,
-                       minimum = "0",
-                       maximum = "14")
-
-dateTime <- add_attribute(attribute_name = "Yrs",
-                          attribute_definition = "Calendar year of the observation from years 1990 - 2010.",
-                          storage_type = cvpiaEDIutils::storage_type$integer,
-                          measurement_scale = cvpiaEDIutils::measurement_scale$dateTime,
-                          attribute_label = "Years",
-                          date_time_format = "YYYY",
-                          date_time_precision = "1",
-                          minimum = "1993",
-                          maximum = "2003")
-attribute_2_list <- list(interval, ratio, dateTime)
-
-all_attributes <- list(attribute_1_list, attribute_2_list)
+# nominal <- add_attribute(attribute_name = "site_id",
+#                          attribute_definition = "Site id as used in sites table",
+#                          storage_type = cvpiaEDIutils::storage_type$integer,
+#                          attribute_label = "NA",
+#                          measurement_scale = cvpiaEDIutils::measurement_scale$nominal,
+#                          domain = "text",
+#                          text_pattern = "NA",
+#                          definition = "Site id as used in sites table.")
+# 
+# ordinal <- add_attribute(attribute_name = "hwa",
+#                          attribute_definition = "Hemlock woolly adelgid density per meter of branch",
+#                          storage_type = cvpiaEDIutils::storage_type$decimal,
+#                          attribute_label = "NA",
+#                          measurement_scale = cvpiaEDIutils::measurement_scale$ordinal,
+#                          domain = "enumerated",
+#                          definition = code_definition)
+# 
+# attribute_1_list <- list(nominal, ordinal)
+# 
+# interval <- add_attribute(attribute_name = "Count",
+#                           attribute_definition = "Number of individuals observed",
+#                           measurement_scale = cvpiaEDIutils::measurement_scale$interval,
+#                           storage_type = cvpiaEDIutils::storage_type$integer,
+#                           attribute_label = "NA",
+#                           type = "interval",
+#                           units = "number",
+#                           unit_precision = "1",
+#                           number_type = cvpiaEDIutils::number_type$whole,
+#                           minimum = "0",
+#                           maximum = "10")
+# 
+# ratio <- add_attribute(attribute_name = "pH",
+#                        attribute_definition = "pH of soil solution",
+#                        storage_type = cvpiaEDIutils::storage_type$float,
+#                        measurement_scale = cvpiaEDIutils::measurement_scale$ratio,
+#                        attribute_label = "NA",
+#                        type = "ratio",
+#                        units = "dimensionless",
+#                        unit_precision = "0.01",
+#                        number_type = cvpiaEDIutils::number_type$real,
+#                        minimum = "0",
+#                        maximum = "14")
+# 
+# dateTime <- add_attribute(attribute_name = "Yrs",
+#                           attribute_definition = "Calendar year of the observation from years 1990 - 2010.",
+#                           storage_type = cvpiaEDIutils::storage_type$integer,
+#                           measurement_scale = cvpiaEDIutils::measurement_scale$dateTime,
+#                           attribute_label = "Years",
+#                           date_time_format = "YYYY",
+#                           date_time_precision = "1",
+#                           minimum = "1993",
+#                           maximum = "2003")
+# attribute_2_list <- list(interval, ratio, dateTime)
+# 
+# all_attributes <- list(attribute_1_list, attribute_2_list)
 # Append Data Table Methods 
+
 method_list <- list()
 data_table_methods <- read_excel("data-raw/template/template.xlsx", sheet = "data_table_methods")
 for (i in 1:nrow(data_table_methods)) {
@@ -186,18 +199,18 @@ data_table <- read_excel("data-raw/template/template.xlsx", sheet = "data_table"
 for (i in 1:nrow(data_table)) {
   current <- data_table[i, ]
   phy <- physical_list[i]
-  att <- all_attributes[i]
-  method <- method_list$methods[i]
+  att <- attributeList[i]
+  # method <- method_list$methods[i]
   parent_element <- add_data_table(parent_element = parent_element,
                                    entity_name = current$entity_name,
                                    entity_description = current$entity_description,
                                    physical = phy,
                                    attribute_list = att,
-                                   methods = method,
+                                   # methods = method,
                                    number_of_records = current$number_of_records,
                                    alternate_identifier = current$alternate_identifier)
 }
-parent_element
+parent_element <- list()
 
 
               
@@ -217,96 +230,98 @@ EML %>%
 EML::eml_validate('eml.xml')
 
 
-# # Append Attribute Information 
-# ## Nominal 
-# attribute_list <- list()
-# nominal_table <- read_excel("data-raw/template/template.xlsx", sheet = "nominal")
-# for (i in 1:nrow(nominal_table)) {
-#   current <- nominal_table[i,]
-#   attribute_list <- add_attribute(attribute_list = list(),
-#                                   attribute_name = current$attribute_name,
-#                                   attribute_definition = current$attribute_definition,
-#                                   storage_type = current$storage_type,
-#                                   measurement_scale = current$measurement_scale,
-#                                   domain = current$domain,
-#                                   definition = current$definition,
-#                                   text_pattern = current$text_pattern,
-#                                   attribute_label = current$attribute_label)
-# }
-# attribute_list 
-# 
-# ## Ordinal 
-# 
-# ordinal_table <- read_excel("data-raw/template/template.xlsx", sheet = "ordinal")
-# for (i in 1:nrow(ordinal_table)) {
-#   current <- ordinal_table[i,]
-#   attribute_list <- add_attribute(attribute_name = current$attribute_name,
-#                                   attribute_definition = current$attribute_definition,
-#                                   storage_type = current$storage_type,
-#                                   measurement_scale = current$measurement_scale,
-#                                   domain = current$domain,
-#                                   definition = current$definition,
-#                                   text_pattern = current$text_pattern,
-#                                   attribute_label = current$attribute_label)
-# }
-# attribute_list
-# 
-# ## Interval 
-# interval_table <- read_excel("data-raw/template/template.xlsx", sheet = "interval")
-# for (i in 1:nrow(interval_table)) {
-#   current <- interval_table[i,]
-#   attribute_list <- add_attribute(attribute_name = current$attribute_name,
-#                                   attribute_definition = current$attribute_definition,
-#                                   storage_type = current$storage_type,
-#                                   measurement_scale = current$measurement_scale,
-#                                   type = current$type,
-#                                   units = current$units,
-#                                   unit_precision = current$unit_precision,
-#                                   number_type = current$number_type,
-#                                   minimum = current$minimum,
-#                                   maximum = current$maximum,
-#                                   attribute_label = current$attribute_label)
-# }
-# attribute_list
-# 
-# ## Ratio 
-# 
-# ratio_table <- read_excel("data-raw/template/template.xlsx", sheet = "ratio")
-# for (i in 1:nrow(ratio_table)) {
-#   current <- ratio_table[i,]
-#   attribute_list <- add_attribute(attribute_name = current$attribute_name,
-#                                   attribute_definition = current$attribute_definition,
-#                                   storage_type = current$storage_type,
-#                                   measurement_scale = current$measurement_scale,
-#                                   type = current$type,
-#                                   units = current$units,
-#                                   unit_precision = current$unit_precision,
-#                                   number_type = current$number_type,
-#                                   minimum = current$minimum,
-#                                   maximum = current$maximum,
-#                                   attribute_label = current$attribute_label)
-# }
-# attribute_list
-# 
-# ## dateTime
-# 
-# dateTime_table <- read_excel("data-raw/template/template.xlsx", sheet = "dateTime")
-# for (i in 1:nrow(dateTime_table)) {
-#   current <- dateTime_table[i,]
-#   attribute_list <- add_attribute(attribute_name = current$attribute_name,
-#                                   attribute_definition = current$attribute_definition,
-#                                   storage_type = current$storage_type,
-#                                   measurement_scale = current$measurement_scale,
-#                                   date_time_format = current$date_time_format,
-#                                   date_time_precision = current$date_time_precision,
-#                                   minimum = current$minimum,
-#                                   maximum = current$maximum,
-#                                   attribute_label = current$attribute_label)
-# }
-# attribute_list
+# Append Attribute Information
+attribute_list <- list()
+attribute_table <- read_excel("data-raw/template/template.xlsx", sheet = "attribute")
+attributeList <- list()
+## Nominal
+for (i in 1:nrow(attribute_table)) {
+  current <- attribute_table[i,]
+  attributeList <- add_attribute(attribute_list = attributeList, attribute_name = current$attribute_name,
+                                                       attribute_definition = current$attribute_definition,
+                                                       storage_type = current$storage_type,
+                                                       measurement_scale = current$measurement_scale,
+                                                       domain = current$domain,
+                                                       definition = current$definition,
+                                                       text_pattern = current$text_pattern,
+                                                       attribute_label = current$attribute_label)
+}
+parent_element
+
+## Ordinal
+for (i in 1:nrow(attribute_table)) {
+  current <- attribute_table[i,]
+  attribute_list <- add_attribute(attribute_name = current$attribute_name,
+                                  attribute_definition = current$attribute_definition,
+                                  storage_type = current$storage_type,
+                                  measurement_scale = current$measurement_scale,
+                                  domain = current$domain,
+                                  definition = current$definition,
+                                  text_pattern = current$text_pattern,
+                                  attribute_label = current$attribute_label)
+}
+
+## Interval
+for (i in 1:nrow(attribute_table)) {
+  current <- attribute_table[i,]
+  attribute_list <- add_attribute(attribute_name = current$attribute_name,
+                                  attribute_definition = current$attribute_definition,
+                                  storage_type = current$storage_type,
+                                  measurement_scale = current$measurement_scale,
+                                  type = current$type,
+                                  units = current$units,
+                                  unit_precision = current$unit_precision,
+                                  number_type = current$number_type,
+                                  minimum = current$minimum,
+                                  maximum = current$maximum,
+                                  attribute_label = current$attribute_label)
+}
+
+## Ratio
+for (i in 1:nrow(attribute_table)) {
+  current <- attribute_table[i,]
+  attribute_list <- add_attribute(attribute_name = current$attribute_name,
+                                  attribute_definition = current$attribute_definition,
+                                  storage_type = current$storage_type,
+                                  measurement_scale = current$measurement_scale,
+                                  type = current$type,
+                                  units = current$units,
+                                  unit_precision = current$unit_precision,
+                                  number_type = current$number_type,
+                                  minimum = current$minimum,
+                                  maximum = current$maximum,
+                                  attribute_label = current$attribute_label)
+}
+
+## dateTime
+for (i in 1:nrow(attribute_table)) {
+  current <- attribute_table[i,]
+  attribute_list <- add_attribute(attribute_name = current$attribute_name,
+                                  attribute_definition = current$attribute_definition,
+                                  storage_type = current$storage_type,
+                                  measurement_scale = current$measurement_scale,
+                                  date_time_format = current$date_time_format,
+                                  date_time_precision = current$date_time_precision,
+                                  minimum = current$minimum,
+                                  maximum = current$maximum,
+                                  attribute_label = current$attribute_label)
+}
+attribute_list
+
+for (i in 1:length(attribute_list)) {
+  parent_element$attribute <- append(parent_element$attribute, attribute_list[i])
+}
 # 
 # attribute_list %>%
 #   EML::write_eml('eml.xml')
 # 
 # parent_element %>%
 #   EML::write_eml('eml.xml')
+
+dataset <- list(dataset = parent_element)
+eml <- list(
+  packageId = "uuid::UUIDgenerate()",
+  system = "uuid", # type of identifier
+  dataset = parent_element)
+
+write_eml(parent_element, "eml.xml")
