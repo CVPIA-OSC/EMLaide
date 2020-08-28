@@ -6,7 +6,10 @@ vignette: >
   %\VignetteEngine{knitr::rmarkdown}
   \usepackage[utf8]{inputenc}
 ---
-
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, message = FALSE)
+knitr::opts_knit$set(root.dir = rprojroot::find_rstudio_root_file("~/cvpiaEDIutils"))
+```
 The following libraries are needed to create a working EML document. 
 ```{r, message = FALSE}
 library(cvpiaEDIutils)
