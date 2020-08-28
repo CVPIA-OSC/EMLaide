@@ -15,6 +15,7 @@ reference:
 - title: EML EDI Functions
   desc: Functions for building EML metadata for EDI's data repository.
   contents:
+  - add_pub_date
   - add_personnel
   - add_title
   - add_keyword_set
@@ -27,6 +28,7 @@ reference:
   - add_taxonomic_coverage
   - add_attribute
   - add_physical
+  - add_data_table
 - title: Helper Data
   desc: Internal data for convenience.
   contents:
@@ -40,3 +42,7 @@ navbar:
   left:
   - text: 'Reference'
     href: reference/index.html
+  - text: 'Articles'
+    menu: 
+      - text: 'EML Template Helper'
+        href: articles/creating-EML.html

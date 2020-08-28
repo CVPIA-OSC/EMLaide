@@ -38,7 +38,7 @@ for (i in 1:length(thesaurus)) {
 #Append Abstract 
 setwd("~/FlowWest/cvpiaEDIutils")
 parent_element <- add_abstract(parent_element = parent_element, 
-                               abstract = "inst/extdata/abstract_template.docx")
+                               abstract = "data-raw/Hannon-Example/hannon_example_abstract.docx")
 
 #Append License and Intellectual Rights Information 
 license <- read_excel("data-raw/template/template.xlsx", sheet = "license")
@@ -96,7 +96,6 @@ for (i in 1:nrow(taxonomic_coverage_table)) {
     taxonomic_coverage <- append(taxonomic_coverage, new_taxon)
   }
 }
-taxonomic_coverage
 
 coverage_table <- read_excel("data-raw/template/template.xlsx", sheet = "coverage")
 for (i in 1:nrow(coverage_table)) {
@@ -110,8 +109,9 @@ for (i in 1:nrow(coverage_table)) {
                                  south_bounding_coordinate = current$south_bounding_coordinate,
                                  begin_date = current$begin_date,
                                  end_date = current$end_date,
-                                 taxonomic_coverage = tax)
-}
+                                 # taxonomic_coverage = taxonomic_coverage/tax
+                                 )
+} 
 
 # Append Physical Information 
 physical_list <- list()
@@ -133,25 +133,33 @@ for (i in 1:nrow(physical_table)) {
 
 # Append Attribute Information  
 
-## For a  nominal or ordinal an enumerated measusrement scale, use this to create code definition:
-code_def_0 = list(code = "0", definition = "0 insects per meter of branch")
-code_def_1 = list(code = "1", definition = "1-10 insects per meter")
-code_def_2 = list(code = "2", definition = "11 – 100 insects per meter")
-code_def_3 = list(code = "3", definition = "more than 100 insects per meter")
-code_definition = list(code_def_0, code_def_1, code_def_2, code_def_3)
-
-# Append Attributes 
 
 attribute_list <- list()
+codes <- read_excel("data-raw/template/template.xlsx", sheet = "code_definitions")
+attribute_names <- unique(codes$attribute_name)
 attribute_table <- read_excel("data-raw/template/template.xlsx", sheet = "attribute")
 for (i in 1:nrow(attribute_table)) {
-  current <- attribute_table[i,]
+  current <- attribute_table[i, ]
+  if (current$domain %in% "enumerated") { 
+    definition <- list()
+    current_codes <- codes[codes$attribute_name == current$attribute_name, ]
+    for (j in 1:nrow(current_codes)) {
+      codeDefinition <- list(code = current_codes$code[j], definition = current_codes$definitions[j])
+      if (is.null(definition$codeDefinition)) {
+        definition$codeDefinition <- codeDefinition
+      } else {
+        definition$codeDefinition <- list(definition$codeDefinition, codeDefinition)
+      }
+    }
+  } else {
+    definition = current$definition
+  }
   new_attribute <- add_attribute(attribute_name = current$attribute_name,
                                  attribute_definition = current$attribute_definition,
                                  storage_type = current$storage_type,
                                  measurement_scale = current$measurement_scale,
                                  domain = current$domain,
-                                 definition = current$definition,
+                                 definition = definition,
                                  text_pattern = current$text_pattern,
                                  type = current$type,
                                  units = current$units,
@@ -168,6 +176,7 @@ for (i in 1:nrow(attribute_table)) {
     attribute_list$attribute <- list(attribute_list$attribute, new_attribute)
   }
 }
+
 # Append Data Table Methods 
 
 method_list <- list()
@@ -192,13 +201,13 @@ for (i in 1:nrow(data_table)) {
   current <- data_table[i, ]
   phy <- physical_list[i]
   att <- attribute_list[i]
-  method <- method_list[i]
+  # method <- method_list[i]
   parent_element <- add_data_table(parent_element = parent_element,
                                    entity_name = current$entity_name,
                                    entity_description = current$entity_description,
                                    physical = phy,
                                    attribute_list = att,
-                                   methods = method,
+                                   # methods = method,
                                    number_of_records = current$number_of_records,
                                    alternate_identifier = current$alternate_identifier)
 }
