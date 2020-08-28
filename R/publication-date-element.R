@@ -1,6 +1,6 @@
 #' @title Add Publication Date 
 #' @description Adds publication date according to EML standards.
-#' @param parent_element
+#' @param parent_element A list representing the EML project or dataset.
 #' @param date The publication date. If left null, it will be assigned the current 
 #' date. This can be overriden by putting in a specific date. 
 #' @return The dataset or project with the publication date appended. 

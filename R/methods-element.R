@@ -5,6 +5,11 @@
 #' "~/cvpiaEDIutils/inst/extdata/methods-template.docx". This file can be opened
 #' and edited to include your proper methods section. 
 #' @param instrumentation Optional. What is being used to conduct the method. 
+#' @param software Optional.
+#' @param sampling_file Optional.
+#' @param sampling_coverage Optional.
+#' @param sampling_citation Optional.
+#' @param qualityControl_file Optional.
 #' @return The methods information.
 #' @examples 
 #' add_method(parent_element = list(), 
@@ -26,6 +31,11 @@ add_method <- function(parent_element,
   }
   
   parent_element <- EML::set_methods(methods_file = methods_file,
-                                             instrumentation = instrumentation)
+                                     instrumentation = instrumentation,
+                                     software = software,
+                                     sampling_file = sampling_file,
+                                     sampling_coverage = sampling_coverage,
+                                     sampling_citation = sampling_citation,
+                                     qualityControl_file = qualityControl_file)
   return(parent_element)
 }

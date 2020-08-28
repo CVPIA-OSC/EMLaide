@@ -186,6 +186,7 @@ test_that('Correct error and warning messages are produced.', {
 
 
 test_that('The attribute function adds attribute elements.', {
+  
   expect_equal(add_attribute(attribute_name = "site_id", attribute_definition = "Site id as used in sites table",
                              attribute_label = "NA", storage_type = "string",
                              measurement_scale = "nominal", domain = "text",
@@ -201,8 +202,7 @@ test_that('The attribute function adds attribute elements.', {
                              definition = "code_definition"),
                list(attributeName = "Recap", attributeDefinition = "Has the Turtle been captured and tagged previously", 
                     storageType = "text", attributeLabel = "NS", measurementScale = list(
-                      nominal = list(nonNumericDomain = list(enumeratedDomain = list(
-                        codeDefinition = "code_definition"))))))
+                      nominal = list(nonNumericDomain = list(enumeratedDomain = "code_definition")))))
   
   expect_equal(add_attribute(attribute_name = "LatitudeDD", attribute_definition = "Latitude",
                              attribute_label = "NA", storage_type = "coordinate", measurement_scale = "ordinal",
@@ -218,8 +218,7 @@ test_that('The attribute function adds attribute elements.', {
                              definition = "code_definition"),
                list(attributeName = "hwa", attributeDefinition = "Hemlock woolly adelgid density per meter of branch", 
                     storageType = "number", attributeLabel = "NA", measurementScale = list(
-                      ordinal = list(nonNumericDomain = list(enumeratedDomain = list(
-                        codeDefinition = "code_definition"))))))
+                      ordinal = list(nonNumericDomain = list(enumeratedDomain = "code_definition")))))
   
   expect_equal(add_attribute(attribute_name = "Count", attribute_definition = "Number of individuals observed",
                              attribute_label = "NA", measurement_scale = "interval",

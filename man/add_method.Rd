@@ -18,6 +18,16 @@ add_method(
 \arguments{
 \item{instrumentation}{Optional. What is being used to conduct the method.}
 
+\item{software}{Optional.}
+
+\item{sampling_file}{Optional.}
+
+\item{sampling_coverage}{Optional.}
+
+\item{sampling_citation}{Optional.}
+
+\item{qualityControl_file}{Optional.}
+
 \item{method_file}{Please provide a word document with proper formatting. The
 function will then append it properly. An example word document can be found in
 "~/cvpiaEDIutils/inst/extdata/methods-template.docx". This file can be opened

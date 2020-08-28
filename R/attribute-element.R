@@ -248,7 +248,7 @@ add_nominal <- function(domain = c("text", "enumerated"), definition, text_patte
     
   } else {
     #enumerated 
-    measurementScale$nominal$nonNumericDomain$enumeratedDomain$codeDefinition <- definition
+    measurementScale$nominal$nonNumericDomain$enumeratedDomain <- definition
     } 
   return(measurementScale)
 }
@@ -302,7 +302,7 @@ add_ordinal <- function(domain = c("text", "enumerated"), definition, text_patte
     
   } else {
     #enumerated 
-    measurementScale$ordinal$nonNumericDomain$enumeratedDomain$codeDefinition <- definition
+    measurementScale$ordinal$nonNumericDomain$enumeratedDomain <- definition
   } 
   return(measurementScale)
 }

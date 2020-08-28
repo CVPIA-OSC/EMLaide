@@ -35,15 +35,13 @@
 #' physical <- add_physical(file_path = "User/data/example.csv",
 #'                          data_url = "https://mydata.org/etc")
 #' method <- add_method(parent_element = method_list, 
-#'                      title = "First method",
-#'                      description = "Description of method",
-#'                      instrumentation = "Instrumentation used.")
+#'                      methods_file = word_example("methods-template.docx"))
 #' add_data_table(parent_element = list(), 
 #'                entity_name = "692_EML_IncubationByDepth_SoilCO2Fluxes.csv",
 #'                entity_description = "Soil CO2 Fluxes 2013-2014", 
 #'                physical = physical, 
 #'                attribute_list = attribute_list, 
-#'                methods = method
+#'                methods = method,
 #'                number_of_records = "1")
 #' @export
 add_data_table <- function(parent_element, entity_name, entity_description, 
