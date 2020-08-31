@@ -4,7 +4,7 @@
 This package can be installed using the following commands: 
 ```{r}
 # install.packages("devtools")
-devtools::install_github("FlowWest/cvpiaEDIutils")
+remotes::install_github("FlowWest/cvpiaEDIutils")
 ```
 
 ### Usage 

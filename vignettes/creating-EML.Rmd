@@ -8,7 +8,7 @@ vignette: >
 ---
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE, message = FALSE)
-knitr::opts_knit$set(root.dir = rprojroot::find_rstudio_root_file("~/cvpiaEDIutils"))
+knitr::opts_knit$set(root.dir = rprojroot::find_rstudio_root_file())
 ```
 The following libraries are needed to create a working EML document. 
 ```{r, message = FALSE}
@@ -83,7 +83,6 @@ of both can be appended to the EML file by providing all inputs in the "personne
 tab in the "template.xlsx" excel file. 
 
 ```{r}
-setwd("~/FlowWest/cvpiaEDIutils")
 personnel_table <- read_excel("data-raw/template/template.xlsx", sheet = "personnel")
 for (i in 1:nrow(personnel_table)) {
   current <- personnel_table[i, ]
@@ -106,7 +105,6 @@ accessible name to the dataset. Again, this information can be added to the "tit
 tab in the excel file "template.xlsx".
 
 ```{r, }
-setwd("~/FlowWest/cvpiaEDIutils")
 title <- read_excel("data-raw/template/template.xlsx", sheet = "title")
 parent_element <- add_title(parent_element = parent_element, title = title$title, 
                             short_name = title$short_name)
@@ -121,7 +119,6 @@ but is not mandatory. Multiple keyword sets can be provided. This information ca
 be added to the "keyword_set" tab in the excel file "template.xlsx".
 
 ```{r}
-setwd("~/FlowWest/cvpiaEDIutils")
 keyword_set <- read_excel("data-raw/template/template.xlsx", sheet = "keyword_set")
 thesaurus <- unique(keyword_set$keywordThesaurus)
 for (i in 1:length(thesaurus)) {
@@ -142,9 +139,7 @@ From there, the file path of your word document can be added to the excel file
 "template.xlsx". 
 
 ```{r}
-setwd("~/FlowWest/cvpiaEDIutils")
 abstract <- read_excel("data-raw/template/template.xlsx", sheet = "abstract")
-setwd("~/FlowWest/cvpiaEDIutils")
 parent_element <- add_abstract(parent_element = parent_element, 
                                abstract = abstract$abstract)
 ```
@@ -160,14 +155,12 @@ information will be appended for you. Only one license should be appended.
 This information can be added to the "license" tab in the excel file "template.xlsx".
 
 ```{r}
-setwd("~/FlowWest/cvpiaEDIutils")
 license <- read_excel("data-raw/template/template.xlsx", sheet = "license")
 parent_element <- add_license(parent_element = parent_element, default_license = license$default_license)
 ```
 
 If a default license is not being used, then the other inputs need to be provided. 
 ```{r}
-# setwd("~/FlowWest/cvpiaEDIutils")
 # parent_element <- add_license(parent_element = parent_element, 
 #                               license_name = license$license_name,
 #                               license_url = license$license_url,
@@ -182,7 +175,6 @@ you recieved the funding from. Multiple funders can be appended if necessary and
 information should be added to the "funding" tab in the excel file "template.xlsx".
 
 ```{r}
-setwd("~/FlowWest/cvpiaEDIutils")
 funding <- read_excel("data-raw/template/template.xlsx", sheet = "funding")
 parent_element <- add_funding(parent_element = parent_element, 
                               funder_name = funding$funder_name,
@@ -196,13 +188,12 @@ parent_element <- add_funding(parent_element = parent_element,
 ### Maintenance 
 The maintenance of a dataset is simply if the data collection is complete or ongoing.
 The `add_maintenance` function allows you to append the status of the dataset to
-your file. The inputs of `complete` and `ongoing` are the only ones allowed.
+your file and the inputs of `complete` and `ongoing` are the only ones allowed.
 If the dataset is still in progress, the frequency of which it is updated must 
 be provided as well. This information should be added to the "maintenance" tab 
 in the excel file "template.xlsx".
 
 ```{r}
-setwd("~/FlowWest/cvpiaEDIutils")
 maintenance <- read_excel("data-raw/template/template.xlsx", sheet = "maintenance")
 parent_element <- add_maintenance(parent_element = parent_element, status = maintenance$status,
                                   update_frequency = maintenance$update_frequency)
@@ -212,7 +203,7 @@ parent_element <- add_maintenance(parent_element = parent_element, status = main
 Overall methods can be appended next. The `add_method` function allows you to
 append the different scientific methods used in the collection process of your data.
 Methods are appended in a similar fashion as the abstract. A template methods document
-is given ("hannon_example_methods.docx). If more methods are needed, you can create 
+is given ("hannon_example_methods.docx"). If more methods are needed, you can create 
 seperate word documents and provide all of the file paths in the "template.xlsx" 
 excel sheet. The methods can be applied here as well as in the data table element,
 so make sure you are appending the correct methods to the accurate places. 
@@ -220,10 +211,8 @@ Top level methods can describe how a particular csv data was collected, while a 
 method can explain how particular attributes in the data table were collected.
 
 ```{r}
-setwd("~/FlowWest/cvpiaEDIutils")
 method_table <- read_excel("data-raw/template/template.xlsx", sheet = "methods")
 for (i in 1:nrow(method_table)) {
-  setwd("~/FlowWest/cvpiaEDIutils")
   current <- method_table[i, ]
   new_method <- add_method(parent_element = parent_element, methods_file = current$methods_file,
                            instrumentation = current$instrumentation)
@@ -238,19 +227,18 @@ for (i in 1:nrow(method_table)) {
 ### Coverage: Geographic, Temporal, Taxonomic 
 Next, the coverage information is appended. The `add_coverage` function allows
 you to append full coverage information to your file. The function itself 
-requires inputs for both temporal and geographic coverage. Taxonomic coverage, 
-however, is optional and can be appended using the `add_taxonomic_coverage` 
-function. Chinook, Delta Smelt, Steelhead, White Sturgeon, and Green Sturgeon are
+requires inputs for both temporal and geographic coverage. Taxonomic coverage,
+is optional and can be appended using the `add_taxonomic_coverage` function. 
+Chinook, Delta Smelt, Steelhead, White Sturgeon, and Green Sturgeon are
 all default options, with full taxonomic coverage already present for easy appendage
 as these are all frequent species being studied under CVPIA. If taxonomic coverage 
 is being appended, this information needs to be appended first. It is not appended
 to the `parent_element`, however, and is instead appended to a new empty list that
 we title `taxonomic_coverage`. The taxonomic coverage information can still be 
-added to the "template.xlsx" excel file, even though the information is not 
-being appended to the `parent_element`. 
+added to the "template.xlsx" excel file on the tab "taxonomic_coverage",
+even though the information is not being appended to the `parent_element`. 
 
 ```{r}
-setwd("~/FlowWest/cvpiaEDIutils")
 taxonomic_coverage <- list()
 taxonomic_coverage_table <- read_excel("data-raw/template/template.xlsx", sheet = "taxonomic_coverage")
 for (i in 1:nrow(taxonomic_coverage_table)) {
@@ -279,7 +267,6 @@ There are three options of doing so.
 The first option is that we have no taxonomic coverage present. This can take either
 one or multiple coverage inputs and append to the `parent_element`.
 ```{r}
-setwd("~/FlowWest/cvpiaEDIutils")
 coverage_table <- read_excel("data-raw/template/template.xlsx", sheet = "coverage")
 for (i in 1:nrow(coverage_table)) {
   current <- coverage_table[i, ]
@@ -298,7 +285,6 @@ If we have multiple coverages, and a unique taxonomic coverage that goes along w
 each specific coverage, we can use this instead: 
 
 ```{r}
-setwd("~/FlowWest/cvpiaEDIutils")
 coverage_table <- read_excel("data-raw/template/template.xlsx", sheet = "coverage")
 for (i in 1:nrow(coverage_table)) {
   current <- coverage_table[i, ]
@@ -320,7 +306,6 @@ Finally, if we have multiple taxonomic coverages that need to be appended to one
 overall coverage, we can do the following: 
 
 ```{r}
-setwd("~/FlowWest/cvpiaEDIutils")
 coverage_table <- read_excel("data-raw/template/template.xlsx", sheet = "coverage")
 for (i in 1:nrow(coverage_table)) {
   current <- coverage_table[i, ]
@@ -338,17 +323,17 @@ for (i in 1:nrow(coverage_table)) {
 
 ### Data Table 
 Next, we need to create the data table. `physical`, `attribute_list`, and potentially 
-`methods` are all lists which must be appended to the data table list, so we 
-have to create these first. 
+`methods` are all lists which must be appended to the data table list. Because of this,
+we have to create these additional lists first, to append to our `parent_element` list. 
 
 #### Physical 
-The physical element can be created first. This represents information on the 
-actual physical information of the data. The file path of the data can be added 
-to the "template.xlsx" excel file and all parameters will be appended, gathering
-the csv's unique size and authentication as well as providing default values of a csv. 
+The physical element can be created first using the `add_physical` function. 
+This will append information on the actual physical information of the data. 
+The file path of the data can be added to the "template.xlsx" excel file 
+and all parameters will be appended, gathering the csv's unique size and 
+authentication, as well as providing the default physical values of a csv. 
 
 ```{r}
-setwd("~/FlowWest/cvpiaEDIutils")
 physical_list <- list()
 physical_table <- read_excel("data-raw/template/template.xlsx", sheet = "physical")
 for (i in 1:nrow(physical_table)) {
@@ -363,8 +348,9 @@ for (i in 1:nrow(physical_table)) {
 }
 ```
 If you wish to provide alternative information than the defaults of a csv, you must do
-so manually in Rstudio using the `add_physical` function fully, although it is not 
-recommended that you do so. 
+so manually in Rstudio using the `add_physical` function fully. It is not recommended 
+that you do so, however, as the default values present represent the best practices 
+in most cases. 
 
 ```{r}
 # physical_list <- list()
@@ -379,15 +365,14 @@ recommended that you do so.
 #### Attribute List 
 Next, we will need to append an attribute list to the data table. We will be able 
 to use the `add_attribute` function to  do so. Please make sure you review what 
-type of attribute you are providing and what inputs are necessary. These values then 
-can be inputted into the "attribute" tab in the "template.xlsx" excel file. If you
-are using a "nominal" or "ordinal" attribute which is "enumerated", in other words
-it has a code definition, please also use the tab "code_definitions". Provide each
+type of attribute you are providing and what inputs are necessary. These values 
+can then be inputted into the "attribute" tab in the "template.xlsx" excel file. If you
+are using a "nominal" or "ordinal" attribute which is "enumerated", (it has a specific 
+code definition), please also use the tab "code_definitions". Provide each
 unique code and definition, with its `attribute_name` alligning to that which is in the
 "attirbute" tab. An example is present curently to help better showcase this. 
 
 ```{r}
-setwd("~/FlowWest/cvpiaEDIutils")
 attribute_list <- list()
 codes <- read_excel("data-raw/template/template.xlsx", sheet = "code_definitions")
 attribute_names <- unique(codes$attribute_name)
@@ -434,17 +419,15 @@ for (i in 1:nrow(attribute_table)) {
 
 ### Methods
 Finally, if there are any methods which you would like to include at the data table
-level, this is where you would do this. It is optional, but as stated before, can 
+level, you can do so here. It is optional, but as stated before, can 
 be included in both places if necessary. Like the previous methods, a document 
 needs to be created which holds all of your methods, and the file path can be added 
 to the "data_table_methods" tab in the "template.xlsx" excel sheet. 
 
 ```{r}
-setwd("~/FlowWest/cvpiaEDIutils")
 method_list <- list()
 data_table_methods <- read_excel("data-raw/template/template.xlsx", sheet = "data_table_methods")
 for (i in 1:nrow(data_table_methods)) {
-  setwd("~/FlowWest/cvpiaEDIutils")
   current <- data_table_methods[i, ]
   new_method <- add_method(parent_element = method_list, methods_file = current$methods_file,
                             instrumentation = current$instrumentation)
@@ -463,7 +446,6 @@ working EML file. The remaining inputs for the data table can be put in the "dat
 tab in the "template.xlsx" excel file. Multiple data tables can be appended to one dataset,
 although it is more common to only have one present. 
 ```{r}
-setwd("~/FlowWest/cvpiaEDIutils")
 data_table <- read_excel("data-raw/template/template.xlsx", sheet = "data_table")
 for (i in 1:nrow(data_table)) {
   current <- data_table[i, ]
@@ -482,7 +464,6 @@ for (i in 1:nrow(data_table)) {
 ```
 If methods are not present at this level, make sure to take it out. 
 ```{r}
-setwd("~/FlowWest/cvpiaEDIutils")
 data_table <- read_excel("data-raw/template/template.xlsx", sheet = "data_table")
 for (i in 1:nrow(data_table)) {
   current <- data_table[i, ]
@@ -499,15 +480,14 @@ for (i in 1:nrow(data_table)) {
 ```
 
 ## Putting It All Together
-Now that we have all of the items appended to the `parent_element`, we must appended it 
+Now that we have all of the items appended to the `parent_element`, we must append it 
 to the "dataset" and also give the file a unique ID number. 
 ```{r}
 eml <- list(packageId = "uuid::UUIDgenerate()",
             system = "uuid",
             dataset = parent_element)
 ```
-We now have everything we need present in the EMML document. To get it into the 
-correct format we can use the EML library's `write_eml` function. 
+We now have all necessary elements to create a working EML document. The final step is to convert it into the correct format. To do so, we can use the EML library's `write_eml` function. 
 ```{r}
 EML::write_eml(eml, "eml.xml")
 ```
