@@ -1,7 +1,10 @@
 #' @title Add Abstract Element
-#' @description adds the abstract of a dataset according to EML standards 
-#' @param parament_element a list representing the EML project or dataset
-#' @param abstract Abstract paragraphs, requires a minimum of 20 words.
+#' @description Adds the abstract of a dataset according to EML standards.
+#' @param parament_element A list representing the EML project or dataset.
+#' @param abstract Abstract paragraphs, requires a minimum of 20 words. A template 
+#' word document is accessible in "~/cvpiaEDIutils/inst/extdata/abstract_template.docx".
+#' You can copy and paste your abstract in this document and set the parameter of 
+#' \code{abstract} equal to this file path. 
 #' @details 
 #' For	a	dataset,	the	abstract	element	can	appear	at	the	resource	level	or	the	project level.		
 #' The	<abstract>	element	will	be	used	for	full-text	searches,	and	it	should	be	rich	with	
@@ -12,19 +15,15 @@
 #' should	also	be	included.		For	a	large	number	of	parameters,	use	categories	instead	of	listing	
 #' all	parameters	(e.g.	use	the	term	“nutrients”	instead	of	nitrate,	phosphate,	calcium,	etc.),	in	
 #' combination	with	the	parameters	that	seem	most	relevant	for	searches.
-#' @return the dataset or project with abstract appended 
+#' @return The dataset or project with abstract appended 
 #' @examples
 #' add_abstract(parent_element = list(),
-#'              abstract = "Reported water chemistry data are from the intensive...")
+#'              abstract = word_example("abstract_template.docx"))
 #'           
 #' @export 
 add_abstract <- function(parent_element, abstract) {
   
-  if (length(unlist(strsplit(abstract, " "))) < 20) {
-    warning("Abstract should be a minimum of 20 words")
-  }
-  
-  parent_element$abstract$para <- abstract
+  parent_element$abstract <- EML::set_TextType(abstract)
   
   return(parent_element)
 }

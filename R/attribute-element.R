@@ -22,13 +22,15 @@
 #' @param text_pattern A regular expression pattern constraining the attribute.
 #' @param type Either "ratio" or "interval". 
 #' @param units The units assigned to this attribute's values. 
-#' @param number_type A list of possible options can be viewed at \code{\link{storage_type}}. 
+#' @param number_type A list of possible options can be viewed at \code{\link{number_type}}. 
 #' @param unit_precision How precise units are measured.
 #' @param date_time_format The format your date/time attribute is recorded in.
 #' ISO 8601 standard should be used (YYYY-MM-DD).
 #' @param date_time_precision To what level time is being measured. 
-#' @param minimum Theoretical or allowable minimum value. 
-#' @param maximum Theoretical or allowable maximum value.
+#' @param minimum Theoretical or allowable minimum value. Values can be larger than 
+#' or equal to this number. 
+#' @param maximum Theoretical or allowable maximum value. Values can be less than 
+#' or equal to this number. 
 #' @section Measurement Scales: 
 #' Different measurement scale values will indicate different inputs: 
 #' 
@@ -59,7 +61,7 @@
 #' Used to define date and time attributes. Please provide the inputs of \code{date_time_format}, 
 #' \code{date_time_precision}, \code{minimum}, and \code{maximum}.
 #' 
-#' @return The project or dataset list with an attribute list appended
+#' @return The project or dataset list with an attribute list appended.
 #' 
 #' @export
 #' @examples
@@ -111,7 +113,7 @@
 #'               type = "interval",
 #'               units = "number",
 #'               unit_precision = "1",
-#'               number_type = "whole", 
+#'               number_type = cvpiaEDIutils::number_type$whole, 
 #'               minimum = "0")
 #'                    
 #' # Ratio: 
@@ -122,7 +124,7 @@
 #'               type = "ratio",
 #'               units = "dimensionless",
 #'               unit_precision = "0.01",
-#'               number_type = "real")
+#'               number_type = cvpiaEDIutils::number_type$real)
 #'                    
 #' # dateTime:
 #' add_attribute(attribute_name = "Yrs", 
@@ -162,7 +164,7 @@ add_attribute <- function(attribute_name, attribute_definition, storage_type,
   if (missing(attribute_label)) {
     message('No attribute label provided.')
   } else {
-    attribute$attributeLabel <- attribute_label
+   attribute$attributeLabel <- attribute_label
   }
   
   if (measurement_scale == "nominal") {
@@ -194,6 +196,7 @@ add_attribute <- function(attribute_name, attribute_definition, storage_type,
   }
   
   attribute$measurementScale <- measurementScale
+  
   
   return(attribute) 
 }
@@ -232,20 +235,20 @@ add_nominal <- function(domain = c("text", "enumerated"), definition, text_patte
   if (is.null(definition)) {
     stop('Please provide the description for your measurement scale.', call. = FALSE)
   }
-  measurementScale <- list(nominal = list(nonNumericDesign = list()))
+  measurementScale <- list(nominal = list(nonNumericDomain = list()))
   
   if (domain == "text") {
-    measurementScale$nominal$nonNumericDesign$textDomain$definition <- definition
+    measurementScale$nominal$nonNumericDomain$textDomain$definition <- definition
     
     if (is.null(text_pattern)) {
       message('No text pattern is provided. Please add if applicable.')
     } else { 
-      measurementScale$nominal$nonNumericDesign$textDomain$pattern <- text_pattern
+      measurementScale$nominal$nonNumericDomain$textDomain$pattern <- text_pattern
     }
     
   } else {
     #enumerated 
-    measurementScale$nominal$nonNumericDesign$enumeratedDomain$codeDefinition <- definition
+    measurementScale$nominal$nonNumericDomain$enumeratedDomain <- definition
     } 
   return(measurementScale)
 }
@@ -286,20 +289,20 @@ add_ordinal <- function(domain = c("text", "enumerated"), definition, text_patte
   if (is.null(definition)) {
     stop('Please provide the description for your measurement scale.', call. = FALSE)
   }
-  measurementScale <- list(ordinal = list(nonNumericDesign = list()))
+  measurementScale <- list(ordinal = list(nonNumericDomain = list()))
   
   if (domain == "text") {
-    measurementScale$ordinal$nonNumericDesign$textDomain$definition <- definition
+    measurementScale$ordinal$nonNumericDomain$textDomain$definition <- definition
     
     if (is.null(text_pattern)) {
       message('No text pattern is provided. Please add if applicable.')
     } else { 
-      measurementScale$ordinal$nonNumericDesign$textDomain$pattern <- text_pattern
+      measurementScale$ordinal$nonNumericDomain$textDomain$pattern <- text_pattern
     }
     
   } else {
     #enumerated 
-    measurementScale$ordinal$nonNumericDesign$enumeratedDomain$codeDefinition <- definition
+    measurementScale$ordinal$nonNumericDomain$enumeratedDomain <- definition
   } 
   return(measurementScale)
 }
@@ -312,8 +315,10 @@ add_ordinal <- function(domain = c("text", "enumerated"), definition, text_patte
 #' @param units The units assigned to this attribute. 
 #' @param unit_precision How precise this attirbutes' measurements are recorded. 
 #' @param number_type What type of number. Examples given in exported documentation. 
-#' @param minimum Optional. A theoreical minimum.
-#' @param maximum Optional. A theoretical maximum. 
+#' @param minimum Optional. Theoretical or allowable minimum value. Values can be larger than 
+#' or equal to this number. 
+#' @param maximum Optional. Theoretical or allowable maximum value. Values can be less than 
+#' or equal to this number.
 #' @examples 
 #' # Interval:
 #' add_attribute(attribute_name = "Count",
@@ -323,7 +328,7 @@ add_ordinal <- function(domain = c("text", "enumerated"), definition, text_patte
 #'                    type = "interval",
 #'                    units = "number",
 #'                    unit_precision = "1",
-#'                    number_type = "whole", 
+#'                    number_type = cvpiaEDIutils::number_type$whole, 
 #'                    minimum = "0")
 #'                    
 #' # Ratio: 
@@ -334,7 +339,7 @@ add_ordinal <- function(domain = c("text", "enumerated"), definition, text_patte
 #'               type = "ratio",
 #'               units = "dimensionless",
 #'               unit_precision = "0.01",
-#'               number_type = "real")
+#'               number_type = cvpiaEDIutils::number_type$real)
 #' @keywords internal
 add_interval_ratio <- function(type = c("interval", "ratio"), units, unit_precision, 
                                number_type, minimum = NULL, maximum = NULL) {
@@ -358,7 +363,7 @@ add_interval_ratio <- function(type = c("interval", "ratio"), units, unit_precis
   } 
   type <- match.arg(type)
   
-  interval_ratio <- list(standardUnit = units,
+  interval_ratio <- list(unit = list(standardUnit = units),
                          precision = unit_precision,
                          numericDomain =
                            list(numberType = number_type))
@@ -373,9 +378,11 @@ add_interval_ratio <- function(type = c("interval", "ratio"), units, unit_precis
     warning(interval_error_message, call. = FALSE)
   } else { 
     if (type == "interval") {
-      measurementScale$interval$numericDomain$bounds$minimum <- minimum 
+      measurementScale$interval$numericDomain$bounds$minimum <- list("exclusive" = "false",
+                                                                     minimum = minimum) 
     } else {
-      measurementScale$ratio$numericDomain$bounds$minimum <- minimum
+      measurementScale$ratio$numericDomain$bounds$minimum <- list("exclusive" = "false",
+                                                                  minimum = minimum)
     } 
   }
   
@@ -383,9 +390,11 @@ add_interval_ratio <- function(type = c("interval", "ratio"), units, unit_precis
     warning(interval_error_message, call. = FALSE)
   } else { 
     if (type == "interval") {
-      measurementScale$interval$numericDomain$bounds$maximum <- maximum 
+      measurementScale$interval$numericDomain$bounds$maximum <- list("exclusive" = "false",
+                                                                     maximum = maximum) 
     } else {
-      measurementScale$ratio$numericDomain$bounds$maximum <- maximum
+      measurementScale$ratio$numericDomain$bounds$maximum <- list("exclusive" = "false",
+                                                                  maximum = maximum)
     } 
   }
   return(measurementScale)
@@ -394,8 +403,10 @@ add_interval_ratio <- function(type = c("interval", "ratio"), units, unit_precis
 #' @title Add dateTime Measurement Scale 
 #' @param date_time_format ISO 8601 format should be used. 
 #' @param date_time_precision To what level of time your attribute is recorded. 
-#' @param minimum The earliest dateTime recorded.
-#' @param maximum The latest dateTime recorded.
+#' @param minimum The earliest dateTime recorded. Values can be larger than 
+#' or equal to this number. 
+#' @param maximum The latest dateTime recorded. Values can be less than 
+#' or equal to this number. 
 #' @examples 
 #' add_attribute(attribute_name = "Yrs",
 #'               attribute_definition = "Calendar year of the observation from years 1990 - 2010.",
@@ -428,8 +439,10 @@ add_datetime <- function(date_time_format, date_time_precision, minimum, maximum
                                   dateTimePrecision = date_time_precision,
                                   dateTimeDomain = 
                                     list(bounds = 
-                                           list(minimum = minimum,
-                                                maximum = maximum))))
+                                           list(minimum = list("exclusive" = "false",
+                                                               minimum = minimum),
+                                                maximum = list("exclusive" = "false",
+                                                               maximum = maximum)))))
   return(measurementScale)
 }
   

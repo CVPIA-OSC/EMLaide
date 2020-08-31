@@ -15,7 +15,7 @@ add_personnel(
 )
 }
 \arguments{
-\item{parent_element}{a list representing the EML project or dataset}
+\item{parent_element}{A list representing the EML project or dataset}
 
 \item{first_name}{Person's given name}
 
@@ -34,7 +34,7 @@ register at \url{http://orcid.org/}}
 with for this dataset or project}
 }
 \description{
-adds personel according to EML standards
+Adds personel according to EML standards
 }
 \examples{
 add_personnel(parent_element = list(),
@@ -42,7 +42,8 @@ add_personnel(parent_element = list(),
               last_name = "Johnson", 
               email = 'kjohnson@nasa.gov', 
               role = 'Creator', 
-              organization = 'NASA')
+              organization = 'NASA',
+              orcid = '12345')
 
 add_personnel(parent_element = list(), 
               first_name = "Edith", 

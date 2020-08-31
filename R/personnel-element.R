@@ -1,6 +1,6 @@
 #' Add Personnel Element
-#' @description adds personel according to EML standards
-#' @param parent_element a list representing the EML project or dataset
+#' @description Adds personel according to EML standards
+#' @param parent_element A list representing the EML project or dataset
 #' @param role Use "Creator" if you are one of the primary originators of the data. 
 #' Other possible roles "Data Manager", "Field Technician", or "Assistant Researcher". 
 #' There can be multiple personnel on a project with the same role.
@@ -17,7 +17,8 @@
 #'               last_name = "Johnson", 
 #'               email = 'kjohnson@nasa.gov', 
 #'               role = 'Creator', 
-#'               organization = 'NASA')
+#'               organization = 'NASA',
+#'               orcid = '12345')
 #' 
 #' add_personnel(parent_element = list(), 
 #'               first_name = "Edith", 
@@ -48,17 +49,18 @@ add_personnel <- function(parent_element, first_name, last_name, email,
                         surName = last_name),
                  electronicMailAddress = email)
   
-  if (!is.null(orcid)) {
-    person$userid = list(
-      directory = 'https://orcid.org',
-      paste0("https://orcid.org/", orcid))
-  }
+  
   
   if (!is.null(organization)) {
-    person$organizationName = organization
+    person$organizationName <- organization
   }
   
   if (role == "Creator") {
+    parent_element$contact <- person
+    if (!is.null(orcid)) {
+      person$'@id' <- orcid 
+    }
+    
     if (is.null(parent_element$creator)) {
       parent_element$creator <- person
     } else {

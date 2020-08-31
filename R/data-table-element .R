@@ -13,7 +13,9 @@
 #' @param attribute_list Describes all variables in a data entity in individual 
 #' attribute elements. These descriptions include the name and definition of each 
 #' attribute, its domain, definition of coded values, and other pertinent information. 
-#' It is further explained and can be appended with the \code{\link{add_attribute}} function. 
+#' It is further explained and can be appended with the \code{\link{add_attribute}} function.
+#' @param methods A set of information of the specific methods used to collect
+#' information in this entity.  
 #' @param number_of_records Optional. A count of the number of records in the data table. 
 #' @return the project or dataset list with a data table appended
 #' @examples
@@ -32,15 +34,19 @@
 #' attribute_list <- list(attribute_1, attribute_2)
 #' physical <- add_physical(file_path = "User/data/example.csv",
 #'                          data_url = "https://mydata.org/etc")
+#' method <- add_method(parent_element = method_list, 
+#'                      methods_file = word_example("methods-template.docx"))
 #' add_data_table(parent_element = list(), 
 #'                entity_name = "692_EML_IncubationByDepth_SoilCO2Fluxes.csv",
 #'                entity_description = "Soil CO2 Fluxes 2013-2014", 
 #'                physical = physical, 
 #'                attribute_list = attribute_list, 
+#'                methods = method,
 #'                number_of_records = "1")
 #' @export
-add_data_table <- function(parent_element, entity_name, entity_description, physical, 
-                           attribute_list, number_of_records = NULL, alternate_identifier = NULL) {
+add_data_table <- function(parent_element, entity_name, entity_description, 
+                           physical, attribute_list, methods = NULL,
+                           number_of_records = NULL, alternate_identifier = NULL) {
   
   required_arguments <- c("entity_name", "entity_description", 
                           "physical", "attribute_list")
@@ -57,22 +63,34 @@ add_data_table <- function(parent_element, entity_name, entity_description, phys
     stop(error_message, call. = FALSE)
   }
   
-  parent_element$dataTable <- list(entityName = entity_name,
-                                   entityDescription = entity_description,
-                                   physical = physical,
-                                   attributeList = list(attribute = attribute_list))
+  data_table <- list(entityName = entity_name,
+                     entityDescription = entity_description,
+                     physical = physical,
+                     attributeList = attribute_list)
   
 
   if (is.null(number_of_records)) {
-    message('The number of records was not provided.', call. = FALSE)
+    message('The number of records was not provided.')
   } else {
-    parent_element$dataTable$numberOfRecords <- number_of_records
+    data_table$numberOfRecords <- number_of_records
   }
   
   if (is.null(alternate_identifier)) {
-    message('An alternate identifier was not provided.', call. = FALSE)
+    message('An alternate identifier was not provided.')
   } else {
-    parent_element$dataTable$alternateIdentifier <- alternate_identifier
+    data_table$alternateIdentifier <- alternate_identifier
+  }
+  
+  if (is.null(methods)) {
+    message('No method of data collection was provided.')
+  } else {
+    data_table <- append(data_table, methods)
+  }
+  
+  if (is.null(parent_element$dataTable)) {
+    parent_element$dataTable <- data_table 
+  } else {
+    parent_element$dataTable <- list(parent_element$dataTable, data_table)
   }
   return(parent_element)
 }

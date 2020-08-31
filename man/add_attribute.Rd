@@ -53,7 +53,7 @@ using this parameter, but have different applications. Examples of both are list
 
 \item{units}{The units assigned to this attribute's values.}
 
-\item{number_type}{A list of possible options can be viewed at \code{\link{storage_type}}.}
+\item{number_type}{A list of possible options can be viewed at \code{\link{number_type}}.}
 
 \item{unit_precision}{How precise units are measured.}
 
@@ -62,14 +62,16 @@ ISO 8601 standard should be used (YYYY-MM-DD).}
 
 \item{date_time_precision}{To what level time is being measured.}
 
-\item{minimum}{Theoretical or allowable minimum value.}
+\item{minimum}{Theoretical or allowable minimum value. Values can be larger than
+or equal to this number.}
 
-\item{maximum}{Theoretical or allowable maximum value.}
+\item{maximum}{Theoretical or allowable maximum value. Values can be less than
+or equal to this number.}
 
 \item{attribute_defenition}{A precise and complete    definition of the attribute    being    documented.}
 }
 \value{
-The project or dataset list with an attribute list appended
+The project or dataset list with an attribute list appended.
 }
 \description{
 Adds an attribute element according to EML standards. Multiple
@@ -158,7 +160,7 @@ add_attribute(attribute_name = "Count",
               type = "interval",
               units = "number",
               unit_precision = "1",
-              number_type = "whole", 
+              number_type = cvpiaEDIutils::number_type$whole, 
               minimum = "0")
                    
 # Ratio: 
@@ -169,7 +171,7 @@ add_attribute(attribute_name = "pH",
               type = "ratio",
               units = "dimensionless",
               unit_precision = "0.01",
-              number_type = "real")
+              number_type = cvpiaEDIutils::number_type$real)
                    
 # dateTime:
 add_attribute(attribute_name = "Yrs", 

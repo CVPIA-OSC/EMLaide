@@ -1,0 +1,493 @@
+---
+title: "Creating EML Using cvpiaEDIutils"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Creating EML Using cvpiaEDIutils}
+  %\VignetteEngine{knitr::rmarkdown}
+  \usepackage[utf8]{inputenc}
+---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, message = FALSE)
+knitr::opts_knit$set(root.dir = rprojroot::find_rstudio_root_file())
+```
+The following libraries are needed to create a working EML document. 
+```{r, message = FALSE}
+library(cvpiaEDIutils)
+library(tidyverse)
+library(readxl)
+library(EML)
+```
+In this document, we create an EML file which has the opportunity to append the 
+following elements:
+
+```yaml
+- eml 
+  -dataset
+    - creator
+    - contact
+    - associated party 
+    - title 
+    - short name 
+    - abstract 
+    - keyword set 
+    - intellectual rights 
+    - license 
+    - methods 
+    - maintenance 
+    - coverage 
+      - geographic coverage 
+      - temporal coverage 
+      - taxonomic coverage 
+    - data table 
+      - physical 
+      - attribute list 
+      - methods 
+```
+
+## Our Example 
+We will use the data provided by John Hannon to show an example of how to put the
+metadata together in a way which can be uploaded to the EDI data portal website. 
+The excel sheet of which Hannon's data resides is found in "~/data-raw/template/template.xlsx". 
+This file can be edited with your data and used with this document to create your 
+own working EML file. 
+
+## Creating EML 
+The tabs of the excel file are organized in the order of which this template appends information. 
+We start with the simpler pieces of information such as `personnel` and `title` and 
+work up to appending the data table, which has other components to it. 
+
+### Creating the Parent Element
+We first need to create a parent element. This will be a list of which our metadata 
+inputs can be appended to. 
+
+```{r}
+parent_element <- list() 
+```
+
+### Publication Date 
+The publication date does not have a tab in the excel sheet, but is simply added with 
+the `add_pub_date` function. If no date is provided, it will automatically append
+the current date. This can be overwritten by providing an input for `date`. 
+
+```{r}
+parent_element <- add_pub_date(parent_element = parent_element, date = NULL)
+```
+
+### Personnel: Creator, Contact, and Associated Parties. 
+The `add_personnel` function allows you to append information on the creator or
+the associated parties to your file. The creator would be any person or organization
+who is responsible for the creation of the data, while an associated party would 
+be any person or organization which is associated to the dataset. The creator will also 
+be the contact for this datset. Multiple creators, associated parties, and a mixture
+of both can be appended to the EML file by providing all inputs in the "personnel"
+tab in the "template.xlsx" excel file. 
+
+```{r}
+personnel_table <- read_excel("data-raw/template/template.xlsx", sheet = "personnel")
+for (i in 1:nrow(personnel_table)) {
+  current <- personnel_table[i, ]
+  parent_element <- add_personnel(parent_element = parent_element, 
+                                  first_name = current$first_name, 
+                                  last_name = current$last_name, 
+                                  email = current$email, 
+                                  role = current$role, 
+                                  orcid = current$orcid)
+}
+```
+
+### Title and Short Name 
+Following the personnel element, we can append the title elements. The `add_title` function 
+allows you to append the title and short name of the dataset to the file. 
+Only one title and short name should be appended. The title should be 
+fairly descriptive and between 7 and 20 words long. The short name must be less than
+the number of words present in the title and is your opportunity to give viewers a more 
+accessible name to the dataset. Again, this information can be added to the "title"
+tab in the excel file "template.xlsx".
+
+```{r, }
+title <- read_excel("data-raw/template/template.xlsx", sheet = "title")
+parent_element <- add_title(parent_element = parent_element, title = title$title, 
+                            short_name = title$short_name)
+```
+
+### Keyword Set 
+The next item we will append is the keyword set. We can use the `add_keyword_set` 
+function to do so. The keyword set should include a list of words under a controlled vocabulary, 
+that helps better identify your dataset and if it will be applicable to viewers.
+A keyword thesaurus is helpful and will provide viewers a better idea of the data,
+but is not mandatory. Multiple keyword sets can be provided. This information can 
+be added to the "keyword_set" tab in the excel file "template.xlsx".
+
+```{r}
+keyword_set <- read_excel("data-raw/template/template.xlsx", sheet = "keyword_set")
+thesaurus <- unique(keyword_set$keywordThesaurus)
+for (i in 1:length(thesaurus)) {
+  keywords <- keyword_set$keyword[keyword_set$keywordThesaurus == thesaurus[i]]
+  parent_element <- add_keyword_set(parent_element = parent_element, 
+                                    keyword_set = list(keyword = keywords, 
+                                                       keywordThesaurus = thesaurus[i]))
+}
+```
+
+### Abstract
+Next, we will use the `add_abstract` function to append the abstract of the dataset to 
+your file. The abstract should include basic information on the dataset that gives 
+a brief summary to the viewers of what they are observing from the data. This 
+information will not be added to the "template.xlsx" excel sheet, but rather the 
+"hannon_example_abstract.docx". The text provided can be deleted and replaced with your own. 
+From there, the file path of your word document can be added to the excel file 
+"template.xlsx". 
+
+```{r}
+abstract <- read_excel("data-raw/template/template.xlsx", sheet = "abstract")
+parent_element <- add_abstract(parent_element = parent_element, 
+                               abstract = abstract$abstract)
+```
+
+### License and Intellectual Rights
+Following the abstract, we will append the license and intellectual rights information. 
+The `add_license` function allows you to append the licensing and usage information 
+to your file. The `intellectual_rights_description` input calls for the description of
+rights, which may be explained in the license you are using. It can also contain 
+other requirements for use, other requirements for attribution, etc. Both the CC0 
+and CCBY licenses can be chosen as defaults using this function, and the rest of the 
+information will be appended for you. Only one license should be appended.
+This information can be added to the "license" tab in the excel file "template.xlsx".
+
+```{r}
+license <- read_excel("data-raw/template/template.xlsx", sheet = "license")
+parent_element <- add_license(parent_element = parent_element, default_license = license$default_license)
+```
+
+If a default license is not being used, then the other inputs need to be provided. 
+```{r}
+# parent_element <- add_license(parent_element = parent_element, 
+#                               license_name = license$license_name,
+#                               license_url = license$license_url,
+#                               license_identifier = license$license_identifier,
+#                               intellectual_rights_description = license$intellectual_rights_description)
+```
+
+### Funding
+Funding should be appended next. The `add_funding` function allows you to append 
+both the description of the funding you have recieved as well as the organization 
+you recieved the funding from. Multiple funders can be appended if necessary and 
+information should be added to the "funding" tab in the excel file "template.xlsx".
+
+```{r}
+funding <- read_excel("data-raw/template/template.xlsx", sheet = "funding")
+parent_element <- add_funding(parent_element = parent_element, 
+                              funder_name = funding$funder_name,
+                              funder_identifier = funding$funder_identifier,
+                              award_number = funding$award_number,
+                              award_title = funding$award_title,
+                              award_url = funding$award_url,
+                              funding_description = funding$funding_description)
+```
+
+### Maintenance 
+The maintenance of a dataset is simply if the data collection is complete or ongoing.
+The `add_maintenance` function allows you to append the status of the dataset to
+your file and the inputs of `complete` and `ongoing` are the only ones allowed.
+If the dataset is still in progress, the frequency of which it is updated must 
+be provided as well. This information should be added to the "maintenance" tab 
+in the excel file "template.xlsx".
+
+```{r}
+maintenance <- read_excel("data-raw/template/template.xlsx", sheet = "maintenance")
+parent_element <- add_maintenance(parent_element = parent_element, status = maintenance$status,
+                                  update_frequency = maintenance$update_frequency)
+```
+
+### Dataset Methods
+Overall methods can be appended next. The `add_method` function allows you to
+append the different scientific methods used in the collection process of your data.
+Methods are appended in a similar fashion as the abstract. A template methods document
+is given ("hannon_example_methods.docx"). If more methods are needed, you can create 
+seperate word documents and provide all of the file paths in the "template.xlsx" 
+excel sheet. The methods can be applied here as well as in the data table element,
+so make sure you are appending the correct methods to the accurate places. 
+Top level methods can describe how a particular csv data was collected, while a data table
+method can explain how particular attributes in the data table were collected.
+
+```{r}
+method_table <- read_excel("data-raw/template/template.xlsx", sheet = "methods")
+for (i in 1:nrow(method_table)) {
+  current <- method_table[i, ]
+  new_method <- add_method(parent_element = parent_element, methods_file = current$methods_file,
+                           instrumentation = current$instrumentation)
+  if (is.null(parent_element$methods)) {
+    parent_element$methods <- new_method
+  } else {
+    parent_element$methods <- list(parent_element$methods, new_method)
+  }
+}
+```
+
+### Coverage: Geographic, Temporal, Taxonomic 
+Next, the coverage information is appended. The `add_coverage` function allows
+you to append full coverage information to your file. The function itself 
+requires inputs for both temporal and geographic coverage. Taxonomic coverage,
+is optional and can be appended using the `add_taxonomic_coverage` function. 
+Chinook, Delta Smelt, Steelhead, White Sturgeon, and Green Sturgeon are
+all default options, with full taxonomic coverage already present for easy appendage
+as these are all frequent species being studied under CVPIA. If taxonomic coverage 
+is being appended, this information needs to be appended first. It is not appended
+to the `parent_element`, however, and is instead appended to a new empty list that
+we title `taxonomic_coverage`. The taxonomic coverage information can still be 
+added to the "template.xlsx" excel file on the tab "taxonomic_coverage",
+even though the information is not being appended to the `parent_element`. 
+
+```{r}
+taxonomic_coverage <- list()
+taxonomic_coverage_table <- read_excel("data-raw/template/template.xlsx", sheet = "taxonomic_coverage")
+for (i in 1:nrow(taxonomic_coverage_table)) {
+  current <- taxonomic_coverage_table[i, ]
+  new_taxon <- add_taxonomic_coverage(CVPIA_common_species = current$CVPIA_common_species,
+                                     kingdom_value = current$kingdom_value,
+                                     phylum_value = current$phylum_value,
+                                     class_value = current$class_value,
+                                     order_value = current$order_value,
+                                     family_value = current$family_value,
+                                     genus_value = current$genus_value,
+                                     species_value = current$species_value,
+                                     common_name = current$common_name,
+                                     taxon_id = current$taxon_id)
+  if (is.null(taxonomic_coverage)) {
+    taxonomic_coverage <- new_taxon
+  } else {
+    taxonomic_coverage <- append(taxonomic_coverage, new_taxon)
+  }
+}
+```
+From here, we then have to append the coverage information to the `parent_element`.
+There are three options of doing so.
+
+#### No Taxonomic Coverage 
+The first option is that we have no taxonomic coverage present. This can take either
+one or multiple coverage inputs and append to the `parent_element`.
+```{r}
+coverage_table <- read_excel("data-raw/template/template.xlsx", sheet = "coverage")
+for (i in 1:nrow(coverage_table)) {
+  current <- coverage_table[i, ]
+  parent_element <- add_coverage(parent_element = parent_element,
+                                 geographic_description = current$geographic_description,
+                                 west_bounding_coordinate = current$west_bounding_coordinate,
+                                 east_bounding_coordinate = current$east_bounding_coordinate,
+                                 north_bounding_coordinate = current$north_bounding_coordinate,
+                                 south_bounding_coordinate = current$south_bounding_coordinate,
+                                 begin_date = current$begin_date,
+                                 end_date = current$end_date)
+} 
+```
+#### Unique Taxonomic Coverage For Multiple Coverages:
+If we have multiple coverages, and a unique taxonomic coverage that goes along with 
+each specific coverage, we can use this instead: 
+
+```{r}
+coverage_table <- read_excel("data-raw/template/template.xlsx", sheet = "coverage")
+for (i in 1:nrow(coverage_table)) {
+  current <- coverage_table[i, ]
+  tax <- taxonomic_coverage[i]
+  parent_element <- add_coverage(parent_element = parent_element,
+                                 geographic_description = current$geographic_description,
+                                 west_bounding_coordinate = current$west_bounding_coordinate,
+                                 east_bounding_coordinate = current$east_bounding_coordinate,
+                                 north_bounding_coordinate = current$north_bounding_coordinate,
+                                 south_bounding_coordinate = current$south_bounding_coordinate,
+                                 begin_date = current$begin_date,
+                                 end_date = current$end_date,
+                                 taxonomic_coverage = tax)
+} 
+```
+
+#### Taxonomic Coverage For Total Coverage 
+Finally, if we have multiple taxonomic coverages that need to be appended to one 
+overall coverage, we can do the following: 
+
+```{r}
+coverage_table <- read_excel("data-raw/template/template.xlsx", sheet = "coverage")
+for (i in 1:nrow(coverage_table)) {
+  current <- coverage_table[i, ]
+  parent_element <- add_coverage(parent_element = parent_element,
+                                 geographic_description = current$geographic_description,
+                                 west_bounding_coordinate = current$west_bounding_coordinate,
+                                 east_bounding_coordinate = current$east_bounding_coordinate,
+                                 north_bounding_coordinate = current$north_bounding_coordinate,
+                                 south_bounding_coordinate = current$south_bounding_coordinate,
+                                 begin_date = current$begin_date,
+                                 end_date = current$end_date,
+                                 taxonomic_coverage = taxonomic_coverage)
+} 
+```
+
+### Data Table 
+Next, we need to create the data table. `physical`, `attribute_list`, and potentially 
+`methods` are all lists which must be appended to the data table list. Because of this,
+we have to create these additional lists first, to append to our `parent_element` list. 
+
+#### Physical 
+The physical element can be created first using the `add_physical` function. 
+This will append information on the actual physical information of the data. 
+The file path of the data can be added to the "template.xlsx" excel file 
+and all parameters will be appended, gathering the csv's unique size and 
+authentication, as well as providing the default physical values of a csv. 
+
+```{r}
+physical_list <- list()
+physical_table <- read_excel("data-raw/template/template.xlsx", sheet = "physical")
+for (i in 1:nrow(physical_table)) {
+  current <- physical_table[i,]
+  new_physical <- add_physical(file_path = current$file_path, 
+                               data_url = current$data_url)
+  if (is.null(physical_list$physical)) {
+    physical_list$physical <- new_physical
+  } else {
+    physical_list$physical <- list(physical_list$physical, new_physical)
+  }
+}
+```
+If you wish to provide alternative information than the defaults of a csv, you must do
+so manually in Rstudio using the `add_physical` function fully. It is not recommended 
+that you do so, however, as the default values present represent the best practices 
+in most cases. 
+
+```{r}
+# physical_list <- list()
+# physical_list <- add_physical(file_path = file_path, 
+#                                number_of_headers = number_of_headers,
+#                                record_delimiter = record_delimiter,
+#                                attribute_orientation = attribute_orientation,
+#                                field_delimiter = field_delimiter,
+#                                data_url = data_url)
+```
+
+#### Attribute List 
+Next, we will need to append an attribute list to the data table. We will be able 
+to use the `add_attribute` function to  do so. Please make sure you review what 
+type of attribute you are providing and what inputs are necessary. These values 
+can then be inputted into the "attribute" tab in the "template.xlsx" excel file. If you
+are using a "nominal" or "ordinal" attribute which is "enumerated", (it has a specific 
+code definition), please also use the tab "code_definitions". Provide each
+unique code and definition, with its `attribute_name` alligning to that which is in the
+"attirbute" tab. An example is present curently to help better showcase this. 
+
+```{r}
+attribute_list <- list()
+codes <- read_excel("data-raw/template/template.xlsx", sheet = "code_definitions")
+attribute_names <- unique(codes$attribute_name)
+attribute_table <- read_excel("data-raw/template/template.xlsx", sheet = "attribute")
+for (i in 1:nrow(attribute_table)) {
+  current <- attribute_table[i, ]
+  if (current$domain %in% "enumerated") { 
+    definition <- list()
+    current_codes <- codes[codes$attribute_name == current$attribute_name, ]
+    for (j in 1:nrow(current_codes)) {
+      codeDefinition <- list(code = current_codes$code[j], definition = current_codes$definitions[j])
+      if (is.null(definition$codeDefinition)) {
+        definition$codeDefinition <- codeDefinition
+      } else {
+        definition$codeDefinition <- list(definition$codeDefinition, codeDefinition)
+      }
+    }
+  } else {
+    definition = current$definition
+  }
+  new_attribute <- add_attribute(attribute_name = current$attribute_name,
+                                 attribute_definition = current$attribute_definition,
+                                 storage_type = current$storage_type,
+                                 measurement_scale = current$measurement_scale,
+                                 domain = current$domain,
+                                 definition = definition,
+                                 text_pattern = current$text_pattern,
+                                 type = current$type,
+                                 units = current$units,
+                                 unit_precision = current$unit_precision,
+                                 number_type = current$number_type,
+                                 date_time_format = current$date_time_format,
+                                 date_time_precision = current$date_time_precision,
+                                 minimum = current$minimum,
+                                 maximum = current$maximum,
+                                 attribute_label = current$attribute_label)
+  if (is.null(attribute_list$attribute)) {
+    attribute_list$attribute <- new_attribute
+  } else {
+    attribute_list$attribute <- list(attribute_list$attribute, new_attribute)
+  }
+}
+```
+
+### Methods
+Finally, if there are any methods which you would like to include at the data table
+level, you can do so here. It is optional, but as stated before, can 
+be included in both places if necessary. Like the previous methods, a document 
+needs to be created which holds all of your methods, and the file path can be added 
+to the "data_table_methods" tab in the "template.xlsx" excel sheet. 
+
+```{r}
+method_list <- list()
+data_table_methods <- read_excel("data-raw/template/template.xlsx", sheet = "data_table_methods")
+for (i in 1:nrow(data_table_methods)) {
+  current <- data_table_methods[i, ]
+  new_method <- add_method(parent_element = method_list, methods_file = current$methods_file,
+                            instrumentation = current$instrumentation)
+  if (is.null(method_list$methods)) {
+    method_list$methods <- new_method
+  } else {
+    method_list$methods <- list(method_list$methods, new_method)
+  }
+}
+```
+
+### Putting the Data Table Together
+Now that we have the `attribute_list`, `physical` information, and `methods`, we 
+can compose the data table, which is the last element we need to create our 
+working EML file. The remaining inputs for the data table can be put in the "data_table"
+tab in the "template.xlsx" excel file. Multiple data tables can be appended to one dataset,
+although it is more common to only have one present. 
+```{r}
+data_table <- read_excel("data-raw/template/template.xlsx", sheet = "data_table")
+for (i in 1:nrow(data_table)) {
+  current <- data_table[i, ]
+  phy <- physical_list[i]
+  att <- attribute_list[i]
+  method <- method_list[i]
+  parent_element <- add_data_table(parent_element = parent_element,
+                                   entity_name = current$entity_name,
+                                   entity_description = current$entity_description,
+                                   physical = phy,
+                                   attribute_list = att,
+                                   methods = method,
+                                   number_of_records = current$number_of_records,
+                                   alternate_identifier = current$alternate_identifier)
+}
+```
+If methods are not present at this level, make sure to take it out. 
+```{r}
+data_table <- read_excel("data-raw/template/template.xlsx", sheet = "data_table")
+for (i in 1:nrow(data_table)) {
+  current <- data_table[i, ]
+  phy <- physical_list[i]
+  att <- attribute_list[i]
+  parent_element <- add_data_table(parent_element = parent_element,
+                                   entity_name = current$entity_name,
+                                   entity_description = current$entity_description,
+                                   physical = phy,
+                                   attribute_list = att,
+                                   number_of_records = current$number_of_records,
+                                   alternate_identifier = current$alternate_identifier)
+}
+```
+
+## Putting It All Together
+Now that we have all of the items appended to the `parent_element`, we must append it 
+to the "dataset" and also give the file a unique ID number. 
+```{r}
+eml <- list(packageId = "uuid::UUIDgenerate()",
+            system = "uuid",
+            dataset = parent_element)
+```
+We now have all necessary elements to create a working EML document. The final step is to convert it into the correct format. To do so, we can use the EML library's `write_eml` function. 
+```{r}
+EML::write_eml(eml, "eml.xml")
+```

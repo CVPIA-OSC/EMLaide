@@ -17,12 +17,12 @@ add_coverage(
 )
 }
 \arguments{
-\item{parent_element}{A list representing the EML project or dataset}
+\item{parent_element}{A list representing the EML project or dataset.}
 
 \item{geographic_description}{A description of the locations    of research sites
 and areas related to the data.}
 
-\item{west_bounding_coordinate}{The west cardinality limit}
+\item{west_bounding_coordinate}{The west cardinality limit.}
 
 \item{east_bounding_coordinate}{The east cardinality limit.}
 
@@ -43,7 +43,7 @@ of how to append this information using the add_taxonomic_coverage
 function is given down below.}
 }
 \value{
-The dataset or project with coverage information appended
+The dataset or project with coverage information appended.
 }
 \description{
 Adds the coverage information of a dataset based off of EML standards.

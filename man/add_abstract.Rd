@@ -7,15 +7,18 @@
 add_abstract(parent_element, abstract)
 }
 \arguments{
-\item{abstract}{Abstract paragraphs, requires a minimum of 20 words.}
+\item{abstract}{Abstract paragraphs, requires a minimum of 20 words. A template
+word document is accessible in "~/cvpiaEDIutils/inst/extdata/abstract_template.docx".
+You can copy and paste your abstract in this document and set the parameter of
+\code{abstract} equal to this file path.}
 
-\item{parament_element}{a list representing the EML project or dataset}
+\item{parament_element}{A list representing the EML project or dataset.}
 }
 \value{
-the dataset or project with abstract appended
+The dataset or project with abstract appended
 }
 \description{
-adds the abstract of a dataset according to EML standards
+Adds the abstract of a dataset according to EML standards.
 }
 \details{
 For	a	dataset,	the	abstract	element	can	appear	at	the	resource	level	or	the	project level.
@@ -30,6 +33,6 @@ combination	with	the	parameters	that	seem	most	relevant	for	searches.
 }
 \examples{
 add_abstract(parent_element = list(),
-             abstract = "Reported water chemistry data are from the intensive...")
+             abstract = word_example("abstract_template.docx"))
           
 }

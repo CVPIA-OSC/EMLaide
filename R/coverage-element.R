@@ -1,9 +1,9 @@
 #' @title Add Coverage Element
 #' @description Adds the coverage information of a dataset based off of EML standards.
-#' @param parent_element A list representing the EML project or dataset
+#' @param parent_element A list representing the EML project or dataset.
 #' @param geographic_description A description of the locations	of research sites
 #' and areas related to the data.
-#' @param west_bounding_coordinate The west cardinality limit 
+#' @param west_bounding_coordinate The west cardinality limit.
 #' @param east_bounding_coordinate The east cardinality limit.
 #' @param north_bounding_coordinate The north cardinality limit.
 #' @param south_bounding_coordinate The south cardinality limit.
@@ -16,7 +16,7 @@
 #' and mandates the input of the taxonomy levels of kingdom-species. An example 
 #' of how to append this information using the add_taxonomic_coverage
 #' function is given down below.  
-#' @return The dataset or project with coverage information appended
+#' @return The dataset or project with coverage information appended.
 #' @examples 
 #' add_coverage(parent_element = list(), geographic_description = "North Slope
 #'              drainage basin: Bounding box encompasses 42 drainage basins
@@ -77,23 +77,27 @@ add_coverage <- function(parent_element, geographic_description, west_bounding_c
                                begin_date = "Please suppply the starting date of this project.",
                                end_date = "Please supply the end or projected end date for this project.")
     stop(coverage_error_message, call. = FALSE)
-  } 
-
-  
-  parent_element$coverage <- list(geographicCoverage = 
-                                    list(geographicDescription = geographic_description,
-                                         boundingCoordinates = 
-                                           list(westBoundingCoordinate = west_bounding_coordinate,
-                                                eastBoundingCoordinate = east_bounding_coordinate,
-                                                northBoundingCoordinate = north_bounding_coordinate,
-                                                southBoundingCoordinate = south_bounding_coordinate)),
-                                  temporalCoverage = list(rangeOfDates = 
-                                                            list(beginDate = list(calendarDate = begin_date),
-                                                                 endDate = list(calendarDate = end_date))))
-                                  
-  if (!is.null(taxonomic_coverage)) {
-    parent_element$coverage$taxonomicCoverage = taxonomic_coverage
   }
   
+  coverage <- list(geographicCoverage =
+                     list(geographicDescription = geographic_description,
+                          boundingCoordinates =
+                            list(westBoundingCoordinate = west_bounding_coordinate,
+                                 eastBoundingCoordinate = east_bounding_coordinate,
+                                 northBoundingCoordinate = north_bounding_coordinate,
+                                 southBoundingCoordinate = south_bounding_coordinate)),
+                   temporalCoverage = list(rangeOfDates =
+                                             list(beginDate = list(calendarDate = begin_date),
+                                                  endDate = list(calendarDate = end_date))))
+
+  if (!is.null(taxonomic_coverage)) {
+    coverage$taxonomicCoverage <- taxonomic_coverage
+  }
+  if (is.null(parent_element$coverage)) {
+    parent_element$coverage <- coverage 
+  } else {
+    parent_element$coverage <- list(parent_element$coverage, coverage)
+  }
+    
   return(parent_element)
 }

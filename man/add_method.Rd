@@ -4,37 +4,44 @@
 \alias{add_method}
 \title{Add Data Collection Method Element}
 \usage{
-add_method(description, title = NULL, instrumentation = NULL)
+add_method(
+  parent_element,
+  methods_file,
+  instrumentation = character(),
+  software = NULL,
+  sampling_file = NULL,
+  sampling_coverage = NULL,
+  sampling_citation = NULL,
+  qualityControl_file = NULL
+)
 }
 \arguments{
-\item{description}{How this method is being conducted.}
-
-\item{title}{Optional. What the particular method is accomplishing.}
-
 \item{instrumentation}{Optional. What is being used to conduct the method.}
+
+\item{software}{Optional.}
+
+\item{sampling_file}{Optional.}
+
+\item{sampling_coverage}{Optional.}
+
+\item{sampling_citation}{Optional.}
+
+\item{qualityControl_file}{Optional.}
+
+\item{method_file}{Please provide a word document with proper formatting. The
+function will then append it properly. An example word document can be found in
+"~/cvpiaEDIutils/inst/extdata/methods-template.docx". This file can be opened
+and edited to include your proper methods section.}
 }
 \value{
-The dataset or project with methods information appended.
+The methods information.
 }
 \description{
 Adds the data collection method information of a dataset based off of EML standards.
 }
 \examples{
-add_method(title = "Climate Data",
-           description = "Daily temperature (maximum/minimum) and
-           precipitation data were obtained for each stand from 1996 to 2011
-           from the online PRISM Gridded Climate database (PRISM Climate Group,
-           Oregon State University, http://prism.oregonstate.edu, created 26 Mar 2015)
-           by interpolating 4km2 resolution climate data at the centroid of each
-           eastern hemlock stand using values from surrounding grid cell centers
-           and inverse-distance squared weighting.", 
+add_method(parent_element = list(), 
+           methods_file = word_example("methods-template.docx"),
            instrumentation = "Thermometer")
-                
-# If the method has a longer description than one paragraph:
-description1 <- "This is the first paragraph" 
-description2 <- "This is the second paragraph." 
-description = list(description1, description2)
-add_method(title = "The Data", 
-           description = description,
-           instrumentation = "The applicable instrument")
+ 
 }

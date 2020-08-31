@@ -1,0 +1,48 @@
+title: cvpiaEDIutils 
+url: https://flowwest.github.io/cvpiaEDIutils/
+template:
+  params:
+    bootswatch: flatly
+    
+home:
+  links:
+  - text: EDI's Data Repositroy 
+    href: https://portal.edirepository.org/nis/home.jsp
+  - text: CVPIA Science Integration Team
+    href: http://cvpia.scienceintegrationteam.com/
+    
+reference:
+- title: EML EDI Functions
+  desc: Functions for building EML metadata for EDI's data repository.
+  contents:
+  - add_pub_date
+  - add_personnel
+  - add_title
+  - add_keyword_set
+  - add_abstract
+  - add_license
+  - add_funding
+  - add_maintenance
+  - add_method
+  - add_coverage
+  - add_taxonomic_coverage
+  - add_attribute
+  - add_physical
+  - add_data_table
+- title: Helper Data
+  desc: Internal data for convenience.
+  contents:
+  - CVPIA_common_species
+  - measurement_scale
+  - number_type
+  - storage_type
+
+navbar:
+  type: default
+  left:
+  - text: 'Reference'
+    href: reference/index.html
+  - text: 'Articles'
+    menu: 
+      - text: 'EML Template Helper'
+        href: articles/creating-EML.html

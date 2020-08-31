@@ -25,9 +25,11 @@ point, which allows the ratio to have meaning.}
 
 \item{number_type}{What type of number. Examples given in exported documentation.}
 
-\item{minimum}{Optional. A theoreical minimum.}
+\item{minimum}{Optional. Theoretical or allowable minimum value. Values can be larger than
+or equal to this number.}
 
-\item{maximum}{Optional. A theoretical maximum.}
+\item{maximum}{Optional. Theoretical or allowable maximum value. Values can be less than
+or equal to this number.}
 }
 \description{
 Add Interval or Ratio Measurement Scales
@@ -41,7 +43,7 @@ add_attribute(attribute_name = "Count",
                    type = "interval",
                    units = "number",
                    unit_precision = "1",
-                   number_type = "whole", 
+                   number_type = cvpiaEDIutils::number_type$whole, 
                    minimum = "0")
                    
 # Ratio: 
@@ -52,6 +54,6 @@ add_attribute(attribute_name = "pH",
               type = "ratio",
               units = "dimensionless",
               unit_precision = "0.01",
-              number_type = "real")
+              number_type = cvpiaEDIutils::number_type$real)
 }
 \keyword{internal}

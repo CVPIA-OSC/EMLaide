@@ -58,6 +58,6 @@ add_physical <- function(file_path,
     physical$distribution = list(online = list(url = list(url = data_url,
                                                           "function" = "download")))
   }
-  
+
   return(physical)
 }

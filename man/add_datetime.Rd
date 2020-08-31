@@ -11,9 +11,11 @@ add_datetime(date_time_format, date_time_precision, minimum, maximum)
 
 \item{date_time_precision}{To what level of time your attribute is recorded.}
 
-\item{minimum}{The earliest dateTime recorded.}
+\item{minimum}{The earliest dateTime recorded. Values can be larger than
+or equal to this number.}
 
-\item{maximum}{The latest dateTime recorded.}
+\item{maximum}{The latest dateTime recorded. Values can be less than
+or equal to this number.}
 }
 \description{
 Add dateTime Measurement Scale
