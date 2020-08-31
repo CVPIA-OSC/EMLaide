@@ -1,4 +1,4 @@
-Package: cvpiaEDIutils
+Package: EDIutils
 Title: Provides functions for building EML metadata for EDI's data repository. 
 Version: 0.0.0.9000
 Authors@R: c(
@@ -22,4 +22,4 @@ Imports:
     EML
 Depends: 
     R (>= 2.10)
-URL: https://flowwest.github.io/cvpiaEDIutils/
+URL: https://CVPIA-OSC.github.io/EDIutils/

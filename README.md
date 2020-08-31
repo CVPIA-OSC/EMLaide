@@ -1,10 +1,10 @@
-# cvpiaEDIutils
+# EDIutils
 
 ### Installation
 This package can be installed using the following commands: 
 ```{r}
 # install.packages("remotes")
-remotes::install_github("FlowWest/cvpiaEDIutils")
+remotes::install_github("CVPIA-OSC/EDIutils")
 ```
 
 ### Usage 
