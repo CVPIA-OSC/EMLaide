@@ -3,7 +3,7 @@
 ### Installation
 This package can be installed using the following commands: 
 ```{r}
-# install.packages("devtools")
+# install.packages("remotes")
 remotes::install_github("FlowWest/cvpiaEDIutils")
 ```
 
