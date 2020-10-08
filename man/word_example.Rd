@@ -11,7 +11,7 @@ word_example(path = NULL)
 }
 \description{
 Helps read documents which are present in the examples of the
-\code{cvpiaEDIutils} package.
+\code{EDIutils} package.
 }
 \examples{
 word_example()

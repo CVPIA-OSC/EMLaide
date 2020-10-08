@@ -1,8 +1,8 @@
 ---
-title: "Creating EML Using cvpiaEDIutils"
+title: "Creating EML Using EDIutils"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{Creating EML Using cvpiaEDIutils}
+  %\VignetteIndexEntry{Creating EML Using EDIutils}
   %\VignetteEngine{knitr::rmarkdown}
   \usepackage[utf8]{inputenc}
 ---
@@ -12,7 +12,7 @@ knitr::opts_knit$set(root.dir = rprojroot::find_rstudio_root_file())
 ```
 The following libraries are needed to create a working EML document. 
 ```{r, message = FALSE}
-library(cvpiaEDIutils)
+library(EDIutils)
 library(tidyverse)
 library(readxl)
 library(EML)

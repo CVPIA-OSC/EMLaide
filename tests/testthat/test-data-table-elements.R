@@ -262,10 +262,8 @@ test_that('The attribute function adds attribute elements.', {
                                           exclusive = "false", maximum = "2003")))))))
 })
 
-# Tests for add_data_table function 
 
 # test_that('Correct error and warning messages are produced', {
-#   # setwd("~/FlowWest/cvpiaEDIutils")
 #   methods <- add_data_table(parent_element = list(), 
 #                            entity_description = "Soil CO2 Fluxes 2013-2014",
 #                            physical = "physical",
@@ -333,23 +331,22 @@ test_that('The attribute function adds attribute elements.', {
 
 # test_that('The add_data_table function adds the appropriate elements.', {
 #   
-#   # setwd("~/FlowWest/cvpiaEDIutils")
 #   method <- add_method(methods_file = "tests/testthat/methods_test.docx")
 # 
 #   attribute_1 <- add_attribute(attribute_name = "site_id",
 #                                attribute_definition = "Site id as used in sites table",
-#                                storage_type = cvpiaEDIutils::storage_type$integer,
-#                                measurement_scale = cvpiaEDIutils::measurement_scale$nominal,
+#                                storage_type = EDIutils::storage_type$integer,
+#                                measurement_scale = EDIutils::measurement_scale$nominal,
 #                                domain = "text",
 #                                definition = "Site id as used in sites table.")
 #   attribute_2 <- add_attribute(attribute_name = "LatitudeDD",
 #                                attribute_definition = "Latitude",
-#                                storage_type = cvpiaEDIutils::storage_type$string,
-#                                measurement_scale = cvpiaEDIutils::measurement_scale$ordinal,
+#                                storage_type = EDIutils::storage_type$string,
+#                                measurement_scale = EDIutils::measurement_scale$ordinal,
 #                                domain = "text",
 #                                definition = "Latitude")
 #   attribute_list <- list(attribute_1, attribute_2)
-#   # setwd("~/FlowWest/cvpiaEDIutils/tests/testthat")
+
 #   physical <- add_physical(file_path = "test_data.csv",
 #                            data_url = "https://mydata.org/etc")
 #   
@@ -388,7 +385,6 @@ test_that('The attribute function adds attribute elements.', {
 #Tests for add_physical function
 
 # test_that('Correct error and warning messages are produced for the add_physical function', {
-#   # setwd("~/FlowWest/cvpiaEDIutils/tests/testthat") 
 #   physical <- add_physical(file_path = "test_data.csv")
 #   expect_message(physical,
 #                  'No url has been provided. Please input a url to which the data file can be downloaded if possible.')

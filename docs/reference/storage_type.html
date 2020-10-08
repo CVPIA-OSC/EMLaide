@@ -8,21 +8,29 @@
 
 <title>Attribute Storage Types — storage_type • EDIutils</title>
 
-<!-- jquery -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-<!-- Bootstrap -->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/flatly/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" />
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script>
+<!-- jquery -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<!-- Bootstrap -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.4.0/flatly/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" />
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script>
+
+<!-- bootstrap-toc -->
+<link rel="stylesheet" href="../bootstrap-toc.css">
+<script src="../bootstrap-toc.js"></script>
 
 <!-- Font Awesome icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous" />
 
 <!-- clipboard.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script>
 
-<!-- sticky kit -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-kit/1.1.3/sticky-kit.min.js" integrity="sha256-c4Rlo1ZozqTPE2RLuvbusY3+SU1pQaJC0TjuhygMipw=" crossorigin="anonymous"></script>
+<!-- headroom.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script>
 
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
@@ -30,11 +38,11 @@
 
 
 
-<meta property="og:title" content="Attribute Storage Types — storage_type" />
 
+<meta property="og:title" content="Attribute Storage Types — storage_type" />
 <meta property="og:description" content="A set of common options for different attribute storage types.
 A helper data object to be used with add_attribute" />
-<meta name="twitter:card" content="summary" />
+
 
 
 
@@ -48,9 +56,10 @@ A helper data object to be used with add_attribute" />
 <![endif]-->
 
 
+
   </head>
 
-  <body>
+  <body data-spy="scroll" data-target="#toc">
     <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -86,7 +95,6 @@ A helper data object to be used with add_attribute" />
   </ul>
 </li>
       </ul>
-      
       <ul class="nav navbar-nav navbar-right">
         
       </ul>
@@ -96,6 +104,7 @@ A helper data object to be used with add_attribute" />
 </div><!--/.navbar -->
 
       
+
       </header>
 
 <div class="row">
@@ -107,39 +116,43 @@ A helper data object to be used with add_attribute" />
     </div>
 
     <div class="ref-description">
-    
     <p>A set of common options for different attribute storage types.
 A helper data object to be used with <code><a href='add_attribute.html'>add_attribute</a></code></p>
-    
     </div>
 
-    <pre class="usage"><span class='no'>storage_type</span></pre>
-        
+    <pre class="usage"><span class='va'>storage_type</span></pre>
+
+
     <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
 
     <p>A named list, keys are named the same as values.</p>
-    
     <h2 class="hasAnchor" id="character-storage-types"><a class="anchor" href="#character-storage-types"></a>Character Storage Types</h2>
 
     
-    <ul>
+
+
+<ul>
 <li><p><strong>string</strong>: The string datatype represents character strings in XML.
 Use <a href='https://www.w3.org/TR/xmlschema-2/#string'>this</a> link for more information.</p></li>
 </ul>
-    
+
     <h2 class="hasAnchor" id="locical-storage-types"><a class="anchor" href="#locical-storage-types"></a>Locical Storage Types</h2>
 
     
-    <ul>
+
+
+<ul>
 <li><p><strong>boolean</strong>: The boolean datatype has the value space required
 to support the mathematical concept of binary-valued logic i.e true, false.
 Use <a href='https://www.w3.org/TR/xmlschema-2/#boolean'>this</a> link for more information.</p></li>
 </ul>
-    
+
     <h2 class="hasAnchor" id="numeric-storage-types"><a class="anchor" href="#numeric-storage-types"></a>Numeric Storage Types</h2>
 
     
-    <ul>
+
+
+<ul>
 <li><p><strong>decimal</strong>: The decimal datatype represents a subset of the real numbers,
 which can be represented by decimal numerals. Out of the 3 numeric storage types,
 decimal is the most precise. It uses up to 28-29 significant digits.
@@ -157,11 +170,13 @@ main difference between decimal, float, and double. It uses up to 15-16 signific
 Use <a href='https://www.w3.org/TR/xmlschema-2/#double'>this</a> link for more
 information. Examples include 3.14, 2.718</p></li>
 </ul>
-    
+
     <h2 class="hasAnchor" id="time-storage-types"><a class="anchor" href="#time-storage-types"></a>Time Storage Types</h2>
 
     
-    <ul>
+
+
+<ul>
 <li><p><strong>duration</strong>:The duration datatype represents a duration of time.
 The value space of duration is a six-dimensional space where the coordinates
 designate the Gregorian year, month, day, hour, minute, and second components
@@ -207,31 +222,20 @@ Use <a href='https://www.w3.org/TR/xmlschema-2/#gMonth'>this</a> link for more i
 The gMonth datatype follows the format -MM. For example, the month of March
 would be inputted as 03.</p></li>
 </ul>
-    
+
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='no'>storage_type</span>$<span class='no'>integer</span> <span class='co'>#"integer"</span></div><div class='output co'>#&gt; NULL</div><div class='input'>
+    <pre class="examples"><div class='input'><span class='va'>storage_type</span><span class='op'>$</span><span class='va'>integer</span> <span class='co'>#"integer"</span>
+</div><div class='output co'>#&gt; NULL</div><div class='input'>
 </div></pre>
   </div>
-  <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
-    <h2>Contents</h2>
-    <ul class="nav nav-pills nav-stacked">
-      
-      <li><a href="#format">Format</a></li>
-
-      <li><a href="#character-storage-types">Character Storage Types</a></li>
-
-      <li><a href="#locical-storage-types">Locical Storage Types</a></li>
-
-      <li><a href="#numeric-storage-types">Numeric Storage Types</a></li>
-
-      <li><a href="#time-storage-types">Time Storage Types</a></li>
-      
-      <li><a href="#examples">Examples</a></li>
-    </ul>
-
+  <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
+    <nav id="toc" data-toggle="toc" class="sticky-top">
+      <h2 data-toc-skip>Contents</h2>
+    </nav>
   </div>
 </div>
+
 
       <footer>
       <div class="copyright">
@@ -239,13 +243,16 @@ would be inputted as 03.</p></li>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.3.0.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
+
       </footer>
    </div>
 
   
 
+
   </body>
 </html>
+
 

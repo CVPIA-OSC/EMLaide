@@ -36,7 +36,7 @@ for (i in 1:length(thesaurus)) {
 }
 
 #Append Abstract 
-setwd("~/FlowWest/cvpiaEDIutils")
+
 parent_element <- add_abstract(parent_element = parent_element, 
                                abstract = "data-raw/Hannon-Example/hannon_example_abstract.docx")
 
@@ -61,10 +61,10 @@ parent_element <- add_maintenance(parent_element = parent_element, status = main
 
 #Append Method Information 
 method_table <- read_excel("data-raw/template/template.xlsx", sheet = "methods")
-setwd("~/FlowWest/cvpiaEDIutils")
+
 
 for (i in 1:nrow(method_table)) {
-  setwd("~/FlowWest/cvpiaEDIutils")
+  
   current <- method_table[i, ]
   new_method <- add_method(parent_element = parent_element, methods_file = current$methods_file,
                            instrumentation = current$instrumentation)
@@ -181,9 +181,9 @@ for (i in 1:nrow(attribute_table)) {
 
 method_list <- list()
 data_table_methods <- read_excel("data-raw/template/template.xlsx", sheet = "data_table_methods")
-setwd("~/FlowWest/cvpiaEDIutils")
+
 for (i in 1:nrow(data_table_methods)) {
-  setwd("~/FlowWest/cvpiaEDIutils")
+  
   current <- data_table_methods[i, ]
   new_method <- add_method(parent_element = method_list, methods_file = current$methods_file,
                             instrumentation = current$instrumentation)

@@ -22,8 +22,8 @@ Add Ordinal Measurment Scale
 # Ordinal(text):
 add_attribute(attribute_name = "LatitudeDD", 
               attribute_definition = "Latitude",
-              storage_type = cvpiaEDIutils::storage_type$string,
-              measurement_scale = cvpiaEDIutils::measurement_scale$ordinal,
+              storage_type = EDIutils::storage_type$string,
+              measurement_scale = EDIutils::measurement_scale$ordinal,
               domain= "text", 
               definition = "Latitude")
               
@@ -35,8 +35,8 @@ code_def_3 = list(code = "3", definition = "more than 100 insects per meter")
 code_definition = list(code_def_0, code_def_1, code_def_2, code_def_3)
 add_attribute(attribute_name = "hwa",
               attribute_definition = "Hemlock woolly adelgid density per meter of branch",
-              storage_type = cvpiaEDIutils::storage_type$decimal,
-              measurement_scale = cvpiaEDIutils::measurement_scale$ordinal,
+              storage_type = EDIutils::storage_type$decimal,
+              measurement_scale = EDIutils::measurement_scale$ordinal,
               domain = "enumerated",
               definition = code_definition)
 }

@@ -1,5 +1,5 @@
 library(testthat)
-library(cvpiaEDIutils)
+library(EDIutils)
 library(tidyverse)
 
-test_check("cvpiaEDIutils")
+test_check("EDIutils")

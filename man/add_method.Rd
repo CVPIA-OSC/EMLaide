@@ -30,7 +30,7 @@ add_method(
 
 \item{method_file}{Please provide a word document with proper formatting. The
 function will then append it properly. An example word document can be found in
-"~/cvpiaEDIutils/inst/extdata/methods-template.docx". This file can be opened
+"~/EDIutils/inst/extdata/methods-template.docx". This file can be opened
 and edited to include your proper methods section.}
 }
 \value{

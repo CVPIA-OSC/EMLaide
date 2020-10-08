@@ -46,7 +46,6 @@ test_that('dataset title function adds title and short name.',{
 })
 
 #Tests for add_abstract function 
-# setwd("~/FlowWest/cvpiaEDIutils")
 
 # test_that('the dataset add_abstract function adds abstract', {
 #   abstract <- add_abstract(parent_element = list(), abstract = "tests/testthat/abstract_test.docx")
@@ -288,7 +287,6 @@ test_that('The method function errors when missing mandatory identifier inputs.'
 })
 
 # test_that('The method function adds the method elements', {
-#   # setwd("~/FlowWest/cvpiaEDIutils")
 #   method <- add_method(methods_file = "tests/testthat/methods_test.docx",
 #              instrumentation = "Thermometer")
 #   expect_equal(method,

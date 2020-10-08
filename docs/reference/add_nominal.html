@@ -8,21 +8,29 @@
 
 <title>Add Nominal Measurment Scale — add_nominal • EDIutils</title>
 
-<!-- jquery -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-<!-- Bootstrap -->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/flatly/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" />
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script>
+<!-- jquery -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<!-- Bootstrap -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.4.0/flatly/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" />
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script>
+
+<!-- bootstrap-toc -->
+<link rel="stylesheet" href="../bootstrap-toc.css">
+<script src="../bootstrap-toc.js"></script>
 
 <!-- Font Awesome icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous" />
 
 <!-- clipboard.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script>
 
-<!-- sticky kit -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-kit/1.1.3/sticky-kit.min.js" integrity="sha256-c4Rlo1ZozqTPE2RLuvbusY3+SU1pQaJC0TjuhygMipw=" crossorigin="anonymous"></script>
+<!-- headroom.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script>
 
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
@@ -30,10 +38,10 @@
 
 
 
-<meta property="og:title" content="Add Nominal Measurment Scale — add_nominal" />
 
+<meta property="og:title" content="Add Nominal Measurment Scale — add_nominal" />
 <meta property="og:description" content="Add Nominal Measurment Scale" />
-<meta name="twitter:card" content="summary" />
+
 
 
 
@@ -47,9 +55,10 @@
 <![endif]-->
 
 
+
   </head>
 
-  <body>
+  <body data-spy="scroll" data-target="#toc">
     <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -85,7 +94,6 @@
   </ul>
 </li>
       </ul>
-      
       <ul class="nav navbar-nav navbar-right">
         
       </ul>
@@ -95,6 +103,7 @@
 </div><!--/.navbar -->
 
       
+
       </header>
 
 <div class="row">
@@ -106,13 +115,11 @@
     </div>
 
     <div class="ref-description">
-    
     <p>Add Nominal Measurment Scale</p>
-    
     </div>
 
-    <pre class="usage"><span class='fu'>add_nominal</span>(<span class='kw'>domain</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>"text"</span>, <span class='st'>"enumerated"</span>), <span class='no'>definition</span>, <span class='kw'>text_pattern</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
-    
+    <pre class="usage"><span class='fu'>add_nominal</span><span class='op'>(</span>domain <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"text"</span>, <span class='st'>"enumerated"</span><span class='op'>)</span>, <span class='va'>definition</span>, text_pattern <span class='op'>=</span> <span class='cn'>NULL</span><span class='op'>)</span></pre>
+
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
@@ -130,16 +137,17 @@ If the domain is "enumerated", provide a list of the attributes code definitions
       <td><p>Optional. Only needed if applicable and the domain given is "text".</p></td>
     </tr>
     </table>
-    
+
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'># Nominal(text):</span>
-<span class='fu'><a href='add_attribute.html'>add_attribute</a></span>(<span class='kw'>attribute_name</span> <span class='kw'>=</span> <span class='st'>"site_id"</span>,
-              <span class='kw'>attribute_definition</span> <span class='kw'>=</span> <span class='st'>"Site id as used in sites table"</span>,
-              <span class='kw'>storage_type</span> <span class='kw'>=</span> <span class='kw pkg'>cvpiaEDIutils</span><span class='kw ns'>::</span><span class='no'><a href='https://www.rdocumentation.org/packages/cvpiaEDIutils/topics/storage_type'>storage_type</a></span>$<span class='no'>integer</span>,
-              <span class='kw'>measurement_scale</span> <span class='kw'>=</span> <span class='kw pkg'>cvpiaEDIutils</span><span class='kw ns'>::</span><span class='no'><a href='https://www.rdocumentation.org/packages/cvpiaEDIutils/topics/measurement_scale'>measurement_scale</a></span>$<span class='no'>nominal</span>,
-              <span class='kw'>domain</span><span class='kw'>=</span> <span class='st'>"text"</span>,
-              <span class='kw'>definition</span> <span class='kw'>=</span> <span class='st'>"Site id as used in sites table."</span>)</div><div class='output co'>#&gt; <span class='message'>No attribute label provided.</span></div><div class='output co'>#&gt; <span class='message'>No text pattern is provided. Please add if applicable.</span></div><div class='output co'>#&gt; $attributeName
+<span class='fu'><a href='add_attribute.html'>add_attribute</a></span><span class='op'>(</span>attribute_name <span class='op'>=</span> <span class='st'>"site_id"</span>,
+              attribute_definition <span class='op'>=</span> <span class='st'>"Site id as used in sites table"</span>,
+              storage_type <span class='op'>=</span> <span class='fu'>EDIutils</span><span class='fu'>::</span><span class='va'><a href='storage_type.html'>storage_type</a></span><span class='op'>$</span><span class='va'>integer</span>,
+              measurement_scale <span class='op'>=</span> <span class='fu'>EDIutils</span><span class='fu'>::</span><span class='va'><a href='measurement_scale.html'>measurement_scale</a></span><span class='op'>$</span><span class='va'>nominal</span>,
+              domain<span class='op'>=</span> <span class='st'>"text"</span>,
+              definition <span class='op'>=</span> <span class='st'>"Site id as used in sites table."</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; <span class='message'>No attribute label provided.</span></div><div class='output co'>#&gt; <span class='message'>No text pattern is provided. Please add if applicable.</span></div><div class='output co'>#&gt; $attributeName
 #&gt; [1] "site_id"
 #&gt; 
 #&gt; $attributeDefinition
@@ -160,15 +168,16 @@ If the domain is "enumerated", provide a list of the attributes code definitions
 #&gt; 
 #&gt; </div><div class='input'>
 <span class='co'># Nominal(enumerated):</span>
-<span class='no'>code_def_1</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/list'>list</a></span>(<span class='kw'>code</span> <span class='kw'>=</span> <span class='st'>"yes"</span>, <span class='kw'>definition</span> <span class='kw'>=</span> <span class='st'>"has been captured previously"</span>)
-<span class='no'>code_def_2</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/list'>list</a></span>(<span class='kw'>code</span> <span class='kw'>=</span> <span class='st'>"no"</span>, <span class='kw'>definition</span> <span class='kw'>=</span> <span class='st'>"has not been captured previously"</span>)
-<span class='no'>code_definition</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/list'>list</a></span>(<span class='no'>code_def_1</span>, <span class='no'>code_def_2</span>)
-<span class='fu'><a href='add_attribute.html'>add_attribute</a></span>(<span class='kw'>attribute_name</span> <span class='kw'>=</span> <span class='st'>"Recap"</span>,
-              <span class='kw'>attribute_definition</span> <span class='kw'>=</span> <span class='st'>"Has the Turtle been captured and tagged previously"</span>,
-              <span class='kw'>storage_type</span> <span class='kw'>=</span> <span class='kw pkg'>cvpiaEDIutils</span><span class='kw ns'>::</span><span class='no'><a href='https://www.rdocumentation.org/packages/cvpiaEDIutils/topics/storage_type'>storage_type</a></span>$<span class='no'>text</span>,
-              <span class='kw'>measurement_scale</span> <span class='kw'>=</span> <span class='kw pkg'>cvpiaEDIutils</span><span class='kw ns'>::</span><span class='no'><a href='https://www.rdocumentation.org/packages/cvpiaEDIutils/topics/measurement_scale'>measurement_scale</a></span>$<span class='no'>nominal</span>,
-              <span class='kw'>domain</span> <span class='kw'>=</span> <span class='st'>"enumerated"</span>,
-              <span class='kw'>definition</span> <span class='kw'>=</span> <span class='no'>code_definition</span>)</div><div class='output co'>#&gt; <span class='message'>No attribute label provided.</span></div><div class='output co'>#&gt; $attributeName
+<span class='va'>code_def_1</span> <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>code <span class='op'>=</span> <span class='st'>"yes"</span>, definition <span class='op'>=</span> <span class='st'>"has been captured previously"</span><span class='op'>)</span>
+<span class='va'>code_def_2</span> <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>code <span class='op'>=</span> <span class='st'>"no"</span>, definition <span class='op'>=</span> <span class='st'>"has not been captured previously"</span><span class='op'>)</span>
+<span class='va'>code_definition</span> <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span><span class='va'>code_def_1</span>, <span class='va'>code_def_2</span><span class='op'>)</span>
+<span class='fu'><a href='add_attribute.html'>add_attribute</a></span><span class='op'>(</span>attribute_name <span class='op'>=</span> <span class='st'>"Recap"</span>, 
+              attribute_definition <span class='op'>=</span> <span class='st'>"Has the Turtle been captured and tagged previously"</span>,
+              storage_type <span class='op'>=</span> <span class='fu'>EDIutils</span><span class='fu'>::</span><span class='va'><a href='storage_type.html'>storage_type</a></span><span class='op'>$</span><span class='va'>text</span>, 
+              measurement_scale <span class='op'>=</span> <span class='fu'>EDIutils</span><span class='fu'>::</span><span class='va'><a href='measurement_scale.html'>measurement_scale</a></span><span class='op'>$</span><span class='va'>nominal</span>, 
+              domain <span class='op'>=</span> <span class='st'>"enumerated"</span>,
+              definition <span class='op'>=</span> <span class='va'>code_definition</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; <span class='message'>No attribute label provided.</span></div><div class='output co'>#&gt; $attributeName
 #&gt; [1] "Recap"
 #&gt; 
 #&gt; $attributeDefinition
@@ -202,16 +211,13 @@ If the domain is "enumerated", provide a list of the attributes code definitions
 #&gt; 
 #&gt; </div></pre>
   </div>
-  <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
-    <h2>Contents</h2>
-    <ul class="nav nav-pills nav-stacked">
-      <li><a href="#arguments">Arguments</a></li>
-            
-      <li><a href="#examples">Examples</a></li>
-    </ul>
-
+  <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
+    <nav id="toc" data-toggle="toc" class="sticky-top">
+      <h2 data-toc-skip>Contents</h2>
+    </nav>
   </div>
 </div>
+
 
       <footer>
       <div class="copyright">
@@ -219,13 +225,16 @@ If the domain is "enumerated", provide a list of the attributes code definitions
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.3.0.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
+
       </footer>
    </div>
 
   
 
+
   </body>
 </html>
+
 

@@ -8,21 +8,29 @@
 
 <title>Add Interval or Ratio Measurement Scales — add_interval_ratio • EDIutils</title>
 
-<!-- jquery -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-<!-- Bootstrap -->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/flatly/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" />
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script>
+<!-- jquery -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<!-- Bootstrap -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.4.0/flatly/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" />
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script>
+
+<!-- bootstrap-toc -->
+<link rel="stylesheet" href="../bootstrap-toc.css">
+<script src="../bootstrap-toc.js"></script>
 
 <!-- Font Awesome icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous" />
 
 <!-- clipboard.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script>
 
-<!-- sticky kit -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-kit/1.1.3/sticky-kit.min.js" integrity="sha256-c4Rlo1ZozqTPE2RLuvbusY3+SU1pQaJC0TjuhygMipw=" crossorigin="anonymous"></script>
+<!-- headroom.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script>
 
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
@@ -30,10 +38,10 @@
 
 
 
-<meta property="og:title" content="Add Interval or Ratio Measurement Scales — add_interval_ratio" />
 
+<meta property="og:title" content="Add Interval or Ratio Measurement Scales — add_interval_ratio" />
 <meta property="og:description" content="Add Interval or Ratio Measurement Scales" />
-<meta name="twitter:card" content="summary" />
+
 
 
 
@@ -47,9 +55,10 @@
 <![endif]-->
 
 
+
   </head>
 
-  <body>
+  <body data-spy="scroll" data-target="#toc">
     <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -85,7 +94,6 @@
   </ul>
 </li>
       </ul>
-      
       <ul class="nav navbar-nav navbar-right">
         
       </ul>
@@ -95,6 +103,7 @@
 </div><!--/.navbar -->
 
       
+
       </header>
 
 <div class="row">
@@ -106,20 +115,18 @@
     </div>
 
     <div class="ref-description">
-    
     <p>Add Interval or Ratio Measurement Scales</p>
-    
     </div>
 
-    <pre class="usage"><span class='fu'>add_interval_ratio</span>(
-  <span class='kw'>type</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>"interval"</span>, <span class='st'>"ratio"</span>),
-  <span class='no'>units</span>,
-  <span class='no'>unit_precision</span>,
-  <span class='no'>number_type</span>,
-  <span class='kw'>minimum</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>maximum</span> <span class='kw'>=</span> <span class='kw'>NULL</span>
-)</pre>
-    
+    <pre class="usage"><span class='fu'>add_interval_ratio</span><span class='op'>(</span>
+  type <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"interval"</span>, <span class='st'>"ratio"</span><span class='op'>)</span>,
+  <span class='va'>units</span>,
+  <span class='va'>unit_precision</span>,
+  <span class='va'>number_type</span>,
+  minimum <span class='op'>=</span> <span class='cn'>NULL</span>,
+  maximum <span class='op'>=</span> <span class='cn'>NULL</span>
+<span class='op'>)</span></pre>
+
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
@@ -153,19 +160,20 @@ or equal to this number.</p></td>
 or equal to this number.</p></td>
     </tr>
     </table>
-    
+
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'># Interval:</span>
-<span class='fu'><a href='add_attribute.html'>add_attribute</a></span>(<span class='kw'>attribute_name</span> <span class='kw'>=</span> <span class='st'>"Count"</span>,
-              <span class='kw'>attribute_definition</span> <span class='kw'>=</span> <span class='st'>"Number of individuals observed"</span>,
-                   <span class='kw'>measurement_scale</span> <span class='kw'>=</span> <span class='kw pkg'>cvpiaEDIutils</span><span class='kw ns'>::</span><span class='no'><a href='https://www.rdocumentation.org/packages/cvpiaEDIutils/topics/measurement_scale'>measurement_scale</a></span>$<span class='no'>interval</span>,
-                   <span class='kw'>storage_type</span> <span class='kw'>=</span> <span class='kw pkg'>cvpiaEDIutils</span><span class='kw ns'>::</span><span class='no'><a href='https://www.rdocumentation.org/packages/cvpiaEDIutils/topics/storage_type'>storage_type</a></span>$<span class='no'>integer</span>,
-                   <span class='kw'>type</span> <span class='kw'>=</span> <span class='st'>"interval"</span>,
-                   <span class='kw'>units</span> <span class='kw'>=</span> <span class='st'>"number"</span>,
-                   <span class='kw'>unit_precision</span> <span class='kw'>=</span> <span class='st'>"1"</span>,
-                   <span class='kw'>number_type</span> <span class='kw'>=</span> <span class='kw pkg'>cvpiaEDIutils</span><span class='kw ns'>::</span><span class='no'><a href='https://www.rdocumentation.org/packages/cvpiaEDIutils/topics/number_type'>number_type</a></span>$<span class='no'>whole</span>,
-                   <span class='kw'>minimum</span> <span class='kw'>=</span> <span class='st'>"0"</span>)</div><div class='output co'>#&gt; <span class='message'>No attribute label provided.</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Please provide a maximum theoretical value if applicable.</span></div><div class='output co'>#&gt; $attributeName
+<span class='fu'><a href='add_attribute.html'>add_attribute</a></span><span class='op'>(</span>attribute_name <span class='op'>=</span> <span class='st'>"Count"</span>,
+              attribute_definition <span class='op'>=</span> <span class='st'>"Number of individuals observed"</span>,
+                   measurement_scale <span class='op'>=</span> <span class='fu'>EDIutils</span><span class='fu'>::</span><span class='va'><a href='measurement_scale.html'>measurement_scale</a></span><span class='op'>$</span><span class='va'>interval</span>, 
+                   storage_type <span class='op'>=</span> <span class='fu'>EDIutils</span><span class='fu'>::</span><span class='va'><a href='storage_type.html'>storage_type</a></span><span class='op'>$</span><span class='va'>integer</span>,
+                   type <span class='op'>=</span> <span class='st'>"interval"</span>,
+                   units <span class='op'>=</span> <span class='st'>"number"</span>,
+                   unit_precision <span class='op'>=</span> <span class='st'>"1"</span>,
+                   number_type <span class='op'>=</span> <span class='fu'>EDIutils</span><span class='fu'>::</span><span class='va'><a href='number_type.html'>number_type</a></span><span class='op'>$</span><span class='va'>whole</span>, 
+                   minimum <span class='op'>=</span> <span class='st'>"0"</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; <span class='message'>No attribute label provided.</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Please provide a maximum theoretical value if applicable.</span></div><div class='output co'>#&gt; $attributeName
 #&gt; [1] "Count"
 #&gt; 
 #&gt; $attributeDefinition
@@ -200,16 +208,17 @@ or equal to this number.</p></td>
 #&gt; 
 #&gt; 
 #&gt; 
-#&gt; </div><div class='input'>
+#&gt; </div><div class='input'>                   
 <span class='co'># Ratio: </span>
-<span class='fu'><a href='add_attribute.html'>add_attribute</a></span>(<span class='kw'>attribute_name</span> <span class='kw'>=</span> <span class='st'>"pH"</span>,
-              <span class='kw'>attribute_definition</span> <span class='kw'>=</span> <span class='st'>"pH of soil solution"</span>,
-              <span class='kw'>storage_type</span> <span class='kw'>=</span> <span class='kw pkg'>cvpiaEDIutils</span><span class='kw ns'>::</span><span class='no'><a href='https://www.rdocumentation.org/packages/cvpiaEDIutils/topics/storage_type'>storage_type</a></span>$<span class='no'>float</span>,
-              <span class='kw'>measurement_scale</span> <span class='kw'>=</span> <span class='kw pkg'>cvpiaEDIutils</span><span class='kw ns'>::</span><span class='no'><a href='https://www.rdocumentation.org/packages/cvpiaEDIutils/topics/measurement_scale'>measurement_scale</a></span>$<span class='no'>ratio</span>,
-              <span class='kw'>type</span> <span class='kw'>=</span> <span class='st'>"ratio"</span>,
-              <span class='kw'>units</span> <span class='kw'>=</span> <span class='st'>"dimensionless"</span>,
-              <span class='kw'>unit_precision</span> <span class='kw'>=</span> <span class='st'>"0.01"</span>,
-              <span class='kw'>number_type</span> <span class='kw'>=</span> <span class='kw pkg'>cvpiaEDIutils</span><span class='kw ns'>::</span><span class='no'><a href='https://www.rdocumentation.org/packages/cvpiaEDIutils/topics/number_type'>number_type</a></span>$<span class='no'>real</span>)</div><div class='output co'>#&gt; <span class='message'>No attribute label provided.</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Please provide a minimum theoretical value if applicable.</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Please provide a minimum theoretical value if applicable.</span></div><div class='output co'>#&gt; $attributeName
+<span class='fu'><a href='add_attribute.html'>add_attribute</a></span><span class='op'>(</span>attribute_name <span class='op'>=</span> <span class='st'>"pH"</span>,
+              attribute_definition <span class='op'>=</span> <span class='st'>"pH of soil solution"</span>,
+              storage_type <span class='op'>=</span> <span class='fu'>EDIutils</span><span class='fu'>::</span><span class='va'><a href='storage_type.html'>storage_type</a></span><span class='op'>$</span><span class='va'>float</span>,
+              measurement_scale <span class='op'>=</span> <span class='fu'>EDIutils</span><span class='fu'>::</span><span class='va'><a href='measurement_scale.html'>measurement_scale</a></span><span class='op'>$</span><span class='va'>ratio</span>,
+              type <span class='op'>=</span> <span class='st'>"ratio"</span>,
+              units <span class='op'>=</span> <span class='st'>"dimensionless"</span>,
+              unit_precision <span class='op'>=</span> <span class='st'>"0.01"</span>,
+              number_type <span class='op'>=</span> <span class='fu'>EDIutils</span><span class='fu'>::</span><span class='va'><a href='number_type.html'>number_type</a></span><span class='op'>$</span><span class='va'>real</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; <span class='message'>No attribute label provided.</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Please provide a minimum theoretical value if applicable.</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Please provide a minimum theoretical value if applicable.</span></div><div class='output co'>#&gt; $attributeName
 #&gt; [1] "pH"
 #&gt; 
 #&gt; $attributeDefinition
@@ -236,16 +245,13 @@ or equal to this number.</p></td>
 #&gt; 
 #&gt; </div></pre>
   </div>
-  <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
-    <h2>Contents</h2>
-    <ul class="nav nav-pills nav-stacked">
-      <li><a href="#arguments">Arguments</a></li>
-            
-      <li><a href="#examples">Examples</a></li>
-    </ul>
-
+  <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
+    <nav id="toc" data-toggle="toc" class="sticky-top">
+      <h2 data-toc-skip>Contents</h2>
+    </nav>
   </div>
 </div>
+
 
       <footer>
       <div class="copyright">
@@ -253,13 +259,16 @@ or equal to this number.</p></td>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.3.0.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
+
       </footer>
    </div>
 
   
 
+
   </body>
 </html>
+
 

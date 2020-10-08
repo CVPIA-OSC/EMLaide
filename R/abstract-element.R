@@ -2,7 +2,7 @@
 #' @description Adds the abstract of a dataset according to EML standards.
 #' @param parament_element A list representing the EML project or dataset.
 #' @param abstract Abstract paragraphs, requires a minimum of 20 words. A template 
-#' word document is accessible in "~/cvpiaEDIutils/inst/extdata/abstract_template.docx".
+#' word document is accessible in "~/EDIutils/inst/extdata/abstract_template.docx".
 #' You can copy and paste your abstract in this document and set the parameter of 
 #' \code{abstract} equal to this file path. 
 #' @details 
