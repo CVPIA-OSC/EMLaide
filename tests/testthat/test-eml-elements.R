@@ -84,7 +84,7 @@ test_that('the dataset add_keyword_set function adds the keyword set',{
 #Tests for add_personnel function 
 
 test_that('personnel function errors when missing mandatory identifier inputs',  {
-  role1 <- "Creator"
+  role1 <- "creator"
   role2 <- "Data Manager"
   first_name <- "Susan"
   last_name <- "Susanton"
@@ -103,7 +103,7 @@ test_that('personnel function errors when missing mandatory identifier inputs', 
                "Please supply a first name.")
   expect_error(add_personnel(parent_element = parent_element, first_name = first_name, 
                              last_name = last_name, email = email), 
-               "Please supply a role. Use 'Creator' if you are the main originator of the dataset or project")
+               "Please supply a role. Use 'creator' if you are the main originator of the dataset or project")
   
   expect_equal(add_personnel(parent_element = parent_element, first_name = first_name, 
                              last_name = last_name, email = email, role = role1, orcid = orcid),
