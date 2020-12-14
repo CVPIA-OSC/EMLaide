@@ -5,18 +5,17 @@
 \title{Add Funding Element}
 \usage{
 add_funding(
-  parent_element,
   funder_name,
   funder_identifier,
   award_number,
   award_title,
+  project_title,
+  project_personnel,
   award_url = NULL,
   funding_description = NULL
 )
 }
 \arguments{
-\item{parent_element}{A list representing the EML project or dataset.}
-
 \item{funder_name}{Organization or individual providing the funding.}
 
 \item{funder_identifier}{This is where the funding organization is listed in
@@ -33,13 +32,14 @@ award on the funding organization's webpage.}
 \item{funding_description}{Optional to provide a short description of the funding recieved.}
 }
 \value{
-The dataset or project with funding information appended.
+An award list that is then added to the project element of an EML file.
 }
 \description{
-Adds the funding information of a dataset based off of EML standards.
+Creates the award information of a project based off of EML standards.
+This award element is then nested within a project node to complete a funding section.
 }
 \examples{
-add_funding(parent_element = list(), funder_name = "National Science Foundation",
+add_funding(funder_name = "National Science Foundation",
             funder_identifier = "http://dx.doi.org/10.13039/100000001",
             award_number = "1656026",
             award_title = "LTER: Beaufort Sea Lagoons: An Arctic Coastal Ecosystem in Transition",
