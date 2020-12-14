@@ -9,8 +9,6 @@ add_funding(
   funder_identifier,
   award_number,
   award_title,
-  project_title,
-  project_personnel,
   award_url = NULL,
   funding_description = NULL
 )

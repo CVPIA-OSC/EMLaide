@@ -23,8 +23,7 @@
 #' @export
 
 add_funding <- function(funder_name, funder_identifier, award_number,
-                        award_title, project_title, project_personnel, 
-                        award_url = NULL, funding_description = NULL)  {
+                        award_title, award_url = NULL, funding_description = NULL)  {
   
   award <- list()
   required_arguments <- c("funder_name", "funder_identifier", "award_number",
