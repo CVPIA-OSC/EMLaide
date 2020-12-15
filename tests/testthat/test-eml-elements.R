@@ -93,56 +93,86 @@ test_that('personnel function errors when missing mandatory identifier inputs', 
   organization <- "USFWS"
  
   expect_error(add_personnel(parent_element = parent_element, role = role1, 
-                             first_name = first_name, last_name = last_name),
+                             first_name = first_name, last_name = last_name,
+                             organization = oganization),
                "Please supply an email.")
+  
   expect_error(add_personnel(parent_element = parent_element, role = role1, 
-                             first_name = first_name, email = email),
+                             first_name = first_name, email = email, 
+                             organization = organization),
                "Please supply a last name.")
+  
   expect_error(add_personnel(parent_element = parent_element, role = role1, 
-                             last_name = last_name, email = email), 
+                             last_name = last_name, email = email,
+                             organization = organization), 
                "Please supply a first name.")
+  
   expect_error(add_personnel(parent_element = parent_element, first_name = first_name, 
-                             last_name = last_name, email = email), 
+                             last_name = last_name, email = email, 
+                             organization = organization), 
                "Please supply a role. Use 'creator' if you are the main originator of the dataset or project")
   
+  expect_error(add_personnel(parent_element = parent_element, first_name = first_name, 
+                             last_name = last_name, role = role, email = email), 
+               "Please supply the name of the organization employing the personnel")
+  
   expect_equal(add_personnel(parent_element = parent_element, first_name = first_name, 
-                             last_name = last_name, email = email, role = role1, orcid = orcid),
+                             last_name = last_name, email = email, role = role1, 
+                             organization = organization, orcid = orcid),
                list(contact = list(individualName = list(givenName = "Susan", 
-                                                         surName = "Susanton"), electronicMailAddress = "susanton@fake.com"), 
+                                                         surName = "Susanton"), 
+                                   electronicMailAddress = "susanton@fake.com",
+                                   organizationName = "USFWS"), 
                     creator = list(individualName = list(givenName = "Susan", 
-                                                         surName = "Susanton"), electronicMailAddress = "susanton@fake.com", 
+                                                         surName = "Susanton"), 
+                                   electronicMailAddress = "susanton@fake.com", 
+                                   organizationName = "USFWS",
                                    `@id` = "00110011")))
   
   expect_equal(add_personnel(parent_element = parent_element, first_name = first_name,
-                             last_name = last_name, email = email, role = role2, orcid = orcid,
-                             organization = organization),
+                             last_name = last_name, email = email, role = role2, 
+                             orcid = orcid, organization = organization),
                list(associatedParty = list(individualName = list(givenName = "Susan", 
-                                                                 surName = "Susanton"), electronicMailAddress = "susanton@fake.com", 
+                                                                 surName = "Susanton"), 
+                                           electronicMailAddress = "susanton@fake.com", 
                                            organizationName = "USFWS", role = "Data Manager")))
   
   creator_1 <- add_personnel(parent_element = parent_element, first_name = first_name, 
-                             last_name = last_name, email = email, role = role1)
+                             last_name = last_name, email = email, role = role1,
+                             organization = organization)
   
   expect_equal(add_personnel(parent_element = creator_1, first_name = "Not Susan", 
-                             last_name = "Smith", email = "free_cats@aol.com", role = role1),
+                             last_name = "Smith", email = "free_cats@aol.com", 
+                             organization = organization, role = role1),
                list(contact = list(individualName = list(givenName = "Not Susan", 
-                                                         surName = "Smith"), electronicMailAddress = "free_cats@aol.com"), 
+                                                         surName = "Smith"), 
+                                   electronicMailAddress = "free_cats@aol.com",
+                                   organizationName = "USFWS"), 
                     creator = list(list(individualName = list(givenName = "Susan", 
-                                                              surName = "Susanton"), electronicMailAddress = "susanton@fake.com"), 
-                                   list(individualName = list(givenName = "Not Susan", surName = "Smith"), 
-                                        electronicMailAddress = "free_cats@aol.com"))))
+                                                              surName = "Susanton"), 
+                                        electronicMailAddress = "susanton@fake.com",
+                                        organizationName = "USFWS"), 
+                                   list(individualName = list(givenName = "Not Susan", 
+                                                              surName = "Smith"), 
+                                        electronicMailAddress = "free_cats@aol.com",
+                                        organizationName = "USFWS"))))
   
   data_manager_1 <- add_personnel(parent_element = parent_element, first_name = first_name, 
-                                  last_name = last_name, email = email, role = role2)
+                                  last_name = last_name, email = email, role = role2,
+                                  organization = organization)
   
   expect_equal(add_personnel(parent_element = data_manager_1, first_name = "Not Susan", 
-                             last_name = "Smith", email = "free_cats@aol.com", role = role2),
+                             last_name = "Smith", email = "free_cats@aol.com", role = role2,
+                             organization = organization),
                list(associatedParty = list(list(individualName = list(givenName = "Susan", 
                                                                       surName = "Susanton"), 
                                                 electronicMailAddress = "susanton@fake.com", 
+                                                organizationName = "USFWS",
                                                 role = "Data Manager"), 
-                                           list(individualName = list(givenName = "Not Susan", surName = "Smith"), 
+                                           list(individualName = list(givenName = "Not Susan", 
+                                                                      surName = "Smith"), 
                                                 electronicMailAddress = "free_cats@aol.com", 
+                                                organizationName = "USFWS",
                                                 role = "Data Manager"))))
   
   

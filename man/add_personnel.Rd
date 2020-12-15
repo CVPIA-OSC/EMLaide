@@ -10,8 +10,8 @@ add_personnel(
   last_name,
   email,
   role,
-  orcid = NULL,
-  organization = NULL
+  organization,
+  orcid = NULL
 )
 }
 \arguments{
@@ -27,11 +27,11 @@ add_personnel(
 Other possible roles "Data Manager", "Field Technician", or "Assistant Researcher".
 There can be multiple personnel on a project with the same role.}
 
-\item{orcid}{ORCID iD is a persistent digital identifier for researchers,
-register at \url{http://orcid.org/}}
-
 \item{organization}{Person's employer or the entity they are associated
 with for this dataset or project}
+
+\item{orcid}{ORCID iD is a persistent digital identifier for researchers,
+register at \url{http://orcid.org/}}
 }
 \description{
 Adds personel according to EML standards
