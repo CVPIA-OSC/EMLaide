@@ -28,11 +28,12 @@
 #'               organization = 'IBM')
 #' @export
 add_personnel <- function(parent_element, first_name, last_name, email, 
-                          role, orcid = NULL, organization = NULL) {
+                          role, organization, orcid = NULL) {
   
-  required_arguments <- c("first_name", "last_name", "email", "role")
+  required_arguments <- c("first_name", "last_name", "email", "role", "organization")
   missing_argument_index <- which(c(missing(first_name), missing(last_name), 
-                                missing(email), missing(role)))
+                                missing(email), missing(role), 
+                                missing(organization)))
   
   if (length(missing_argument_index) > 0) {
     person_error <- required_arguments[missing_argument_index][1]
@@ -40,20 +41,15 @@ add_personnel <- function(parent_element, first_name, last_name, email,
                                    first_name = "Please supply a first name.",
                                    last_name = "Please supply a last name.",
                                    email = "Please supply an email.",
-                                   role = "Please supply a role. Use 'creator' if you are the main originator of the dataset or project")
+                                   role = "Please supply a role. Use 'creator' if you are the main originator of the dataset or project",
+                                   organization = "Please supply the name of the organization employing the personnel")
     stop(person_error_message, call. = FALSE)
   } 
   
-  person <- list(individualName = 
-                   list(givenName = first_name, 
-                        surName = last_name),
-                 electronicMailAddress = email)
-  
-  
-  
-  if (!is.null(organization)) {
-    person$organizationName <- organization
-  }
+  person <- list(individualName = list(givenName = first_name, 
+                                       surName = last_name),
+                 electronicMailAddress = email, 
+                 organizationName = organization)
   
   if (tolower(role) == "creator") {
     parent_element$contact <- person
