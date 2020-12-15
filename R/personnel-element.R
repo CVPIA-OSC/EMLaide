@@ -7,10 +7,10 @@
 #' @param first_name Person's given name
 #' @param last_name Person's surname
 #' @param email Person's email address
-#' @param orcid ORCID iD is a persistent digital identifier for researchers,
-#' register at \url{http://orcid.org/}
 #' @param organization Person's employer or the entity they are associated
 #' with for this dataset or project
+#' @param orcid ORCID iD is a persistent digital identifier for researchers,
+#' register at \url{http://orcid.org/}
 #' @examples 
 #' add_personnel(parent_element = list(),
 #'               first_name = 'Katherine', 
