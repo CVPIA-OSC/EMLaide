@@ -12,15 +12,17 @@ add_project(
 )
 }
 \arguments{
-\item{parent_element}{A list in which the project node should be nested in}
+\item{parent_element}{A list in which the project node should be nested in.}
 
 \item{project_title}{The title of the project that the funding is awarded to.}
 
 \item{award_information}{A list that includes that award title and the funder name
-for the funding award.}
+for the funding award.This list can be created by calling the add_funding function
+on the funding information. It can also be created manually.}
 
 \item{project_personnel}{A list that includes the project personnel. It must include
-the first name, last name, organization, and position for this project.}
+the first name, last name, organization, and position for this project. This list can be created
+by calling the add_personnel function on the project personnel.}
 }
 \value{
 This function returns the parent element with a new project node containing
@@ -28,19 +30,35 @@ all project information.
 }
 \description{
 This function creates a project node within the parent element that
-contains all the project information.
+contains all the project information. This function can be used in combination with add_personnel
+and add_funding. Add_personnel can be used to generate the project_personnel
+input and add_funding can be used to generate the award_information input.
 }
 \examples{
-
-add_project(project_title = "my project title", 
-            award_information = list(title = "Money up for grabs",
-                                     funderName = "Bank",
-                                     awardNumber = "000",
+add_project(parent_element = parent_element, 
+            project_title = "my project title", 
+            award_information = add_funding(funder_name = "Bank",
+                                            funder_identifer = "Funder 1",
+                                            award_number = "000",
+                                            award_title = "Money up for grabs",
+                                            award_url = "awardforme.com"),
+            project_personnel = add_personnel(parent_element = parent_elementm
+                                              first_name = "Smithy",
+                                              last_name = "Smith",
+                                              email = "myemail@mail.gov",
+                                              role = "Manager",
+                                              organization = "US GOV"))
+                                              
+add_project(parent_element = parent_element, 
+            project_title = "my project title", 
+            award_information = list(funderName = "Bank",
                                      funderIdentifier = "Funder 1",
+                                     awardNumber = "000",
+                                     title = "Money up for grabs",
                                      awardUrl = "awardforme.com"),
-            personnel_info = list(individualName = list(givenName = "Smithy",
-                                                        surName ="Smith"),
-                                  organizationName = "US GOV",
-                                  electronicMailAddress = "myemail@mail.gov",
-                                  role = "Manager"))
+            project_personnel = list(associatedParty = list(individualName = list(givenName = "Smithy",
+                                                                                  surName = "Smith"),
+                                     electronicMailAddress = "myemail@mail.gov",
+                                     role = "Manager",
+                                     organizationName = "US GOV")))
 }
