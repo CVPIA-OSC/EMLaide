@@ -68,12 +68,15 @@ add_project <- function(parent_element, project_title,
   
   null_required_information <- which(c(is.null(award_information$funderName), 
                                        is.null(award_information$title),
-                                       (is.null(project_personnel$individualName)&
-                                          is.null(project_personnel$associatedParty$individualName)),
-                                       (is.null(project_personnel$organization)&
-                                          is.null(project_personnel$associatedParty$organization)),
-                                       (is.null(project_personnel$role)&
-                                          is.null(project_personnel$associatedParty$role))))
+                                       (is.null(project_personnel$individualName) & 
+                                          is.null(project_personnel$associatedParty$individualName) &
+                                          is.null(project_personnel$creator$individualName)),
+                                       (is.null(project_personnel$organization) & 
+                                          is.null(project_personnel$associatedParty$organization) &
+                                          is.null(project_personnel$creator$organization)),
+                                       (is.null(project_personnel$role) & 
+                                          is.null(project_personnel$associatedParty$role) &
+                                          is.null(project_personnel$creator$role))))
   
   if (length(null_required_information) > 0) {
     missing_requirment_error <- required_information[null_required_information][1]

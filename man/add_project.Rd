@@ -16,13 +16,13 @@ add_project(
 
 \item{project_title}{The title of the project that the funding is awarded to.}
 
-\item{award_information}{A list that includes that award title and the funder name
-for the funding award.This list can be created by calling the add_funding function
+\item{award_information}{A list that includes the award title and the funder name
+for the award.This list can be created by calling the add_funding function
 on the funding information. It can also be created manually.}
 
 \item{project_personnel}{A list that includes the project personnel. It must include
 the first name, last name, organization, and position for this project. This list can be created
-by calling the add_personnel function on the project personnel.}
+by calling the add_personnel function on the project personnel.It can also be created manually.}
 }
 \value{
 This function returns the parent element with a new project node containing
@@ -42,7 +42,7 @@ add_project(parent_element = parent_element,
                                             award_number = "000",
                                             award_title = "Money up for grabs",
                                             award_url = "awardforme.com"),
-            project_personnel = add_personnel(parent_element = parent_elementm
+            project_personnel = add_personnel(parent_element = parent_element,
                                               first_name = "Smithy",
                                               last_name = "Smith",
                                               email = "myemail@mail.gov",
@@ -56,9 +56,9 @@ add_project(parent_element = parent_element,
                                      awardNumber = "000",
                                      title = "Money up for grabs",
                                      awardUrl = "awardforme.com"),
-            project_personnel = list(associatedParty = list(individualName = list(givenName = "Smithy",
-                                                                                  surName = "Smith"),
+            project_personnel = list(individualName = list(givenName = "Smithy",
+                                                           surName = "Smith"),
                                      electronicMailAddress = "myemail@mail.gov",
                                      role = "Manager",
-                                     organizationName = "US GOV")))
+                                     organizationName = "US GOV"))
 }
