@@ -13,9 +13,11 @@ With no input the allow_principal will default to "public". To change
 to a different principal please input a new principal.
 
 The valid options for the principal are:
-'public' - special principal indicate that any user or group has a particular access permission
-and other individual users or groups can be specified if they are defined in the
-"https://pasta.edirepository.org/authentication" authentication system}
+\itemize{
+\item 'public' - special principal indicate that any user or group has a particular access permission
+\item other individual users or groups can be specified if they are defined in the PASTA EDI authentication
+system. Read the PASTA documentation for more information \url{https://pastaplus-core.readthedocs.io/_/downloads/en/latest/pdf/}
+}}
 
 \item{allow_permission}{The permission argument refers to the type of access
 that is allowed to the principal. The allow_permission argument takes in a string.
@@ -24,10 +26,12 @@ allows the principal to read the dataset but not edit. To change to a different
 permission please input a new permission.
 
 The valid options for permission are:
-'read' - allow viewing of the resource,
-'write' - allow modification of the resource (except for access rules),
-'changePermission' - modifications including access rules, and
-'all' - all of the above.}
+\itemize{
+\item 'read' - allow viewing of the resource,
+\item 'write' - allow modification of the resource (except for access rules),
+\item 'changePermission' - modifications including access rules, and
+\item 'all' - all of the above.
+}}
 }
 \value{
 Returns an list with all the information required for the access section

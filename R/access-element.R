@@ -9,9 +9,9 @@
 #' to a different principal please input a new principal. 
 #' 
 #' The valid options for the principal are:
-#'    'public' - special principal indicate that any user or group has a particular access permission 
-#'     and other individual users or groups can be specified if they are defined in the 
-#'     "https://pasta.edirepository.org/authentication" authentication system 
+#'   * 'public' - special principal indicate that any user or group has a particular access permission 
+#'   * other individual users or groups can be specified if they are defined in the PASTA EDI authentication 
+#'   system. Read the PASTA documentation for more information <https://pastaplus-core.readthedocs.io/_/downloads/en/latest/pdf/>  
 #' 
 #' @param allow_permission The permission argument refers to the type of access 
 #' that is allowed to the principal. The allow_permission argument takes in a string. 
@@ -20,10 +20,10 @@
 #' permission please input a new permission. 
 #' 
 #' The valid options for permission are: 
-#'   'read' - allow viewing of the resource, 
-#'   'write' - allow modification of the resource (except for access rules),  
-#'   'changePermission' - modifications including access rules, and  
-#'   'all' - all of the above.  
+#'   * 'read' - allow viewing of the resource, 
+#'   * 'write' - allow modification of the resource (except for access rules),  
+#'   * 'changePermission' - modifications including access rules, and  
+#'   * 'all' - all of the above.  
 #'   
 #' @return Returns an list with all the information required for the access section 
 #' of an EML document.
