@@ -10,23 +10,34 @@ add_access(allow_principal = NULL, allow_permission = NULL)
 \item{allow_principal}{The principal argument refers to who will have access
 to this dataset. The allow_principal argument takes in a string.
 With no input the allow_principal will default to "public". To change
-to a different principal please input a new principal.}
+to a different principal please input a new principal.
+
+The valid options for the principal are:
+'public' - special principal indicate that any user or group has a particular access permission
+and other individual users or groups can be specified if they are defined in the
+"https://pasta.edirepository.org/authentication" authentication system}
 
 \item{allow_permission}{The permission argument refers to the type of access
 that is allowed to the principal. The allow_permission argument takes in a string.
 With no input the allow_permission will default to "read". This default permission
 allows the principal to read the dataset but not edit. To change to a different
-permission please input a new permission.}
+permission please input a new permission.
+
+The valid options for permission are:
+'read' - allow viewing of the resource,
+'write' - allow modification of the resource (except for access rules),
+'changePermission' - modifications including access rules, and
+'all' - all of the above.}
 }
 \value{
 Returns an list with all the information required for the access section
-of an EML
+of an EML document.
 }
 \description{
 The add access element creates a list that includes all the required
-elements for the access section of an EML. Calling add_access() will output the
-default public access permissions. To create a non default access add principal
-and permission values into allow_principal and add_permission.
+elements for the access section of an EML document. Calling add_access() will output the
+default public access permissions. To customize the access level provide values
+for the allow_principal and add_permission arguments.
 }
 \examples{
 add_access()
