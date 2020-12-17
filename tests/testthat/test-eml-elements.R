@@ -1,6 +1,19 @@
 parent_element <- list()
-
-#Tests for add_title function 
+# Tests for add_access function 
+test_that('add_accesss function returns proper default and non default access lists', {
+  access <- list(scope = "document",
+                 order = "allowFirst", 
+                 authSystem = "https://pasta.edirepository.org/authentication",
+                 allow = list(principal = "public", permission = "read"))
+  expect_equal(add_access(), access)
+  expect_equal(add_access(allow_principal = "private", 
+                          allow_permission = "none"), 
+               list(scope = "document",
+                    order = "allowFirst", 
+                    authSystem = "https://pasta.edirepository.org/authentication",
+                    allow = list(principal = "private", permission = "none")))
+})
+# Tests for add_title function 
 
 test_that('dataset title length is between 7 and 20 words long', {
   
