@@ -16,6 +16,7 @@ library(EDIutils)
 library(tidyverse)
 library(readxl)
 library(EML)
+library(readtext)
 ```
 In this document, we create an EML file which has the opportunity to append the 
 following elements:
@@ -34,6 +35,10 @@ following elements:
     - license 
     - methods 
     - maintenance 
+    - project
+      - project title
+      - project personnel 
+      - project funding 
     - coverage 
       - geographic coverage 
       - temporal coverage 
@@ -47,7 +52,7 @@ following elements:
 ## Our Example 
 We will use the data provided by John Hannon to show an example of how to put the
 metadata together in a way which can be uploaded to the EDI data portal website. 
-The excel sheet of which Hannon's data resides is found in "~/data-raw/template/template.xlsx". 
+The excel sheet of which Hannon's data resides is found in "~/data-raw/Hannon-Example/example-metadata.xlsx". 
 This file can be edited with your data and used with this document to create your 
 own working EML file. 
 
@@ -55,6 +60,37 @@ own working EML file.
 The tabs of the excel file are organized in the order of which this template appends information. 
 We start with the simpler pieces of information such as `personnel` and `title` and 
 work up to appending the data table, which has other components to it. 
+
+### Loading in Example Files 
+Four files must be uploaded to make a complete EML document. 
+  - An excel spreadsheet containing the majority of the metadata
+  - A word document containing the abstract text 
+  - A word document containing the methods text 
+  - A csv file that contains the data 
+In addition to these four files a entity description and an EDI number must be defined. 
+The entity description is a short description for the datatable that you uploaded. 
+The EDI number should be a unique data package identifier. You can reserve this 
+data package identifier number on the [EDI data repository under tools.](https://portal.edirepository.org/nis/reservations.jsp)
+For this example all of our files are stored in a the Hannon-Example folder within data-raw. 
+"~/data-raw/Hannon-Example".
+
+```{r}
+excel_path <- "data-raw/Hannon-Example/example-metadata.xlsx"
+sheets <- readxl::excel_sheets(excel_path)
+metadata_sheets <- lapply(sheets, function(x) readxl::read_excel(excel_path, sheet = x))
+names(metadata_sheets) <- sheets
+
+abstract_docx <- "data-raw/Hannon-Example/hannon_example_abstract.docx"
+methods_docx <- "data-raw/Hannon-Example/hannon_example_methods.docx"
+physical_entity <- "data-raw/Hannon-Example/hannon_example_physical_data.csv"
+
+entity_description <- "Hannon Snorkel Survey"
+
+
+edi_number = "edi.687.1"
+
+```
+
 
 ### Creating the Parent Element
 We first need to create a parent element. This will be a list of which our metadata 
@@ -83,14 +119,15 @@ of both can be appended to the EML file by providing all inputs in the "personne
 tab in the "template.xlsx" excel file. 
 
 ```{r}
-personnel_table <- read_excel("data-raw/template/template.xlsx", sheet = "personnel")
+personnel_table <- metadata_sheets$personnel
 for (i in 1:nrow(personnel_table)) {
   current <- personnel_table[i, ]
   parent_element <- add_personnel(parent_element = parent_element, 
                                   first_name = current$first_name, 
                                   last_name = current$last_name, 
-                                  email = current$email, 
+                                  email = current$email,
                                   role = current$role, 
+                                  organization = current$organization,
                                   orcid = current$orcid)
 }
 ```
@@ -105,7 +142,7 @@ accessible name to the dataset. Again, this information can be added to the "tit
 tab in the excel file "template.xlsx".
 
 ```{r, }
-title <- read_excel("data-raw/template/template.xlsx", sheet = "title")
+title <- metadata_sheets$title
 parent_element <- add_title(parent_element = parent_element, title = title$title, 
                             short_name = title$short_name)
 ```
@@ -119,14 +156,19 @@ but is not mandatory. Multiple keyword sets can be provided. This information ca
 be added to the "keyword_set" tab in the excel file "template.xlsx".
 
 ```{r}
-keyword_set <- read_excel("data-raw/template/template.xlsx", sheet = "keyword_set")
-thesaurus <- unique(keyword_set$keywordThesaurus)
-for (i in 1:length(thesaurus)) {
-  keywords <- keyword_set$keyword[keyword_set$keywordThesaurus == thesaurus[i]]
-  parent_element <- add_keyword_set(parent_element = parent_element, 
-                                    keyword_set = list(keyword = keywords, 
-                                                       keywordThesaurus = thesaurus[i]))
-}
+keyword_set <- metadata_sheets$keyword_set
+if (length(!is.na(metadata_sheets$keywordThesaurus)) == 0) {
+  parent_element <- add_keyword_set(parent_element = parent_element,
+                                    keyword_set = keyword_set[,1])
+} else {
+  thesaurus <- unique(keyword_set$keywordThesaurus)
+  for (i in 1:length(thesaurus)) {
+    keywords <- keyword_set$keyword[keyword_set$keywordThesaurus == thesaurus[i]]
+    parent_element <- add_keyword_set(parent_element = parent_element,
+                                      keyword_set = list(keyword = keywords,
+                                                         keywordThesaurus = thesaurus[i]))
+  }
+ }
 ```
 
 ### Abstract
@@ -139,9 +181,8 @@ From there, the file path of your word document can be added to the excel file
 "template.xlsx". 
 
 ```{r}
-abstract <- read_excel("data-raw/template/template.xlsx", sheet = "abstract")
 parent_element <- add_abstract(parent_element = parent_element, 
-                               abstract = abstract$abstract)
+                               abstract = abstract_docx)
 ```
 
 ### License and Intellectual Rights
@@ -155,7 +196,7 @@ information will be appended for you. Only one license should be appended.
 This information can be added to the "license" tab in the excel file "template.xlsx".
 
 ```{r}
-license <- read_excel("data-raw/template/template.xlsx", sheet = "license")
+license <- metadata_sheets$license
 parent_element <- add_license(parent_element = parent_element, default_license = license$default_license)
 ```
 
@@ -167,24 +208,6 @@ If a default license is not being used, then the other inputs need to be provide
 #                               license_identifier = license$license_identifier,
 #                               intellectual_rights_description = license$intellectual_rights_description)
 ```
-
-### Funding
-Funding should be appended next. The `add_funding` function allows you to append 
-both the description of the funding you have recieved as well as the organization 
-you recieved the funding from. Multiple funders can be appended if necessary and 
-information should be added to the "funding" tab in the excel file "template.xlsx".
-
-```{r}
-funding <- read_excel("data-raw/template/template.xlsx", sheet = "funding")
-parent_element <- add_funding(parent_element = parent_element, 
-                              funder_name = funding$funder_name,
-                              funder_identifier = funding$funder_identifier,
-                              award_number = funding$award_number,
-                              award_title = funding$award_title,
-                              award_url = funding$award_url,
-                              funding_description = funding$funding_description)
-```
-
 ### Maintenance 
 The maintenance of a dataset is simply if the data collection is complete or ongoing.
 The `add_maintenance` function allows you to append the status of the dataset to
@@ -194,53 +217,101 @@ be provided as well. This information should be added to the "maintenance" tab
 in the excel file "template.xlsx".
 
 ```{r}
-maintenance <- read_excel("data-raw/template/template.xlsx", sheet = "maintenance")
+maintenance <- metadata_sheets$maintenance
 parent_element <- add_maintenance(parent_element = parent_element, status = maintenance$status,
                                   update_frequency = maintenance$update_frequency)
 ```
 
+### Project Section 
+The project section should be appended next. Project personnel and project funding 
+are nested in this project section. To generate a valid EML doc the project section 
+must contain a project title, a project personnel, and project funding. 
+
+#### Project title
+```{r}
+project_title <- metadata_sheets$project_title$project_title
+```
+
+
+#### Project personnel 
+```{r}
+project_personnel_table <- metadata_sheets$project_personnel
+for (i in 1:nrow(project_personnel_table)) {
+  current <- project_personnel_table[i, ]
+  project_personnel <- add_personnel(parent_element = list(), 
+                                     first_name = current$first_name, 
+                                     last_name = current$last_name, 
+                                     email = current$email,
+                                     role = current$role, 
+                                     organization = current$organization,
+                                     orcid = current$orcid)
+}
+if (!is.null(project_personnel$associatedParty)) {
+  project_personnel <- project_personnel$associatedParty
+}
+if (!is.null(project_personnel$creator)){
+  project_personnel <- project_personnel$creator
+}
+```
+
+#### Project funding 
+The `add_funding` function allows you to append 
+both the description of the funding you have received as well as the organization 
+you received the funding from. Multiple funders can be appended if necessary and 
+information should be added to the "funding" tab in the excel file "template.xlsx".
+
+```{r}
+funding <- metadata_sheets$funding
+award_information <- add_funding(funder_name = funding$funder_name,
+                                 funder_identifier = funding$funder_identifier,
+                                 award_number = funding$award_number,
+                                 award_title = funding$award_title,
+                                 award_url = funding$award_url,
+                                 funding_description = funding$funding_description)
+```
+
+#### Combining Project Elements
+Once all the components of project have been defined we can use the add_project
+function to combine the sections in the proper formatting for an EML document. 
+```{r}
+# parent_element <- add_project(parent_element = parent_element,
+#                               project_title = project_title,
+#                               award_information = award_information,
+#                               project_personnel = project_personnel)
+parent_element$project <- list(title = project_title,
+                               personnel = project_personnel,
+                               award = award_information)
+``` 
+
 ### Dataset Methods
-Overall methods can be appended next. The `add_method` function allows you to
-append the different scientific methods used in the collection process of your data.
-Methods are appended in a similar fashion as the abstract. A template methods document
-is given ("hannon_example_methods.docx"). If more methods are needed, you can create 
-seperate word documents and provide all of the file paths in the "template.xlsx" 
-excel sheet. The methods can be applied here as well as in the data table element,
+The method section explains the scientific methods that were used in the collection of the dataset.
+The `add_method` function allows you to add a method file to the parent_element.
+A template methods document is given ("data-raw/Hannon-Example/hannon_example_methods.docx"). 
+If more methods are needed, you can create separate word documents.
+The methods can be applied here as well as in the data table element,
 so make sure you are appending the correct methods to the accurate places. 
 Top level methods can describe how a particular csv data was collected, while a data table
 method can explain how particular attributes in the data table were collected.
 
 ```{r}
-method_table <- read_excel("data-raw/template/template.xlsx", sheet = "methods")
-for (i in 1:nrow(method_table)) {
-  current <- method_table[i, ]
-  new_method <- add_method(parent_element = parent_element, methods_file = current$methods_file,
-                           instrumentation = current$instrumentation)
-  if (is.null(parent_element$methods)) {
-    parent_element$methods <- new_method
-  } else {
-    parent_element$methods <- list(parent_element$methods, new_method)
-  }
-}
+parent_element$methods <- add_method(parent_element = parent_element,
+                                     methods_file = methods_docx)
 ```
 
 ### Coverage: Geographic, Temporal, Taxonomic 
 Next, the coverage information is appended. The `add_coverage` function allows
-you to append full coverage information to your file. The function itself 
-requires inputs for both temporal and geographic coverage. Taxonomic coverage,
-is optional and can be appended using the `add_taxonomic_coverage` function. 
-Chinook, Delta Smelt, Steelhead, White Sturgeon, and Green Sturgeon are
-all default options, with full taxonomic coverage already present for easy appendage
-as these are all frequent species being studied under CVPIA. If taxonomic coverage 
-is being appended, this information needs to be appended first. It is not appended
-to the `parent_element`, however, and is instead appended to a new empty list that
-we title `taxonomic_coverage`. The taxonomic coverage information can still be 
-added to the "template.xlsx" excel file on the tab "taxonomic_coverage",
-even though the information is not being appended to the `parent_element`. 
+you to append full coverage information to your file. Temporal, Geographic, and 
+Taxonomic Coverage are all required elements to generate an EML document. 
 
+##### Taxonomic coverage 
+Taxonomic coverage can be appended using the `add_taxonomic_coverage` function. 
+The taxonomic coverage information is added to the "template-metadata.xlsx" 
+excel file on the tab "taxonomic_coverage". chinook, delta_smelt, steelhead, 
+white_sturgeon, and green_sturgeon are all default options that can be selected 
+using the drop down menu under the CVPIA_common_species column.
 ```{r}
 taxonomic_coverage <- list()
-taxonomic_coverage_table <- read_excel("data-raw/template/template.xlsx", sheet = "taxonomic_coverage")
+taxonomic_coverage_table <- metadata_sheets$taxonomic_coverage
 for (i in 1:nrow(taxonomic_coverage_table)) {
   current <- taxonomic_coverage_table[i, ]
   new_taxon <- add_taxonomic_coverage(CVPIA_common_species = current$CVPIA_common_species,
@@ -259,54 +330,37 @@ for (i in 1:nrow(taxonomic_coverage_table)) {
     taxonomic_coverage <- append(taxonomic_coverage, new_taxon)
   }
 }
-```
-From here, we then have to append the coverage information to the `parent_element`.
-There are three options of doing so.
-
-#### No Taxonomic Coverage 
-The first option is that we have no taxonomic coverage present. This can take either
-one or multiple coverage inputs and append to the `parent_element`.
-```{r}
-coverage_table <- read_excel("data-raw/template/template.xlsx", sheet = "coverage")
-for (i in 1:nrow(coverage_table)) {
-  current <- coverage_table[i, ]
-  parent_element <- add_coverage(parent_element = parent_element,
-                                 geographic_description = current$geographic_description,
-                                 west_bounding_coordinate = current$west_bounding_coordinate,
-                                 east_bounding_coordinate = current$east_bounding_coordinate,
-                                 north_bounding_coordinate = current$north_bounding_coordinate,
-                                 south_bounding_coordinate = current$south_bounding_coordinate,
-                                 begin_date = current$begin_date,
-                                 end_date = current$end_date)
-} 
-```
-#### Unique Taxonomic Coverage For Multiple Coverages:
-If we have multiple coverages, and a unique taxonomic coverage that goes along with 
-each specific coverage, we can use this instead: 
-
-```{r}
-coverage_table <- read_excel("data-raw/template/template.xlsx", sheet = "coverage")
-for (i in 1:nrow(coverage_table)) {
-  current <- coverage_table[i, ]
-  tax <- taxonomic_coverage[i]
-  parent_element <- add_coverage(parent_element = parent_element,
-                                 geographic_description = current$geographic_description,
-                                 west_bounding_coordinate = current$west_bounding_coordinate,
-                                 east_bounding_coordinate = current$east_bounding_coordinate,
-                                 north_bounding_coordinate = current$north_bounding_coordinate,
-                                 south_bounding_coordinate = current$south_bounding_coordinate,
-                                 begin_date = current$begin_date,
-                                 end_date = current$end_date,
-                                 taxonomic_coverage = tax)
-} 
+if (length(taxonomic_coverage) ==  0) {
+  taxonomic_coverage <- list(taxonomicClassification = "No informaion on taxonomic coverage")
+}
+if (length(taxonomic_coverage) ==  1) {
+  taxonomic_coverage <- taxonomic_coverage
+}
+if (length(taxonomic_coverage) == 2) {
+  taxon_1 <- taxonomic_coverage[1]
+  taxon_2 <- taxonomic_coverage[2]
+  taxonomic_coverage <- list(taxon_1, taxon_2)
+}
+if (length(taxonomic_coverage) == 3) {
+  taxon_1 <- taxonomic_coverage[1]
+  taxon_2 <- taxonomic_coverage[2]
+  taxon_3 <- taxonomic_coverage[3]
+  taxonomic_coverage <- list(taxon_1, taxon_2, taxon_3)
+}
+if (length(taxonomic_coverage) == 4) {
+  taxon_1 <- taxonomic_coverage[1]
+  taxon_2 <- taxonomic_coverage[2]
+  taxon_3 <- taxonomic_coverage[3]
+  taxon_4 <- taxonomic_coverage[4]
+  taxonomic_coverage <- list(taxon_1, taxon_2, taxon_3, taxon_4)
+}
 ```
 
-#### Taxonomic Coverage For Total Coverage 
-Finally, if we have multiple taxonomic coverages that need to be appended to one 
-overall coverage, we can do the following: 
-
+#### Combining Coverage Elements  
+The `add_coverage` function will add all the elements of coverage to the parent 
+element. 
 ```{r}
-coverage_table <- read_excel("data-raw/template/template.xlsx", sheet = "coverage")
+coverage_table <- metadata_sheets$coverage
 for (i in 1:nrow(coverage_table)) {
   current <- coverage_table[i, ]
   parent_element <- add_coverage(parent_element = parent_element,
@@ -334,19 +388,11 @@ and all parameters will be appended, gathering the csv's unique size and
 authentication, as well as providing the default physical values of a csv. 
 
 ```{r}
-physical_list <- list()
-physical_table <- read_excel("data-raw/template/template.xlsx", sheet = "physical")
-for (i in 1:nrow(physical_table)) {
-  current <- physical_table[i,]
-  new_physical <- add_physical(file_path = current$file_path, 
-                               data_url = current$data_url)
-  if (is.null(physical_list$physical)) {
-    physical_list$physical <- new_physical
-  } else {
-    physical_list$physical <- list(physical_list$physical, new_physical)
-  }
-}
+physical <- add_physical(file_path = physical_entity, 
+                         data_url = current$data_url)
+
 ```
+
 If you wish to provide alternative information than the defaults of a csv, you must do
 so manually in Rstudio using the `add_physical` function fully. It is not recommended 
 that you do so, however, as the default values present represent the best practices 
@@ -374,9 +420,9 @@ unique code and definition, with its `attribute_name` alligning to that which is
 
 ```{r}
 attribute_list <- list()
-codes <- read_excel("data-raw/template/template.xlsx", sheet = "code_definitions")
+codes <- metadata_sheets$code_definitions
 attribute_names <- unique(codes$attribute_name)
-attribute_table <- read_excel("data-raw/template/template.xlsx", sheet = "attribute")
+attribute_table <- metadata_sheets$attribute
 for (i in 1:nrow(attribute_table)) {
   current <- attribute_table[i, ]
   if (current$domain %in% "enumerated") { 
@@ -391,7 +437,7 @@ for (i in 1:nrow(attribute_table)) {
       }
     }
   } else {
-    definition = current$definition
+    definition = current$attribute_definition
   }
   new_attribute <- add_attribute(attribute_name = current$attribute_name,
                                  attribute_definition = current$attribute_definition,
@@ -442,52 +488,35 @@ for (i in 1:nrow(data_table_methods)) {
 ### Putting the Data Table Together
 Now that we have the `attribute_list`, `physical` information, and `methods`, we 
 can compose the data table, which is the last element we need to create our 
-working EML file. The remaining inputs for the data table can be put in the "data_table"
-tab in the "template.xlsx" excel file. Multiple data tables can be appended to one dataset,
-although it is more common to only have one present. 
+working EML file. If you wish to append multiple datatables to one dataset please 
+contact CVPIA data guidance and we will help you do so properly. 
 ```{r}
-data_table <- read_excel("data-raw/template/template.xlsx", sheet = "data_table")
-for (i in 1:nrow(data_table)) {
-  current <- data_table[i, ]
-  phy <- physical_list[i]
-  att <- attribute_list[i]
-  method <- method_list[i]
-  parent_element <- add_data_table(parent_element = parent_element,
-                                   entity_name = current$entity_name,
-                                   entity_description = current$entity_description,
-                                   physical = phy,
-                                   attribute_list = att,
-                                   methods = method,
-                                   number_of_records = current$number_of_records,
-                                   alternate_identifier = current$alternate_identifier)
-}
+# parent_element$dataTable <- list(entityName = physical_entity,
+#                                  entityDescription = entity_description,
+#                                  physical = physical,
+#                                  methods = methods_list,
+#                                  attributeList = attribute_list)
 ```
 If methods are not present at this level, make sure to take it out. 
 ```{r}
-data_table <- read_excel("data-raw/template/template.xlsx", sheet = "data_table")
-for (i in 1:nrow(data_table)) {
-  current <- data_table[i, ]
-  phy <- physical_list[i]
-  att <- attribute_list[i]
-  parent_element <- add_data_table(parent_element = parent_element,
-                                   entity_name = current$entity_name,
-                                   entity_description = current$entity_description,
-                                   physical = phy,
-                                   attribute_list = att,
-                                   number_of_records = current$number_of_records,
-                                   alternate_identifier = current$alternate_identifier)
-}
+parent_element$dataTable <- list(entityName = physical_entity,
+                                 entityDescription = entity_description,
+                                 physical = physical,
+                                 attributeList = attribute_list)
 ```
 
-## Putting It All Together
+## Making the EML document 
 Now that we have all of the items appended to the `parent_element`, we must append it 
-to the "dataset" and also give the file a unique ID number. 
+to the "dataset" and also give the file a unique ID number. The unique id number should 
+be equal to one that you reserved on the EDI data portal. Input this at the top of the 
+document where you define the data tables. 
 ```{r}
-eml <- list(packageId = "uuid::UUIDgenerate()",
-            system = "uuid",
+eml <- list(packageId = edi_number,
+            system = "EDI",
             dataset = parent_element)
 ```
 We now have all necessary elements to create a working EML document. The final step is to convert it into the correct format. To do so, we can use the EML library's `write_eml` function. 
 ```{r}
 EML::write_eml(eml, "eml.xml")
+eml_validate("eml.xml")
 ```
