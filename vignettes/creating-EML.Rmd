@@ -23,15 +23,15 @@ following elements:
 
 ```yaml
 - eml 
+  -access
   -dataset
-    - creator
-    - contact
-    - associated party 
-    - title 
-    - short name 
+    -personnel 
+      - creator
+      - contact
+      - associated party 
+    - title  
     - abstract 
-    - keyword set 
-    - intellectual rights 
+    - keyword set  
     - license 
     - methods 
     - maintenance 
@@ -63,10 +63,10 @@ work up to appending the data table, which has other components to it.
 
 ### Loading in Example Files 
 Four files must be uploaded to make a complete EML document. 
-  - An excel spreadsheet containing the majority of the metadata
-  - A word document containing the abstract text 
-  - A word document containing the methods text 
-  - A csv file that contains the data 
+  * An excel spreadsheet containing the majority of the metadata
+  * A word document containing the abstract text 
+  * A word document containing the methods text 
+  * A csv file that contains the data 
 In addition to these four files a entity description and an EDI number must be defined. 
 The entity description is a short description for the datatable that you uploaded. 
 The EDI number should be a unique data package identifier. You can reserve this 
@@ -84,20 +84,23 @@ abstract_docx <- "data-raw/Hannon-Example/hannon_example_abstract.docx"
 methods_docx <- "data-raw/Hannon-Example/hannon_example_methods.docx"
 physical_entity <- "data-raw/Hannon-Example/hannon_example_physical_data.csv"
 
-entity_description <- "Hannon Snorkel Survey"
-
-
 edi_number = "edi.687.1"
 
 ```
-
-
 ### Creating the Parent Element
 We first need to create a parent element. This will be a list of which our metadata 
 inputs can be appended to. 
 
 ```{r}
 parent_element <- list() 
+```
+
+### Access Section 
+The `add_access` adds an access section at the beginning of our EML document. The 
+`add_access` default is public principal with a read permission. 
+
+```{r}
+access <- add_access()
 ```
 
 ### Publication Date 
@@ -194,20 +197,23 @@ other requirements for use, other requirements for attribution, etc. Both the CC
 and CCBY licenses can be chosen as defaults using this function, and the rest of the 
 information will be appended for you. Only one license should be appended.
 This information can be added to the "license" tab in the excel file "template.xlsx".
+If a default license is not being used, then the other inputs need to be provided. 
 
 ```{r}
 license <- metadata_sheets$license
-parent_element <- add_license(parent_element = parent_element, default_license = license$default_license)
+
+if (license$default_license == "CCO" | license$default_license == "CCBY") {
+  parent_element <- add_license(parent_element = parent_element, default_license = license$default_license)
+} else {
+  parent_element <- add_license(parent_element = parent_element,
+                              license_name = license$license_name,
+                              license_url = license$license_url,
+                              license_identifier = license$license_identifier,
+                              intellectual_rights_description = license$intellectual_rights_description)
+}
 ```
 
-If a default license is not being used, then the other inputs need to be provided. 
-```{r}
-# parent_element <- add_license(parent_element = parent_element, 
-#                               license_name = license$license_name,
-#                               license_url = license$license_url,
-#                               license_identifier = license$license_identifier,
-#                               intellectual_rights_description = license$intellectual_rights_description)
-```
+
 ### Maintenance 
 The maintenance of a dataset is simply if the data collection is complete or ongoing.
 The `add_maintenance` function allows you to append the status of the dataset to
@@ -325,34 +331,10 @@ for (i in 1:nrow(taxonomic_coverage_table)) {
                                      common_name = current$common_name,
                                      taxon_id = current$taxon_id)
   if (is.null(taxonomic_coverage)) {
-    taxonomic_coverage <- new_taxon
+    taxonomic_coverage <- list(new_taxon)
   } else {
-    taxonomic_coverage <- append(taxonomic_coverage, new_taxon)
+    taxonomic_coverage <- append(taxonomic_coverage, list(new_taxon))
   }
-}
-if (length(taxonomic_coverage) ==  0) {
-  taxonomic_coverage <- list(taxonomicClassification = "No informaion on taxonomic coverage")
-}
-if (length(taxonomic_coverage) ==  1) {
-  taxonomic_coverage <- taxonomic_coverage
-}
-if (length(taxonomic_coverage) == 2) {
-  taxon_1 <- taxonomic_coverage[1]
-  taxon_2 <- taxonomic_coverage[2]
-  taxonomic_coverage <- list(taxon_1, taxon_2)
-}
-if (length(taxonomic_coverage) == 3) {
-  taxon_1 <- taxonomic_coverage[1]
-  taxon_2 <- taxonomic_coverage[2]
-  taxon_3 <- taxonomic_coverage[3]
-  taxonomic_coverage <- list(taxon_1, taxon_2, taxon_3)
-}
-if (length(taxonomic_coverage) == 4) {
-  taxon_1 <- taxonomic_coverage[1]
-  taxon_2 <- taxonomic_coverage[2]
-  taxon_3 <- taxonomic_coverage[3]
-  taxon_4 <- taxonomic_coverage[4]
-  taxonomic_coverage <- list(taxon_1, taxon_2, taxon_3, taxon_4)
 }
 ```
 
@@ -472,17 +454,10 @@ to the "data_table_methods" tab in the "template.xlsx" excel sheet.
 
 ```{r}
 method_list <- list()
-data_table_methods <- read_excel("data-raw/template/template.xlsx", sheet = "data_table_methods")
-for (i in 1:nrow(data_table_methods)) {
-  current <- data_table_methods[i, ]
-  new_method <- add_method(parent_element = method_list, methods_file = current$methods_file,
-                            instrumentation = current$instrumentation)
-  if (is.null(method_list$methods)) {
-    method_list$methods <- new_method
-  } else {
-    method_list$methods <- list(method_list$methods, new_method)
-  }
-}
+
+methods_list <- add_method(parent_element = method_list, 
+                           methods_file = methods_docx)
+
 ```
 
 ### Putting the Data Table Together
@@ -500,7 +475,7 @@ contact CVPIA data guidance and we will help you do so properly.
 If methods are not present at this level, make sure to take it out. 
 ```{r}
 parent_element$dataTable <- list(entityName = physical_entity,
-                                 entityDescription = entity_description,
+                                 entityDescription = metadata_sheets$dataset$name,
                                  physical = physical,
                                  attributeList = attribute_list)
 ```
@@ -513,6 +488,7 @@ document where you define the data tables.
 ```{r}
 eml <- list(packageId = edi_number,
             system = "EDI",
+            access = access,
             dataset = parent_element)
 ```
 We now have all necessary elements to create a working EML document. The final step is to convert it into the correct format. To do so, we can use the EML library's `write_eml` function. 
