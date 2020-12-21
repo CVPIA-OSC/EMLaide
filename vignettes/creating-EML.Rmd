@@ -1,13 +1,16 @@
 ---
 title: "Creating EML Using EDIutils"
-output: rmarkdown::html_vignette
+output: 
+  rmarkdown::html_vignette:
+    toc: TRUE
 vignette: >
   %\VignetteIndexEntry{Creating EML Using EDIutils}
   %\VignetteEngine{knitr::rmarkdown}
   \usepackage[utf8]{inputenc}
+toc-title: "Table of Contents: Workflow and sections for EML generation"
 ---
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE, message = FALSE)
+knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)
 knitr::opts_knit$set(root.dir = rprojroot::find_rstudio_root_file())
 ```
 The following libraries are needed to create a working EML document. 
@@ -56,19 +59,15 @@ The excel sheet of which Hannon's data resides is found in "~/data-raw/Hannon-Ex
 This file can be edited with your data and used with this document to create your 
 own working EML file. 
 
-## Creating EML 
-The tabs of the excel file are organized in the order of which this template appends information. 
-We start with the simpler pieces of information such as `personnel` and `title` and 
-work up to appending the data table, which has other components to it. 
-
-### Loading in Example Files 
+## Required Files 
 Four files must be uploaded to make a complete EML document. 
-  * An excel spreadsheet containing the majority of the metadata
-  * A word document containing the abstract text 
-  * A word document containing the methods text 
-  * A csv file that contains the data 
+
+* An excel spreadsheet containing the majority of the metadata
+* A word document containing the abstract text 
+* A word document containing the methods text 
+* A file that contains the data (preferably csv if tabular data)
+
 In addition to these four files a entity description and an EDI number must be defined. 
-The entity description is a short description for the datatable that you uploaded. 
 The EDI number should be a unique data package identifier. You can reserve this 
 data package identifier number on the [EDI data repository under tools.](https://portal.edirepository.org/nis/reservations.jsp)
 For this example all of our files are stored in a the Hannon-Example folder within data-raw. 
@@ -85,22 +84,26 @@ methods_docx <- "data-raw/Hannon-Example/hannon_example_methods.docx"
 physical_entity <- "data-raw/Hannon-Example/hannon_example_physical_data.csv"
 
 edi_number = "edi.687.1"
-
-```
-### Creating the Parent Element
-We first need to create a parent element. This will be a list of which our metadata 
-inputs can be appended to. 
-
-```{r}
-parent_element <- list() 
 ```
 
-### Access Section 
+## EML Sections 
+We start with the simpler pieces of information such as `personnel` and `title` and 
+work up to appending the more complex sections like `dataTable`. 
+
+### Access Permissions 
 The `add_access` adds an access section at the beginning of our EML document. The 
 `add_access` default is public principal with a read permission. 
 
 ```{r}
 access <- add_access()
+```
+
+### Creating the Parent Element
+We first need to create a parent element. This will be a parent list that stores all 
+of our metadata sections. 
+
+```{r}
+parent_element <- list() 
 ```
 
 ### Publication Date 
@@ -119,7 +122,7 @@ who is responsible for the creation of the data, while an associated party would
 be any person or organization which is associated to the dataset. The creator will also 
 be the contact for this datset. Multiple creators, associated parties, and a mixture
 of both can be appended to the EML file by providing all inputs in the "personnel"
-tab in the "template.xlsx" excel file. 
+tab in the "example-metadata.xlsx" excel file. 
 
 ```{r}
 personnel_table <- metadata_sheets$personnel
@@ -142,21 +145,23 @@ Only one title and short name should be appended. The title should be
 fairly descriptive and between 7 and 20 words long. The short name must be less than
 the number of words present in the title and is your opportunity to give viewers a more 
 accessible name to the dataset. Again, this information can be added to the "title"
-tab in the excel file "template.xlsx".
+tab in the excel file "example-metadata.xlsx".
 
 ```{r, }
 title <- metadata_sheets$title
-parent_element <- add_title(parent_element = parent_element, title = title$title, 
+parent_element <- add_title(parent_element = parent_element,
+                            title = title$title, 
                             short_name = title$short_name)
 ```
 
 ### Keyword Set 
 The next item we will append is the keyword set. We can use the `add_keyword_set` 
-function to do so. The keyword set should include a list of words under a controlled vocabulary, 
-that helps better identify your dataset and if it will be applicable to viewers.
-A keyword thesaurus is helpful and will provide viewers a better idea of the data,
-but is not mandatory. Multiple keyword sets can be provided. This information can 
-be added to the "keyword_set" tab in the excel file "template.xlsx".
+function to do so. The keyword set should include a list of words that help 
+identify your project or connect it with other similar projects. If you add keywords
+from a controlled vocabulary you must state what keyword thesaurus they belong to. 
+If keywords are not from a controlled vocabulary do not add a keyword thesaurus. 
+Multiple keyword sets can be provided. This information can 
+be added to the "keyword_set" tab in the excel file "example-metadata.xlsx".
 
 ```{r}
 keyword_set <- metadata_sheets$keyword_set
@@ -178,10 +183,8 @@ if (length(!is.na(metadata_sheets$keywordThesaurus)) == 0) {
 Next, we will use the `add_abstract` function to append the abstract of the dataset to 
 your file. The abstract should include basic information on the dataset that gives 
 a brief summary to the viewers of what they are observing from the data. This 
-information will not be added to the "template.xlsx" excel sheet, but rather the 
+information will not be added to the "example-metadata.xlsx" excel sheet, but rather the 
 "hannon_example_abstract.docx". The text provided can be deleted and replaced with your own. 
-From there, the file path of your word document can be added to the excel file 
-"template.xlsx". 
 
 ```{r}
 parent_element <- add_abstract(parent_element = parent_element, 
@@ -196,14 +199,15 @@ rights, which may be explained in the license you are using. It can also contain
 other requirements for use, other requirements for attribution, etc. Both the CC0 
 and CCBY licenses can be chosen as defaults using this function, and the rest of the 
 information will be appended for you. Only one license should be appended.
-This information can be added to the "license" tab in the excel file "template.xlsx".
+This information can be added to the "license" tab in the excel file "example-metadata.xlsx".
 If a default license is not being used, then the other inputs need to be provided. 
 
 ```{r}
 license <- metadata_sheets$license
 
 if (license$default_license == "CCO" | license$default_license == "CCBY") {
-  parent_element <- add_license(parent_element = parent_element, default_license = license$default_license)
+  parent_element <- add_license(parent_element = parent_element, 
+                                default_license = license$default_license)
 } else {
   parent_element <- add_license(parent_element = parent_element,
                               license_name = license$license_name,
@@ -213,6 +217,16 @@ if (license$default_license == "CCO" | license$default_license == "CCBY") {
 }
 ```
 
+### Methods
+The method section explains the scientific methods that were used in the collection of the dataset.
+The `add_method` function allows you to add a method file to the parent_element.
+A template methods document is given ("data-raw/Hannon-Example/hannon_example_methods.docx"). 
+If more methods are needed, you can create separate sections in your word document.
+
+```{r}
+parent_element$methods <- add_method(parent_element = parent_element,
+                                     methods_file = methods_docx)
+```
 
 ### Maintenance 
 The maintenance of a dataset is simply if the data collection is complete or ongoing.
@@ -220,28 +234,28 @@ The `add_maintenance` function allows you to append the status of the dataset to
 your file and the inputs of `complete` and `ongoing` are the only ones allowed.
 If the dataset is still in progress, the frequency of which it is updated must 
 be provided as well. This information should be added to the "maintenance" tab 
-in the excel file "template.xlsx".
+in the excel file "example-metadata.xlsx".
 
 ```{r}
 maintenance <- metadata_sheets$maintenance
-parent_element <- add_maintenance(parent_element = parent_element, status = maintenance$status,
+parent_element <- add_maintenance(parent_element = parent_element, 
+                                  status = maintenance$status,
                                   update_frequency = maintenance$update_frequency)
 ```
 
-### Project Section 
+### Project: Title, Personnel, and Funding 
 The project section should be appended next. Project personnel and project funding 
 are nested in this project section. To generate a valid EML doc the project section 
 must contain a project title, a project personnel, and project funding. 
 
 #### Project title
 ```{r}
-project_title <- metadata_sheets$project_title$project_title
+project_title <- metadata_sheets$project$project_title
 ```
-
 
 #### Project personnel 
 ```{r}
-project_personnel_table <- metadata_sheets$project_personnel
+project_personnel_table <- metadata_sheets$project
 for (i in 1:nrow(project_personnel_table)) {
   current <- project_personnel_table[i, ]
   project_personnel <- add_personnel(parent_element = list(), 
@@ -264,22 +278,26 @@ if (!is.null(project_personnel$creator)){
 The `add_funding` function allows you to append 
 both the description of the funding you have received as well as the organization 
 you received the funding from. Multiple funders can be appended if necessary and 
-information should be added to the "funding" tab in the excel file "template.xlsx".
+information should be added to the "funding" tab in the excel file "example-metadata.xlsx".
 
 ```{r}
-funding <- metadata_sheets$funding
-award_information <- add_funding(funder_name = funding$funder_name,
-                                 funder_identifier = funding$funder_identifier,
-                                 award_number = funding$award_number,
-                                 award_title = funding$award_title,
-                                 award_url = funding$award_url,
-                                 funding_description = funding$funding_description)
+funding_table <- metadata_sheets$funding
+for (i in 1:nrow(funding_table)) {
+  current <- funding_table[i, ]
+  award_information <- add_funding(funder_name = current$funder_name,
+                                   funder_identifier = current$funder_identifier,
+                                   award_number = current$award_number,
+                                   award_title = current$award_title,
+                                   award_url = current$award_url,
+                                   funding_description = current$funding_description)
+} 
 ```
 
 #### Combining Project Elements
 Once all the components of project have been defined we can use the add_project
 function to combine the sections in the proper formatting for an EML document. 
 ```{r}
+# TODO change to using add_project function once merged 
 # parent_element <- add_project(parent_element = parent_element,
 #                               project_title = project_title,
 #                               award_information = award_information,
@@ -289,21 +307,6 @@ parent_element$project <- list(title = project_title,
                                award = award_information)
 ``` 
 
-### Dataset Methods
-The method section explains the scientific methods that were used in the collection of the dataset.
-The `add_method` function allows you to add a method file to the parent_element.
-A template methods document is given ("data-raw/Hannon-Example/hannon_example_methods.docx"). 
-If more methods are needed, you can create separate word documents.
-The methods can be applied here as well as in the data table element,
-so make sure you are appending the correct methods to the accurate places. 
-Top level methods can describe how a particular csv data was collected, while a data table
-method can explain how particular attributes in the data table were collected.
-
-```{r}
-parent_element$methods <- add_method(parent_element = parent_element,
-                                     methods_file = methods_docx)
-```
-
 ### Coverage: Geographic, Temporal, Taxonomic 
 Next, the coverage information is appended. The `add_coverage` function allows
 you to append full coverage information to your file. Temporal, Geographic, and 
@@ -311,7 +314,7 @@ Taxonomic Coverage are all required elements to generate an EML document.
 
 ##### Taxonomic coverage 
 Taxonomic coverage can be appended using the `add_taxonomic_coverage` function. 
-The taxonomic coverage information is added to the "template-metadata.xlsx" 
+The taxonomic coverage information is added to the "example-metadata.xlsx" 
 excel file on the tab "taxonomic_coverage". chinook, delta_smelt, steelhead, 
 white_sturgeon, and green_sturgeon are all default options that can be selected 
 using the drop down menu under the CVPIA_common_species column.
@@ -358,21 +361,21 @@ for (i in 1:nrow(coverage_table)) {
 ```
 
 ### Data Table 
-Next, we need to create the data table. `physical`, `attribute_list`, and potentially 
-`methods` are all lists which must be appended to the data table list. Because of this,
-we have to create these additional lists first, to append to our `parent_element` list. 
+Next, we need to create the data table. The data table element includes`physical`, `attribute_list`, 
+and potentially additional information for Spatial Data. These sections are all lists 
+which must be created first, appended to a dataTable, and then appended to 
+the `parent_element`.
 
 #### Physical 
 The physical element can be created first using the `add_physical` function. 
 This will append information on the actual physical information of the data. 
-The file path of the data can be added to the "template.xlsx" excel file 
+The file path of the data can be added to the "example-metadata.xlsx" excel file 
 and all parameters will be appended, gathering the csv's unique size and 
 authentication, as well as providing the default physical values of a csv. 
 
 ```{r}
 physical <- add_physical(file_path = physical_entity, 
                          data_url = current$data_url)
-
 ```
 
 If you wish to provide alternative information than the defaults of a csv, you must do
@@ -380,31 +383,24 @@ so manually in Rstudio using the `add_physical` function fully. It is not recomm
 that you do so, however, as the default values present represent the best practices 
 in most cases. 
 
-```{r}
-# physical_list <- list()
-# physical_list <- add_physical(file_path = file_path, 
-#                                number_of_headers = number_of_headers,
-#                                record_delimiter = record_delimiter,
-#                                attribute_orientation = attribute_orientation,
-#                                field_delimiter = field_delimiter,
-#                                data_url = data_url)
-```
-
 #### Attribute List 
 Next, we will need to append an attribute list to the data table. We will be able 
-to use the `add_attribute` function to  do so. Please make sure you review what 
+to use the `add_attribute` function to do so. Please make sure you review what 
 type of attribute you are providing and what inputs are necessary. These values 
-can then be inputted into the "attribute" tab in the "template.xlsx" excel file. If you
+can then be inputted into the "attribute" tab in the "example-metadata.xlsx" excel file. If you
 are using a "nominal" or "ordinal" attribute which is "enumerated", (it has a specific 
 code definition), please also use the tab "code_definitions". Provide each
-unique code and definition, with its `attribute_name` alligning to that which is in the
-"attirbute" tab. An example is present curently to help better showcase this. 
+unique code and definition, with its `attribute_name` aligning to that which is in the
+"attribute" tab. An example is present currently to help better showcase this. Every single 
+column in the dataTable must have a described attribute to match EDI congruence checker. 
 
 ```{r}
-attribute_list <- list()
-codes <- metadata_sheets$code_definitions
-attribute_names <- unique(codes$attribute_name)
 attribute_table <- metadata_sheets$attribute
+codes <- metadata_sheets$code_definitions
+
+attribute_list <- list()
+attribute_names <- unique(codes$attribute_name)
+
 for (i in 1:nrow(attribute_table)) {
   current <- attribute_table[i, ]
   if (current$domain %in% "enumerated") { 
@@ -427,7 +423,6 @@ for (i in 1:nrow(attribute_table)) {
                                  measurement_scale = current$measurement_scale,
                                  domain = current$domain,
                                  definition = definition,
-                                 text_pattern = current$text_pattern,
                                  type = current$type,
                                  units = current$units,
                                  unit_precision = current$unit_precision,
@@ -445,45 +440,34 @@ for (i in 1:nrow(attribute_table)) {
 }
 ```
 
-### Methods
-Finally, if there are any methods which you would like to include at the data table
-level, you can do so here. It is optional, but as stated before, can 
-be included in both places if necessary. Like the previous methods, a document 
-needs to be created which holds all of your methods, and the file path can be added 
-to the "data_table_methods" tab in the "template.xlsx" excel sheet. 
-
-```{r}
-method_list <- list()
-
-methods_list <- add_method(parent_element = method_list, 
-                           methods_file = methods_docx)
-
-```
-
-### Putting the Data Table Together
-Now that we have the `attribute_list`, `physical` information, and `methods`, we 
+#### Putting the Data Table Together
+Now that we have the `attribute_list` and `physical` information, we 
 can compose the data table, which is the last element we need to create our 
 working EML file. If you wish to append multiple datatables to one dataset please 
 contact CVPIA data guidance and we will help you do so properly. 
+
 ```{r}
-# parent_element$dataTable <- list(entityName = physical_entity,
-#                                  entityDescription = entity_description,
-#                                  physical = physical,
-#                                  methods = methods_list,
-#                                  attributeList = attribute_list)
-```
-If methods are not present at this level, make sure to take it out. 
-```{r}
-parent_element$dataTable <- list(entityName = physical_entity,
-                                 entityDescription = metadata_sheets$dataset$name,
-                                 physical = physical,
-                                 attributeList = attribute_list)
+if (metadata_sheets$dataset$type == "tabular") {
+  parent_element$dataTable <- list(entityName = physical_entity,
+                                   entityDescription = metadata_sheets$dataset$name,
+                                   physical = physical,
+                                   attributeList = attribute_list)
+} 
+if (metadata_sheets$dataset$type == "vector") {
+  parent_element$spatialVector <- list(entityName = physical_entity,
+                                       entityDescription = metadata_sheets$dataset$name,
+                                       physical = physical,
+                                       attributeList = attribute_list,
+                                       geometry = metadata_sheets$dataset$geometry)
+}
+
+## TODO RASTER DATA 
 ```
 
 ## Making the EML document 
 Now that we have all of the items appended to the `parent_element`, we must append it 
 to the "dataset" and also give the file a unique ID number. The unique id number should 
-be equal to one that you reserved on the EDI data portal. Input this at the top of the 
+match one that you reserved on the EDI data portal. Input this at the top of the 
 document where you define the data tables. 
 ```{r}
 eml <- list(packageId = edi_number,
