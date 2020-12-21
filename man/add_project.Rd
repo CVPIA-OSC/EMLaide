@@ -18,37 +18,37 @@ add_project(
 
 \item{award_information}{A list that includes the required funding information
 for an EML document.This list must include the award title and the funderName.
-This list can be created by calling the add_funding function
+This list can be created by calling the \code{add_funding} function
 on the funding information or by manually inputting the required information.
 If the list is written manually it must be formatted as follows.
 
-award_infomation = list(funderName = "Name", title = "Award Title")
+\code{award_infomation = list(funderName = "Name", title = "Award Title")}
 
 Additional information about the funding may be added to the list. See the
-add_funding documentation for more information.}
+\code{\link{add_funding}} documentation for more information.}
 
 \item{project_personnel}{A list that includes the required information on project
 personnel for an EML document. It must include the first name, last name,
 organization, and personnel role for this project. This list can be created
-by calling the add_personnel function on the project personnel or by manually inputting the required
+by calling the \code{add_personnel} function on the project personnel or by manually inputting the required
 information. If the list is written manually it must be formatted as follows.
 
-project_personnel = list(individualName = list(givenName = "First Name", surName = "Last Name"),
-role = "Position", organization = "Organization")
+\code{project_personnel = list(individualName = list(givenName = "First Name", surName = "Last Name"),
+role = "Position", organization = "Organization")}
 
 Additional information about the project personnel may be added to the list. See the
-add_personnel documentation for more information.}
+\code{\link{add_personnel}} documentation for more information.}
 }
 \value{
 This function returns the parent element with a new project node containing
-all project information requried for an EML document.
+all project information required for an EML document.
 }
 \description{
 This function creates a project node within the parent element that
 contains all the required elements for the project section of an EML document.
-This function can be used in combination with add_personnel
-and add_funding. Add_personnel can be used to generate the project_personnel
-input and add_funding can be used to generate the award_information input.
+This function can be used in combination with \code{add_personnel}
+and \code{add_funding}. \code{add_personnel} can be used to generate the \code{project_personnel}
+input and \code{add_funding} can be used to generate the \code{award_information} input.
 }
 \examples{
 add_project(parent_element = parent_element, 

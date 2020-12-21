@@ -1,36 +1,36 @@
 #' @title Add project element 
 #' @description This function creates a project node within the parent element that 
 #' contains all the required elements for the project section of an EML document.
-#' This function can be used in combination with add_personnel
-#' and add_funding. Add_personnel can be used to generate the project_personnel 
-#' input and add_funding can be used to generate the award_information input.  
+#' This function can be used in combination with \code{add_personnel}
+#' and \code{add_funding}. \code{add_personnel} can be used to generate the \code{project_personnel} 
+#' input and \code{add_funding} can be used to generate the \code{award_information} input.  
 #' @param parent_element A list in which the project node should be nested in. 
 #' @param project_title The title of the project that the funding is awarded to. 
 #' @param award_information A list that includes the required funding information 
 #' for an EML document.This list must include the award title and the funderName.
-#' This list can be created by calling the add_funding function 
+#' This list can be created by calling the \code{add_funding} function 
 #' on the funding information or by manually inputting the required information. 
 #' If the list is written manually it must be formatted as follows. 
 #'
-#' award_infomation = list(funderName = "Name", title = "Award Title")
+#' \code{award_infomation = list(funderName = "Name", title = "Award Title")}
 #'
 #' Additional information about the funding may be added to the list. See the 
-#' add_funding documentation for more information. 
+#' \code{\link{add_funding}} documentation for more information. 
 #'                         
 #' @param project_personnel A list that includes the required information on project 
 #' personnel for an EML document. It must include the first name, last name, 
 #' organization, and personnel role for this project. This list can be created 
-#' by calling the add_personnel function on the project personnel or by manually inputting the required
+#' by calling the \code{add_personnel} function on the project personnel or by manually inputting the required
 #' information. If the list is written manually it must be formatted as follows. 
 #'
-#' project_personnel = list(individualName = list(givenName = "First Name", surName = "Last Name"),
-#' role = "Position", organization = "Organization")
+#' \code{project_personnel = list(individualName = list(givenName = "First Name", surName = "Last Name"),
+#' role = "Position", organization = "Organization")}
 #'
 #' Additional information about the project personnel may be added to the list. See the 
-#' add_personnel documentation for more information.
+#' \code{\link{add_personnel}} documentation for more information.
 #' 
 #' @return This function returns the parent element with a new project node containing 
-#' all project information requried for an EML document. 
+#' all project information required for an EML document. 
 #' @examples
 #' add_project(parent_element = parent_element, 
 #'             project_title = "my project title", 
@@ -74,10 +74,7 @@ add_project <- function(parent_element, project_title,
                                     award_infomration = "Please provide the award information.",
                                     project_personnel = "Please provide the project personnel")
     
-    if (missing(project_title) | missing(award_information) |
-        missing(project_personnel)) {
-      stop(project_error_message, call. = FALSE)
-    }
+    stop(project_error_message, call. = FALSE)
   }
   required_information <- c("funderName", "title", "individualName", "organization",
                             "role")
@@ -102,19 +99,8 @@ add_project <- function(parent_element, project_title,
                                        individualName = "Please provide a name for the project personnel.",
                                        organization = "Please provide an organization for the project personnel.",
                                        role = "Please provide a role for the project personnel.")
-    
-    if (is.null(award_information$funderName)| is.null(award_information$title) |
-        (is.null(project_personnel$individualName) & 
-         is.null(project_personnel$associatedParty$individualName) &
-         is.null(project_personnel$creator$individualName))|
-        (is.null(project_personnel$organization) & 
-         is.null(project_personnel$associatedParty$organization) &
-         is.null(project_personnel$creator$organization)) |
-        (is.null(project_personnel$role) & 
-         is.null(project_personnel$associatedParty$role) &
-         is.null(project_personnel$creator$role))) {
-      stop(requirment_error_message, call. = FALSE)
-    }
+
+    stop(requirment_error_message, call. = FALSE)
   }
   
   parent_element$project <- list(title = project_title,
