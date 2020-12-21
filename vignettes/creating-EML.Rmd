@@ -477,6 +477,6 @@ eml <- list(packageId = edi_number,
 ```
 We now have all necessary elements to create a working EML document. The final step is to convert it into the correct format. To do so, we can use the EML library's `write_eml` function. 
 ```{r}
-EML::write_eml(eml, "eml.xml")
-eml_validate("eml.xml")
+EML::write_eml(eml, paste(edi_number, "xml", sep = "."))
+eml_validate(paste(edi_number, "xml", sep = "."))
 ```
