@@ -6,7 +6,7 @@ output:
 vignette: >
   %\VignetteIndexEntry{Creating EML Using EDIutils}
   %\VignetteEngine{knitr::rmarkdown}
-  \usepackage[utf8]{inputenc}
+  %\VignetteEncoding{UTF-8}
 toc-title: "Table of Contents: Workflow and sections for EML generation"
 ---
 ```{r setup, include=FALSE}

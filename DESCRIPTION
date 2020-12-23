@@ -22,4 +22,10 @@ Imports:
     EML
 Depends: 
     R (>= 2.10)
+Suggests: 
+    rmarkdown, 
+    knitr,
+    testthat (>= 2.1.0),
+    tidyverse
 URL: https://CVPIA-OSC.github.io/EDIutils/
+VignetteBuilder: knitr
