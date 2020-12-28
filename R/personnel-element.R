@@ -9,7 +9,7 @@
 #' @param email Person's email address
 #' @param organization Person's employer or the entity they are associated
 #' with for this dataset or project
-#' @param orcid ORCID iD is a persistent digital identifier for researchers,
+#' @param orcid (Optional) ORCID iD is a persistent digital identifier for researchers,
 #' register at \url{http://orcid.org/}
 #' @examples 
 #' add_personnel(parent_element = list(),

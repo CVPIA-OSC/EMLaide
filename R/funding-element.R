@@ -2,14 +2,14 @@
 #' @description Creates the award information of a project based off of EML standards. 
 #' This award element is then nested within a project node to complete a funding section. 
 #' @param funder_name Organization or individual providing the funding.
-#' @param funder_identifier This is where the funding organization is listed in 
+#' @param funder_identifier (Optional) This is where the funding organization is listed in 
 #' the registry. The funder identifier must be registered. Follow the instructions at 
 #' \url{https://ror.org/curation/} to get registered. 
-#' @param award_number The identifier assigned by the funding agency to identify this funding award.
-#' @param award_title Title of the dataset or project which recieved funding.
-#' @param award_url Optional to include a link to information about the funding
+#' @param award_number (Optional) The identifier assigned by the funding agency to identify this funding award.
+#' @param award_title Title of the dataset or project which received funding.
+#' @param award_url (Optional) Optional to include a link to information about the funding
 #'  award on the funding organization's webpage.
-#' @param funding_description Optional to provide a short description of the funding recieved.
+#' @param funding_description (Optional) Provide a short description of the funding received.
 #' @return An award list that is then added to the project element of an EML file.  
 #' @examples 
 #' add_funding(funder_name = "National Science Foundation",
