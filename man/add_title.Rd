@@ -7,12 +7,12 @@
 add_title(parent_element, title, short_name)
 }
 \arguments{
+\item{parent_element}{A list representing the EML project or dataset.}
+
 \item{title}{The title of the project and/or dataset. A complete title is between
 7 and 20 words long and includes: What, Where, and When (and Who, if relevant).}
 
 \item{short_name}{Short name or nickname you use to refer to this dataset.}
-
-\item{parament_element}{A list representing the EML project or dataset.}
 }
 \value{
 The project or dataset list with title and short name appended.
