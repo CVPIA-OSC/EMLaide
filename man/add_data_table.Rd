@@ -37,7 +37,7 @@ information in this entity.}
 
 \item{number_of_records}{Optional. A count of the number of records in the data table.}
 
-\item{alternate_identifer}{Optional. Provide when a dataset or project belongs
+\item{alternate_identifier}{Optional. Provide when a dataset or project belongs
 to more than the contributing organization. Please include each additional
 individual ID with its own alternate_identifier.}
 }

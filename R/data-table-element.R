@@ -1,7 +1,7 @@
 #' @title Add Data Table 
 #' @description Adds the data table elements according to EML standards. 
 #' @param parent_element A list representing the EML project or dataset.
-#' @param alternate_identifer Optional. Provide when a dataset or project belongs 
+#' @param alternate_identifier Optional. Provide when a dataset or project belongs 
 #' to more than the contributing organization. Please include each additional 
 #' individual ID with its own alternate_identifier.
 #' @param entity_name The name of the table, file, or database table. Often 
