@@ -7,12 +7,12 @@
 add_abstract(parent_element, abstract)
 }
 \arguments{
+\item{parent_element}{A list representing the EML project or dataset.}
+
 \item{abstract}{Abstract paragraphs, requires a minimum of 20 words. A template
 word document is accessible in "~/EDIutils/inst/extdata/abstract_template.docx".
 You can copy and paste your abstract in this document and set the parameter of
 \code{abstract} equal to this file path.}
-
-\item{parament_element}{A list representing the EML project or dataset.}
 }
 \value{
 The dataset or project with abstract appended
