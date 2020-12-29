@@ -38,7 +38,7 @@ expression of    the    domain of    the    attribute. A list of approved storag
 attribute. A list of approved measurment scales can be viewed at \code{\link{measurement_scale}}.
 Further explination of the choices and required inputs are described below.}
 
-\item{attribute_label}{Optional. Used to provide    a    less ambiguous or    less cryptic
+\item{attribute_label}{(Optional) Used to provide    a    less ambiguous or    less cryptic
 alternative identification    than what    is provided    in \code{attribute_name}.}
 
 \item{domain}{Input for the non-numeric measurement scales only.
@@ -47,7 +47,7 @@ Please list either "text" or "enumerated".}
 \item{definition}{Either the text definition or code definition. Both are appended
 using this parameter, but have different applications. Examples of both are listed below.}
 
-\item{text_pattern}{A regular expression pattern constraining the attribute.}
+\item{text_pattern}{(Optional) A regular expression pattern constraining the attribute.}
 
 \item{type}{Either "ratio" or "interval".}
 
@@ -55,7 +55,7 @@ using this parameter, but have different applications. Examples of both are list
 
 \item{number_type}{A list of possible options can be viewed at \code{\link{number_type}}.}
 
-\item{unit_precision}{How precise units are measured.}
+\item{unit_precision}{(Optional) How precise units are measured.}
 
 \item{date_time_format}{The format your date/time attribute is recorded in.
 ISO 8601 standard should be used (YYYY-MM-DD).}
@@ -142,7 +142,7 @@ add_attribute(attribute_name = "LatitudeDD",
 # Ordinal(enumerated): 
 code_def_0 = list(code = "0", definition = "0 insects per meter of branch")
 code_def_1 = list(code = "1", definition = "1-10 insects per meter")
-code_def_2 = list(code = "2", definition = "11 – 100 insects per meter")
+code_def_2 = list(code = "2", definition = "11 â€“ 100 insects per meter")
 code_def_3 = list(code = "3", definition = "more than 100 insects per meter")
 code_definition = list(code_def_0, code_def_1, code_def_2, code_def_3)
 add_attribute(attribute_name = "hwa",

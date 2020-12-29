@@ -30,7 +30,7 @@ There can be multiple personnel on a project with the same role.}
 \item{organization}{Person's employer or the entity they are associated
 with for this dataset or project}
 
-\item{orcid}{ORCID iD is a persistent digital identifier for researchers,
+\item{orcid}{(Optional) ORCID iD is a persistent digital identifier for researchers,
 register at \url{http://orcid.org/}}
 }
 \description{

@@ -16,18 +16,18 @@ add_funding(
 \arguments{
 \item{funder_name}{Organization or individual providing the funding.}
 
-\item{funder_identifier}{This is where the funding organization is listed in
+\item{funder_identifier}{(Optional) This is where the funding organization is listed in
 the registry. The funder identifier must be registered. Follow the instructions at
 \url{https://ror.org/curation/} to get registered.}
 
-\item{award_number}{The identifier assigned by the funding agency to identify this funding award.}
+\item{award_number}{(Optional) The identifier assigned by the funding agency to identify this funding award.}
 
-\item{award_title}{Title of the dataset or project which recieved funding.}
+\item{award_title}{Title of the dataset or project which received funding.}
 
-\item{award_url}{Optional to include a link to information about the funding
+\item{award_url}{(Optional) Optional to include a link to information about the funding
 award on the funding organization's webpage.}
 
-\item{funding_description}{Optional to provide a short description of the funding recieved.}
+\item{funding_description}{(Optional) Provide a short description of the funding received.}
 }
 \value{
 An award list that is then added to the project element of an EML file.
