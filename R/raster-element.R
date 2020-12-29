@@ -1,5 +1,3 @@
-
-
 #'
 #' @title Add Raster Element
 #' @description This function adds all the required elements for a \code{spatialRaster} section of
@@ -8,11 +6,11 @@
 #' @param file_name The name of your raster file
 #' @param file_description A short description of your file
 #' @param attribute_list A list of all the columns on your datatable. 
-#' Use \code{\link{add_attribute} to generate this attribute list and see the 
-#' documentation for \code{\link{add_attribute} for more information. 
+#' Use \code{\link{add_attribute}} to generate this attribute list and see the 
+#' documentation for \code{\link{add_attribute}} for more information. 
 #' @param physical A list of the physical descriptions of your file. Use 
-#' \code{\link{add_physical} to generate this physical list and see the 
-#' documentation for \code{\link{add_physical} for more information. 
+#' \code{\link{add_physical}} to generate this physical list and see the 
+#' documentation for \code{\link{add_physical}} for more information. 
 #' @param spatial_reference This is the name of a predefined coordinate system. 
 #' The acceptable values for \code{spatial_reference} can be found at 
 #' \href{https://eml.ecoinformatics.org/schema/index.html}{EDI Schema}.
@@ -56,12 +54,12 @@ add_raster <- function(parent_element, file_name, file_description, attribute_li
                        cell_size_x, cell_size_y, number_of_bands, raster_origin, 
                        rows, columns, verticals, cell_geometry) {
   
-  required_arguments <- c("file_name", "file_description", "attribute_list", "physical",
+  required_arguments <- c("parent_element", "file_name", "file_description", "attribute_list", "physical",
                           "spatial_reference", "horizontal_accuracy", "vertical_accuracy",
                           "cell_size_x", "cell_size_y", "number_of_bands", "raster_origin",
                           "rows", "columns", "verticals", "cell_geometry")
 
-  missing_argument_index <- which(c(missing(file_name), missing(file_description), 
+  missing_argument_index <- which(c(missing(parent_element), missing(file_name), missing(file_description), 
                                     missing(attribute_list), missing(physical), missing(spatial_reference), 
                                     missing(horizontal_accuracy), missing(vertical_accuracy),
                                     missing(cell_size_x), missing(cell_size_y), missing(number_of_bands),
