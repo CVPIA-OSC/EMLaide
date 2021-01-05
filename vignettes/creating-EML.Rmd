@@ -83,7 +83,7 @@ abstract_docx <- system.file("extdata", "Hannon-Example", "hannon_example_abstra
 methods_docx <- system.file("extdata", "Hannon-Example", "hannon_example_methods.docx", 
                             package = "EDIutils", mustWork = TRUE)
 
-physical_entity <- system.file("extdata", "Hannon-Example", "hannon_example_physical_data.csv",
+dataset_file <- system.file("extdata", "Hannon-Example", "hannon_example_physical_data.csv",
                                package = "EDIutils", mustWork = TRUE)
 
 edi_number = "edi.687.1"
@@ -377,7 +377,7 @@ and all parameters will be appended, gathering the csv's unique size and
 authentication, as well as providing the default physical values of a csv. 
 
 ```{r}
-physical <- add_physical(file_path = physical_entity, 
+physical <- add_physical(file_path = dataset_file, 
                          data_url = current$data_url)
 ```
 
@@ -451,13 +451,13 @@ contact CVPIA data guidance and we will help you do so properly.
 
 ```{r}
 if (metadata_sheets$dataset$type == "tabular") {
-  parent_element$dataTable <- list(entityName = physical_entity,
+  parent_element$dataTable <- list(entityName = dataset_file,
                                    entityDescription = metadata_sheets$dataset$name,
                                    physical = physical,
                                    attributeList = attribute_list)
 } 
 if (metadata_sheets$dataset$type == "vector") {
-  parent_element$spatialVector <- list(entityName = physical_entity,
+  parent_element$spatialVector <- list(entityName = dataset_file,
                                        entityDescription = metadata_sheets$dataset$name,
                                        physical = physical,
                                        attributeList = attribute_list,
