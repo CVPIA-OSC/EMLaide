@@ -5,29 +5,28 @@
 \title{Add Funding Element}
 \usage{
 add_funding(
-  CVPIA_default_funder = NULL,
   funder_name,
+  award_title,
   funder_identifier = NULL,
   award_number = NULL,
-  award_title,
   award_url = NULL,
   funding_description = NULL
 )
 }
 \arguments{
-\item{CVPIA_default_funder}{If funding is one of the common CVPIA funding sources select
-a default funding source from the \code{CVPIA_default_funder} options in the metadata.xlsx
-sheet. The options for default funding are USBR, CDWR, and CDFW.}
+\item{funder_name}{Organization or individual providing the funding. If applicable,
+use one of the following from the helper data
+\code{\link{CVPIA_funders}}: "USBR", "CDWR", or "CDFW" to get pre-selected funding
+information. If you are funded by one of these sources
+please specify which one in \code{funder_name} and include an \code{award_title}.}
 
-\item{funder_name}{Organization or individual providing the funding.}
+\item{award_title}{Title of the award granted to the project.}
 
 \item{funder_identifier}{(Optional) This is where the funding organization is listed in
 the registry. The funder identifier must be registered. Follow the instructions at
 \url{https://ror.org/curation/} to get registered.}
 
 \item{award_number}{(Optional) The identifier assigned by the funding agency to identify this funding award.}
-
-\item{award_title}{Title of the award granted to the project.}
 
 \item{award_url}{(Optional) Optional to include a link to information about the funding
 award on the funding organization's webpage.}

@@ -165,8 +165,6 @@ test_that('funding function errors when missing mandatory identifier inputs', {
                              award_title = "LTER: Beaufort Sea Lagoons: An Arctic Coastal Ecosystem in Transition",
                              award_url = "https://www.nsf.gov/awardsearch/showAward?AWD_ID=1656026"),
                  "Please provide the description of the funding recieved.")
-  
-  
 })
 
 test_that('The add_funding function adds the funding elements', {
@@ -186,20 +184,23 @@ test_that('The add_funding function adds the funding elements', {
 })
 
 test_that('The default funding options are adding the correct default funding information', {
-  expect_equal(add_funding(CVPIA_default_funder = "CDWR"),
+  expect_equal(add_funding(funder_name = "CDWR", 
+                           award_title = "CDWR Fish Predation Grant"),
                list(funderName = "CDWR",
-                    title = "California Department of Water Resources Funding",
+                    title = "CDWR Fish Predation Grant",
                     awardUrl = "https://www.wikidata.org/wiki/Q5020440"))
   
-  expect_equal(add_funding(CVPIA_default_funder = "USBR"),
+  expect_equal(add_funding(funder_name = "USBR",  
+                           award_title = "USBR California Water Grant"),
                list(funderName = "USBR",
-                    title = "United States Bureau of Reclamation Funding",
+                    title = "USBR California Water Grant",
                     funderIdentifier = "100006450", 
                     awardUrl = "https://www.wikidata.org/wiki/Q1010548"))
   
-  expect_equal(add_funding(CVPIA_default_funder = "CDFW"),
+  expect_equal(add_funding(funder_name = "CDFW", 
+                           award_title = "California Department of Fish and Wildlife Grant"),
                list(funderName = "CDFW",
-                    title = "California Department of Fish and Wildlife Funding",
+                    title = "California Department of Fish and Wildlife Grant", 
                     funderIdentifier = "100006238",
                     awardUrl = "https://www.wikidata.org/wiki/Q5020421"))
 })
