@@ -105,9 +105,9 @@ test_that('The add_project function adds the project elements', {
                                                                                  organizationName = "USFWS", 
                                                                                  role = "Data Manager")),
                                          award = list(funderName = "National Science Foundation", 
+                                                      title = "LTER: Beaufort Sea Lagoons: An Arctic Coastal Ecosystem in Transition", 
                                                       funderIdentifier = "http://dx.doi.org/10.13039/100000001", 
                                                       awardNumber = "1656026", 
-                                                      title = "LTER: Beaufort Sea Lagoons: An Arctic Coastal Ecosystem in Transition", 
                                                       description = "BLE LTER is supported by the National Science Foundation under award #1656026 (2017-08-01 to 2022-07-31).",
                                                       awardUrl = "https://www.nsf.gov/awardsearch/showAward?AWD_ID=1656026")))
   
@@ -130,14 +130,14 @@ test_that('funding function errors when missing mandatory identifier inputs', {
                            funding_description = "BLE LTER is supported by the National Science Foundation under award #1656026 (2017-08-01 to 2022-07-31)." ), 
                "Please provide funders name.")
   
-  expect_error(add_funding(funder_name = "National Science Foundation",
+  expect_warning(add_funding(funder_name = "National Science Foundation",
                            award_number = "1656026",
                            award_title = "LTER: Beaufort Sea Lagoons: An Arctic Coastal Ecosystem in Transition",
                            award_url = "https://www.nsf.gov/awardsearch/showAward?AWD_ID=1656026",
                            funding_description = "BLE LTER is supported by the National Science Foundation under award #1656026 (2017-08-01 to 2022-07-31)." ),
                "Please provide funder identifier link.")
   
-  expect_error(add_funding(funder_name = "National Science Foundation",
+  expect_warning(add_funding(funder_name = "National Science Foundation",
                            funder_identifier = "http://dx.doi.org/10.13039/100000001",
                            award_title = "LTER: Beaufort Sea Lagoons: An Arctic Coastal Ecosystem in Transition",
                            award_url = "https://www.nsf.gov/awardsearch/showAward?AWD_ID=1656026",
@@ -178,9 +178,28 @@ test_that('The add_funding function adds the funding elements', {
                            award_url = "https://www.nsf.gov/awardsearch/showAward?AWD_ID=1656026",
                            funding_description = "BLE LTER is supported by the National Science Foundation under award #1656026 (2017-08-01 to 2022-07-31)."),
                list(funderName = "National Science Foundation", 
+                    title = "LTER: Beaufort Sea Lagoons: An Arctic Coastal Ecosystem in Transition",
                     funderIdentifier = "http://dx.doi.org/10.13039/100000001", 
                     awardNumber = "1656026", 
-                    title = "LTER: Beaufort Sea Lagoons: An Arctic Coastal Ecosystem in Transition", 
                     description = "BLE LTER is supported by the National Science Foundation under award #1656026 (2017-08-01 to 2022-07-31).",
                     awardUrl = "https://www.nsf.gov/awardsearch/showAward?AWD_ID=1656026"))
+})
+
+test_that('The default funding options are adding the correct default funding information', {
+  expect_equal(add_funding(CVPIA_default_funder = "CDWR"),
+               list(funderName = "CDWR",
+                    title = "California Department of Water Resources Funding",
+                    awardUrl = "https://www.wikidata.org/wiki/Q5020440"))
+  
+  expect_equal(add_funding(CVPIA_default_funder = "USBR"),
+               list(funderName = "USBR",
+                    title = "United States Bureau of Reclamation Funding",
+                    funderIdentifier = "100006450", 
+                    awardUrl = "https://www.wikidata.org/wiki/Q1010548"))
+  
+  expect_equal(add_funding(CVPIA_default_funder = "CDFW"),
+               list(funderName = "CDFW",
+                    title = "California Department of Fish and Wildlife Funding",
+                    funderIdentifier = "100006238",
+                    awardUrl = "https://www.wikidata.org/wiki/Q5020421"))
 })

@@ -5,15 +5,20 @@
 \title{Add Funding Element}
 \usage{
 add_funding(
+  CVPIA_default_funder = NULL,
   funder_name,
-  funder_identifier,
-  award_number,
+  funder_identifier = NULL,
+  award_number = NULL,
   award_title,
   award_url = NULL,
   funding_description = NULL
 )
 }
 \arguments{
+\item{CVPIA_default_funder}{If funding is one of the common CVPIA funding sources select
+a default funding source from the \code{CVPIA_default_funder} options in the metadata.xlsx
+sheet. The options for default funding are USBR, CDWR, and CDFW.}
+
 \item{funder_name}{Organization or individual providing the funding.}
 
 \item{funder_identifier}{(Optional) This is where the funding organization is listed in

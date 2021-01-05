@@ -1,6 +1,9 @@
 #' @title Add Funding Element
 #' @description Creates the award information of a project based off of EML standards. 
 #' This award element is then nested within a project node to complete a funding section. 
+#' @param CVPIA_default_funder If funding is one of the common CVPIA funding sources select 
+#' a default funding source from the \code{CVPIA_default_funder} options in the metadata.xlsx
+#' sheet. The options for default funding are USBR, CDWR, and CDFW. 
 #' @param funder_name Organization or individual providing the funding.
 #' @param funder_identifier (Optional) This is where the funding organization is listed in 
 #' the registry. The funder identifier must be registered. Follow the instructions at 
@@ -22,51 +25,69 @@
 #'                                    (2017-08-01 to 2022-07-31)." )
 #' @export
 
-add_funding <- function(funder_name, funder_identifier, award_number,
-                        award_title, award_url = NULL, funding_description = NULL)  {
+add_funding <- function(CVPIA_default_funder = NULL, funder_name, funder_identifier = NULL, 
+                        award_number = NULL, award_title, award_url = NULL, funding_description = NULL)  {
   
   award <- list()
-  required_arguments <- c("funder_name", "funder_identifier", "award_number",
-                          "award_title", "award_url", "funding_description")
-  
-  missing_argument_index <- which(c(missing(funder_name), missing(funder_identifier),
-                              missing(award_number), missing(award_title), 
-                              missing(award_url), missing(funding_description)))
-  
-  if (length(missing_argument_index) > 0) {
-    fund_error <- required_arguments[missing_argument_index][1]
-    fund_error_message <- switch(fund_error, funder_name = "Please provide funders name.",
-                                 funder_identifier = "Please provide funder identifier link.",
-                                 award_number = "Please provide your award number.", 
-                                 award_title = "Please provide the title of your award.",
-                                 award_url = "Please provide the award url.",
-                                 funding_description = "Please provide the description of the funding recieved.")
-    if (missing(funder_name) | missing(funder_identifier) |
-        missing(award_number) | missing(award_title)) {
-      stop(fund_error_message, call. = FALSE)
-    } 
+  if (is.null(CVPIA_default_funder)) {
+    required_arguments <- c("funder_name", "funder_identifier", "award_number",
+                            "award_title", "award_url", "funding_description")
     
-    if (missing(award_url) | missing(funding_description)) {
-      warning(fund_error_message, call. = FALSE)
+    missing_argument_index <- which(c(missing(funder_name), missing(funder_identifier),
+                                      missing(award_number), missing(award_title), 
+                                      missing(award_url), missing(funding_description)))
+    
+    if (length(missing_argument_index) > 0) {
+      fund_error <- required_arguments[missing_argument_index][1]
+      fund_error_message <- switch(fund_error, funder_name = "Please provide funders name.",
+                                   funder_identifier = "Please provide funder identifier link.",
+                                   award_number = "Please provide your award number.", 
+                                   award_title = "Please provide the title of your award.",
+                                   award_url = "Please provide the award url.",
+                                   funding_description = "Please provide the description of the funding recieved.")
+      if (missing(funder_name) | missing(award_title)) {
+        stop(fund_error_message, call. = FALSE)
+      } 
+      
+      if (missing(award_url) | missing(award_number) | 
+          missing(funder_identifier) | missing(funding_description)) {
+        warning(fund_error_message, call. = FALSE)
+      }
+    }
+  } else {
+    if (CVPIA_default_funder == "USBR"){
+      funder_name = "USBR"
+      funder_identifier = "100006450"
+      award_title = "United States Bureau of Reclamation Funding"
+      award_url = "https://www.wikidata.org/wiki/Q1010548"
+    }
+    if (CVPIA_default_funder == "CDWR"){
+      funder_name = "CDWR"
+      award_title = "California Department of Water Resources Funding"
+      award_url = "https://www.wikidata.org/wiki/Q5020440"
+    } 
+    if (CVPIA_default_funder == "CDFW"){
+      funder_name = "CDFW"
+      funder_identifier = "100006238"
+      award_title = "California Department of Fish and Wildlife Funding"
+      award_url = "https://www.wikidata.org/wiki/Q5020421"
     }
   }
+  
   award <- list(funderName = funder_name,
-                funderIdentifier = funder_identifier,
-                awardNumber = award_number, 
                 title = award_title)
   
-  if (!is.null(funding_description)) {
-    award$description = funding_description
-
+  if (!is.null(funder_identifier)) {
+    award$funderIdentifier = funder_identifier 
   }
-  
+  if (!is.null(award_number)) {
+    award$awardNumber = award_number 
+  }
+  if (!is.null(funding_description)) {
+    award$description = funding_description 
+  }
   if (!is.null(award_url)) {
     award$awardUrl <- award_url
   }
-  
   return(award)
 }
-
-
-
-
