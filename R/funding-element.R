@@ -9,7 +9,7 @@
 #' the registry. The funder identifier must be registered. Follow the instructions at 
 #' \url{https://ror.org/curation/} to get registered. 
 #' @param award_number (Optional) The identifier assigned by the funding agency to identify this funding award.
-#' @param award_title Title of the dataset or project which received funding.
+#' @param award_title Title of the award granted to the project.
 #' @param award_url (Optional) Optional to include a link to information about the funding
 #'  award on the funding organization's webpage.
 #' @param funding_description (Optional) Provide a short description of the funding received.
@@ -18,7 +18,7 @@
 #' add_funding(funder_name = "National Science Foundation",
 #'             funder_identifier = "http://dx.doi.org/10.13039/100000001",
 #'             award_number = "1656026",
-#'             award_title = "LTER: Beaufort Sea Lagoons: An Arctic Coastal Ecosystem in Transition",
+#'             award_title = "National Science Foundation Grant",
 #'             award_url = "https://www.nsf.gov/awardsearch/showAward?AWD_ID=1656026",
 #'             funding_description = "BLE LTER is supported by the National Science 
 #'                                    Foundation under award #1656026 

@@ -27,7 +27,7 @@ the registry. The funder identifier must be registered. Follow the instructions 
 
 \item{award_number}{(Optional) The identifier assigned by the funding agency to identify this funding award.}
 
-\item{award_title}{Title of the dataset or project which received funding.}
+\item{award_title}{Title of the award granted to the project.}
 
 \item{award_url}{(Optional) Optional to include a link to information about the funding
 award on the funding organization's webpage.}
@@ -45,7 +45,7 @@ This award element is then nested within a project node to complete a funding se
 add_funding(funder_name = "National Science Foundation",
             funder_identifier = "http://dx.doi.org/10.13039/100000001",
             award_number = "1656026",
-            award_title = "LTER: Beaufort Sea Lagoons: An Arctic Coastal Ecosystem in Transition",
+            award_title = "National Science Foundation Grant",
             award_url = "https://www.nsf.gov/awardsearch/showAward?AWD_ID=1656026",
             funding_description = "BLE LTER is supported by the National Science 
                                    Foundation under award #1656026 
