@@ -30,7 +30,6 @@ add_funding <- function(funder_name, award_title, funder_identifier = NULL,
                         award_number = NULL, award_url = NULL, funding_description = NULL)  {
   
   award <- list()
-
   required_arguments <- c("funder_name", "funder_identifier", "award_number",
                           "award_title", "award_url", "funding_description")
   
@@ -40,40 +39,33 @@ add_funding <- function(funder_name, award_title, funder_identifier = NULL,
   
   if (length(missing_argument_index) > 0) {
     fund_error <- required_arguments[missing_argument_index][1]
-    fund_error_message <- switch(fund_error, funder_name = "Please provide funders name.",
-                                 funder_identifier = "Please provide funder identifier link.",
-                                 award_number = "Please provide your award number.", 
-                                 award_title = "Please provide the title of your award.",
-                                 award_url = "Please provide the award url.",
-                                 funding_description = "Please provide the description of the funding recieved.")
+    fund_error_message <- paste("Please provide the", fund_error)
     if (missing(funder_name) | missing(award_title)) {
       stop(fund_error_message, call. = FALSE)
     } 
   }
   if (funder_name %in% names(CVPIA_funders)){
     if (funder_name == "USBR"){
-      funder_name = "USBR"
-      funder_identifier = "100006450"
-      award_url = "https://www.wikidata.org/wiki/Q1010548"
+    award <- EDIutils::CVPIA_funders$USBR
+    award$title = award_title
     }
     if (funder_name == "CDWR"){
-      funder_name = "CDWR"
-      award_url = "https://www.wikidata.org/wiki/Q5020440"
+    award <- EDIutils::CVPIA_funders$CDWR
+    award$title = award_title
     } 
     if (funder_name == "CDFW"){
-      funder_name = "CDFW"
-      funder_identifier = "100006238"
-      award_url = "https://www.wikidata.org/wiki/Q5020421"
+    award <- EDIutils::CVPIA_funders$CDFW
+    award$title = award_title
     }
-  } else {
+  } 
+  else {
+    award <- list(funderName = funder_name,
+                  title = award_title)
     if (missing(award_url) | missing(award_number) | 
         missing(funder_identifier) | missing(funding_description)) {
       warning(fund_error_message, call. = FALSE)
     }
   }
-  award <- list(funderName = funder_name,
-                title = award_title)
-  
   if (!is.null(funder_identifier)) {
     award$funderIdentifier = funder_identifier 
   }

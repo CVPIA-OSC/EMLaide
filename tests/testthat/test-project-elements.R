@@ -128,28 +128,28 @@ test_that('funding function errors when missing mandatory identifier inputs', {
                            award_title = "LTER: Beaufort Sea Lagoons: An Arctic Coastal Ecosystem in Transition",
                            award_url = "https://www.nsf.gov/awardsearch/showAward?AWD_ID=1656026",
                            funding_description = "BLE LTER is supported by the National Science Foundation under award #1656026 (2017-08-01 to 2022-07-31)." ), 
-               "Please provide funders name.")
+               "Please provide the funder_name")
   
   expect_warning(add_funding(funder_name = "National Science Foundation",
                            award_number = "1656026",
                            award_title = "LTER: Beaufort Sea Lagoons: An Arctic Coastal Ecosystem in Transition",
                            award_url = "https://www.nsf.gov/awardsearch/showAward?AWD_ID=1656026",
                            funding_description = "BLE LTER is supported by the National Science Foundation under award #1656026 (2017-08-01 to 2022-07-31)." ),
-               "Please provide funder identifier link.")
+               "Please provide the funder_identifier")
   
   expect_warning(add_funding(funder_name = "National Science Foundation",
                            funder_identifier = "http://dx.doi.org/10.13039/100000001",
                            award_title = "LTER: Beaufort Sea Lagoons: An Arctic Coastal Ecosystem in Transition",
                            award_url = "https://www.nsf.gov/awardsearch/showAward?AWD_ID=1656026",
                            funding_description = "BLE LTER is supported by the National Science Foundation under award #1656026 (2017-08-01 to 2022-07-31)." ),
-               "Please provide your award number.")
+               "Please provide the award_number")
   
   expect_error(add_funding(funder_name = "National Science Foundation",
                            funder_identifier = "http://dx.doi.org/10.13039/100000001",
                            award_number = "1656026",
                            award_url = "https://www.nsf.gov/awardsearch/showAward?AWD_ID=1656026",
                            funding_description = "BLE LTER is supported by the National Science Foundation under award #1656026 (2017-08-01 to 2022-07-31)." ),
-               "Please provide the title of your award.")
+               "Please provide the award_title")
   
   
   expect_warning(add_funding(funder_name = "National Science Foundation",
@@ -157,14 +157,14 @@ test_that('funding function errors when missing mandatory identifier inputs', {
                              award_number = "1656026",
                              award_title = "LTER: Beaufort Sea Lagoons: An Arctic Coastal Ecosystem in Transition",
                              funding_description = "BLE LTER is supported by the National Science Foundation under award #1656026 (2017-08-01 to 2022-07-31)." ),
-                 "Please provide the award url.")
+                 "Please provide the award_url")
   
   expect_warning(add_funding(funder_name = "National Science Foundation",
                              funder_identifier = "http://dx.doi.org/10.13039/100000001",
                              award_number = "1656026",
                              award_title = "LTER: Beaufort Sea Lagoons: An Arctic Coastal Ecosystem in Transition",
                              award_url = "https://www.nsf.gov/awardsearch/showAward?AWD_ID=1656026"),
-                 "Please provide the description of the funding recieved.")
+                 "Please provide the funding_description")
 })
 
 test_that('The add_funding function adds the funding elements', {
@@ -186,21 +186,19 @@ test_that('The add_funding function adds the funding elements', {
 test_that('The default funding options are adding the correct default funding information', {
   expect_equal(add_funding(funder_name = "CDWR", 
                            award_title = "CDWR Fish Predation Grant"),
-               list(funderName = "CDWR",
-                    title = "CDWR Fish Predation Grant",
-                    awardUrl = "https://www.wikidata.org/wiki/Q5020440"))
+               list(funderName = "California Department of Water Resources",
+                    funderIdentifier = "https://www.wikidata.org/wiki/Q5020440",
+                    title = "CDWR Fish Predation Grant"))
   
   expect_equal(add_funding(funder_name = "USBR",  
                            award_title = "USBR California Water Grant"),
-               list(funderName = "USBR",
-                    title = "USBR California Water Grant",
-                    funderIdentifier = "100006450", 
-                    awardUrl = "https://www.wikidata.org/wiki/Q1010548"))
+               list(funderName = "United States Bureau of Reclamation",
+                    funderIdentifier = "https://www.wikidata.org/wiki/Q1010548",
+                    title = "USBR California Water Grant"))
   
   expect_equal(add_funding(funder_name = "CDFW", 
                            award_title = "California Department of Fish and Wildlife Grant"),
-               list(funderName = "CDFW",
-                    title = "California Department of Fish and Wildlife Grant", 
-                    funderIdentifier = "100006238",
-                    awardUrl = "https://www.wikidata.org/wiki/Q5020421"))
+               list(funderName = "California Department of Fish and Wildlife",
+                    funderIdentifier = "https://www.wikidata.org/wiki/Q5020421",
+                    title = "California Department of Fish and Wildlife Grant"))
 })
