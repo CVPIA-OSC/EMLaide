@@ -118,8 +118,6 @@ add_taxonomic_coverage <- function(CVPIA_common_species = NULL,
                                  common_name = "Please provide a common name.")
       stop(tax_error_message, call. = FALSE)
     } 
-    
-    
     kingdom_value <- kingdom_value
     phylum_value <- phylum_value
     class_value <- class_value
@@ -128,86 +126,52 @@ add_taxonomic_coverage <- function(CVPIA_common_species = NULL,
     genus_value <- genus_value
     species_value <- species_value
     common_name <- common_name
-    
-  } else {
-    
+  } 
+  if (!is.null(CVPIA_common_species)) {
+    if (CVPIA_common_species == "chinook") {
+      taxonomicCoverage <- EDIutils::CVPIA_common_species$chinook
+    }
+    if (CVPIA_common_species == "steelhead") {
+      taxonomicCoverage <- EDIutils::CVPIA_common_species$steelhead
+    }
+    if (CVPIA_common_species == "delta_smelt") {
+      taxonomicCoverage <- EDIutils::CVPIA_common_species$delta_smelt
+    }
+    if (CVPIA_common_species == "white_sturgeon") {
+      taxonomicCoverage <- EDIutils::CVPIA_common_species$white_sturgeon
+    }
+    if (CVPIA_common_species == "green_sturgeon") {
+      taxonomicCoverage <- EDIutils::CVPIA_common_species$green_sturgeon
+    }
+    # return(taxonomicCoverage)
+    } else {
     kingdom_value <- "Animalia"
     phylum_value <- "Chordata"
-    
-    if (CVPIA_common_species == "chinook") {
-      class_value <- "Teleostei"
-      order_value <- "Salmoniformes"
-      family_value <- "Salmonidae"
-      genus_value <- "Oncorhynchus"
-      species_value <- "Oncorhynchus tshawytscha"
-      common_name <- "Chinook Salmon"
-      taxon_id <- "161980"
-    }
-    
-    if (CVPIA_common_species == "steelhead") {
-      class_value <- "Teleostei"
-      order_value <- "Salmoniformes"
-      family_value <- "Salmonidae"
-      genus_value <- "Oncorhynchus"
-      species_value <- "Oncorhynchus mykiss"
-      common_name <- "Steelhead Trout"
-      taxon_id <- "161989"
-    }
-    
-    if (CVPIA_common_species == "delta_smelt") {
-      class_value <- "Teleostei"
-      order_value <- "Osmeriformes"
-      family_value <- "Osmeridae"
-      genus_value <- "Hypomesus"
-      species_value <- "Hypomesus transpacificus"
-      common_name <- "Delta Smelt"
-      taxon_id <- "162032"
-    }
-    
-    if (CVPIA_common_species == "white_sturgeon") {
-      class_value <- "Chondrostei"
-      order_value <- "Acipenseriformes"
-      family_value <- "Acipenseridae"
-      genus_value <- "Acipenser"
-      species_value <- "Acipenser transmontanus"
-      common_name <- "White Sturgeon"
-      taxon_id <- "161068"
-    }
-    
-    if (CVPIA_common_species == "green_sturgeon") {
-      class_value <- "Chondrostei"
-      order_value <- "Acipenseriformes"
-      family_value <- "Acipenseridae"
-      genus_value <- "Acipenser"
-      species_value <- "Acipenser medirostris"
-      common_name <- "Green Sturgeon"
-      taxon_id <- "161067"
-    }
-  } 
   
-  taxonomicCoverage <-
-    list(taxonomicClassification = 
-           list(taxonRankName = kingdom,
-                taxonRankValue = kingdom_value,
-                taxonomicClassification =
-                  list(taxonRankName = phylum,
-                       taxonRankValue = phylum_value,
-                       taxonomicClassification =
-                         list(taxonRankName = class,
-                              taxonRankValue = class_value,
-                              taxonomicClassification =
-                                list(taxonRankName = order,
-                                     taxonRankValue = order_value,
-                                     taxonomicClassification =
-                                       list(taxonRankName = family,
-                                            taxonRankValue = family_value,
-                                            taxonomicClassification =
-                                              list(taxonRankName = genus,
-                                                   taxonRankValue = genus_value,
-                                                   taxonomicClassification =
-                                                     list(taxonRankName = species,
-                                                          taxonRankValue = species_value,
-                                                          commonName = common_name))))))))
+    taxonomicCoverage <-
+      list(taxonomicClassification = 
+             list(taxonRankName = kingdom,
+                  taxonRankValue = kingdom_value,
+                  taxonomicClassification =
+                    list(taxonRankName = phylum,
+                         taxonRankValue = phylum_value,
+                         taxonomicClassification =
+                           list(taxonRankName = class,
+                                taxonRankValue = class_value,
+                                taxonomicClassification =
+                                  list(taxonRankName = order,
+                                       taxonRankValue = order_value,
+                                       taxonomicClassification =
+                                         list(taxonRankName = family,
+                                              taxonRankValue = family_value,
+                                              taxonomicClassification =
+                                                list(taxonRankName = genus,
+                                                     taxonRankValue = genus_value,
+                                                     taxonomicClassification =
+                                                       list(taxonRankName = species,
+                                                            taxonRankValue = species_value,
+                                                            commonName = common_name))))))))
+    }
   if (is.null(taxon_id)) {
     message("No taxon id has been provided. This number can be found at ITIS.gov if you wish to append it.")
   } else {
