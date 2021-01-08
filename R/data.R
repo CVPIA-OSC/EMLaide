@@ -152,9 +152,11 @@
 
 
 #' @title CVPIA Common Species 
-#' @description A list of CVPIA common species that can be appended to the taxonomic
-#' coverage.
-#' @format A named list, keys are named the same as values. 
+#' @description A named list containing the names and complete taxonomic information of 
+#' CVPIA common species. \code{CVPIA_common_species} is used by \code{add_taxonomic_coverage}
+#' to generate the taxonomic coverage element according the the EML schema.
+#' @format A named list, keys are names of CVPIA common species and values are nested
+#' lists containing complete taxonomic information for each species.  
 #' 
 #' @section CVPIA Common Species:
 #' \itemize{
@@ -166,6 +168,65 @@
 #' }
 #'
 #' @examples 
-#' CVPIA_common_species$chinook #"chinook"
+#' CVPIA_common_species$chinook 
+#' 
+#' $taxonomicClassification
+#' $taxonomicClassification$taxonRankName
+#' [1] "kingdom"
+#' 
+#' $taxonomicClassification$taxonRankValue
+#' [1] "Animalia"
+#' 
+#' $taxonomicClassification$taxonomicClassification
+#' $taxonomicClassification$taxonomicClassification$taxonRankName
+#' [1] "phylum"
+#' 
+#' $taxonomicClassification$taxonomicClassification$taxonRankValue
+#' [1] "Chordata"
+#' 
+#' $taxonomicClassification$taxonomicClassification$taxonomicClassification
+#' $taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonRankName
+#' [1] "class"
+#' 
+#' $taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonRankValue
+#' [1] "Teleostei"
+#' 
+#' $taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification
+#' $taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonRankName
+#' [1] "order"
+#' 
+#' $taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonRankValue
+#' [1] "Salmoniformes"
+#' 
+#' $taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification
+#' $taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonRankName
+#' [1] "family"
+#' 
+#' $taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonRankValue
+#' [1] "Salmonidae"
+#' 
+#' $taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification
+#' $taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonRankName
+#' [1] "genus"
+#' 
+#' $taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonRankValue
+#' [1] "Oncorhynchus"
+#' 
+#' $taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification
+#' $taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonRankName
+#' [1] "species"
+#' 
+#' $taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonRankValue
+#' [1] "Oncorhynchus tshawytscha"
+#' 
+#' $taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$commonName
+#' [1] "Chinook Salmon"
+#' 
+#' $taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonId
+#' $taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonId$provider
+#' [1] "https://itis.gov"
+#' 
+#' $taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonId$taxonId
+#' [1] "161980"
 #' 
 "CVPIA_common_species"

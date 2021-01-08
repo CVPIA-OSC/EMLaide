@@ -30,23 +30,23 @@
 #' 
 #' Select "chinook" to append the taxonomy of Oncorhynchus tshawytscha 
 #' (Also known as Chinook Salmon or King Salmon) from the ITIS database. 
-#' The correspoinding ITIS taxonomic id number is 161980.
+#' The corresponding ITIS taxonomic id number is 161980.
 #' 
 #' Select "delta_smelt" to append the taxonomy of Hypomesus transpacificus 
 #' (Also known as Delta Smelt) from the ITIS database. The correspoinding ITIS 
 #' taxonomic id number is 162032. 
 #' 
 #' Select "white_sturgeon" to append the taxonomy of Acipenser transmontanus 
-#' (Also known as White Sturgeon) from the ITIS database. The correspoinding ITIS 
+#' (Also known as White Sturgeon) from the ITIS database. The corresponding ITIS 
 #' taxonomic id number is 161068.
 #' 
 #' Select "green_sturgeon" to append the taxonomy of Acipenser medirostris (Also
-#' known as Green Sturgeon) from the ITIS database. The correspoinding ITIS 
+#' known as Green Sturgeon) from the ITIS database. The corresponding ITIS 
 #' taxonomic id number is 161067.
 #' 
 #' Select "steelhead" to append the taxonomy of Oncorhynchus mykiss 
 #' (Also known as Steelhead, Rainbow Trout, or Redband Trout) from the ITIS database. 
-#' The correspoinding ITIS taxonomic id number is 161989.
+#' The corresponding ITIS taxonomic id number is 161989.
 #' 
 #' For further taxonomic coverage (i.e subkingdom, infrakingdom, etc.) on any of 
 #' these species, you can visit: \href{https://www.itis.gov/}{ITIS}'s webpage for 
@@ -127,22 +127,15 @@ add_taxonomic_coverage <- function(CVPIA_common_species = NULL,
     species_value <- species_value
     common_name <- common_name
   } 
-  if (!is.null(CVPIA_common_species)) {
-    if (CVPIA_common_species == "chinook") {
-      taxonomicCoverage <- EDIutils::CVPIA_common_species$chinook
-    }
-    if (CVPIA_common_species == "steelhead") {
-      taxonomicCoverage <- EDIutils::CVPIA_common_species$steelhead
-    }
-    if (CVPIA_common_species == "delta_smelt") {
-      taxonomicCoverage <- EDIutils::CVPIA_common_species$delta_smelt
-    }
-    if (CVPIA_common_species == "white_sturgeon") {
-      taxonomicCoverage <- EDIutils::CVPIA_common_species$white_sturgeon
-    }
-    if (CVPIA_common_species == "green_sturgeon") {
-      taxonomicCoverage <- EDIutils::CVPIA_common_species$green_sturgeon
-    }
+  common_species_index <- which(c(CVPIA_common_species == "chinook", 
+                                  CVPIA_common_species == "steelhead",
+                                  CVPIA_common_species == "delta_smelt", 
+                                  CVPIA_common_species == "white_sturgeon",
+                                  CVPIA_common_species == "green_sturgeon"))
+  
+  if (length(common_species_index) > 0) {
+    taxonomicCoverage <- EDIutils::CVPIA_common_species[[common_species_index]]
+    
   } else {
     kingdom_value <- "Animalia"
     phylum_value <- "Chordata"
