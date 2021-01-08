@@ -20,8 +20,7 @@ add_method(
 
 \item{methods_file}{Please provide a word document with proper formatting. The
 function will then append it properly. An example word document can be found in
-"~/EDIutils/inst/extdata/methods-template.docx". This file can be opened
-and edited to include your proper methods section.}
+"~/EDIutils/inst/extdata/methods-template.docx".}
 
 \item{instrumentation}{Optional. What is being used to conduct the method.}
 
