@@ -143,8 +143,7 @@ add_taxonomic_coverage <- function(CVPIA_common_species = NULL,
     if (CVPIA_common_species == "green_sturgeon") {
       taxonomicCoverage <- EDIutils::CVPIA_common_species$green_sturgeon
     }
-    # return(taxonomicCoverage)
-    } else {
+  } else {
     kingdom_value <- "Animalia"
     phylum_value <- "Chordata"
   
@@ -171,7 +170,7 @@ add_taxonomic_coverage <- function(CVPIA_common_species = NULL,
                                                        list(taxonRankName = species,
                                                             taxonRankValue = species_value,
                                                             commonName = common_name))))))))
-    }
+  }
   if (is.null(taxon_id)) {
     message("No taxon id has been provided. This number can be found at ITIS.gov if you wish to append it.")
   } else {
