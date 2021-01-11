@@ -169,3 +169,23 @@
 #' CVPIA_common_species$chinook #"chinook"
 #' 
 "CVPIA_common_species"
+#' @title CVPIA_funders
+#' @description A list of CVPIA_funders that can be appended to the funding element. 
+#' @format A named list, keys are names of CVPIA funding organizations and keys contain 
+#' information about each funder. 
+#' @section CVPIA_funders:
+#' \itemize{
+#'     \item \strong{USBR}
+#'     \item \strong{CDWR}
+#'     \item \strong{CDFW}
+#'}
+#'@examples 
+#'CVPIA$funders$USBR
+#'
+#' $funderName
+#' [1] "United States Bureau of Reclamation"
+#' 
+#' $funderIdentifier
+#' [1] "https://www.wikidata.org/wiki/Q1010548"
+#'
+"CVPIA_funders"
