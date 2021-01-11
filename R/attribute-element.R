@@ -5,7 +5,7 @@
 #' and/or cryptic name. It is recommended that the attribute names	be suitable	for
 #' use	as a	variable,	e.g.,	composed of ASCII	characters,	and	that the attribute
 #' names match the column headers of a CSV or other text table.	
-#' @param attribute_defenition A precise and complete	definition of the attribute	being	documented.
+#' @param attribute_definition A precise and complete	definition of the attribute	being	documented.
 #' @param storage_type An indicator	to processing	systems	as to	how	the	attribute
 #' might be represented in	a	system or	language,	but	is distinct	from the actual
 #' expression of	the	domain of	the	attribute. A list of approved storage types can be found at 

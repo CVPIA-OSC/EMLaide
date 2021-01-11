@@ -1,17 +1,14 @@
 ---
 title: "Creating EML Using EDIutils"
-output: 
-  rmarkdown::html_vignette:
-    toc: TRUE
+output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{Creating EML Using EDIutils}
   %\VignetteEngine{knitr::rmarkdown}
-  %\VignetteEncoding{UTF-8}
-toc-title: "Table of Contents: Workflow and sections for EML generation"
+  \usepackage[utf8]{inputenc}
 ---
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)
-knitr::opts_knit$set(root.dir = rprojroot::find_rstudio_root_file())
+#knitr::opts_knit$set(root.dir = rprojroot::find_rstudio_root_file())
 ```
 The following libraries are needed to create a working EML document. 
 ```{r, message = FALSE}
@@ -19,7 +16,6 @@ library(EDIutils)
 library(tidyverse)
 library(readxl)
 library(EML)
-library(readtext)
 ```
 In this document, we create an EML file which has the opportunity to append the 
 following elements:
@@ -74,14 +70,21 @@ For this example all of our files are stored in a the Hannon-Example folder with
 "~/data-raw/Hannon-Example".
 
 ```{r}
-excel_path <- "data-raw/Hannon-Example/example-metadata.xlsx"
+excel_path <- system.file("extdata", "Hannon-Example", "example-metadata.xlsx", 
+                          package = "EDIutils", mustWork = TRUE)
+
 sheets <- readxl::excel_sheets(excel_path)
 metadata_sheets <- lapply(sheets, function(x) readxl::read_excel(excel_path, sheet = x))
 names(metadata_sheets) <- sheets
 
-abstract_docx <- "data-raw/Hannon-Example/hannon_example_abstract.docx"
-methods_docx <- "data-raw/Hannon-Example/hannon_example_methods.docx"
-physical_entity <- "data-raw/Hannon-Example/hannon_example_physical_data.csv"
+abstract_docx <- system.file("extdata", "Hannon-Example", "hannon_example_abstract.docx", 
+                             package = "EDIutils", mustWork = TRUE)
+
+methods_docx <- system.file("extdata", "Hannon-Example", "hannon_example_methods.docx", 
+                            package = "EDIutils", mustWork = TRUE)
+
+dataset_file <- system.file("extdata", "Hannon-Example", "hannon_example_physical_data.csv",
+                               package = "EDIutils", mustWork = TRUE)
 
 edi_number = "edi.687.1"
 ```
@@ -374,7 +377,7 @@ and all parameters will be appended, gathering the csv's unique size and
 authentication, as well as providing the default physical values of a csv. 
 
 ```{r}
-physical <- add_physical(file_path = physical_entity, 
+physical <- add_physical(file_path = dataset_file, 
                          data_url = current$data_url)
 ```
 
@@ -448,13 +451,13 @@ contact CVPIA data guidance and we will help you do so properly.
 
 ```{r}
 if (metadata_sheets$dataset$type == "tabular") {
-  parent_element$dataTable <- list(entityName = physical_entity,
+  parent_element$dataTable <- list(entityName = dataset_file,
                                    entityDescription = metadata_sheets$dataset$name,
                                    physical = physical,
                                    attributeList = attribute_list)
 } 
 if (metadata_sheets$dataset$type == "vector") {
-  parent_element$spatialVector <- list(entityName = physical_entity,
+  parent_element$spatialVector <- list(entityName = dataset_file,
                                        entityDescription = metadata_sheets$dataset$name,
                                        physical = physical,
                                        attributeList = attribute_list,

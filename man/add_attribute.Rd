@@ -29,6 +29,8 @@ and/or cryptic name. It is recommended that the attribute names    be suitable  
 use    as a    variable,    e.g.,    composed of ASCII    characters,    and    that the attribute
 names match the column headers of a CSV or other text table.}
 
+\item{attribute_definition}{A precise and complete    definition of the attribute    being    documented.}
+
 \item{storage_type}{An indicator    to processing    systems    as to    how    the    attribute
 might be represented in    a    system or    language,    but    is distinct    from the actual
 expression of    the    domain of    the    attribute. A list of approved storage types can be found at
@@ -67,8 +69,6 @@ or equal to this number.}
 
 \item{maximum}{Theoretical or allowable maximum value. Values can be less than
 or equal to this number.}
-
-\item{attribute_defenition}{A precise and complete    definition of the attribute    being    documented.}
 }
 \value{
 The project or dataset list with an attribute list appended.

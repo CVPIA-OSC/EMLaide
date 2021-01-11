@@ -31,11 +31,15 @@
 #' @export
 #'
 #' @examples
-#' add_raster(file_name = "Rasterfiles.zip" ,
+#' add_raster(parent_element = list(),
+#'            file_name = "Rasterfiles.zip" ,
 #'            file_description = "A Raster File",
-#'            attribute_list =  add_attribute(attribute_name = "Date",
-#'                                            attribute_definition = "date data collected",
-#'                                            measurement_scale = "dateTime"),
+#'            attribute_list =  add_attribute(attribute_name = "Yrs", attribute_label = "Years", 
+#'                                            attribute_definition = "Calendar year of the observation from years 1990 - 2010.", 
+#'                                            storage_type = EDIutils::storage_type$date, 
+#'                                            measurement_scale = EDIutils::measurement_scale$dateTime, 
+#'                                            date_time_format = "YYYY",
+#'                                            date_time_precision = "1", minimum = "1993", maximum = "2003"),
 #'            physical = add_physical("Rasterfiles.zip"),
 #'            spatial_reference = "NAD_1983_StatePlane_California_I_FIPS_0401",
 #'            horizontal_accuracy = "No Information",

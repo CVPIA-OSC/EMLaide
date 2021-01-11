@@ -1,9 +1,9 @@
 #' @title Add Data Collection Method Element 
 #' @description Adds the data collection method information of a dataset based off of EML standards. 
-#' @param method_file Please provide a word document with proper formatting. The 
+#' @param parent_element Please provide a parent element to append methods to. 
+#' @param methods_file Please provide a word document with proper formatting. The 
 #' function will then append it properly. An example word document can be found in 
-#' "~/EDIutils/inst/extdata/methods-template.docx". This file can be opened
-#' and edited to include your proper methods section. 
+#' "~/EDIutils/inst/extdata/methods-template.docx". 
 #' @param instrumentation Optional. What is being used to conduct the method. 
 #' @param software Optional.
 #' @param sampling_file Optional.

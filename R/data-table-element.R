@@ -1,12 +1,12 @@
 #' @title Add Data Table 
 #' @description Adds the data table elements according to EML standards. 
-#' @param parament_element A list representing the EML project or dataset.
-#' @param alternate_identifer Optional. Provide when a dataset or project belongs 
+#' @param parent_element A list representing the EML project or dataset.
+#' @param alternate_identifier Optional. Provide when a dataset or project belongs 
 #' to more than the contributing organization. Please include each additional 
 #' individual ID with its own alternate_identifier.
 #' @param entity_name The name of the table, file, or database table. Often 
 #' thought of as the original ascii file name. 
-#' @param entity_description A longer, more descriptive explination of the data in the entity. 
+#' @param entity_description A longer, more descriptive explanation of the data in the entity. 
 #' @param physical A description of the physical format of the entity.
 #' This includes it file name, authentication code, and data format. Further information
 #' can be seen at \code{\link{add_physical}} . 
