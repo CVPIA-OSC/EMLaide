@@ -24,13 +24,12 @@ A list of CVPIA_funders that can be appended to the funding element.
 }
 
 \examples{
-CVPIA$funders$USBR
+CVPIA_funders$USBR # $funderName
+                   #   [1] "United States Bureau of Reclamation"
 
-$funderName
-[1] "United States Bureau of Reclamation"
+                   # $funderIdentifier
+                   #   [1] "https://www.wikidata.org/wiki/Q1010548"
 
-$funderIdentifier
-[1] "https://www.wikidata.org/wiki/Q1010548"
 
 }
 \keyword{datasets}

@@ -40,15 +40,15 @@
 #' name taxonomic_coverage to append it to the dataset or project. Example of how 
 #' to incorporate it into the add_coverage function is seen below. 
 #' @examples 
-#' taxonomic_coverage <- add_taxonomic_coverage(CVPIA_common_species = EDIutils::CVPIA_common_species$chinook)
+#' taxonomic_coverage <- add_taxonomic_coverage(CVPIA_common_species = "chinook")
 #' 
-#' taxonomic_coverage <- add_taxonomic_coverage(CVPIA_common_species = EDIutils::CVPIA_common_species$delta_smelt)
+#' taxonomic_coverage <- add_taxonomic_coverage(CVPIA_common_species = "delta_smelt")
 #' 
-#' taxonomic_coverage <- add_taxonomic_coverage(CVPIA_common_species = EDIutils::CVPIA_common_species$white_sturgeon)
+#' taxonomic_coverage <- add_taxonomic_coverage(CVPIA_common_species = "white_sturgeon")
 #' 
-#' taxonomic_coverage <- add_taxonomic_coverage(CVPIA_common_species = EDIutils::CVPIA_common_species$green_sturgeon)
+#' taxonomic_coverage <- add_taxonomic_coverage(CVPIA_common_species = "green_sturgeon")
 #' 
-#' taxonomic_coverage <- add_taxonomic_coverage(CVPIA_common_species = EDIutils::CVPIA_common_species$steelhead)
+#' taxonomic_coverage <- add_taxonomic_coverage(CVPIA_common_species = "steelhead")
 #' 
 #' taxonomic_coverage <- add_taxonomic_coverage(kingdom_value = "Animalia",
 #'                        phylum_value = "Chordata",
