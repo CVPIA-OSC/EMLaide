@@ -83,6 +83,8 @@ methods_docx <- system.file("extdata", "Hannon-Example", "hannon_example_methods
 dataset_file <- system.file("extdata", "Hannon-Example", "hannon_example_physical_data.csv",
                                package = "EDIutils", mustWork = TRUE)
 
+dataset_file_name <- "hannon_example_physical_data.csv"
+
 edi_number = "edi.687.1"
 ```
 
@@ -444,7 +446,7 @@ contact CVPIA data guidance and we will help you do so properly.
 
 ```{r}
 if (metadata_sheets$dataset$type == "tabular") {
-  parent_element$dataTable <- list(entityName = dataset_file,
+  parent_element$dataTable <- list(entityName = dataset_file_name,
                                    entityDescription = metadata_sheets$dataset$name,
                                    physical = physical,
                                    attributeList = attribute_list)
