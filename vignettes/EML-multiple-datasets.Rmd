@@ -88,10 +88,18 @@ methods_docx <- system.file("extdata", "Hannon-Example", "hannon_example_methods
                             package = "EDIutils", mustWork = TRUE)
 
 
-## Multiple datasets are loaded in here and the attribute sheets for each dataset are collected in a named list 
-dataset_file <- list("snorkel data" = "hannon", "predator data" = "hello")
+## Multiple datasets are loaded in here and the attribute metadata and code definitions for each dataset are collected in a named list 
+dataset_files <- list("snorkel data" = list(datatable = system.file("extdata", "Hannon-Example", "hannon_example_physical_data.csv",
+                                                        package = "EDIutils", mustWork = TRUE),
+                                            datatable_name = "hannon_example_snorkel_data.csv",
+                                            attribute = metadata_sheets$attribute,
+                                            code = metadata_sheets$code_definitions), 
+                      "predator data" = list(datatable = system.file("extdata", "Hannon-Example", "hannon_example_physical_data.csv",
+                                                         package = "EDIutils", mustWork = TRUE),
+                                             datatable_name = "hannon_example_predator_data.csv",
+                                             attribute = metadata_sheets$attribute,
+                                             code = metadata_sheets$code_definitions))
 
-atrribute_metadata <- list("snorkel data metadata" = "path", "predator data metadata" = "path")
 
 edi_number = "edi.687.1"
 ```
@@ -377,8 +385,64 @@ The physical element can be created first using the `add_physical` function.
 This will append information on the physical format of the data.
 
 ```{r}
-physical <- add_physical(file_path = dataset_file, 
-                         data_url = current$data_url)
+for (i in 1:length(dataset_files)) {
+  data_tables <- list()
+  dataset_file <- dataset_files[[i]]$datatable
+  dataset_file_name <- dataset_files[[i]]$datatable_name
+  attribute_table <- dataset_files[[i]]$attribute
+  codes <- dataset_files[[i]]$code
+  
+  attribute_list <- list()
+  attribute_names <- unique(codes$attribute_name)
+  
+  for (i in 1:nrow(attribute_table)) {
+    current <- attribute_table[i, ]
+    if (current$domain %in% "enumerated") { 
+      definition <- list()
+      current_codes <- codes[codes$attribute_name == current$attribute_name, ]
+      for (j in 1:nrow(current_codes)) {
+        codeDefinition <- list(code = current_codes$code[j], definition = current_codes$definitions[j])
+        if (is.null(definition$codeDefinition)) {
+          definition$codeDefinition <- codeDefinition
+        } else {
+          definition$codeDefinition <- list(definition$codeDefinition, codeDefinition)
+        }
+      }
+    } else {
+      definition = current$attribute_definition
+    }
+    new_attribute <- add_attribute(attribute_name = current$attribute_name,
+                                   attribute_definition = current$attribute_definition,
+                                   storage_type = current$storage_type,
+                                   measurement_scale = current$measurement_scale,
+                                   domain = current$domain,
+                                   definition = definition,
+                                   type = current$type,
+                                   units = current$units,
+                                   unit_precision = current$unit_precision,
+                                   number_type = current$number_type,
+                                   date_time_format = current$date_time_format,
+                                   date_time_precision = current$date_time_precision,
+                                   minimum = current$minimum,
+                                   maximum = current$maximum,
+                                   attribute_label = current$attribute_label)
+    if (is.null(attribute_list$attribute)) {
+      attribute_list$attribute <- new_attribute
+    } else {
+      attribute_list$attribute <- list(attribute_list$attribute, new_attribute)
+    }
+  }
+  physical <- add_physical(file_path = dataset_file)
+  dataTable <- list(entityName = dataset_file_name,
+                                 entityDescription = metadata_sheets$dataset$name,
+                                 physical = physical,
+                                 attributeList = attribute_list)
+  if (is.null(data_tables)) {
+    data_tables <- list(dataTable)
+  } else {
+    data_tables <- append(data_tables, list(dataTable))
+  }
+}
 ```
 
 #### Attribute List 
@@ -392,62 +456,13 @@ unique code and definition, with its `attribute_name` aligning to that which is 
 "attribute" tab. An example is present currently to help better showcase this. Every single 
 column in the dataTable must have a described attribute to match EDI congruence checker. 
 
-```{r}
-# Each dataset has an individual attribute sheet to describe the attributes of that dataset.
-attribute_table <- metadata_sheets$attribute
-codes <- metadata_sheets$code_definitions
-
-attribute_list <- list()
-attribute_names <- unique(codes$attribute_name)
-
-for (i in 1:nrow(attribute_table)) {
-  current <- attribute_table[i, ]
-  if (current$domain %in% "enumerated") { 
-    definition <- list()
-    current_codes <- codes[codes$attribute_name == current$attribute_name, ]
-    for (j in 1:nrow(current_codes)) {
-      codeDefinition <- list(code = current_codes$code[j], definition = current_codes$definitions[j])
-      if (is.null(definition$codeDefinition)) {
-        definition$codeDefinition <- codeDefinition
-      } else {
-        definition$codeDefinition <- list(definition$codeDefinition, codeDefinition)
-      }
-    }
-  } else {
-    definition = current$attribute_definition
-  }
-  new_attribute <- add_attribute(attribute_name = current$attribute_name,
-                                 attribute_definition = current$attribute_definition,
-                                 storage_type = current$storage_type,
-                                 measurement_scale = current$measurement_scale,
-                                 domain = current$domain,
-                                 definition = definition,
-                                 type = current$type,
-                                 units = current$units,
-                                 unit_precision = current$unit_precision,
-                                 number_type = current$number_type,
-                                 date_time_format = current$date_time_format,
-                                 date_time_precision = current$date_time_precision,
-                                 minimum = current$minimum,
-                                 maximum = current$maximum,
-                                 attribute_label = current$attribute_label)
-  if (is.null(attribute_list$attribute)) {
-    attribute_list$attribute <- new_attribute
-  } else {
-    attribute_list$attribute <- list(attribute_list$attribute, new_attribute)
-  }
-}
-```
-
 #### Putting the Data Table Together
 Now that we have the `attribute_list` and `physical` information, we 
 can compose the data tables.
 
 ```{r}
-parent_element$dataTable <- list(entityName = dataset_file,
-                                 entityDescription = metadata_sheets$dataset$name,
-                                 physical = physical,
-                                 attributeList = attribute_list)
+length(dataset_files)
+parent_element$dataTable <- data_tables
  
 ```
 
