@@ -40,8 +40,9 @@
 
 
 <meta property="og:title" content="CVPIA Common Species — CVPIA_common_species" />
-<meta property="og:description" content="A list of CVPIA common species that can be appended to the taxonomic
-coverage." />
+<meta property="og:description" content="A named list containing the names and complete taxonomic information of
+CVPIA common species. CVPIA_common_species is used by add_taxonomic_coverage
+to generate the taxonomic coverage element according the the EML schema." />
 
 
 
@@ -116,8 +117,9 @@ coverage." />
     </div>
 
     <div class="ref-description">
-    <p>A list of CVPIA common species that can be appended to the taxonomic
-coverage.</p>
+    <p>A named list containing the names and complete taxonomic information of
+CVPIA common species. <code>CVPIA_common_species</code> is used by <code>add_taxonomic_coverage</code>
+to generate the taxonomic coverage element according the the EML schema.</p>
     </div>
 
     <pre class="usage"><span class='va'>CVPIA_common_species</span></pre>
@@ -125,7 +127,8 @@ coverage.</p>
 
     <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
 
-    <p>A named list, keys are named the same as values.</p>
+    <p>A named list, keys are names of CVPIA common species and values are nested
+lists containing complete taxonomic information for each species.</p>
     <h2 class="hasAnchor" id="cvpia-common-species"><a class="anchor" href="#cvpia-common-species"></a>CVPIA Common Species</h2>
 
     
@@ -140,8 +143,131 @@ coverage.</p>
 
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='va'>CVPIA_common_species</span><span class='op'>$</span><span class='va'>chinook</span> <span class='co'>#"chinook"</span>
-</div><div class='output co'>#&gt; [1] "chinook"</div><div class='input'>
+    <pre class="examples"><div class='input'><span class='va'>CVPIA_common_species</span><span class='op'>$</span><span class='va'>chinook</span> <span class='co'># $taxonomicClassification</span>
+</div><div class='output co'>#&gt; $taxonomicClassification
+#&gt; $taxonomicClassification$taxonRankName
+#&gt; [1] "kingdom"
+#&gt; 
+#&gt; $taxonomicClassification$taxonRankValue
+#&gt; [1] "Animalia"
+#&gt; 
+#&gt; $taxonomicClassification$taxonomicClassification
+#&gt; $taxonomicClassification$taxonomicClassification$taxonRankName
+#&gt; [1] "phylum"
+#&gt; 
+#&gt; $taxonomicClassification$taxonomicClassification$taxonRankValue
+#&gt; [1] "Chordata"
+#&gt; 
+#&gt; $taxonomicClassification$taxonomicClassification$taxonomicClassification
+#&gt; $taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonRankName
+#&gt; [1] "class"
+#&gt; 
+#&gt; $taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonRankValue
+#&gt; [1] "Teleostei"
+#&gt; 
+#&gt; $taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification
+#&gt; $taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonRankName
+#&gt; [1] "order"
+#&gt; 
+#&gt; $taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonRankValue
+#&gt; [1] "Salmoniformes"
+#&gt; 
+#&gt; $taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification
+#&gt; $taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonRankName
+#&gt; [1] "family"
+#&gt; 
+#&gt; $taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonRankValue
+#&gt; [1] "Salmonidae"
+#&gt; 
+#&gt; $taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification
+#&gt; $taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonRankName
+#&gt; [1] "genus"
+#&gt; 
+#&gt; $taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonRankValue
+#&gt; [1] "Oncorhynchus"
+#&gt; 
+#&gt; $taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification
+#&gt; $taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonRankName
+#&gt; [1] "species"
+#&gt; 
+#&gt; $taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonRankValue
+#&gt; [1] "Oncorhynchus tshawytscha"
+#&gt; 
+#&gt; $taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$commonName
+#&gt; [1] "Chinook Salmon"
+#&gt; 
+#&gt; $taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonId
+#&gt; $taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonId$provider
+#&gt; [1] "https://itis.gov"
+#&gt; 
+#&gt; $taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonId$taxonId
+#&gt; [1] "161980"
+#&gt; 
+#&gt; 
+#&gt; 
+#&gt; 
+#&gt; 
+#&gt; 
+#&gt; 
+#&gt; 
+#&gt; </div><div class='input'>                             <span class='co'># $taxonomicClassification$taxonRankName</span>
+                             <span class='co'>#  [1] "kingdom"</span>
+                             <span class='co'>#</span>
+                             <span class='co'># $taxonomicClassification$taxonRankValue</span>
+                             <span class='co'># [1] "Animalia"</span>
+                             <span class='co'># </span>
+                             <span class='co'># $taxonomicClassification$taxonomicClassification</span>
+                             <span class='co'># $taxonomicClassification$taxonomicClassification$taxonRankName</span>
+                             <span class='co'># [1] "phylum"</span>
+                             <span class='co'># </span>
+                             <span class='co'># $taxonomicClassification$taxonomicClassification$taxonRankValue</span>
+                             <span class='co'># [1] "Chordata"</span>
+                             <span class='co'># </span>
+                             <span class='co'># $taxonomicClassification$taxonomicClassification$taxonomicClassification</span>
+                             <span class='co'># $taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonRankName</span>
+                             <span class='co'># [1] "class"</span>
+                             <span class='co'># </span>
+                             <span class='co'># $taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonRankValue</span>
+                             <span class='co'># [1] "Teleostei"</span>
+                             <span class='co'># </span>
+                             <span class='co'># $taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification</span>
+                             <span class='co'># $taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonRankName</span>
+                             <span class='co'># [1] "order"</span>
+                             <span class='co'># </span>
+                             <span class='co'># $taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonRankValue</span>
+                             <span class='co'># [1] "Salmoniformes"</span>
+                             <span class='co'># </span>
+                             <span class='co'># $taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification</span>
+                             <span class='co'># $taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonRankName</span>
+                             <span class='co'># [1] "family"</span>
+                             <span class='co'># </span>
+                             <span class='co'># $taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonRankValue</span>
+                             <span class='co'># [1] "Salmonidae"</span>
+                             <span class='co'># </span>
+                             <span class='co'># $taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification</span>
+                             <span class='co'># $taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonRankName</span>
+                             <span class='co'># [1] "genus"</span>
+                             <span class='co'># </span>
+                             <span class='co'># $taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonRankValue</span>
+                             <span class='co'># [1] "Oncorhynchus"</span>
+                             <span class='co'># </span>
+                             <span class='co'># $taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification</span>
+                             <span class='co'># $taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonRankName</span>
+                             <span class='co'># [1] "species"</span>
+                             <span class='co'># </span>
+                             <span class='co'># $taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonRankValue</span>
+                             <span class='co'># [1] "Oncorhynchus tshawytscha"</span>
+                             <span class='co'># </span>
+                             <span class='co'># $taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$commonName</span>
+                             <span class='co'># [1] "Chinook Salmon"</span>
+                             <span class='co'># </span>
+                             <span class='co'># $taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonId</span>
+                             <span class='co'># $taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonId$provider</span>
+                             <span class='co'># [1] "https://itis.gov"</span>
+                             <span class='co'># </span>
+                             <span class='co'># $taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonId$taxonId</span>
+                             <span class='co'># [1] "161980"</span>
+                            
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
