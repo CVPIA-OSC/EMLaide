@@ -380,17 +380,27 @@ and potentially additional information for Spatial Data. These sections are all 
 which must be created first, appended to a dataTable, and then appended to 
 the `parent_element`.
 
-#### Physical 
-The physical element can be created first using the `add_physical` function. 
-This will append information on the physical format of the data.
+The loops below create a `data_tables` list where we append each data table. When looping through the 
+for loop we create the `attribute_list` using the `add_attribute` functionand the `physical` 
+element using the `add_physical` function. 
 
-```{r}
-for (i in 1:length(dataset_files)) {
-  data_tables <- list()
-  dataset_file <- dataset_files[[i]]$datatable
-  dataset_file_name <- dataset_files[[i]]$datatable_name
-  attribute_table <- dataset_files[[i]]$attribute
-  codes <- dataset_files[[i]]$code
+Please make sure you review what type of attribute you are providing and what inputs are necessary. These values 
+can then be inputted into the "attribute" tab in the "example-metadata.xlsx" excel file. If you
+are using a "nominal" or "ordinal" attribute which is "enumerated", (it has a specific 
+code definition), please also use the tab "code_definitions". Provide each
+unique code and definition, with its `attribute_name` aligning to that which is in the
+"attribute" tab. An example is present currently to help better showcase this. Every single 
+column in the dataTable must have a described attribute to match EDI congruence checker. 
+
+
+```{r, warning=F}
+data_tables <- list()
+for (h in 1:length(dataset_files)) {
+
+  dataset_file <- dataset_files[[h]]$datatable
+  dataset_file_name <- dataset_files[[h]]$datatable_name
+  attribute_table <- dataset_files[[h]]$attribute
+  codes <- dataset_files[[h]]$code
   
   attribute_list <- list()
   attribute_names <- unique(codes$attribute_name)
@@ -432,40 +442,21 @@ for (i in 1:length(dataset_files)) {
       attribute_list$attribute <- list(attribute_list$attribute, new_attribute)
     }
   }
+  
   physical <- add_physical(file_path = dataset_file)
   dataTable <- list(entityName = dataset_file_name,
                                  entityDescription = metadata_sheets$dataset$name,
                                  physical = physical,
                                  attributeList = attribute_list)
-  if (is.null(data_tables)) {
+  if (length(data_tables) == 0) {
     data_tables <- list(dataTable)
-  } else {
-    data_tables <- append(data_tables, list(dataTable))
+  } 
+  else {
+    data_tables <- append(data_tables, list(dataTable)) 
   }
 }
-```
-
-#### Attribute List 
-Next, we will need to append an attribute list to the data table. We will be able 
-to use the `add_attribute` function to do so. Please make sure you review what 
-type of attribute you are providing and what inputs are necessary. These values 
-can then be inputted into the "attribute" tab in the "example-metadata.xlsx" excel file. If you
-are using a "nominal" or "ordinal" attribute which is "enumerated", (it has a specific 
-code definition), please also use the tab "code_definitions". Provide each
-unique code and definition, with its `attribute_name` aligning to that which is in the
-"attribute" tab. An example is present currently to help better showcase this. Every single 
-column in the dataTable must have a described attribute to match EDI congruence checker. 
-
-#### Putting the Data Table Together
-Now that we have the `attribute_list` and `physical` information, we 
-can compose the data tables.
-
-```{r}
-length(dataset_files)
 parent_element$dataTable <- data_tables
- 
 ```
-
 ## Making the EML document 
 Now that we have all of the items appended to the `parent_element`, we must append it 
 to the "dataset" and also give the file a unique ID number. The unique id number should 
