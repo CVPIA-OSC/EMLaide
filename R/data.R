@@ -186,6 +186,6 @@
 #' }
 #'
 #' @examples 
-#' CVPIA_common_species$chinook \
+#' CVPIA_common_species$chinook 
 "CVPIA_common_species"
 

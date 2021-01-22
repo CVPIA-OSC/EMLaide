@@ -27,4 +27,7 @@ to generate the taxonomic coverage element according the the EML schema.
 }
 }
 
+\examples{
+CVPIA_common_species$chinook 
+}
 \keyword{datasets}
