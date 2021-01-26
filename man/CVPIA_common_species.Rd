@@ -5,14 +5,16 @@
 \alias{CVPIA_common_species}
 \title{CVPIA Common Species}
 \format{
-A named list, keys are named the same as values.
+A named list, keys are names of CVPIA common species and values are nested
+lists containing complete taxonomic information for each species.
 }
 \usage{
 CVPIA_common_species
 }
 \description{
-A list of CVPIA common species that can be appended to the taxonomic
-coverage.
+A named list containing the names and complete taxonomic information of
+CVPIA common species. \code{CVPIA_common_species} is used by \code{add_taxonomic_coverage}
+to generate the taxonomic coverage element according the the EML schema.
 }
 \section{CVPIA Common Species}{
 
@@ -26,7 +28,6 @@ coverage.
 }
 
 \examples{
-CVPIA_common_species$chinook #"chinook"
-
+CVPIA_common_species$chinook 
 }
 \keyword{datasets}

@@ -10,8 +10,8 @@ add_personnel(
   last_name,
   email,
   role,
-  orcid = NULL,
-  organization = NULL
+  organization,
+  orcid = NULL
 )
 }
 \arguments{
@@ -23,15 +23,15 @@ add_personnel(
 
 \item{email}{Person's email address}
 
-\item{role}{Use "Creator" if you are one of the primary originators of the data.
+\item{role}{Use "creator" if you are one of the primary originators of the data.
 Other possible roles "Data Manager", "Field Technician", or "Assistant Researcher".
 There can be multiple personnel on a project with the same role.}
 
-\item{orcid}{ORCID iD is a persistent digital identifier for researchers,
-register at \url{http://orcid.org/}}
-
 \item{organization}{Person's employer or the entity they are associated
 with for this dataset or project}
+
+\item{orcid}{(Optional) ORCID iD is a persistent digital identifier for researchers,
+register at \url{http://orcid.org/}}
 }
 \description{
 Adds personel according to EML standards
@@ -41,7 +41,7 @@ add_personnel(parent_element = list(),
               first_name = 'Katherine', 
               last_name = "Johnson", 
               email = 'kjohnson@nasa.gov', 
-              role = 'Creator', 
+              role = 'creator', 
               organization = 'NASA',
               orcid = '12345')
 

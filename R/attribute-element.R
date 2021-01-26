@@ -5,7 +5,7 @@
 #' and/or cryptic name. It is recommended that the attribute names	be suitable	for
 #' use	as a	variable,	e.g.,	composed of ASCII	characters,	and	that the attribute
 #' names match the column headers of a CSV or other text table.	
-#' @param attribute_defenition A precise and complete	definition of the attribute	being	documented.
+#' @param attribute_definition A precise and complete	definition of the attribute	being	documented.
 #' @param storage_type An indicator	to processing	systems	as to	how	the	attribute
 #' might be represented in	a	system or	language,	but	is distinct	from the actual
 #' expression of	the	domain of	the	attribute. A list of approved storage types can be found at 
@@ -13,17 +13,17 @@
 #' @param measurement_scale The	type of	scale	from which values are	drawn	for	the
 #' attribute. A list of approved measurment scales can be viewed at \code{\link{measurement_scale}}.
 #' Further explination of the choices and required inputs are described below.
-#' @param attribute_label Optional. Used to provide	a	less ambiguous or	less cryptic
+#' @param attribute_label (Optional) Used to provide	a	less ambiguous or	less cryptic
 #' alternative identification	than what	is provided	in \code{attribute_name}.
 #' @param domain Input for the non-numeric measurement scales only.
 #' Please list either "text" or "enumerated".
 #' @param definition Either the text definition or code definition. Both are appended
 #' using this parameter, but have different applications. Examples of both are listed below.  
-#' @param text_pattern A regular expression pattern constraining the attribute.
+#' @param text_pattern (Optional) A regular expression pattern constraining the attribute.
 #' @param type Either "ratio" or "interval". 
 #' @param units The units assigned to this attribute's values. 
 #' @param number_type A list of possible options can be viewed at \code{\link{number_type}}. 
-#' @param unit_precision How precise units are measured.
+#' @param unit_precision (Optional) How precise units are measured.
 #' @param date_time_format The format your date/time attribute is recorded in.
 #' ISO 8601 standard should be used (YYYY-MM-DD).
 #' @param date_time_precision To what level time is being measured. 

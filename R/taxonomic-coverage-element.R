@@ -25,28 +25,12 @@
 #' @param common_name The common name of the organism. 
 #' @param taxon_id Optional. The taxonomic serial number provided by ITIS.
 #' @section CVPIA Common Species: 
-#' By using a CVPIA common species, the appropriate taxonomy is appended based off 
-#' of the Integrated Taxonomic Information System (ITIS). 
-#' 
-#' Select "chinook" to append the taxonomy of Oncorhynchus tshawytscha 
-#' (Also known as Chinook Salmon or King Salmon) from the ITIS database. 
-#' The correspoinding ITIS taxonomic id number is 161980.
-#' 
-#' Select "delta_smelt" to append the taxonomy of Hypomesus transpacificus 
-#' (Also known as Delta Smelt) from the ITIS database. The correspoinding ITIS 
-#' taxonomic id number is 162032. 
-#' 
-#' Select "white_sturgeon" to append the taxonomy of Acipenser transmontanus 
-#' (Also known as White Sturgeon) from the ITIS database. The correspoinding ITIS 
-#' taxonomic id number is 161068.
-#' 
-#' Select "green_sturgeon" to append the taxonomy of Acipenser medirostris (Also
-#' known as Green Sturgeon) from the ITIS database. The correspoinding ITIS 
-#' taxonomic id number is 161067.
-#' 
-#' Select "steelhead" to append the taxonomy of Oncorhynchus mykiss 
-#' (Also known as Steelhead, Rainbow Trout, or Redband Trout) from the ITIS database. 
-#' The correspoinding ITIS taxonomic id number is 161989.
+#' The following frequently cited species are available for convenience: 
+#'  * EDIutils::CVPIA_common_species$chinook - Oncorhynchus tshawytscha (ITIS: 161980)
+#'  * EDIutils::CVPIA_common_species$steelhead - Oncorhynchus mykiss (ITIS: 161989)
+#'  * EDIutils::CVPIA_common_species$delta_smelt - Hypomesus transpacificus (ITIS: 162032)
+#'  * EDIutils::CVPIA_common_species$white_sturgeon - Acipenser transmontanus (ITIS:161068)
+#'  * EDIutils::CVPIA_common_species$green_sturgeon - Acipenser medirostris (ITIS: 161067)
 #' 
 #' For further taxonomic coverage (i.e subkingdom, infrakingdom, etc.) on any of 
 #' these species, you can visit: \href{https://www.itis.gov/}{ITIS}'s webpage for 
@@ -56,15 +40,15 @@
 #' name taxonomic_coverage to append it to the dataset or project. Example of how 
 #' to incorporate it into the add_coverage function is seen below. 
 #' @examples 
-#' taxonomic_coverage <- add_taxonomic_coverage(CVPIA_common_species = EDIutils::CVPIA_common_species$chinook)
+#' taxonomic_coverage <- add_taxonomic_coverage(CVPIA_common_species = "chinook")
 #' 
-#' taxonomic_coverage <- add_taxonomic_coverage(CVPIA_common_species = EDIutils::CVPIA_common_species$delta_smelt)
+#' taxonomic_coverage <- add_taxonomic_coverage(CVPIA_common_species = "delta_smelt")
 #' 
-#' taxonomic_coverage <- add_taxonomic_coverage(CVPIA_common_species = EDIutils::CVPIA_common_species$white_sturgeon)
+#' taxonomic_coverage <- add_taxonomic_coverage(CVPIA_common_species = "white_sturgeon")
 #' 
-#' taxonomic_coverage <- add_taxonomic_coverage(CVPIA_common_species = EDIutils::CVPIA_common_species$green_sturgeon)
+#' taxonomic_coverage <- add_taxonomic_coverage(CVPIA_common_species = "green_sturgeon")
 #' 
-#' taxonomic_coverage <- add_taxonomic_coverage(CVPIA_common_species = EDIutils::CVPIA_common_species$steelhead)
+#' taxonomic_coverage <- add_taxonomic_coverage(CVPIA_common_species = "steelhead")
 #' 
 #' taxonomic_coverage <- add_taxonomic_coverage(kingdom_value = "Animalia",
 #'                        phylum_value = "Chordata",
@@ -118,8 +102,6 @@ add_taxonomic_coverage <- function(CVPIA_common_species = NULL,
                                  common_name = "Please provide a common name.")
       stop(tax_error_message, call. = FALSE)
     } 
-    
-    
     kingdom_value <- kingdom_value
     phylum_value <- phylum_value
     class_value <- class_value
@@ -128,86 +110,44 @@ add_taxonomic_coverage <- function(CVPIA_common_species = NULL,
     genus_value <- genus_value
     species_value <- species_value
     common_name <- common_name
+  } 
+  common_species_index <- which(c(CVPIA_common_species == "chinook", 
+                                  CVPIA_common_species == "steelhead",
+                                  CVPIA_common_species == "delta_smelt", 
+                                  CVPIA_common_species == "white_sturgeon",
+                                  CVPIA_common_species == "green_sturgeon"))
+  
+  if (length(common_species_index) > 0) {
+    taxonomicCoverage <- EDIutils::CVPIA_common_species[[common_species_index]]
     
   } else {
-    
     kingdom_value <- "Animalia"
     phylum_value <- "Chordata"
-    
-    if (CVPIA_common_species == "chinook") {
-      class_value <- "Teleostei"
-      order_value <- "Salmoniformes"
-      family_value <- "Salmonidae"
-      genus_value <- "Oncorhynchus"
-      species_value <- "Oncorhynchus tshawytscha"
-      common_name <- "Chinook Salmon"
-      taxon_id <- "161980"
-    }
-    
-    if (CVPIA_common_species == "steelhead") {
-      class_value <- "Teleostei"
-      order_value <- "Salmoniformes"
-      family_value <- "Salmonidae"
-      genus_value <- "Oncorhynchus"
-      species_value <- "Oncorhynchus mykiss"
-      common_name <- "Steelhead Trout"
-      taxon_id <- "161989"
-    }
-    
-    if (CVPIA_common_species == "delta_smelt") {
-      class_value <- "Teleostei"
-      order_value <- "Osmeriformes"
-      family_value <- "Osmeridae"
-      genus_value <- "Hypomesus"
-      species_value <- "Hypomesus transpacificus"
-      common_name <- "Delta Smelt"
-      taxon_id <- "162032"
-    }
-    
-    if (CVPIA_common_species == "white_sturgeon") {
-      class_value <- "Chondrostei"
-      order_value <- "Acipenseriformes"
-      family_value <- "Acipenseridae"
-      genus_value <- "Acipenser"
-      species_value <- "Acipenser transmontanus"
-      common_name <- "White Sturgeon"
-      taxon_id <- "161068"
-    }
-    
-    if (CVPIA_common_species == "green_sturgeon") {
-      class_value <- "Chondrostei"
-      order_value <- "Acipenseriformes"
-      family_value <- "Acipenseridae"
-      genus_value <- "Acipenser"
-      species_value <- "Acipenser medirostris"
-      common_name <- "Green Sturgeon"
-      taxon_id <- "161067"
-    }
-  } 
   
-  taxonomicCoverage <-
-    list(taxonomicClassification = 
-           list(taxonRankName = kingdom,
-                taxonRankValue = kingdom_value,
-                taxonomicClassification =
-                  list(taxonRankName = phylum,
-                       taxonRankValue = phylum_value,
-                       taxonomicClassification =
-                         list(taxonRankName = class,
-                              taxonRankValue = class_value,
-                              taxonomicClassification =
-                                list(taxonRankName = order,
-                                     taxonRankValue = order_value,
-                                     taxonomicClassification =
-                                       list(taxonRankName = family,
-                                            taxonRankValue = family_value,
-                                            taxonomicClassification =
-                                              list(taxonRankName = genus,
-                                                   taxonRankValue = genus_value,
-                                                   taxonomicClassification =
-                                                     list(taxonRankName = species,
-                                                          taxonRankValue = species_value,
-                                                          commonName = common_name))))))))
+    taxonomicCoverage <-
+      list(taxonomicClassification = 
+             list(taxonRankName = kingdom,
+                  taxonRankValue = kingdom_value,
+                  taxonomicClassification =
+                    list(taxonRankName = phylum,
+                         taxonRankValue = phylum_value,
+                         taxonomicClassification =
+                           list(taxonRankName = class,
+                                taxonRankValue = class_value,
+                                taxonomicClassification =
+                                  list(taxonRankName = order,
+                                       taxonRankValue = order_value,
+                                       taxonomicClassification =
+                                         list(taxonRankName = family,
+                                              taxonRankValue = family_value,
+                                              taxonomicClassification =
+                                                list(taxonRankName = genus,
+                                                     taxonRankValue = genus_value,
+                                                     taxonomicClassification =
+                                                       list(taxonRankName = species,
+                                                            taxonRankValue = species_value,
+                                                            commonName = common_name))))))))
+  }
   if (is.null(taxon_id)) {
     message("No taxon id has been provided. This number can be found at ITIS.gov if you wish to append it.")
   } else {

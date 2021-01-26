@@ -5,44 +5,46 @@
 \title{Add Funding Element}
 \usage{
 add_funding(
-  parent_element,
   funder_name,
-  funder_identifier,
-  award_number,
   award_title,
+  funder_identifier = NULL,
+  award_number = NULL,
   award_url = NULL,
   funding_description = NULL
 )
 }
 \arguments{
-\item{parent_element}{A list representing the EML project or dataset.}
+\item{funder_name}{Organization or individual providing the funding. If applicable,
+use one of the following from the helper data
+\code{\link{CVPIA_funders}}: "USBR", "CDWR", or "CDFW" to get pre-selected funding
+information. If you are funded by one of these sources
+please specify which one in \code{funder_name} and include an \code{award_title}.}
 
-\item{funder_name}{Organization or individual providing the funding.}
+\item{award_title}{Title of the award granted to the project.}
 
-\item{funder_identifier}{This is where the funding organization is listed in
+\item{funder_identifier}{(Optional) This is where the funding organization is listed in
 the registry. The funder identifier must be registered. Follow the instructions at
 \url{https://ror.org/curation/} to get registered.}
 
-\item{award_number}{The identifier assigned by the funding agency to identify this funding award.}
+\item{award_number}{(Optional) The identifier assigned by the funding agency to identify this funding award.}
 
-\item{award_title}{Title of the dataset or project which recieved funding.}
-
-\item{award_url}{Optional to include a link to information about the funding
+\item{award_url}{(Optional) Optional to include a link to information about the funding
 award on the funding organization's webpage.}
 
-\item{funding_description}{Optional to provide a short description of the funding recieved.}
+\item{funding_description}{(Optional) Provide a short description of the funding received.}
 }
 \value{
-The dataset or project with funding information appended.
+An award list that is then added to the project element of an EML file.
 }
 \description{
-Adds the funding information of a dataset based off of EML standards.
+Creates the award information of a project based off of EML standards.
+This award element is then nested within a project node to complete a funding section.
 }
 \examples{
-add_funding(parent_element = list(), funder_name = "National Science Foundation",
+add_funding(funder_name = "National Science Foundation",
             funder_identifier = "http://dx.doi.org/10.13039/100000001",
             award_number = "1656026",
-            award_title = "LTER: Beaufort Sea Lagoons: An Arctic Coastal Ecosystem in Transition",
+            award_title = "National Science Foundation Grant",
             award_url = "https://www.nsf.gov/awardsearch/showAward?AWD_ID=1656026",
             funding_description = "BLE LTER is supported by the National Science 
                                    Foundation under award #1656026 

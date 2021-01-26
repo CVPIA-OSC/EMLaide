@@ -149,12 +149,32 @@
 #' number_type$natural #"natural"
 #'   
 "number_type"
-
+#' @title CVPIA_funders
+#' @description A list of CVPIA_funders that can be appended to the funding element. 
+#' @format A named list, keys are names of CVPIA funding organizations and keys contain 
+#' information about each funder. 
+#' @section CVPIA_funders:
+#' \itemize{
+#'     \item \strong{USBR}
+#'     \item \strong{CDWR}
+#'     \item \strong{CDFW}
+#' }
+#' @examples 
+#' CVPIA_funders$USBR # $funderName
+#'                    #   [1] "United States Bureau of Reclamation"
+#' 
+#'                    # $funderIdentifier
+#'                    #   [1] "https://www.wikidata.org/wiki/Q1010548"
+#'
+#'
+"CVPIA_funders"
 
 #' @title CVPIA Common Species 
-#' @description A list of CVPIA common species that can be appended to the taxonomic
-#' coverage.
-#' @format A named list, keys are named the same as values. 
+#' @description A named list containing the names and complete taxonomic information of 
+#' CVPIA common species. \code{CVPIA_common_species} is used by \code{add_taxonomic_coverage}
+#' to generate the taxonomic coverage element according the the EML schema.
+#' @format A named list, keys are names of CVPIA common species and values are nested
+#' lists containing complete taxonomic information for each species.  
 #' 
 #' @section CVPIA Common Species:
 #' \itemize{
@@ -166,6 +186,6 @@
 #' }
 #'
 #' @examples 
-#' CVPIA_common_species$chinook #"chinook"
-#' 
+#' CVPIA_common_species$chinook 
 "CVPIA_common_species"
+

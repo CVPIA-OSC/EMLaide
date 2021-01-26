@@ -1,6 +1,19 @@
 parent_element <- list()
-
-#Tests for add_title function 
+# Tests for add_access function 
+test_that('add_accesss function returns proper default and non default access lists', {
+  access <- list(scope = "document",
+                 order = "allowFirst", 
+                 authSystem = "https://pasta.edirepository.org/authentication",
+                 allow = list(principal = "public", permission = "read"))
+  expect_equal(add_access(), access)
+  expect_equal(add_access(allow_principal = "private", 
+                          allow_permission = "none"), 
+               list(scope = "document",
+                    order = "allowFirst", 
+                    authSystem = "https://pasta.edirepository.org/authentication",
+                    allow = list(principal = "private", permission = "none")))
+})
+# Tests for add_title function 
 
 test_that('dataset title length is between 7 and 20 words long', {
   
@@ -84,7 +97,7 @@ test_that('the dataset add_keyword_set function adds the keyword set',{
 #Tests for add_personnel function 
 
 test_that('personnel function errors when missing mandatory identifier inputs',  {
-  role1 <- "Creator"
+  role1 <- "creator"
   role2 <- "Data Manager"
   first_name <- "Susan"
   last_name <- "Susanton"
@@ -93,127 +106,91 @@ test_that('personnel function errors when missing mandatory identifier inputs', 
   organization <- "USFWS"
  
   expect_error(add_personnel(parent_element = parent_element, role = role1, 
-                             first_name = first_name, last_name = last_name),
+                             first_name = first_name, last_name = last_name,
+                             organization = oganization),
                "Please supply an email.")
+  
   expect_error(add_personnel(parent_element = parent_element, role = role1, 
-                             first_name = first_name, email = email),
+                             first_name = first_name, email = email, 
+                             organization = organization),
                "Please supply a last name.")
+  
   expect_error(add_personnel(parent_element = parent_element, role = role1, 
-                             last_name = last_name, email = email), 
+                             last_name = last_name, email = email,
+                             organization = organization), 
                "Please supply a first name.")
+  
   expect_error(add_personnel(parent_element = parent_element, first_name = first_name, 
-                             last_name = last_name, email = email), 
-               "Please supply a role. Use 'Creator' if you are the main originator of the dataset or project")
+                             last_name = last_name, email = email, 
+                             organization = organization), 
+               "Please supply a role. Use 'creator' if you are the main originator of the dataset or project")
+  
+  expect_error(add_personnel(parent_element = parent_element, first_name = first_name, 
+                             last_name = last_name, role = role, email = email), 
+               "Please supply the name of the organization employing the personnel")
   
   expect_equal(add_personnel(parent_element = parent_element, first_name = first_name, 
-                             last_name = last_name, email = email, role = role1, orcid = orcid),
+                             last_name = last_name, email = email, role = role1, 
+                             organization = organization, orcid = orcid),
                list(contact = list(individualName = list(givenName = "Susan", 
-                                                         surName = "Susanton"), electronicMailAddress = "susanton@fake.com"), 
+                                                         surName = "Susanton"), 
+                                   electronicMailAddress = "susanton@fake.com",
+                                   organizationName = "USFWS"), 
                     creator = list(individualName = list(givenName = "Susan", 
-                                                         surName = "Susanton"), electronicMailAddress = "susanton@fake.com", 
+                                                         surName = "Susanton"), 
+                                   electronicMailAddress = "susanton@fake.com", 
+                                   organizationName = "USFWS",
                                    `@id` = "00110011")))
   
   expect_equal(add_personnel(parent_element = parent_element, first_name = first_name,
-                             last_name = last_name, email = email, role = role2, orcid = orcid,
-                             organization = organization),
+                             last_name = last_name, email = email, role = role2, 
+                             orcid = orcid, organization = organization),
                list(associatedParty = list(individualName = list(givenName = "Susan", 
-                                                                 surName = "Susanton"), electronicMailAddress = "susanton@fake.com", 
+                                                                 surName = "Susanton"), 
+                                           electronicMailAddress = "susanton@fake.com", 
                                            organizationName = "USFWS", role = "Data Manager")))
   
   creator_1 <- add_personnel(parent_element = parent_element, first_name = first_name, 
-                             last_name = last_name, email = email, role = role1)
+                             last_name = last_name, email = email, role = role1,
+                             organization = organization)
   
   expect_equal(add_personnel(parent_element = creator_1, first_name = "Not Susan", 
-                             last_name = "Smith", email = "free_cats@aol.com", role = role1),
+                             last_name = "Smith", email = "free_cats@aol.com", 
+                             organization = organization, role = role1),
                list(contact = list(individualName = list(givenName = "Not Susan", 
-                                                         surName = "Smith"), electronicMailAddress = "free_cats@aol.com"), 
+                                                         surName = "Smith"), 
+                                   electronicMailAddress = "free_cats@aol.com",
+                                   organizationName = "USFWS"), 
                     creator = list(list(individualName = list(givenName = "Susan", 
-                                                              surName = "Susanton"), electronicMailAddress = "susanton@fake.com"), 
-                                   list(individualName = list(givenName = "Not Susan", surName = "Smith"), 
-                                        electronicMailAddress = "free_cats@aol.com"))))
+                                                              surName = "Susanton"), 
+                                        electronicMailAddress = "susanton@fake.com",
+                                        organizationName = "USFWS"), 
+                                   list(individualName = list(givenName = "Not Susan", 
+                                                              surName = "Smith"), 
+                                        electronicMailAddress = "free_cats@aol.com",
+                                        organizationName = "USFWS"))))
   
   data_manager_1 <- add_personnel(parent_element = parent_element, first_name = first_name, 
-                                  last_name = last_name, email = email, role = role2)
+                                  last_name = last_name, email = email, role = role2,
+                                  organization = organization)
   
   expect_equal(add_personnel(parent_element = data_manager_1, first_name = "Not Susan", 
-                             last_name = "Smith", email = "free_cats@aol.com", role = role2),
+                             last_name = "Smith", email = "free_cats@aol.com", role = role2,
+                             organization = organization),
                list(associatedParty = list(list(individualName = list(givenName = "Susan", 
                                                                       surName = "Susanton"), 
                                                 electronicMailAddress = "susanton@fake.com", 
+                                                organizationName = "USFWS",
                                                 role = "Data Manager"), 
-                                           list(individualName = list(givenName = "Not Susan", surName = "Smith"), 
+                                           list(individualName = list(givenName = "Not Susan", 
+                                                                      surName = "Smith"), 
                                                 electronicMailAddress = "free_cats@aol.com", 
+                                                organizationName = "USFWS",
                                                 role = "Data Manager"))))
   
   
 })
 
-#Tests for add_funding function 
-
-test_that('funding function errors when missing mandatory identifier inputs', {
-  
-  expect_error(add_funding(parent_element = list(), 
-                           funder_identifier = "http://dx.doi.org/10.13039/100000001",
-                           award_number = "1656026",
-                           award_title = "LTER: Beaufort Sea Lagoons: An Arctic Coastal Ecosystem in Transition",
-                           award_url = "https://www.nsf.gov/awardsearch/showAward?AWD_ID=1656026",
-                           funding_description = "BLE LTER is supported by the National Science Foundation under award #1656026 (2017-08-01 to 2022-07-31)." ), 
-               "Please provide funders name.")
-  
-  expect_error(add_funding(parent_element = list(), funder_name = "National Science Foundation",
-                           award_number = "1656026",
-                           award_title = "LTER: Beaufort Sea Lagoons: An Arctic Coastal Ecosystem in Transition",
-                           award_url = "https://www.nsf.gov/awardsearch/showAward?AWD_ID=1656026",
-                           funding_description = "BLE LTER is supported by the National Science Foundation under award #1656026 (2017-08-01 to 2022-07-31)." ),
-               "Please provide funder identifier link.")
-  
-  expect_error(add_funding(parent_element = list(), funder_name = "National Science Foundation",
-                           funder_identifier = "http://dx.doi.org/10.13039/100000001",
-                           award_title = "LTER: Beaufort Sea Lagoons: An Arctic Coastal Ecosystem in Transition",
-                           award_url = "https://www.nsf.gov/awardsearch/showAward?AWD_ID=1656026",
-                           funding_description = "BLE LTER is supported by the National Science Foundation under award #1656026 (2017-08-01 to 2022-07-31)." ),
-               "Please provide your award number.")
-  
-  expect_error(add_funding(parent_element = list(), funder_name = "National Science Foundation",
-                           funder_identifier = "http://dx.doi.org/10.13039/100000001",
-                           award_number = "1656026",
-                           award_url = "https://www.nsf.gov/awardsearch/showAward?AWD_ID=1656026",
-                           funding_description = "BLE LTER is supported by the National Science Foundation under award #1656026 (2017-08-01 to 2022-07-31)." ),
-               "Please provide the title of your project.")
-  
-  expect_warning(add_funding(parent_element = list(), funder_name = "National Science Foundation",
-                             funder_identifier = "http://dx.doi.org/10.13039/100000001",
-                             award_number = "1656026",
-                             award_title = "LTER: Beaufort Sea Lagoons: An Arctic Coastal Ecosystem in Transition",
-                             funding_description = "BLE LTER is supported by the National Science Foundation under award #1656026 (2017-08-01 to 2022-07-31)." ),
-                 "Please provide the award url.")
-  
-  expect_warning(add_funding(parent_element = list(), funder_name = "National Science Foundation",
-                             funder_identifier = "http://dx.doi.org/10.13039/100000001",
-                             award_number = "1656026",
-                             award_title = "LTER: Beaufort Sea Lagoons: An Arctic Coastal Ecosystem in Transition",
-                             award_url = "https://www.nsf.gov/awardsearch/showAward?AWD_ID=1656026"),
-                 "Please provide the description of the funding recieved.")
-  
-  
-})
-
-test_that('The add_funding function adds the funding elements', {
-  
-  expect_equal(add_funding(parent_element = list(), funder_name = "National Science Foundation",
-                           funder_identifier = "http://dx.doi.org/10.13039/100000001",
-                           award_number = "1656026",
-                           award_title = "LTER: Beaufort Sea Lagoons: An Arctic Coastal Ecosystem in Transition",
-                           award_url = "https://www.nsf.gov/awardsearch/showAward?AWD_ID=1656026",
-                           funding_description = "BLE LTER is supported by the National Science Foundation under award #1656026 (2017-08-01 to 2022-07-31)."),
-               list(funding = list(para = "BLE LTER is supported by the National Science Foundation under award #1656026 (2017-08-01 to 2022-07-31)."), 
-                    award = list(funderName = "National Science Foundation", 
-                                 funderIdentifier = "http://dx.doi.org/10.13039/100000001", 
-                                 awardNumber = "1656026", title = "LTER: Beaufort Sea Lagoons: An Arctic Coastal Ecosystem in Transition", 
-                                 awardUrl = "https://www.nsf.gov/awardsearch/showAward?AWD_ID=1656026"))
-  )
-  
-})
 
 #Tests for add_license function 
 
