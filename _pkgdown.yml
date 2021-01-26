@@ -15,6 +15,7 @@ reference:
 - title: EML EDI Functions
   desc: Functions for building EML metadata for EDI's data repository.
   contents:
+  - add_access
   - add_pub_date
   - add_personnel
   - add_title
@@ -22,6 +23,7 @@ reference:
   - add_abstract
   - add_license
   - add_funding
+  - add_project
   - add_maintenance
   - add_method
   - add_coverage
@@ -29,10 +31,12 @@ reference:
   - add_attribute
   - add_physical
   - add_data_table
+  - add_raster
 - title: Helper Data
   desc: Internal data for convenience.
   contents:
   - CVPIA_common_species
+  - CVPIA_funders
   - measurement_scale
   - number_type
   - storage_type

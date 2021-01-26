@@ -231,38 +231,29 @@ to incorporate it into the add_coverage function is seen below.</p>
 
     
 
-<p>By using a CVPIA common species, the appropriate taxonomy is appended based off
-of the Integrated Taxonomic Information System (ITIS).</p>
-<p>Select "chinook" to append the taxonomy of Oncorhynchus tshawytscha
-(Also known as Chinook Salmon or King Salmon) from the ITIS database.
-The correspoinding ITIS taxonomic id number is 161980.</p>
-<p>Select "delta_smelt" to append the taxonomy of Hypomesus transpacificus
-(Also known as Delta Smelt) from the ITIS database. The correspoinding ITIS
-taxonomic id number is 162032.</p>
-<p>Select "white_sturgeon" to append the taxonomy of Acipenser transmontanus
-(Also known as White Sturgeon) from the ITIS database. The correspoinding ITIS
-taxonomic id number is 161068.</p>
-<p>Select "green_sturgeon" to append the taxonomy of Acipenser medirostris (Also
-known as Green Sturgeon) from the ITIS database. The correspoinding ITIS
-taxonomic id number is 161067.</p>
-<p>Select "steelhead" to append the taxonomy of Oncorhynchus mykiss
-(Also known as Steelhead, Rainbow Trout, or Redband Trout) from the ITIS database.
-The correspoinding ITIS taxonomic id number is 161989.</p>
+<p>The following frequently cited species are available for convenience:</p><ul>
+<li><p>EDIutils::CVPIA_common_species$chinook - Oncorhynchus tshawytscha (ITIS: 161980)</p></li>
+<li><p>EDIutils::CVPIA_common_species$steelhead - Oncorhynchus mykiss (ITIS: 161989)</p></li>
+<li><p>EDIutils::CVPIA_common_species$delta_smelt - Hypomesus transpacificus (ITIS: 162032)</p></li>
+<li><p>EDIutils::CVPIA_common_species$white_sturgeon - Acipenser transmontanus (ITIS:161068)</p></li>
+<li><p>EDIutils::CVPIA_common_species$green_sturgeon - Acipenser medirostris (ITIS: 161067)</p></li>
+</ul>
+
 <p>For further taxonomic coverage (i.e subkingdom, infrakingdom, etc.) on any of
 these species, you can visit: <a href='https://www.itis.gov/'>ITIS</a>'s webpage for
 full coverage information.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='va'>taxonomic_coverage</span> <span class='op'>&lt;-</span> <span class='fu'>add_taxonomic_coverage</span><span class='op'>(</span>CVPIA_common_species <span class='op'>=</span> <span class='fu'>EDIutils</span><span class='fu'>::</span><span class='va'><a href='CVPIA_common_species.html'>CVPIA_common_species</a></span><span class='op'>$</span><span class='va'>chinook</span><span class='op'>)</span>
-
-<span class='va'>taxonomic_coverage</span> <span class='op'>&lt;-</span> <span class='fu'>add_taxonomic_coverage</span><span class='op'>(</span>CVPIA_common_species <span class='op'>=</span> <span class='fu'>EDIutils</span><span class='fu'>::</span><span class='va'><a href='CVPIA_common_species.html'>CVPIA_common_species</a></span><span class='op'>$</span><span class='va'>delta_smelt</span><span class='op'>)</span>
-
-<span class='va'>taxonomic_coverage</span> <span class='op'>&lt;-</span> <span class='fu'>add_taxonomic_coverage</span><span class='op'>(</span>CVPIA_common_species <span class='op'>=</span> <span class='fu'>EDIutils</span><span class='fu'>::</span><span class='va'><a href='CVPIA_common_species.html'>CVPIA_common_species</a></span><span class='op'>$</span><span class='va'>white_sturgeon</span><span class='op'>)</span>
-
-<span class='va'>taxonomic_coverage</span> <span class='op'>&lt;-</span> <span class='fu'>add_taxonomic_coverage</span><span class='op'>(</span>CVPIA_common_species <span class='op'>=</span> <span class='fu'>EDIutils</span><span class='fu'>::</span><span class='va'><a href='CVPIA_common_species.html'>CVPIA_common_species</a></span><span class='op'>$</span><span class='va'>green_sturgeon</span><span class='op'>)</span>
-
-<span class='va'>taxonomic_coverage</span> <span class='op'>&lt;-</span> <span class='fu'>add_taxonomic_coverage</span><span class='op'>(</span>CVPIA_common_species <span class='op'>=</span> <span class='fu'>EDIutils</span><span class='fu'>::</span><span class='va'><a href='CVPIA_common_species.html'>CVPIA_common_species</a></span><span class='op'>$</span><span class='va'>steelhead</span><span class='op'>)</span>
-
+    <pre class="examples"><div class='input'><span class='va'>taxonomic_coverage</span> <span class='op'>&lt;-</span> <span class='fu'>add_taxonomic_coverage</span><span class='op'>(</span>CVPIA_common_species <span class='op'>=</span> <span class='st'>"chinook"</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; <span class='message'>No taxon id has been provided. This number can be found at ITIS.gov if you wish to append it.</span></div><div class='input'>
+<span class='va'>taxonomic_coverage</span> <span class='op'>&lt;-</span> <span class='fu'>add_taxonomic_coverage</span><span class='op'>(</span>CVPIA_common_species <span class='op'>=</span> <span class='st'>"delta_smelt"</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; <span class='message'>No taxon id has been provided. This number can be found at ITIS.gov if you wish to append it.</span></div><div class='input'>
+<span class='va'>taxonomic_coverage</span> <span class='op'>&lt;-</span> <span class='fu'>add_taxonomic_coverage</span><span class='op'>(</span>CVPIA_common_species <span class='op'>=</span> <span class='st'>"white_sturgeon"</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; <span class='message'>No taxon id has been provided. This number can be found at ITIS.gov if you wish to append it.</span></div><div class='input'>
+<span class='va'>taxonomic_coverage</span> <span class='op'>&lt;-</span> <span class='fu'>add_taxonomic_coverage</span><span class='op'>(</span>CVPIA_common_species <span class='op'>=</span> <span class='st'>"green_sturgeon"</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; <span class='message'>No taxon id has been provided. This number can be found at ITIS.gov if you wish to append it.</span></div><div class='input'>
+<span class='va'>taxonomic_coverage</span> <span class='op'>&lt;-</span> <span class='fu'>add_taxonomic_coverage</span><span class='op'>(</span>CVPIA_common_species <span class='op'>=</span> <span class='st'>"steelhead"</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; <span class='message'>No taxon id has been provided. This number can be found at ITIS.gov if you wish to append it.</span></div><div class='input'>
 <span class='va'>taxonomic_coverage</span> <span class='op'>&lt;-</span> <span class='fu'>add_taxonomic_coverage</span><span class='op'>(</span>kingdom_value <span class='op'>=</span> <span class='st'>"Animalia"</span>,
                        phylum_value <span class='op'>=</span> <span class='st'>"Chordata"</span>,
                        class_value <span class='op'>=</span> <span class='st'>"Mammalia"</span>,

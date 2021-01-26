@@ -32,21 +32,21 @@
 #' @return This function returns the parent element with a new project node containing 
 #' all project information required for an EML document. 
 #' @examples
-#' add_project(parent_element = parent_element, 
+#' add_project(parent_element = list(), 
 #'             project_title = "my project title", 
 #'             award_information = add_funding(funder_name = "Bank",
 #'                                             funder_identifier = "Funder 1",
 #'                                             award_number = "000",
 #'                                             award_title = "Money up for grabs",
 #'                                             award_url = "awardforme.com"),
-#'             project_personnel = add_personnel(parent_element = parent_element,
+#'             project_personnel = add_personnel(parent_element = list(),
 #'                                               first_name = "Smithy",
 #'                                               last_name = "Smith",
 #'                                               email = "myemail@mail.gov",
 #'                                               role = "Manager",
 #'                                               organization = "US GOV"))
 #'                                               
-#' add_project(parent_element = parent_element, 
+#' add_project(parent_element = list(), 
 #'             project_title = "my project title", 
 #'             award_information = list(funderName = "Bank",
 #'                                      funderIdentifier = "Funder 1",
@@ -58,6 +58,8 @@
 #'                                      electronicMailAddress = "myemail@mail.gov",
 #'                                      role = "Manager",
 #'                                      organizationName = "US GOV"))
+#' 
+#' @export                                                                          
 
 add_project <- function(parent_element, project_title, 
                         award_information, project_personnel) {

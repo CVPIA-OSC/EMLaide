@@ -36,7 +36,7 @@ add_physical <- function(file_path,
   field_delimiter <- match.arg(field_delimiter)
   
   file_path_breaks <- unlist(strsplit(file_path, "/"))
-  object_name <- paste(tail(file_path_breaks, n = 1))
+  object_name <- paste(utils::tail(file_path_breaks, n = 1))
   object_size <- paste(file.size(file_path))
   authentication <- paste(tools::md5sum(file_path))
   

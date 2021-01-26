@@ -8,7 +8,6 @@ vignette: >
 ---
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)
-#knitr::opts_knit$set(root.dir = rprojroot::find_rstudio_root_file())
 ```
 The following libraries are needed to create a working EML document. 
 ```{r, message = FALSE}
@@ -52,8 +51,6 @@ following elements:
 We will use the data provided by John Hannon to show an example of how to put the
 metadata together in a way which can be uploaded to the EDI data portal website. 
 The excel sheet of which Hannon's data resides is found in "~/data-raw/Hannon-Example/example-metadata.xlsx". 
-This file can be edited with your data and used with this document to create your 
-own working EML file. 
 
 ## Required Files 
 Four files must be uploaded to make a complete EML document. 
@@ -85,6 +82,8 @@ methods_docx <- system.file("extdata", "Hannon-Example", "hannon_example_methods
 
 dataset_file <- system.file("extdata", "Hannon-Example", "hannon_example_physical_data.csv",
                                package = "EDIutils", mustWork = TRUE)
+
+dataset_file_name <- "hannon_example_physical_data.csv"
 
 edi_number = "edi.687.1"
 ```
@@ -300,14 +299,10 @@ for (i in 1:nrow(funding_table)) {
 Once all the components of project have been defined we can use the add_project
 function to combine the sections in the proper formatting for an EML document. 
 ```{r}
-# TODO change to using add_project function once merged 
-# parent_element <- add_project(parent_element = parent_element,
-#                               project_title = project_title,
-#                               award_information = award_information,
-#                               project_personnel = project_personnel)
-parent_element$project <- list(title = project_title,
-                               personnel = project_personnel,
-                               award = award_information)
+parent_element <- add_project(parent_element = parent_element,
+                              project_title = project_title,
+                              award_information = award_information,
+                              project_personnel = project_personnel)
 ``` 
 
 ### Coverage: Geographic, Temporal, Taxonomic 
@@ -446,12 +441,12 @@ for (i in 1:nrow(attribute_table)) {
 #### Putting the Data Table Together
 Now that we have the `attribute_list` and `physical` information, we 
 can compose the data table, which is the last element we need to create our 
-working EML file. If you wish to append multiple datatables to one dataset please 
+working EML file. If you wish to append multiple datatables to one datapackage please 
 contact CVPIA data guidance and we will help you do so properly. 
 
 ```{r}
 if (metadata_sheets$dataset$type == "tabular") {
-  parent_element$dataTable <- list(entityName = dataset_file,
+  parent_element$dataTable <- list(entityName = dataset_file_name,
                                    entityDescription = metadata_sheets$dataset$name,
                                    physical = physical,
                                    attributeList = attribute_list)

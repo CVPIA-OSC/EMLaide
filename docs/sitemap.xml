@@ -4,10 +4,10 @@
     <loc>https://CVPIA-OSC.github.io/EDIutils//index.html</loc>
   </url>
   <url>
-    <loc>https://CVPIA-OSC.github.io/EDIutils//reference/CVPIA_common_species.html</loc>
+    <loc>https://CVPIA-OSC.github.io/EDIutils//reference/add_abstract.html</loc>
   </url>
   <url>
-    <loc>https://CVPIA-OSC.github.io/EDIutils//reference/add_abstract.html</loc>
+    <loc>https://CVPIA-OSC.github.io/EDIutils//reference/add_access.html</loc>
   </url>
   <url>
     <loc>https://CVPIA-OSC.github.io/EDIutils//reference/add_attribute.html</loc>
@@ -52,13 +52,25 @@
     <loc>https://CVPIA-OSC.github.io/EDIutils//reference/add_physical.html</loc>
   </url>
   <url>
+    <loc>https://CVPIA-OSC.github.io/EDIutils//reference/add_project.html</loc>
+  </url>
+  <url>
     <loc>https://CVPIA-OSC.github.io/EDIutils//reference/add_pub_date.html</loc>
+  </url>
+  <url>
+    <loc>https://CVPIA-OSC.github.io/EDIutils//reference/add_raster.html</loc>
   </url>
   <url>
     <loc>https://CVPIA-OSC.github.io/EDIutils//reference/add_taxonomic_coverage.html</loc>
   </url>
   <url>
     <loc>https://CVPIA-OSC.github.io/EDIutils//reference/add_title.html</loc>
+  </url>
+  <url>
+    <loc>https://CVPIA-OSC.github.io/EDIutils//reference/CVPIA_common_species.html</loc>
+  </url>
+  <url>
+    <loc>https://CVPIA-OSC.github.io/EDIutils//reference/CVPIA_funders.html</loc>
   </url>
   <url>
     <loc>https://CVPIA-OSC.github.io/EDIutils//reference/measurement_scale.html</loc>

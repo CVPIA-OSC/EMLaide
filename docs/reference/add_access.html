@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Add Publication Date — add_pub_date • EDIutils</title>
+<title>Add Access Element — add_access • EDIutils</title>
 
 
 <!-- jquery -->
@@ -39,8 +39,11 @@
 
 
 
-<meta property="og:title" content="Add Publication Date — add_pub_date" />
-<meta property="og:description" content="Adds publication date according to EML standards." />
+<meta property="og:title" content="Add Access Element — add_access" />
+<meta property="og:description" content="The add access element creates a list that includes all the required
+elements for the access section of an EML document. Calling add_access() will output the
+default public access permissions. To customize the access level provide values
+for the allow_principal and add_permission arguments." />
 
 
 
@@ -109,45 +112,92 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Add Publication Date</h1>
+    <h1>Add Access Element</h1>
     
-    <div class="hidden name"><code>add_pub_date.Rd</code></div>
+    <div class="hidden name"><code>add_access.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Adds publication date according to EML standards.</p>
+    <p>The add access element creates a list that includes all the required
+elements for the access section of an EML document. Calling add_access() will output the
+default public access permissions. To customize the access level provide values
+for the allow_principal and add_permission arguments.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>add_pub_date</span><span class='op'>(</span><span class='va'>parent_element</span>, date <span class='op'>=</span> <span class='cn'>NULL</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>add_access</span><span class='op'>(</span>allow_principal <span class='op'>=</span> <span class='cn'>NULL</span>, allow_permission <span class='op'>=</span> <span class='cn'>NULL</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>parent_element</th>
-      <td><p>A list representing the EML project or dataset.</p></td>
+      <th>allow_principal</th>
+      <td><p>The principal argument refers to who will have access
+to this dataset. The allow_principal argument takes in a string.
+With no input the allow_principal will default to "public". To change
+to a different principal please input a new principal.</p>
+<p>The valid options for the principal are:</p><ul>
+<li><p>'public' - special principal indicate that any user or group has a particular access permission</p></li>
+<li><p>other individual users or groups can be specified if they are defined in the PASTA EDI authentication
+system. Read the PASTA documentation for more information <a href='https://pastaplus-core.readthedocs.io/_/downloads/en/latest/pdf/'>https://pastaplus-core.readthedocs.io/_/downloads/en/latest/pdf/</a></p></li>
+</ul></td>
     </tr>
     <tr>
-      <th>date</th>
-      <td><p>The publication date. If left null, it will be assigned the current
-date. This can be overriden by putting in a specific date.</p></td>
+      <th>allow_permission</th>
+      <td><p>The permission argument refers to the type of access
+that is allowed to the principal. The allow_permission argument takes in a string.
+With no input the allow_permission will default to "read". This default permission
+allows the principal to read the dataset but not edit. To change to a different
+permission please input a new permission.</p>
+<p>The valid options for permission are:</p><ul>
+<li><p>'read' - allow viewing of the resource,</p></li>
+<li><p>'write' - allow modification of the resource (except for access rules),</p></li>
+<li><p>'changePermission' - modifications including access rules, and</p></li>
+<li><p>'all' - all of the above.</p></li>
+</ul></td>
     </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>The dataset or project with the publication date appended.</p>
+    <p>Returns an list with all the information required for the access section
+of an EML document.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>add_pub_date</span><span class='op'>(</span>parent_element <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span><span class='op'>)</span>,
-             date <span class='op'>=</span> <span class='st'>"2020-08-19"</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; $pubDate
-#&gt; [1] "2020-08-19"
-#&gt; </div><div class='input'>             
-<span class='co'># Appends current date:              </span>
-<span class='fu'>add_pub_date</span><span class='op'>(</span>parent_element <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span><span class='op'>)</span><span class='op'>)</span> 
-</div><div class='output co'>#&gt; $pubDate
-#&gt; [1] "2021-01-20"
+    <pre class="examples"><div class='input'><span class='fu'>add_access</span><span class='op'>(</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; $scope
+#&gt; [1] "document"
+#&gt; 
+#&gt; $order
+#&gt; [1] "allowFirst"
+#&gt; 
+#&gt; $authSystem
+#&gt; [1] "https://pasta.edirepository.org/authentication"
+#&gt; 
+#&gt; $allow
+#&gt; $allow$principal
+#&gt; [1] "public"
+#&gt; 
+#&gt; $allow$permission
+#&gt; [1] "read"
+#&gt; 
+#&gt; </div><div class='input'><span class='fu'>add_access</span><span class='op'>(</span>allow_principal <span class='op'>=</span> <span class='st'>"private"</span>,
+           allow_permission <span class='op'>=</span> <span class='st'>"none"</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; $scope
+#&gt; [1] "document"
+#&gt; 
+#&gt; $order
+#&gt; [1] "allowFirst"
+#&gt; 
+#&gt; $authSystem
+#&gt; [1] "https://pasta.edirepository.org/authentication"
+#&gt; 
+#&gt; $allow
+#&gt; $allow$principal
+#&gt; [1] "private"
+#&gt; 
+#&gt; $allow$permission
+#&gt; [1] "none"
+#&gt; 
 #&gt; </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">

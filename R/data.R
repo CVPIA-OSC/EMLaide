@@ -149,7 +149,25 @@
 #' number_type$natural #"natural"
 #'   
 "number_type"
-
+#' @title CVPIA_funders
+#' @description A list of CVPIA_funders that can be appended to the funding element. 
+#' @format A named list, keys are names of CVPIA funding organizations and keys contain 
+#' information about each funder. 
+#' @section CVPIA_funders:
+#' \itemize{
+#'     \item \strong{USBR}
+#'     \item \strong{CDWR}
+#'     \item \strong{CDFW}
+#' }
+#' @examples 
+#' CVPIA_funders$USBR # $funderName
+#'                    #   [1] "United States Bureau of Reclamation"
+#' 
+#'                    # $funderIdentifier
+#'                    #   [1] "https://www.wikidata.org/wiki/Q1010548"
+#'
+#'
+"CVPIA_funders"
 
 #' @title CVPIA Common Species 
 #' @description A named list containing the names and complete taxonomic information of 
@@ -169,84 +187,5 @@
 #'
 #' @examples 
 #' CVPIA_common_species$chinook 
-#' 
-#' $taxonomicClassification
-#' $taxonomicClassification$taxonRankName
-#' [1] "kingdom"
-#' 
-#' $taxonomicClassification$taxonRankValue
-#' [1] "Animalia"
-#' 
-#' $taxonomicClassification$taxonomicClassification
-#' $taxonomicClassification$taxonomicClassification$taxonRankName
-#' [1] "phylum"
-#' 
-#' $taxonomicClassification$taxonomicClassification$taxonRankValue
-#' [1] "Chordata"
-#' 
-#' $taxonomicClassification$taxonomicClassification$taxonomicClassification
-#' $taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonRankName
-#' [1] "class"
-#' 
-#' $taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonRankValue
-#' [1] "Teleostei"
-#' 
-#' $taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification
-#' $taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonRankName
-#' [1] "order"
-#' 
-#' $taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonRankValue
-#' [1] "Salmoniformes"
-#' 
-#' $taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification
-#' $taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonRankName
-#' [1] "family"
-#' 
-#' $taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonRankValue
-#' [1] "Salmonidae"
-#' 
-#' $taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification
-#' $taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonRankName
-#' [1] "genus"
-#' 
-#' $taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonRankValue
-#' [1] "Oncorhynchus"
-#' 
-#' $taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification
-#' $taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonRankName
-#' [1] "species"
-#' 
-#' $taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonRankValue
-#' [1] "Oncorhynchus tshawytscha"
-#' 
-#' $taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$commonName
-#' [1] "Chinook Salmon"
-#' 
-#' $taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonId
-#' $taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonId$provider
-#' [1] "https://itis.gov"
-#' 
-#' $taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonId$taxonId
-#' [1] "161980"
-#' 
 "CVPIA_common_species"
-#' @title CVPIA_funders
-#' @description A list of CVPIA_funders that can be appended to the funding element. 
-#' @format A named list, keys are names of CVPIA funding organizations and keys contain 
-#' information about each funder. 
-#' @section CVPIA_funders:
-#' \itemize{
-#'     \item \strong{USBR}
-#'     \item \strong{CDWR}
-#'     \item \strong{CDFW}
-#'}
-#'@examples 
-#'CVPIA$funders$USBR
-#'
-#' $funderName
-#' [1] "United States Bureau of Reclamation"
-#' 
-#' $funderIdentifier
-#' [1] "https://www.wikidata.org/wiki/Q1010548"
-#'
-"CVPIA_funders"
+

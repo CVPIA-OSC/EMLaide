@@ -91,15 +91,15 @@ full coverage information.
 }
 
 \examples{
-taxonomic_coverage <- add_taxonomic_coverage(CVPIA_common_species = EDIutils::CVPIA_common_species$chinook)
+taxonomic_coverage <- add_taxonomic_coverage(CVPIA_common_species = "chinook")
 
-taxonomic_coverage <- add_taxonomic_coverage(CVPIA_common_species = EDIutils::CVPIA_common_species$delta_smelt)
+taxonomic_coverage <- add_taxonomic_coverage(CVPIA_common_species = "delta_smelt")
 
-taxonomic_coverage <- add_taxonomic_coverage(CVPIA_common_species = EDIutils::CVPIA_common_species$white_sturgeon)
+taxonomic_coverage <- add_taxonomic_coverage(CVPIA_common_species = "white_sturgeon")
 
-taxonomic_coverage <- add_taxonomic_coverage(CVPIA_common_species = EDIutils::CVPIA_common_species$green_sturgeon)
+taxonomic_coverage <- add_taxonomic_coverage(CVPIA_common_species = "green_sturgeon")
 
-taxonomic_coverage <- add_taxonomic_coverage(CVPIA_common_species = EDIutils::CVPIA_common_species$steelhead)
+taxonomic_coverage <- add_taxonomic_coverage(CVPIA_common_species = "steelhead")
 
 taxonomic_coverage <- add_taxonomic_coverage(kingdom_value = "Animalia",
                        phylum_value = "Chordata",
