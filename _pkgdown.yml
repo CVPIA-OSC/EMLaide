@@ -57,6 +57,5 @@ navbar:
 repo:
   url:
     home: https://github.com/CVPIA-OSC/EDIutils
-    source: https://github.com/CVPIA-OSC/EDIutils/blob/master/
     issue: https://github.com/CVPIA-OSC/EDIutils/issues/
         
