@@ -3,7 +3,6 @@ url: https://CVPIA-OSC.github.io/EDIutils/
 template:
   params:
     bootswatch: flatly
-    
 home:
   links:
   - text: EDI's Data Repositroy 
@@ -42,6 +41,9 @@ reference:
   - storage_type
 
 navbar:
+  structure:
+    left:  [home, reference, articles]
+    right: [github]  
   type: default
   left:
   - text: 'Reference'
@@ -50,3 +52,11 @@ navbar:
     menu: 
       - text: 'EML Template Helper'
         href: articles/creating-EML.html
+      - text: 'Multiple Datasets'
+        href: articles/EML-multiple-datasets.html
+repo:
+  url:
+    home: https://github.com/CVPIA-OSC/EDIutils
+    source: https://github.com/CVPIA-OSC/EDIutils/blob/master/
+    issue: https://github.com/CVPIA-OSC/EDIutils/issues/
+        
