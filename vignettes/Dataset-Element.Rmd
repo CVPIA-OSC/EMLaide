@@ -1,0 +1,149 @@
+---
+title: "Dataset Element"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Dataset-Element}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)
+```
+The following libraries are needed to create a working EML document. 
+```{r, message = FALSE}
+library(EDIutils)
+library(tidyverse)
+library(readxl)
+library(EML)
+```
+
+# Dataset Element 
+
+## Multiple datsets for one data package
+## Diffrent types of datasets 
+```{r, include = FALSE}
+excel_path <- system.file("extdata", "Hannon-Example", "example-metadata.xlsx", 
+                          package = "EDIutils", mustWork = TRUE)
+
+sheets <- readxl::excel_sheets(excel_path)
+metadata <- lapply(sheets, function(x) readxl::read_excel(excel_path, sheet = x))
+names(metadata) <- sheets
+
+abstract_docx <- system.file("extdata", "Hannon-Example", "hannon_example_abstract.docx", 
+                             package = "EDIutils", mustWork = TRUE)
+
+methods_docx <- system.file("extdata", "Hannon-Example", "hannon_example_methods.docx", 
+                            package = "EDIutils", mustWork = TRUE)
+
+dataset_file <- system.file("extdata", "Hannon-Example", "hannon_example_physical_data.csv",
+                               package = "EDIutils", mustWork = TRUE)
+
+dataset_file_name <- "hannon_example_physical_data.csv"
+
+edi_number <- "edi.687.1"
+
+parent_element <- list()
+```
+### Data Table 
+Next, we need to create the data table. The data table element includes`physical`, `attribute_list`, 
+and potentially additional information for Spatial Data. These sections are all lists 
+which must be created first, appended to a dataTable, and then appended to 
+the `parent_element`.
+
+#### Physical 
+The physical element can be created first using the `add_physical` function. 
+This will append information on the actual physical information of the data. 
+The file path of the data can be added to the "example-metadata.xlsx" excel file 
+and all parameters will be appended, gathering the csv's unique size and 
+authentication, as well as providing the default physical values of a csv. 
+
+```{r}
+physical <- add_physical(file_path = dataset_file)
+```
+
+If you wish to provide alternative information than the defaults of a csv, you must do
+so manually in Rstudio using the `add_physical` function fully. It is not recommended 
+that you do so, however, as the default values present represent the best practices 
+in most cases. 
+
+#### Attribute List 
+Next, we will need to append an attribute list to the data table. We will be able 
+to use the `add_attribute` function to do so. Please make sure you review what 
+type of attribute you are providing and what inputs are necessary. These values 
+can then be inputted into the "attribute" tab in the "example-metadata.xlsx" excel file. If you
+are using a "nominal" or "ordinal" attribute which is "enumerated", (it has a specific 
+code definition), please also use the tab "code_definitions". Provide each
+unique code and definition, with its `attribute_name` aligning to that which is in the
+"attribute" tab. An example is present currently to help better showcase this. Every single 
+column in the dataTable must have a described attribute to match EDI congruence checker. 
+
+```{r}
+attribute_table <- metadata$attribute
+codes <- metadata$code_definitions
+
+attribute_list <- list()
+attribute_names <- unique(codes$attribute_name)
+
+for (i in 1:nrow(attribute_table)) {
+  current <- attribute_table[i, ]
+  if (current$domain %in% "enumerated") { 
+    definition <- list()
+    current_codes <- codes[codes$attribute_name == current$attribute_name, ]
+    for (j in 1:nrow(current_codes)) {
+      codeDefinition <- list(code = current_codes$code[j], definition = current_codes$definitions[j])
+      if (is.null(definition$codeDefinition)) {
+        definition$codeDefinition <- codeDefinition
+      } else {
+        definition$codeDefinition <- list(definition$codeDefinition, codeDefinition)
+      }
+    }
+  } else {
+    definition = current$attribute_definition
+  }
+  new_attribute <- add_attribute(attribute_name = current$attribute_name,
+                                 attribute_definition = current$attribute_definition,
+                                 storage_type = current$storage_type,
+                                 measurement_scale = current$measurement_scale,
+                                 domain = current$domain,
+                                 definition = definition,
+                                 type = current$type,
+                                 units = current$units,
+                                 unit_precision = current$unit_precision,
+                                 number_type = current$number_type,
+                                 date_time_format = current$date_time_format,
+                                 date_time_precision = current$date_time_precision,
+                                 minimum = current$minimum,
+                                 maximum = current$maximum,
+                                 attribute_label = current$attribute_label)
+  if (is.null(attribute_list$attribute)) {
+    attribute_list$attribute <- new_attribute
+  } else {
+    attribute_list$attribute <- list(attribute_list$attribute, new_attribute)
+  }
+}
+```
+
+#### Putting the Data Table Together
+Now that we have the `attribute_list` and `physical` information, we 
+can compose the data table, which is the last element we need to create our 
+working EML file. If you wish to append multiple datatables to one datapackage please 
+contact CVPIA data guidance and we will help you do so properly. 
+
+```{r}
+if (metadata$dataset$type == "tabular") {
+  parent_element$dataTable <- list(entityName = dataset_file_name,
+                                   entityDescription = metadata$dataset$name,
+                                   physical = physical,
+                                   attributeList = attribute_list)
+} 
+if (metadata$dataset$type == "vector") {
+  parent_element$spatialVector <- list(entityName = dataset_file,
+                                       entityDescription = metadata$dataset$name,
+                                       physical = physical,
+                                       attributeList = attribute_list,
+                                       geometry = metadata$dataset$geometry)
+}
+
+## TODO RASTER DATA 
+```
