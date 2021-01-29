@@ -1,0 +1,148 @@
+---
+title: "Inital Metadata Information"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Inital-Metadata-Information}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)
+```
+The following libraries are needed to create a working EML document. 
+```{r, message = FALSE}
+library(EDIutils)
+library(tidyverse)
+library(readxl)
+library(EML)
+```
+### Access Permissions 
+The `add_access` adds an access section at the beginning of our EML document. The 
+`add_access` default is public principal with a read permission. 
+
+```{r}
+access <- add_access()
+```
+
+### Publication Date 
+The publication date does not have a tab in the excel sheet, but is simply added with 
+the `add_pub_date` function. If no date is provided, it will automatically append
+the current date. This can be overwritten by providing an input for `date`. 
+
+```{r}
+parent_element <- add_pub_date(parent_element = list(), date = NULL)
+```
+
+### Personnel: Creator, Contact, and Associated Parties. 
+The `add_personnel` function allows you to append information on the creator or
+the associated parties to your file. The creator would be any person or organization
+who is responsible for the creation of the data, while an associated party would 
+be any person or organization which is associated to the dataset. The creator will also 
+be the contact for this datset. Multiple creators, associated parties, and a mixture
+of both can be appended to the EML file by providing all inputs in the "personnel"
+tab in the "example-metadata.xlsx" excel file. 
+
+```{r}
+adds_person <- function(first_name, last_name, email, role, organization, orcid) {
+  parent_element <- add_personnel(parent_element, first_name, last_name, email,
+                                  role, organization, orcid)
+}
+parent_element <- purrr::pmap(metadata$personnel, adds_person) %>% flatten()
+```
+
+### Title and Short Name 
+Following the personnel element, we can append the title elements. The `add_title` function 
+allows you to append the title and short name of the dataset to the file. 
+Only one title and short name should be appended. The title should be 
+fairly descriptive and between 7 and 20 words long. The short name must be less than
+the number of words present in the title and is your opportunity to give viewers a more 
+accessible name to the dataset. Again, this information can be added to the "title"
+tab in the excel file "example-metadata.xlsx".
+
+```{r, }
+parent_element <- add_title(parent_element = parent_element,
+                            title = metadata$title$title, 
+                            short_name = metadata$title$short_name)
+```
+
+### Keyword Set 
+The next item we will append is the keyword set. We can use the `add_keyword_set` 
+function to do so. The keyword set should include a list of words that help 
+identify your project or connect it with other similar projects. If you add keywords
+from a controlled vocabulary you must state what keyword thesaurus they belong to. 
+If keywords are not from a controlled vocabulary do not add a keyword thesaurus. 
+Multiple keyword sets can be provided. This information can 
+be added to the "keyword_set" tab in the excel file "example-metadata.xlsx".
+
+```{r}
+keyword_set <- metadata$keyword_set
+if (length(!is.na(keyword_set$keywordThesaurus)) == 0) {
+  parent_element <- add_keyword_set(parent_element, keyword_set[,1])
+  
+  
+} else {
+  thesaurus <- unique(keyword_set$keywordThesaurus)
+  for (i in 1:length(thesaurus)) {
+    keywords <- keyword_set$keyword[keyword_set$keywordThesaurus == thesaurus[i]]
+    parent_element <- add_keyword_set(parent_element = parent_element,
+                                      keyword_set = list(keyword = keywords,
+                                                         keywordThesaurus = thesaurus[i]))
+  }
+ }
+```
+
+### Abstract
+Next, we will use the `add_abstract` function to append the abstract of the dataset to 
+your file. The abstract should include basic information on the dataset that gives 
+a brief summary to the viewers of what they are observing from the data. This 
+information will not be added to the "example-metadata.xlsx" excel sheet, but rather the 
+"hannon_example_abstract.docx". The text provided can be deleted and replaced with your own. 
+
+```{r}
+parent_element <- add_abstract(parent_element = parent_element, 
+                               abstract = abstract_docx)
+```
+
+### License and Intellectual Rights
+Following the abstract, we will append the license and intellectual rights information. 
+The `add_license` function allows you to append the licensing and usage information 
+to your file. If you are not adding a CC0 or CCBY default license please see the 
+article that goes into depth on this section. This information can be added to the 
+"license" tab in the excel file "example-metadata.xlsx".
+
+```{r}
+parent_element <- add_license(parent_element = parent_element, 
+                              default_license = metadata$license$default_license)
+
+```
+
+### Methods
+The method section explains the scientific methods that were used in the collection of the dataset.
+The `add_method` function allows you to add a method file to the parent_element.
+A template methods document is given ("data-raw/Hannon-Example/hannon_example_methods.docx"). 
+If more methods are needed, you can create separate sections in your word document.
+
+```{r}
+parent_element$methods <- add_method(parent_element = parent_element,
+                                     methods_file = methods_docx)
+```
+
+### Maintenance 
+The maintenance of a dataset \strong(is simply if the data collection is complete or ongoing.)
+The `add_maintenance` function allows you to append the status of the dataset to
+your file and the inputs of `complete` and `ongoing` are the only ones allowed.
+If the dataset is still in progress, the frequency of which it is updated must 
+be provided as well. This information should be added to the "maintenance" tab 
+in the excel file "example-metadata.xlsx".
+
+```{r}
+parent_element <- add_maintenance(parent_element = parent_element, 
+                                  status = metadata$maintenance$status,
+                                  update_frequency = metadata$maintenance$update_frequency)
+```
+
+
+
+
+

@@ -137,61 +137,11 @@ of both can be appended to the EML file by providing all inputs in the "personne
 tab in the "example-metadata.xlsx" excel file. 
 
 ```{r}
-
-personnel_table <- metadata$personnel
-for (i in 1:nrow(personnel_table)) {
-  current <- personnel_table[i, ]
-  parent_element <- add_personnel(parent_element = parent_element,
-                             first_name = current$first_name, 
-                             last_name = current$last_name, 
-                             email = current$email,
-                             role = current$role, 
-                             organization = current$organization,
-                             orcid = current$orcid)
+adds_person <- function(first_name, last_name, email, role, organization, orcid) {
+  parent_element <- add_personnel(parent_element, first_name, last_name, email,
+                                  role, organization, orcid)
 }
-
-# parent_element <- list(parent_element, personnel)
-# 
-# parent_element2 <- add_pub_date(parent_element = list(), date = NULL)
-# apply_personnel = function(x){
-#   parent_element2 = add_personnel(parent_element = parent_element2,
-#                 first_name = x['first_name'],
-#                 last_name = x['last_name'],
-#                 email = x['email'],
-#                 role = x['role'],
-#                 organization = x['organization'],
-#                 orcid = x['orcid'])
-# }
-# 
-# element_list = apply(X = personnel_table, MARGIN = 1, FUN = apply_personnel)
-# 
-# 
-# purrr::map_df(personnel_table, add_personnel(parent_element = parent_element, 
-#                                   first_name = personnel_table$first_name, 
-#                                   last_name = personnel_table$last_name, 
-#                                   email = personnel_table$email,
-#                                   role = personnel_table$role, 
-#                                   organization = personnel_table$organization,
-#                                   orcid = personnel_table$orcid))
-# args <- list(personnel_table$first_name, personnel_table$last_name, personnel_table$email,
-#              personnel_table$role, personnel_table$organization, personnel_table$orcid)
-# purrr::pmap(list(personnel_table$first_name, personnel_table$last_name, personnel_table$email,
-#              personnel_table$role, personnel_table$organization, personnel_table$orcid), .f = add_personnel)
-# ```
-# ```{r}
-# parent_element <- list()
-# first_name <- personnel_table[['first_name']]
-# last_name <- personnel_table[["last_name"]]
-# email <- personnel_table[["email"]]
-# role <- personnel_table[["role"]]
-# organization <- personnel_table[["organization"]]
-# orcid <- personnel_table[["orcid"]]
-# 
-# args <- list(first_name, last_name, email, role, organization, orcid)
-# results <- purrr::pmap_int(args, add_personnel)
-# 
-# 
-# results[1]
+parent_element <- purrr::pmap(metadata$personnel, adds_person) %>% flatten()
 ```
 
 ### Title and Short Name 
@@ -220,9 +170,8 @@ be added to the "keyword_set" tab in the excel file "example-metadata.xlsx".
 
 ```{r}
 keyword_set <- metadata$keyword_set
-if (length(!is.na(metadata$keywordThesaurus)) == 0) {
-  parent_element <- add_keyword_set(parent_element = parent_element,
-                                    keyword_set = keyword_set[,1])
+if (length(!is.na(keyword_set$keywordThesaurus)) == 0) {
+  parent_element <- add_keyword_set(parent_element, keyword_set[,1])
 } else {
   thesaurus <- unique(keyword_set$keywordThesaurus)
   for (i in 1:length(thesaurus)) {
@@ -231,7 +180,11 @@ if (length(!is.na(metadata$keywordThesaurus)) == 0) {
                                       keyword_set = list(keyword = keywords,
                                                          keywordThesaurus = thesaurus[i]))
   }
- }
+}
+# purrr::pmap(keyword_set$keywordThesaurus, function(){
+#   keywords <- keyword_set$keyword[]
+# })
+
 ```
 
 ### Abstract
@@ -256,7 +209,6 @@ article that goes into depth on this section. This information can be added to t
 ```{r}
 parent_element <- add_license(parent_element = parent_element, 
                               default_license = metadata$license$default_license)
-
 ```
 
 ### Methods
@@ -296,23 +248,18 @@ project_title <- metadata$project$project_title
 
 #### Project personnel 
 ```{r}
-project_personnel_table <- metadata$project
-for (i in 1:nrow(project_personnel_table)) {
-  current <- project_personnel_table[i, ]
-  project_personnel <- add_personnel(parent_element = list(), 
-                                     first_name = current$first_name, 
-                                     last_name = current$last_name, 
-                                     email = current$email,
-                                     role = current$role, 
-                                     organization = current$organization,
-                                     orcid = current$orcid)
-}
-if (!is.null(project_personnel$associatedParty)) {
+project_table <- metadata$project %>% select(-project_title)
+adds_project_person <- function(first_name, last_name, email, role, organization, orcid) {
+  project_personnel <- add_personnel(list(), first_name, last_name, email,
+                                  role, organization, orcid)
+  if (!is.null(project_personnel$associatedParty)) {
   project_personnel <- project_personnel$associatedParty
-}
-if (!is.null(project_personnel$creator)){
+  }
+  if (!is.null(project_personnel$creator)){
   project_personnel <- project_personnel$creator
+  }
 }
+project_personnel <- purrr::pmap(project_table, adds_project_person) %>% flatten()
 ```
 
 #### Project funding 
@@ -322,26 +269,20 @@ you received the funding from. Multiple funders can be appended if necessary and
 information should be added to the "funding" tab in the excel file "example-metadata.xlsx".
 
 ```{r}
-funding_table <- metadata$funding
-for (i in 1:nrow(funding_table)) {
-  current <- funding_table[i, ]
-  award_information <- add_funding(funder_name = current$funder_name,
-                                   funder_identifier = current$funder_identifier,
-                                   award_number = current$award_number,
-                                   award_title = current$award_title,
-                                   award_url = current$award_url,
-                                   funding_description = current$funding_description)
-} 
+add_a_funder <- function(funder_name, funder_identifier, award_number, award_title, 
+                         award_url, funding_description) {
+  parent_element <- add_funding(funder_name, funder_identifier, award_number, award_title,
+                                award_url, funding_description)
+}
+parent_element <- purrr::pmap(metadata$funding, add_a_funder)
 ```
 
 #### Combining Project Elements
 Once all the components of project have been defined we can use the add_project
 function to combine the sections in the proper formatting for an EML document. 
 ```{r}
-parent_element <- add_project(parent_element = parent_element,
-                              project_title = project_title,
-                              award_information = award_information,
-                              project_personnel = project_personnel)
+parent_element <- add_project(parent_element, project_title, award_information,
+                              project_personnel)
 ``` 
 
 ### Coverage: Geographic, Temporal, Taxonomic 
@@ -376,31 +317,7 @@ for (i in 1:nrow(taxonomic_coverage_table)) {
     taxonomic_coverage <- append(taxonomic_coverage, list(new_taxon))
   }
 }
-## Attempted rewrite using map 
-# CVPIA_common_species = current[['CVPIA_common_species']]
-# kingdom_value = current[['kingdom_value']]
-# phylum_value = current[['phylum_value']]
-# class_value = current[['class_value']]
-# order_value = current[['order_value']]
-# family_value = current[['family_value']]
-# genus_value = current[['genus_value']]
-# species_value = current[['species_value']]
-# common_name = current[['common_name']]
-# taxon_id = current[['taxon_id']]
-# 
-# 
-# new_taxon <- purrr::pmap(list(CVPIA_common_species, 
-#                kingdom_value, 
-#                phylum_value, 
-#                class_value, 
-#                order_value, 
-#                family_value, 
-#                genus_value, 
-#                species_value, 
-#                common_name, 
-#                taxon_id), add_taxonomic_coverage)
-# 
-# new_taxon
+
 ```
 
 #### Combining Coverage Elements  
