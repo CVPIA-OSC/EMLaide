@@ -59,7 +59,7 @@ Four files must be uploaded to make a complete EML document.
 * An excel spreadsheet containing the majority of the metadata
 * A word document containing the abstract text 
 * A word document containing the methods text 
-* A file that contains the data (preferably csv if tabular data)
+* A file that contains the data (preferably csv if tabular data) and the name of the file 
 
 In addition to these four files a entity description and an EDI number must be defined. 
 The EDI number should be a unique data package identifier. You can reserve this 
@@ -86,7 +86,7 @@ dataset_file <- system.file("extdata", "Hannon-Example", "hannon_example_physica
 
 dataset_file_name <- "hannon_example_physical_data.csv"
 
-edi_number <- "edi.687.1"
+edi_number <- "edi.678.1"
 ```
 
 ```{r, eval = FALSE}
@@ -104,7 +104,7 @@ dataset_file <- "data-raw/Hannon-Example/hannon_example_physical_data.csv"
 
 dataset_file_name <- "hannon_example_physical_data.csv"
 
-edi_number <- "edi.687.1"
+edi_number <- "edi.678.1"
 ```
 ## EML Sections 
 We start with the simpler pieces of information such as `personnel` and `title` and 
@@ -124,7 +124,7 @@ the `add_pub_date` function. If no date is provided, it will automatically appen
 the current date. This can be overwritten by providing an input for `date`. 
 
 ```{r}
-parent_element <- add_pub_date(parent_element = list(), date = NULL)
+pub_date <- add_pub_date(list())
 ```
 
 ### Personnel: Creator, Contact, and Associated Parties. 
@@ -137,13 +137,13 @@ of both can be appended to the EML file by providing all inputs in the "personne
 tab in the "example-metadata.xlsx" excel file. 
 
 ```{r}
+personnel <- list()
 adds_person <- function(first_name, last_name, email, role, organization, orcid) {
-  parent_element <- add_personnel(parent_element, first_name, last_name, email,
+  personnel <- add_personnel(personnel, first_name, last_name, email,
                                   role, organization, orcid)
 }
-parent_element <- purrr::pmap(metadata$personnel, adds_person) %>% flatten()
+personnel <- purrr::pmap(metadata$personnel, adds_person) %>% flatten()
 ```
-
 ### Title and Short Name 
 Following the personnel element, we can append the title elements. The `add_title` function 
 allows you to append the title and short name of the dataset to the file. 
@@ -154,37 +154,19 @@ accessible name to the dataset. Again, this information can be added to the "tit
 tab in the excel file "example-metadata.xlsx".
 
 ```{r, }
-parent_element <- add_title(parent_element = parent_element,
-                            title = metadata$title$title, 
-                            short_name = metadata$title$short_name)
+title <- add_title(list(), title = metadata$title$title,  
+                   short_name = metadata$title$short_name)
 ```
 
 ### Keyword Set 
 The next item we will append is the keyword set. We can use the `add_keyword_set` 
 function to do so. The keyword set should include a list of words that help 
 identify your project or connect it with other similar projects. If you add keywords
-from a controlled vocabulary you must state what keyword thesaurus they belong to. 
-If keywords are not from a controlled vocabulary do not add a keyword thesaurus. 
-Multiple keyword sets can be provided. This information can 
-be added to the "keyword_set" tab in the excel file "example-metadata.xlsx".
+from a controlled vocabulary please see the detailed instructions on 
+[initial metadata information] (vignettes/Initial-Metadata-Information).
 
 ```{r}
-keyword_set <- metadata$keyword_set
-if (length(!is.na(keyword_set$keywordThesaurus)) == 0) {
-  parent_element <- add_keyword_set(parent_element, keyword_set[,1])
-} else {
-  thesaurus <- unique(keyword_set$keywordThesaurus)
-  for (i in 1:length(thesaurus)) {
-    keywords <- keyword_set$keyword[keyword_set$keywordThesaurus == thesaurus[i]]
-    parent_element <- add_keyword_set(parent_element = parent_element,
-                                      keyword_set = list(keyword = keywords,
-                                                         keywordThesaurus = thesaurus[i]))
-  }
-}
-# purrr::pmap(keyword_set$keywordThesaurus, function(){
-#   keywords <- keyword_set$keyword[]
-# })
-
+keywords <- add_keyword_set(list(), metadata$keyword_set[,1])
 ```
 
 ### Abstract
@@ -195,20 +177,17 @@ information will not be added to the "example-metadata.xlsx" excel sheet, but ra
 "hannon_example_abstract.docx". The text provided can be deleted and replaced with your own. 
 
 ```{r}
-parent_element <- add_abstract(parent_element = parent_element, 
-                               abstract = abstract_docx)
+abstract <- add_abstract(list(), abstract = abstract_docx)
 ```
 
 ### License and Intellectual Rights
 Following the abstract, we will append the license and intellectual rights information. 
 The `add_license` function allows you to append the licensing and usage information 
-to your file. If you are not adding a CC0 or CCBY default license please see the 
-article that goes into depth on this section. This information can be added to the 
+to your file. If you are not adding a CC0 or CCBY default license please see [initial metadata information] (vignettes/Initial-Metadata-Information). This information can be added to the 
 "license" tab in the excel file "example-metadata.xlsx".
 
 ```{r}
-parent_element <- add_license(parent_element = parent_element, 
-                              default_license = metadata$license$default_license)
+license <- add_license(list(), default_license = metadata$license$default_license)
 ```
 
 ### Methods
@@ -218,8 +197,7 @@ A template methods document is given ("data-raw/Hannon-Example/hannon_example_me
 If more methods are needed, you can create separate sections in your word document.
 
 ```{r}
-parent_element$methods <- add_method(parent_element = parent_element,
-                                     methods_file = methods_docx)
+methods <- add_method(list(), methods_file = methods_docx)
 ```
 
 ### Maintenance 
@@ -231,9 +209,8 @@ be provided as well. This information should be added to the "maintenance" tab
 in the excel file "example-metadata.xlsx".
 
 ```{r}
-parent_element <- add_maintenance(parent_element = parent_element, 
-                                  status = metadata$maintenance$status,
-                                  update_frequency = metadata$maintenance$update_frequency)
+maintenance <- add_maintenance(list(), status = metadata$maintenance$status,
+                               update_frequency = metadata$maintenance$update_frequency)
 ```
 
 ### Project: Title, Personnel, and Funding 
@@ -246,11 +223,13 @@ must contain a project title, a project personnel, and project funding.
 project_title <- metadata$project$project_title
 ```
 
+
 #### Project personnel 
 ```{r}
 project_table <- metadata$project %>% select(-project_title)
+project_personnel <- list()
 adds_project_person <- function(first_name, last_name, email, role, organization, orcid) {
-  project_personnel <- add_personnel(list(), first_name, last_name, email,
+  project_personnel <- add_personnel(project_personnel, first_name, last_name, email,
                                   role, organization, orcid)
   if (!is.null(project_personnel$associatedParty)) {
   project_personnel <- project_personnel$associatedParty
@@ -258,6 +237,7 @@ adds_project_person <- function(first_name, last_name, email, role, organization
   if (!is.null(project_personnel$creator)){
   project_personnel <- project_personnel$creator
   }
+  return(project_personnel)
 }
 project_personnel <- purrr::pmap(project_table, adds_project_person) %>% flatten()
 ```
@@ -271,18 +251,21 @@ information should be added to the "funding" tab in the excel file "example-meta
 ```{r}
 add_a_funder <- function(funder_name, funder_identifier, award_number, award_title, 
                          award_url, funding_description) {
-  parent_element <- add_funding(funder_name, funder_identifier, award_number, award_title,
+  award_information <- add_funding(funder_name, funder_identifier, award_number, award_title,
                                 award_url, funding_description)
 }
-parent_element <- purrr::pmap(metadata$funding, add_a_funder)
+
+award_information <- purrr::pmap(metadata$funding, add_a_funder) %>% flatten()
 ```
 
 #### Combining Project Elements
 Once all the components of project have been defined we can use the add_project
 function to combine the sections in the proper formatting for an EML document. 
 ```{r}
-parent_element <- add_project(parent_element, project_title, award_information,
-                              project_personnel)
+project <- add_project(list(),
+                       project_title, 
+                       award_information,
+                       project_personnel)
 ``` 
 
 ### Coverage: Geographic, Temporal, Taxonomic 
@@ -297,46 +280,23 @@ excel file on the tab "taxonomic_coverage". chinook, delta_smelt, steelhead,
 white_sturgeon, and green_sturgeon are all default options that can be selected 
 using the drop down menu under the CVPIA_common_species column.
 ```{r}
-taxonomic_coverage <- list()
-taxonomic_coverage_table <- metadata$taxonomic_coverage
-for (i in 1:nrow(taxonomic_coverage_table)) {
-  current <- taxonomic_coverage_table[i, ]
-  new_taxon <- add_taxonomic_coverage(CVPIA_common_species = current$CVPIA_common_species,
-                                     kingdom_value = current$kingdom_value,
-                                     phylum_value = current$phylum_value,
-                                     class_value = current$class_value,
-                                     order_value = current$order_value,
-                                     family_value = current$family_value,
-                                     genus_value = current$genus_value,
-                                     species_value = current$species_value,
-                                     common_name = current$common_name,
-                                     taxon_id = current$taxon_id)
-  if (is.null(taxonomic_coverage)) {
-    taxonomic_coverage <- list(new_taxon)
-  } else {
-    taxonomic_coverage <- append(taxonomic_coverage, list(new_taxon))
-  }
-}
-
+taxonomic_coverage <- purrr::pmap(metadata$taxonomic_coverage, add_taxonomic_coverage)
 ```
 
 #### Combining Coverage Elements  
 The `add_coverage` function will add all the elements of coverage to the parent 
 element. 
 ```{r}
-coverage_table <- metadata$coverage
-for (i in 1:nrow(coverage_table)) {
-  current <- coverage_table[i, ]
-  parent_element <- add_coverage(parent_element = parent_element,
-                                 geographic_description = current$geographic_description,
-                                 west_bounding_coordinate = current$west_bounding_coordinate,
-                                 east_bounding_coordinate = current$east_bounding_coordinate,
-                                 north_bounding_coordinate = current$north_bounding_coordinate,
-                                 south_bounding_coordinate = current$south_bounding_coordinate,
-                                 begin_date = current$begin_date,
-                                 end_date = current$end_date,
-                                 taxonomic_coverage = taxonomic_coverage)
-} 
+coverage <- add_coverage(list(),
+                         geographic_description = metadata$coverage$geographic_description,
+                         west_bounding_coordinate = metadata$coverage$west_bounding_coordinate,
+                         east_bounding_coordinate = metadata$coverage$east_bounding_coordinate,
+                         north_bounding_coordinate = metadata$coverage$north_bounding_coordinate,
+                         south_bounding_coordinate = metadata$coverage$south_bounding_coordinate,
+                         begin_date = metadata$coverage$begin_date,
+                         end_date = metadata$coverage$end_date,
+                         taxonomic_coverage = taxonomic_coverage)
+
 ```
 
 ### Data Table 
@@ -353,8 +313,7 @@ and all parameters will be appended, gathering the csv's unique size and
 authentication, as well as providing the default physical values of a csv. 
 
 ```{r}
-physical <- add_physical(file_path = dataset_file, 
-                         data_url = current$data_url)
+physical <- add_physical(file_path = dataset_file)
 ```
 
 If you wish to provide alternative information than the defaults of a csv, you must do
@@ -376,49 +335,32 @@ column in the dataTable must have a described attribute to match EDI congruence 
 ```{r}
 attribute_table <- metadata$attribute
 codes <- metadata$code_definitions
-
 attribute_list <- list()
-attribute_names <- unique(codes$attribute_name)
 
-for (i in 1:nrow(attribute_table)) {
-  current <- attribute_table[i, ]
-  if (current$domain %in% "enumerated") { 
-    definition <- list()
-    current_codes <- codes[codes$attribute_name == current$attribute_name, ]
-    for (j in 1:nrow(current_codes)) {
-      codeDefinition <- list(code = current_codes$code[j], definition = current_codes$definitions[j])
-      if (is.null(definition$codeDefinition)) {
-        definition$codeDefinition <- codeDefinition
-      } else {
-        definition$codeDefinition <- list(definition$codeDefinition, codeDefinition)
-      }
-    }
-  } else {
-    definition = current$attribute_definition
-  }
-  new_attribute <- add_attribute(attribute_name = current$attribute_name,
-                                 attribute_definition = current$attribute_definition,
-                                 storage_type = current$storage_type,
-                                 measurement_scale = current$measurement_scale,
-                                 domain = current$domain,
-                                 definition = definition,
-                                 type = current$type,
-                                 units = current$units,
-                                 unit_precision = current$unit_precision,
-                                 number_type = current$number_type,
-                                 date_time_format = current$date_time_format,
-                                 date_time_precision = current$date_time_precision,
-                                 minimum = current$minimum,
-                                 maximum = current$maximum,
-                                 attribute_label = current$attribute_label)
-  if (is.null(attribute_list$attribute)) {
-    attribute_list$attribute <- new_attribute
-  } else {
-    attribute_list$attribute <- list(attribute_list$attribute, new_attribute)
-  }
+code_helper <- function(code, definitions) {
+  codeDefinition <- list(code = code, definition = definitions)
 }
-```
 
+attributes_and_codes <- function(attribute_name, attribute_definition, storage_type, 
+                                 measurement_scale, domain, type, units, unit_precision, 
+                                 number_type, date_time_format, date_time_precision, minimum, maximum, attribute_label){
+  if (domain %in% "enumerated") { 
+    definition <- list()
+    current_codes <- codes[codes$attribute_name == attribute_name, ]
+    definition$codeDefinition <- purrr::pmap(current_codes %>% select(-attribute_name), code_helper) 
+  } else {
+    definition = attribute_definition
+  }
+  new_attribute <- add_attribute(attribute_name = attribute_name, attribute_definition = attribute_definition,
+                                 storage_type = storage_type, measurement_scale = measurement_scale, domain = domain,
+                                 definition = definition, type = type, units = units, unit_precision = unit_precision,
+                                 number_type = number_type, date_time_format = date_time_format,
+                                 date_time_precision = date_time_precision, minimum = minimum, maximum = maximum,
+                                 attribute_label = attribute_label)
+}
+
+attribute_list$attribute <- purrr::pmap(attribute_table, attributes_and_codes) 
+```
 #### Putting the Data Table Together
 Now that we have the `attribute_list` and `physical` information, we 
 can compose the data table, which is the last element we need to create our 
@@ -426,12 +368,30 @@ working EML file. If you wish to append multiple datatables to one datapackage p
 contact CVPIA data guidance and we will help you do so properly. 
 
 ```{r}
-parent_element$dataTable <- list(entityName = dataset_file_name,
-                                 entityDescription = metadata$dataset$name,
-                                 physical = physical,
-                                 attributeList = attribute_list)
-```
+dataTable = list(entityName = dataset_file_name,
+                 entityDescription = metadata$dataset$name,
+                 physical = physical,
+                 attributeList = attribute_list)
 
+```
+## Append all items to the dataset
+```{r}
+dataset <- list(title = title$title,
+                shortName = title$shortName,
+                creator = personnel$creator,
+                contact = personnel$contact,
+                pubDate = pub_date,
+                abstract = abstract$abstract,
+                associatedParty = list(personnel[[3]], personnel[[4]], personnel[[5]]),
+                keywordSet = keywords$keywordSet,
+                coverage = coverage$coverage,
+                intellectualRights = license$intellectualRights,
+                licensed = license$licensed,
+                methods = methods,
+                maintenance = maintenance$maintenance,
+                dataTable = dataTable) 
+
+```
 ## Making the EML document 
 Now that we have all of the items appended to the `parent_element`, we must append it 
 to the "dataset" and also give the file a unique ID number. The unique id number should 
@@ -441,7 +401,7 @@ document where you define the data tables.
 eml <- list(packageId = edi_number,
             system = "EDI",
             access = access,
-            dataset = parent_element)
+            dataset = dataset)
 ```
 We now have all necessary elements to create a working EML document. The final step is to convert it into the correct format. To do so, we can use the EML library's `write_eml` function. 
 ```{r, eval = FALSE}
