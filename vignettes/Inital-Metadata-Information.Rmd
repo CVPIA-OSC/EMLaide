@@ -1,5 +1,5 @@
 ---
-title: "Inital Metadata Information"
+title: "Details on Inital Metadata Components"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{Inital-Metadata-Information}
@@ -17,7 +17,35 @@ library(tidyverse)
 library(readxl)
 library(EML)
 ```
-### Access Permissions 
+
+```{r, include = FALSE}
+excel_path <- system.file("extdata", "Hannon-Example", "example-metadata.xlsx", 
+                          package = "EDIutils", mustWork = TRUE)
+
+sheets <- readxl::excel_sheets(excel_path)
+metadata <- lapply(sheets, function(x) readxl::read_excel(excel_path, sheet = x))
+names(metadata) <- sheets
+
+abstract_docx <- system.file("extdata", "Hannon-Example", "hannon_example_abstract.docx", 
+                             package = "EDIutils", mustWork = TRUE)
+
+methods_docx <- system.file("extdata", "Hannon-Example", "hannon_example_methods.docx", 
+                            package = "EDIutils", mustWork = TRUE)
+
+dataset_file <- system.file("extdata", "Hannon-Example", "hannon_example_physical_data.csv",
+                               package = "EDIutils", mustWork = TRUE)
+
+dataset_file_name <- "hannon_example_physical_data.csv"
+
+edi_number <- "edi.678.1"
+```
+# Custom inputs to the initial metadata information 
+
+This document gives more in depth examples on how to use the `add_access`, `add_pub_date`,
+`add_keywords`, and `add_license` elements. 
+
+## Access Permissions 
+### Default Permissions
 The `add_access` adds an access section at the beginning of our EML document. The 
 `add_access` default is public principal with a read permission. 
 
@@ -25,122 +53,99 @@ The `add_access` adds an access section at the beginning of our EML document. Th
 access <- add_access()
 ```
 
-### Publication Date 
+### Custom Permissions 
+If you would like to change the principle and permissions for access please specify a 
+valid principle and permission. 
+The valid options for principal are:
+
+  * 'public' - special principal indicate that any user or group has a particular access permission   
+  * other individual users or groups can be specified if they are defined in the PASTA EDI authentication 
+   system. Read the [PASTA documentation](https://pastaplus-core.readthedocs.io/_/downloads/en/latest/pdf/) for more information 
+   
+The valid options for permission are:  
+
+  * 'read' - allow viewing of the resource, 
+  * 'write' - allow modification of the resource (except for access rules),   
+  * 'changePermission' - modifications including access rules, and  
+  * 'all' - all of the above.
+
+The example below shows the `add_access` function taking in a public principle with a permission of all. 
+```{r}
+access <- add_access(allow_principal = "public", allow_permission = "all")
+```
+
+## Publication Date 
+### Default Publication Date
 The publication date does not have a tab in the excel sheet, but is simply added with 
 the `add_pub_date` function. If no date is provided, it will automatically append
 the current date. This can be overwritten by providing an input for `date`. 
 
 ```{r}
-parent_element <- add_pub_date(parent_element = list(), date = NULL)
+publication_date <- add_pub_date(list())
 ```
 
-### Personnel: Creator, Contact, and Associated Parties. 
-The `add_personnel` function allows you to append information on the creator or
-the associated parties to your file. The creator would be any person or organization
-who is responsible for the creation of the data, while an associated party would 
-be any person or organization which is associated to the dataset. The creator will also 
-be the contact for this datset. Multiple creators, associated parties, and a mixture
-of both can be appended to the EML file by providing all inputs in the "personnel"
-tab in the "example-metadata.xlsx" excel file. 
-
+### Custom Publication Date 
+If you wish to provide an input for date please do so using a date in international date 
+format (ISO). A date in ISO format lists year, month and day as follows: "YYYY-MM-DD". The example 
+below uses `add_pub_date` to add a custom date. 
 ```{r}
-adds_person <- function(first_name, last_name, email, role, organization, orcid) {
-  parent_element <- add_personnel(parent_element, first_name, last_name, email,
-                                  role, organization, orcid)
-}
-parent_element <- purrr::pmap(metadata$personnel, adds_person) %>% flatten()
+publication_date <- add_pub_date(list(), date = "2020-08-19")
 ```
 
-### Title and Short Name 
-Following the personnel element, we can append the title elements. The `add_title` function 
-allows you to append the title and short name of the dataset to the file. 
-Only one title and short name should be appended. The title should be 
-fairly descriptive and between 7 and 20 words long. The short name must be less than
-the number of words present in the title and is your opportunity to give viewers a more 
-accessible name to the dataset. Again, this information can be added to the "title"
-tab in the excel file "example-metadata.xlsx".
-
-```{r, }
-parent_element <- add_title(parent_element = parent_element,
-                            title = metadata$title$title, 
-                            short_name = metadata$title$short_name)
-```
-
-### Keyword Set 
+## Keyword Set 
+### Keywords that do not come from a controlled vocabulary 
 The next item we will append is the keyword set. We can use the `add_keyword_set` 
 function to do so. The keyword set should include a list of words that help 
-identify your project or connect it with other similar projects. If you add keywords
-from a controlled vocabulary you must state what keyword thesaurus they belong to. 
-If keywords are not from a controlled vocabulary do not add a keyword thesaurus. 
-Multiple keyword sets can be provided. This information can 
+identify your project or connect it with other similar projects. This information can 
 be added to the "keyword_set" tab in the excel file "example-metadata.xlsx".
 
 ```{r}
 keyword_set <- metadata$keyword_set
-if (length(!is.na(keyword_set$keywordThesaurus)) == 0) {
-  parent_element <- add_keyword_set(parent_element, keyword_set[,1])
-  
-  
-} else {
-  thesaurus <- unique(keyword_set$keywordThesaurus)
-  for (i in 1:length(thesaurus)) {
-    keywords <- keyword_set$keyword[keyword_set$keywordThesaurus == thesaurus[i]]
-    parent_element <- add_keyword_set(parent_element = parent_element,
-                                      keyword_set = list(keyword = keywords,
-                                                         keywordThesaurus = thesaurus[i]))
-  }
- }
+keywords <- add_keyword_set(list(), keyword_set[,1])
 ```
 
-### Abstract
-Next, we will use the `add_abstract` function to append the abstract of the dataset to 
-your file. The abstract should include basic information on the dataset that gives 
-a brief summary to the viewers of what they are observing from the data. This 
-information will not be added to the "example-metadata.xlsx" excel sheet, but rather the 
-"hannon_example_abstract.docx". The text provided can be deleted and replaced with your own. 
+### Keywords from a controlled vocabulary
+If you add keywords
+from a controlled vocabulary you must state what keyword thesaurus they belong to. 
+Multiple keyword sets can be provided. This information can 
+be added to the "keyword_set" tab in the excel file "example-metadata.xlsx".
 
-```{r}
-parent_element <- add_abstract(parent_element = parent_element, 
-                               abstract = abstract_docx)
+```{r, eval = FALSE}
+unique_thesaurus <- unique(metadata$keyword_set$keywordThesaurus)
+keywords <- list()
+add_keywords = function(unique_thesaurus){
+  keywords <- add_keyword_set(keywords, 
+                              keyword_set = list(keyword = metadata$keyword_set$keyword[keyword_set$keywordThesaurus == unique_thesaurus],
+                                                 keywordThesaurus = unique_thesaurus))
+}
+all_keywords <- purrr::map(unique_thesaurus, add_keywords) %>% flatten()
 ```
 
-### License and Intellectual Rights
-Following the abstract, we will append the license and intellectual rights information. 
+## License and Intellectual Rights
+### Default Licenses 
 The `add_license` function allows you to append the licensing and usage information 
-to your file. If you are not adding a CC0 or CCBY default license please see the 
-article that goes into depth on this section. This information can be added to the 
-"license" tab in the excel file "example-metadata.xlsx".
+to your file.  Both the CC0 and CCBY licenses can be chosen as defaults using 
+this function, and the rest of the information will be appended for you. This information 
+can be added to the "license" tab in the excel file "example-metadata.xlsx".
 
 ```{r}
-parent_element <- add_license(parent_element = parent_element, 
-                              default_license = metadata$license$default_license)
+license <- add_license(list(), 
+                       default_license = metadata$license$default_license)
 
 ```
 
-### Methods
-The method section explains the scientific methods that were used in the collection of the dataset.
-The `add_method` function allows you to add a method file to the parent_element.
-A template methods document is given ("data-raw/Hannon-Example/hannon_example_methods.docx"). 
-If more methods are needed, you can create separate sections in your word document.
+### Custom Licenses 
+If a default license is not being used, then the other inputs need to be provided in 
+the "license" tab in the excel file "example-metadata.xlsx". 
+```{r, eval = FALSE}
+license <- add_license(list(),
+                       license_name = metadata$license$license_name,
+                       license_url = metadata$license$license_url,
+                       license_identifier = metadata$license$license_identifier,
+                       intellectual_rights_description = metadata$license$intellectual_rights_description)
 
-```{r}
-parent_element$methods <- add_method(parent_element = parent_element,
-                                     methods_file = methods_docx)
 ```
 
-### Maintenance 
-The maintenance of a dataset \strong(is simply if the data collection is complete or ongoing.)
-The `add_maintenance` function allows you to append the status of the dataset to
-your file and the inputs of `complete` and `ongoing` are the only ones allowed.
-If the dataset is still in progress, the frequency of which it is updated must 
-be provided as well. This information should be added to the "maintenance" tab 
-in the excel file "example-metadata.xlsx".
-
-```{r}
-parent_element <- add_maintenance(parent_element = parent_element, 
-                                  status = metadata$maintenance$status,
-                                  update_frequency = metadata$maintenance$update_frequency)
-```
 
 
 
