@@ -49,8 +49,8 @@ please see section specific articles.
 ```
 
 ## Our Example 
-We will use the data provided by John Hannon to show an example of how to put the
-metadata together in a way which can be uploaded to the EDI data portal website. 
+We will use the data provided by John Hannon to show an example of how to compile
+metadata in a valid EML document that can be uploaded to the EDI data portal website. 
 The excel sheet of which Hannon's data resides is found in "~/data-raw/Hannon-Example/example-metadata.xlsx". 
 
 ## Required Files 
@@ -119,7 +119,7 @@ access <- add_access()
 ```
 
 ### Publication Date 
-The publication date does not have a tab in the excel sheet, but is simply added with 
+The publication date is simply added with 
 the `add_pub_date` function. If no date is provided, it will automatically append
 the current date. This can be overwritten by providing an input for `date`. 
 
@@ -144,13 +144,14 @@ adds_person <- function(first_name, last_name, email, role, organization, orcid)
 }
 personnel <- purrr::pmap(metadata$personnel, adds_person) %>% flatten()
 ```
+
 ### Title and Short Name 
 Following the personnel element, we can append the title elements. The `add_title` function 
 allows you to append the title and short name of the dataset to the file. 
 Only one title and short name should be appended. The title should be 
 fairly descriptive and between 7 and 20 words long. The short name must be less than
 the number of words present in the title and is your opportunity to give viewers a more 
-accessible name to the dataset. Again, this information can be added to the "title"
+accessible name to the dataset. This information can be added to the "title"
 tab in the excel file "example-metadata.xlsx".
 
 ```{r, }
@@ -163,7 +164,7 @@ The next item we will append is the keyword set. We can use the `add_keyword_set
 function to do so. The keyword set should include a list of words that help 
 identify your project or connect it with other similar projects. If you add keywords
 from a controlled vocabulary please see the detailed instructions on 
-[initial metadata information] (vignettes/Initial-Metadata-Information).
+[initial metadata information](Initial-Metadata-Information.Rmd).
 
 ```{r}
 keywords <- add_keyword_set(list(), metadata$keyword_set[,1])
@@ -183,7 +184,7 @@ abstract <- add_abstract(list(), abstract = abstract_docx)
 ### License and Intellectual Rights
 Following the abstract, we will append the license and intellectual rights information. 
 The `add_license` function allows you to append the licensing and usage information 
-to your file. If you are not adding a CC0 or CCBY default license please see [initial metadata information] (vignettes/Initial-Metadata-Information). This information can be added to the 
+to your file. If you are not adding a CC0 or CCBY default license please see [initial metadata information](Initial-Metadata-Information.Rmd) This information can be added to the 
 "license" tab in the excel file "example-metadata.xlsx".
 
 ```{r}
@@ -216,7 +217,8 @@ maintenance <- add_maintenance(list(), status = metadata$maintenance$status,
 ### Project: Title, Personnel, and Funding 
 The project section should be appended next. Project personnel and project funding 
 are nested in this project section. To generate a valid EML doc the project section 
-must contain a project title, a project personnel, and project funding. 
+must contain a project title, a project personnel, and project funding. For more detailed 
+information on the project section of the EML please visit the [project specific instructions](Project-Element.Rmd).
 
 #### Project title
 ```{r}
@@ -303,33 +305,25 @@ coverage <- add_coverage(list(),
 Next, we need to create the data table. The data table element includes`physical`, `attribute_list`, 
 and potentially additional information for Spatial Data. These sections are all lists 
 which must be created first, appended to a dataTable, and then appended to 
-the `parent_element`.
+the `parent_element`. For more detailed information on the datatable element and 
+instructions on appending multiple datatables please see the [dataset specific instructions](Dataset-Element.Rmd).
 
 #### Physical 
 The physical element can be created first using the `add_physical` function. 
-This will append information on the actual physical information of the data. 
-The file path of the data can be added to the "example-metadata.xlsx" excel file 
-and all parameters will be appended, gathering the csv's unique size and 
-authentication, as well as providing the default physical values of a csv. 
+This will append the actual information of the data. 
+The file path of the data must be given as the `dataset_file` specified at the top of this document.  
 
 ```{r}
 physical <- add_physical(file_path = dataset_file)
 ```
 
-If you wish to provide alternative information than the defaults of a csv, you must do
-so manually in Rstudio using the `add_physical` function fully. It is not recommended 
-that you do so, however, as the default values present represent the best practices 
-in most cases. 
-
 #### Attribute List 
-Next, we will need to append an attribute list to the data table. We will be able 
-to use the `add_attribute` function to do so. Please make sure you review what 
+Next, we use the `add_attribute` function to append all attributes to an attribute list. Please make sure you review what 
 type of attribute you are providing and what inputs are necessary. These values 
 can then be inputted into the "attribute" tab in the "example-metadata.xlsx" excel file. If you
 are using a "nominal" or "ordinal" attribute which is "enumerated", (it has a specific 
-code definition), please also use the tab "code_definitions". Provide each
-unique code and definition, with its `attribute_name` aligning to that which is in the
-"attribute" tab. An example is present currently to help better showcase this. Every single 
+code definition), you must also fill out the tab "code_definitions". Give the `attribute_name` and the 
+unique code and definition for every attribute that is "enumerated". Every single 
 column in the dataTable must have a described attribute to match EDI congruence checker. 
 
 ```{r}
@@ -343,7 +337,8 @@ code_helper <- function(code, definitions) {
 
 attributes_and_codes <- function(attribute_name, attribute_definition, storage_type, 
                                  measurement_scale, domain, type, units, unit_precision, 
-                                 number_type, date_time_format, date_time_precision, minimum, maximum, attribute_label){
+                                 number_type, date_time_format, date_time_precision, minimum, maximum, 
+                                 attribute_label){
   if (domain %in% "enumerated") { 
     definition <- list()
     current_codes <- codes[codes$attribute_name == attribute_name, ]
@@ -352,11 +347,11 @@ attributes_and_codes <- function(attribute_name, attribute_definition, storage_t
     definition = attribute_definition
   }
   new_attribute <- add_attribute(attribute_name = attribute_name, attribute_definition = attribute_definition,
-                                 storage_type = storage_type, measurement_scale = measurement_scale, domain = domain,
-                                 definition = definition, type = type, units = units, unit_precision = unit_precision,
-                                 number_type = number_type, date_time_format = date_time_format,
-                                 date_time_precision = date_time_precision, minimum = minimum, maximum = maximum,
-                                 attribute_label = attribute_label)
+                                 storage_type = storage_type, measurement_scale = measurement_scale, 
+                                 domain = domain, definition = definition, type = type, units = units, 
+                                 unit_precision = unit_precision, number_type = number_type, 
+                                 date_time_format = date_time_format, date_time_precision = date_time_precision, 
+                                 minimum = minimum, maximum = maximum, attribute_label = attribute_label)
 }
 
 attribute_list$attribute <- purrr::pmap(attribute_table, attributes_and_codes) 
@@ -364,8 +359,8 @@ attribute_list$attribute <- purrr::pmap(attribute_table, attributes_and_codes)
 #### Putting the Data Table Together
 Now that we have the `attribute_list` and `physical` information, we 
 can compose the data table, which is the last element we need to create our 
-working EML file. If you wish to append multiple datatables to one datapackage please 
-contact CVPIA data guidance and we will help you do so properly. 
+working EML file. If you wish to append multiple datatables to one datapackage please view the 
+[detailed dataset instructions](Dataset-Element.Rmd). 
 
 ```{r}
 dataTable = list(entityName = dataset_file_name,
@@ -375,6 +370,7 @@ dataTable = list(entityName = dataset_file_name,
 
 ```
 ## Append all items to the dataset
+Here we  create a datasest list that contains all of the elements we generated.
 ```{r}
 dataset <- list(title = title$title,
                 shortName = title$shortName,
@@ -393,9 +389,8 @@ dataset <- list(title = title$title,
 
 ```
 ## Making the EML document 
-Now that we have all of the items appended to the `parent_element`, we must append it 
-to the "dataset" and also give the file a unique ID number. The unique id number should 
-match one that you reserved on the EDI data portal. Input this at the top of the 
+Now that we have all of the items appended to the `dataset` we can add the dataset, id, and access to a new list named eml. 
+The unique id number should match one that you reserved on the EDI data portal. Input this at the top of the 
 document where you define the data tables. 
 ```{r}
 eml <- list(packageId = edi_number,
@@ -403,7 +398,7 @@ eml <- list(packageId = edi_number,
             access = access,
             dataset = dataset)
 ```
-We now have all necessary elements to create a working EML document. The final step is to convert it into the correct format. To do so, we can use the EML library's `write_eml` function. 
+The final step is to convert our `eml` list into the correct format. To do so, we can use the EML library's `write_eml` function. 
 ```{r, eval = FALSE}
 file_name <- paste(edi_number, "xml", sep = ".")
 EML::write_eml(eml, file_name)
