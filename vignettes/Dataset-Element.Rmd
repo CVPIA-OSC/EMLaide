@@ -19,32 +19,83 @@ library(EML)
 ```
 
 # Dataset Element 
+This document explains how to add multiple datasets to one EML document and how to 
+add non tabular data to an EML document. 
 
 ## Multiple datsets for one data package
 ## Diffrent types of datasets 
-```{r, include = FALSE}
+```{r, warning=F, include=False}
 excel_path <- system.file("extdata", "Hannon-Example", "example-metadata.xlsx", 
                           package = "EDIutils", mustWork = TRUE)
 
 sheets <- readxl::excel_sheets(excel_path)
-metadata <- lapply(sheets, function(x) readxl::read_excel(excel_path, sheet = x))
-names(metadata) <- sheets
+metadata_sheets <- lapply(sheets, function(x) readxl::read_excel(excel_path, sheet = x))
+names(metadata_sheets) <- sheets
 
 abstract_docx <- system.file("extdata", "Hannon-Example", "hannon_example_abstract.docx", 
                              package = "EDIutils", mustWork = TRUE)
 
 methods_docx <- system.file("extdata", "Hannon-Example", "hannon_example_methods.docx", 
                             package = "EDIutils", mustWork = TRUE)
+edi_number = "edi.687.1"
+```
 
-dataset_file <- system.file("extdata", "Hannon-Example", "hannon_example_physical_data.csv",
-                               package = "EDIutils", mustWork = TRUE)
+```{r, eval = FALSE}
+excel_path <- "data-raw/Hannon-Example/example-metadata.xlsx"
+
+sheets <- readxl::excel_sheets(excel_path)
+metadata <- lapply(sheets, function(x) readxl::read_excel(excel_path, sheet = x))
+names(metadata) <- sheets
+
+abstract_docx <- "data-raw/Hannon-Example/hannon_example_abstract.docx"
+
+methods_docx <- "data-raw/Hannon-Example/hannon_example_methods.docx"
+
+dataset_file <- "data-raw/Hannon-Example/hannon_example_physical_data.csv"
 
 dataset_file_name <- "hannon_example_physical_data.csv"
 
-edi_number <- "edi.687.1"
-
-parent_element <- list()
+edi_number <- "edi.678.1"
 ```
+
+The files added below: 
+
+* One or more data files (preferably csv if tabular data) 
+
+In this example we included two datasets by creating a nested list of the datasets. 
+
+Each named dataset list includes:
+
+* A `datatable` element which is the file path to the datatable
+* A `datatable_name`
+* An `attribute` section that reads in the attribute table for the dataset 
+* The `code` section that reads in the attribute codes for the dataset
+* (Optional) `dataset_methods` section that reads file path to dataset specific methods
+* (Optional) `additional_information` If additional information is pertinent to the entry please add it as a string description. 
+
+In this example there are no dataset specific methods or additional information so those fields are NULL. 
+
+To add more than two datasets please follow the same structure adding additional 
+named lists within the dataset files list. 
+```{r}
+dataset_files <- list("snorkel data" = list(datatable = system.file("extdata", "Hannon-Example", 
+                                                                    "hannon_example_physical_data.csv",
+                                                        package = "EDIutils", mustWork = TRUE),
+                                            datatable_name = "hannon_example_snorkel_data.csv",
+                                            attribute = metadata_sheets$attribute,
+                                            code = metadata_sheets$code_definitions,
+                                            dataset_methods = NULL,
+                                            additional_info = NULL), 
+                      "predator data" = list(datatable = system.file("extdata", "Hannon-Example", 
+                                                                     "hannon_example_physical_data.csv",
+                                                         package = "EDIutils", mustWork = TRUE),
+                                             datatable_name = "hannon_example_predator_data.csv",
+                                             attribute = metadata_sheets$attribute,
+                                             code = metadata_sheets$code_definitions,
+                                             dataset_methods = NULL,
+                                             additional_info = NULL))
+```
+
 ### Data Table 
 Next, we need to create the data table. The data table element includes`physical`, `attribute_list`, 
 and potentially additional information for Spatial Data. These sections are all lists 
@@ -81,69 +132,56 @@ column in the dataTable must have a described attribute to match EDI congruence 
 ```{r}
 attribute_table <- metadata$attribute
 codes <- metadata$code_definitions
-
 attribute_list <- list()
-attribute_names <- unique(codes$attribute_name)
 
-for (i in 1:nrow(attribute_table)) {
-  current <- attribute_table[i, ]
-  if (current$domain %in% "enumerated") { 
-    definition <- list()
-    current_codes <- codes[codes$attribute_name == current$attribute_name, ]
-    for (j in 1:nrow(current_codes)) {
-      codeDefinition <- list(code = current_codes$code[j], definition = current_codes$definitions[j])
-      if (is.null(definition$codeDefinition)) {
-        definition$codeDefinition <- codeDefinition
-      } else {
-        definition$codeDefinition <- list(definition$codeDefinition, codeDefinition)
-      }
-    }
-  } else {
-    definition = current$attribute_definition
-  }
-  new_attribute <- add_attribute(attribute_name = current$attribute_name,
-                                 attribute_definition = current$attribute_definition,
-                                 storage_type = current$storage_type,
-                                 measurement_scale = current$measurement_scale,
-                                 domain = current$domain,
-                                 definition = definition,
-                                 type = current$type,
-                                 units = current$units,
-                                 unit_precision = current$unit_precision,
-                                 number_type = current$number_type,
-                                 date_time_format = current$date_time_format,
-                                 date_time_precision = current$date_time_precision,
-                                 minimum = current$minimum,
-                                 maximum = current$maximum,
-                                 attribute_label = current$attribute_label)
-  if (is.null(attribute_list$attribute)) {
-    attribute_list$attribute <- new_attribute
-  } else {
-    attribute_list$attribute <- list(attribute_list$attribute, new_attribute)
-  }
+code_helper <- function(code, definitions) {
+  codeDefinition <- list(code = code, definition = definitions)
 }
+attributes_and_codes <- function(attribute_name, attribute_definition, storage_type, 
+                                 measurement_scale, domain, type, units, unit_precision, 
+                                 number_type, date_time_format, date_time_precision, minimum, maximum, 
+                                 attribute_label){
+  if (domain %in% "enumerated") { 
+    definition <- list()
+    current_codes <- codes[codes$attribute_name == attribute_name, ]
+    definition$codeDefinition <- purrr::pmap(current_codes %>% select(-attribute_name), code_helper) 
+  } else {
+    definition = attribute_definition
+  }
+  new_attribute <- add_attribute(attribute_name = attribute_name, attribute_definition = attribute_definition,
+                                 storage_type = storage_type, measurement_scale = measurement_scale, 
+                                 domain = domain, definition = definition, type = type, units = units, 
+                                 unit_precision = unit_precision, number_type = number_type, 
+                                 date_time_format = date_time_format, date_time_precision = date_time_precision, 
+                                 minimum = minimum, maximum = maximum, attribute_label = attribute_label)
+}
+attribute_list$attribute <- purrr::pmap(attribute_table, attributes_and_codes) 
 ```
 
 #### Putting the Data Table Together
 Now that we have the `attribute_list` and `physical` information, we 
 can compose the data table, which is the last element we need to create our 
-working EML file. If you wish to append multiple datatables to one datapackage please 
-contact CVPIA data guidance and we will help you do so properly. 
+working EML file.  
 
 ```{r}
-if (metadata$dataset$type == "tabular") {
-  parent_element$dataTable <- list(entityName = dataset_file_name,
-                                   entityDescription = metadata$dataset$name,
-                                   physical = physical,
-                                   attributeList = attribute_list)
-} 
-if (metadata$dataset$type == "vector") {
-  parent_element$spatialVector <- list(entityName = dataset_file,
-                                       entityDescription = metadata$dataset$name,
-                                       physical = physical,
-                                       attributeList = attribute_list,
-                                       geometry = metadata$dataset$geometry)
-}
 
+data_tables <- list(dataTable =  list(entityName = dataset_file_name,
+                                      entityDescription = metadata$dataset$name,
+                                      physical = physical,
+                                      attributeList = attribute_list))
+```
+
+If you have 
+```{r}
+
+parent_element$spatialVector <- list(entityName = dataset_file,
+                                     entityDescription = metadata$dataset$name,
+                                     physical = physical,
+                                     attributeList = attribute_list,
+                                     geometry = metadata$dataset$geometry)
+```
+
+
+```{r}
 ## TODO RASTER DATA 
 ```

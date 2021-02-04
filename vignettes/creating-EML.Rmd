@@ -247,7 +247,7 @@ project_personnel <- purrr::pmap(project_table, adds_project_person) %>% flatten
 #### Project funding 
 The `add_funding` function allows you to append 
 both the description of the funding you have received as well as the organization 
-you received the funding from. Multiple funders can be appended if necessary and 
+you received the funding from. Multiple funders can be appended and 
 information should be added to the "funding" tab in the excel file "example-metadata.xlsx".
 
 ```{r}
