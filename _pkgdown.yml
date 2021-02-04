@@ -42,6 +42,9 @@ reference:
   - storage_type
 
 navbar:
+  structure:
+    left:  [home, reference, articles]
+    right: [github]  
   type: default
   left:
   - text: 'Reference'
@@ -50,3 +53,11 @@ navbar:
     menu: 
       - text: 'EML Template Helper'
         href: articles/creating-EML.html
+      - text: 'EML Dateset Section Template'
+        href: articles/Dataset-Element.html
+      - text: 'EML Custom Inputs to Inital Sections'
+        href: articles/Inital-Metadata-Information.html
+repo:
+ url:
+  home: https://github.com/CVPIA-OSC/EDIutils
+  issue: https://github.com/CVPIA-OSC/EDIutils/issues/
