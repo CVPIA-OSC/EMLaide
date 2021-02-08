@@ -21,7 +21,7 @@ RoxygenNote: 7.1.1
 Imports: 
     EML
 Depends: 
-    R (>= 3.5.0)
+    R (>= 2.10)
 Suggests: 
     rmarkdown, 
     knitr,
@@ -30,3 +30,4 @@ Suggests:
     readxl
 URL: https://CVPIA-OSC.github.io/EDIutils/
 VignetteBuilder: knitr
+StagedInstall: no
