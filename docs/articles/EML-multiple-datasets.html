@@ -5,13 +5,13 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Creating EML Using EDIutils • EDIutils</title>
+<title>Generating an EML document for multiple datasets • EDIutils</title>
 <!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script><!-- Bootstrap --><link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.4.0/flatly/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script><!-- bootstrap-toc --><link rel="stylesheet" href="../bootstrap-toc.css">
 <script src="../bootstrap-toc.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
 <!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="../pkgdown.css" rel="stylesheet">
-<script src="../pkgdown.js"></script><meta property="og:title" content="Creating EML Using EDIutils">
+<script src="../pkgdown.js"></script><meta property="og:title" content="Generating an EML document for multiple datasets">
 <meta property="og:description" content="EDIutils">
 <!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
@@ -73,69 +73,78 @@
 
       
 
-      </header><script src="creating-EML_files/accessible-code-block-0.0.1/empty-anchor.js"></script><link href="creating-EML_files/anchor-sections-1.0/anchor-sections.css" rel="stylesheet">
-<script src="creating-EML_files/anchor-sections-1.0/anchor-sections.js"></script><div class="row">
+      </header><script src="EML-multiple-datasets_files/accessible-code-block-0.0.1/empty-anchor.js"></script><link href="EML-multiple-datasets_files/anchor-sections-1.0/anchor-sections.css" rel="stylesheet">
+<script src="EML-multiple-datasets_files/anchor-sections-1.0/anchor-sections.js"></script><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
-      <h1 data-toc-skip>Creating EML Using EDIutils</h1>
+      <h1 data-toc-skip>Generating an EML document for multiple datasets</h1>
             
       
       
-      <div class="hidden name"><code>creating-EML.Rmd</code></div>
+      <div class="hidden name"><code>EML-multiple-datasets.Rmd</code></div>
 
     </div>
 
     
     
-<p>The following libraries are needed to create a working EML document.</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://CVPIA-OSC.github.io/EDIutils/">EDIutils</a></span><span class="op">)</span></code></pre></div>
+<p>The following libraries are needed to create a working EML document.</p>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://CVPIA-OSC.github.io/EDIutils/">EDIutils</a></span><span class="op">)</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="http://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://readxl.tidyverse.org">readxl</a></span><span class="op">)</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://docs.ropensci.org/EML/">EML</a></span><span class="op">)</span></code></pre></div>
 <p>In this document, we create an EML file which has the opportunity to append the following elements:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb2-1"><a href="#cb2-1"></a><span class="kw">-</span><span class="at"> eml </span></span>
-<span id="cb2-2"><a href="#cb2-2"></a><span class="at">  -access</span></span>
-<span id="cb2-3"><a href="#cb2-3"></a><span class="at">  -dataset</span></span>
-<span id="cb2-4"><a href="#cb2-4"></a><span class="at">    -personnel </span></span>
-<span id="cb2-5"><a href="#cb2-5"></a><span class="at">      </span><span class="kw">-</span><span class="at"> creator</span></span>
-<span id="cb2-6"><a href="#cb2-6"></a><span class="at">      </span><span class="kw">-</span><span class="at"> contact</span></span>
-<span id="cb2-7"><a href="#cb2-7"></a><span class="at">      </span><span class="kw">-</span><span class="at"> associated party </span></span>
-<span id="cb2-8"><a href="#cb2-8"></a><span class="at">    </span><span class="kw">-</span><span class="at"> title  </span></span>
-<span id="cb2-9"><a href="#cb2-9"></a><span class="at">    </span><span class="kw">-</span><span class="at"> abstract </span></span>
-<span id="cb2-10"><a href="#cb2-10"></a><span class="at">    </span><span class="kw">-</span><span class="at"> keyword set  </span></span>
-<span id="cb2-11"><a href="#cb2-11"></a><span class="at">    </span><span class="kw">-</span><span class="at"> license </span></span>
-<span id="cb2-12"><a href="#cb2-12"></a><span class="at">    </span><span class="kw">-</span><span class="at"> methods </span></span>
-<span id="cb2-13"><a href="#cb2-13"></a><span class="at">    </span><span class="kw">-</span><span class="at"> maintenance </span></span>
-<span id="cb2-14"><a href="#cb2-14"></a><span class="at">    </span><span class="kw">-</span><span class="at"> project</span></span>
-<span id="cb2-15"><a href="#cb2-15"></a><span class="at">      </span><span class="kw">-</span><span class="at"> project title</span></span>
-<span id="cb2-16"><a href="#cb2-16"></a><span class="at">      </span><span class="kw">-</span><span class="at"> project personnel </span></span>
-<span id="cb2-17"><a href="#cb2-17"></a><span class="at">      </span><span class="kw">-</span><span class="at"> project funding </span></span>
-<span id="cb2-18"><a href="#cb2-18"></a><span class="at">    </span><span class="kw">-</span><span class="at"> coverage </span></span>
-<span id="cb2-19"><a href="#cb2-19"></a><span class="at">      </span><span class="kw">-</span><span class="at"> geographic coverage </span></span>
-<span id="cb2-20"><a href="#cb2-20"></a><span class="at">      </span><span class="kw">-</span><span class="at"> temporal coverage </span></span>
-<span id="cb2-21"><a href="#cb2-21"></a><span class="at">      </span><span class="kw">-</span><span class="at"> taxonomic coverage </span></span>
-<span id="cb2-22"><a href="#cb2-22"></a><span class="at">    </span><span class="kw">-</span><span class="at"> data table </span></span>
-<span id="cb2-23"><a href="#cb2-23"></a><span class="at">      </span><span class="kw">-</span><span class="at"> physical </span></span>
-<span id="cb2-24"><a href="#cb2-24"></a><span class="at">      </span><span class="kw">-</span><span class="at"> attribute list </span></span>
-<span id="cb2-25"><a href="#cb2-25"></a><span class="at">      </span><span class="kw">-</span><span class="at"> methods </span></span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb3-1"><a href="#cb3-1"></a><span class="kw">-</span><span class="at"> eml </span></span>
+<span id="cb3-2"><a href="#cb3-2"></a><span class="at">  -access</span></span>
+<span id="cb3-3"><a href="#cb3-3"></a><span class="at">  -dataset</span></span>
+<span id="cb3-4"><a href="#cb3-4"></a><span class="at">    -personnel </span></span>
+<span id="cb3-5"><a href="#cb3-5"></a><span class="at">      </span><span class="kw">-</span><span class="at"> creator</span></span>
+<span id="cb3-6"><a href="#cb3-6"></a><span class="at">      </span><span class="kw">-</span><span class="at"> contact</span></span>
+<span id="cb3-7"><a href="#cb3-7"></a><span class="at">      </span><span class="kw">-</span><span class="at"> associated party </span></span>
+<span id="cb3-8"><a href="#cb3-8"></a><span class="at">    </span><span class="kw">-</span><span class="at"> title  </span></span>
+<span id="cb3-9"><a href="#cb3-9"></a><span class="at">    </span><span class="kw">-</span><span class="at"> abstract </span></span>
+<span id="cb3-10"><a href="#cb3-10"></a><span class="at">    </span><span class="kw">-</span><span class="at"> keyword set  </span></span>
+<span id="cb3-11"><a href="#cb3-11"></a><span class="at">    </span><span class="kw">-</span><span class="at"> license </span></span>
+<span id="cb3-12"><a href="#cb3-12"></a><span class="at">    </span><span class="kw">-</span><span class="at"> methods </span></span>
+<span id="cb3-13"><a href="#cb3-13"></a><span class="at">    </span><span class="kw">-</span><span class="at"> maintenance </span></span>
+<span id="cb3-14"><a href="#cb3-14"></a><span class="at">    </span><span class="kw">-</span><span class="at"> project</span></span>
+<span id="cb3-15"><a href="#cb3-15"></a><span class="at">      </span><span class="kw">-</span><span class="at"> project title</span></span>
+<span id="cb3-16"><a href="#cb3-16"></a><span class="at">      </span><span class="kw">-</span><span class="at"> project personnel </span></span>
+<span id="cb3-17"><a href="#cb3-17"></a><span class="at">      </span><span class="kw">-</span><span class="at"> project funding </span></span>
+<span id="cb3-18"><a href="#cb3-18"></a><span class="at">    </span><span class="kw">-</span><span class="at"> coverage </span></span>
+<span id="cb3-19"><a href="#cb3-19"></a><span class="at">      </span><span class="kw">-</span><span class="at"> geographic coverage </span></span>
+<span id="cb3-20"><a href="#cb3-20"></a><span class="at">      </span><span class="kw">-</span><span class="at"> temporal coverage </span></span>
+<span id="cb3-21"><a href="#cb3-21"></a><span class="at">      </span><span class="kw">-</span><span class="at"> taxonomic coverage </span></span>
+<span id="cb3-22"><a href="#cb3-22"></a><span class="at">    </span><span class="kw">-</span><span class="at"> data tables </span></span>
+<span id="cb3-23"><a href="#cb3-23"></a><span class="at">      </span><span class="kw">-</span><span class="at"> physical </span></span>
+<span id="cb3-24"><a href="#cb3-24"></a><span class="at">      </span><span class="kw">-</span><span class="at"> attribute list </span></span>
+<span id="cb3-25"><a href="#cb3-25"></a><span class="at">      </span><span class="kw">-</span><span class="at"> methods </span></span></code></pre></div>
+<div id="overview" class="section level2">
+<h2 class="hasAnchor">
+<a href="#overview" class="anchor"></a>Overview</h2>
+<p>This vignette walks you through our process of using EDIutils to create a working EML document to upload to the EDI data repository. If you wish to use this workflow to generate your own EML doc you must first format your metadata to be consistent with our example “~/data-raw/Hannon-Example/example-metadata.xlsx”. Your dataset files may then be added in place of our example files by adding your file paths into the first two sections of code.</p>
+</div>
 <div id="our-example" class="section level2">
 <h2 class="hasAnchor">
 <a href="#our-example" class="anchor"></a>Our Example</h2>
 <p>We will use the data provided by John Hannon to show an example of how to put the metadata together in a way which can be uploaded to the EDI data portal website. The excel sheet of which Hannon’s data resides is found in “~/data-raw/Hannon-Example/example-metadata.xlsx”.</p>
+<p>TODO: Redo with an example that actually has multiple datasets (this one just appends the same one twice)</p>
 </div>
 <div id="required-files" class="section level2">
 <h2 class="hasAnchor">
 <a href="#required-files" class="anchor"></a>Required Files</h2>
-<p>Four files must be uploaded to make a complete EML document.</p>
+<p>The next two code blocks define the metadata and datasets that will be used by the rest of the document to generate a working EML document.</p>
+<p>Metadata must be prepared following the structure of the “~/data-raw/metadata_template”. Each dataset must have a separate metadata excel sheet. However, one metadata excel sheet will be used to create the overall metadata and the other metadata sheets will only be used to fill in the information specific to the dataset.</p>
+<p>Three metadata files are loaded in below:</p>
 <ul>
 <li>An excel spreadsheet containing the majority of the metadata</li>
 <li>A word document containing the abstract text</li>
 <li>A word document containing the methods text</li>
-<li>A file that contains the data (preferably csv if tabular data)</li>
 </ul>
-<p>In addition to these four files a entity description and an EDI number must be defined. The EDI number should be a unique data package identifier. You can reserve this data package identifier number on the <a href="https://portal.edirepository.org/nis/reservations.jsp">EDI data repository under tools.</a> For this example all of our files are stored in a the Hannon-Example folder within data-raw. “~/data-raw/Hannon-Example”.</p>
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<p>In addition to these files an EDI number must be defined. The EDI number should be a unique data package identifier. You can reserve this data package identifier number on the <a href="https://portal.edirepository.org/nis/reservations.jsp">EDI data repository under tools.</a> For this example all of our files are stored in a the Hannon-Example folder within data-raw. “~/data-raw/Hannon-Example”.</p>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">excel_path</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html">system.file</a></span><span class="op">(</span><span class="st">"extdata"</span>, <span class="st">"Hannon-Example"</span>, <span class="st">"example-metadata.xlsx"</span>, 
                           package <span class="op">=</span> <span class="st">"EDIutils"</span>, mustWork <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>
 
@@ -148,13 +157,42 @@
 
 <span class="va">methods_docx</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html">system.file</a></span><span class="op">(</span><span class="st">"extdata"</span>, <span class="st">"Hannon-Example"</span>, <span class="st">"hannon_example_methods.docx"</span>, 
                             package <span class="op">=</span> <span class="st">"EDIutils"</span>, mustWork <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>
-
-<span class="va">dataset_file</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html">system.file</a></span><span class="op">(</span><span class="st">"extdata"</span>, <span class="st">"Hannon-Example"</span>, <span class="st">"hannon_example_physical_data.csv"</span>,
-                               package <span class="op">=</span> <span class="st">"EDIutils"</span>, mustWork <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>
-
-<span class="va">dataset_file_name</span> <span class="op">&lt;-</span> <span class="st">"hannon_example_physical_data.csv"</span>
-
 <span class="va">edi_number</span> <span class="op">=</span> <span class="st">"edi.687.1"</span></code></pre></div>
+<p>Now we must add in the actual datasets and the metadata referring to the attributes of each dataset.</p>
+<p>The files added below:</p>
+<ul>
+<li>One or more data files (preferably csv if tabular data)</li>
+</ul>
+<p>In this example we included two datasets by creating a nested list of the datasets.</p>
+<p>Each named dataset list includes:</p>
+<ul>
+<li>A <code>datatable</code> element which is the file path to the datatable</li>
+<li>A <code>datatable_name</code>
+</li>
+<li>An <code>attribute</code> section that reads in the attribute table for the dataset</li>
+<li>The <code>code</code> section that reads in the attribute codes for the dataset</li>
+<li>(Optional) <code>dataset_methods</code> section that reads file path to dataset specific methods</li>
+<li>(Optional) <code>additional_information</code> If additional information is pertinent to the entry please add it as a string description.</li>
+</ul>
+<p>In this example there are no dataset specific methods or additional information so those fields are NULL.</p>
+<p>To add more than two datasets please follow the same structure adding additional named lists within the dataset files list.</p>
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">dataset_files</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span><span class="st">"snorkel data"</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>datatable <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html">system.file</a></span><span class="op">(</span><span class="st">"extdata"</span>, <span class="st">"Hannon-Example"</span>, 
+                                                                    <span class="st">"hannon_example_physical_data.csv"</span>,
+                                                        package <span class="op">=</span> <span class="st">"EDIutils"</span>, mustWork <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>,
+                                            datatable_name <span class="op">=</span> <span class="st">"hannon_example_snorkel_data.csv"</span>,
+                                            attribute <span class="op">=</span> <span class="va">metadata_sheets</span><span class="op">$</span><span class="va">attribute</span>,
+                                            code <span class="op">=</span> <span class="va">metadata_sheets</span><span class="op">$</span><span class="va">code_definitions</span>,
+                                            dataset_methods <span class="op">=</span> <span class="cn">NULL</span>,
+                                            additional_info <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span>, 
+                      <span class="st">"predator data"</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>datatable <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html">system.file</a></span><span class="op">(</span><span class="st">"extdata"</span>, <span class="st">"Hannon-Example"</span>, 
+                                                                     <span class="st">"hannon_example_physical_data.csv"</span>,
+                                                         package <span class="op">=</span> <span class="st">"EDIutils"</span>, mustWork <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>,
+                                             datatable_name <span class="op">=</span> <span class="st">"hannon_example_predator_data.csv"</span>,
+                                             attribute <span class="op">=</span> <span class="va">metadata_sheets</span><span class="op">$</span><span class="va">attribute</span>,
+                                             code <span class="op">=</span> <span class="va">metadata_sheets</span><span class="op">$</span><span class="va">code_definitions</span>,
+                                             dataset_methods <span class="op">=</span> <span class="cn">NULL</span>,
+                                             additional_info <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span><span class="op">)</span></code></pre></div>
 </div>
 <div id="eml-sections" class="section level2">
 <h2 class="hasAnchor">
@@ -164,28 +202,28 @@
 <h3 class="hasAnchor">
 <a href="#access-permissions" class="anchor"></a>Access Permissions</h3>
 <p>The <code>add_access</code> adds an access section at the beginning of our EML document. The <code>add_access</code> default is public principal with a read permission.</p>
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">access</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/add_access.html">add_access</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
 </div>
 <div id="creating-the-parent-element" class="section level3">
 <h3 class="hasAnchor">
 <a href="#creating-the-parent-element" class="anchor"></a>Creating the Parent Element</h3>
 <p>We first need to create a parent element. This will be a parent list that stores all of our metadata sections.</p>
-<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">parent_element</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span><span class="op">)</span> </code></pre></div>
 </div>
 <div id="publication-date" class="section level3">
 <h3 class="hasAnchor">
 <a href="#publication-date" class="anchor"></a>Publication Date</h3>
 <p>The publication date does not have a tab in the excel sheet, but is simply added with the <code>add_pub_date</code> function. If no date is provided, it will automatically append the current date. This can be overwritten by providing an input for <code>date</code>.</p>
-<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">parent_element</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/add_pub_date.html">add_pub_date</a></span><span class="op">(</span>parent_element <span class="op">=</span> <span class="va">parent_element</span>, date <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span></code></pre></div>
 </div>
 <div id="personnel-creator-contact-and-associated-parties-" class="section level3">
 <h3 class="hasAnchor">
 <a href="#personnel-creator-contact-and-associated-parties-" class="anchor"></a>Personnel: Creator, Contact, and Associated Parties.</h3>
 <p>The <code>add_personnel</code> function allows you to append information on the creator or the associated parties to your file. The creator would be any person or organization who is responsible for the creation of the data, while an associated party would be any person or organization which is associated to the dataset. The creator will also be the contact for this datset. Multiple creators, associated parties, and a mixture of both can be appended to the EML file by providing all inputs in the “personnel” tab in the “example-metadata.xlsx” excel file.</p>
-<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">personnel_table</span> <span class="op">&lt;-</span> <span class="va">metadata_sheets</span><span class="op">$</span><span class="va">personnel</span>
 <span class="kw">for</span> <span class="op">(</span><span class="va">i</span> <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span><span class="fu"><a href="https://rdrr.io/r/base/nrow.html">nrow</a></span><span class="op">(</span><span class="va">personnel_table</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span>
   <span class="va">current</span> <span class="op">&lt;-</span> <span class="va">personnel_table</span><span class="op">[</span><span class="va">i</span>, <span class="op">]</span>
@@ -202,7 +240,7 @@
 <h3 class="hasAnchor">
 <a href="#title-and-short-name" class="anchor"></a>Title and Short Name</h3>
 <p>Following the personnel element, we can append the title elements. The <code>add_title</code> function allows you to append the title and short name of the dataset to the file. Only one title and short name should be appended. The title should be fairly descriptive and between 7 and 20 words long. The short name must be less than the number of words present in the title and is your opportunity to give viewers a more accessible name to the dataset. Again, this information can be added to the “title” tab in the excel file “example-metadata.xlsx”.</p>
-<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">title</span> <span class="op">&lt;-</span> <span class="va">metadata_sheets</span><span class="op">$</span><span class="va">title</span>
 <span class="va">parent_element</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/add_title.html">add_title</a></span><span class="op">(</span>parent_element <span class="op">=</span> <span class="va">parent_element</span>,
                             title <span class="op">=</span> <span class="va">title</span><span class="op">$</span><span class="va">title</span>, 
@@ -212,7 +250,7 @@
 <h3 class="hasAnchor">
 <a href="#keyword-set" class="anchor"></a>Keyword Set</h3>
 <p>The next item we will append is the keyword set. We can use the <code>add_keyword_set</code> function to do so. The keyword set should include a list of words that help identify your project or connect it with other similar projects. If you add keywords from a controlled vocabulary you must state what keyword thesaurus they belong to. If keywords are not from a controlled vocabulary do not add a keyword thesaurus. Multiple keyword sets can be provided. This information can be added to the “keyword_set” tab in the excel file “example-metadata.xlsx”.</p>
-<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">keyword_set</span> <span class="op">&lt;-</span> <span class="va">metadata_sheets</span><span class="op">$</span><span class="va">keyword_set</span>
 <span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span><span class="op">(</span><span class="op">!</span><span class="fu"><a href="https://rdrr.io/r/base/NA.html">is.na</a></span><span class="op">(</span><span class="va">metadata_sheets</span><span class="op">$</span><span class="va">keywordThesaurus</span><span class="op">)</span><span class="op">)</span> <span class="op">==</span> <span class="fl">0</span><span class="op">)</span> <span class="op">{</span>
   <span class="va">parent_element</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/add_keyword_set.html">add_keyword_set</a></span><span class="op">(</span>parent_element <span class="op">=</span> <span class="va">parent_element</span>,
@@ -231,7 +269,7 @@
 <h3 class="hasAnchor">
 <a href="#abstract" class="anchor"></a>Abstract</h3>
 <p>Next, we will use the <code>add_abstract</code> function to append the abstract of the dataset to your file. The abstract should include basic information on the dataset that gives a brief summary to the viewers of what they are observing from the data. This information will not be added to the “example-metadata.xlsx” excel sheet, but rather the “hannon_example_abstract.docx”. The text provided can be deleted and replaced with your own.</p>
-<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">parent_element</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/add_abstract.html">add_abstract</a></span><span class="op">(</span>parent_element <span class="op">=</span> <span class="va">parent_element</span>, 
                                abstract <span class="op">=</span> <span class="va">abstract_docx</span><span class="op">)</span></code></pre></div>
 </div>
@@ -239,7 +277,7 @@
 <h3 class="hasAnchor">
 <a href="#license-and-intellectual-rights" class="anchor"></a>License and Intellectual Rights</h3>
 <p>Following the abstract, we will append the license and intellectual rights information. The <code>add_license</code> function allows you to append the licensing and usage information to your file. The <code>intellectual_rights_description</code> input calls for the description of rights, which may be explained in the license you are using. It can also contain other requirements for use, other requirements for attribution, etc. Both the CC0 and CCBY licenses can be chosen as defaults using this function, and the rest of the information will be appended for you. Only one license should be appended. This information can be added to the “license” tab in the excel file “example-metadata.xlsx”. If a default license is not being used, then the other inputs need to be provided.</p>
-<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">license</span> <span class="op">&lt;-</span> <span class="va">metadata_sheets</span><span class="op">$</span><span class="va">license</span>
 
 <span class="kw">if</span> <span class="op">(</span><span class="va">license</span><span class="op">$</span><span class="va">default_license</span> <span class="op">==</span> <span class="st">"CCO"</span> <span class="op">|</span> <span class="va">license</span><span class="op">$</span><span class="va">default_license</span> <span class="op">==</span> <span class="st">"CCBY"</span><span class="op">)</span> <span class="op">{</span>
@@ -257,7 +295,7 @@
 <h3 class="hasAnchor">
 <a href="#methods" class="anchor"></a>Methods</h3>
 <p>The method section explains the scientific methods that were used in the collection of the dataset. The <code>add_method</code> function allows you to add a method file to the parent_element. A template methods document is given (“data-raw/Hannon-Example/hannon_example_methods.docx”). If more methods are needed, you can create separate sections in your word document.</p>
-<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">parent_element</span><span class="op">$</span><span class="va">methods</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/add_method.html">add_method</a></span><span class="op">(</span>parent_element <span class="op">=</span> <span class="va">parent_element</span>,
                                      methods_file <span class="op">=</span> <span class="va">methods_docx</span><span class="op">)</span></code></pre></div>
 </div>
@@ -265,7 +303,7 @@
 <h3 class="hasAnchor">
 <a href="#maintenance" class="anchor"></a>Maintenance</h3>
 <p>The maintenance of a dataset is simply if the data collection is complete or ongoing. The <code>add_maintenance</code> function allows you to append the status of the dataset to your file and the inputs of <code>complete</code> and <code>ongoing</code> are the only ones allowed. If the dataset is still in progress, the frequency of which it is updated must be provided as well. This information should be added to the “maintenance” tab in the excel file “example-metadata.xlsx”.</p>
-<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">maintenance</span> <span class="op">&lt;-</span> <span class="va">metadata_sheets</span><span class="op">$</span><span class="va">maintenance</span>
 <span class="va">parent_element</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/add_maintenance.html">add_maintenance</a></span><span class="op">(</span>parent_element <span class="op">=</span> <span class="va">parent_element</span>, 
                                   status <span class="op">=</span> <span class="va">maintenance</span><span class="op">$</span><span class="va">status</span>,
@@ -278,13 +316,13 @@
 <div id="project-title" class="section level4">
 <h4 class="hasAnchor">
 <a href="#project-title" class="anchor"></a>Project title</h4>
-<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">project_title</span> <span class="op">&lt;-</span> <span class="va">metadata_sheets</span><span class="op">$</span><span class="va">project</span><span class="op">$</span><span class="va">project_title</span></code></pre></div>
 </div>
 <div id="project-personnel" class="section level4">
 <h4 class="hasAnchor">
 <a href="#project-personnel" class="anchor"></a>Project personnel</h4>
-<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb17"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">project_personnel_table</span> <span class="op">&lt;-</span> <span class="va">metadata_sheets</span><span class="op">$</span><span class="va">project</span>
 <span class="kw">for</span> <span class="op">(</span><span class="va">i</span> <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span><span class="fu"><a href="https://rdrr.io/r/base/nrow.html">nrow</a></span><span class="op">(</span><span class="va">project_personnel_table</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span>
   <span class="va">current</span> <span class="op">&lt;-</span> <span class="va">project_personnel_table</span><span class="op">[</span><span class="va">i</span>, <span class="op">]</span>
@@ -307,7 +345,7 @@
 <h4 class="hasAnchor">
 <a href="#project-funding" class="anchor"></a>Project funding</h4>
 <p>The <code>add_funding</code> function allows you to append both the description of the funding you have received as well as the organization you received the funding from. Multiple funders can be appended if necessary and information should be added to the “funding” tab in the excel file “example-metadata.xlsx”.</p>
-<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb18"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">funding_table</span> <span class="op">&lt;-</span> <span class="va">metadata_sheets</span><span class="op">$</span><span class="va">funding</span>
 <span class="kw">for</span> <span class="op">(</span><span class="va">i</span> <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span><span class="fu"><a href="https://rdrr.io/r/base/nrow.html">nrow</a></span><span class="op">(</span><span class="va">funding_table</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span>
   <span class="va">current</span> <span class="op">&lt;-</span> <span class="va">funding_table</span><span class="op">[</span><span class="va">i</span>, <span class="op">]</span>
@@ -323,7 +361,7 @@
 <h4 class="hasAnchor">
 <a href="#combining-project-elements" class="anchor"></a>Combining Project Elements</h4>
 <p>Once all the components of project have been defined we can use the add_project function to combine the sections in the proper formatting for an EML document.</p>
-<div class="sourceCode" id="cb17"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb19"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">parent_element</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/add_project.html">add_project</a></span><span class="op">(</span>parent_element <span class="op">=</span> <span class="va">parent_element</span>,
                               project_title <span class="op">=</span> <span class="va">project_title</span>,
                               award_information <span class="op">=</span> <span class="va">award_information</span>,
@@ -338,7 +376,7 @@
 <h5 class="hasAnchor">
 <a href="#taxonomic-coverage" class="anchor"></a>Taxonomic coverage</h5>
 <p>Taxonomic coverage can be appended using the <code>add_taxonomic_coverage</code> function. The taxonomic coverage information is added to the “example-metadata.xlsx” excel file on the tab “taxonomic_coverage”. chinook, delta_smelt, steelhead, white_sturgeon, and green_sturgeon are all default options that can be selected using the drop down menu under the CVPIA_common_species column.</p>
-<div class="sourceCode" id="cb18"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb20"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">taxonomic_coverage</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span><span class="op">)</span>
 <span class="va">taxonomic_coverage_table</span> <span class="op">&lt;-</span> <span class="va">metadata_sheets</span><span class="op">$</span><span class="va">taxonomic_coverage</span>
 <span class="kw">for</span> <span class="op">(</span><span class="va">i</span> <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span><span class="fu"><a href="https://rdrr.io/r/base/nrow.html">nrow</a></span><span class="op">(</span><span class="va">taxonomic_coverage_table</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span>
@@ -364,7 +402,7 @@
 <h4 class="hasAnchor">
 <a href="#combining-coverage-elements" class="anchor"></a>Combining Coverage Elements</h4>
 <p>The <code>add_coverage</code> function will add all the elements of coverage to the parent element.</p>
-<div class="sourceCode" id="cb19"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb21"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">coverage_table</span> <span class="op">&lt;-</span> <span class="va">metadata_sheets</span><span class="op">$</span><span class="va">coverage</span>
 <span class="kw">for</span> <span class="op">(</span><span class="va">i</span> <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span><span class="fu"><a href="https://rdrr.io/r/base/nrow.html">nrow</a></span><span class="op">(</span><span class="va">coverage_table</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span>
   <span class="va">current</span> <span class="op">&lt;-</span> <span class="va">coverage_table</span><span class="op">[</span><span class="va">i</span>, <span class="op">]</span>
@@ -380,102 +418,99 @@
 <span class="op">}</span> </code></pre></div>
 </div>
 </div>
-<div id="data-table" class="section level3">
+<div id="data-tables" class="section level3">
 <h3 class="hasAnchor">
-<a href="#data-table" class="anchor"></a>Data Table</h3>
-<p>Next, we need to create the data table. The data table element includes<code>physical</code>, <code>attribute_list</code>, and potentially additional information for Spatial Data. These sections are all lists which must be created first, appended to a dataTable, and then appended to the <code>parent_element</code>.</p>
-<div id="physical" class="section level4">
-<h4 class="hasAnchor">
-<a href="#physical" class="anchor"></a>Physical</h4>
-<p>The physical element can be created first using the <code>add_physical</code> function. This will append information on the actual physical information of the data. The file path of the data can be added to the “example-metadata.xlsx” excel file and all parameters will be appended, gathering the csv’s unique size and authentication, as well as providing the default physical values of a csv.</p>
-<div class="sourceCode" id="cb20"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">physical</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/add_physical.html">add_physical</a></span><span class="op">(</span>file_path <span class="op">=</span> <span class="va">dataset_file</span>, 
-                         data_url <span class="op">=</span> <span class="va">current</span><span class="op">$</span><span class="va">data_url</span><span class="op">)</span></code></pre></div>
-<p>If you wish to provide alternative information than the defaults of a csv, you must do so manually in Rstudio using the <code>add_physical</code> function fully. It is not recommended that you do so, however, as the default values present represent the best practices in most cases.</p>
-</div>
-<div id="attribute-list" class="section level4">
-<h4 class="hasAnchor">
-<a href="#attribute-list" class="anchor"></a>Attribute List</h4>
-<p>Next, we will need to append an attribute list to the data table. We will be able to use the <code>add_attribute</code> function to do so. Please make sure you review what type of attribute you are providing and what inputs are necessary. These values can then be inputted into the “attribute” tab in the “example-metadata.xlsx” excel file. If you are using a “nominal” or “ordinal” attribute which is “enumerated”, (it has a specific code definition), please also use the tab “code_definitions”. Provide each unique code and definition, with its <code>attribute_name</code> aligning to that which is in the “attribute” tab. An example is present currently to help better showcase this. Every single column in the dataTable must have a described attribute to match EDI congruence checker.</p>
-<div class="sourceCode" id="cb21"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">attribute_table</span> <span class="op">&lt;-</span> <span class="va">metadata_sheets</span><span class="op">$</span><span class="va">attribute</span>
-<span class="va">codes</span> <span class="op">&lt;-</span> <span class="va">metadata_sheets</span><span class="op">$</span><span class="va">code_definitions</span>
-
-<span class="va">attribute_list</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span><span class="op">)</span>
-<span class="va">attribute_names</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/unique.html">unique</a></span><span class="op">(</span><span class="va">codes</span><span class="op">$</span><span class="va">attribute_name</span><span class="op">)</span>
-
-<span class="kw">for</span> <span class="op">(</span><span class="va">i</span> <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span><span class="fu"><a href="https://rdrr.io/r/base/nrow.html">nrow</a></span><span class="op">(</span><span class="va">attribute_table</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span>
-  <span class="va">current</span> <span class="op">&lt;-</span> <span class="va">attribute_table</span><span class="op">[</span><span class="va">i</span>, <span class="op">]</span>
-  <span class="kw">if</span> <span class="op">(</span><span class="va">current</span><span class="op">$</span><span class="va">domain</span> <span class="op">%in%</span> <span class="st">"enumerated"</span><span class="op">)</span> <span class="op">{</span> 
-    <span class="va">definition</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span><span class="op">)</span>
-    <span class="va">current_codes</span> <span class="op">&lt;-</span> <span class="va">codes</span><span class="op">[</span><span class="va">codes</span><span class="op">$</span><span class="va">attribute_name</span> <span class="op">==</span> <span class="va">current</span><span class="op">$</span><span class="va">attribute_name</span>, <span class="op">]</span>
-    <span class="kw">for</span> <span class="op">(</span><span class="va">j</span> <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span><span class="fu"><a href="https://rdrr.io/r/base/nrow.html">nrow</a></span><span class="op">(</span><span class="va">current_codes</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span>
-      <span class="va">codeDefinition</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>code <span class="op">=</span> <span class="va">current_codes</span><span class="op">$</span><span class="va">code</span><span class="op">[</span><span class="va">j</span><span class="op">]</span>, definition <span class="op">=</span> <span class="va">current_codes</span><span class="op">$</span><span class="va">definitions</span><span class="op">[</span><span class="va">j</span><span class="op">]</span><span class="op">)</span>
-      <span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/NULL.html">is.null</a></span><span class="op">(</span><span class="va">definition</span><span class="op">$</span><span class="va">codeDefinition</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span>
-        <span class="va">definition</span><span class="op">$</span><span class="va">codeDefinition</span> <span class="op">&lt;-</span> <span class="va">codeDefinition</span>
-      <span class="op">}</span> <span class="kw">else</span> <span class="op">{</span>
-        <span class="va">definition</span><span class="op">$</span><span class="va">codeDefinition</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span><span class="va">definition</span><span class="op">$</span><span class="va">codeDefinition</span>, <span class="va">codeDefinition</span><span class="op">)</span>
+<a href="#data-tables" class="anchor"></a>Data Tables</h3>
+<p>Next, we need to add each data table. The data table element includes a <code>physical</code> section, an <code>attribute_list</code>, and potentially additional information for Spatial Data. These sections are all lists which must be created first, appended to a dataTable, and then appended to the <code>parent_element</code>.</p>
+<p>The loops below create a <code>data_tables</code> list where we append each data table. When looping through the for loop we create the <code>attribute_list</code> using the <code>add_attribute</code> function and the <code>physical</code> element using the <code>add_physical</code> function.</p>
+<p>Please make sure you review what type of attribute you are providing and what inputs are necessary. These values can then be inputted into the “attribute” tab in the “example-metadata.xlsx” excel file. If you are using a “nominal” or “ordinal” attribute which is “enumerated”, (it has a specific code definition), please also use the tab “code_definitions”. Provide each unique code and definition, with its <code>attribute_name</code> aligning to that which is in the “attribute” tab. An example is present currently to help better showcase this. Every single column in the dataTable must have a described attribute to match EDI congruence checker.</p>
+<div class="sourceCode" id="cb22"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">data_tables</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span><span class="op">)</span>
+<span class="kw">for</span> <span class="op">(</span><span class="va">h</span> <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span><span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span><span class="op">(</span><span class="va">dataset_files</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span>
+  <span class="va">dataset_file</span> <span class="op">&lt;-</span> <span class="va">dataset_files</span><span class="op">[[</span><span class="va">h</span><span class="op">]</span><span class="op">]</span><span class="op">$</span><span class="va">datatable</span>
+  <span class="va">dataset_file_name</span> <span class="op">&lt;-</span> <span class="va">dataset_files</span><span class="op">[[</span><span class="va">h</span><span class="op">]</span><span class="op">]</span><span class="op">$</span><span class="va">datatable_name</span>
+  <span class="va">attribute_table</span> <span class="op">&lt;-</span> <span class="va">dataset_files</span><span class="op">[[</span><span class="va">h</span><span class="op">]</span><span class="op">]</span><span class="op">$</span><span class="va">attribute</span>
+  <span class="va">codes</span> <span class="op">&lt;-</span> <span class="va">dataset_files</span><span class="op">[[</span><span class="va">h</span><span class="op">]</span><span class="op">]</span><span class="op">$</span><span class="va">code</span>
+  <span class="va">dataset_methods</span> <span class="op">&lt;-</span> <span class="va">dataset_files</span><span class="op">[[</span><span class="va">h</span><span class="op">]</span><span class="op">]</span><span class="op">$</span><span class="va">dataset_methods</span>
+  <span class="va">additional_info</span> <span class="op">&lt;-</span> <span class="va">dataset_files</span><span class="op">[[</span><span class="va">h</span><span class="op">]</span><span class="op">]</span><span class="op">$</span><span class="va">additional_info</span>  
+  <span class="va">attribute_list</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span><span class="op">)</span>
+  <span class="va">attribute_names</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/unique.html">unique</a></span><span class="op">(</span><span class="va">codes</span><span class="op">$</span><span class="va">attribute_name</span><span class="op">)</span>
+  
+  <span class="kw">for</span> <span class="op">(</span><span class="va">i</span> <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span><span class="fu"><a href="https://rdrr.io/r/base/nrow.html">nrow</a></span><span class="op">(</span><span class="va">attribute_table</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span>
+    <span class="va">current</span> <span class="op">&lt;-</span> <span class="va">attribute_table</span><span class="op">[</span><span class="va">i</span>, <span class="op">]</span>
+    <span class="kw">if</span> <span class="op">(</span><span class="va">current</span><span class="op">$</span><span class="va">domain</span> <span class="op">%in%</span> <span class="st">"enumerated"</span><span class="op">)</span> <span class="op">{</span> 
+      <span class="va">definition</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span><span class="op">)</span>
+      <span class="va">current_codes</span> <span class="op">&lt;-</span> <span class="va">codes</span><span class="op">[</span><span class="va">codes</span><span class="op">$</span><span class="va">attribute_name</span> <span class="op">==</span> <span class="va">current</span><span class="op">$</span><span class="va">attribute_name</span>, <span class="op">]</span>
+      <span class="kw">for</span> <span class="op">(</span><span class="va">j</span> <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span><span class="fu"><a href="https://rdrr.io/r/base/nrow.html">nrow</a></span><span class="op">(</span><span class="va">current_codes</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span>
+        <span class="va">codeDefinition</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>code <span class="op">=</span> <span class="va">current_codes</span><span class="op">$</span><span class="va">code</span><span class="op">[</span><span class="va">j</span><span class="op">]</span>, definition <span class="op">=</span> <span class="va">current_codes</span><span class="op">$</span><span class="va">definitions</span><span class="op">[</span><span class="va">j</span><span class="op">]</span><span class="op">)</span>
+        <span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/NULL.html">is.null</a></span><span class="op">(</span><span class="va">definition</span><span class="op">$</span><span class="va">codeDefinition</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span>
+          <span class="va">definition</span><span class="op">$</span><span class="va">codeDefinition</span> <span class="op">&lt;-</span> <span class="va">codeDefinition</span>
+        <span class="op">}</span> <span class="kw">else</span> <span class="op">{</span>
+          <span class="va">definition</span><span class="op">$</span><span class="va">codeDefinition</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span><span class="va">definition</span><span class="op">$</span><span class="va">codeDefinition</span>, <span class="va">codeDefinition</span><span class="op">)</span>
+        <span class="op">}</span>
       <span class="op">}</span>
+    <span class="op">}</span> <span class="kw">else</span> <span class="op">{</span>
+      <span class="va">definition</span> <span class="op">=</span> <span class="va">current</span><span class="op">$</span><span class="va">attribute_definition</span>
     <span class="op">}</span>
-  <span class="op">}</span> <span class="kw">else</span> <span class="op">{</span>
-    <span class="va">definition</span> <span class="op">=</span> <span class="va">current</span><span class="op">$</span><span class="va">attribute_definition</span>
+    <span class="va">new_attribute</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/add_attribute.html">add_attribute</a></span><span class="op">(</span>attribute_name <span class="op">=</span> <span class="va">current</span><span class="op">$</span><span class="va">attribute_name</span>,
+                                   attribute_definition <span class="op">=</span> <span class="va">current</span><span class="op">$</span><span class="va">attribute_definition</span>,
+                                   storage_type <span class="op">=</span> <span class="va">current</span><span class="op">$</span><span class="va">storage_type</span>,
+                                   measurement_scale <span class="op">=</span> <span class="va">current</span><span class="op">$</span><span class="va">measurement_scale</span>,
+                                   domain <span class="op">=</span> <span class="va">current</span><span class="op">$</span><span class="va">domain</span>,
+                                   definition <span class="op">=</span> <span class="va">definition</span>,
+                                   type <span class="op">=</span> <span class="va">current</span><span class="op">$</span><span class="va">type</span>,
+                                   units <span class="op">=</span> <span class="va">current</span><span class="op">$</span><span class="va">units</span>,
+                                   unit_precision <span class="op">=</span> <span class="va">current</span><span class="op">$</span><span class="va">unit_precision</span>,
+                                   number_type <span class="op">=</span> <span class="va">current</span><span class="op">$</span><span class="va">number_type</span>,
+                                   date_time_format <span class="op">=</span> <span class="va">current</span><span class="op">$</span><span class="va">date_time_format</span>,
+                                   date_time_precision <span class="op">=</span> <span class="va">current</span><span class="op">$</span><span class="va">date_time_precision</span>,
+                                   minimum <span class="op">=</span> <span class="va">current</span><span class="op">$</span><span class="va">minimum</span>,
+                                   maximum <span class="op">=</span> <span class="va">current</span><span class="op">$</span><span class="va">maximum</span>,
+                                   attribute_label <span class="op">=</span> <span class="va">current</span><span class="op">$</span><span class="va">attribute_label</span><span class="op">)</span>
+    <span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/NULL.html">is.null</a></span><span class="op">(</span><span class="va">attribute_list</span><span class="op">$</span><span class="va">attribute</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span>
+      <span class="va">attribute_list</span><span class="op">$</span><span class="va">attribute</span> <span class="op">&lt;-</span> <span class="va">new_attribute</span>
+    <span class="op">}</span> <span class="kw">else</span> <span class="op">{</span>
+      <span class="va">attribute_list</span><span class="op">$</span><span class="va">attribute</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span><span class="va">attribute_list</span><span class="op">$</span><span class="va">attribute</span>, <span class="va">new_attribute</span><span class="op">)</span>
+    <span class="op">}</span>
   <span class="op">}</span>
-  <span class="va">new_attribute</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/add_attribute.html">add_attribute</a></span><span class="op">(</span>attribute_name <span class="op">=</span> <span class="va">current</span><span class="op">$</span><span class="va">attribute_name</span>,
-                                 attribute_definition <span class="op">=</span> <span class="va">current</span><span class="op">$</span><span class="va">attribute_definition</span>,
-                                 storage_type <span class="op">=</span> <span class="va">current</span><span class="op">$</span><span class="va">storage_type</span>,
-                                 measurement_scale <span class="op">=</span> <span class="va">current</span><span class="op">$</span><span class="va">measurement_scale</span>,
-                                 domain <span class="op">=</span> <span class="va">current</span><span class="op">$</span><span class="va">domain</span>,
-                                 definition <span class="op">=</span> <span class="va">definition</span>,
-                                 type <span class="op">=</span> <span class="va">current</span><span class="op">$</span><span class="va">type</span>,
-                                 units <span class="op">=</span> <span class="va">current</span><span class="op">$</span><span class="va">units</span>,
-                                 unit_precision <span class="op">=</span> <span class="va">current</span><span class="op">$</span><span class="va">unit_precision</span>,
-                                 number_type <span class="op">=</span> <span class="va">current</span><span class="op">$</span><span class="va">number_type</span>,
-                                 date_time_format <span class="op">=</span> <span class="va">current</span><span class="op">$</span><span class="va">date_time_format</span>,
-                                 date_time_precision <span class="op">=</span> <span class="va">current</span><span class="op">$</span><span class="va">date_time_precision</span>,
-                                 minimum <span class="op">=</span> <span class="va">current</span><span class="op">$</span><span class="va">minimum</span>,
-                                 maximum <span class="op">=</span> <span class="va">current</span><span class="op">$</span><span class="va">maximum</span>,
-                                 attribute_label <span class="op">=</span> <span class="va">current</span><span class="op">$</span><span class="va">attribute_label</span><span class="op">)</span>
-  <span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/NULL.html">is.null</a></span><span class="op">(</span><span class="va">attribute_list</span><span class="op">$</span><span class="va">attribute</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span>
-    <span class="va">attribute_list</span><span class="op">$</span><span class="va">attribute</span> <span class="op">&lt;-</span> <span class="va">new_attribute</span>
-  <span class="op">}</span> <span class="kw">else</span> <span class="op">{</span>
-    <span class="va">attribute_list</span><span class="op">$</span><span class="va">attribute</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span><span class="va">attribute_list</span><span class="op">$</span><span class="va">attribute</span>, <span class="va">new_attribute</span><span class="op">)</span>
+  
+  <span class="va">physical</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/add_physical.html">add_physical</a></span><span class="op">(</span>file_path <span class="op">=</span> <span class="va">dataset_file</span><span class="op">)</span>
+  <span class="va">dataTable</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>entityName <span class="op">=</span> <span class="va">dataset_file_name</span>,
+                    entityDescription <span class="op">=</span> <span class="va">metadata_sheets</span><span class="op">$</span><span class="va">dataset</span><span class="op">$</span><span class="va">name</span>,
+                    physical <span class="op">=</span> <span class="va">physical</span>,
+                    attributeList <span class="op">=</span> <span class="va">attribute_list</span><span class="op">)</span>
+  
+  <span class="kw">if</span> <span class="op">(</span><span class="op">!</span><span class="fu">is_null</span><span class="op">(</span><span class="va">dataset_methods</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span>
+    <span class="va">dataTable</span><span class="op">$</span><span class="va">methods</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/add_method.html">add_method</a></span><span class="op">(</span><span class="va">dataset_methods</span><span class="op">)</span>
+  <span class="op">}</span>
+  
+  <span class="kw">if</span> <span class="op">(</span><span class="op">!</span><span class="fu">is_null</span><span class="op">(</span><span class="va">additional_info</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span>
+    <span class="va">dataTable</span><span class="op">$</span><span class="va">additional_info</span> <span class="op">&lt;-</span> <span class="va">additional_info</span>
+  <span class="op">}</span>
+  
+  <span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span><span class="op">(</span><span class="va">data_tables</span><span class="op">)</span> <span class="op">==</span> <span class="fl">0</span><span class="op">)</span> <span class="op">{</span>
+    <span class="va">data_tables</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span><span class="va">dataTable</span><span class="op">)</span>
+  <span class="op">}</span> 
+  <span class="kw">else</span> <span class="op">{</span>
+    <span class="va">data_tables</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/append.html">append</a></span><span class="op">(</span><span class="va">data_tables</span>, <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span><span class="va">dataTable</span><span class="op">)</span><span class="op">)</span> 
   <span class="op">}</span>
 <span class="op">}</span></code></pre></div>
-</div>
-<div id="putting-the-data-table-together" class="section level4">
-<h4 class="hasAnchor">
-<a href="#putting-the-data-table-together" class="anchor"></a>Putting the Data Table Together</h4>
-<p>Now that we have the <code>attribute_list</code> and <code>physical</code> information, we can compose the data table, which is the last element we need to create our working EML file. If you wish to append multiple datatables to one datapackage please contact CVPIA data guidance and we will help you do so properly.</p>
-<div class="sourceCode" id="cb22"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="kw">if</span> <span class="op">(</span><span class="va">metadata_sheets</span><span class="op">$</span><span class="va">dataset</span><span class="op">$</span><span class="va">type</span> <span class="op">==</span> <span class="st">"tabular"</span><span class="op">)</span> <span class="op">{</span>
-  <span class="va">parent_element</span><span class="op">$</span><span class="va">dataTable</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>entityName <span class="op">=</span> <span class="va">dataset_file_name</span>,
-                                   entityDescription <span class="op">=</span> <span class="va">metadata_sheets</span><span class="op">$</span><span class="va">dataset</span><span class="op">$</span><span class="va">name</span>,
-                                   physical <span class="op">=</span> <span class="va">physical</span>,
-                                   attributeList <span class="op">=</span> <span class="va">attribute_list</span><span class="op">)</span>
-<span class="op">}</span> 
-<span class="kw">if</span> <span class="op">(</span><span class="va">metadata_sheets</span><span class="op">$</span><span class="va">dataset</span><span class="op">$</span><span class="va">type</span> <span class="op">==</span> <span class="st">"vector"</span><span class="op">)</span> <span class="op">{</span>
-  <span class="va">parent_element</span><span class="op">$</span><span class="va">spatialVector</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>entityName <span class="op">=</span> <span class="va">dataset_file</span>,
-                                       entityDescription <span class="op">=</span> <span class="va">metadata_sheets</span><span class="op">$</span><span class="va">dataset</span><span class="op">$</span><span class="va">name</span>,
-                                       physical <span class="op">=</span> <span class="va">physical</span>,
-                                       attributeList <span class="op">=</span> <span class="va">attribute_list</span>,
-                                       geometry <span class="op">=</span> <span class="va">metadata_sheets</span><span class="op">$</span><span class="va">dataset</span><span class="op">$</span><span class="va">geometry</span><span class="op">)</span>
-<span class="op">}</span>
-
-<span class="co">## TODO RASTER DATA </span></code></pre></div>
-</div>
+<p>Now we must append the <code>data_tables</code> list of datatables to the <code>parent_element</code>.</p>
+<div class="sourceCode" id="cb23"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">parent_element</span><span class="op">$</span><span class="va">dataTable</span> <span class="op">&lt;-</span> <span class="va">data_tables</span></code></pre></div>
 </div>
 </div>
 <div id="making-the-eml-document" class="section level2">
 <h2 class="hasAnchor">
 <a href="#making-the-eml-document" class="anchor"></a>Making the EML document</h2>
 <p>Now that we have all of the items appended to the <code>parent_element</code>, we must append it to the “dataset” and also give the file a unique ID number. The unique id number should match one that you reserved on the EDI data portal. Input this at the top of the document where you define the data tables.</p>
-<div class="sourceCode" id="cb23"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb24"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">eml</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>packageId <span class="op">=</span> <span class="va">edi_number</span>,
             system <span class="op">=</span> <span class="st">"EDI"</span>,
             access <span class="op">=</span> <span class="va">access</span>,
             dataset <span class="op">=</span> <span class="va">parent_element</span><span class="op">)</span></code></pre></div>
 <p>We now have all necessary elements to create a working EML document. The final step is to convert it into the correct format. To do so, we can use the EML library’s <code>write_eml</code> function.</p>
-<div class="sourceCode" id="cb24"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb25"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">file_name</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span><span class="op">(</span><span class="va">edi_number</span>, <span class="st">"xml"</span>, sep <span class="op">=</span> <span class="st">"."</span><span class="op">)</span>
 <span class="fu">EML</span><span class="fu">::</span><span class="fu"><a href="https://docs.ropensci.org/EML/reference/write_eml.html">write_eml</a></span><span class="op">(</span><span class="va">eml</span>, <span class="va">file_name</span><span class="op">)</span>
 <span class="fu"><a href="https://docs.ropensci.org/EML/reference/eml_validate.html">eml_validate</a></span><span class="op">(</span><span class="va">file_name</span><span class="op">)</span></code></pre></div>

@@ -3,7 +3,8 @@ pkgdown: 1.6.1
 pkgdown_sha: ~
 articles:
   creating-EML: creating-EML.html
-last_built: 2021-01-20T22:10Z
+  EML-multiple-datasets: EML-multiple-datasets.html
+last_built: 2021-01-27T21:32Z
 urls:
   reference: https://CVPIA-OSC.github.io/EDIutils//reference
   article: https://CVPIA-OSC.github.io/EDIutils//articles
