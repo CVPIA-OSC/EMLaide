@@ -52,10 +52,12 @@ navbar:
     menu: 
       - text: 'EML Template Helper'
         href: articles/creating-EML.html
-      - text: 'Multiple Datasets'
-        href: articles/EML-multiple-datasets.html
+      - text: 'EML Dateset Section Template'
+        href: articles/Dataset-Element.html
+      - text: 'EML Custom Inputs to Inital Sections'
+        href: articles/Inital-Metadata-Information.html
 repo:
-  url:
-    home: https://github.com/CVPIA-OSC/EDIutils
-    issue: https://github.com/CVPIA-OSC/EDIutils/issues/
-        
+ url:
+  home: https://github.com/CVPIA-OSC/EDIutils
+  issue: https://github.com/CVPIA-OSC/EDIutils/issues/
+
