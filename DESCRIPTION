@@ -1,6 +1,6 @@
 Package: EDIutils
 Title: Provides functions for building EML metadata for EDI's data repository 
-Version: 0.0.0.9000
+Version: 0.1
 Authors@R: c(
     person("Sadie", "Gill", email = "sgill@flowwest.com", role = c("aut", "cre")),
     person("Elizabeth", "Shaw", email = "egshaw@uchicago.edu", role = "aut"),
