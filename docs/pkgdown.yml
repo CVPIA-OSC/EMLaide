@@ -2,10 +2,12 @@ pandoc: 2.7.3
 pkgdown: 1.6.1
 pkgdown_sha: ~
 articles:
-  creating-EML-old-version: creating-EML-old-version.html
-  creating-EML: creating-EML.html
-  Dataset-Element: Dataset-Element.html
-  Inital-Metadata-Information: Inital-Metadata-Information.html
+      - text: 'EML Template Helper'
+        href: articles/creating-EML.html
+      - text: 'EML Dateset Section Template'
+        href: articles/Dataset-Element.html
+      - text: 'EML Custom Inputs to Inital Sections'
+        href: articles/Inital-Metadata-Information.html
 last_built: 2021-02-09T23:50Z
 urls:
   reference: https://CVPIA-OSC.github.io/EDIutils//reference
