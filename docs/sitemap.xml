@@ -85,9 +85,15 @@
     <loc>https://CVPIA-OSC.github.io/EDIutils//reference/word_example.html</loc>
   </url>
   <url>
+    <loc>https://CVPIA-OSC.github.io/EDIutils//articles/creating-EML-old-version.html</loc>
+  </url>
+  <url>
     <loc>https://CVPIA-OSC.github.io/EDIutils//articles/creating-EML.html</loc>
   </url>
   <url>
-    <loc>https://CVPIA-OSC.github.io/EDIutils//articles/EML-multiple-datasets.html</loc>
+    <loc>https://CVPIA-OSC.github.io/EDIutils//articles/Dataset-Element.html</loc>
+  </url>
+  <url>
+    <loc>https://CVPIA-OSC.github.io/EDIutils//articles/Inital-Metadata-Information.html</loc>
   </url>
 </urlset>
