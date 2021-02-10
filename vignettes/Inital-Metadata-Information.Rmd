@@ -42,7 +42,7 @@ edi_number <- "edi.678.1"
 # Custom inputs to the initial metadata information 
 
 This document gives more in depth examples on how to use the `add_access`, `add_pub_date`,
-`add_keywords`, and `add_license` elements. 
+`add_keywords`, and `add_license` elements. This document will not explain how to create a complete valid EML document to upload to the EDI repository. Please use this article just for sections of the EML document and refer to [the EML template helper](https://cvpia-osc.github.io/EDIutils//articles/creating-EML.html) to generate the entire document.
 
 ## Access Permissions 
 ### Default Permissions

@@ -164,7 +164,7 @@ The next item we will append is the keyword set. We can use the `add_keyword_set
 function to do so. The keyword set should include a list of words that help 
 identify your project or connect it with other similar projects. If you add keywords
 from a controlled vocabulary please see the detailed instructions on 
-[initial metadata information](Initial-Metadata-Information.Rmd).
+[initial metadata information](https://cvpia-osc.github.io/EDIutils//articles/Inital-Metadata-Information.html).
 
 ```{r}
 keywords <- add_keyword_set(list(), metadata$keyword_set[,1])
@@ -184,7 +184,7 @@ abstract <- add_abstract(list(), abstract = abstract_docx)
 ### License and Intellectual Rights
 Following the abstract, we will append the license and intellectual rights information. 
 The `add_license` function allows you to append the licensing and usage information 
-to your file. If you are not adding a CC0 or CCBY default license please see [initial metadata information](Initial-Metadata-Information.Rmd) This information can be added to the 
+to your file. If you are not adding a CC0 or CCBY default license please see [initial metadata information](https://cvpia-osc.github.io/EDIutils//articles/Inital-Metadata-Information.html) This information can be added to the 
 "license" tab in the excel file "example-metadata.xlsx".
 
 ```{r}
@@ -217,8 +217,7 @@ maintenance <- add_maintenance(list(), status = metadata$maintenance$status,
 ### Project: Title, Personnel, and Funding 
 The project section should be appended next. Project personnel and project funding 
 are nested in this project section. To generate a valid EML doc the project section 
-must contain a project title, a project personnel, and project funding. For more detailed 
-information on the project section of the EML please visit the [project specific instructions](Project-Element.Rmd).
+must contain a project title, a project personnel, and project funding. 
 
 #### Project title
 ```{r}
@@ -306,7 +305,7 @@ Next, we need to create the data table. The data table element includes`physical
 and potentially additional information for Spatial Data. These sections are all lists 
 which must be created first, appended to a dataTable, and then appended to 
 the `parent_element`. For more detailed information on the datatable element and 
-instructions on appending multiple datatables please see the [dataset specific instructions](Dataset-Element.Rmd).
+instructions on appending multiple datatables please see the [dataset specific instructions](https://cvpia-osc.github.io/EDIutils//articles/Dataset-Element.html).
 
 #### Physical 
 The physical element can be created first using the `add_physical` function. 
@@ -360,7 +359,7 @@ attribute_list$attribute <- purrr::pmap(attribute_table, attributes_and_codes)
 Now that we have the `attribute_list` and `physical` information, we 
 can compose the data table, which is the last element we need to create our 
 working EML file. If you wish to append multiple datatables to one datapackage please view the 
-[detailed dataset instructions](Dataset-Element.Rmd). 
+[detailed dataset instructions](https://cvpia-osc.github.io/EDIutils//articles/Dataset-Element.html). 
 
 ```{r}
 dataTable = list(entityName = dataset_file_name,
