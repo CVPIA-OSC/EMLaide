@@ -2,9 +2,11 @@ pandoc: 2.7.3
 pkgdown: 1.6.1
 pkgdown_sha: ~
 articles:
+  creating-EML-old-version: creating-EML-old-version.html
   creating-EML: creating-EML.html
-  EML-multiple-datasets: EML-multiple-datasets.html
-last_built: 2021-01-27T21:32Z
+  Dataset-Element: Dataset-Element.html
+  Inital-Metadata-Information: Inital-Metadata-Information.html
+last_built: 2021-02-09T23:50Z
 urls:
   reference: https://CVPIA-OSC.github.io/EDIutils//reference
   article: https://CVPIA-OSC.github.io/EDIutils//articles
