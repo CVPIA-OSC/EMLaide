@@ -241,7 +241,7 @@ add_nominal <- function(domain = c("text", "enumerated"), definition, text_patte
     measurementScale$nominal$nonNumericDomain$textDomain$definition <- definition
     
     if (is.null(text_pattern)) {
-      message('No text pattern is provided. Please add if applicable.')
+      message('Warning: Please add text pattern if applicable.')
     } else { 
       measurementScale$nominal$nonNumericDomain$textDomain$pattern <- text_pattern
     }
@@ -295,7 +295,7 @@ add_ordinal <- function(domain = c("text", "enumerated"), definition, text_patte
     measurementScale$ordinal$nonNumericDomain$textDomain$definition <- definition
     
     if (is.null(text_pattern)) {
-      message('No text pattern is provided. Please add if applicable.')
+      message('Warning: Please add text pattern if applicable.')
     } else { 
       measurementScale$ordinal$nonNumericDomain$textDomain$pattern <- text_pattern
     }
