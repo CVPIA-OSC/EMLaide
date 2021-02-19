@@ -28,7 +28,7 @@ To create valid EML the nested list must:
 
 We have two main sections within our EML document:
 
-* Access - The [Access Section](https://eml.ecoinformatics.org/schema/eml_xsd.html#eml_access) defines the access for the entire resource(entire EML document)
+* Access - The [Access Section](https://eml.ecoinformatics.org/schema/eml_xsd.html#eml_access) defines the access for the entire resource (entire EML document)
 * Dataset - The [Dataset Resource](https://eml.ecoinformatics.org/schema/eml_xsd.html#eml_dataset) contains the descriptive metadata information on a data set. A data set can contain one or more data entities. A data entity is a tabular data table or a vector or raster image. 
 
 The Dataset element contains all of the additional metadata information. Within the Dataset element we have additional nested lists. Some information is at the top level and is applicable to all elements in the Dataset but other information is nested within subsections and is metadata specific to that subsection. Please refer to the diagram below to see the overall EML structure. 
@@ -170,13 +170,12 @@ personnel <- purrr::pmap(metadata$personnel, adds_person) %>% flatten()
 ```
 
 ### Title and Short Name 
-Following the personnel element, we can append the title elements. The `add_title` function 
-allows you to append the title and short name of the dataset to the file. 
-Only one title and short name should be appended. The title should be 
-fairly descriptive and between 7 and 20 words long. The short name must be less than
-the number of words present in the title and is your opportunity to give viewers a more 
-accessible name to the dataset. This information can be added to the "title"
-tab in the excel file "example-metadata.xlsx".
+The `add_title` function allows you to append the title and short name of the dataset to the file. 
+
+* Title - Descriptive and between 7 and 20 words long
+* Short Name - less words than title and should give viewers a more accessible name to the dataset
+
+This information can be added to the "title" tab in the excel file "example-metadata.xlsx".
 
 ```{r, }
 title <- add_title(list(), title = metadata$title$title,  
@@ -310,10 +309,10 @@ instructions on appending multiple datatables please see the [dataset specific i
 #### Physical 
 The physical element can be created first using the `add_physical` function. 
 This will append the actual information of the data. 
-The file path of the data must be given as the `dataset_file` specified at the top of this document.  
+The file path of the data must be given as the `dataset_file` specified at the top of this document. **If you wish to upload your datapackage to EDI directly from R you must include a URL to access the dataset. You can do this by providing an input to the `data_url` argument.**
 
 ```{r}
-physical <- add_physical(file_path = dataset_file)
+physical <- add_physical(file_path = dataset_file, data_url = NULL)
 ```
 
 #### Attribute List 
@@ -323,8 +322,8 @@ can then be inputted into the "attribute" tab in the "example-metadata.xlsx" exc
 column in the dataTable must have a described attribute to match EDI congruence checker. 
 
 #### Enumerated vs. Non Enumerated Attributes
-*  If you are using a "nominal" or "ordinal" attribute which is "enumerated", (it has a specific code definition), you must also fill out the tab "code_definitions". The `code_helper()` function below helps adding `codeDefinitions` to the "enumerated" attributes. 
-* For Non Enumerated attributes the definition required by EML is simply the `attribute_defintion` given in the spreadsheet. 
+* Enumerated - If you are using a "nominal" or "ordinal" attribute which is "enumerated", (it has a specific code definition), you must also fill out the tab "code_definitions". The `code_helper()` function below helps adding `codeDefinitions` to the "enumerated" attributes. 
+* Non Enumberated - For Non Enumerated attributes the definition required by EML is simply the `attribute_defintion` given in the spreadsheet. 
 ```{r}
 attribute_list <- list()
 # Create helper function to add code definitions if domain is "enumerated"
@@ -363,6 +362,7 @@ adds_attribute <- function(attribute_name, attribute_definition, storage_type,
 # Maps through entire attribute sheet adding to attribute_list
 attribute_list$attribute <- purrr::pmap(metadata$attribute, adds_attribute) 
 ```
+
 #### Putting the Data Table Together
 Now that we have the `attribute_list` and `physical` information, we 
 can compose the data table, which is the last element we need to create our 
@@ -376,8 +376,9 @@ dataTable <- list(entityName = dataset_file_name,
                  attributeList = attribute_list)
 
 ```
+
 ## Append all items to the dataset
-Here we  create a datasest list that contains all of the elements we generated.
+Here we  create a datasest list that contains all of the elements we generated. 
 ```{r}
 dataset <- list(title = title$title,
                 shortName = title$shortName,
@@ -393,7 +394,6 @@ dataset <- list(title = title$title,
                 methods = methods,
                 maintenance = maintenance$maintenance,
                 dataTable = dataTable) 
-
 ```
 ## Making the EML document 
 Now that we have all of the items appended to the `dataset` we can add the dataset, id, and access to a new list named eml. 
