@@ -15,10 +15,32 @@ library(EDIutils)
 library(tidyverse)
 library(readxl)
 library(EML)
+
 ```
+
+## Ecological Metadata Language(EML) Schema Outline 
+
+We use the EML package to generate the EML document based on our metadata inputs. The EML package `write_eml()` function takes in a nested list and formats the list into an EML document. 
+To create valid EML the nested list must:
+
+* Contain all required EML fields
+* nest all fields under the correct sub sections
+
+We have two main sections within our EML document:
+
+* Access - The [Access Section](https://eml.ecoinformatics.org/schema/eml_xsd.html#eml_access) defines the access for the entire resource(entire EML document)
+* Dataset - The [Dataset Resource](https://eml.ecoinformatics.org/schema/eml_xsd.html#eml_dataset) contains the descriptive metadata information on a data set. A data set can contain one or more data entities. A data entity is a tabular data table or a vector or raster image. 
+
+The Dataset element contains all of the additional metadata information. Within the Dataset element we have additional nested lists. Some information is at the top level and is applicable to all elements in the Dataset but other information is nested within subsections and is metadata specific to that subsection. Please refer to the diagram below to see the overall EML structure. 
+
+![Alt text](figures/EML_diagram (2).jpeg){width=100%}
+
+For a more in depth description of EML please see [EML Specification.](https://eml.ecoinformatics.org/)
+
 In this document, we can quickly create an EML file which has the opportunity to 
-append the following elements. For more detailed instructions on a specific section 
+append the following elements.For more detailed instructions on a specific section 
 please see section specific articles. 
+
 
 ```yaml
 - eml 
@@ -51,9 +73,9 @@ please see section specific articles.
 ## Our Example 
 We will use the data provided by John Hannon to show an example of how to compile
 metadata in a valid EML document that can be uploaded to the EDI data portal website. 
-The excel sheet of which Hannon's data resides is found in "~/data-raw/Hannon-Example/example-metadata.xlsx". 
+To follow along with this example please download the [Hannon-Example]()
 
-## Required Files 
+### Required Files 
 Four files must be uploaded to make a complete EML document. 
 
 * An excel spreadsheet containing the majority of the metadata
@@ -61,18 +83,12 @@ Four files must be uploaded to make a complete EML document.
 * A word document containing the methods text 
 * A file that contains the data (preferably csv if tabular data) and the name of the file 
 
-In addition to these four files a entity description and an EDI number must be defined. 
-The EDI number should be a unique data package identifier. You can reserve this 
-data package identifier number on the [EDI data repository under tools.](https://portal.edirepository.org/nis/reservations.jsp)
-For this example all of our files are stored in a the Hannon-Example folder within data-raw. 
-"~/data-raw/Hannon-Example".
-
 ```{r, include = FALSE}
 excel_path <- system.file("extdata", "Hannon-Example", "example-metadata.xlsx", 
                           package = "EDIutils", mustWork = TRUE)
 
 sheets <- readxl::excel_sheets(excel_path)
-metadata <- lapply(sheets, function(x) readxl::read_excel(excel_path, sheet = x))
+metadata <- purrr::map(sheets, function(x) readxl::read_excel(excel_path, sheet = x))
 names(metadata) <- sheets
 
 abstract_docx <- system.file("extdata", "Hannon-Example", "hannon_example_abstract.docx", 
@@ -90,22 +106,29 @@ edi_number <- "edi.678.1"
 ```
 
 ```{r, eval = FALSE}
-excel_path <- "data-raw/Hannon-Example/example-metadata.xlsx"
+excel_path <- "Hannon-Example/example-metadata.xlsx"
 
 sheets <- readxl::excel_sheets(excel_path)
 metadata <- lapply(sheets, function(x) readxl::read_excel(excel_path, sheet = x))
 names(metadata) <- sheets
 
-abstract_docx <- "data-raw/Hannon-Example/hannon_example_abstract.docx"
+abstract_docx <- "Hannon-Example/hannon_example_abstract.docx"
 
-methods_docx <- "data-raw/Hannon-Example/hannon_example_methods.docx"
+methods_docx <- "Hannon-Example/hannon_example_methods.docx"
 
-dataset_file <- "data-raw/Hannon-Example/hannon_example_physical_data.csv"
+dataset_file <- "Hannon-Example/hannon_example_physical_data.csv"
 
 dataset_file_name <- "hannon_example_physical_data.csv"
+```
+### EDI Number
 
+In addition to these four files a entity description and an EDI number must be defined. 
+The EDI number should be a unique data package identifier. You can reserve this 
+data package identifier number on the [EDI data repository under tools.](https://portal.edirepository.org/nis/reservations.jsp)
+```{r}
 edi_number <- "edi.678.1"
 ```
+
 ## EML Sections 
 We start with the simpler pieces of information such as `personnel` and `title` and 
 work up to appending the more complex sections like `dataTable`. 
@@ -202,7 +225,7 @@ methods <- add_method(list(), methods_file = methods_docx)
 ```
 
 ### Maintenance 
-The maintenance of a dataset \strong(is simply if the data collection is complete or ongoing.)
+The maintenance of a dataset **is simply if the data collection is complete or ongoing.**
 The `add_maintenance` function allows you to append the status of the dataset to
 your file and the inputs of `complete` and `ongoing` are the only ones allowed.
 If the dataset is still in progress, the frequency of which it is updated must 
@@ -219,28 +242,12 @@ The project section should be appended next. Project personnel and project fundi
 are nested in this project section. To generate a valid EML doc the project section 
 must contain a project title, a project personnel, and project funding. 
 
-#### Project title
-```{r}
-project_title <- metadata$project$project_title
-```
-
-
 #### Project personnel 
+The creator of the dataset is appended as the `project_personnel`. If a different person is associated with the project please add that information to the "project" tab in the excel file "example-metadata.xlsx". The project personnel also requires that a role be specified in the list. Here we add `role = "Project Contact"`.
 ```{r}
-project_table <- metadata$project %>% select(-project_title)
-project_personnel <- list()
-adds_project_person <- function(first_name, last_name, email, role, organization, orcid) {
-  project_personnel <- add_personnel(project_personnel, first_name, last_name, email,
-                                  role, organization, orcid)
-  if (!is.null(project_personnel$associatedParty)) {
-  project_personnel <- project_personnel$associatedParty
-  }
-  if (!is.null(project_personnel$creator)){
-  project_personnel <- project_personnel$creator
-  }
-  return(project_personnel)
-}
-project_personnel <- purrr::pmap(project_table, adds_project_person) %>% flatten()
+#TODO is it better to assign the role within the add_project? Or to fix add_personnel function and do it within?
+project_personnel <- personnel$creator 
+project_personnel$role <- "Project Contact"
 ```
 
 #### Project funding 
@@ -250,21 +257,21 @@ you received the funding from. Multiple funders can be appended and
 information should be added to the "funding" tab in the excel file "example-metadata.xlsx".
 
 ```{r}
-add_a_funder <- function(funder_name, funder_identifier, award_number, award_title, 
+add_funder <- function(funder_name, funder_identifier, award_number, award_title, 
                          award_url, funding_description) {
   award_information <- add_funding(funder_name, funder_identifier, award_number, award_title,
                                 award_url, funding_description)
 }
 
-award_information <- purrr::pmap(metadata$funding, add_a_funder) %>% flatten()
+award_information <- purrr::pmap(metadata$funding, add_funder) %>% flatten()
 ```
 
 #### Combining Project Elements
 Once all the components of project have been defined we can use the add_project
 function to combine the sections in the proper formatting for an EML document. 
 ```{r}
-project <- add_project(list(),
-                       project_title, 
+project <- add_project(list(), 
+                       project_title = metadata$title$short_name, 
                        award_information,
                        project_personnel)
 ``` 
@@ -274,7 +281,7 @@ Next, the coverage information is appended. The `add_coverage` function allows
 you to append full coverage information to your file. Temporal, Geographic, and 
 Taxonomic Coverage are all required elements to generate an EML document. 
 
-##### Taxonomic coverage 
+#### Taxonomic coverage 
 Taxonomic coverage can be appended using the `add_taxonomic_coverage` function. 
 The taxonomic coverage information is added to the "example-metadata.xlsx" 
 excel file on the tab "taxonomic_coverage". chinook, delta_smelt, steelhead, 
@@ -319,41 +326,49 @@ physical <- add_physical(file_path = dataset_file)
 #### Attribute List 
 Next, we use the `add_attribute` function to append all attributes to an attribute list. Please make sure you review what 
 type of attribute you are providing and what inputs are necessary. These values 
-can then be inputted into the "attribute" tab in the "example-metadata.xlsx" excel file. If you
-are using a "nominal" or "ordinal" attribute which is "enumerated", (it has a specific 
-code definition), you must also fill out the tab "code_definitions". Give the `attribute_name` and the 
-unique code and definition for every attribute that is "enumerated". Every single 
+can then be inputted into the "attribute" tab in the "example-metadata.xlsx" excel file. Every single 
 column in the dataTable must have a described attribute to match EDI congruence checker. 
 
+#### Enumerated vs. Non Enumerated Attributes
+*  If you are using a "nominal" or "ordinal" attribute which is "enumerated", (it has a specific code definition), you must also fill out the tab "code_definitions". The `code_helper()` function below helps adding `codeDefinitions` to the "enumerated" attributes. 
+* For Non Enumerated attributes the definition required by EML is simply the `attribute_defintion` given in the spreadsheet. 
 ```{r}
-attribute_table <- metadata$attribute
-codes <- metadata$code_definitions
 attribute_list <- list()
-
-code_helper <- function(code, definitions) {
+# Create helper function to add code definitions if domain is "enumerated"
+code_helper <- function(code, definitions, attribute_name) {
   codeDefinition <- list(code = code, definition = definitions)
 }
-
-attributes_and_codes <- function(attribute_name, attribute_definition, storage_type, 
-                                 measurement_scale, domain, type, units, unit_precision, 
-                                 number_type, date_time_format, date_time_precision, minimum, maximum, 
+# Adds both enumerated and non enumerated attributes 
+adds_attribute <- function(attribute_name, attribute_definition, storage_type, 
+                                 measurement_scale, domain, type, units,
+                                 unit_precision, number_type, date_time_format, 
+                                 date_time_precision, minimum, maximum, 
                                  attribute_label){
+  # If statement adds definition for enumerated attribute using code_helper()
   if (domain %in% "enumerated") { 
     definition <- list()
-    current_codes <- codes[codes$attribute_name == attribute_name, ]
-    definition$codeDefinition <- purrr::pmap(current_codes %>% select(-attribute_name), code_helper) 
+    codes <- metadata$code_definitions
+    current_codes <- codes[codes$attribute_name == attribute_name, ] 
+    definition$codeDefinition <- purrr::pmap(current_codes, code_helper) 
+  # Else statement adds definition for non-enumerated attribute 
   } else {
     definition = attribute_definition
   }
-  new_attribute <- add_attribute(attribute_name = attribute_name, attribute_definition = attribute_definition,
-                                 storage_type = storage_type, measurement_scale = measurement_scale, 
-                                 domain = domain, definition = definition, type = type, units = units, 
-                                 unit_precision = unit_precision, number_type = number_type, 
-                                 date_time_format = date_time_format, date_time_precision = date_time_precision, 
-                                 minimum = minimum, maximum = maximum, attribute_label = attribute_label)
+  new_attribute <- add_attribute(attribute_name = attribute_name, 
+                                 attribute_definition = attribute_definition,
+                                 storage_type = storage_type,
+                                 measurement_scale = measurement_scale, 
+                                 domain = domain, definition = definition, 
+                                 type = type, units = units, 
+                                 unit_precision = unit_precision, 
+                                 number_type = number_type, 
+                                 date_time_format = date_time_format, 
+                                 date_time_precision = date_time_precision, 
+                                 minimum = minimum, maximum = maximum, 
+                                 attribute_label = attribute_label)
 }
-
-attribute_list$attribute <- purrr::pmap(attribute_table, attributes_and_codes) 
+# Maps through entire attribute sheet adding to attribute_list
+attribute_list$attribute <- purrr::pmap(metadata$attribute, adds_attribute) 
 ```
 #### Putting the Data Table Together
 Now that we have the `attribute_list` and `physical` information, we 
@@ -362,7 +377,7 @@ working EML file. If you wish to append multiple datatables to one datapackage p
 [detailed dataset instructions](https://cvpia-osc.github.io/EDIutils//articles/Dataset-Element.html). 
 
 ```{r}
-dataTable = list(entityName = dataset_file_name,
+dataTable <- list(entityName = dataset_file_name,
                  entityDescription = metadata$dataset$name,
                  physical = physical,
                  attributeList = attribute_list)
