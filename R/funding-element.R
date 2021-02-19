@@ -6,11 +6,11 @@
 #' \code{\link{CVPIA_funders}}: "USBR", "CDWR", or "CDFW" to get pre-selected funding 
 #' information. If you are funded by one of these sources 
 #' please specify which one in \code{funder_name} and include an \code{award_title}. 
+#' @param award_title Title of the award granted to the project.
 #' @param funder_identifier (Optional) This is where the funding organization is listed in 
 #' the registry. The funder identifier must be registered. Follow the instructions at 
 #' \url{https://ror.org/curation/} to get registered. 
 #' @param award_number (Optional) The identifier assigned by the funding agency to identify this funding award.
-#' @param award_title Title of the award granted to the project.
 #' @param award_url (Optional) Optional to include a link to information about the funding
 #'  award on the funding organization's webpage.
 #' @param funding_description (Optional) Provide a short description of the funding received.
@@ -30,11 +30,11 @@ add_funding <- function(funder_name, award_title, funder_identifier = NULL,
                         award_number = NULL, award_url = NULL, funding_description = NULL)  {
   
   award <- list()
-  required_arguments <- c("funder_name", "funder_identifier", "award_number",
-                          "award_title", "award_url", "funding_description")
+  required_arguments <- c("funder_name", "award_title", "funder_identifier", 
+                          "award_number", "award_url", "funding_description")
   
-  missing_argument_index <- which(c(missing(funder_name), missing(funder_identifier),
-                                    missing(award_number), missing(award_title), 
+  missing_argument_index <- which(c(missing(funder_name), missing(award_title), 
+                                    missing(funder_identifier), missing(award_number),  
                                     missing(award_url), missing(funding_description)))
   
   if (length(missing_argument_index) > 0) {
@@ -67,7 +67,9 @@ add_funding <- function(funder_name, award_title, funder_identifier = NULL,
     }
   }
   if (!is.null(funder_identifier)) {
+    if (!is.na(funder_identifier)) { 
     award$funderIdentifier = funder_identifier 
+    }
   }
   if (!is.null(award_number)) {
     award$awardNumber = award_number 

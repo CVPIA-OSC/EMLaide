@@ -33,12 +33,12 @@ We have two main sections within our EML document:
 
 The Dataset element contains all of the additional metadata information. Within the Dataset element we have additional nested lists. Some information is at the top level and is applicable to all elements in the Dataset but other information is nested within subsections and is metadata specific to that subsection. Please refer to the diagram below to see the overall EML structure. 
 
-![Alt text](figures/EML_diagram (2).jpeg){width=100%}
+![Alt text](figures/EML_diagram.jpeg){width=100%}
 
 For a more in depth description of EML please see [EML Specification.](https://eml.ecoinformatics.org/)
 
 In this document, we can quickly create an EML file which has the opportunity to 
-append the following elements.For more detailed instructions on a specific section 
+append the following elements. For more detailed instructions on a specific section 
 please see section specific articles. 
 
 
@@ -46,10 +46,9 @@ please see section specific articles.
 - eml 
   -access
   -dataset
-    -personnel 
-      - creator
-      - contact
-      - associated party 
+    - creator
+    - contact
+    - associated parties
     - title  
     - abstract 
     - keyword set  
@@ -57,23 +56,14 @@ please see section specific articles.
     - methods 
     - maintenance 
     - project
-      - project title
-      - project personnel 
-      - project funding 
     - coverage 
-      - geographic coverage 
-      - temporal coverage 
-      - taxonomic coverage 
     - data table 
-      - physical 
-      - attribute list 
-      - methods 
 ```
 
 ## Our Example 
 We will use the data provided by John Hannon to show an example of how to compile
 metadata in a valid EML document that can be uploaded to the EDI data portal website. 
-To follow along with this example please download the [Hannon-Example]()
+To follow along with this example please download the [Hannon-Example](https://s3.console.aws.amazon.com/s3/buckets/cvpia-data-stewardship?region=us-west-1&tab=objects)
 
 ### Required Files 
 Four files must be uploaded to make a complete EML document. 
@@ -151,13 +141,17 @@ pub_date <- add_pub_date(list())
 ```
 
 ### Personnel: Creator, Contact, and Associated Parties. 
-The `add_personnel` function allows you to append information on the creator or
-the associated parties to your file. The creator would be any person or organization
-who is responsible for the creation of the data, while an associated party would 
-be any person or organization which is associated to the dataset. The creator will also 
-be the contact for this datset. Multiple creators, associated parties, and a mixture
+The `add_personnel` function allows you to append information on personnel involved in this dataset. EDI schema allows for addition of personel taking on the roles of:
+
+* Creator - any person or organization who is responsible for the creation of the data
+* Contact - individual to contact with questions about data (often the creator) 
+* Associated Party - any person or organization which is associated to the dataset
+
+Multiple creators, associated parties, and a mixture
 of both can be appended to the EML file by providing all inputs in the "personnel"
 tab in the "example-metadata.xlsx" excel file. 
+
+Below we create a personnel list. We append each person using an `adds_person()` helper function that provides inputs and calls on our `add_personnel()` function to add each person individually to the `personnel` list. 
 
 ```{r}
 personnel <- list()
@@ -257,13 +251,7 @@ you received the funding from. Multiple funders can be appended and
 information should be added to the "funding" tab in the excel file "example-metadata.xlsx".
 
 ```{r}
-add_funder <- function(funder_name, funder_identifier, award_number, award_title, 
-                         award_url, funding_description) {
-  award_information <- add_funding(funder_name, funder_identifier, award_number, award_title,
-                                award_url, funding_description)
-}
-
-award_information <- purrr::pmap(metadata$funding, add_funder) %>% flatten()
+award_information <- purrr::pmap(metadata$funding, add_funding) %>% flatten()
 ```
 
 #### Combining Project Elements
@@ -417,5 +405,14 @@ The final step is to convert our `eml` list into the correct format. To do so, w
 file_name <- paste(edi_number, "xml", sep = ".")
 EML::write_eml(eml, file_name)
 eml_validate(file_name)
-
 ```
+
+## Uploading to EDI Data Repository 
+If you feel ready to upload your document to the EDI data repository you can do that from R using the Environmental Data Initiatives EDIutils package. Use the `api_create_data_package()` to create the initial version of a data package. 
+
+In order to upload from R you must have the data table accessible by a URL that can be accessed through the EDI repository. This URL must be added in the `add_physical()` section above. If you do not have a URL available then you can upload the EML document and the dataset on the [EDI data portal.](https://portal.edirepository.org/nis/home.jsp)
+
+```{r}
+#api_create_data_package()
+```
+
