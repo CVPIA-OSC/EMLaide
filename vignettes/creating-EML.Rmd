@@ -119,6 +119,13 @@ data package identifier number on the [EDI data repository under tools.](https:/
 edi_number <- "edi.678.1"
 ```
 
+It is also possible to use the EDIutils function `api_create_reservation()` to generate a EDI number using R. See the `api_create_reservation()` [documentation.](https://ediorg.github.io/EDIutils/reference/api_create_reservation.html)
+```{r}
+# edi_number <- api_create_resercation(scope = "edi", environment = "staging", user.id = "your user id", 
+#                                      user.pass = "your user password ", affilitation = "EDI")
+```
+
+
 ## EML Sections 
 We start with the simpler pieces of information such as `personnel` and `title` and 
 work up to appending the more complex sections like `dataTable`. 
@@ -192,7 +199,7 @@ Next, we will use the `add_abstract` function to append the abstract of the data
 your file. The abstract should include basic information on the dataset that gives 
 a brief summary to the viewers of what they are observing from the data. This 
 information will not be added to the "example-metadata.xlsx" excel sheet, but rather the 
-"hannon_example_abstract.docx". The text provided can be deleted and replaced with your own. 
+"hannon_example_abstract.docx". 
 
 ```{r}
 abstract <- add_abstract(list(), abstract = abstract_docx)
@@ -211,7 +218,7 @@ license <- add_license(list(), default_license = metadata$license$default_licens
 ### Methods
 The method section explains the scientific methods that were used in the collection of the dataset.
 The `add_method` function allows you to add a method file to the parent_element.
-A template methods document is given ("data-raw/Hannon-Example/hannon_example_methods.docx"). 
+A template methods document is given ("Hannon-Example/hannon_example_methods.docx"). 
 If more methods are needed, you can create separate sections in your word document.
 
 ```{r}
@@ -237,11 +244,9 @@ are nested in this project section. To generate a valid EML doc the project sect
 must contain a project title, a project personnel, and project funding. 
 
 #### Project personnel 
-The creator of the dataset is appended as the `project_personnel`. If a different person is associated with the project please add that information to the "project" tab in the excel file "example-metadata.xlsx". The project personnel also requires that a role be specified in the list. Here we add `role = "Project Contact"`.
+The creator of the dataset is appended as the `project_personnel`. If a different person is associated with the project please add that information to the "project" tab in the excel file "example-metadata.xlsx". 
 ```{r}
-#TODO is it better to assign the role within the add_project? Or to fix add_personnel function and do it within?
 project_personnel <- personnel$creator 
-project_personnel$role <- "Project Contact"
 ```
 
 #### Project funding 

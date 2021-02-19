@@ -68,19 +68,6 @@ test_that('arguments have all the nessisary required values', {
                                                     electronicMailAddress = "i@didnt.know",
                                                     role = "Manager")), 
                "Please provide an organization for the project personnel.")
-  
-  expect_error(add_project(parent_element = parent_element,
-                           project_title = "my project title", 
-                           award_information = list(title = "Money up for grabs",
-                                                    funderName = "Bank",
-                                                    awardNumber = "000",
-                                                    funderIdentifier = "Funder 1",
-                                                    awardUrl = "awardforme.com"),
-                           project_personnel = list(individualName = list(givenName = "Sue",
-                                                                          surName ="Knew"),
-                                                    organizationName = "Something",
-                                                    electronicMailAddress = "i@didnt.know")), 
-               "Please provide a role for the project personnel.")
 })
 
 test_that('The add_project function adds the project elements', {
@@ -92,18 +79,19 @@ test_that('The add_project function adds the project elements', {
                          funding_description = "BLE LTER is supported by the National Science Foundation under award #1656026 (2017-08-01 to 2022-07-31).")
   
   person <- add_personnel(parent_element = parent_element,
-                          first_name <- "Susan", 
-                          last_name <- "Susanton", 
-                          email <- "susanton@fake.com", 
-                          role <- "Data Manager", 
-                          organization <- "USFWS")
+                          first_name = "Susan", 
+                          last_name = "Susanton", 
+                          email = "susanton@fake.com", 
+                          organization = "USFWS",
+                          role = "Project Lead")
+  project_person <- person$associatedParty
   
   expected_project = list(project = list(title = "This is a new project",
-                                         personnel = list(associatedParty = list(individualName = list(givenName = "Susan", 
-                                                                                                       surName = "Susanton"), 
-                                                                                 electronicMailAddress = "susanton@fake.com", 
-                                                                                 organizationName = "USFWS", 
-                                                                                 role = "Data Manager")),
+                                         personnel = list(individualName = list(givenName = "Susan", 
+                                                                                surName = "Susanton"), 
+                                                          electronicMailAddress = "susanton@fake.com", 
+                                                          organizationName = "USFWS", 
+                                                          role = "Project Lead"),
                                          award = list(funderName = "National Science Foundation", 
                                                       title = "LTER: Beaufort Sea Lagoons: An Arctic Coastal Ecosystem in Transition", 
                                                       funderIdentifier = "http://dx.doi.org/10.13039/100000001", 
@@ -114,7 +102,7 @@ test_that('The add_project function adds the project elements', {
   expect_equal(add_project(parent_element = parent_element,
                            project_title = "This is a new project",
                            award_information = funding,
-                           project_personnel = person), 
+                           project_personnel = project_person), 
                expected_project)
   
 })  
