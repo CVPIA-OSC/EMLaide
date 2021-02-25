@@ -35,7 +35,7 @@ test_that('Correct error and warning messages are produced.', {
   expect_message(add_attribute(attribute_name = "LatitudeDD", attribute_definition = "Latitude",
                                attribute_label = "Lat", storage_type = "coordinate", measurement_scale = "ordinal",
                                domain = "text", definition = "Latitude"),
-                 'No text pattern is provided. Please add if applicable.')
+                 'Warning: Please add text pattern if applicable.')
   
   expect_error(add_attribute(attribute_name = "site_id", attribute_label = "sites", 
                              attribute_definition = "Site id as used in sites table",
@@ -53,7 +53,7 @@ test_that('Correct error and warning messages are produced.', {
                                storage_type = "string", measurement_scale = "nominal",
                                domain = "text", attribute_label = "sites",
                                definition = "Site id as used in sites table."),
-                 'No text pattern is provided. Please add if applicable.')
+                 'Warning: Please add text pattern if applicable.')
   
   expect_error(add_attribute(attribute_name = "Recap", attribute_definition = "Has the Turtle been captured and tagged previously",
                              storage_type = "text", attribute_label = "Turtles",
@@ -75,7 +75,7 @@ test_that('Correct error and warning messages are produced.', {
                                attribute_label = "Latitude", storage_type = "coordinate",
                                measurement_scale = "ordinal",
                                domain = "text", definition = "Latitude"),
-                 'No text pattern is provided. Please add if applicable.')
+                 'Warning: Please add text pattern if applicable.')
   
   expect_error(add_attribute(attribute_name = "hwa", attribute_definition = "Hemlock woolly adelgid density per meter of branch",
                              storage_type = "number", measurement_scale = "ordinal",
