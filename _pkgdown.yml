@@ -3,6 +3,9 @@ url: https://CVPIA-OSC.github.io/EDIutils/
 template:
   params:
     bootswatch: flatly
+resource_files:
+- figures/EML_diagram.png
+
 home:
   links:
   - text: EDI's Data Repositroy 
