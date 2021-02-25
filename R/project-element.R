@@ -88,10 +88,7 @@ add_project <- function(parent_element, project_title,
                                           is.null(project_personnel$creator$individualName)),
                                        (is.null(project_personnel$organization) & 
                                           is.null(project_personnel$associatedParty$organization) &
-                                          is.null(project_personnel$creator$organization)),
-                                       (is.null(project_personnel$role) & 
-                                          is.null(project_personnel$associatedParty$role) &
-                                          is.null(project_personnel$creator$role))))
+                                          is.null(project_personnel$creator$organization))))
   
   if (length(null_required_information) > 0) {
     missing_requirment_error <- required_information[null_required_information][1]
@@ -99,12 +96,11 @@ add_project <- function(parent_element, project_title,
                                        funderName = "Please provide a list that includes the funderName.",
                                        title = "Please provide a list that includes the title for this award.",
                                        individualName = "Please provide a name for the project personnel.",
-                                       organization = "Please provide an organization for the project personnel.",
-                                       role = "Please provide a role for the project personnel.")
+                                       organization = "Please provide an organization for the project personnel.")
 
     stop(requirment_error_message, call. = FALSE)
   }
-  
+  project_personnel$role <- "Project Lead"
   parent_element$project <- list(title = project_title,
                                  personnel = project_personnel,
                                  award = award_information)
