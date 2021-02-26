@@ -31,7 +31,7 @@ We have two main sections within our EML document:
 * Access - The [Access Section](https://eml.ecoinformatics.org/schema/eml_xsd.html#eml_access) defines the access for the entire resource (entire EML document)
 * Dataset - The [Dataset Resource](https://eml.ecoinformatics.org/schema/eml_xsd.html#eml_dataset) contains the descriptive metadata information on a data set. A data set can contain one or more data entities. A data entity is a tabular data table or a vector or raster image. 
 
-The Dataset element contains all of the additional metadata information. Within the Dataset element we have additional nested lists. Some information is at the top level and is applicable to all elements in the Dataset but other information is nested within subsections and is metadata specific to that subsection. 
+The Dataset element contains all of the additional metadata information. The Dataset element is composed of nested lists. Some information is at the top level and is applicable to all elements in the Dataset but other information is nested within subsections and is metadata specific to that subsection. 
 
 For a more in depth description of EML please see [EML Specification.](https://eml.ecoinformatics.org/)
 
