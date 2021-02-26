@@ -115,7 +115,7 @@ unique_thesaurus <- unique(metadata$keyword_set$keywordThesaurus)
 keywords <- list()
 add_keywords = function(unique_thesaurus){
   keywords <- add_keyword_set(keywords, 
-                              keyword_set = list(keyword = metadata$keyword_set$keyword[keyword_set$keywordThesaurus == unique_thesaurus],
+                              keyword_set = list(keyword = metadata$keyword_set$keyword[metadata$keyword_set$keywordThesaurus == unique_thesaurus],
                                                  keywordThesaurus = unique_thesaurus))
 }
 all_keywords <- purrr::map(unique_thesaurus, add_keywords) %>% flatten()
