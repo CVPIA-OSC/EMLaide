@@ -17,233 +17,149 @@ abstract_docx <- "data-raw/Hannon-Example/hannon_example_abstract.docx"
 methods_docx <- "data-raw/Hannon-Example/hannon_example_methods.docx"
 physical_entity <- "data-raw/Hannon-Example/hannon_example_physical_data.csv"
 
+# EDI number -------------------------------------------------------------------
 edi_number = "edi.687.1"
 
 # Add Access -------------------------------------------------------------------
 access <- add_access()
 
-### Add Creating the Parent Element --------------------------------------------
-parent_element <- list() 
-
 ### Add Publication Date -------------------------------------------------------
-parent_element <- add_pub_date(parent_element = parent_element, date = NULL)
+pub_date <- add_pub_date(list())
 
 ### Add Personnel: Creator, Contact, and Associated Parties.--------------------
-personnel_table <- metadata_sheets$personnel
-for (i in 1:nrow(personnel_table)) {
-  current <- personnel_table[i, ]
-  parent_element <- add_personnel(parent_element = parent_element, 
-                                  first_name = current$first_name, 
-                                  last_name = current$last_name, 
-                                  email = current$email,
-                                  role = current$role, 
-                                  organization = current$organization,
-                                  orcid = current$orcid)
+personnel <- list()
+adds_person <- function(first_name, last_name, email, role, organization, orcid) {
+  personnel <- add_personnel(personnel, first_name, last_name, email,
+                             role, organization, orcid)
 }
+personnel <- purrr::pmap(metadata$personnel, adds_person) %>% flatten()
 
 ### Add Title and Short Name ---------------------------------------------------
-title <- metadata_sheets$title
-parent_element <- add_title(parent_element = parent_element,
-                            title = title$title, 
-                            short_name = title$short_name)
+title <- add_title(list(), title = metadata$title$title,  
+                   short_name = metadata$title$short_name)
 
 ### Add Keyword Set ------------------------------------------------------------
-keyword_set <- metadata_sheets$keyword_set
-if (length(!is.na(metadata_sheets$keywordThesaurus)) == 0) {
-  parent_element <- add_keyword_set(parent_element = parent_element,
-                                    keyword_set = keyword_set[,1])
-} else {
-  thesaurus <- unique(keyword_set$keywordThesaurus)
-  for (i in 1:length(thesaurus)) {
-    keywords <- keyword_set$keyword[keyword_set$keywordThesaurus == thesaurus[i]]
-    parent_element <- add_keyword_set(parent_element = parent_element,
-                                      keyword_set = list(keyword = keywords,
-                                                         keywordThesaurus = thesaurus[i]))
-  }
- }
-
+unique_thesaurus <- unique(metadata$keyword_set$keywordThesaurus)
+keywords <- list()
+add_keywords = function(unique_thesaurus){
+  keywords <- add_keyword_set(keywords, 
+                              keyword_set = list(keyword = metadata$keyword_set$keyword[keyword_set$keywordThesaurus == unique_thesaurus],
+                                                 keywordThesaurus = unique_thesaurus))
+}
+all_keywords <- purrr::map(unique_thesaurus, add_keywords) %>% flatten()
 ### Add Abstract ---------------------------------------------------------------
-parent_element <- add_abstract(parent_element = parent_element, 
-                               abstract = abstract_docx)
+abstract <- add_abstract(list(), abstract = abstract_docx)
 
 ### Add License and Intellectual Rights ----------------------------------------
-license <- metadata_sheets$license
-
-if (license$default_license == "CCO" | license$default_license == "CCBY") {
-  parent_element <- add_license(parent_element = parent_element, 
-                                default_license = license$default_license)
-} else {
-  parent_element <- add_license(parent_element = parent_element,
-                              license_name = license$license_name,
-                              license_url = license$license_url,
-                              license_identifier = license$license_identifier,
-                              intellectual_rights_description = license$intellectual_rights_description)
-}
+license <- add_license(list(), default_license = metadata$license$default_license)
 
 ### Add Methods ----------------------------------------------------------------
-parent_element$methods <- add_method(parent_element = parent_element,
-                                     methods_file = methods_docx)
+methods <- add_method(list(), methods_file = methods_docx)
 
 ### Add Maintenance 
-maintenance <- metadata_sheets$maintenance
-parent_element <- add_maintenance(parent_element = parent_element, 
-                                  status = maintenance$status,
-                                  update_frequency = maintenance$update_frequency)
+maintenance <- add_maintenance(list(), status = metadata$maintenance$status,
+                               update_frequency = metadata$maintenance$update_frequency)
 
-### Add Project: Title, Personnel, and Funding ---------------------------------
-project_title <- metadata_sheets$project$project_title
+### Add Project: 
 
 #### Add Project personnel ----------------------------------------------------- 
-project_personnel_table <- metadata_sheets$project
-for (i in 1:nrow(project_personnel_table)) {
-  current <- project_personnel_table[i, ]
-  project_personnel <- add_personnel(parent_element = list(), 
-                                     first_name = current$first_name, 
-                                     last_name = current$last_name, 
-                                     email = current$email,
-                                     role = current$role, 
-                                     organization = current$organization,
-                                     orcid = current$orcid)
-}
-if (!is.null(project_personnel$associatedParty)) {
-  project_personnel <- project_personnel$associatedParty
-}
-if (!is.null(project_personnel$creator)){
-  project_personnel <- project_personnel$creator
-}
+project_personnel <- personnel$creator 
 
 #### Add Project funding -------------------------------------------------------
-funding_table <- metadata_sheets$funding
-for (i in 1:nrow(funding_table)) {
-  current <- funding_table[i, ]
-  award_information <- add_funding(funder_name = current$funder_name,
-                                   funder_identifier = current$funder_identifier,
-                                   award_number = current$award_number,
-                                   award_title = current$award_title,
-                                   award_url = current$award_url,
-                                   funding_description = current$funding_description)
-} 
+award_information <- purrr::pmap(metadata$funding, add_funding) %>% flatten()
 
 #### Add Combining Project Elements --------------------------------------------
 
-# TODO change to using add_project function once merged 
-# parent_element <- add_project(parent_element = parent_element,
-#                               project_title = project_title,
-#                               award_information = award_information,
-#                               project_personnel = project_personnel)
-parent_element$project <- list(title = project_title,
-                               personnel = project_personnel,
-                               award = award_information)
+project <- add_project(list(), 
+                       project_title = metadata$title$short_name, 
+                       award_information,
+                       project_personnel)
 
 ### Add Coverage: Geographic, Temporal, Taxonomic ------------------------------
-taxonomic_coverage <- list()
-taxonomic_coverage_table <- metadata_sheets$taxonomic_coverage
-for (i in 1:nrow(taxonomic_coverage_table)) {
-  current <- taxonomic_coverage_table[i, ]
-  new_taxon <- add_taxonomic_coverage(CVPIA_common_species = current$CVPIA_common_species,
-                                     kingdom_value = current$kingdom_value,
-                                     phylum_value = current$phylum_value,
-                                     class_value = current$class_value,
-                                     order_value = current$order_value,
-                                     family_value = current$family_value,
-                                     genus_value = current$genus_value,
-                                     species_value = current$species_value,
-                                     common_name = current$common_name,
-                                     taxon_id = current$taxon_id)
-  if (is.null(taxonomic_coverage)) {
-    taxonomic_coverage <- list(new_taxon)
-  } else {
-    taxonomic_coverage <- append(taxonomic_coverage, list(new_taxon))
-  }
-}
+taxonomic_coverage <- purrr::pmap(metadata$taxonomic_coverage, add_taxonomic_coverage)
 
 #### Add Combining Coverage Elements -------------------------------------------  
-coverage_table <- metadata_sheets$coverage
-for (i in 1:nrow(coverage_table)) {
-  current <- coverage_table[i, ]
-  parent_element <- add_coverage(parent_element = parent_element,
-                                 geographic_description = current$geographic_description,
-                                 west_bounding_coordinate = current$west_bounding_coordinate,
-                                 east_bounding_coordinate = current$east_bounding_coordinate,
-                                 north_bounding_coordinate = current$north_bounding_coordinate,
-                                 south_bounding_coordinate = current$south_bounding_coordinate,
-                                 begin_date = current$begin_date,
-                                 end_date = current$end_date,
-                                 taxonomic_coverage = taxonomic_coverage)
-} 
+coverage <- add_coverage(list(),
+                         geographic_description = metadata$coverage$geographic_description,
+                         west_bounding_coordinate = metadata$coverage$west_bounding_coordinate,
+                         east_bounding_coordinate = metadata$coverage$east_bounding_coordinate,
+                         north_bounding_coordinate = metadata$coverage$north_bounding_coordinate,
+                         south_bounding_coordinate = metadata$coverage$south_bounding_coordinate,
+                         begin_date = metadata$coverage$begin_date,
+                         end_date = metadata$coverage$end_date,
+                         taxonomic_coverage = taxonomic_coverage)
 
 ### Add DataTable or SpatialRaster or SpatialVector ----------------------------
 #### Add Physical --------------------------------------------------------------
-physical <- add_physical(file_path = physical_entity, 
-                         data_url = current$data_url)
+physical <- add_physical(file_path = dataset_file, data_url = NULL)
+
 
 #### Add Attribute List --------------------------------------------------------
-attribute_table <- metadata_sheets$attribute
-codes <- metadata_sheets$code_definitions
+# Create helper function to add code definitions if domain is "enumerated"
+code_helper <- function(code, definitions, attribute_name) {
+  codeDefinition <- list(code = code, definition = definitions)
+}
 
 attribute_list <- list()
-attribute_names <- unique(codes$attribute_name)
-
-for (i in 1:nrow(attribute_table)) {
-  current <- attribute_table[i, ]
-  if (current$domain %in% "enumerated") { 
+# Adds both enumerated and non enumerated attributes 
+adds_attribute <- function(attribute_name, attribute_definition, storage_type, 
+                           measurement_scale, domain, type, units,
+                           unit_precision, number_type, date_time_format, 
+                           date_time_precision, minimum, maximum,
+                           attribute_label){
+  # If statement adds definition for enumerated attribute using code_helper()
+  if (domain %in% "enumerated") { 
     definition <- list()
-    current_codes <- codes[codes$attribute_name == current$attribute_name, ]
-    for (j in 1:nrow(current_codes)) {
-      codeDefinition <- list(code = current_codes$code[j], definition = current_codes$definitions[j])
-      if (is.null(definition$codeDefinition)) {
-        definition$codeDefinition <- codeDefinition
-      } else {
-        definition$codeDefinition <- list(definition$codeDefinition, codeDefinition)
-      }
-    }
+    codes <- metadata$code_definitions
+    current_codes <- codes[codes$attribute_name == attribute_name, ] 
+    definition$codeDefinition <- purrr::pmap(current_codes, code_helper) 
+    # Else statement adds definition for non-enumerated attribute 
   } else {
-    definition = current$attribute_definition
+    definition = attribute_definition
   }
-  new_attribute <- add_attribute(attribute_name = current$attribute_name,
-                                 attribute_definition = current$attribute_definition,
-                                 storage_type = current$storage_type,
-                                 measurement_scale = current$measurement_scale,
-                                 domain = current$domain,
-                                 definition = definition,
-                                 type = current$type,
-                                 units = current$units,
-                                 unit_precision = current$unit_precision,
-                                 number_type = current$number_type,
-                                 date_time_format = current$date_time_format,
-                                 date_time_precision = current$date_time_precision,
-                                 minimum = current$minimum,
-                                 maximum = current$maximum,
-                                 attribute_label = current$attribute_label)
-  if (is.null(attribute_list$attribute)) {
-    attribute_list$attribute <- new_attribute
-  } else {
-    attribute_list$attribute <- list(attribute_list$attribute, new_attribute)
-  }
+  new_attribute <- add_attribute(attribute_name = attribute_name, 
+                                 attribute_definition = attribute_definition,
+                                 storage_type = storage_type,
+                                 measurement_scale = measurement_scale, 
+                                 domain = domain, definition = definition, 
+                                 type = type, units = units, 
+                                 unit_precision = unit_precision, 
+                                 number_type = number_type, 
+                                 date_time_format = date_time_format, 
+                                 date_time_precision = date_time_precision, 
+                                 minimum = minimum, maximum = maximum, 
+                                 attribute_label = attribute_label)
 }
+# Maps through entire attribute sheet adding to attribute_list
+attribute_list$attribute <- purrr::pmap(metadata$attribute, adds_attribute) 
 
 #### Putting the Data Table Together -------------------------------------------
-if (metadata_sheets$dataset$type == "tabular") {
-  parent_element$dataTable <- list(entityName = physical_entity,
-                                   entityDescription = metadata_sheets$dataset$name,
-                                   physical = physical,
-                                   attributeList = attribute_list)
-} 
-if (metadata_sheets$dataset$type == "vector") {
-  parent_element$spatialVector <- list(entityName = physical_entity,
-                                       entityDescription = metadata_sheets$dataset$name,
-                                       physical = physical,
-                                       attributeList = attribute_list,
-                                       geometry = metadata_sheets$dataset$geometry)
-}
+dataTable <- list(entityName = dataset_file_name,
+                  entityDescription = metadata$dataset$name,
+                  physical = physical,
+                  attributeList = attribute_list)
 
-## TODO RASTER DATA 
+# Appending all to dataset list
+dataset <- list(title = title$title,
+                shortName = title$shortName,
+                creator = personnel$creator,
+                contact = personnel$contact,
+                pubDate = pub_date,
+                abstract = abstract$abstract,
+                associatedParty = list(personnel[[3]], personnel[[4]], personnel[[5]]),
+                keywordSet = keywords$keywordSet,
+                coverage = coverage$coverage,
+                intellectualRights = license$intellectualRights,
+                licensed = license$licensed,
+                methods = methods,
+                maintenance = maintenance$maintenance,
+                dataTable = dataTable) 
 
 ## Making the EML document -----------------------------------------------------
 eml <- list(packageId = edi_number,
             system = "EDI",
             access = access,
-            dataset = parent_element)
+            dataset = dataset)
 
 file_name <- paste(edi_number, "xml", sep = ".")
 EML::write_eml(eml, file_name)
