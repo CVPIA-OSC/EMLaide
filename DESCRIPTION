@@ -1,4 +1,4 @@
-Package: EDIutils
+Package: EMLaide
 Title: Provides functions for building EML metadata for EDI's data repository 
 Version: 0.1
 Authors@R: c(
@@ -29,6 +29,6 @@ Suggests:
     testthat (>= 2.1.0),
     tidyverse, 
     readxl
-URL: https://CVPIA-OSC.github.io/EDIutils/
+URL: https://CVPIA-OSC.github.io/EMLaide/
 VignetteBuilder: knitr
 StagedInstall: no

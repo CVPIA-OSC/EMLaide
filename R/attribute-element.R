@@ -68,8 +68,8 @@
 #' # Nominal(text):
 #' add_attribute(attribute_name = "site_id",
 #'               attribute_definition = "Site id as used in sites table",
-#'               storage_type = EDIutils::storage_type$integer,
-#'               measurement_scale = EDIutils::measurement_scale$nominal,
+#'               storage_type = EMLaide::storage_type$integer,
+#'               measurement_scale = EMLaide::measurement_scale$nominal,
 #'               domain= "text",
 #'               definition = "Site id as used in sites table.")
 #'
@@ -79,16 +79,16 @@
 #' code_definition = list(code_def_1, code_def_2)
 #' add_attribute(attribute_name = "Recap", 
 #'               attribute_definition = "Has the Turtle been captured and tagged previously",
-#'               storage_type = EDIutils::storage_type$text, 
-#'               measurement_scale = EDIutils::measurement_scale$nominal, 
+#'               storage_type = EMLaide::storage_type$text, 
+#'               measurement_scale = EMLaide::measurement_scale$nominal, 
 #'               domain = "enumerated",
 #'               definition = code_definition)
 #'               
 #' # Ordinal(text):
 #' add_attribute(attribute_name = "LatitudeDD", 
 #'               attribute_definition = "Latitude",
-#'               storage_type = EDIutils::storage_type$string,
-#'               measurement_scale = EDIutils::measurement_scale$ordinal,
+#'               storage_type = EMLaide::storage_type$string,
+#'               measurement_scale = EMLaide::measurement_scale$ordinal,
 #'               domain= "text", 
 #'               definition = "Latitude")
 #'               
@@ -100,37 +100,37 @@
 #' code_definition = list(code_def_0, code_def_1, code_def_2, code_def_3)
 #' add_attribute(attribute_name = "hwa",
 #'               attribute_definition = "Hemlock woolly adelgid density per meter of branch",
-#'               storage_type = EDIutils::storage_type$decimal,
-#'               measurement_scale = EDIutils::measurement_scale$ordinal,
+#'               storage_type = EMLaide::storage_type$decimal,
+#'               measurement_scale = EMLaide::measurement_scale$ordinal,
 #'               domain = "enumerated",
 #'               definition = code_definition)
 #'               
 #' # Interval:
 #' add_attribute(attribute_name = "Count",
 #'               attribute_definition = "Number of individuals observed",
-#'               measurement_scale = EDIutils::measurement_scale$interval, 
-#'               storage_type = EDIutils::storage_type$integer,
+#'               measurement_scale = EMLaide::measurement_scale$interval, 
+#'               storage_type = EMLaide::storage_type$integer,
 #'               type = "interval",
 #'               units = "number",
 #'               unit_precision = "1",
-#'               number_type = EDIutils::number_type$whole, 
+#'               number_type = EMLaide::number_type$whole, 
 #'               minimum = "0")
 #'                    
 #' # Ratio: 
 #' add_attribute(attribute_name = "pH",
 #'               attribute_definition = "pH of soil solution",
-#'               storage_type = EDIutils::storage_type$float,
-#'               measurement_scale = EDIutils::measurement_scale$ratio,
+#'               storage_type = EMLaide::storage_type$float,
+#'               measurement_scale = EMLaide::measurement_scale$ratio,
 #'               type = "ratio",
 #'               units = "dimensionless",
 #'               unit_precision = "0.01",
-#'               number_type = EDIutils::number_type$real)
+#'               number_type = EMLaide::number_type$real)
 #'                    
 #' # dateTime:
 #' add_attribute(attribute_name = "Yrs", 
 #'               attribute_definition = "Calendar year of the observation from years 1990 - 2010.",
-#'               storage_type = EDIutils::storage_type$integer,
-#'               measurement_scale = EDIutils::measurement_scale$dateTime,
+#'               storage_type = EMLaide::storage_type$integer,
+#'               measurement_scale = EMLaide::measurement_scale$dateTime,
 #'               attribute_label = "Years",
 #'               date_time_format = "YYYY", 
 #'               date_time_precision = "1", 
@@ -208,8 +208,8 @@ add_attribute <- function(attribute_name, attribute_definition, storage_type,
 #' # Nominal(text):
 #' add_attribute(attribute_name = "site_id",
 #'               attribute_definition = "Site id as used in sites table",
-#'               storage_type = EDIutils::storage_type$integer,
-#'               measurement_scale = EDIutils::measurement_scale$nominal,
+#'               storage_type = EMLaide::storage_type$integer,
+#'               measurement_scale = EMLaide::measurement_scale$nominal,
 #'               domain= "text",
 #'               definition = "Site id as used in sites table.")
 #'
@@ -219,8 +219,8 @@ add_attribute <- function(attribute_name, attribute_definition, storage_type,
 #' code_definition = list(code_def_1, code_def_2)
 #' add_attribute(attribute_name = "Recap", 
 #'               attribute_definition = "Has the Turtle been captured and tagged previously",
-#'               storage_type = EDIutils::storage_type$text, 
-#'               measurement_scale = EDIutils::measurement_scale$nominal, 
+#'               storage_type = EMLaide::storage_type$text, 
+#'               measurement_scale = EMLaide::measurement_scale$nominal, 
 #'               domain = "enumerated",
 #'               definition = code_definition)
 #' @param text_pattern Optional. Only needed if applicable and the domain given is "text".
@@ -261,8 +261,8 @@ add_nominal <- function(domain = c("text", "enumerated"), definition, text_patte
 #' # Ordinal(text):
 #' add_attribute(attribute_name = "LatitudeDD", 
 #'               attribute_definition = "Latitude",
-#'               storage_type = EDIutils::storage_type$string,
-#'               measurement_scale = EDIutils::measurement_scale$ordinal,
+#'               storage_type = EMLaide::storage_type$string,
+#'               measurement_scale = EMLaide::measurement_scale$ordinal,
 #'               domain= "text", 
 #'               definition = "Latitude")
 #'               
@@ -274,8 +274,8 @@ add_nominal <- function(domain = c("text", "enumerated"), definition, text_patte
 #' code_definition = list(code_def_0, code_def_1, code_def_2, code_def_3)
 #' add_attribute(attribute_name = "hwa",
 #'               attribute_definition = "Hemlock woolly adelgid density per meter of branch",
-#'               storage_type = EDIutils::storage_type$decimal,
-#'               measurement_scale = EDIutils::measurement_scale$ordinal,
+#'               storage_type = EMLaide::storage_type$decimal,
+#'               measurement_scale = EMLaide::measurement_scale$ordinal,
 #'               domain = "enumerated",
 #'               definition = code_definition)
 #' @param text_pattern Optional. Only needed if applicable and the domain given is "text".
@@ -323,23 +323,23 @@ add_ordinal <- function(domain = c("text", "enumerated"), definition, text_patte
 #' # Interval:
 #' add_attribute(attribute_name = "Count",
 #'               attribute_definition = "Number of individuals observed",
-#'                    measurement_scale = EDIutils::measurement_scale$interval, 
-#'                    storage_type = EDIutils::storage_type$integer,
+#'                    measurement_scale = EMLaide::measurement_scale$interval, 
+#'                    storage_type = EMLaide::storage_type$integer,
 #'                    type = "interval",
 #'                    units = "number",
 #'                    unit_precision = "1",
-#'                    number_type = EDIutils::number_type$whole, 
+#'                    number_type = EMLaide::number_type$whole, 
 #'                    minimum = "0")
 #'                    
 #' # Ratio: 
 #' add_attribute(attribute_name = "pH",
 #'               attribute_definition = "pH of soil solution",
-#'               storage_type = EDIutils::storage_type$float,
-#'               measurement_scale = EDIutils::measurement_scale$ratio,
+#'               storage_type = EMLaide::storage_type$float,
+#'               measurement_scale = EMLaide::measurement_scale$ratio,
 #'               type = "ratio",
 #'               units = "dimensionless",
 #'               unit_precision = "0.01",
-#'               number_type = EDIutils::number_type$real)
+#'               number_type = EMLaide::number_type$real)
 #' @keywords internal
 add_interval_ratio <- function(type = c("interval", "ratio"), units, unit_precision, 
                                number_type, minimum = NULL, maximum = NULL) {
@@ -410,8 +410,8 @@ add_interval_ratio <- function(type = c("interval", "ratio"), units, unit_precis
 #' @examples 
 #' add_attribute(attribute_name = "Yrs",
 #'               attribute_definition = "Calendar year of the observation from years 1990 - 2010.",
-#'               storage_type = EDIutils::storage_type$integer,
-#'               measurement_scale = EDIutils::measurement_scale$dateTime,
+#'               storage_type = EMLaide::storage_type$integer,
+#'               measurement_scale = EMLaide::measurement_scale$dateTime,
 #'               attribute_label = "Years",
 #'               date_time_format = "YYYY", 
 #'               date_time_precision = "1", 

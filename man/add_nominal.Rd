@@ -21,8 +21,8 @@ Add Nominal Measurment Scale
 # Nominal(text):
 add_attribute(attribute_name = "site_id",
               attribute_definition = "Site id as used in sites table",
-              storage_type = EDIutils::storage_type$integer,
-              measurement_scale = EDIutils::measurement_scale$nominal,
+              storage_type = EMLaide::storage_type$integer,
+              measurement_scale = EMLaide::measurement_scale$nominal,
               domain= "text",
               definition = "Site id as used in sites table.")
 
@@ -32,8 +32,8 @@ code_def_2 = list(code = "no", definition = "has not been captured previously")
 code_definition = list(code_def_1, code_def_2)
 add_attribute(attribute_name = "Recap", 
               attribute_definition = "Has the Turtle been captured and tagged previously",
-              storage_type = EDIutils::storage_type$text, 
-              measurement_scale = EDIutils::measurement_scale$nominal, 
+              storage_type = EMLaide::storage_type$text, 
+              measurement_scale = EMLaide::measurement_scale$nominal, 
               domain = "enumerated",
               definition = code_definition)
 }

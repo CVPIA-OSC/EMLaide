@@ -26,11 +26,11 @@
 #' @param taxon_id Optional. The taxonomic serial number provided by ITIS.
 #' @section CVPIA Common Species: 
 #' The following frequently cited species are available for convenience: 
-#'  * EDIutils::CVPIA_common_species$chinook - Oncorhynchus tshawytscha (ITIS: 161980)
-#'  * EDIutils::CVPIA_common_species$steelhead - Oncorhynchus mykiss (ITIS: 161989)
-#'  * EDIutils::CVPIA_common_species$delta_smelt - Hypomesus transpacificus (ITIS: 162032)
-#'  * EDIutils::CVPIA_common_species$white_sturgeon - Acipenser transmontanus (ITIS:161068)
-#'  * EDIutils::CVPIA_common_species$green_sturgeon - Acipenser medirostris (ITIS: 161067)
+#'  * EMLaide::CVPIA_common_species$chinook - Oncorhynchus tshawytscha (ITIS: 161980)
+#'  * EMLaide::CVPIA_common_species$steelhead - Oncorhynchus mykiss (ITIS: 161989)
+#'  * EMLaide::CVPIA_common_species$delta_smelt - Hypomesus transpacificus (ITIS: 162032)
+#'  * EMLaide::CVPIA_common_species$white_sturgeon - Acipenser transmontanus (ITIS:161068)
+#'  * EMLaide::CVPIA_common_species$green_sturgeon - Acipenser medirostris (ITIS: 161067)
 #' 
 #' For further taxonomic coverage (i.e subkingdom, infrakingdom, etc.) on any of 
 #' these species, you can visit: \href{https://www.itis.gov/}{ITIS}'s webpage for 
@@ -118,7 +118,7 @@ add_taxonomic_coverage <- function(CVPIA_common_species = NULL,
                                   CVPIA_common_species == "green_sturgeon"))
   
   if (length(common_species_index) > 0) {
-    taxonomicCoverage <- EDIutils::CVPIA_common_species[[common_species_index]]
+    taxonomicCoverage <- EMLaide::CVPIA_common_species[[common_species_index]]
     
   } else {
     kingdom_value <- "Animalia"

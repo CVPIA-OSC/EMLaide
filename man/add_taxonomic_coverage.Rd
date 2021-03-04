@@ -78,11 +78,11 @@ provided if chosen to be included.
 
 The following frequently cited species are available for convenience:
 \itemize{
-\item EDIutils::CVPIA_common_species$chinook - Oncorhynchus tshawytscha (ITIS: 161980)
-\item EDIutils::CVPIA_common_species$steelhead - Oncorhynchus mykiss (ITIS: 161989)
-\item EDIutils::CVPIA_common_species$delta_smelt - Hypomesus transpacificus (ITIS: 162032)
-\item EDIutils::CVPIA_common_species$white_sturgeon - Acipenser transmontanus (ITIS:161068)
-\item EDIutils::CVPIA_common_species$green_sturgeon - Acipenser medirostris (ITIS: 161067)
+\item EMLaide::CVPIA_common_species$chinook - Oncorhynchus tshawytscha (ITIS: 161980)
+\item EMLaide::CVPIA_common_species$steelhead - Oncorhynchus mykiss (ITIS: 161989)
+\item EMLaide::CVPIA_common_species$delta_smelt - Hypomesus transpacificus (ITIS: 162032)
+\item EMLaide::CVPIA_common_species$white_sturgeon - Acipenser transmontanus (ITIS:161068)
+\item EMLaide::CVPIA_common_species$green_sturgeon - Acipenser medirostris (ITIS: 161067)
 }
 
 For further taxonomic coverage (i.e subkingdom, infrakingdom, etc.) on any of

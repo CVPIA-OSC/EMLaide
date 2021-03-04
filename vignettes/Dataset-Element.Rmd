@@ -12,7 +12,7 @@ knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)
 ```
 The following libraries are needed to create a working EML document. 
 ```{r, message = FALSE}
-library(EDIutils)
+library(EMLaide)
 library(tidyverse)
 library(readxl)
 library(EML)
@@ -20,25 +20,25 @@ library(EML)
 
 # Dataset Element 
 This document explains how to add multiple datasets to one EML document and how to 
-add non tabular data to an EML document. This document will not explain how to create a complete valid EML document to upload to the EDI repository. Please use this article just for the dataset section of the EML document and refer to [the EML template helper](https://cvpia-osc.github.io/EDIutils//articles/creating-EML.html) to generate the entire document. 
+add non tabular data to an EML document. This document will not explain how to create a complete valid EML document to upload to the EDI repository. Please use this article just for the dataset section of the EML document and refer to [the EML template helper](https://cvpia-osc.github.io/EMLaide//articles/creating-EML.html) to generate the entire document. 
 
 ## Loading in Data 
 ```{r, warning=F, include=FALSE}
 excel_path <- system.file("extdata", "Hannon-Example", "example-metadata.xlsx", 
-                          package = "EDIutils", mustWork = TRUE)
+                          package = "EMLaide", mustWork = TRUE)
 
 sheets <- readxl::excel_sheets(excel_path)
 metadata <- lapply(sheets, function(x) readxl::read_excel(excel_path, sheet = x))
 names(metadata) <- sheets
 
 abstract_docx <- system.file("extdata", "Hannon-Example", "hannon_example_abstract.docx", 
-                             package = "EDIutils", mustWork = TRUE)
+                             package = "EMLaide", mustWork = TRUE)
 
 methods_docx <- system.file("extdata", "Hannon-Example", "hannon_example_methods.docx", 
-                            package = "EDIutils", mustWork = TRUE)
+                            package = "EMLaide", mustWork = TRUE)
 
 dataset_file = system.file("extdata", "Hannon-Example", "hannon_example_physical_data.csv",
-                            package = "EDIutils", mustWork = TRUE)
+                            package = "EMLaide", mustWork = TRUE)
 
 dataset_file_name <- "hannon_example_physical_data.csv"
 
@@ -82,16 +82,16 @@ To add more than two datasets please follow the same structure adding additional
 # TODO add real multipule datast example 
 dataset_files <- dplyr::tibble(datatable = c(system.file("extdata", "Hannon-Example",
                                                                     "hannon_example_physical_data.csv",
-                                                        package = "EDIutils", mustWork = TRUE),
+                                                        package = "EMLaide", mustWork = TRUE),
                                              system.file("extdata", "Hannon-Example",
                                                                     "hannon_example_physical_data.csv",
-                                                        package = "EDIutils", mustWork = TRUE)),
+                                                        package = "EMLaide", mustWork = TRUE)),
                                datatable_name = c("hannon_example_snorkel_data.csv", 
                                                   "hannon_example_physical_data.csv"),
                                attribute_info = c(system.file("extdata", "Hannon-Example", "example-metadata.xlsx",
-                                                       package = "EDIutils", mustWork = TRUE),
+                                                       package = "EMLaide", mustWork = TRUE),
                                                   system.file("extdata", "Hannon-Example", "example-metadata.xlsx",
-                                                       package = "EDIutils", mustWork = TRUE)))
+                                                       package = "EMLaide", mustWork = TRUE)))
 
 ```
 

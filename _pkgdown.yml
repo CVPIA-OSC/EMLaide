@@ -1,5 +1,5 @@
-title: EDIutils 
-url: https://CVPIA-OSC.github.io/EDIutils/
+title: EMLaide 
+url: https://CVPIA-OSC.github.io/EMLaide/
 template:
   params:
     bootswatch: flatly
@@ -61,6 +61,6 @@ navbar:
         href: articles/Inital-Metadata-Information.html
 repo:
  url:
-  home: https://github.com/CVPIA-OSC/EDIutils
-  issue: https://github.com/CVPIA-OSC/EDIutils/issues/
+  home: https://github.com/CVPIA-OSC/EMLaide
+  issue: https://github.com/CVPIA-OSC/EMLaide/issues/
 

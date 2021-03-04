@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Add Nominal Measurment Scale — add_nominal • EDIutils</title>
+<title>Add Nominal Measurment Scale — add_nominal • EMLaide</title>
 
 
 <!-- jquery -->
@@ -71,7 +71,7 @@
         <span class="icon-bar"></span>
       </button>
       <span class="navbar-brand">
-        <a class="navbar-link" href="../index.html">EDIutils</a>
+        <a class="navbar-link" href="../index.html">EMLaide</a>
         <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1</span>
       </span>
     </div>
@@ -102,7 +102,7 @@
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li>
-  <a href="https://github.com/CVPIA-OSC/EDIutils">
+  <a href="https://github.com/CVPIA-OSC/EMLaide">
     <span class="fab fa-github fa-lg"></span>
      
   </a>
@@ -154,8 +154,8 @@ If the domain is "enumerated", provide a list of the attributes code definitions
     <pre class="examples"><div class='input'><span class='co'># Nominal(text):</span>
 <span class='fu'><a href='add_attribute.html'>add_attribute</a></span><span class='op'>(</span>attribute_name <span class='op'>=</span> <span class='st'>"site_id"</span>,
               attribute_definition <span class='op'>=</span> <span class='st'>"Site id as used in sites table"</span>,
-              storage_type <span class='op'>=</span> <span class='fu'>EDIutils</span><span class='fu'>::</span><span class='va'><a href='storage_type.html'>storage_type</a></span><span class='op'>$</span><span class='va'>integer</span>,
-              measurement_scale <span class='op'>=</span> <span class='fu'>EDIutils</span><span class='fu'>::</span><span class='va'><a href='measurement_scale.html'>measurement_scale</a></span><span class='op'>$</span><span class='va'>nominal</span>,
+              storage_type <span class='op'>=</span> <span class='fu'>EMLaide</span><span class='fu'>::</span><span class='va'><a href='storage_type.html'>storage_type</a></span><span class='op'>$</span><span class='va'>integer</span>,
+              measurement_scale <span class='op'>=</span> <span class='fu'>EMLaide</span><span class='fu'>::</span><span class='va'><a href='measurement_scale.html'>measurement_scale</a></span><span class='op'>$</span><span class='va'>nominal</span>,
               domain<span class='op'>=</span> <span class='st'>"text"</span>,
               definition <span class='op'>=</span> <span class='st'>"Site id as used in sites table."</span><span class='op'>)</span>
 </div><div class='output co'>#&gt; <span class='message'>No attribute label provided.</span></div><div class='output co'>#&gt; <span class='message'>Warning: Please add text pattern if applicable.</span></div><div class='output co'>#&gt; $attributeName
@@ -184,8 +184,8 @@ If the domain is "enumerated", provide a list of the attributes code definitions
 <span class='va'>code_definition</span> <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span><span class='va'>code_def_1</span>, <span class='va'>code_def_2</span><span class='op'>)</span>
 <span class='fu'><a href='add_attribute.html'>add_attribute</a></span><span class='op'>(</span>attribute_name <span class='op'>=</span> <span class='st'>"Recap"</span>, 
               attribute_definition <span class='op'>=</span> <span class='st'>"Has the Turtle been captured and tagged previously"</span>,
-              storage_type <span class='op'>=</span> <span class='fu'>EDIutils</span><span class='fu'>::</span><span class='va'><a href='storage_type.html'>storage_type</a></span><span class='op'>$</span><span class='va'>text</span>, 
-              measurement_scale <span class='op'>=</span> <span class='fu'>EDIutils</span><span class='fu'>::</span><span class='va'><a href='measurement_scale.html'>measurement_scale</a></span><span class='op'>$</span><span class='va'>nominal</span>, 
+              storage_type <span class='op'>=</span> <span class='fu'>EMLaide</span><span class='fu'>::</span><span class='va'><a href='storage_type.html'>storage_type</a></span><span class='op'>$</span><span class='va'>text</span>, 
+              measurement_scale <span class='op'>=</span> <span class='fu'>EMLaide</span><span class='fu'>::</span><span class='va'><a href='measurement_scale.html'>measurement_scale</a></span><span class='op'>$</span><span class='va'>nominal</span>, 
               domain <span class='op'>=</span> <span class='st'>"enumerated"</span>,
               definition <span class='op'>=</span> <span class='va'>code_definition</span><span class='op'>)</span>
 </div><div class='output co'>#&gt; <span class='message'>No attribute label provided.</span></div><div class='output co'>#&gt; $attributeName

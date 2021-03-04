@@ -46,15 +46,15 @@ add_funding <- function(funder_name, award_title, funder_identifier = NULL,
   }
   if (funder_name %in% names(CVPIA_funders)){
     if (funder_name == "USBR"){
-    award <- EDIutils::CVPIA_funders$USBR
+    award <- EMLaide::CVPIA_funders$USBR
     award$title = award_title
     }
     if (funder_name == "CDWR"){
-    award <- EDIutils::CVPIA_funders$CDWR
+    award <- EMLaide::CVPIA_funders$CDWR
     award$title = award_title
     } 
     if (funder_name == "CDFW"){
-    award <- EDIutils::CVPIA_funders$CDFW
+    award <- EMLaide::CVPIA_funders$CDFW
     award$title = award_title
     }
   } 

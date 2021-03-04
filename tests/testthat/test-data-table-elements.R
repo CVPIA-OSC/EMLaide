@@ -335,14 +335,14 @@ test_that('The attribute function adds attribute elements.', {
 # 
 #   attribute_1 <- add_attribute(attribute_name = "site_id",
 #                                attribute_definition = "Site id as used in sites table",
-#                                storage_type = EDIutils::storage_type$integer,
-#                                measurement_scale = EDIutils::measurement_scale$nominal,
+#                                storage_type = EMLaide::storage_type$integer,
+#                                measurement_scale = EMLaide::measurement_scale$nominal,
 #                                domain = "text",
 #                                definition = "Site id as used in sites table.")
 #   attribute_2 <- add_attribute(attribute_name = "LatitudeDD",
 #                                attribute_definition = "Latitude",
-#                                storage_type = EDIutils::storage_type$string,
-#                                measurement_scale = EDIutils::measurement_scale$ordinal,
+#                                storage_type = EMLaide::storage_type$string,
+#                                measurement_scale = EMLaide::measurement_scale$ordinal,
 #                                domain = "text",
 #                                definition = "Latitude")
 #   attribute_list <- list(attribute_1, attribute_2)

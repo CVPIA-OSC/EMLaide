@@ -1,8 +1,8 @@
 ---
-title: "Creating EML Using EDIutils"
+title: "Creating EML Using EMLaide"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{Creating EML Using EDIutils}
+  %\VignetteIndexEntry{Creating EML Using EMLaide}
   %\VignetteEngine{knitr::rmarkdown}
   \usepackage[utf8]{inputenc}
 ---
@@ -11,7 +11,7 @@ knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)
 ```
 The following libraries are needed to create a working EML document. 
 ```{r, message = FALSE}
-library(EDIutils)
+library(EMLaide)
 library(tidyverse)
 library(readxl)
 library(EML)
@@ -71,20 +71,20 @@ Four files must be uploaded to make a complete EML document.
 
 ```{r, include = FALSE}
 excel_path <- system.file("extdata", "Hannon-Example", "example-metadata.xlsx", 
-                          package = "EDIutils", mustWork = TRUE)
+                          package = "EMLaide", mustWork = TRUE)
 
 sheets <- readxl::excel_sheets(excel_path)
 metadata <- purrr::map(sheets, function(x) readxl::read_excel(excel_path, sheet = x))
 names(metadata) <- sheets
 
 abstract_docx <- system.file("extdata", "Hannon-Example", "hannon_example_abstract.docx", 
-                             package = "EDIutils", mustWork = TRUE)
+                             package = "EMLaide", mustWork = TRUE)
 
 methods_docx <- system.file("extdata", "Hannon-Example", "hannon_example_methods.docx", 
-                            package = "EDIutils", mustWork = TRUE)
+                            package = "EMLaide", mustWork = TRUE)
 
 dataset_file <- system.file("extdata", "Hannon-Example", "hannon_example_physical_data.csv",
-                               package = "EDIutils", mustWork = TRUE)
+                               package = "EMLaide", mustWork = TRUE)
 
 dataset_file_name <- "hannon_example_physical_data.csv"
 
@@ -115,7 +115,7 @@ data package identifier number on the [EDI data repository under tools.](https:/
 edi_number <- "edi.678.1"
 ```
 
-It is also possible to use the EDIutils function `api_create_reservation()` to generate a EDI number using R. See the `api_create_reservation()` [documentation.](https://ediorg.github.io/EDIutils/reference/api_create_reservation.html)
+It is also possible to use the EMLaide function `api_create_reservation()` to generate a EDI number using R. See the `api_create_reservation()` [documentation.](https://ediorg.github.io/EMLaide/reference/api_create_reservation.html)
 ```{r}
 # edi_number <- api_create_resercation(scope = "edi", environment = "staging", user.id = "your user id", 
 #                                      user.pass = "your user password ", affilitation = "EDI")
@@ -183,7 +183,7 @@ The next item we will append is the keyword set. We can use the `add_keyword_set
 function to do so. The keyword set should include a list of words that help 
 identify your project or connect it with other similar projects. If you add keywords
 from a controlled vocabulary please see the detailed instructions on 
-[initial metadata information](https://cvpia-osc.github.io/EDIutils//articles/Inital-Metadata-Information.html).
+[initial metadata information](https://cvpia-osc.github.io/EMLaide//articles/Inital-Metadata-Information.html).
 
 ```{r}
 keywords <- add_keyword_set(list(), metadata$keyword_set[,1])
@@ -203,7 +203,7 @@ abstract <- add_abstract(list(), abstract = abstract_docx)
 ### License and Intellectual Rights
 Following the abstract, we will append the license and intellectual rights information. 
 The `add_license` function allows you to append the licensing and usage information 
-to your file. If you are not adding a CC0 or CCBY default license please see [initial metadata information](https://cvpia-osc.github.io/EDIutils//articles/Inital-Metadata-Information.html) This information can be added to the 
+to your file. If you are not adding a CC0 or CCBY default license please see [initial metadata information](https://cvpia-osc.github.io/EMLaide//articles/Inital-Metadata-Information.html) This information can be added to the 
 "license" tab in the excel file "example-metadata.xlsx".
 
 ```{r}
@@ -299,7 +299,7 @@ Next, we need to create the data table. The data table element includes`physical
 and potentially additional information for Spatial Data. These sections are all lists 
 which must be created first, appended to a dataTable, and then appended to 
 the `parent_element`. For more detailed information on the datatable element and 
-instructions on appending multiple datatables please see the [dataset specific instructions](https://cvpia-osc.github.io/EDIutils//articles/Dataset-Element.html).
+instructions on appending multiple datatables please see the [dataset specific instructions](https://cvpia-osc.github.io/EMLaide//articles/Dataset-Element.html).
 
 #### Physical 
 The physical element can be created first using the `add_physical` function. 
@@ -364,7 +364,7 @@ attribute_list$attribute <- purrr::pmap(metadata$attribute, adds_attribute)
 Now that we have the `attribute_list` and `physical` information, we 
 can compose the data table, which is the last element we need to create our 
 working EML file. If you wish to append multiple datatables to one datapackage please view the 
-[detailed dataset instructions](https://cvpia-osc.github.io/EDIutils//articles/Dataset-Element.html). 
+[detailed dataset instructions](https://cvpia-osc.github.io/EMLaide//articles/Dataset-Element.html). 
 
 ```{r}
 dataTable <- list(entityName = dataset_file_name,
@@ -410,7 +410,7 @@ eml_validate(file_name)
 ```
 
 ## Uploading to EDI Data Repository 
-If you feel ready to upload your document to the EDI data repository you can do that from R using the Environmental Data Initiatives EDIutils package. Use the `api_create_data_package()` to create the initial version of a data package. 
+If you feel ready to upload your document to the EDI data repository you can do that from R using the Environmental Data Initiatives EMLaide package. Use the `api_create_data_package()` to create the initial version of a data package. 
 
 In order to upload from R you must have the data table accessible by a URL that can be accessed through the EDI repository. This URL must be added in the `add_physical()` section above. If you do not have a URL available then you can upload the EML document and the dataset on the [EDI data portal.](https://portal.edirepository.org/nis/home.jsp)
 

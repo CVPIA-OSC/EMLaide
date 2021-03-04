@@ -5,14 +5,14 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Creating EML Using EDIutils • EDIutils</title>
+<title>Creating EML Using EMLaide • EMLaide</title>
 <!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script><!-- Bootstrap --><link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.4.0/flatly/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script><!-- bootstrap-toc --><link rel="stylesheet" href="../bootstrap-toc.css">
 <script src="../bootstrap-toc.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
 <!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="../pkgdown.css" rel="stylesheet">
-<script src="../pkgdown.js"></script><meta property="og:title" content="Creating EML Using EDIutils">
-<meta property="og:description" content="EDIutils">
+<script src="../pkgdown.js"></script><meta property="og:title" content="Creating EML Using EMLaide">
+<meta property="og:description" content="EMLaide">
 <!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
@@ -30,7 +30,7 @@
         <span class="icon-bar"></span>
       </button>
       <span class="navbar-brand">
-        <a class="navbar-link" href="../index.html">EDIutils</a>
+        <a class="navbar-link" href="../index.html">EMLaide</a>
         <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1</span>
       </span>
     </div>
@@ -61,7 +61,7 @@
       </ul>
 <ul class="nav navbar-nav navbar-right">
 <li>
-  <a href="https://github.com/CVPIA-OSC/EDIutils">
+  <a href="https://github.com/CVPIA-OSC/EMLaide">
     <span class="fab fa-github fa-lg"></span>
      
   </a>
@@ -79,7 +79,7 @@
       </header><script src="creating-EML_files/accessible-code-block-0.0.1/empty-anchor.js"></script><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
-      <h1 data-toc-skip>Creating EML Using EDIutils</h1>
+      <h1 data-toc-skip>Creating EML Using EMLaide</h1>
             
       
       
@@ -91,7 +91,7 @@
     
 <p>The following libraries are needed to create a working EML document.</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://CVPIA-OSC.github.io/EDIutils/">EDIutils</a></span><span class="op">)</span>
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://CVPIA-OSC.github.io/EMLaide/">EMLaide</a></span><span class="op">)</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="http://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://readxl.tidyverse.org">readxl</a></span><span class="op">)</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://docs.ropensci.org/EML/">EML</a></span><span class="op">)</span></code></pre></div>
@@ -162,7 +162,7 @@
 <p>In addition to these four files a entity description and an EDI number must be defined. The EDI number should be a unique data package identifier. You can reserve this data package identifier number on the <a href="https://portal.edirepository.org/nis/reservations.jsp">EDI data repository under tools.</a></p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">edi_number</span> <span class="op">&lt;-</span> <span class="st">"edi.678.1"</span></code></pre></div>
-<p>It is also possible to use the EDIutils function <code>api_create_reservation()</code> to generate a EDI number using R. See the <code>api_create_reservation()</code> <a href="https://ediorg.github.io/EDIutils/reference/api_create_reservation.html">documentation.</a></p>
+<p>It is also possible to use the EMLaide function <code>api_create_reservation()</code> to generate a EDI number using R. See the <code>api_create_reservation()</code> <a href="https://ediorg.github.io/EMLaide/reference/api_create_reservation.html">documentation.</a></p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># edi_number &lt;- api_create_resercation(scope = "edi", environment = "staging", user.id = "your user id", </span>
 <span class="co">#                                      user.pass = "your user password ", affilitation = "EDI")</span></code></pre></div>
@@ -221,7 +221,7 @@
 <div id="keyword-set" class="section level3">
 <h3 class="hasAnchor">
 <a href="#keyword-set" class="anchor"></a>Keyword Set</h3>
-<p>The next item we will append is the keyword set. We can use the <code>add_keyword_set</code> function to do so. The keyword set should include a list of words that help identify your project or connect it with other similar projects. If you add keywords from a controlled vocabulary please see the detailed instructions on <a href="https://cvpia-osc.github.io/EDIutils//articles/Inital-Metadata-Information.html">initial metadata information</a>.</p>
+<p>The next item we will append is the keyword set. We can use the <code>add_keyword_set</code> function to do so. The keyword set should include a list of words that help identify your project or connect it with other similar projects. If you add keywords from a controlled vocabulary please see the detailed instructions on <a href="https://cvpia-osc.github.io/EMLaide//articles/Inital-Metadata-Information.html">initial metadata information</a>.</p>
 <div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">keywords</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/add_keyword_set.html">add_keyword_set</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span><span class="op">)</span>, <span class="va">metadata</span><span class="op">$</span><span class="va">keyword_set</span><span class="op">[</span>,<span class="fl">1</span><span class="op">]</span><span class="op">)</span></code></pre></div>
 </div>
@@ -235,7 +235,7 @@
 <div id="license-and-intellectual-rights" class="section level3">
 <h3 class="hasAnchor">
 <a href="#license-and-intellectual-rights" class="anchor"></a>License and Intellectual Rights</h3>
-<p>Following the abstract, we will append the license and intellectual rights information. The <code>add_license</code> function allows you to append the licensing and usage information to your file. If you are not adding a CC0 or CCBY default license please see <a href="https://cvpia-osc.github.io/EDIutils//articles/Inital-Metadata-Information.html">initial metadata information</a> This information can be added to the “license” tab in the excel file “example-metadata.xlsx”.</p>
+<p>Following the abstract, we will append the license and intellectual rights information. The <code>add_license</code> function allows you to append the licensing and usage information to your file. If you are not adding a CC0 or CCBY default license please see <a href="https://cvpia-osc.github.io/EMLaide//articles/Inital-Metadata-Information.html">initial metadata information</a> This information can be added to the “license” tab in the excel file “example-metadata.xlsx”.</p>
 <div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">license</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/add_license.html">add_license</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span><span class="op">)</span>, default_license <span class="op">=</span> <span class="va">metadata</span><span class="op">$</span><span class="va">license</span><span class="op">$</span><span class="va">default_license</span><span class="op">)</span></code></pre></div>
 </div>
@@ -313,7 +313,7 @@
 <div id="data-table" class="section level3">
 <h3 class="hasAnchor">
 <a href="#data-table" class="anchor"></a>Data Table</h3>
-<p>Next, we need to create the data table. The data table element includes<code>physical</code>, <code>attribute_list</code>, and potentially additional information for Spatial Data. These sections are all lists which must be created first, appended to a dataTable, and then appended to the <code>parent_element</code>. For more detailed information on the datatable element and instructions on appending multiple datatables please see the <a href="https://cvpia-osc.github.io/EDIutils//articles/Dataset-Element.html">dataset specific instructions</a>.</p>
+<p>Next, we need to create the data table. The data table element includes<code>physical</code>, <code>attribute_list</code>, and potentially additional information for Spatial Data. These sections are all lists which must be created first, appended to a dataTable, and then appended to the <code>parent_element</code>. For more detailed information on the datatable element and instructions on appending multiple datatables please see the <a href="https://cvpia-osc.github.io/EMLaide//articles/Dataset-Element.html">dataset specific instructions</a>.</p>
 <div id="physical" class="section level4">
 <h4 class="hasAnchor">
 <a href="#physical" class="anchor"></a>Physical</h4>
@@ -375,7 +375,7 @@
 <div id="putting-the-data-table-together" class="section level4">
 <h4 class="hasAnchor">
 <a href="#putting-the-data-table-together" class="anchor"></a>Putting the Data Table Together</h4>
-<p>Now that we have the <code>attribute_list</code> and <code>physical</code> information, we can compose the data table, which is the last element we need to create our working EML file. If you wish to append multiple datatables to one datapackage please view the <a href="https://cvpia-osc.github.io/EDIutils//articles/Dataset-Element.html">detailed dataset instructions</a>.</p>
+<p>Now that we have the <code>attribute_list</code> and <code>physical</code> information, we can compose the data table, which is the last element we need to create our working EML file. If you wish to append multiple datatables to one datapackage please view the <a href="https://cvpia-osc.github.io/EMLaide//articles/Dataset-Element.html">detailed dataset instructions</a>.</p>
 <div class="sourceCode" id="cb22"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">dataTable</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>entityName <span class="op">=</span> <span class="va">dataset_file_name</span>,
                  entityDescription <span class="op">=</span> <span class="va">metadata</span><span class="op">$</span><span class="va">dataset</span><span class="op">$</span><span class="va">name</span>,
@@ -422,7 +422,7 @@
 <div id="uploading-to-edi-data-repository" class="section level2">
 <h2 class="hasAnchor">
 <a href="#uploading-to-edi-data-repository" class="anchor"></a>Uploading to EDI Data Repository</h2>
-<p>If you feel ready to upload your document to the EDI data repository you can do that from R using the Environmental Data Initiatives EDIutils package. Use the <code>api_create_data_package()</code> to create the initial version of a data package.</p>
+<p>If you feel ready to upload your document to the EDI data repository you can do that from R using the Environmental Data Initiatives EMLaide package. Use the <code>api_create_data_package()</code> to create the initial version of a data package.</p>
 <p>In order to upload from R you must have the data table accessible by a URL that can be accessed through the EDI repository. This URL must be added in the <code><a href="../reference/add_physical.html">add_physical()</a></code> section above. If you do not have a URL available then you can upload the EML document and the dataset on the <a href="https://portal.edirepository.org/nis/home.jsp">EDI data portal.</a></p>
 <div class="sourceCode" id="cb26"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co">#api_create_data_package()</span></code></pre></div>

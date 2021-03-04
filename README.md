@@ -1,10 +1,10 @@
-# EDIutils
+# EMLaide
 
 ### Installation
 This package can be installed using the following commands: 
 ```{r}
 # install.packages("remotes")
-remotes::install_github("CVPIA-OSC/EDIutils")
+remotes::install_github("CVPIA-OSC/EMLaide")
 ```
 
 ### Usage 

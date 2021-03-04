@@ -1,6 +1,6 @@
 
 # The following libraries are needed to create a working EML document. 
-library(EDIutils)
+library(EMLaide)
 library(tidyverse)
 library(readxl)
 library(EML)
