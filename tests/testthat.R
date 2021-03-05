@@ -1,5 +1,5 @@
 library(testthat)
-library(EDIutils)
+library(EMLaide)
 library(tidyverse)
 
-test_check("EDIutils")
+test_check("EMLaide")

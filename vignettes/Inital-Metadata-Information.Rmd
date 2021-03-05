@@ -12,7 +12,7 @@ knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)
 ```
 The following libraries are needed to create a working EML document. 
 ```{r, message = FALSE}
-library(EDIutils)
+library(EMLaide)
 library(tidyverse)
 library(readxl)
 library(EML)
@@ -20,20 +20,20 @@ library(EML)
 
 ```{r, include = FALSE}
 excel_path <- system.file("extdata", "Hannon-Example", "example-metadata.xlsx", 
-                          package = "EDIutils", mustWork = TRUE)
+                          package = "EMLaide", mustWork = TRUE)
 
 sheets <- readxl::excel_sheets(excel_path)
 metadata <- lapply(sheets, function(x) readxl::read_excel(excel_path, sheet = x))
 names(metadata) <- sheets
 
 abstract_docx <- system.file("extdata", "Hannon-Example", "hannon_example_abstract.docx", 
-                             package = "EDIutils", mustWork = TRUE)
+                             package = "EMLaide", mustWork = TRUE)
 
 methods_docx <- system.file("extdata", "Hannon-Example", "hannon_example_methods.docx", 
-                            package = "EDIutils", mustWork = TRUE)
+                            package = "EMLaide", mustWork = TRUE)
 
 dataset_file <- system.file("extdata", "Hannon-Example", "hannon_example_physical_data.csv",
-                               package = "EDIutils", mustWork = TRUE)
+                               package = "EMLaide", mustWork = TRUE)
 
 dataset_file_name <- "hannon_example_physical_data.csv"
 
@@ -42,7 +42,7 @@ edi_number <- "edi.678.1"
 # Custom inputs to the initial metadata information 
 
 This document gives more in depth examples on how to use the `add_access`, `add_pub_date`,
-`add_keywords`, and `add_license` elements. This document will not explain how to create a complete valid EML document to upload to the EDI repository. Please use this article just for sections of the EML document and refer to [the EML template helper](https://cvpia-osc.github.io/EDIutils//articles/creating-EML.html) to generate the entire document.
+`add_keywords`, and `add_license` elements. This document will not explain how to create a complete valid EML document to upload to the EDI repository. Please use this article just for sections of the EML document and refer to [the EML template helper](https://cvpia-osc.github.io/EMLaide//articles/creating-EML.html) to generate the entire document.
 
 ## Access Permissions 
 ### Default Permissions

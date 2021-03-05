@@ -3,7 +3,7 @@
 #' @param parent_element Please provide a parent element to append methods to. 
 #' @param methods_file Please provide a word document with proper formatting. The 
 #' function will then append it properly. An example word document can be found in 
-#' "~/EDIutils/inst/extdata/methods-template.docx". 
+#' "~/EMLaide/inst/extdata/methods-template.docx". 
 #' @param instrumentation Optional. What is being used to conduct the method. 
 #' @param software Optional.
 #' @param sampling_file Optional.

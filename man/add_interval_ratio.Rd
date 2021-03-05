@@ -38,22 +38,22 @@ Add Interval or Ratio Measurement Scales
 # Interval:
 add_attribute(attribute_name = "Count",
               attribute_definition = "Number of individuals observed",
-                   measurement_scale = EDIutils::measurement_scale$interval, 
-                   storage_type = EDIutils::storage_type$integer,
+                   measurement_scale = EMLaide::measurement_scale$interval, 
+                   storage_type = EMLaide::storage_type$integer,
                    type = "interval",
                    units = "number",
                    unit_precision = "1",
-                   number_type = EDIutils::number_type$whole, 
+                   number_type = EMLaide::number_type$whole, 
                    minimum = "0")
                    
 # Ratio: 
 add_attribute(attribute_name = "pH",
               attribute_definition = "pH of soil solution",
-              storage_type = EDIutils::storage_type$float,
-              measurement_scale = EDIutils::measurement_scale$ratio,
+              storage_type = EMLaide::storage_type$float,
+              measurement_scale = EMLaide::measurement_scale$ratio,
               type = "ratio",
               units = "dimensionless",
               unit_precision = "0.01",
-              number_type = EDIutils::number_type$real)
+              number_type = EMLaide::number_type$real)
 }
 \keyword{internal}

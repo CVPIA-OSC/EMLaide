@@ -23,8 +23,8 @@ Add dateTime Measurement Scale
 \examples{
 add_attribute(attribute_name = "Yrs",
               attribute_definition = "Calendar year of the observation from years 1990 - 2010.",
-              storage_type = EDIutils::storage_type$integer,
-              measurement_scale = EDIutils::measurement_scale$dateTime,
+              storage_type = EMLaide::storage_type$integer,
+              measurement_scale = EMLaide::measurement_scale$dateTime,
               attribute_label = "Years",
               date_time_format = "YYYY", 
               date_time_precision = "1", 

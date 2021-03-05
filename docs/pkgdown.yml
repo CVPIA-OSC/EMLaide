@@ -2,12 +2,11 @@ pandoc: 2.7.3
 pkgdown: 1.6.1
 pkgdown_sha: ~
 articles:
-  creating-EML-old-version: creating-EML-old-version.html
   creating-EML: creating-EML.html
   Dataset-Element: Dataset-Element.html
   Inital-Metadata-Information: Inital-Metadata-Information.html
-last_built: 2021-02-26T16:35Z
+last_built: 2021-03-04T16:36Z
 urls:
-  reference: https://CVPIA-OSC.github.io/EDIutils//reference
-  article: https://CVPIA-OSC.github.io/EDIutils//articles
+  reference: https://CVPIA-OSC.github.io/EMLaide//reference
+  article: https://CVPIA-OSC.github.io/EMLaide//articles
 

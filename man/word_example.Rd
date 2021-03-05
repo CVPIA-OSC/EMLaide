@@ -11,7 +11,7 @@ word_example(path = NULL)
 }
 \description{
 Helps read documents which are present in the examples of the
-\code{EDIutils} package.
+\code{EMLaide} package.
 }
 \examples{
 word_example()
