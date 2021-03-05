@@ -343,7 +343,6 @@ add_ordinal <- function(domain = c("text", "enumerated"), definition, text_patte
 #' @keywords internal
 add_interval_ratio <- function(type = c("interval", "ratio"), units, unit_precision, 
                                number_type, minimum = NULL, maximum = NULL) {
-  
   required_arguments <- c("type", "units", "unit_precision", "number_type", "minimum", "maximum")
   missing_argument_index <- which(c(is.null(type), is.null(units), is.null(unit_precision), is.null(number_type),
                                   is.null(minimum), is.null(maximum)))
@@ -362,12 +361,22 @@ add_interval_ratio <- function(type = c("interval", "ratio"), units, unit_precis
     } 
   } 
   type <- match.arg(type)
-  
-  interval_ratio <- list(unit = list(standardUnit = units),
-                         precision = unit_precision,
-                         numericDomain =
-                           list(numberType = number_type))
-  
+  if (units %in% standard_units) {
+    interval_ratio <- list(unit = list(standardUnit = units),
+                           precision = unit_precision,
+                           numericDomain =
+                             list(numberType = number_type))
+  } else {
+    interval_ratio <- list(unit = list(customUnit = units),
+                           precision = unit_precision,
+                           numericDomain =
+                             list(numberType = number_type))
+    custom_units <- units
+    print(paste("We identified the following custom unit:", custom_units, 
+                ", please make sure to add information on this custom unit in additional metadata information:", 
+                 sep = " "))
+  }
+ 
   if (type == "interval") {
     measurementScale <- list(interval = interval_ratio)
   } else {

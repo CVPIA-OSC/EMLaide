@@ -189,3 +189,12 @@
 #' CVPIA_common_species$chinook 
 "CVPIA_common_species"
 
+#' @title standard_units 
+#' @description A list of all valid standard units accepted by EML schema. This list is used 
+#' to by \code{add_attribute()}. As \code{add_attribute()} filters through all attribute components 
+#' it will check that the units are in the standard unit list. 
+#' @format A list.   
+#' @examples 
+#' "meters" %in% standard_units
+"standard_units"
+
