@@ -1,4 +1,4 @@
-# EMLaide
+# EMLaide 🍋
 
 ### Installation
 This package can be installed using the following commands: 
