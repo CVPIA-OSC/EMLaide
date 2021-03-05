@@ -8,7 +8,7 @@ add_interval_ratio(
   type = c("interval", "ratio"),
   units,
   number_type,
-  unit_precision,
+  unit_precision = NULL,
   minimum = NULL,
   maximum = NULL
 )
