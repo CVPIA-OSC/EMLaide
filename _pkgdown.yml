@@ -42,6 +42,7 @@ reference:
   - measurement_scale
   - number_type
   - storage_type
+  - standard_units
 
 navbar:
   structure:
