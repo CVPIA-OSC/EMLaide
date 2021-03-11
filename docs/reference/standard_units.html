@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Add Publication Date — add_pub_date • EMLaide</title>
+<title>standard_units — standard_units • EMLaide</title>
 
 
 <!-- jquery -->
@@ -39,8 +39,10 @@
 
 
 
-<meta property="og:title" content="Add Publication Date — add_pub_date" />
-<meta property="og:description" content="Adds publication date according to EML standards." />
+<meta property="og:title" content="standard_units — standard_units" />
+<meta property="og:description" content="A list of all valid standard units accepted by EML schema. This list is used
+to by add_attribute(). As add_attribute() filters through all attribute components
+it will check that the units are in the standard unit list." />
 
 
 
@@ -120,46 +122,27 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Add Publication Date</h1>
+    <h1>standard_units</h1>
     
-    <div class="hidden name"><code>add_pub_date.Rd</code></div>
+    <div class="hidden name"><code>standard_units.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Adds publication date according to EML standards.</p>
+    <p>A list of all valid standard units accepted by EML schema. This list is used
+to by <code><a href='add_attribute.html'>add_attribute()</a></code>. As <code><a href='add_attribute.html'>add_attribute()</a></code> filters through all attribute components
+it will check that the units are in the standard unit list.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>add_pub_date</span><span class='op'>(</span><span class='va'>parent_element</span>, date <span class='op'>=</span> <span class='cn'>NULL</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='va'>standard_units</span></pre>
 
-    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
-    <table class="ref-arguments">
-    <colgroup><col class="name" /><col class="desc" /></colgroup>
-    <tr>
-      <th>parent_element</th>
-      <td><p>A list representing the EML project or dataset.</p></td>
-    </tr>
-    <tr>
-      <th>date</th>
-      <td><p>The publication date. If left null, it will be assigned the current
-date. This can be overriden by putting in a specific date.</p></td>
-    </tr>
-    </table>
 
-    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+    <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
 
-    <p>The dataset or project with the publication date appended.</p>
+    <p>A list.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>add_pub_date</span><span class='op'>(</span>parent_element <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span><span class='op'>)</span>,
-             date <span class='op'>=</span> <span class='st'>"2020-08-19"</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; $pubDate
-#&gt; [1] "2020-08-19"
-#&gt; </div><div class='input'>             
-<span class='co'># Appends current date:              </span>
-<span class='fu'>add_pub_date</span><span class='op'>(</span>parent_element <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span><span class='op'>)</span><span class='op'>)</span> 
-</div><div class='output co'>#&gt; $pubDate
-#&gt; [1] "2021-03-11"
-#&gt; </div></pre>
+    <pre class="examples"><div class='input'><span class='st'>"meters"</span> <span class='op'>%in%</span> <span class='va'>standard_units</span>
+</div><div class='output co'>#&gt; [1] FALSE</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

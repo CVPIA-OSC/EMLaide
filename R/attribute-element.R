@@ -363,7 +363,7 @@ add_interval_ratio <- function(type = c("interval", "ratio"), units,
   } 
   type <- match.arg(type)
   
-  if (units %in% standard_units) {
+  if (units %in% EMLaide::standard_units) {
     interval_ratio <- list(unit = list(standardUnit = units),
                            numericDomain =
                              list(numberType = number_type))
