@@ -88,7 +88,7 @@ test_that('Correct error and warning messages are produced.', {
                              number_type = "whole", minimum = "0", maximum = "10"),
                'Please provide what units your measurement scale uses.')
   
-  expect_error(add_attribute(attribute_name = "Count", attribute_definition = "Number of individuals observed",
+  expect_warning(add_attribute(attribute_name = "Count", attribute_definition = "Number of individuals observed",
                              attribute_label = "NA", measurement_scale = "interval",
                              storage_type = "integer", type = "interval", units = "number",
                              number_type = "whole", minimum = "0", maximum = "10"),
@@ -124,7 +124,7 @@ test_that('Correct error and warning messages are produced.', {
                              number_type = "real", minimum = "0", maximum = "14"),
                'Please provide what units your measurement scale uses.')
   
-  expect_error(add_attribute(attribute_name = "pH", attribute_definition = "pH of soil solution",
+  expect_warning(add_attribute(attribute_name = "pH", attribute_definition = "pH of soil solution",
                              attribute_label = "NA", storage_type = "float",
                              measurement_scale = "ratio", type = "ratio", units = "dimensionless",
                              number_type = "real", minimum = "0", maximum = "14"),
@@ -227,14 +227,14 @@ test_that('The attribute function adds attribute elements.', {
                list(attributeName = "Count", attributeDefinition = "Number of individuals observed", 
                     storageType = "integer", attributeLabel = "NA", measurementScale = list(
                       interval = list(unit = list(standardUnit = "number"), 
-                                      precision = "1", 
                                       numericDomain = 
                                         list(numberType = "whole",
                                              bounds = list(minimum = 
                                                              list(exclusive = "false",
                                                                   minimum = "0"), 
                                                            maximum = list(exclusive = "false",
-                                                                          maximum = "10")))))))
+                                                                          maximum = "10"))),
+                                      precision = "1"))))
   
   expect_equal(add_attribute(attribute_name = "pH", attribute_definition = "pH of soil solution",
                              attribute_label = "NA", storage_type = "float",
@@ -244,10 +244,11 @@ test_that('The attribute function adds attribute elements.', {
                list(attributeName = "pH", attributeDefinition = "pH of soil solution", 
                     storageType = "float", attributeLabel = "NA", measurementScale = list(
                       ratio = list(unit = list(standardUnit = "dimensionless"), 
-                                   precision = "0.01", numericDomain = list(numberType = "real", 
+                                   numericDomain = list(numberType = "real", 
                                                                             bounds = list(minimum = list(exclusive = "false", 
                                                                                                          minimum = "NA"), maximum = list(exclusive = "false", 
-                                                                                                                                         maximum = "NA")))))))
+                                                                                                                                         maximum = "NA"))),
+                                   precision = "0.01"))))
   
   expect_equal(add_attribute(attribute_name = "Yrs", attribute_label = "Years",
                              attribute_definition = "Calendar year of the observation from years 1990 - 2010.",

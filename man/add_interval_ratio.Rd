@@ -7,8 +7,8 @@
 add_interval_ratio(
   type = c("interval", "ratio"),
   units,
-  unit_precision,
   number_type,
+  unit_precision = NULL,
   minimum = NULL,
   maximum = NULL
 )
@@ -21,9 +21,9 @@ point, which allows the ratio to have meaning.}
 
 \item{units}{The units assigned to this attribute.}
 
-\item{unit_precision}{How precise this attirbutes' measurements are recorded.}
-
 \item{number_type}{What type of number. Examples given in exported documentation.}
+
+\item{unit_precision}{How precise this attirbutes' measurements are recorded.}
 
 \item{minimum}{Optional. Theoretical or allowable minimum value. Values can be larger than
 or equal to this number.}
