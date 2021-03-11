@@ -1,4 +1,4 @@
-# EMLaide 🍋
+# EMLaide <a href='https://CVPIA-OSC.github.io/EMLaide'><img src='man/figures/logo.png' align ="right" height="200" /></a> 
 
 ### Installation
 This package can be installed using the following commands: 
