@@ -17,7 +17,8 @@
 <script src="../bootstrap-toc.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
 <!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="../pkgdown.css" rel="stylesheet">
-<script src="../pkgdown.js"></script><meta property="og:title" content="Creating EML Using EMLaide">
+<script src="../pkgdown.js"></script><link href="../extra.css" rel="stylesheet">
+<meta property="og:title" content="Creating EML Using EMLaide">
 <meta property="og:description" content="EMLaide">
 <meta property="og:image" content="https://CVPIA-OSC.github.io/EMLaide/logo.png">
 <!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
@@ -83,7 +84,7 @@
 
       
 
-      </header><script src="creating-EML_files/accessible-code-block-0.0.1/empty-anchor.js"></script><div class="row">
+      </header><script src="creating-EML_files/header-attrs-2.6/header-attrs.js"></script><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
       <h1 data-toc-skip>Creating EML Using EMLaide</h1>
@@ -118,21 +119,21 @@
 <p>The Dataset element contains all of the additional metadata information. The Dataset element is composed of nested lists. Some information is at the top level and is applicable to all elements in the Dataset but other information is nested within subsections and is metadata specific to that subsection.</p>
 <p>For a more in depth description of EML please see <a href="https://eml.ecoinformatics.org/">EML Specification.</a></p>
 <p>In this document, we can quickly create an EML file which has the opportunity to append the following elements. For more detailed instructions on a specific section please see section specific articles.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb2-1"><a href="#cb2-1"></a><span class="kw">-</span><span class="at"> eml </span></span>
-<span id="cb2-2"><a href="#cb2-2"></a><span class="at">  -access</span></span>
-<span id="cb2-3"><a href="#cb2-3"></a><span class="at">  -dataset</span></span>
-<span id="cb2-4"><a href="#cb2-4"></a><span class="at">    </span><span class="kw">-</span><span class="at"> creator</span></span>
-<span id="cb2-5"><a href="#cb2-5"></a><span class="at">    </span><span class="kw">-</span><span class="at"> contact</span></span>
-<span id="cb2-6"><a href="#cb2-6"></a><span class="at">    </span><span class="kw">-</span><span class="at"> associated parties</span></span>
-<span id="cb2-7"><a href="#cb2-7"></a><span class="at">    </span><span class="kw">-</span><span class="at"> title  </span></span>
-<span id="cb2-8"><a href="#cb2-8"></a><span class="at">    </span><span class="kw">-</span><span class="at"> abstract </span></span>
-<span id="cb2-9"><a href="#cb2-9"></a><span class="at">    </span><span class="kw">-</span><span class="at"> keyword set  </span></span>
-<span id="cb2-10"><a href="#cb2-10"></a><span class="at">    </span><span class="kw">-</span><span class="at"> license </span></span>
-<span id="cb2-11"><a href="#cb2-11"></a><span class="at">    </span><span class="kw">-</span><span class="at"> methods </span></span>
-<span id="cb2-12"><a href="#cb2-12"></a><span class="at">    </span><span class="kw">-</span><span class="at"> maintenance </span></span>
-<span id="cb2-13"><a href="#cb2-13"></a><span class="at">    </span><span class="kw">-</span><span class="at"> project</span></span>
-<span id="cb2-14"><a href="#cb2-14"></a><span class="at">    </span><span class="kw">-</span><span class="at"> coverage </span></span>
-<span id="cb2-15"><a href="#cb2-15"></a><span class="at">    </span><span class="kw">-</span><span class="at"> data table </span></span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">-</span><span class="at"> eml </span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="at">  -access</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="at">  -dataset</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> creator</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> contact</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> associated parties</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> title  </span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> abstract </span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> keyword set  </span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> license </span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> methods </span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> maintenance </span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> project</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> coverage </span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> data table </span></span></code></pre></div>
 </div>
 <div id="our-example" class="section level2">
 <h2 class="hasAnchor">
