@@ -1,11 +1,12 @@
 library(httr)
 library(jsonlite)
 library(EDIutils)
+library(xml2)
 
 # Define variables -------------------------------------------------------------
 file_path <- "vignettes/edi.678.1.xml" 
 user_id <- "ecain"
-# password <- Sys.getenv('edi_password')
+password <- "S@lmonSwimUpstr3am"
 # Data package identifier reservation ------------------------------------------
 reserve_edi_id <- function(user_id, password) {
   r <-httr::POST(
@@ -33,9 +34,11 @@ r <- httr::GET(
                transaction_id),
   config = httr::authenticate(paste('uid=', user_id, ",o=EDI", ',dc=edirepository,dc=org'), password)
 )
+
 report <- httr::content(r, as = 'text', encoding = 'UTF-8')
 report
 
-
+errors <- str_extract_all(report, "error")
+warnings <- str_extract_all(report, "warn")
 
 
