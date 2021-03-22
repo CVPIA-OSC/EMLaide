@@ -6,7 +6,6 @@ library(xml2)
 # Define variables -------------------------------------------------------------
 file_path <- "vignettes/edi.678.1.xml" 
 user_id <- "ecain"
-password <- "S@lmonSwimUpstr3am"
 # Data package identifier reservation ------------------------------------------
 reserve_edi_id <- function(user_id, password) {
   r <-httr::POST(

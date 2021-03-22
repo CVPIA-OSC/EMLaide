@@ -2,16 +2,12 @@
 #' Reserve EDI ID 
 #' @description This package returns a funder
 #' @param user_id A string that contains the user ID for the EDI data portal. If you 
-#' do not already have an EDI account you may create one on the EDI portal.
-#' \url {https://portal.edirepository.org/nis/login.jsp}
+#' do not already have an EDI account you may create one on the EDI portal. \url {https://portal.edirepository.org/nis/login.jsp}
 #' @param password A string that contains the user password for the EDI data portal. 
-#'
 #' @return This function returns a edi identifier number. 
-#'
 #' @examples 
 #' reserve_edi_id(user_id = "samuelwright", 
 #'                password = "340account")
-#'                
 #' @export                
 
 reserve_edi_id <- function(user_id, password) {
