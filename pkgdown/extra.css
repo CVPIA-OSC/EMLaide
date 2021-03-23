@@ -6,3 +6,20 @@ a {
     color: #0b8cc3;
     text-decoration: none;
 }
+
+.current {
+    background: #060652;
+}
+
+nav[data-toggle='toc'] .nav > li > a {
+  display: block;
+  padding: 4px 20px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #4a9d45;
+}
+
+pre, code {
+  background-color: #f8f8f8;
+  color: #4a9d45;
+}
