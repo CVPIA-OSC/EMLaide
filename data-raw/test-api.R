@@ -19,13 +19,13 @@ reserve_edi_id <- function(user_id, password) {
 
 # Play around with evaluation online...try with dataset that has URL------------
 
-evaluate_edi_package <- function(user_id, password, file_path) {
+evaluate_edi_package <- function(user_id, password, eml_file_path) {
   r <- httr::POST(
     url = "https://pasta-d.lternet.edu/package/evaluate/eml",
     config = httr::authenticate(paste('uid=', user_id, ",o=EDI", ',dc=edirepository,dc=org'), password),
-    body = httr::upload_file(file_path)
+    body = httr::upload_file(eml_file_path)
   )
-  if (r$status_code == "201") {
+  if (r$status_code == "202") {
   transaction_id <- httr::content(r, as = 'text', encoding = 'UTF-8')
   r <- httr::GET(
     url = paste0("https://pasta-d.lternet.edu/package/evaluate/report/eml/",
