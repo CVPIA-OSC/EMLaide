@@ -3,7 +3,7 @@
 #' @description This package reserves and returns a unique EDI number. 
 #' @param user_id EDI data portal user ID. Create an account an
 #' EDI \href{https://portal.edirepository.org/nis/login.jsp}{here}
-#' @param password A string that contains the user password for the EDI data portal. 
+#' @param password EDI data portal user password
 #' @return This function returns a edi identifier number. 
 #' @examples 
 #' reserve_edi_id(user_id = "samuelwright")
@@ -26,16 +26,15 @@ reserve_edi_id <- function(user_id, password) {
 }
 
 # Evaluate EDI Data package -------------------------------------------------------
-#' Evaluate EDI Data Package 
+#' Validate EDI Data Package 
 #' @description This function takes in authentication info for EDI and an EML file to 
 #' be evaluated using the EDI congruence checker. This package returns a data frame that contains the status of the 
 #' package. 
 #' @param user_id EDI data portal user ID. Create an account an
 #' EDI \href{https://portal.edirepository.org/nis/login.jsp}{here}
-#' @param password A string that contains the user password for the EDI data portal. 
-#' @param eml_file_path A string that contains the filepath to the EML document that 
-#' contains all the data package information. A web link to the csv must be included 
-#' in the dataset information in the EML in order for a data package to be evaluated. 
+#' @param password EDI data portal user password
+#' @param eml_file_path The file path to the EML metadata document that you wish to evaluate. 
+#' (A web link to the csv must be included in the dataset information in the EML in order for a data package to be evaluated.) 
 #' @return This package returns a data frame that contains the status of the 
 #' package. The data frame contains the following information:
 #' * The status of each check - Can be valid, info, warn, or error. Errors must be fixed before package can be uploaded to EDI. 
