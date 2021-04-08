@@ -117,7 +117,7 @@ edi_number <- "edi.678.1"
 
 It is also possible to use the EMLaide function `api_create_reservation()` to generate a EDI number using R. See the `api_create_reservation()` [documentation.](https://ediorg.github.io/EMLaide/reference/api_create_reservation.html)
 ```{r}
-# edi_number <- api_create_resercation(scope = "edi", environment = "staging", user.id = "your user id", 
+# edi_number <- api_create_reservation(scope = "edi", environment = "staging", user.id = "your user id", 
 #                                      user.pass = "your user password ", affilitation = "EDI")
 ```
 
@@ -241,7 +241,7 @@ must contain a project title, a project personnel, and project funding.
 #### Project personnel 
 The creator of the dataset is appended as the `project_personnel`. If a different person is associated with the project please add that information to the "project" tab in the excel file "example-metadata.xlsx". 
 ```{r}
-project_personnel <- personnel$creator 
+project_personnel <- personnel$creator[1:3]
 ```
 
 #### Project funding 
@@ -370,7 +370,8 @@ working EML file. If you wish to append multiple datatables to one datapackage p
 dataTable <- list(entityName = dataset_file_name,
                  entityDescription = metadata$dataset$name,
                  physical = physical,
-                 attributeList = attribute_list)
+                 attributeList = attribute_list, 
+                 numberOfRecords = nrow(read_csv(dataset_file)))
 
 ```
 
@@ -392,6 +393,7 @@ dataset <- list(title = title$title,
                 maintenance = maintenance$maintenance,
                 dataTable = dataTable) 
 ```
+
 ## Making the EML document 
 Now that we have all of the items appended to the `dataset` we can add the dataset, id, and access to a new list named eml. 
 The unique id number should match one that you reserved on the EDI data portal. Input this at the top of the 
@@ -402,6 +404,7 @@ eml <- list(packageId = edi_number,
             access = access,
             dataset = dataset)
 ```
+
 The final step is to convert our `eml` list into the correct format. To do so, we can use the EML library's `write_eml` function. 
 ```{r, eval = FALSE}
 file_name <- paste(edi_number, "xml", sep = ".")

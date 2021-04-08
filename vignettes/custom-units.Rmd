@@ -1,0 +1,46 @@
+---
+title: "custom-units"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{custom-units}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(EMLaide)
+```
+
+### Add any Custom Units in Additional Metadata 
+If you have units that are not included in the EML schema you can add custom units by filling out the following. Only run this code if you wish to add custom units. 
+```{r}
+custom_units <- data.frame(id = c("NTU", "psu"),
+                           unitType = c("dimensionless", "dimensionless"),
+                           parentSI = c(NA, NA),
+                           multiplierToSI = c(NA, NA),
+                           description = c("Nephelometric Turbidity unit",
+                                           "used to describe the concentration of dissolved salts
+                                           in water, the UNESCO Practical Salinity Scale of 1978
+                                           (PSS78) defines salinity in terms of a conductivity
+                                           ratio"))
+
+unitList <- EML::set_unitList(custom_units)
+```
+
+If you have added custom units please add them into the additional metadata section as shown below. 
+```{r, eval=FALSE}
+eml <- list(packageId = edi_number,
+            system = "EDI",
+            access = access,
+            dataset = dataset,
+            additionalMetadata = list(metadata = list(
+              unitList = unitList))
+            )
+```
