@@ -45,32 +45,33 @@ reserve_edi_id <- function(user_id, password) {
 #'                eml_file_path = "data/edi20.1.xml")
 #' @export   
 evaluate_edi_package <- function(user_id, password, eml_file_path) {
-  response <- httr::POST(
+  r <- httr::POST(
     url = "https://pasta-d.lternet.edu/package/evaluate/eml",
-    config = httr::authenticate(paste("uid=", user_id, ",o=EDI", ",dc=edirepository,dc=org"), password),
+    config = httr::authenticate(paste('uid=', user_id, ",o=EDI", ',dc=edirepository,dc=org'), password),
     body = httr::upload_file(eml_file_path)
   )
   if (r$status_code == "202") {
-    transaction_id <- httr::content(response, as = "text", encoding = "UTF-8")
-    response <- httr::GET(
+    transaction_id <- httr::content(r, as = 'text', encoding = 'UTF-8')
+    r <- httr::GET(
       url = paste0("https://pasta-d.lternet.edu/package/evaluate/report/eml/",
                    transaction_id),
-      config = httr::authenticate(paste("uid=", user_id, ",o=EDI", ",dc=edirepository,dc=org"), password)
+      config = httr::authenticate(paste('uid=', user_id, ",o=EDI", ',dc=edirepository,dc=org'), password)
     )
-    report <- httr::content(response, as = "text", encoding = "UTF-8")
-    name <- stringr::str_extract_all(report, "(?<=<name>)(.*)(?=</name>)")
-    status <- stringr::str_extract_all(report, "[:alpha:]+(?=</status>)")
-    suggestion <- stringr::str_extract_all(report, "(?<=<suggestion>)(.*)(?=</suggestion>)")
+    report <- httr::content(r, as = 'text', encoding = 'UTF-8')
+    name <- stringr::str_extract_all(report, "(?<=<name>)(.*)(?=</name>)")[[1]]
+    status <- stringr::str_extract_all(report, '[:alpha:]+(?=</status>)')[[1]]
+    suggestion <- stringr::str_extract_all(report, "(?<=<suggestion>)(.*)(?=</suggestion>)")[[1]]
     
-    report_df <- dplyr::tibble("Status" = as.vector(purrr::flatten(status)), 
-                        "Element Checked" = as.vector(purrr::flatten(name)),
-                        "Suggestion to fix/imporve" = as.vector(purrr::flatten(suggestion)))
-    report_df
+    report_df <- tibble("Status" = as_vector(status), 
+                        "Element Checked" = as_vector(name),
+                        "Suggestion to fix/imporve" = as_vector(suggestion))
+    View(report_df)
+    return(report_df)
   } else {
     message("Your request to evaluate an EDI package failed,
            please check that you entered a valid username, password, and XML document.
            That XML document must link to a csv accessible online.
            See more information on request status below")
-    print(response)
+    print(r)
   }
 }

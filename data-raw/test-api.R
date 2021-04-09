@@ -5,7 +5,7 @@ library(xml2)
 library(tidyr)
 
 # Define variables -------------------------------------------------------------
-file_path <- "vignettes/edi.678.1.xml" 
+eml_file_path <- "vignettes/edi.678.1.xml" 
 user_id <- "ecain"
 # Data package identifier reservation ------------------------------------------
 reserve_edi_id <- function(user_id, password) {
@@ -37,10 +37,10 @@ evaluate_edi_package <- function(user_id, password, eml_file_path) {
   status <- stringr::str_extract_all(report, '[:alpha:]+(?=</status>)')
   suggestion <- stringr::str_extract_all(report, "(?<=<suggestion>)(.*)(?=</suggestion>)")
    
-  report_df <- tibble("Status" = as_vector(flatten(status)), 
-                      "Element Checked" = as_vector(flatten(name)),
-                      "Suggestion to fix/imporve" = as_vector(flatten(suggestion)))
-  return(report_df)
+  report_df <- tibble("Status" = as_vector(status[[1]]), 
+                      "Element Checked" = as_vector(name[[1]]),
+                      "Suggestion to fix/imporve" = as_vector(suggestion[[1]]))
+  View(report_df)
   
   } else {
     message("Your request to evaluate an EDI package failed,
@@ -49,5 +49,4 @@ evaluate_edi_package <- function(user_id, password, eml_file_path) {
            See more information on request status below")
     print(r)
   }
-  
 }
