@@ -359,6 +359,7 @@ adds_attribute <- function(attribute_name, attribute_definition, storage_type,
 # Maps through entire attribute sheet adding to attribute_list
 attribute_list$attribute <- purrr::pmap(metadata$attribute, adds_attribute) 
 ```
+If your dataset contains units that are not part of the EML schema you may add them as custom units. To do so please see the vignette on [custom units.](https://cvpia-osc.github.io/EMLaide//articles/custom-units.html) 
 
 #### Putting the Data Table Together
 Now that we have the `attribute_list` and `physical` information, we 
@@ -413,7 +414,7 @@ eml_validate(file_name)
 ```
 
 ## Uploading to EDI Data Repository 
-If you feel ready to upload your document to the EDI data repository you can do that from R using the Environmental Data Initiatives EMLaide package. Use the `api_create_data_package()` to create the initial version of a data package. 
+If you feel ready to upload your document to the EDI data repository you can do that from R using the Environmental Data Initiatives EDIutils package. Use the `api_create_data_package()` to create the initial version of a data package. 
 
 In order to upload from R you must have the data table accessible by a URL that can be accessed through the EDI repository. This URL must be added in the `add_physical()` section above. If you do not have a URL available then you can upload the EML document and the dataset on the [EDI data portal.](https://portal.edirepository.org/nis/home.jsp)
 

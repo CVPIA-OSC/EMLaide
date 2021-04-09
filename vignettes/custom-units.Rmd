@@ -13,13 +13,9 @@ knitr::opts_chunk$set(
   comment = "#>"
 )
 ```
+### Add any Custom Units in Additional Metadata
 
-```{r setup}
-library(EMLaide)
-```
-
-### Add any Custom Units in Additional Metadata 
-If you have units that are not included in the EML schema you can add custom units by filling out the following. Only run this code if you wish to add custom units. 
+If you have units that are not included in the EML schema you can add custom units by adding the following code into your script. This example adds two custom units, "NTU", and "psu". 
 ```{r}
 custom_units <- data.frame(id = c("NTU", "psu"),
                            unitType = c("dimensionless", "dimensionless"),
@@ -34,7 +30,7 @@ custom_units <- data.frame(id = c("NTU", "psu"),
 unitList <- EML::set_unitList(custom_units)
 ```
 
-If you have added custom units please add them into the additional metadata section as shown below. 
+When defining custom units you must also add them into the eml list. To do this the `unitList` created above is added in a nested list under the `additionalMetadata`section as shown below. 
 ```{r, eval=FALSE}
 eml <- list(packageId = edi_number,
             system = "EDI",
