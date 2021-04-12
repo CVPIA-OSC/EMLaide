@@ -172,7 +172,7 @@
 <code class="sourceCode R"><span class="va">edi_number</span> <span class="op">&lt;-</span> <span class="st">"edi.678.1"</span></code></pre></div>
 <p>It is also possible to use the EMLaide function <code>api_create_reservation()</code> to generate a EDI number using R. See the <code>api_create_reservation()</code> <a href="https://ediorg.github.io/EMLaide/reference/api_create_reservation.html">documentation.</a></p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="co"># edi_number &lt;- api_create_resercation(scope = "edi", environment = "staging", user.id = "your user id", </span>
+<code class="sourceCode R"><span class="co"># edi_number &lt;- api_create_reservation(scope = "edi", environment = "staging", user.id = "your user id", </span>
 <span class="co">#                                      user.pass = "your user password ", affilitation = "EDI")</span></code></pre></div>
 </div>
 </div>
@@ -271,7 +271,7 @@
 <a href="#project-personnel" class="anchor"></a>Project personnel</h4>
 <p>The creator of the dataset is appended as the <code>project_personnel</code>. If a different person is associated with the project please add that information to the “project” tab in the excel file “example-metadata.xlsx”.</p>
 <div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">project_personnel</span> <span class="op">&lt;-</span> <span class="va">personnel</span><span class="op">$</span><span class="va">creator</span> </code></pre></div>
+<code class="sourceCode R"><span class="va">project_personnel</span> <span class="op">&lt;-</span> <span class="va">personnel</span><span class="op">$</span><span class="va">creator</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">3</span><span class="op">]</span></code></pre></div>
 </div>
 <div id="project-funding" class="section level4">
 <h4 class="hasAnchor">
@@ -379,6 +379,7 @@
 <span class="op">}</span>
 <span class="co"># Maps through entire attribute sheet adding to attribute_list</span>
 <span class="va">attribute_list</span><span class="op">$</span><span class="va">attribute</span> <span class="op">&lt;-</span> <span class="fu">purrr</span><span class="fu">::</span><span class="fu"><a href="https://purrr.tidyverse.org/reference/map2.html">pmap</a></span><span class="op">(</span><span class="va">metadata</span><span class="op">$</span><span class="va">attribute</span>, <span class="va">adds_attribute</span><span class="op">)</span> </code></pre></div>
+<p>If your dataset contains units that are not part of the EML schema you may add them as custom units. To do so please see the vignette on <a href="https://cvpia-osc.github.io/EMLaide//articles/custom-units.html">custom units.</a></p>
 </div>
 <div id="putting-the-data-table-together" class="section level4">
 <h4 class="hasAnchor">
@@ -388,7 +389,8 @@
 <code class="sourceCode R"><span class="va">dataTable</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>entityName <span class="op">=</span> <span class="va">dataset_file_name</span>,
                  entityDescription <span class="op">=</span> <span class="va">metadata</span><span class="op">$</span><span class="va">dataset</span><span class="op">$</span><span class="va">name</span>,
                  physical <span class="op">=</span> <span class="va">physical</span>,
-                 attributeList <span class="op">=</span> <span class="va">attribute_list</span><span class="op">)</span></code></pre></div>
+                 attributeList <span class="op">=</span> <span class="va">attribute_list</span>, 
+                 numberOfRecords <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/nrow.html">nrow</a></span><span class="op">(</span><span class="fu">read_csv</span><span class="op">(</span><span class="va">dataset_file</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></code></pre></div>
 </div>
 </div>
 </div>
@@ -430,7 +432,7 @@
 <div id="uploading-to-edi-data-repository" class="section level2">
 <h2 class="hasAnchor">
 <a href="#uploading-to-edi-data-repository" class="anchor"></a>Uploading to EDI Data Repository</h2>
-<p>If you feel ready to upload your document to the EDI data repository you can do that from R using the Environmental Data Initiatives EMLaide package. Use the <code>api_create_data_package()</code> to create the initial version of a data package.</p>
+<p>If you feel ready to upload your document to the EDI data repository you can do that from R using the Environmental Data Initiatives EDIutils package. Use the <code>api_create_data_package()</code> to create the initial version of a data package.</p>
 <p>In order to upload from R you must have the data table accessible by a URL that can be accessed through the EDI repository. This URL must be added in the <code><a href="../reference/add_physical.html">add_physical()</a></code> section above. If you do not have a URL available then you can upload the EML document and the dataset on the <a href="https://portal.edirepository.org/nis/home.jsp">EDI data portal.</a></p>
 <div class="sourceCode" id="cb26"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co">#api_create_data_package()</span></code></pre></div>
