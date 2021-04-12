@@ -45,7 +45,7 @@ dataset_file_name <- "hannon_example_physical_data.csv"
 edi_number = "edi.687.1"
 ```
 
-```{r, eval = FALSE}
+```{r, eval = FALSE, include=FALSE}
 excel_path <- "data-raw/Hannon-Example/example-metadata.xlsx"
 
 sheets <- readxl::excel_sheets(excel_path)
@@ -68,25 +68,24 @@ In this example we included two datasets by creating a tibble where each row giv
 
 The tibble has 3-5 columns:
 
-* A `datatable` element which is the file path to the datatable
-* A `datatable_name`
-* An `attribute_info` the file path for the attribute and code tables for the dataset (should be a metadata.xlsx)
-* (Optional) `dataset_methods` section that reads file path to dataset specific methods
-* (Optional) `additional_information` If additional information is pertinent to the entry please add it as a string description. 
+* A `datatable` column which contains the file paths to the datatables
+* A `datatable_name` column which contains the names of the datatables
+* An `attribute_info` column which contains the file path to the metadata describing the dataset (should be a metadata.xlsx)
+* (Optional) An `dataset_methods` column that reads file path to dataset specific methods
+* (Optional) An `additional_information` column that adds additional information that is pertinent to the entry, please add it as a string description. 
 
 In this example there are no dataset specific methods or additional information so those columns are not included. 
 
 To add more than two datasets please follow the same structure adding additional an additional row for each dataset. 
 
-```{r}
-# TODO add real multipule datast example 
+```{r, include=FALSE}
 dataset_files <- dplyr::tibble(datatable = c(system.file("extdata", "Hannon-Example",
-                                                                    "hannon_example_physical_data.csv",
+                                                                    "snorkel-index-data-2015-2020.csv",
                                                         package = "EMLaide", mustWork = TRUE),
                                              system.file("extdata", "Hannon-Example",
                                                                     "hannon_example_physical_data.csv",
                                                         package = "EMLaide", mustWork = TRUE)),
-                               datatable_name = c("hannon_example_snorkel_data.csv", 
+                               datatable_name = c("snorkel-index-data-2015-2020.csv",
                                                   "hannon_example_physical_data.csv"),
                                attribute_info = c(system.file("extdata", "Hannon-Example", "example-metadata.xlsx",
                                                        package = "EMLaide", mustWork = TRUE),
@@ -95,6 +94,15 @@ dataset_files <- dplyr::tibble(datatable = c(system.file("extdata", "Hannon-Exam
 
 ```
 
+```{r, eval = FALSE}
+dataset_files <- dplyr::tibble(datatable = c("extdata/Hannon-Example/snorkel-index-data-2015-2020.csv",
+                                            "extdata/Hannon-Example/hannon_example_physical_data.csv"),
+                               datatable_name = c("snorkel-index-data-2015-2020.csv", 
+                                                  "hannon_example_physical_data.csv"),
+                               attribute_info = c("extdata/Hannon-Example/snorkel-index-metadata.xlsx",
+                                                  "extdata/Hannon-Example/example-metadata.xlsx")
+
+```
 ### Data Tables 
 We need to add each data table. The data table element includes the datatable name,  a `physical` section, and the `attribute_list`. These sections are all lists which must be created first then added to a named `dataTable` list.
 
@@ -110,7 +118,6 @@ unique code and definition, with its `attribute_name` aligning to that which is 
 column in the dataTable must have a described attribute to match EDI congruence checker. 
 
 ```{r}
-# TODO work in dataset methods 
 adds_datatable <- function(datatable, datatable_name, attribute_info, dataset_methods = NULL, additional_info = NULL){
   attribute_table <- readxl::read_xlsx(attribute_info, sheet = "attribute")
   codes <- readxl::read_xlsx(attribute_info, sheet = "code_definitions")
@@ -153,24 +160,12 @@ data_tables <- purrr::pmap(dataset_files, adds_datatable)
 This `data_table` list can now be added in as `dataTable = data_tables` in the dataset list. 
 
 ## Diffrent types of datasets 
-##### Physical 
-The physical element can be created first using the `add_physical` function. 
-This will append information on the actual physical information of the data. 
-The file path of the data can be added to the "example-metadata.xlsx" excel file 
-and all parameters will be appended, gathering the csv's unique size and 
-authentication, as well as providing the default physical values of a csv. 
-
-```{r}
-physical <- add_physical(file_path = dataset_file)
-```
-
-If you wish to provide alternative information than the defaults of a csv, you must do
-so manually in Rstudio using the `add_physical` function fully. It is not recommended 
-that you do so, however, as the default values present represent the best practices 
-in most cases. 
 
 ### Vector Data 
-If you have vector data please append the data elements in a `spatialVector` named section of the dataset. In addition to the components that are required for tabular data you must include a geometry for your dataset. This should be added in the "dataset tab" of the "example-metadata.xlsx" excel file.
+If you have vector data please append the data elements in a `spatialVector` named section of the dataset. In addition to the components that are required for tabular data you must include a geometry for your dataset. This should be added in the "dataset tab" of the "example-metadata.xlsx" excel file. 
+
+To learn how to create the other dataset elements `physical` and `attribute_list` please see [the EML template helper](https://cvpia-osc.github.io/EMLaide//articles/creating-EML.html)
+
 ```{r, eval = FALSE}
 #TODO add real example of spatialVEctor
 data_tables <- list(spatialVector = list(entityName = dataset_file,
@@ -179,37 +174,25 @@ data_tables <- list(spatialVector = list(entityName = dataset_file,
                                          attributeList = attribute_list,
                                          geometry = metadata$dataset$geometry))
 ```
+This `data_table` list can now be added in as `dataTable = data_tables` in the dataset list. 
 
 ### Raster Data 
-If you have raster data please append the data elements in a `spatialRaster` named section of the dataset. In addition to the components that are required for tabular data you must include a geometry for your dataset. This should be added in the "dataset tab" of the "example-metadata.xlsx" excel file.
+If you have raster data please append the data elements in a `spatialRaster` named section of the dataset. In addition to the components that are required for tabular data you must include the:
+* `spatial_reference`
+* `horizontal_accuracy`
+* `vertical_accuracy`
+* `cell_size_x`
+* `cell_size_y`
+* `number_of_bands`
+* `raster_origin`
+* `rows`
+* `columns`
+* `verticals`
+* `cell_geometry` 
+All of these required fields must be added as inputs to the `add_raster()` function. 
 ```{r, eval = FALSE}
-# TODO add real example for spatialVector 
+# TODO add real example for spatialRaster
 data_tables <- list(spatialRaster = list(add_raster()))
 ```
+This `data_table` list can now be added in as `dataTable = data_tables` in the dataset list. 
 
-#### Checks for valid EML
-```{r, include = FALSE}
-dataset <- list(title = "Testing for valid EML on multiple datasets",
-                creator = list(individualName = list(givenName = "John M.", 
-                                                     surName = "Hannon"), 
-                               electronicMailAddress = "jhannon@usbr.gov", 
-                               organizationName = "US Bureau of Reclamation"),
-                contact =list(individualName = list(givenName = "John M.", 
-                                                     surName = "Hannon"), 
-                               electronicMailAddress = "jhannon@usbr.gov", 
-                               organizationName = "US Bureau of Reclamation"),
-                dataTable = data_tables) 
-```
-
-```{r, include = FALSE}
-eml <- list(packageId = edi_number,
-            system = "EDI",
-            dataset = dataset)
-```
-The final step is to convert our `eml` list into the correct format. To do so, we can use the EML library's `write_eml` function. 
-```{r, eval = FALSE, include = FALSE}
-file_name <- paste(edi_number, "xml", sep = ".")
-EML::write_eml(eml, file_name)
-eml_validate(file_name)
-
-```
