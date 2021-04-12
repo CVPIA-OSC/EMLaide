@@ -110,22 +110,6 @@
 <div id="loading-in-data" class="section level2">
 <h2 class="hasAnchor">
 <a href="#loading-in-data" class="anchor"></a>Loading in Data</h2>
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">excel_path</span> <span class="op">&lt;-</span> <span class="st">"data-raw/Hannon-Example/example-metadata.xlsx"</span>
-
-<span class="va">sheets</span> <span class="op">&lt;-</span> <span class="fu">readxl</span><span class="fu">::</span><span class="fu"><a href="https://readxl.tidyverse.org/reference/excel_sheets.html">excel_sheets</a></span><span class="op">(</span><span class="va">excel_path</span><span class="op">)</span>
-<span class="va">metadata</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/lapply.html">lapply</a></span><span class="op">(</span><span class="va">sheets</span>, <span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="fu">readxl</span><span class="fu">::</span><span class="fu"><a href="https://readxl.tidyverse.org/reference/read_excel.html">read_excel</a></span><span class="op">(</span><span class="va">excel_path</span>, sheet <span class="op">=</span> <span class="va">x</span><span class="op">)</span><span class="op">)</span>
-<span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span><span class="op">(</span><span class="va">metadata</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="va">sheets</span>
-
-<span class="va">abstract_docx</span> <span class="op">&lt;-</span> <span class="st">"data-raw/Hannon-Example/hannon_example_abstract.docx"</span>
-
-<span class="va">methods_docx</span> <span class="op">&lt;-</span> <span class="st">"data-raw/Hannon-Example/hannon_example_methods.docx"</span>
-
-<span class="va">dataset_file</span> <span class="op">&lt;-</span> <span class="st">"data-raw/Hannon-Example/hannon_example_physical_data.csv"</span>
-
-<span class="va">dataset_file_name</span> <span class="op">&lt;-</span> <span class="st">"hannon_example_physical_data.csv"</span>
-
-<span class="va">edi_number</span> <span class="op">&lt;-</span> <span class="st">"edi.678.1"</span></code></pre></div>
 </div>
 <div id="multiple-datsets-for-one-data-package" class="section level2">
 <h2 class="hasAnchor">
@@ -133,38 +117,28 @@
 <p>In this example we included two datasets by creating a tibble where each row gives information on one dataset.</p>
 <p>The tibble has 3-5 columns:</p>
 <ul>
-<li>A <code>datatable</code> element which is the file path to the datatable</li>
-<li>A <code>datatable_name</code>
-</li>
-<li>An <code>attribute_info</code> the file path for the attribute and code tables for the dataset (should be a metadata.xlsx)</li>
-<li>(Optional) <code>dataset_methods</code> section that reads file path to dataset specific methods</li>
-<li>(Optional) <code>additional_information</code> If additional information is pertinent to the entry please add it as a string description.</li>
+<li>A <code>datatable</code> column which contains the file paths to the datatables</li>
+<li>A <code>datatable_name</code> column which contains the names of the datatables</li>
+<li>An <code>attribute_info</code> column which contains the file path to the metadata describing the dataset (should be a metadata.xlsx)</li>
+<li>(Optional) An <code>dataset_methods</code> column that reads file path to dataset specific methods</li>
+<li>(Optional) An <code>additional_information</code> column that adds additional information that is pertinent to the entry, please add it as a string description.</li>
 </ul>
 <p>In this example there are no dataset specific methods or additional information so those columns are not included.</p>
 <p>To add more than two datasets please follow the same structure adding additional an additional row for each dataset.</p>
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="co"># TODO add real multipule datast example </span>
-<span class="va">dataset_files</span> <span class="op">&lt;-</span> <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://tibble.tidyverse.org/reference/tibble.html">tibble</a></span><span class="op">(</span>datatable <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/system.file.html">system.file</a></span><span class="op">(</span><span class="st">"extdata"</span>, <span class="st">"Hannon-Example"</span>,
-                                                                    <span class="st">"hannon_example_physical_data.csv"</span>,
-                                                        package <span class="op">=</span> <span class="st">"EMLaide"</span>, mustWork <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>,
-                                             <span class="fu"><a href="https://rdrr.io/r/base/system.file.html">system.file</a></span><span class="op">(</span><span class="st">"extdata"</span>, <span class="st">"Hannon-Example"</span>,
-                                                                    <span class="st">"hannon_example_physical_data.csv"</span>,
-                                                        package <span class="op">=</span> <span class="st">"EMLaide"</span>, mustWork <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span>,
-                               datatable_name <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"hannon_example_snorkel_data.csv"</span>, 
-                                                  <span class="st">"hannon_example_physical_data.csv"</span><span class="op">)</span>,
-                               attribute_info <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/system.file.html">system.file</a></span><span class="op">(</span><span class="st">"extdata"</span>, <span class="st">"Hannon-Example"</span>, <span class="st">"example-metadata.xlsx"</span>,
-                                                       package <span class="op">=</span> <span class="st">"EMLaide"</span>, mustWork <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>,
-                                                  <span class="fu"><a href="https://rdrr.io/r/base/system.file.html">system.file</a></span><span class="op">(</span><span class="st">"extdata"</span>, <span class="st">"Hannon-Example"</span>, <span class="st">"example-metadata.xlsx"</span>,
-                                                       package <span class="op">=</span> <span class="st">"EMLaide"</span>, mustWork <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>dataset_files <span class="ot">&lt;-</span> dplyr<span class="sc">::</span><span class="fu">tibble</span>(<span class="at">datatable =</span> <span class="fu">c</span>(<span class="st">"extdata/Hannon-Example/snorkel-index-data-2015-2020.csv"</span>,</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>                                            <span class="st">"extdata/Hannon-Example/hannon_example_physical_data.csv"</span>),</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>                               <span class="at">datatable_name =</span> <span class="fu">c</span>(<span class="st">"snorkel-index-data-2015-2020.csv"</span>, </span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>                                                  <span class="st">"hannon_example_physical_data.csv"</span>),</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>                               <span class="at">attribute_info =</span> <span class="fu">c</span>(<span class="st">"extdata/Hannon-Example/snorkel-index-metadata.xlsx"</span>,</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>                                                  <span class="st">"extdata/Hannon-Example/example-metadata.xlsx"</span>)</span></code></pre></div>
 <div id="data-tables" class="section level3">
 <h3 class="hasAnchor">
 <a href="#data-tables" class="anchor"></a>Data Tables</h3>
 <p>We need to add each data table. The data table element includes the datatable name, a <code>physical</code> section, and the <code>attribute_list</code>. These sections are all lists which must be created first then added to a named <code>dataTable</code> list.</p>
 <p>The code below create a <code>data_tables</code> list where we append each data table. We have the <code>code_helper</code> and the <code>attributes_and_codes</code> that help create the <code>attribute_list</code> using the <code>add_attribute</code> function. We create the <code>physical</code> element using the <code>add_physical</code> function.</p>
 <p>Please make sure you review what type of attribute you are providing and what inputs are necessary. These values can then be inputted into the “attribute” tab in the “example-metadata.xlsx” excel file. If you are using a “nominal” or “ordinal” attribute which is “enumerated”, (it has a specific code definition), please also use the tab “code_definitions”. Provide each unique code and definition, with its <code>attribute_name</code> aligning to that which is in the “attribute” tab. An example is present currently to help better showcase this. Every single column in the dataTable must have a described attribute to match EDI congruence checker.</p>
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="co"># TODO work in dataset methods </span>
-<span class="va">adds_datatable</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">datatable</span>, <span class="va">datatable_name</span>, <span class="va">attribute_info</span>, <span class="va">dataset_methods</span> <span class="op">=</span> <span class="cn">NULL</span>, <span class="va">additional_info</span> <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span><span class="op">{</span>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">adds_datatable</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">datatable</span>, <span class="va">datatable_name</span>, <span class="va">attribute_info</span>, <span class="va">dataset_methods</span> <span class="op">=</span> <span class="cn">NULL</span>, <span class="va">additional_info</span> <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span><span class="op">{</span>
   <span class="va">attribute_table</span> <span class="op">&lt;-</span> <span class="fu">readxl</span><span class="fu">::</span><span class="fu"><a href="https://readxl.tidyverse.org/reference/read_excel.html">read_xlsx</a></span><span class="op">(</span><span class="va">attribute_info</span>, sheet <span class="op">=</span> <span class="st">"attribute"</span><span class="op">)</span>
   <span class="va">codes</span> <span class="op">&lt;-</span> <span class="fu">readxl</span><span class="fu">::</span><span class="fu"><a href="https://readxl.tidyverse.org/reference/read_excel.html">read_xlsx</a></span><span class="op">(</span><span class="va">attribute_info</span>, sheet <span class="op">=</span> <span class="st">"code_definitions"</span><span class="op">)</span>
   <span class="va">attribute_list</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span><span class="op">)</span>
@@ -208,38 +182,28 @@
 <div id="diffrent-types-of-datasets" class="section level2">
 <h2 class="hasAnchor">
 <a href="#diffrent-types-of-datasets" class="anchor"></a>Diffrent types of datasets</h2>
-<div id="physical" class="section level5">
-<h5 class="hasAnchor">
-<a href="#physical" class="anchor"></a>Physical</h5>
-<p>The physical element can be created first using the <code>add_physical</code> function. This will append information on the actual physical information of the data. The file path of the data can be added to the “example-metadata.xlsx” excel file and all parameters will be appended, gathering the csv’s unique size and authentication, as well as providing the default physical values of a csv.</p>
-<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">physical</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/add_physical.html">add_physical</a></span><span class="op">(</span>file_path <span class="op">=</span> <span class="va">dataset_file</span><span class="op">)</span></code></pre></div>
-<p>If you wish to provide alternative information than the defaults of a csv, you must do so manually in Rstudio using the <code>add_physical</code> function fully. It is not recommended that you do so, however, as the default values present represent the best practices in most cases.</p>
-</div>
 <div id="vector-data" class="section level3">
 <h3 class="hasAnchor">
 <a href="#vector-data" class="anchor"></a>Vector Data</h3>
 <p>If you have vector data please append the data elements in a <code>spatialVector</code> named section of the dataset. In addition to the components that are required for tabular data you must include a geometry for your dataset. This should be added in the “dataset tab” of the “example-metadata.xlsx” excel file.</p>
-<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<p>To learn how to create the other dataset elements <code>physical</code> and <code>attribute_list</code> please see <a href="https://cvpia-osc.github.io/EMLaide//articles/creating-EML.html">the EML template helper</a></p>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co">#TODO add real example of spatialVEctor</span>
 <span class="va">data_tables</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>spatialVector <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>entityName <span class="op">=</span> <span class="va">dataset_file</span>,
                                          entityDescription <span class="op">=</span> <span class="va">metadata</span><span class="op">$</span><span class="va">dataset</span><span class="op">$</span><span class="va">name</span>,
                                          physical <span class="op">=</span> <span class="va">physical</span>,
                                          attributeList <span class="op">=</span> <span class="va">attribute_list</span>,
                                          geometry <span class="op">=</span> <span class="va">metadata</span><span class="op">$</span><span class="va">dataset</span><span class="op">$</span><span class="va">geometry</span><span class="op">)</span><span class="op">)</span></code></pre></div>
+<p>This <code>data_table</code> list can now be added in as <code>dataTable = data_tables</code> in the dataset list.</p>
 </div>
 <div id="raster-data" class="section level3">
 <h3 class="hasAnchor">
 <a href="#raster-data" class="anchor"></a>Raster Data</h3>
-<p>If you have raster data please append the data elements in a <code>spatialRaster</code> named section of the dataset. In addition to the components that are required for tabular data you must include a geometry for your dataset. This should be added in the “dataset tab” of the “example-metadata.xlsx” excel file.</p>
-<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="co"># TODO add real example for spatialVector </span>
+<p>If you have raster data please append the data elements in a <code>spatialRaster</code> named section of the dataset. In addition to the components that are required for tabular data you must include the: * <code>spatial_reference</code> * <code>horizontal_accuracy</code> * <code>vertical_accuracy</code> * <code>cell_size_x</code> * <code>cell_size_y</code> * <code>number_of_bands</code> * <code>raster_origin</code> * <code>rows</code> * <code>columns</code> * <code>verticals</code> * <code>cell_geometry</code> All of these required fields must be added as inputs to the <code><a href="../reference/add_raster.html">add_raster()</a></code> function.</p>
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># TODO add real example for spatialRaster</span>
 <span class="va">data_tables</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>spatialRaster <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span><span class="fu"><a href="../reference/add_raster.html">add_raster</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></code></pre></div>
-<div id="checks-for-valid-eml" class="section level4">
-<h4 class="hasAnchor">
-<a href="#checks-for-valid-eml" class="anchor"></a>Checks for valid EML</h4>
-<p>The final step is to convert our <code>eml</code> list into the correct format. To do so, we can use the EML library’s <code>write_eml</code> function.</p>
-</div>
+<p>This <code>data_table</code> list can now be added in as <code>dataTable = data_tables</code> in the dataset list.</p>
 </div>
 </div>
 </div>

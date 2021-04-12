@@ -1,5 +1,5 @@
 ---
-title: "custom-units"
+title: "Custom Units"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{custom-units}
@@ -15,7 +15,7 @@ knitr::opts_chunk$set(
 ```
 ### Add any Custom Units in Additional Metadata
 
-If you have units that are not included in the EML schema you can add custom units by adding the following code into your script. This example adds two custom units, "NTU", and "psu". 
+If you have units that are not included in the EML schema you can add custom units by adding the following code into your script. This example adds two custom units, "NTU", and "psu". You can add as many custom units as you want as long as you add them in the same format as shown below. 
 ```{r}
 custom_units <- data.frame(id = c("NTU", "psu"),
                            unitType = c("dimensionless", "dimensionless"),
