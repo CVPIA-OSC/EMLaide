@@ -45,19 +45,20 @@ reserve_edi_id <- function(user_id, password) {
 #'                eml_file_path = "data/edi20.1.xml")
 #' @export   
 evaluate_edi_package <- function(user_id, password, eml_file_path) {
-  r <- httr::POST(
+  response <- httr::POST(
     url = "https://pasta-d.lternet.edu/package/evaluate/eml",
     config = httr::authenticate(paste('uid=', user_id, ",o=EDI", ',dc=edirepository,dc=org'), password),
     body = httr::upload_file(eml_file_path)
   )
-  if (r$status_code == "202") {
-    transaction_id <- httr::content(r, as = 'text', encoding = 'UTF-8')
-    r <- httr::GET(
+  Sys.sleep(.5)
+  if (response$status_code == "202") {
+    transaction_id <- httr::content(response, as = 'text', encoding = 'UTF-8')
+    response<- httr::GET(
       url = paste0("https://pasta-d.lternet.edu/package/evaluate/report/eml/",
                    transaction_id),
       config = httr::authenticate(paste('uid=', user_id, ",o=EDI", ',dc=edirepository,dc=org'), password)
     )
-    report <- httr::content(r, as = 'text', encoding = 'UTF-8')
+    report <- httr::content(response, as = 'text', encoding = 'UTF-8')
     name <- stringr::str_extract_all(report, "(?<=<name>)(.*)(?=</name>)")[[1]]
     status <- stringr::str_extract_all(report, '[:alpha:]+(?=</status>)')[[1]]
     suggestion <- stringr::str_extract_all(report, "(?<=<suggestion>)(.*)(?=</suggestion>)")[[1]]
@@ -65,7 +66,6 @@ evaluate_edi_package <- function(user_id, password, eml_file_path) {
     report_df <- tibble("Status" = as_vector(status), 
                         "Element Checked" = as_vector(name),
                         "Suggestion to fix/imporve" = as_vector(suggestion))
-    View(report_df)
     return(report_df)
   } else {
     message("Your request to evaluate an EDI package failed,
