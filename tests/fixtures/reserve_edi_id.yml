@@ -1,0 +1,69 @@
+http_interactions:
+- request:
+    method: post
+    uri: https://pasta-d.lternet.edu/package/reservations/eml/edi
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+      Content-Type: ''
+  response:
+    status:
+      status_code: 500
+      category: Server error
+      reason: Internal Server Error
+      message: 'Server error: (500) Internal Server Error'
+    headers:
+      server: nginx/1.14.0 (Ubuntu)
+      date: Mon, 12 Apr 2021 23:50:07 GMT
+      content-type: text/html;charset=iso-8859-1
+      content-length: '3733'
+      connection: keep-alive
+      cache-control: must-revalidate,no-cache,no-store
+    body:
+      encoding: UTF-8
+      file: no
+      string: "<html>\n<head>\n<meta http-equiv=\"Content-Type\" content=\"text/html;charset=utf-8\"/>\n<title>Error
+        500 Server Error</title>\n</head>\n<body><h2>HTTP ERROR 500</h2>\n<p>Problem
+        accessing /package/reservations/eml/edi. Reason:\n<pre>    Server Error</pre></p><h3>Caused
+        by:</h3><pre>javax.ws.rs.WebApplicationException\n\tat edu.lternet.pasta.common.WebExceptionFactory.make(WebExceptionFactory.java:73)\n\tat
+        edu.lternet.pasta.common.WebExceptionFactory.makeBadRequest(WebExceptionFactory.java:112)\n\tat
+        edu.lternet.pasta.common.security.token.BasicAuthToken.&lt;init&gt;(BasicAuthToken.java:128)\n\tat
+        edu.lternet.pasta.common.security.token.AuthTokenFactory.makeAuthTokenWithPassword(AuthTokenFactory.java:80)\n\tat
+        edu.lternet.pasta.gatekeeper.GatekeeperFilter.makeAuthenticated(GatekeeperFilter.java:311)\n\tat
+        edu.lternet.pasta.gatekeeper.GatekeeperFilter.doHeader(GatekeeperFilter.java:249)\n\tat
+        edu.lternet.pasta.gatekeeper.GatekeeperFilter.doFilter(GatekeeperFilter.java:165)\n\tat
+        org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1610)\n\tat
+        org.eclipse.jetty.websocket.server.WebSocketUpgradeFilter.doFilter(WebSocketUpgradeFilter.java:214)\n\tat
+        org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1610)\n\tat
+        org.eclipse.jetty.servlets.CrossOriginFilter.handle(CrossOriginFilter.java:311)\n\tat
+        org.eclipse.jetty.servlets.CrossOriginFilter.doFilter(CrossOriginFilter.java:265)\n\tat
+        org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1610)\n\tat
+        org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:540)\n\tat
+        org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:146)\n\tat
+        org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:548)\n\tat
+        org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:132)\n\tat
+        org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:257)\n\tat
+        org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:1701)\n\tat
+        org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:255)\n\tat
+        org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1345)\n\tat
+        org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:203)\n\tat
+        org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:480)\n\tat
+        org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:1668)\n\tat
+        org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:201)\n\tat
+        org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1247)\n\tat
+        org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:144)\n\tat
+        org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:220)\n\tat
+        org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:126)\n\tat
+        org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:132)\n\tat
+        org.eclipse.jetty.server.Server.handle(Server.java:502)\n\tat org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:370)\n\tat
+        org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:267)\n\tat
+        org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:305)\n\tat
+        org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:103)\n\tat org.eclipse.jetty.io.ChannelEndPoint$2.run(ChannelEndPoint.java:117)\n\tat
+        org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:765)\n\tat
+        org.eclipse.jetty.util.thread.QueuedThreadPool$2.run(QueuedThreadPool.java:683)\n\tat
+        java.lang.Thread.run(Thread.java:748)\n</pre>\n<hr><a href=\"http://eclipse.org/jetty\">Powered
+        by Jetty:// 9.4.15.v20190215</a><hr/>\n\n</body>\n</html>\n"
+  recorded_at: 2021-04-12 23:50:07 GMT
+  recorded_with: vcr/0.6.0, webmockr/0.8.0
