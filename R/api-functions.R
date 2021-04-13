@@ -50,7 +50,7 @@ evaluate_edi_package <- function(user_id, password, eml_file_path) {
     config = httr::authenticate(paste('uid=', user_id, ",o=EDI", ',dc=edirepository,dc=org'), password),
     body = httr::upload_file(eml_file_path)
   )
-  Sys.sleep(.5)
+  Sys.sleep(1)
   if (response$status_code == "202") {
     transaction_id <- httr::content(response, as = 'text', encoding = 'UTF-8')
     response<- httr::GET(

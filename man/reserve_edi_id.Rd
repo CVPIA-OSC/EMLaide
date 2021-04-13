@@ -2,23 +2,22 @@
 % Please edit documentation in R/api-functions.R
 \name{reserve_edi_id}
 \alias{reserve_edi_id}
-\title{Reserve EDI ID}
+\title{Reserve EDI Data Package Identifier}
 \usage{
 reserve_edi_id(user_id, password)
 }
 \arguments{
-\item{user_id}{A string that contains the user ID for the EDI data portal. If you
-do not already have an EDI account you may create one on the EDI portal. \url {https://portal.edirepository.org/nis/login.jsp}}
+\item{user_id}{EDI data portal user ID. Create an account an
+EDI \href{https://portal.edirepository.org/nis/login.jsp}{here}}
 
-\item{password}{A string that contains the user password for the EDI data portal.}
+\item{password}{EDI data portal user password}
 }
 \value{
 This function returns a edi identifier number.
 }
 \description{
-This package returns a funder
+This package reserves and returns a unique EDI number.
 }
 \examples{
-reserve_edi_id(user_id = "samuelwright", 
-               password = "340account")
+reserve_edi_id(user_id = "samuelwright")
 }

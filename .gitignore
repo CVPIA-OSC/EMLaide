@@ -5,3 +5,4 @@
 work-flow.R
 .DS_Store
 eml.xml
+.Renviron
