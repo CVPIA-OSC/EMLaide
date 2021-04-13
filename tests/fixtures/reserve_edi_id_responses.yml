@@ -1,0 +1,32 @@
+http_interactions:
+- request:
+    method: post
+    uri: https://pasta-d.lternet.edu/package/reservations/eml/edi
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+      Content-Type: ''
+  response:
+    status:
+      status_code: 201
+      category: Success
+      reason: Created
+      message: 'Success: (201) Created'
+    headers:
+      server: nginx/1.14.0 (Ubuntu)
+      date: Tue, 13 Apr 2021 15:44:47 GMT
+      content-type: application/json
+      content-length: '2'
+      connection: keep-alive
+      set-cookie: auth-token=dWlkPWVjYWluLG89RURJLGRjPWVkaXJlcG9zaXRvcnksZGM9b3JnKmh0dHBzOi8vcGFzdGEuZWRpcmVwb3NpdG9yeS5vcmcvYXV0aGVudGljYXRpb24qMTYxODM1NzQ4NzQ0MyphdXRoZW50aWNhdGVkKnZldHRlZA==-PUyvnubcoA0ztCwbux31iAcdruQIKH7/sGvb9MlTklpCrirEvBIu/8vRd9LgUzWc2JaXITdhImOH/zpl+q+/F7cRbPPF3wItcnvoxI1K7dTwwfsB1GqFRx7mQMNU/+Bb9S7UnIhNpDxfnGxcHf8u3Zx4rXJEpadfg7iGq9x9G9nfVqN4Zxa2qKlIu1AEQfKx1mse6K784i+rUVhpGY2Hfv077fvIXJzgc/Adr1aJcTaQmtqi76Jyp9Jl5SXKmkZsn2n2p/P1OLznODyElUZEO4+gGCcpRbF7e3NnclvV+3eiTOuk7t912mHDwL1RxSr2V4xUhcY4Ko7eEhb/eaAhZw==;Expires=Mon,
+        25-Jul-2072 15:29:34 GMT;Max-Age=1618357487
+      expires: Thu, 01 Jan 1970 00:00:00 GMT
+      web-service: DataPackageManager-1.0
+    body:
+      encoding: UTF-8
+      file: no
+      string: '28'
+  recorded_at: 2021-04-13 15:44:49 GMT
+  recorded_with: vcr/0.6.0, webmockr/0.8.0
