@@ -7,19 +7,38 @@ a {
     text-decoration: none;
 }
 
+a:hover {
+  color: #ffc31b;
+}
+
 .current {
     background: #060652;
 }
 
-nav[data-toggle='toc'] .nav > li > a {
-  display: block;
-  padding: 4px 20px;
-  font-size: 13px;
-  font-weight: 500;
-  color: #4a9d45;
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+    background-color: #309444;
+    color: #ffc31b;
 }
 
-pre, code {
-  background-color: #f8f8f8;
-  color: #4a9d45;
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+    color: #555;
+    background-color: #4a9d45;
+}
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:hover,
+.navbar-default .navbar-nav > .open > a:focus {
+    color: #555;
+    background-color: #4a9d45;
+}
+
+.navbar-default .navbar-brand,
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus {
+    color: #4a9d45;
+}
+
+.navbar-default .navbar-nav > li > a {
+    color: #4a9d45;
 }
