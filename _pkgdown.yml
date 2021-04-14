@@ -56,7 +56,7 @@ navbar:
     menu: 
       - text: 'EML Template Helper'
         href: articles/creating-EML.html
-      - text: 'EML Dateset Section Template'
+      - text: 'EML Dataset Section'
         href: articles/Dataset-Element.html
       - text: 'EML Custom Inputs to Inital Sections'
         href: articles/Inital-Metadata-Information.html
