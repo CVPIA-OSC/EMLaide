@@ -50,7 +50,7 @@ evaluate_edi_package <- function(user_id, password, eml_file_path) {
     config = httr::authenticate(paste('uid=', user_id, ",o=EDI", ',dc=edirepository,dc=org'), password),
     body = httr::upload_file(eml_file_path)
   )
-  Sys.sleep(1)
+  Sys.sleep(2)
   if (response$status_code == "202") {
     transaction_id <- httr::content(response, as = 'text', encoding = 'UTF-8')
     response<- httr::GET(
@@ -63,9 +63,9 @@ evaluate_edi_package <- function(user_id, password, eml_file_path) {
     status <- stringr::str_extract_all(report, '[:alpha:]+(?=</status>)')[[1]]
     suggestion <- stringr::str_extract_all(report, "(?<=<suggestion>)(.*)(?=</suggestion>)")[[1]]
     
-    report_df <- tibble("Status" = as_vector(status), 
-                        "Element Checked" = as_vector(name),
-                        "Suggestion to fix/imporve" = as_vector(suggestion))
+    report_df <- dplyr::tibble("Status" = as.vector(status), 
+                               "Element Checked" = as.vector(name),
+                               "Suggestion to fix/imporve" = as.vector(suggestion))
     return(report_df)
   } else {
     message("Your request to evaluate an EDI package failed,
