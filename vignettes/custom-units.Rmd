@@ -13,6 +13,11 @@ knitr::opts_chunk$set(
   comment = "#>"
 )
 ```
+
+## Custom Units 
+
+This document explains how to add custom units to a EML document. This document will not explain how to create a complete valid EML document to upload to the EDI repository. Please use this article just for the dataset section of the EML document and refer to [the EML template helper](https://cvpia-osc.github.io/EMLaide//articles/creating-EML.html) to generate the entire document. 
+
 ### Add any Custom Units in Additional Metadata
 
 If you have units that are not included in the EML schema you can add custom units by adding the following code into your script. This example adds two custom units, "NTU", and "psu". You can add as many custom units as you want as long as you add them in the same format as shown below. 

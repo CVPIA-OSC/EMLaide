@@ -9,6 +9,8 @@ vignette: >
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)
 ```
+This document walks through the creation of an EML document based on example data and metadata. 
+
 The following libraries are needed to create a working EML document. 
 ```{r, message = FALSE}
 library(EMLaide)
@@ -59,10 +61,10 @@ please see section specific articles.
 ## Our Example 
 We will use the data provided by John Hannon to show an example of how to compile
 metadata in a valid EML document that can be uploaded to the EDI data portal website. 
-To follow along with this example please download the [Hannon-Example](https://s3.console.aws.amazon.com/s3/buckets/cvpia-data-stewardship?region=us-west-1&tab=objects)
+To follow along with this example please download the [Hannon-Example zip folder](https://cvpia-data-stewardship.s3-us-west-1.amazonaws.com/hannon-example.zip). 
 
 ### Required Files 
-Four files must be uploaded to make a complete EML document. 
+Four files must be uploaded to make a complete EML document. To follow along with this example please load the following files from the `Hannon-Example` folder into your environment. 
 
 * An excel spreadsheet containing the majority of the metadata
 * A word document containing the abstract text 
@@ -87,8 +89,6 @@ dataset_file <- system.file("extdata", "Hannon-Example", "hannon_example_physica
                                package = "EMLaide", mustWork = TRUE)
 
 dataset_file_name <- "hannon_example_physical_data.csv"
-
-edi_number <- "edi.678.1"
 ```
 
 ```{r, eval = FALSE}
@@ -115,7 +115,7 @@ data package identifier number on the [EDI data repository under tools.](https:/
 edi_number <- "edi.678.1"
 ```
 
-It is also possible to use the EMLaide function `api_create_reservation()` to generate a EDI number using R. See the `api_create_reservation()` [documentation.](https://ediorg.github.io/EMLaide/reference/api_create_reservation.html)
+It is also possible to use the EDIutils function `api_create_reservation()` to generate a EDI number using R. See the `api_create_reservation()` [documentation.](https://ediorg.github.io/EMLaide/reference/api_create_reservation.html)
 ```{r}
 # edi_number <- api_create_reservation(scope = "edi", environment = "staging", user.id = "your user id", 
 #                                      user.pass = "your user password ", affilitation = "EDI")
@@ -124,7 +124,7 @@ It is also possible to use the EMLaide function `api_create_reservation()` to ge
 
 ## EML Sections 
 We start with the simpler pieces of information such as `personnel` and `title` and 
-work up to appending the more complex sections like `dataTable`. 
+work up to appending the more complex sections like `dataTable`. Sections will correspond with different sheets of metadata inputs from the `metadata.xlsx` document. 
 
 ### Access Permissions 
 The `add_access` adds an access section at the beginning of our EML document. The 

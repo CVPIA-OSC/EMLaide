@@ -100,6 +100,7 @@
 
     
     
+<p>This document walks through the creation of an EML document based on example data and metadata.</p>
 <p>The following libraries are needed to create a working EML document.</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://CVPIA-OSC.github.io/EMLaide/">EMLaide</a></span><span class="op">)</span>
@@ -141,11 +142,11 @@
 <div id="our-example" class="section level2">
 <h2 class="hasAnchor">
 <a href="#our-example" class="anchor"></a>Our Example</h2>
-<p>We will use the data provided by John Hannon to show an example of how to compile metadata in a valid EML document that can be uploaded to the EDI data portal website. To follow along with this example please download the <a href="https://s3.console.aws.amazon.com/s3/buckets/cvpia-data-stewardship?region=us-west-1&amp;tab=objects">Hannon-Example</a></p>
+<p>We will use the data provided by John Hannon to show an example of how to compile metadata in a valid EML document that can be uploaded to the EDI data portal website. To follow along with this example please download the <a href="https://cvpia-data-stewardship.s3-us-west-1.amazonaws.com/hannon-example.zip">Hannon-Example zip folder</a>.</p>
 <div id="required-files" class="section level3">
 <h3 class="hasAnchor">
 <a href="#required-files" class="anchor"></a>Required Files</h3>
-<p>Four files must be uploaded to make a complete EML document.</p>
+<p>Four files must be uploaded to make a complete EML document. To follow along with this example please load the following files from the <code>Hannon-Example</code> folder into your environment.</p>
 <ul>
 <li>An excel spreadsheet containing the majority of the metadata</li>
 <li>A word document containing the abstract text</li>
@@ -173,7 +174,7 @@
 <p>In addition to these four files a entity description and an EDI number must be defined. The EDI number should be a unique data package identifier. You can reserve this data package identifier number on the <a href="https://portal.edirepository.org/nis/reservations.jsp">EDI data repository under tools.</a></p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">edi_number</span> <span class="op">&lt;-</span> <span class="st">"edi.678.1"</span></code></pre></div>
-<p>It is also possible to use the EMLaide function <code>api_create_reservation()</code> to generate a EDI number using R. See the <code>api_create_reservation()</code> <a href="https://ediorg.github.io/EMLaide/reference/api_create_reservation.html">documentation.</a></p>
+<p>It is also possible to use the EDIutils function <code>api_create_reservation()</code> to generate a EDI number using R. See the <code>api_create_reservation()</code> <a href="https://ediorg.github.io/EMLaide/reference/api_create_reservation.html">documentation.</a></p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># edi_number &lt;- api_create_reservation(scope = "edi", environment = "staging", user.id = "your user id", </span>
 <span class="co">#                                      user.pass = "your user password ", affilitation = "EDI")</span></code></pre></div>
@@ -182,7 +183,7 @@
 <div id="eml-sections" class="section level2">
 <h2 class="hasAnchor">
 <a href="#eml-sections" class="anchor"></a>EML Sections</h2>
-<p>We start with the simpler pieces of information such as <code>personnel</code> and <code>title</code> and work up to appending the more complex sections like <code>dataTable</code>.</p>
+<p>We start with the simpler pieces of information such as <code>personnel</code> and <code>title</code> and work up to appending the more complex sections like <code>dataTable</code>. Sections will correspond with different sheets of metadata inputs from the <code>metadata.xlsx</code> document.</p>
 <div id="access-permissions" class="section level3">
 <h3 class="hasAnchor">
 <a href="#access-permissions" class="anchor"></a>Access Permissions</h3>
