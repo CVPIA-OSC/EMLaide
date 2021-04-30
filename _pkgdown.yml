@@ -54,6 +54,8 @@ navbar:
     href: reference/index.html
   - text: 'Articles'
     menu: 
+      - text: 'Metadata Template Documentation'
+        href: articles/template-doc.html
       - text: 'EML Template Helper'
         href: articles/creating-EML.html
       - text: 'EML Dataset Section'
