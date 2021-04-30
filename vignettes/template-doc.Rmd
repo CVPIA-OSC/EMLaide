@@ -1,11 +1,10 @@
 ---
 title: "Metadata Template Documentation"
-output: pdf_document
-# output: rmarkdown::html_vignette
-# vignette: >
-#   %\VignetteIndexEntry{Metadata Template Documentation}
-#   %\VignetteEngine{knitr::rmarkdown}
-#   \usepackage[utf8]{inputenc}
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Metadata Template Documentation}
+  %\VignetteEngine{knitr::rmarkdown}
+  \usepackage[utf8]{inputenc}
 ---
 
 ```{r setup, include=FALSE}
@@ -14,7 +13,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 
 This document provides guidance for completing each element within the
-metadata template directory. Within the top level of the directory you
+[metadata template directory](https://cvpia-data-stewardship.s3-us-west-1.amazonaws.com/metadata+template.zip). Within the top level of the directory you
 will find the following assets for recording your projects metadata:
 
 * methods.docx
