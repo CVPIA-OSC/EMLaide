@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Articles • EMLaide</title>
+<title>Word Document Example Reader — word_example • EMLaide</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -48,7 +48,9 @@
   <link href="../extra.css" rel="stylesheet">
   
 
-<meta property="og:title" content="Articles" />
+<meta property="og:title" content="Word Document Example Reader — word_example" />
+<meta property="og:description" content="Helps read documents which are present in the examples of the
+EMLaide package." />
 <meta property="og:image" content="https://CVPIA-OSC.github.io/EMLaide/logo.png" />
 
 
@@ -68,7 +70,7 @@
   </head>
 
   <body data-spy="scroll" data-target="#toc">
-    <div class="container template-article-index">
+    <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -135,28 +137,38 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-      <h1>Articles</h1>
+    <h1>Word Document Example Reader</h1>
+    
+    <div class="hidden name"><code>word_example.Rd</code></div>
     </div>
 
-    <div class="section ">
-      <h3>All vignettes</h3>
-      <p class="section-desc"></p>
-
-      <dl>
-        <dt><a href="creating-EML.html">Creating EML Using EMLaide</a></dt>
-        <dd></dt>
-        <dt><a href="custom-units.html">Custom Units</a></dt>
-        <dd></dt>
-        <dt><a href="Dataset-Element.html">Dataset Element</a></dt>
-        <dd></dt>
-        <dt><a href="Inital-Metadata-Information.html">Details on Inital Metadata Components</a></dt>
-        <dd></dt>
-        <dt><a href="new-example.html">Creating EML Using EMLaide</a></dt>
-        <dd></dt>
-        <dt><a href="template-doc.html">Metadata Template Documentation</a></dt>
-        <dd></dt>
-      </dl>
+    <div class="ref-description">
+    <p>Helps read documents which are present in the examples of the
+<code>EMLaide</code> package.</p>
     </div>
+
+    <pre class="usage"><span class='fu'>word_example</span><span class='op'>(</span>path <span class='op'>=</span> <span class='cn'>NULL</span><span class='op'>)</span></pre>
+
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>path</th>
+      <td><p>Name of file. If <code>NULL</code>, the example files will be listed.</p></td>
+    </tr>
+    </table>
+
+
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'><span class='fu'>word_example</span><span class='op'>(</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; [1] "abstract_template.docx" "Hannon-Example"         "methods-template.docx" 
+#&gt; [4] "multi-dataset-example" </div><div class='input'><span class='fu'>word_example</span><span class='op'>(</span><span class='st'>"abstract_template.docx"</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; [1] "C:/Users/Erin Cain/AppData/Local/Temp/Rtmpe8FLxT/temp_libpath26b02b03648d/EMLaide/extdata/abstract_template.docx"</div></pre>
+  </div>
+  <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
+    <nav id="toc" data-toggle="toc" class="sticky-top">
+      <h2 data-toc-skip>Contents</h2>
+    </nav>
   </div>
 </div>
 
