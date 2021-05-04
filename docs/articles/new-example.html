@@ -157,19 +157,23 @@
 <li>A file that contains the data (preferably csv if tabular data) and the name of the file</li>
 </ul>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">excel_path</span> <span class="op">&lt;-</span> <span class="st">"Hannon-Example/example-metadata.xlsx"</span>
+
+<code class="sourceCode R"><span class="va">excel_path</span> <span class="op">&lt;-</span> <span class="st">"Hannon-Example/snorkel-index-example-metadata.xlsx"</span>
+
 
 <span class="va">sheets</span> <span class="op">&lt;-</span> <span class="fu">readxl</span><span class="fu">::</span><span class="fu"><a href="https://readxl.tidyverse.org/reference/excel_sheets.html">excel_sheets</a></span><span class="op">(</span><span class="va">excel_path</span><span class="op">)</span>
 <span class="va">metadata</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/lapply.html">lapply</a></span><span class="op">(</span><span class="va">sheets</span>, <span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="fu">readxl</span><span class="fu">::</span><span class="fu"><a href="https://readxl.tidyverse.org/reference/read_excel.html">read_excel</a></span><span class="op">(</span><span class="va">excel_path</span>, sheet <span class="op">=</span> <span class="va">x</span><span class="op">)</span><span class="op">)</span>
 <span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span><span class="op">(</span><span class="va">metadata</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="va">sheets</span>
 
-<span class="va">abstract_docx</span> <span class="op">&lt;-</span> <span class="st">"Hannon-Example/hannon_example_abstract.docx"</span>
 
-<span class="va">methods_docx</span> <span class="op">&lt;-</span> <span class="st">"Hannon-Example/hannon_example_methods.docx"</span>
+<span class="va">abstract_docx</span> <span class="op">&lt;-</span> <span class="st">"Hannon-Example/snorkel-index-example-abstract.docx"</span>
 
-<span class="va">dataset_file</span> <span class="op">&lt;-</span> <span class="st">"Hannon-Example/hannon_example_physical_data.csv"</span>
+<span class="va">methods_docx</span> <span class="op">&lt;-</span> <span class="st">"Hannon-Example/snorkel-index-hannon-example-methods.docx"</span>
 
-<span class="va">dataset_file_name</span> <span class="op">&lt;-</span> <span class="st">"hannon_example_physical_data.csv"</span></code></pre></div>
+<span class="va">dataset_file</span> <span class="op">&lt;-</span> <span class="st">"Hannon-Example/snorkel-index-example-data.csv"</span>
+
+<span class="va">dataset_file_name</span> <span class="op">&lt;-</span> <span class="st">"snorkel-index-example-data.csv"</span></code></pre></div>
+
 </div>
 <div id="edi-number" class="section level3">
 <h3 class="hasAnchor">
@@ -377,7 +381,7 @@
                                  measurement_scale <span class="op">=</span> <span class="va">measurement_scale</span>, 
                                  domain <span class="op">=</span> <span class="va">domain</span>, definition <span class="op">=</span> <span class="va">definition</span>, 
                                  type <span class="op">=</span> <span class="va">type</span>, units <span class="op">=</span> <span class="va">units</span>, 
-                                 unit_precision <span class="op">=</span> <span class="va">unit_precision</span>, 
+                                 unit_precision <span class="op">=</span> <span class="cn">NULL</span>, 
                                  number_type <span class="op">=</span> <span class="va">number_type</span>, 
                                  date_time_format <span class="op">=</span> <span class="va">date_time_format</span>, 
                                  date_time_precision <span class="op">=</span> <span class="va">date_time_precision</span>, 
@@ -385,7 +389,8 @@
                                  attribute_label <span class="op">=</span> <span class="va">attribute_label</span><span class="op">)</span>
 <span class="op">}</span>
 <span class="co"># Maps through entire attribute sheet adding to attribute_list</span>
-<span class="va">attribute_list</span><span class="op">$</span><span class="va">attribute</span> <span class="op">&lt;-</span> <span class="fu">purrr</span><span class="fu">::</span><span class="fu"><a href="https://purrr.tidyverse.org/reference/map2.html">pmap</a></span><span class="op">(</span><span class="va">metadata</span><span class="op">$</span><span class="va">attribute</span>, <span class="va">adds_attribute</span><span class="op">)</span> </code></pre></div>
+<span class="va">attribute_list</span><span class="op">$</span><span class="va">attribute</span> <span class="op">&lt;-</span> <span class="fu">purrr</span><span class="fu">::</span><span class="fu"><a href="https://purrr.tidyverse.org/reference/map2.html">pmap</a></span><span class="op">(</span><span class="va">metadata</span><span class="op">$</span><span class="va">attribute</span>, <span class="va">adds_attribute</span><span class="op">)</span> 
+<span class="va">attribute_list</span> <span class="op">&lt;-</span> <span class="fu">purrr</span><span class="fu">::</span><span class="fu"><a href="https://purrr.tidyverse.org/reference/map.html">map</a></span><span class="op">(</span><span class="va">attribute_list</span>, <span class="va">na.omit</span><span class="op">)</span></code></pre></div>
 <p>If your dataset contains units that are not part of the EML schema you may add them as custom units. To do so please see the vignette on <a href="https://cvpia-osc.github.io/EMLaide//articles/custom-units.html">custom units.</a></p>
 </div>
 <div id="putting-the-data-table-together" class="section level4">

@@ -74,6 +74,7 @@ Four files must be uploaded to make a complete EML document. To follow along wit
 ```{r, include = FALSE}
 excel_path <- system.file("extdata", "Hannon-Example", "snorkel-index-example-metadata.xlsx", 
                           package = "EMLaide", mustWork = TRUE)
+
 sheets <- readxl::excel_sheets(excel_path)
 metadata <- purrr::map(sheets, function(x) readxl::read_excel(excel_path, sheet = x))
 names(metadata) <- sheets

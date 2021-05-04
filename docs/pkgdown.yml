@@ -7,7 +7,13 @@ articles:
   Dataset-Element: Dataset-Element.html
   Inital-Metadata-Information: Inital-Metadata-Information.html
   template-doc: template-doc.html
+<<<<<<< HEAD
 last_built: 2021-05-04T17:16Z
+=======
+
+last_built: 2021-05-04T16:50Z
+
+>>>>>>> 2941d7b48025db968f7551f4994cf34880eca7dc
 urls:
   reference: https://CVPIA-OSC.github.io/EMLaide//reference
   article: https://CVPIA-OSC.github.io/EMLaide//articles

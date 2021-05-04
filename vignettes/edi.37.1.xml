@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<eml:eml xmlns:eml="https://eml.ecoinformatics.org/eml-2.2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:stmml="http://www.xml-cml.org/schema/stmml-1.2" packageId="edi.678.1" system="EDI" xsi:schemaLocation="https://eml.ecoinformatics.org/eml-2.2.0 https://eml.ecoinformatics.org/eml-2.2.0/eml.xsd">
+<eml:eml xmlns:eml="https://eml.ecoinformatics.org/eml-2.2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:stmml="http://www.xml-cml.org/schema/stmml-1.2" packageId="edi.37.1" system="EDI" xsi:schemaLocation="https://eml.ecoinformatics.org/eml-2.2.0 https://eml.ecoinformatics.org/eml-2.2.0/eml.xsd">
   <access authSystem="https://pasta.edirepository.org/authentication" order="allowFirst" scope="document">
     <allow>
       <principal>public</principal>
@@ -7,32 +7,30 @@
     </allow>
   </access>
   <dataset>
-    <shortName>CVPIA Salmonid Habitat Monitoring Snorkel Index Data</shortName>
-    <title>Salmonid habitat use monitoring used to determine effectiveness of habitat improvement projects in the Sacramento River</title>
-    <creator id="https://orcid.org/0000-0002-6225-2057">
+    <shortName>CVPIA Salmonid Habitat Monitoring Data</shortName>
+    <title>Salmonid habitat use monitoring used to determine effectiveness of habitat improvement projects in the Sacramento River, CA</title>
+    <creator id="https://orcid.org/0000-0001-9057-9084">
       <individualName>
-        <givenName>Amanda</givenName>
-        <surName>Banet</surName>
-      </individualName>
-      <organizationName>CSU Chico</organizationName>
-      <electronicMailAddress>abanet@csuchico edu</electronicMailAddress>
-    </creator>
-    <associatedParty>
-      <individualName>
-        <givenName>John</givenName>
+        <givenName>John M.</givenName>
         <surName>Hannon</surName>
       </individualName>
       <organizationName>US Bureau of Reclamation</organizationName>
       <electronicMailAddress>jhannon@usbr.gov</electronicMailAddress>
-      <role>program founder</role>
+    </creator>
+    <associatedParty>
+      <individualName>
+        <givenName>Mandy</givenName>
+        <surName>Banet</surName>
+      </individualName>
+      <organizationName>CSU Chico</organizationName>
+      <role>other</role>
     </associatedParty>
     <associatedParty>
       <individualName>
         <givenName>Steve</givenName>
         <surName>Tussing</surName>
       </individualName>
-      <organizationName>Tussing Ecological Services</organizationName>
-      <electronicMailAddress>sptussing@earthlink.net</electronicMailAddress>
+      <organizationName>BCWC</organizationName>
       <role>other</role>
     </associatedParty>
     <associatedParty>
@@ -41,10 +39,9 @@
         <surName>Greathouse</surName>
       </individualName>
       <organizationName>PSMFC</organizationName>
-      <electronicMailAddress>rgreathouse@psmfc.org</electronicMailAddress>
       <role>other</role>
     </associatedParty>
-    <pubDate>2021-05-04</pubDate>
+    <pubDate>2021-03-22</pubDate>
     <abstract>
       <para>
     The Central Valley Project Improvement Act (CVPIA) funds habitat
@@ -66,11 +63,9 @@
       <keyword>Sacramento River</keyword>
       <keyword>Salmonid Habitat Restoration Projects</keyword>
       <keyword>Effectiveness Monitoring</keyword>
-      <keyword>Pacific Salmon</keyword>
-      <keyword>CVPIA</keyword>
     </keywordSet>
     <intellectualRights>
-      <para>This data package is released to the "public domain" under Creative Commons CC0 1.0 "No Rights Reserved" (see: https://creativecommons.org/publicdomain/zero/1.0/). It is considered professional etiquette to provide attribution of the original work if this data package is shared in whole or by individual components. A generic citation is provided for this data package on the website https://portal.edirepository.org (herein "website") in the summary metadata page. Communication (and collaboration) with the creators of this data package is recommended to prevent duplicate research or publication. This data package (and its components) is made available "as is" and with no warranty of accuracy or fitness for use. The creators of this data package and the website shall not be liable for any damages resulting from misinterpretation or misuse of the data package or its components. Periodic updates of this data package may be available from the website. Thank you.</para>
+      <para>This data package is released to the "public domain" under Creative Commons CC0 1.0 "No Rights Reserved" (see: https://creativecommons.org/publicdomain/zero/1.0/). It is considered professional etiquette to provide attribution of the original work if this data package is shared in whole or by individual components. A generic citation is provided for this data package on the website https://portal.edirepository.org (herein "website") in the summary metadata page. Communication (and collaboration) with the creators of this data package is recommended to prevent duplicate research or publication. This data package (and its components) is made available "as is" and with no warranty of accuracy or fitness for use. The creators of this data package and the website shall not be liable for any damages resulting from misinterpretation or misuse of the data package or its components. Periodic updates of this data package may be available from the website. Thank you.&amp;#13;</para>
     </intellectualRights>
     <licensed>
       <licenseName>Creative Commons Zero v1.0 Universal</licenseName>
@@ -79,7 +74,7 @@
     </licensed>
     <coverage>
       <geographicCoverage>
-        <geographicDescription>Sacramento Riverin northern California in the reach of the river between Keswick Dam and Sacramento</geographicDescription>
+        <geographicDescription>Sacramento River in northern California in the reach of river between Keswick Dam and Sacramento</geographicDescription>
         <boundingCoordinates>
           <westBoundingCoordinate>-122.4482</westBoundingCoordinate>
           <eastBoundingCoordinate>-121.4844</eastBoundingCoordinate>
@@ -90,10 +85,10 @@
       <temporalCoverage>
         <rangeOfDates>
           <beginDate>
-            <calendarDate>2015-12-08</calendarDate>
+            <calendarDate>2016-01-01</calendarDate>
           </beginDate>
           <endDate>
-            <calendarDate>2020-07-02</calendarDate>
+            <calendarDate>2019-01-31</calendarDate>
           </endDate>
         </rangeOfDates>
       </temporalCoverage>
@@ -164,51 +159,52 @@
     </coverage>
     <maintenance>
       <description>ongoing</description>
-      <maintenanceUpdateFrequency>annually</maintenanceUpdateFrequency>
+      <maintenanceUpdateFrequency>monthly</maintenanceUpdateFrequency>
     </maintenance>
     <contact>
       <individualName>
-        <givenName>Amanda</givenName>
-        <surName>Banet</surName>
+        <givenName>John M.</givenName>
+        <surName>Hannon</surName>
       </individualName>
-      <organizationName>CSU Chico</organizationName>
-      <electronicMailAddress>abanet@csuchico edu</electronicMailAddress>
+      <organizationName>US Bureau of Reclamation</organizationName>
+      <electronicMailAddress>jhannon@usbr.gov</electronicMailAddress>
     </contact>
     <methods>
       <methodStep>
         <description>
           <section>
-            <title>Snorkel Survey: Abundance Index Methods.</title>
+            <title>Response Variable Methods </title>
             <para>
-      Data was collected following methods described at the following
-      link:
-    </para>
-            <para>
+      Monitoring efforts will generate data for the following response
+      variables for the purposes of testing hypotheses (Table 1).
+      Specific response variable metrics are identified while methods
+      reference field protocols that are documented in Appendix A (Table
+      A - 1), which can be viewed at
       https://www.sacramentoriver.org/forum/publications/side_channels/Monitoring%20Plan%20(final)%20170831.pdf
     </para>
+          </section>
+          <section>
+            <title>Explanatory Variable Methods </title>
             <para>
-      Monitoring efforts will generate data for the presented response
-      variables for the purpose of testing the hypotheses presented in
-      table 1 of the aforementioned document. Specific response variable
-      metrics are identified while methods reference field protocols
-      that are documented in Appendix A (Table A-1).
-    </para>
-            <para>
-      Note that the above referenced protocol includes additional types
-      of data collection. Snorkel survey abundance index methods are
-      identified and clearly labeled throughout the document.
+      Monitoring efforts will generate data for the following
+      explanatory variables to test causal mechanisms and validate the
+      linkage between restoration actions and the biologic response to
+      those actions (Table 2). Specific explanatory variable metrics are
+      identified while methods reference field protocols that are
+      documented in Appendix A (Table A - 2), which can be viewed at
+      https://www.sacramentoriver.org/forum/publications/side_channels/Monitoring%20Plan%20(final)%20170831.pdf
     </para>
           </section>
         </description>
       </methodStep>
     </methods>
     <dataTable>
-      <entityName>snorkel_index_example_data.csv</entityName>
-      <entityDescription>Hannon Salmonid Dataset</entityDescription>
+      <entityName>hannon_example_physical_data.csv</entityName>
+      <entityDescription>Hannon Salmonid Survey Data</entityDescription>
       <physical>
-        <objectName>snorkel-index-example-data.csv</objectName>
-        <size unit="bytes">122534</size>
-        <authentication method="MD5">77ac2461101467ed013277645ddfb5bd</authentication>
+        <objectName>hannon_example_physical_data.csv</objectName>
+        <size unit="bytes">62774</size>
+        <authentication method="MD5">ed4073c7e7415133ff988f34decfa058</authentication>
         <dataFormat>
           <textFormat>
             <numHeaderLines>1</numHeaderLines>
@@ -221,7 +217,7 @@
         </dataFormat>
         <distribution>
           <online>
-            <url function="download"/>
+            <url function="download">s3://cvpia-data-stewardship/Hannon-Example/hannon_example_physical_data.csv</url>
           </online>
         </distribution>
       </physical>
@@ -237,14 +233,40 @@
               <dateTimeDomain>
                 <bounds>
                   <minimum exclusive="false">42019</minimum>
-                  <maximum exclusive="false">NA</maximum>
+                  <maximum exclusive="false">43496</maximum>
                 </bounds>
               </dateTimeDomain>
             </dateTime>
           </measurementScale>
         </attribute>
         <attribute>
-          <attributeName>site_number</attributeName>
+          <attributeName>month</attributeName>
+          <attributeDefinition>Month in which data was collected</attributeDefinition>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Month in which data was collected</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>year</attributeName>
+          <attributeDefinition>Year in which data was collected</attributeDefinition>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Year in which data was collected</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>site_numner</attributeName>
           <attributeDefinition>A number that uniquely identifies the site at which the data was collected</attributeDefinition>
           <storageType>dbl</storageType>
           <measurementScale>
@@ -272,26 +294,6 @@
           </measurementScale>
         </attribute>
         <attribute>
-          <attributeName>river_mile</attributeName>
-          <attributeDefinition>The approximate river mile of the study site</attributeDefinition>
-          <storageType>dbl</storageType>
-          <measurementScale>
-            <ratio>
-              <unit>
-                <standardUnit>mile</standardUnit>
-              </unit>
-              <precision>0.5</precision>
-              <numericDomain>
-                <numberType>natural</numberType>
-                <bounds>
-                  <minimum exclusive="false">0</minimum>
-                  <maximum exclusive="false">445</maximum>
-                </bounds>
-              </numericDomain>
-            </ratio>
-          </measurementScale>
-        </attribute>
-        <attribute>
           <attributeName>length</attributeName>
           <attributeDefinition>The length of the site sampled</attributeDefinition>
           <storageType>dbl</storageType>
@@ -300,7 +302,6 @@
               <unit>
                 <standardUnit>meter</standardUnit>
               </unit>
-              <precision>NA</precision>
               <numericDomain>
                 <numberType>natural</numberType>
                 <bounds>
@@ -338,7 +339,7 @@
         </attribute>
         <attribute>
           <attributeName>time</attributeName>
-          <attributeDefinition>time at which the data was collected (24-hour notation)</attributeDefinition>
+          <attributeDefinition>time at whicht the data was collected</attributeDefinition>
           <storageType>time</storageType>
           <measurementScale>
             <dateTime>
@@ -362,7 +363,6 @@
               <unit>
                 <standardUnit>meter</standardUnit>
               </unit>
-              <precision>NA</precision>
               <numericDomain>
                 <numberType>real</numberType>
                 <bounds>
@@ -412,14 +412,13 @@
         </attribute>
         <attribute>
           <attributeName>water_temp</attributeName>
-          <attributeDefinition>temperature of water at time of collection in Fahrenheit</attributeDefinition>
+          <attributeDefinition>temperature of water at time of collection</attributeDefinition>
           <storageType>dbl</storageType>
           <measurementScale>
             <interval>
               <unit>
                 <standardUnit>fahrenheit</standardUnit>
               </unit>
-              <precision>NA</precision>
               <numericDomain>
                 <numberType>real</numberType>
                 <bounds>
@@ -435,11 +434,10 @@
           <attributeDefinition>The visability in feet measeured using a secchi disk</attributeDefinition>
           <storageType>dbl</storageType>
           <measurementScale>
-            <ratio>
+            <interval>
               <unit>
                 <standardUnit>foot</standardUnit>
               </unit>
-              <precision>NA</precision>
               <numericDomain>
                 <numberType>real</numberType>
                 <bounds>
@@ -447,7 +445,7 @@
                   <maximum exclusive="false">12</maximum>
                 </bounds>
               </numericDomain>
-            </ratio>
+            </interval>
           </measurementScale>
         </attribute>
         <attribute>
@@ -459,7 +457,6 @@
               <unit>
                 <standardUnit>meter</standardUnit>
               </unit>
-              <precision>NA</precision>
               <numericDomain>
                 <numberType>real</numberType>
                 <bounds>
@@ -525,15 +522,14 @@
           </measurementScale>
         </attribute>
         <attribute>
-          <attributeName>wr_count</attributeName>
-          <attributeDefinition>winter run counted</attributeDefinition>
+          <attributeName>lfr_count</attributeName>
+          <attributeDefinition>late fall run counted</attributeDefinition>
           <storageType>dbl</storageType>
           <measurementScale>
             <ratio>
               <unit>
                 <standardUnit>dimensionless</standardUnit>
               </unit>
-              <precision>NA</precision>
               <numericDomain>
                 <numberType>whole</numberType>
                 <bounds>
@@ -545,15 +541,14 @@
           </measurementScale>
         </attribute>
         <attribute>
-          <attributeName>lfr_count</attributeName>
-          <attributeDefinition>late fall run counted</attributeDefinition>
+          <attributeName>wr_count</attributeName>
+          <attributeDefinition>winter run counted</attributeDefinition>
           <storageType>dbl</storageType>
           <measurementScale>
             <ratio>
               <unit>
                 <standardUnit>dimensionless</standardUnit>
               </unit>
-              <precision>NA</precision>
               <numericDomain>
                 <numberType>whole</numberType>
                 <bounds>
@@ -573,7 +568,6 @@
               <unit>
                 <standardUnit>dimensionless</standardUnit>
               </unit>
-              <precision>NA</precision>
               <numericDomain>
                 <numberType>whole</numberType>
                 <bounds>
@@ -593,7 +587,6 @@
               <unit>
                 <standardUnit>dimensionless</standardUnit>
               </unit>
-              <precision>NA</precision>
               <numericDomain>
                 <numberType>whole</numberType>
                 <bounds>
@@ -613,7 +606,6 @@
               <unit>
                 <standardUnit>dimensionless</standardUnit>
               </unit>
-              <precision>NA</precision>
               <numericDomain>
                 <numberType>whole</numberType>
                 <bounds>
@@ -633,7 +625,6 @@
               <unit>
                 <standardUnit>dimensionless</standardUnit>
               </unit>
-              <precision>NA</precision>
               <numericDomain>
                 <numberType>whole</numberType>
                 <bounds>
@@ -646,14 +637,13 @@
         </attribute>
         <attribute>
           <attributeName>other_juvenile_fish</attributeName>
-          <attributeDefinition>other juvenile fish counted</attributeDefinition>
+          <attributeDefinition>other fish counted</attributeDefinition>
           <storageType>dbl</storageType>
           <measurementScale>
             <ratio>
               <unit>
                 <standardUnit>dimensionless</standardUnit>
               </unit>
-              <precision>NA</precision>
               <numericDomain>
                 <numberType>whole</numberType>
                 <bounds>
@@ -687,7 +677,6 @@
               <unit>
                 <standardUnit>cubicFeetPerSecond</standardUnit>
               </unit>
-              <precision>NA</precision>
               <numericDomain>
                 <numberType>real</numberType>
                 <bounds>
@@ -699,7 +688,6 @@
           </measurementScale>
         </attribute>
       </attributeList>
-      <numberOfRecords>724</numberOfRecords>
     </dataTable>
   </dataset>
 </eml:eml>
