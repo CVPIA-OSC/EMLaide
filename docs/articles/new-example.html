@@ -157,11 +157,14 @@
 <li>A file that contains the data (preferably csv if tabular data) and the name of the file</li>
 </ul>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+
 <code class="sourceCode R"><span class="va">excel_path</span> <span class="op">&lt;-</span> <span class="st">"Hannon-Example/snorkel-index-example-metadata.xlsx"</span>
+
 
 <span class="va">sheets</span> <span class="op">&lt;-</span> <span class="fu">readxl</span><span class="fu">::</span><span class="fu"><a href="https://readxl.tidyverse.org/reference/excel_sheets.html">excel_sheets</a></span><span class="op">(</span><span class="va">excel_path</span><span class="op">)</span>
 <span class="va">metadata</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/lapply.html">lapply</a></span><span class="op">(</span><span class="va">sheets</span>, <span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="fu">readxl</span><span class="fu">::</span><span class="fu"><a href="https://readxl.tidyverse.org/reference/read_excel.html">read_excel</a></span><span class="op">(</span><span class="va">excel_path</span>, sheet <span class="op">=</span> <span class="va">x</span><span class="op">)</span><span class="op">)</span>
 <span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span><span class="op">(</span><span class="va">metadata</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="va">sheets</span>
+
 
 <span class="va">abstract_docx</span> <span class="op">&lt;-</span> <span class="st">"Hannon-Example/snorkel-index-example-abstract.docx"</span>
 
@@ -170,6 +173,7 @@
 <span class="va">dataset_file</span> <span class="op">&lt;-</span> <span class="st">"Hannon-Example/snorkel-index-example-data.csv"</span>
 
 <span class="va">dataset_file_name</span> <span class="op">&lt;-</span> <span class="st">"snorkel-index-example-data.csv"</span></code></pre></div>
+
 </div>
 <div id="edi-number" class="section level3">
 <h3 class="hasAnchor">
