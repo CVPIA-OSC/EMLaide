@@ -19,25 +19,18 @@ library(EML)
 ```
 
 ```{r, include = FALSE}
-excel_path <- system.file("extdata", "Hannon-Example", "example-metadata.xlsx", 
+excel_path <- system.file("extdata", "Hannon-Example", "snorkel-index-example-metadata.xlsx", 
                           package = "EMLaide", mustWork = TRUE)
-
 sheets <- readxl::excel_sheets(excel_path)
-metadata <- lapply(sheets, function(x) readxl::read_excel(excel_path, sheet = x))
+metadata <- purrr::map(sheets, function(x) readxl::read_excel(excel_path, sheet = x))
 names(metadata) <- sheets
-
-abstract_docx <- system.file("extdata", "Hannon-Example", "hannon_example_abstract.docx", 
+abstract_docx <- system.file("extdata", "Hannon-Example", "snorkel-index-example-abstract.docx", 
                              package = "EMLaide", mustWork = TRUE)
-
-methods_docx <- system.file("extdata", "Hannon-Example", "hannon_example_methods.docx", 
+methods_docx <- system.file("extdata", "Hannon-Example", "snorkel-index-example-methods.docx", 
                             package = "EMLaide", mustWork = TRUE)
-
-dataset_file <- system.file("extdata", "Hannon-Example", "hannon_example_physical_data.csv",
+dataset_file <- system.file("extdata", "Hannon-Example", "snorkel-index-example-data.csv",
                                package = "EMLaide", mustWork = TRUE)
-
-dataset_file_name <- "hannon_example_physical_data.csv"
-
-edi_number <- "edi.678.1"
+dataset_file_name <- "snorkel_index_example_data.csv"
 ```
 # Custom inputs to the initial metadata information 
 
