@@ -1,0 +1,73 @@
+﻿habitat,site_id,enclosure_number,diptera,exuvium,coleoptera,hemiptera,odonata,trichoptera,ephemeroptera,plecoptera,hymenoptera,ostracoda,cladocera,amphipoda,Sum
+Control Side Channel,Bourbon Island,B1,2,0,0,0,0,0,0,0,0,0,0,0,2
+Control Side Channel,Bourbon Island,B1,1,0,0,0,0,0,0,0,0,0,0,0,1
+Control Side Channel,Bourbon Island,B1,1,1,0,0,0,0,0,0,0,0,0,0,2
+Control Side Channel,Bourbon Island,B1,2,0,0,0,0,0,0,0,0,0,0,0,2
+Control Side Channel,Bourbon Island,B2,4,0,0,0,0,0,0,0,0,0,0,0,4
+Control Side Channel,Bourbon Island,B2,0,0,0,0,0,0,1,0,0,0,0,0,1
+Control Side Channel,Bourbon Island,B2,1,1,0,0,0,0,2,0,0,0,0,0,4
+Control Side Channel,Bourbon Island,B2,0,0,0,0,0,0,1,0,0,0,0,0,1
+Control Side Channel,Bourbon Island,B3,1,6,0,0,0,0,0,0,0,0,0,0,7
+Control Side Channel,Bourbon Island,B3,2,0,0,0,0,0,0,0,0,0,0,0,2
+Control Side Channel,Bourbon Island,B3,6,0,0,0,0,0,4,0,0,0,0,0,10
+Control Side Channel,Bourbon Island,B3,0,2,0,0,0,0,0,0,0,0,0,0,2
+Control Side Channel,Bourbon Island,B4,1,1,0,0,0,0,0,0,0,0,0,0,2
+Control Side Channel,Bourbon Island,B4,1,0,0,0,0,0,0,0,0,0,0,0,1
+Control Side Channel,Bourbon Island,B4,0,1,0,0,0,7,0,0,0,0,0,0,8
+Control Side Channel,Bourbon Island,B4,0,1,0,0,0,1,2,0,0,0,0,0,4
+Control Side Channel,Bourbon Island,B4,1,0,0,0,0,1,3,0,0,0,0,0,5
+Control Side Channel,Bourbon Island,B4,0,0,0,0,0,1,0,0,0,0,0,0,1
+Control Side Channel,Bourbon Island,B4,0,0,0,0,0,5,2,0,0,0,0,0,7
+Control Side Channel,Bourbon Island,B4,4,0,0,0,0,0,4,0,0,0,0,0,8
+Control Side Channel,Bourbon Island,B5,0,0,0,0,0,1,1,0,0,0,0,0,2
+Control Side Channel,Bourbon Island,B5,2,0,0,0,0,0,0,0,0,0,0,0,2
+Control Side Channel,Bourbon Island,B5,0,0,0,0,0,1,2,0,0,0,0,0,3
+Control Side Channel,Bourbon Island,B5,1,0,1,0,0,0,0,0,0,0,0,0,2
+Control Side Channel,Bourbon Island,B6,0,3,0,0,0,0,1,0,0,0,0,0,4
+Control Side Channel,Bourbon Island,B6,0,0,0,0,0,0,1,0,0,0,0,0,1
+Control Side Channel,Bourbon Island,B6,2,0,0,0,0,0,1,0,0,0,0,0,3
+Control Side Channel,Bourbon Island,B6,0,0,2,2,0,0,0,0,0,0,0,0,4
+Restored Side Channel,Lake California,CA1,1,0,1,0,0,0,0,0,0,0,0,0,2
+Restored Side Channel,Lake California,CA1,1,0,0,0,0,4,2,0,0,0,0,0,7
+Restored Side Channel,Lake California,CA1,0,0,1,0,0,0,0,0,0,0,0,0,1
+Restored Side Channel,Lake California,CA1,0,0,0,0,0,2,1,1,0,0,0,0,4
+Restored Side Channel,Lake California,CA2,2,0,0,0,0,0,0,0,0,0,0,0,2
+Restored Side Channel,Lake California,CA2,0,0,0,0,0,0,2,0,1,0,0,0,3
+Restored Side Channel,Lake California,CA2,1,2,0,0,0,0,0,0,0,0,0,0,3
+Restored Side Channel,Lake California,CA2,2,0,1,0,0,0,0,0,0,0,0,0,3
+Restored Side Channel,Lake California,CA3,3,0,0,0,0,2,1,0,0,0,0,0,6
+Restored Side Channel,Lake California,CA3,3,0,0,0,0,0,7,0,0,0,0,0,10
+Restored Side Channel,Lake California,CA3,2,0,0,0,0,2,3,0,0,0,0,0,7
+Restored Side Channel,Lake California,CA3,0,0,0,0,0,0,2,0,0,0,0,0,2
+Restored Side Channel,Lake California,CA5,1,1,0,0,0,1,0,0,0,0,0,0,3
+Restored Side Channel,Lake California,CA5,2,0,0,0,0,1,1,0,0,0,0,0,4
+Restored Side Channel,Lake California,CA5,0,1,0,0,0,2,0,0,0,0,0,0,3
+Restored Side Channel,Lake California,CA5,0,5,0,0,0,1,1,0,0,0,0,0,7
+Restored Side Channel,Lake California,CA6,3,2,0,0,0,0,5,0,0,0,0,0,10
+Restored Side Channel,Lake California,CA6,2,0,0,0,0,0,1,0,0,0,0,0,3
+Restored Side Channel,Lake California,CA6,0,0,0,0,1,3,4,0,0,0,0,0,8
+Restored Side Channel,Lake California,CA6,2,0,0,0,0,2,2,0,0,0,1,1,8
+Mainstem Control,Mainstem North,M-1,30,8,0,0,0,1,0,0,0,0,0,0,39
+Mainstem Control,Mainstem North,M-1,14,4,0,0,0,0,0,0,0,0,0,0,18
+Mainstem Control,Mainstem North,M-1,8,4,0,0,0,2,2,0,0,0,0,0,16
+Mainstem Control,Mainstem North,M-1,7,3,0,0,0,0,8,0,0,0,0,0,18
+Mainstem Control,Mainstem North,M2,3,2,0,0,0,0,2,0,0,0,0,0,7
+Mainstem Control,Mainstem North,M2,1,1,0,0,0,0,2,0,0,0,0,0,4
+Mainstem Control,Mainstem North,M2,2,0,0,0,0,0,1,0,0,0,0,0,3
+Mainstem Control,Mainstem North,M2,3,0,0,0,0,0,0,0,0,0,0,0,3
+Mainstem Control,Mainstem North,M4,1,2,0,0,0,0,0,0,0,0,0,0,3
+Mainstem Control,Mainstem North,M4,1,2,0,0,0,0,0,0,0,0,1,0,4
+Mainstem Control,Mainstem North,M4,2,4,0,0,0,3,1,0,0,0,0,0,10
+Mainstem Control,Mainstem North,M4,10,7,2,0,0,3,1,0,0,0,0,0,23
+Mainstem Control,Mainstem North,M4,0,0,0,2,0,0,1,0,0,0,0,0,3
+Mainstem Control,Mainstem North,M4,2,0,0,0,0,0,0,0,0,0,0,0,2
+Mainstem Control,Mainstem North,M4,5,2,0,0,0,0,0,0,0,0,0,0,7
+Mainstem Control,Mainstem North,M4,5,0,0,0,0,0,1,0,1,0,2,0,9
+Mainstem Control,Mainstem North,M5,4,4,0,0,0,2,1,0,0,0,0,0,11
+Mainstem Control,Mainstem North,M5,1,5,0,0,0,1,0,0,0,0,1,0,8
+Mainstem Control,Mainstem North,M5,1,1,0,0,0,0,0,0,0,0,0,0,2
+Mainstem Control,Mainstem North,M5,1,4,0,0,0,4,2,0,0,0,0,0,11
+Mainstem Control,Mainstem North,M6,2,0,1,0,0,0,0,0,0,1,0,0,4
+Mainstem Control,Mainstem North,M6,3,1,0,0,0,0,0,0,0,0,2,0,6
+Mainstem Control,Mainstem North,M6,4,3,0,0,0,2,0,0,0,0,0,0,9
+Mainstem Control,Mainstem North,M6,0,2,0,0,0,0,0,0,0,0,0,0,2
