@@ -50,23 +50,36 @@ evaluate_edi_package <- function(user_id, password, eml_file_path) {
     config = httr::authenticate(paste('uid=', user_id, ",o=EDI", ',dc=edirepository,dc=org'), password),
     body = httr::upload_file(eml_file_path)
   )
-  Sys.sleep(2)
   if (response$status_code == "202") {
     transaction_id <- httr::content(response, as = 'text', encoding = 'UTF-8')
-    response<- httr::GET(
-      url = paste0("https://pasta-d.lternet.edu/package/evaluate/report/eml/",
-                   transaction_id),
-      config = httr::authenticate(paste('uid=', user_id, ",o=EDI", ',dc=edirepository,dc=org'), password)
-    )
-    report <- httr::content(response, as = 'text', encoding = 'UTF-8')
-    name <- stringr::str_extract_all(report, "(?<=<name>)(.*)(?=</name>)")[[1]]
-    status <- stringr::str_extract_all(report, '[:alpha:]+(?=</status>)')[[1]]
-    suggestion <- stringr::str_extract_all(report, "(?<=<suggestion>)(.*)(?=</suggestion>)")[[1]]
-    
-    report_df <- dplyr::tibble("Status" = as.vector(status), 
-                               "Element Checked" = as.vector(name),
-                               "Suggestion to fix/imporve" = as.vector(suggestion))
-    return(report_df)
+    iter <- 0
+    max_iter <- 5
+    while(TRUE){
+      Sys.sleep(2)
+      response<- httr::GET(
+        url = paste0("https://pasta-d.lternet.edu/package/evaluate/report/eml/",
+                     transaction_id),
+        config = httr::authenticate(paste('uid=', user_id, ",o=EDI", ',dc=edirepository,dc=org'), password)
+      )
+      iter <- iter + 1
+      if (response$status_code == "200") {
+        report <- httr::content(response, as = 'text', encoding = 'UTF-8')
+        name <- stringr::str_extract_all(report, "(?<=<name>)(.*)(?=</name>)")[[1]]
+        status <- stringr::str_extract_all(report, '[:alpha:]+(?=</status>)')[[1]]
+        suggestion <- stringr::str_extract_all(report, "(?<=<suggestion>)(.*)(?=</suggestion>)")[[1]]
+        
+        report_df <- dplyr::tibble("Status" = as.vector(status), 
+                                   "Element Checked" = as.vector(name),
+                                   "Suggestion to fix/imporve" = as.vector(suggestion))
+        View(report_df)
+        return(report_df)
+        break
+      }
+      if (max_iter > iter) {
+        print("Request timed out, check that you inputs are all valid and try again")
+        break 
+      }
+    }
   } else {
     message("Your request to evaluate an EDI package failed,
            please check that you entered a valid username, password, and XML document.
@@ -99,23 +112,33 @@ upload_edi_package <- function(user_id, password, eml_file_path) {
     config = httr::authenticate(paste('uid=', user_id, ",o=EDI", ',dc=edirepository,dc=org'), password),
     body = httr::upload_file(eml_file_path)
   )
-  Sys.sleep(2)
   if (response$status_code == "202") {
     transaction_id <- httr::content(response, as = 'text', encoding = 'UTF-8')
-    response<- httr::GET(
-      url = paste0("https://pasta-d.lternet.edu/package/report/eml/",
-                   transaction_id),
-      config = httr::authenticate(paste('uid=', user_id, ",o=EDI", ',dc=edirepository,dc=org'), password)
-    )
-    report <- httr::content(response, as = 'text', encoding = 'UTF-8')
-    name <- stringr::str_extract_all(report, "(?<=<name>)(.*)(?=</name>)")[[1]]
-    status <- stringr::str_extract_all(report, '[:alpha:]+(?=</status>)')[[1]]
-    suggestion <- stringr::str_extract_all(report, "(?<=<suggestion>)(.*)(?=</suggestion>)")[[1]]
-    
-    report_df <- dplyr::tibble("Status" = as.vector(status), 
-                               "Element Checked" = as.vector(name),
-                               "Suggestion to fix/imporve" = as.vector(suggestion))
-    return(report_df)
+    iter <- 0
+    max_iter <- 5
+    while(TRUE){
+      Sys.sleep(2)
+      response<- httr::GET(url = paste0("https://pasta-d.lternet.edu/package/report/eml/",
+                   transaction_id), config = httr::authenticate(paste('uid=', user_id, ",o=EDI", ',dc=edirepository,dc=org'), password))
+      iter <- iter + 1
+      if (response$status_code == "200") {
+         report <- httr::content(response, as = 'text', encoding = 'UTF-8')
+         name <- stringr::str_extract_all(report, "(?<=<name>)(.*)(?=</name>)")[[1]]
+         status <- stringr::str_extract_all(report, '[:alpha:]+(?=</status>)')[[1]]
+         suggestion <- stringr::str_extract_all(report, "(?<=<suggestion>)(.*)(?=</suggestion>)")[[1]]
+         
+         report_df <- dplyr::tibble("Status" = as.vector(status), 
+                                    "Element Checked" = as.vector(name),
+                                    "Suggestion to fix/imporve" = as.vector(suggestion))
+         View(report_df)
+         return(report_df)
+         break
+      }
+      if (max_iter > iter) {
+        print("Request timed out, check that you inputs are all valid and try again")
+        break 
+      }
+    }
   } else {
     message("Your request to evaluate an EDI package failed,
            please check that you entered a valid username, password, and XML document.
@@ -151,24 +174,34 @@ update_edi_package <- function(user_id, password, existing_package_identifier, e
     config = httr::authenticate(paste('uid=', user_id, ",o=EDI", ',dc=edirepository,dc=org'), password),
     body = httr::upload_file(eml_file_path)
   )
-  Sys.sleep(2)
   if (response$status_code == "202") {
     transaction_id <- httr::content(response, as = 'text', encoding = 'UTF-8')
-    response<- httr::GET(
-      url = paste0("https://pasta-d.lternet.edu/package/report/eml/",
-                   transaction_id),
-      config = httr::authenticate(paste('uid=', user_id, ",o=EDI", ',dc=edirepository,dc=org'), password)
-    )
-    report <- httr::content(response, as = 'text', encoding = 'UTF-8')
-    name <- stringr::str_extract_all(report, "(?<=<name>)(.*)(?=</name>)")[[1]]
-    status <- stringr::str_extract_all(report, '[:alpha:]+(?=</status>)')[[1]]
-    suggestion <- stringr::str_extract_all(report, "(?<=<suggestion>)(.*)(?=</suggestion>)")[[1]]
-    
-    report_df <- dplyr::tibble("Status" = as.vector(status), 
-                               "Element Checked" = as.vector(name),
-                               "Suggestion to fix/imporve" = as.vector(suggestion))
-    message("Your package has been succesfully updated")
-    return(report_df)
+    iter <- 0
+    max_iter <- 5
+    while(TRUE){
+      Sys.sleep(2)
+      response<- httr::GET(url = paste0("https://pasta-d.lternet.edu/package/report/eml/",
+                                        transaction_id), config = httr::authenticate(paste('uid=', user_id, ",o=EDI", ',dc=edirepository,dc=org'), password))
+      iter <- iter + 1
+      if (response$status_code == "200") {
+        report <- httr::content(response, as = 'text', encoding = 'UTF-8')
+        name <- stringr::str_extract_all(report, "(?<=<name>)(.*)(?=</name>)")[[1]]
+        status <- stringr::str_extract_all(report, '[:alpha:]+(?=</status>)')[[1]]
+        suggestion <- stringr::str_extract_all(report, "(?<=<suggestion>)(.*)(?=</suggestion>)")[[1]]
+        
+        report_df <- dplyr::tibble("Status" = as.vector(status), 
+                                   "Element Checked" = as.vector(name),
+                                   "Suggestion to fix/imporve" = as.vector(suggestion))
+        print("Your package update was successful if no errors are reported in the results data frame.")
+        View(report_df)
+        return(report_df)
+        break
+      }
+      if (max_iter > iter) {
+        print("Request timed out, check that you inputs are all valid and try again")
+        break 
+      }
+    }
   } else {
     message("Your request to evaluate an EDI package failed,
            please check that you entered a valid username, password, and XML document.

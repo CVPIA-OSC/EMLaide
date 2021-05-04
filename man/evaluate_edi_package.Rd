@@ -30,6 +30,6 @@ be evaluated using the EDI congruence checker. This package returns a data frame
 package.
 }
 \examples{
-reserve_edi_id(user_id = "samuelwright", 
-               eml_file_path = "data/edi20.1.xml")
+evaluate_edi_package(user_id = "samuelwright", 
+                      eml_file_path = "data/edi20.1.xml")
 }
