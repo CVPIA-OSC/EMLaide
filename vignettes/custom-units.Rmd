@@ -1,5 +1,5 @@
 ---
-title: "Custom Units"
+title: "EML Custom Units"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{custom-units}

@@ -59,13 +59,10 @@
       <a href="../articles/template-doc.html">Metadata Template Documentation</a>
     </li>
     <li>
-      <a href="../articles/creating-EML.html">EML Template Helper</a>
+      <a href="../articles/creating-EML.html">Create EML Doc from Template</a>
     </li>
     <li>
-      <a href="../articles/Dataset-Element.html">EML Dataset Section</a>
-    </li>
-    <li>
-      <a href="../articles/Inital-Metadata-Information.html">EML Custom Inputs to Inital Sections</a>
+      <a href="../articles/Dataset-Element.html">Include Multiple Datasets in EML Doc</a>
     </li>
     <li>
       <a href="../articles/custom-units.html">EML Custom Units</a>
@@ -159,7 +156,7 @@
 <div id="personnel" class="section level2">
 <h2 class="hasAnchor">
 <a href="#personnel" class="anchor"></a>Personnel</h2>
-<p>In the personnel sheet you will provide information on the creator and the associated parties to the dataset. The creator is any person or organization who is responsible for the creation of the data, the creator will also be the contact for this dataset. You must have one person with the role “creator”.</p>
+<p>In the personnel sheet you will provide information on the creator and the associated parties to the dataset. The creator is any person or organization who is responsible for the creation of the data, the creator will also be the contact for this dataset. You must have one person with the role “creator”. Columns that are gray are optional but every other column must be filled out.</p>
 <ul>
 <li>
 <strong>first_name</strong> - Person’s given name</li>
@@ -195,7 +192,7 @@
 <li>
 <strong>keyword</strong> - The keyword</li>
 <li>
-<strong>keywordThesaurus</strong> - <em>(Required only when keyword is from a controlled vocabulary)</em> A string identifying the controlled vocabulary the keywords originate from, do not include if keywords are not from a controlled vocabulary</li>
+<strong>keywordThesaurus</strong> (conditionally required) - <strong>Required only when keyword is from a controlled vocabulary.</strong> A string identifying the controlled vocabulary the keywords originate from, do not include if keywords are not from a controlled vocabulary</li>
 </ul>
 <p>In order to promote consistency, please search the following resources for keywords:</p>
 <ul>
@@ -213,16 +210,17 @@
 <p>The intellectual rights information associated with the dataset. For projects funded under CVPIA authority, we have preselected two licenses, CC0 and CC BY. You can select either of these by adding “CC0” or “CCBY” in the default_license column and leave the rest of the columns blank.</p>
 <p><a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0</a> - The most permissive license, appropriate for data in the public domain.</p>
 <p><a href="https://creativecommons.org/licenses/by/4.0/">CC BY</a> - Attribution required</p>
-<p>If neither of these two licenses fit the intellectual right associated with the dataset you must provide information for the following columns:</p>
+<p>If neither of these two licenses fit the intellectual right associated with the dataset you must provide information for all of the conditionally required columns:</p>
 <ul>
+<li>**default* - Select the default license if applicable to your project.</li>
 <li>
-<strong>license_name</strong> - The official name of the license that applies to the data and metadata</li>
+<strong>license_name (conditionally required)</strong> - The official name of the license that applies to the data and metadata</li>
 <li>
-<strong>license_url</strong> - The persistent URL for the license</li>
+<strong>license_url (conditionally required)</strong> - The persistent URL for the license</li>
 <li>
-<strong>license_identifier</strong> - The official identifier for the license, which should be drawn from the SPDX license list, or a similar well-known license registry</li>
+<strong>license_identifier (conditionally required)</strong> - The official identifier for the license, which should be drawn from the SPDX license list, or a similar well-known license registry</li>
 <li>
-<strong>intellectual_rights_description</strong> - Description of rights under the license</li>
+<strong>intellectual_rights_description (conditionally required)</strong> - Description of rights under the license</li>
 </ul>
 <p><strong>Example:</strong></p>
 <ul>
@@ -235,25 +233,42 @@
 <div id="project" class="section level2">
 <h2 class="hasAnchor">
 <a href="#project" class="anchor"></a>Project</h2>
-<p>Use this sheet to input a project personnel if you wish to specify a specific project personnel. If project personnel is left blank we will automatically assign project personnel to the prior defined personnel with the role of creator. To give a different project personnel please fill out all sections of this sheet. * <strong>first_name</strong> - Person’s given name * <strong>last_name</strong> - Person’s given last name * <strong>email (optional)</strong>- Person’s email address * <strong>role</strong> - Select the appropriate role from the dropdown, contact CVPIA data manager if you would like a role added to the template options * <strong>organization</strong> - The name of the organization that the person is employed by * <strong>orcid (optional)</strong> - ORCID iD is a persistent digital identifier for researchers, register at <a href="http://orcid.org/">http://orcid.org/</a></p>
+<p>Use this sheet to input a project personnel if you wish to specify a specific project personnel. If project personnel is left blank we will automatically assign project personnel to the prior defined personnel with the role of creator. To give a different project personnel please fill out all sections of this sheet. Columns that are blue are conditionally required and columns that are gray are optional.</p>
+<ul>
+<li>
+<strong>first_name (conditionally required)</strong> - <strong>Required if you want to add a specific project personnel</strong> Person’s given name</li>
+<li>
+<strong>last_name (conditionally required)</strong> - <strong>Required if you want to add a specific project personnel</strong> Person’s given last name</li>
+<li>
+<strong>email (optional)</strong>- <strong>Required if you want to add a specific project personnel</strong> Person’s email address</li>
+<li>
+<strong>role (conditionally required)</strong> - <strong>Required if you want to add a specific project personnel</strong> Select the appropriate role from the dropdown, contact CVPIA data manager if you would like a role added to the template options</li>
+<li>
+<strong>organization (conditionally required)</strong> - <strong>Required if you want to add a specific project personnel</strong> The name of the organization that the person is employed by</li>
+<li>
+<strong>orcid (optional)</strong> - ORCID iD is a persistent digital identifier for researchers, register at <a href="http://orcid.org/">http://orcid.org/</a>
+</li>
+</ul>
 </div>
 <div id="funding" class="section level2">
 <h2 class="hasAnchor">
 <a href="#funding" class="anchor"></a>Funding</h2>
-<p>Funding information of the dataset. Use this sheet to describe the funding awarded to the project. We have provided a set of CVPIA default funders: "USBR", "CDFW", "CDWR". If you input one of the previous listed in the <strong>funder_name</strong> column you must still provide an award_title but you may leave the remaining columns blank.</p>
+<p>Funding information of the dataset. Use this sheet to describe the funding awarded to the project. We have provided a set of CVPIA default funders: "USBR", "CDFW", "CDWR". If you input one of the previous listed in the <strong>funder_name</strong> column you must still provide an <strong>award_title</strong> but you may leave the remaining columns blank.</p>
+<p>If the default funding options are not applicable to your project you must fill out all required and conditionally required columns. Columns that are blue are conditionally required and columns that are gray are optional but every other column must be filled out.</p>
 <ul>
 <li>
-<strong>funder_name</strong> - organization or individual providing the funding</li>
+<strong>funder_name</strong> - Organization or individual providing the funding. If applicable select a default funder from the dropdown list.</li>
 <li>
-<strong>funder_identifier</strong> <strong>(Optional)</strong> - CVPIA specific finding identifiers are in development</li>
+<strong>funder_identifier</strong> <strong>(optional)</strong> - CVPIA specific finding identifiers are in development.<br>
+</li>
 <li>
-<strong>award_number (Optional)</strong> - The identifier assigned by the&gt; funding agency to identify this funding award.</li>
+<strong>award_number (conditionally required)</strong> - The identifier assigned by the funding agency to identify this funding award. Required if default funder is not selected.</li>
 <li>
-<strong>award_title -</strong> Title of the dataset or project which received&gt; funding.</li>
+<strong>award_title -</strong> Title of the dataset or project which received funding.</li>
 <li>
-<strong>award_url</strong> <strong>(Optional)</strong> - to include a link to information about the funding award on the funding organization's webpage.</li>
+<strong>award_url</strong> <strong>(optional)</strong> - to include a link to information about the funding award on the funding organization's webpage.</li>
 <li>
-<strong>funding_description (Optional)</strong> - to provide a short description of the funding received.</li>
+<strong>funding_description (optional)</strong> - To provide a short description of the funding received.</li>
 </ul>
 <p><strong>Example:</strong></p>
 <ul>
@@ -270,9 +285,9 @@
 <p>Maintenance information of the dataset. Use this sheet to describe the status of the data collection as well as the frequency at which you plan to update the data. All columns required.</p>
 <ul>
 <li>
-<strong>status -</strong> status of the project or dataset this can be either “ongoing” or “complete”</li>
+<strong>status</strong> - status of the project or dataset this can be either “ongoing” or “complete”</li>
 <li>
-<strong>update_frequency -</strong> if status is “ongoing” provide the frequency of which the project or dataset is updated. Available update frequencies: daily, weekly, monthly, annual</li>
+<strong>update_frequency (conditionally required)</strong> - <strong>Required if status is “ongoing”</strong> provide the frequency of which the project or dataset is updated. Available update frequencies: daily, weekly, monthly, annual</li>
 </ul>
 <p><strong>Example (ongoing maintenance):</strong></p>
 <ul>
@@ -286,15 +301,15 @@
 <p>Geographical and temporal coverage associated with the dataset, all columns are required. Geographic and temporal will allow users to quickly search for your dataset based on geographic location and time.</p>
 <ul>
 <li>
-<strong>geographic_description</strong> - a description of the locations of research sites and areas related to the data</li>
+<strong>geographic_description</strong> - A description of the locations of research sites and areas related to the data</li>
 <li>
-<strong>west_bounding_coordinate</strong> - the west cardinality limit</li>
+<strong>west_bounding_coordinate</strong> - The west cardinality limit</li>
 <li>
-<strong>east_bounding_coordinate</strong> - the east cardinality limit</li>
+<strong>east_bounding_coordinate</strong> - The east cardinality limit</li>
 <li>
-<strong>north_bounding_coordinate</strong> - the north cardinality limit</li>
+<strong>north_bounding_coordinate</strong> - The north cardinality limit</li>
 <li>
-<strong>south_bounding_coordinate</strong> - the south cardinality limit</li>
+<strong>south_bounding_coordinate</strong> - The south cardinality limit</li>
 <li>
 <strong>begin_date</strong> - The starting date for the dataset or project. Dates must be provided in ISO 8601 format, YYYY-MM-DD</li>
 <li>
@@ -303,18 +318,18 @@
 <p><strong>Example:</strong></p>
 <ul>
 <li>geographic_description: North Slope drainage basin: Bounding box encompasses 42 drainage basins totaling the North Slope drainage basin, Alaska, USA</li>
-<li>West_bound_coordinate: -160.594000</li>
-<li>East_bound_coordinate: -134.1048</li>
-<li>North_bound_coordinate: 71.2383</li>
-<li>South_bound_coordinate: 67.865</li>
-<li>Begin_date: 1980-01-01</li>
-<li>End_date: 2010-12-31</li>
+<li>west_bound_coordinate: -160.594000</li>
+<li>east_bound_coordinate: -134.1048</li>
+<li>north_bound_coordinate: 71.2383</li>
+<li>south_bound_coordinate: 67.865</li>
+<li>begin_date: 1980-01-01</li>
+<li>end_date: 2010-12-31</li>
 </ul>
 </div>
 <div id="taxonomic-coverage" class="section level2">
 <h2 class="hasAnchor">
 <a href="#taxonomic-coverage" class="anchor"></a>Taxonomic Coverage</h2>
-<p>Taxonomic coverage for the dataset, this sheet is optional. We have provided a set of CVPIA common taxa: "chinook", "delta_smelt", "white_sturgeon", "green_sturgeon", or "steelhead". If you select one of the previous listed in the <strong>CVPIA_common_species</strong> column you can leave the remaining columns blank. If you are adding a new taxon you must fill out all of the other columns. When adding a new taxon please use <a href="https://www.itis.gov/">https://www.itis.gov/</a> for full taxonomic coverage. Contact the CVPIA data managers if you wish to add a set of taxa to the CVPIA common taxa list.</p>
+<p>Taxonomic coverage for the dataset, this sheet is optional. We have provided a set of CVPIA common taxa: "chinook", "delta_smelt", "white_sturgeon", "green_sturgeon", or "steelhead". If you select one of the previous listed in the <strong>CVPIA_common_species</strong> column you can leave the remaining columns blank. If you are adding a new taxon you must fill out all of the other columns. When adding a new taxon please use <a href="https://www.itis.gov/">https://www.itis.gov/</a> for full taxonomic coverage. Contact the CVPIA data managers if you wish to add a set of taxa to the CVPIA common taxa list. All blue columns are conditionally required and only need to be filled out if you do not selevt a <strong>CVPIA_common_species</strong>.</p>
 <p><strong>Example:</strong></p>
 <ul>
 <li>
@@ -341,14 +356,34 @@
 <h2 class="hasAnchor">
 <a href="#attribute" class="anchor"></a>Attribute</h2>
 <p>For each column in your dataset, you need to describe in detail the type of information encoded in that column. In EML, columns are “attributes”. The type of information needed for an attribute varies based on its measurement scale. This document explains the different types of measurement scales, how to select the appropriate one given the data within a column, and which columns within the ‘attribute’ tab of the metadata excel workbook are required given the measurement scale.</p>
-<p>The instructions included below detail how to complete all the columns. Please fill in at least the three following columns for each attribute of your dataset within the ‘attribute’ tab:</p>
+<p>The instructions included below detail how to complete all the columns. Columns that are gray are optional and columns that are blue are conditionally required depending on the type of measurement scale:</p>
 <ul>
 <li>
 <strong>attriubute_name</strong> - Name of the attribute as it appears in the dataset</li>
 <li>
-<strong>attribute_definition</strong>: A precise and complete definition of the attribute being documented</li>
+<strong>attribute_definition</strong>- A precise and complete definition of the attribute being documented</li>
 <li>
-<strong>measurement_scale</strong>: The type of scale from which values are drawn for the attribute (allowed values and additional details see <a href="#measurement-scales"><u>Measurement Scales</u></a> section)</li>
+<strong>measurement_scale</strong>- The type of scale from which values are drawn for the attribute (allowed values and additional details see <a href="#measurement-scales"><u>Measurement Scales</u></a> section)</li>
+<li>
+<strong>attribute_label (optionally)</strong> - A descriptive label that can be used to display the name of an attribute.</li>
+<li>
+<strong>domain</strong> - Please select a domain from the dropdown. Domain options vary depending on measurment_scale. See the measurement_scale sections below to see which domains are appropriate for each measurement_scale.</li>
+<li>
+<strong>type (conditionally required)</strong> - Required for measurement_scale: <em>Ratio</em>, <em>Interval</em>. See the measurement_scale sections on <em>Ratio</em> and <em>Interval</em> for additional information.</li>
+<li>
+<strong>units (conditionally required)</strong> - Required for measurement_scale: <em>Ratio</em>, <em>Interval</em>. See the measurement_scale sections on <em>Ratio</em> and <em>Interval</em> for additional information.</li>
+<li>
+<strong>number_type (conditionally required)</strong> - Required for measurement_scale: <em>Ratio</em>, <em>Interval</em>. See the measurement_scale sections on <em>Ratio</em> and <em>Interval</em> for additional information.</li>
+<li>
+<strong>unit_precision (optional)</strong>- This is a decimal value indicating how precise the measured value is.</li>
+<li>
+<strong>date_time_format (conditionally required)</strong> - Required for measurement_scales: <em>Date Time</em> See the measurement_scale section on <em>Date Time</em> for additional information.</li>
+<li>
+<strong>date_time_precision (optional)</strong> - Optional for measurement_scales: <em>Date Time</em> See the measurement_scale section on <em>Date Time</em> for additional information.</li>
+<li>
+<strong>minimum (conditionally required)</strong> - Required for measurement_scale: <em>Ratio</em>, <em>Interval</em>, <em>Date Time</em>. Appropriate minimum values vary depending on measurment_scale. See the measurement_scale sections below to see what values are appropriate for each measurement_scale.</li>
+<li>
+<strong>maximum (conditionally required)</strong> - Required for measurement_scale: <em>Ratio</em>, <em>Interval</em>, <em>Date Time</em>. Appropriate maximum values vary depending on measurement_scale. See the measurement_scale sections below to see what values are appropriate for each measurement_scale.</li>
 </ul>
 <p>The ‘attributes’ tab is the most in the metadata standards weeds, we can provide technical assistance with completing this tab.</p>
 <div id="measurement-scales" class="section level3">
@@ -433,7 +468,7 @@
 <li>
 <strong>date_time_format</strong> - The format your date/time attribute is recorded in. ISO 8601 standard should be used (YYYY-MM-DD) for date, (YYYY-MM-DDThh:mm:ss) for datetime and (hh:mm:ss) for time.</li>
 <li>
-<strong>date_time_precision</strong> - To what level time is being measured</li>
+<strong>date_time_precision (optional)</strong> - To what level time is being measured</li>
 <li>
 <strong>minimum</strong> - minimum allowable date/time</li>
 <li>
@@ -446,6 +481,7 @@
 <h2 class="hasAnchor">
 <a href="#code-definitions" class="anchor"></a>Code Definitions</h2>
 <p>The code definitions sheet is where you will define the “enumerated” variable types specified in the attributes sheet. This is simply where you will list out all the types for an enumerated variable and each of their definitions.</p>
+<p>All columns of this section are blue because they are conditionally required and only needs to be filled out if there are attributes that are “enumerated”.</p>
 <p><strong>Example:</strong></p>
 <table class="table">
 <thead><tr class="header">

@@ -1,5 +1,5 @@
 ---
-title: "Creating EML Using EMLaide"
+title: "Create EML Doc from Template"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{Creating EML Using EMLaide}
@@ -114,10 +114,9 @@ data package identifier number on the [EDI data repository under tools.](https:/
 edi_number <- "edi.678.1"
 ```
 
-It is also possible to use the EDIutils function `api_create_reservation()` to generate a EDI number using R. See the `api_create_reservation()` [documentation.](https://ediorg.github.io/EMLaide/reference/api_create_reservation.html)
-```{r}
-# edi_number <- api_create_reservation(scope = "edi", environment = "staging", user.id = "your user id", 
-#                                      user.pass = "your user password ", affilitation = "EDI")
+It is also possible to use the EMLaide function `reserve_edi_id()` to generate a EDI number using R. 
+```{r, eval = FALSE}
+edi_number <- reserve_edi_id(user_id = "your user id", password = "your user password ")
 ```
 
 
@@ -306,7 +305,7 @@ This will append the actual information of the data.
 The file path of the data must be given as the `dataset_file` specified at the top of this document. **If you wish to upload your datapackage to EDI directly from R you must include a URL to access the dataset. You can do this by providing an input to the `data_url` argument.**
 
 ```{r}
-physical <- add_physical(file_path = dataset_file, data_url = "s3://cvpia-data-stewardship/Hannon-Example/hannon_example_physical_data.csv")
+physical <- add_physical(file_path = dataset_file, data_url = NULL)
 ```
 
 #### Attribute List 
@@ -413,12 +412,10 @@ EML::write_eml(eml, file_name)
 eml_validate(file_name)
 ```
 
-## Uploading to EDI Data Repository 
-If you feel ready to upload your document to the EDI data repository you can do that from R using the Environmental Data Initiatives EDIutils package. Use the `api_create_data_package()` to create the initial version of a data package. 
+## Evaluation using the EDI Congruency Checker
+To evaluate your document in R using the EDI congruence checker you can use `evaluate_edi_package()`. To use this function you must have the data table accessible by a URL that can be accessed through the EDI repository. This URL must be added in the `add_physical()` section above. If you do not have a URL available then you can upload the EML document and the dataset on the [EDI data portal.](https://portal.edirepository.org/nis/home.jsp) 
 
-In order to upload from R you must have the data table accessible by a URL that can be accessed through the EDI repository. This URL must be added in the `add_physical()` section above. If you do not have a URL available then you can upload the EML document and the dataset on the [EDI data portal.](https://portal.edirepository.org/nis/home.jsp)
-
-```{r}
-#api_create_data_package()
+```{r, eval = FALSE}
+evaluate_edi_package(user_id = "Your User Id", password = "Your password", eml_file_path = file_name)
 ```
 

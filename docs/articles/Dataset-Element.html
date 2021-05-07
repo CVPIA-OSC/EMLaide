@@ -5,7 +5,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dataset Element • EMLaide</title>
+<title>Include Multiple Datasets in EML Doc • EMLaide</title>
 <!-- favicons --><link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
 <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="../apple-touch-icon.png">
@@ -18,7 +18,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
 <!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="../pkgdown.css" rel="stylesheet">
 <script src="../pkgdown.js"></script><link href="../extra.css" rel="stylesheet">
-<meta property="og:title" content="Dataset Element">
+<meta property="og:title" content="Include Multiple Datasets in EML Doc">
 <meta property="og:description" content="EMLaide">
 <meta property="og:image" content="https://CVPIA-OSC.github.io/EMLaide/logo.png">
 <!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
@@ -59,13 +59,10 @@
       <a href="../articles/template-doc.html">Metadata Template Documentation</a>
     </li>
     <li>
-      <a href="../articles/creating-EML.html">EML Template Helper</a>
+      <a href="../articles/creating-EML.html">Create EML Doc from Template</a>
     </li>
     <li>
-      <a href="../articles/Dataset-Element.html">EML Dataset Section</a>
-    </li>
-    <li>
-      <a href="../articles/Inital-Metadata-Information.html">EML Custom Inputs to Inital Sections</a>
+      <a href="../articles/Dataset-Element.html">Include Multiple Datasets in EML Doc</a>
     </li>
     <li>
       <a href="../articles/custom-units.html">EML Custom Units</a>
@@ -93,7 +90,7 @@
       </header><script src="Dataset-Element_files/header-attrs-2.6/header-attrs.js"></script><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
-      <h1 data-toc-skip>Dataset Element</h1>
+      <h1 data-toc-skip>Include Multiple Datasets in EML Doc</h1>
             
       
       
@@ -215,7 +212,21 @@
 <div id="raster-data" class="section level3">
 <h3 class="hasAnchor">
 <a href="#raster-data" class="anchor"></a>Raster Data</h3>
-<p>If you have raster data please append the data elements in a <code>spatialRaster</code> named section of the dataset. In addition to the components that are required for tabular data you must include the: * <code>spatial_reference</code> * <code>horizontal_accuracy</code> * <code>vertical_accuracy</code> * <code>cell_size_x</code> * <code>cell_size_y</code> * <code>number_of_bands</code> * <code>raster_origin</code> * <code>rows</code> * <code>columns</code> * <code>verticals</code> * <code>cell_geometry</code> All of these required fields must be added as inputs to the <code><a href="../reference/add_raster.html">add_raster()</a></code> function.</p>
+<p>If you have raster data please append the data elements in a <code>spatialRaster</code> named section of the dataset. In addition to the components that are required for tabular data you must include the:</p>
+<ul>
+<li><code>spatial_reference</code></li>
+<li><code>horizontal_accuracy</code></li>
+<li><code>vertical_accuracy</code></li>
+<li><code>cell_size_x</code></li>
+<li><code>cell_size_y</code></li>
+<li><code>number_of_bands</code></li>
+<li><code>raster_origin</code></li>
+<li><code>rows</code></li>
+<li><code>columns</code></li>
+<li><code>verticals</code></li>
+<li>
+<code>cell_geometry</code> All of these required fields must be added as inputs to the <code><a href="../reference/add_raster.html">add_raster()</a></code> function.</li>
+</ul>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">data_tables</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>spatialRaster <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span><span class="fu"><a href="../reference/add_raster.html">add_raster</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></code></pre></div>
 <p>This <code>data_table</code> list can now be added in as <code>dataTable = data_tables</code> in the dataset list.</p>

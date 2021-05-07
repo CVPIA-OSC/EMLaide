@@ -5,7 +5,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Creating EML Using EMLaide • EMLaide</title>
+<title>Create EML Doc from Template • EMLaide</title>
 <!-- favicons --><link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
 <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="../apple-touch-icon.png">
@@ -18,7 +18,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
 <!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="../pkgdown.css" rel="stylesheet">
 <script src="../pkgdown.js"></script><link href="../extra.css" rel="stylesheet">
-<meta property="og:title" content="Creating EML Using EMLaide">
+<meta property="og:title" content="Create EML Doc from Template">
 <meta property="og:description" content="EMLaide">
 <meta property="og:image" content="https://CVPIA-OSC.github.io/EMLaide/logo.png">
 <!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
@@ -59,13 +59,10 @@
       <a href="../articles/template-doc.html">Metadata Template Documentation</a>
     </li>
     <li>
-      <a href="../articles/creating-EML.html">EML Template Helper</a>
+      <a href="../articles/creating-EML.html">Create EML Doc from Template</a>
     </li>
     <li>
-      <a href="../articles/Dataset-Element.html">EML Dataset Section</a>
-    </li>
-    <li>
-      <a href="../articles/Inital-Metadata-Information.html">EML Custom Inputs to Inital Sections</a>
+      <a href="../articles/Dataset-Element.html">Include Multiple Datasets in EML Doc</a>
     </li>
     <li>
       <a href="../articles/custom-units.html">EML Custom Units</a>
@@ -93,7 +90,7 @@
       </header><script src="creating-EML_files/header-attrs-2.6/header-attrs.js"></script><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
-      <h1 data-toc-skip>Creating EML Using EMLaide</h1>
+      <h1 data-toc-skip>Create EML Doc from Template</h1>
             
       
       
@@ -177,10 +174,9 @@
 <p>In addition to these four files a entity description and an EDI number must be defined. The EDI number should be a unique data package identifier. You can reserve this data package identifier number on the <a href="https://portal.edirepository.org/nis/reservations.jsp">EDI data repository under tools.</a></p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">edi_number</span> <span class="op">&lt;-</span> <span class="st">"edi.678.1"</span></code></pre></div>
-<p>It is also possible to use the EDIutils function <code>api_create_reservation()</code> to generate a EDI number using R. See the <code>api_create_reservation()</code> <a href="https://ediorg.github.io/EMLaide/reference/api_create_reservation.html">documentation.</a></p>
+<p>It is also possible to use the EMLaide function <code><a href="../reference/reserve_edi_id.html">reserve_edi_id()</a></code> to generate a EDI number using R.</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="co"># edi_number &lt;- api_create_reservation(scope = "edi", environment = "staging", user.id = "your user id", </span>
-<span class="co">#                                      user.pass = "your user password ", affilitation = "EDI")</span></code></pre></div>
+<code class="sourceCode R"><span class="va">edi_number</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/reserve_edi_id.html">reserve_edi_id</a></span><span class="op">(</span>user_id <span class="op">=</span> <span class="st">"your user id"</span>, password <span class="op">=</span> <span class="st">"your user password "</span><span class="op">)</span></code></pre></div>
 </div>
 </div>
 <div id="eml-sections" class="section level2">
@@ -437,13 +433,12 @@
 <span class="fu">EML</span><span class="fu">::</span><span class="fu"><a href="https://docs.ropensci.org/EML/reference/write_eml.html">write_eml</a></span><span class="op">(</span><span class="va">eml</span>, <span class="va">file_name</span><span class="op">)</span>
 <span class="fu"><a href="https://docs.ropensci.org/EML/reference/eml_validate.html">eml_validate</a></span><span class="op">(</span><span class="va">file_name</span><span class="op">)</span></code></pre></div>
 </div>
-<div id="uploading-to-edi-data-repository" class="section level2">
+<div id="evaluation-using-the-edi-congruency-checker" class="section level2">
 <h2 class="hasAnchor">
-<a href="#uploading-to-edi-data-repository" class="anchor"></a>Uploading to EDI Data Repository</h2>
-<p>If you feel ready to upload your document to the EDI data repository you can do that from R using the Environmental Data Initiatives EDIutils package. Use the <code>api_create_data_package()</code> to create the initial version of a data package.</p>
-<p>In order to upload from R you must have the data table accessible by a URL that can be accessed through the EDI repository. This URL must be added in the <code><a href="../reference/add_physical.html">add_physical()</a></code> section above. If you do not have a URL available then you can upload the EML document and the dataset on the <a href="https://portal.edirepository.org/nis/home.jsp">EDI data portal.</a></p>
+<a href="#evaluation-using-the-edi-congruency-checker" class="anchor"></a>Evaluation using the EDI Congruency Checker</h2>
+<p>To evaluate your document in R using the EDI congruence checker you can use <code><a href="../reference/evaluate_edi_package.html">evaluate_edi_package()</a></code>. To use this function you must have the data table accessible by a URL that can be accessed through the EDI repository. This URL must be added in the <code><a href="../reference/add_physical.html">add_physical()</a></code> section above. If you do not have a URL available then you can upload the EML document and the dataset on the <a href="https://portal.edirepository.org/nis/home.jsp">EDI data portal.</a></p>
 <div class="sourceCode" id="cb26"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="co">#api_create_data_package()</span></code></pre></div>
+<code class="sourceCode R"><span class="fu"><a href="../reference/evaluate_edi_package.html">evaluate_edi_package</a></span><span class="op">(</span>user_id <span class="op">=</span> <span class="st">"Your User Id"</span>, password <span class="op">=</span> <span class="st">"Your password"</span>, eml_file_path <span class="op">=</span> <span class="va">file_name</span><span class="op">)</span></code></pre></div>
 </div>
   </div>
 

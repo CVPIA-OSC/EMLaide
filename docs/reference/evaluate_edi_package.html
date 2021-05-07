@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>standard_units — standard_units • EMLaide</title>
+<title>Validate EDI Data Package — evaluate_edi_package • EMLaide</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -48,10 +48,10 @@
   <link href="../extra.css" rel="stylesheet">
   
 
-<meta property="og:title" content="standard_units — standard_units" />
-<meta property="og:description" content="A list of all valid standard units accepted by EML schema. This list is used
-to by add_attribute(). As add_attribute() filters through all attribute components
-it will check that the units are in the standard unit list." />
+<meta property="og:title" content="Validate EDI Data Package — evaluate_edi_package" />
+<meta property="og:description" content="This function takes in authentication info for EDI and an EML file to
+be evaluated using the EDI congruence checker. This package returns a data frame that contains the status of the
+package." />
 <meta property="og:image" content="https://CVPIA-OSC.github.io/EMLaide/logo.png" />
 
 
@@ -135,27 +135,52 @@ it will check that the units are in the standard unit list." />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>standard_units</h1>
+    <h1>Validate EDI Data Package</h1>
     
-    <div class="hidden name"><code>standard_units.Rd</code></div>
+    <div class="hidden name"><code>evaluate_edi_package.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>A list of all valid standard units accepted by EML schema. This list is used
-to by <code><a href='add_attribute.html'>add_attribute()</a></code>. As <code><a href='add_attribute.html'>add_attribute()</a></code> filters through all attribute components
-it will check that the units are in the standard unit list.</p>
+    <p>This function takes in authentication info for EDI and an EML file to
+be evaluated using the EDI congruence checker. This package returns a data frame that contains the status of the
+package.</p>
     </div>
 
-    <pre class="usage"><span class='va'>standard_units</span></pre>
+    <pre class="usage"><span class='fu'>evaluate_edi_package</span><span class='op'>(</span><span class='va'>user_id</span>, <span class='va'>password</span>, <span class='va'>eml_file_path</span><span class='op'>)</span></pre>
 
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>user_id</th>
+      <td><p>EDI data portal user ID. Create an account an
+EDI <a href='https://portal.edirepository.org/nis/login.jsp'>here</a></p></td>
+    </tr>
+    <tr>
+      <th>password</th>
+      <td><p>EDI data portal user password</p></td>
+    </tr>
+    <tr>
+      <th>eml_file_path</th>
+      <td><p>The file path to the EML metadata document that you wish to evaluate.
+(A web link to the csv must be included in the dataset information in the EML in order for a data package to be evaluated.)</p></td>
+    </tr>
+    </table>
 
-    <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>A list.</p>
+    <p>This package returns a data frame that contains the status of the
+package. The data frame contains the following information:</p><ul>
+<li><p>The status of each check - Can be valid, info, warn, or error. Errors must be fixed before package can be uploaded to EDI.</p></li>
+<li><p>A description of what each status is referring to</p></li>
+<li><p>A suggestion of how to fix the status or improve the package.</p></li>
+</ul>
+
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='st'>"meters"</span> <span class='op'>%in%</span> <span class='va'>standard_units</span>
-</div><div class='output co'>#&gt; [1] FALSE</div></pre>
+    <pre class="examples"><div class='input'><span class='fu'>evaluate_edi_package</span><span class='op'>(</span>user_id <span class='op'>=</span> <span class='st'>"samuelwright"</span>, 
+                      eml_file_path <span class='op'>=</span> <span class='st'>"data/edi20.1.xml"</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; <span class='error'>Error in httr::upload_file(eml_file_path): file.exists(path) is not TRUE</span></div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

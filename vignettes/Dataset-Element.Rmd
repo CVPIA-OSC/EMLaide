@@ -1,5 +1,5 @@
 ---
-title: "Dataset Element"
+title: "Include Multiple Datasets in EML Doc"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{Dataset-Element}
@@ -176,6 +176,7 @@ This `data_table` list can now be added in as `dataTable = data_tables` in the d
 
 ### Raster Data 
 If you have raster data please append the data elements in a `spatialRaster` named section of the dataset. In addition to the components that are required for tabular data you must include the:
+
 * `spatial_reference`
 * `horizontal_accuracy`
 * `vertical_accuracy`

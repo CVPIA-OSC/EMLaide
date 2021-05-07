@@ -117,7 +117,8 @@ In the personnel sheet you will provide information on the creator and
 the associated parties to the dataset. The creator is any person or
 organization who is responsible for the creation of the data, the
 creator will also be the contact for this dataset. You must have one
-person with the role "creator".
+person with the role "creator". Columns that are gray are optional 
+but every other column must be filled out.
 
 * **first\_name** - Person's given name
 * **last\_name** - Person's given last name
@@ -148,7 +149,7 @@ different research efforts. If you choose not to use one of the
 controlled vocabularies linked to below, leave keywordThesaurus blank.
 
 * **keyword** - The keyword
-* **keywordThesaurus** - *(Required only when keyword is from a controlled vocabulary)* A string identifying the controlled vocabulary the keywords originate from, do not include if keywords are not from a controlled vocabulary
+* **keywordThesaurus** (conditionally required) - **Required only when keyword is from a controlled vocabulary.** A string identifying the controlled vocabulary the keywords originate from, do not include if keywords are not from a controlled vocabulary
 
 In order to promote consistency, please search the following resources
 for keywords:
@@ -172,12 +173,14 @@ domain.
 [CC BY](https://creativecommons.org/licenses/by/4.0/) - Attribution required
 
 If neither of these two licenses fit the intellectual right associated
-with the dataset you must provide information for the following columns:
+with the dataset you must provide information for all of the conditionally 
+required columns:
 
-* **license\_name** - The official name of the license that applies to the data and metadata
-* **license\_url** - The persistent URL for the license
-* **license\_identifier** - The official identifier for the license, which should be drawn from the SPDX license list, or a similar well-known license registry
-* **intellectual\_rights\_description** - Description of rights under the license
+* **default\license** - Select the default license if applicable to your project. 
+* **license\_name (conditionally required)** - The official name of the license that applies to the data and metadata
+* **license\_url (conditionally required)** - The persistent URL for the license
+* **license\_identifier (conditionally required)** - The official identifier for the license, which should be drawn from the SPDX license list, or a similar well-known license registry
+* **intellectual\_rights\_description (conditionally required)** - Description of rights under the license
 
 **Example:**
 
@@ -201,12 +204,14 @@ Use this sheet to input a project personnel if you wish to specify a
 specific project personnel. If project personnel is left blank we will
 automatically assign project personnel to the prior defined personnel
 with the role of creator. To give a different project personnel please
-fill out all sections of this sheet.
-* **first\_name** - Person's given name
-* **last\_name** - Person's given last name
-* **email (optional)**- Person's email address
-* **role** - Select the appropriate role from the dropdown, contact CVPIA data manager if you would like a role added to the template  options
-* **organization** - The name of the organization that the person is employed by
+fill out all sections of this sheet. Columns that are blue are conditionally 
+required and columns that are gray are optional. 
+
+* **first\_name (conditionally required)** - **Required if you want to add a specific project personnel** Person's given name
+* **last\_name (conditionally required)** - **Required if you want to add a specific project personnel** Person's given last name
+* **email (optional)**- **Required if you want to add a specific project personnel** Person's email address
+* **role (conditionally required)** - **Required if you want to add a specific project personnel** Select the appropriate role from the dropdown, contact CVPIA data manager if you would like a role added to the template  options
+* **organization (conditionally required)** - **Required if you want to add a specific project personnel** The name of the organization that the person is employed by
 * **orcid (optional)** - ORCID iD is a persistent digital identifier for researchers, register at  [http://orcid.org/](http://orcid.org/)
 
 ## Funding
@@ -215,14 +220,20 @@ Funding information of the dataset. Use this sheet to describe the
 funding awarded to the project. We have provided a set of CVPIA default
 funders: \"USBR\", \"CDFW\", \"CDWR\". If you input one of the previous
 listed in the **funder\_name** column you must still provide an
-award\_title but you may leave the remaining columns blank.
+**award\_title** but you may leave the remaining columns blank. 
 
-* **funder\_name** - organization or individual providing the funding
-* **funder\_identifier** **(Optional)** - CVPIA specific finding identifiers are in development
-* **award\_number (Optional)** - The identifier assigned by the> funding agency to identify this funding award.
-* **award\_title -** Title of the dataset or project which received> funding.
-* **award\_url** **(Optional)** - to include a link to information about the funding award on the funding organization\'s webpage.
-* **funding\_description (Optional)** - to provide a short description of the funding received.
+If the default funding options are not applicable to your project you must fill 
+out all required and conditionally required columns. Columns that are blue are 
+conditionally required and columns that are gray are optional
+but every other column must be filled out.
+
+
+* **funder\_name** - Organization or individual providing the funding. If applicable select a default funder from the dropdown list. 
+* **funder\_identifier** **(optional)** - CVPIA specific finding identifiers are in development.  
+* **award\_number (conditionally required)** - The identifier assigned by the funding agency to identify this funding award. Required if default funder is not selected. 
+* **award\_title -** Title of the dataset or project which received funding.
+* **award\_url** **(optional)** - to include a link to information about the funding award on the funding organization\'s webpage.
+* **funding\_description (optional)** - To provide a short description of the funding received. 
 
 **Example:**
 
@@ -239,8 +250,8 @@ Maintenance information of the dataset. Use this sheet to describe the
 status of the data collection as well as the frequency at which you plan
 to update the data. All columns required.
 
-* **status -** status of the project or dataset this can be either "ongoing" or "complete"
-* **update\_frequency -** if status is "ongoing" provide the frequency of which the project or dataset is updated. Available update frequencies: daily, weekly, monthly, annual
+* **status** - status of the project or dataset this can be either "ongoing" or "complete"
+* **update\_frequency (conditionally required)** - **Required if status is "ongoing"** provide the frequency of which the project or dataset is updated. Available update frequencies: daily, weekly, monthly, annual
 
 **Example (ongoing maintenance):**
 
@@ -253,23 +264,23 @@ Geographical and temporal coverage associated with the dataset, all
 columns are required. Geographic and temporal will allow users to
 quickly search for your dataset based on geographic location and time.
 
-* **geographic\_description** - a description of the locations of research sites and areas related to the data
-* **west\_bounding\_coordinate** - the west cardinality limit
-* **east\_bounding\_coordinate** - the east cardinality limit
-* **north\_bounding\_coordinate** - the north cardinality limit
-* **south\_bounding\_coordinate** - the south cardinality limit
+* **geographic\_description** - A description of the locations of research sites and areas related to the data
+* **west\_bounding\_coordinate** - The west cardinality limit
+* **east\_bounding\_coordinate** - The east cardinality limit
+* **north\_bounding\_coordinate** - The north cardinality limit
+* **south\_bounding\_coordinate** - The south cardinality limit
 * **begin\_date** - The starting date for the dataset or project. Dates must be provided in ISO 8601 format, YYYY-MM-DD
 * **end\_date** - The projected or actual end date for the dataset or  project. Dates must be provided in ISO 8601 format, YYYY-MM-DD.
 
 **Example:**
 
 * geographic\_description: North Slope drainage basin: Bounding box encompasses 42 drainage basins totaling the North Slope drainage basin, Alaska, USA
-* West\_bound\_coordinate: -160.594000
-* East\_bound\_coordinate: -134.1048
-* North\_bound\_coordinate: 71.2383
-* South\_bound\_coordinate: 67.865
-* Begin\_date: 1980-01-01
-* End\_date: 2010-12-31
+* west\_bound\_coordinate: -160.594000
+* east\_bound\_coordinate: -134.1048
+* north\_bound\_coordinate: 71.2383
+* south\_bound\_coordinate: 67.865
+* begin\_date: 1980-01-01
+* end\_date: 2010-12-31
 
 ## Taxonomic Coverage
 
@@ -281,7 +292,8 @@ column you can leave the remaining columns blank. If you are adding a
 new taxon you must fill out all of the other columns. When adding a new
 taxon please use [https://www.itis.gov/](https://www.itis.gov/) for full
 taxonomic coverage. Contact the CVPIA data managers if you wish to add a
-set of taxa to the CVPIA common taxa list.
+set of taxa to the CVPIA common taxa list. All blue columns are conditionally 
+required and only need to be filled out if you do not selevt a **CVPIA\_common\_species**.
 
 **Example:**
 
@@ -307,12 +319,22 @@ within a column, and which columns within the 'attribute' tab of the
 metadata excel workbook are required given the measurement scale.
 
 The instructions included below detail how to complete all the columns.
-Please fill in at least the three following columns for each attribute
-of your dataset within the 'attribute' tab:
+Columns that are gray are optional and columns that are blue are conditionally 
+required depending on the type of measurement scale:
 
 * **attriubute\_name** - Name of the attribute as it appears in the dataset
-* **attribute\_definition**: A precise and complete definition of the attribute being documented
-* **measurement\_scale**: The type of scale from which values are drawn for the attribute (allowed values and additional details see [[Measurement Scales]{.underline}](#measurement-scales) section)
+* **attribute\_definition**- A precise and complete definition of the attribute being documented
+* **measurement\_scale**- The type of scale from which values are drawn for the attribute (allowed values and additional details see [[Measurement Scales]{.underline}](#measurement-scales) section)
+* **attribute\_label (optionally)** -  A descriptive label that can be used to display the name of an attribute. 
+* **domain** -  Please select a domain from the dropdown. Domain options vary depending on measurment\_scale. See the measurement\_scale sections below to see which domains are appropriate for each measurement\_scale. 
+* **type (conditionally required)** - Required for measurement\_scale: *Ratio*, *Interval*. See the measurement\_scale sections on *Ratio* and *Interval* for additional information. 
+* **units (conditionally required)** - Required for measurement\_scale: *Ratio*, *Interval*. See the measurement\_scale sections on *Ratio* and *Interval* for additional information. 
+* **number_type (conditionally required)** - Required for measurement\_scale: *Ratio*, *Interval*. See the measurement\_scale sections on *Ratio* and *Interval* for additional information. 
+* **unit\_precision (optional)**- This is a decimal value indicating how precise the measured value is.
+* **date_time_format (conditionally required)** - Required for measurement\_scales: *Date Time* See the measurement\_scale section on *Date Time* for additional information. 
+* **date_time_precision (optional)** - Optional for measurement\_scales: *Date Time* See the measurement\_scale section on *Date Time* for additional information.
+* **minimum (conditionally required)** - Required for measurement\_scale: *Ratio*, *Interval*, *Date Time*. Appropriate minimum values vary depending on measurment\_scale. See the measurement\_scale sections below to see what values are appropriate for each measurement\_scale.
+* **maximum (conditionally required)** - Required for measurement\_scale: *Ratio*, *Interval*, *Date Time*. Appropriate maximum values vary depending on measurement\_scale. See the measurement\_scale sections below to see what values are appropriate for each measurement\_scale.
 
 The 'attributes' tab is the most in the metadata standards weeds, we can
 provide technical assistance with completing this tab.
@@ -366,7 +388,7 @@ Used to define date and time attributes. DateTime is used when the values fall o
 
 * **domain -** The domain for a datetime value should be dateTime. Please select dateTime from the dropdown menu.
 * **date\_time\_format** - The format your date/time attribute is recorded in. ISO 8601 standard should be used (YYYY-MM-DD) for date, (YYYY-MM-DDThh:mm:ss) for datetime and (hh:mm:ss) for time.
-* **date\_time\_precision** - To what level time is being measured
+* **date\_time\_precision (optional)** - To what level time is being measured
 * **minimum** - minimum allowable date/time
 * **maximum** - maximum allowable date/time or "ongoing"
 
@@ -376,6 +398,9 @@ The code definitions sheet is where you will define the "enumerated"
 variable types specified in the attributes sheet. This is simply where
 you will list out all the types for an enumerated variable and each of
 their definitions.
+
+All columns of this section are blue because they are conditionally required and 
+only needs to be filled out if there are attributes that are "enumerated". 
 
 **Example:**
 

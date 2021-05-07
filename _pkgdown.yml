@@ -56,12 +56,10 @@ navbar:
     menu: 
       - text: 'Metadata Template Documentation'
         href: articles/template-doc.html
-      - text: 'EML Template Helper'
+      - text: 'Create EML Doc from Template'
         href: articles/creating-EML.html
-      - text: 'EML Dataset Section'
+      - text: 'Include Multiple Datasets in EML Doc'
         href: articles/Dataset-Element.html
-      - text: 'EML Custom Inputs to Inital Sections'
-        href: articles/Inital-Metadata-Information.html
       - text: 'EML Custom Units'
         href: articles/custom-units.html
 repo:
