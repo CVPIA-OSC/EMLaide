@@ -1,0 +1,27 @@
+http_interactions:
+- request:
+    method: post
+    uri: https://pasta-d.lternet.edu/package/reservations/eml/edi
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+      Content-Type: ''
+  response:
+    status:
+      status_code: 401
+      category: Client error
+      reason: Unauthorized
+      message: 'Client error: (401) Unauthorized'
+    headers:
+      server: nginx/1.14.0 (Ubuntu)
+      date: Tue, 13 Apr 2021 15:54:05 GMT
+      transfer-encoding: chunked
+      connection: keep-alive
+    body:
+      encoding: UTF-8
+      file: no
+      string: ''
+  recorded_at: 2021-04-13 15:54:07 GMT
+  recorded_with: vcr/0.6.0, webmockr/0.8.0

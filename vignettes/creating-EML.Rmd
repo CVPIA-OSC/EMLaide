@@ -306,7 +306,7 @@ This will append the actual information of the data.
 The file path of the data must be given as the `dataset_file` specified at the top of this document. **If you wish to upload your datapackage to EDI directly from R you must include a URL to access the dataset. You can do this by providing an input to the `data_url` argument.**
 
 ```{r}
-physical <- add_physical(file_path = dataset_file, data_url = NULL)
+physical <- add_physical(file_path = dataset_file, data_url = "s3://cvpia-data-stewardship/Hannon-Example/hannon_example_physical_data.csv")
 ```
 
 #### Attribute List 

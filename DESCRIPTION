@@ -24,11 +24,12 @@ Imports:
 Depends: 
     R (>= 2.10)
 Suggests: 
-    rmarkdown, 
+    rmarkdown,
     knitr,
     testthat (>= 2.1.0),
-    tidyverse, 
-    readxl
+    tidyverse,
+    readxl,
+    vcr
 URL: https://CVPIA-OSC.github.io/EMLaide/
 VignetteBuilder: knitr
 StagedInstall: no
