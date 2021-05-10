@@ -379,7 +379,9 @@ add_interval_ratio <- function(type = c("interval", "ratio"), units,
   if (is.null(unit_precision)) {
     warning(interval_error_message, call. = FALSE)
   } else {
+    if (!is.na(unit_precision)) { 
     interval_ratio$precision <- unit_precision
+    }
   }
   
   if (type == "interval") {
