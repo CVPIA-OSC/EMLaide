@@ -1,5 +1,5 @@
 ---
-title: "Include Multiple Datasets in EML Doc"
+title: "Handle Special Case Datasets"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{Dataset-Element}

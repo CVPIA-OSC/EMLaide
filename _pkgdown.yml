@@ -56,9 +56,9 @@ navbar:
     menu: 
       - text: 'Metadata Template Documentation'
         href: articles/template-doc.html
-      - text: 'Create EML Doc from Template'
+      - text: 'Create EML Document from Template'
         href: articles/creating-EML.html
-      - text: 'Include Multiple Datasets in EML Doc'
+      - text: 'Handle Special Case Datasets'
         href: articles/Dataset-Element.html
       - text: 'EML Custom Units'
         href: articles/custom-units.html

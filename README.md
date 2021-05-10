@@ -18,7 +18,7 @@ A working template and additional guides can be found under the 'Articles' tab. 
 Articles: 
 
 * **[Metadata Template Documentation](https://cvpia-osc.github.io/EMLaide/articles/template-doc.html)** - Instructions for using our [template materials](https://cvpia-data-stewardship.s3-us-west-1.amazonaws.com/metadata+template.zip) to create inputs for our functions to generate an EML document. 
-* **[Create EML Doc from Template](https://cvpia-osc.github.io/EMLaide/articles/creating-EML.html)** - Step by step instructions of how to generate a full EML document for an [example dataset](https://cvpia-data-stewardship.s3-us-west-1.amazonaws.com/hannon-example.zip). 
+* **[Create EML Document from Template](https://cvpia-osc.github.io/EMLaide/articles/creating-EML.html)** - Step by step instructions of how to generate a full EML document for an [example dataset](https://cvpia-data-stewardship.s3-us-west-1.amazonaws.com/hannon-example.zip). 
 * **[Handle Special Case Datasets](https://cvpia-osc.github.io/EMLaide/articles/Dataset-Element.html)** - How to add multiple datasets to one EML document and how to add non tabular data to an EML document. 
 * **[EML Custon Units](https://cvpia-osc.github.io/EMLaide/articles/custom-units.html)** - How to add custom units to an EML document. 
 
