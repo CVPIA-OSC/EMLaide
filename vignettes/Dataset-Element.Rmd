@@ -129,7 +129,6 @@ This `data_table` list can now be added in as `dataTable = data_tables` in the d
 
 ## Diffrent types of datasets
 
-## Loading in Data 
 ```{r,eval = FALSE, warning=F, include=FALSE}
 excel_path <- system.file("extdata", "Hannon-Example", "example-metadata.xlsx", 
                           package = "EMLaide", mustWork = TRUE)
