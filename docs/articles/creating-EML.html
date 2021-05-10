@@ -232,7 +232,7 @@
 <div id="keyword-set" class="section level3">
 <h3 class="hasAnchor">
 <a href="#keyword-set" class="anchor"></a>Keyword Set</h3>
-<p>The next item we will append is the keyword set. We can use the <code>add_keyword_set</code> function to do so. The keyword set should include a list of words that help identify your project or connect it with other similar projects. If you add keywords from a controlled vocabulary please see the detailed instructions on <a href="https://cvpia-osc.github.io/EMLaide//articles/Inital-Metadata-Information.html">initial metadata information</a>.</p>
+<p>The next item we will append is the keyword set. We can use the <code>add_keyword_set</code> function to do so. The keyword set should include a list of words that help identify your project or connect it with other similar projects.</p>
 <div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">keywords</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/add_keyword_set.html">add_keyword_set</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span><span class="op">)</span>, <span class="va">metadata</span><span class="op">$</span><span class="va">keyword_set</span><span class="op">[</span>,<span class="fl">1</span><span class="op">]</span><span class="op">)</span></code></pre></div>
 </div>
@@ -246,7 +246,7 @@
 <div id="license-and-intellectual-rights" class="section level3">
 <h3 class="hasAnchor">
 <a href="#license-and-intellectual-rights" class="anchor"></a>License and Intellectual Rights</h3>
-<p>Following the abstract, we will append the license and intellectual rights information. The <code>add_license</code> function allows you to append the licensing and usage information to your file. If you are not adding a CC0 or CCBY default license please see <a href="https://cvpia-osc.github.io/EMLaide//articles/Inital-Metadata-Information.html">initial metadata information</a> This information can be added to the “license” tab in the excel file “example-metadata.xlsx”.</p>
+<p>Following the abstract, we will append the license and intellectual rights information. The <code>add_license</code> function allows you to append the licensing and usage information to your file. Information can be added to the “license” tab in the excel file “example-metadata.xlsx”.</p>
 <div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">license</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/add_license.html">add_license</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span><span class="op">)</span>, default_license <span class="op">=</span> <span class="va">metadata</span><span class="op">$</span><span class="va">license</span><span class="op">$</span><span class="va">default_license</span><span class="op">)</span></code></pre></div>
 </div>
