@@ -1,5 +1,6 @@
 ---
 title: "Metadata Template Documentation"
+# output: pdf_document
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{Metadata Template Documentation}
@@ -69,7 +70,8 @@ for each dataset associated with the project.
 
 All other information will be inputted into metadata.xlsx. Each section
 below corresponds to a sheet of the xlsx document. Columns that are gray
-are optional but every other column must be filled out. Some columns
+are optional and columns that are blue are conditionally required
+but every other column must be filled out. Some columns
 contain drop down menus of acceptable values. In these columns you must
 input one of the predefined options listed in the dropdown menu.
 
@@ -84,11 +86,12 @@ labeled for each data table to the abstract and methods documents.
 In the dataset sheet you will provide information on the name and type
 of dataset. If the type of your dataset is not tabular or vector contact
 the acting CVPIA data managers and we will help you prepare the
-metadata.
+metadata. Columns that are white are required and columns that are blue are conditionally 
+required.
 
 * **name** - Name of the dataset you are submitting
 * **type** - Type of data (tabular, vector, raster)
-* **geometry** - (**Required only if the dataset is type vector)** EML schema accepts eight geometry values: Point, LineString, LinearRing, Polygon, Multipoint, MultiLineString, MultiPolygon, MultiGeometry.
+* **geometry (conditionally required)** - **Required only if the dataset is type vector** EML schema accepts eight geometry values: Point, LineString, LinearRing, Polygon, Multipoint, MultiLineString, MultiPolygon, MultiGeometry.
 
 
 ### Spatial Data 
@@ -149,7 +152,7 @@ different research efforts. If you choose not to use one of the
 controlled vocabularies linked to below, leave keywordThesaurus blank.
 
 * **keyword** - The keyword
-* **keywordThesaurus** (conditionally required) - **Required only when keyword is from a controlled vocabulary.** A string identifying the controlled vocabulary the keywords originate from, do not include if keywords are not from a controlled vocabulary
+* **keywordThesaurus (conditionally required)** - **Required only when keyword is from a controlled vocabulary.** A string identifying the controlled vocabulary the keywords originate from, do not include if keywords are not from a controlled vocabulary
 
 In order to promote consistency, please search the following resources
 for keywords:
@@ -176,7 +179,7 @@ If neither of these two licenses fit the intellectual right associated
 with the dataset you must provide information for all of the conditionally 
 required columns:
 
-* **default\license** - Select the default license if applicable to your project. 
+* **default\_license** - Select the default license if applicable to your project. 
 * **license\_name (conditionally required)** - The official name of the license that applies to the data and metadata
 * **license\_url (conditionally required)** - The persistent URL for the license
 * **license\_identifier (conditionally required)** - The official identifier for the license, which should be drawn from the SPDX license list, or a similar well-known license registry
@@ -325,7 +328,7 @@ required depending on the type of measurement scale:
 * **attriubute\_name** - Name of the attribute as it appears in the dataset
 * **attribute\_definition**- A precise and complete definition of the attribute being documented
 * **measurement\_scale**- The type of scale from which values are drawn for the attribute (allowed values and additional details see [[Measurement Scales]{.underline}](#measurement-scales) section)
-* **attribute\_label (optionally)** -  A descriptive label that can be used to display the name of an attribute. 
+* **attribute\_label (optional)** -  A descriptive label that can be used to display the name of an attribute. 
 * **domain** -  Please select a domain from the dropdown. Domain options vary depending on measurment\_scale. See the measurement\_scale sections below to see which domains are appropriate for each measurement\_scale. 
 * **type (conditionally required)** - Required for measurement\_scale: *Ratio*, *Interval*. See the measurement\_scale sections on *Ratio* and *Interval* for additional information. 
 * **units (conditionally required)** - Required for measurement\_scale: *Ratio*, *Interval*. See the measurement\_scale sections on *Ratio* and *Interval* for additional information. 

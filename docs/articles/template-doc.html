@@ -124,19 +124,19 @@
 <div id="metadata-workbook" class="section level1">
 <h1 class="hasAnchor">
 <a href="#metadata-workbook" class="anchor"></a>Metadata Workbook</h1>
-<p>All other information will be inputted into metadata.xlsx. Each section below corresponds to a sheet of the xlsx document. Columns that are gray are optional but every other column must be filled out. Some columns contain drop down menus of acceptable values. In these columns you must input one of the predefined options listed in the dropdown menu.</p>
+<p>All other information will be inputted into metadata.xlsx. Each section below corresponds to a sheet of the xlsx document. Columns that are gray are optional and columns that are blue are conditionally required but every other column must be filled out. Some columns contain drop down menus of acceptable values. In these columns you must input one of the predefined options listed in the dropdown menu.</p>
 <p>If multiple data tables are associated with your project, fill out a different metadata.xlsx for each data table. If methodology or abstract differ between the data tables, you can add subsections with headers labeled for each data table to the abstract and methods documents.</p>
 <div id="dataset" class="section level2">
 <h2 class="hasAnchor">
 <a href="#dataset" class="anchor"></a>Dataset</h2>
-<p>In the dataset sheet you will provide information on the name and type of dataset. If the type of your dataset is not tabular or vector contact the acting CVPIA data managers and we will help you prepare the metadata.</p>
+<p>In the dataset sheet you will provide information on the name and type of dataset. If the type of your dataset is not tabular or vector contact the acting CVPIA data managers and we will help you prepare the metadata. Columns that are white are required and columns that are blue are conditionally required.</p>
 <ul>
 <li>
 <strong>name</strong> - Name of the dataset you are submitting</li>
 <li>
 <strong>type</strong> - Type of data (tabular, vector, raster)</li>
 <li>
-<strong>geometry</strong> - (<strong>Required only if the dataset is type vector)</strong> EML schema accepts eight geometry values: Point, LineString, LinearRing, Polygon, Multipoint, MultiLineString, MultiPolygon, MultiGeometry.</li>
+<strong>geometry (conditionally required)</strong> - <strong>Required only if the dataset is type vector</strong> EML schema accepts eight geometry values: Point, LineString, LinearRing, Polygon, Multipoint, MultiLineString, MultiPolygon, MultiGeometry.</li>
 </ul>
 <div id="spatial-data" class="section level3">
 <h3 class="hasAnchor">
@@ -212,7 +212,8 @@
 <p><a href="https://creativecommons.org/licenses/by/4.0/">CC BY</a> - Attribution required</p>
 <p>If neither of these two licenses fit the intellectual right associated with the dataset you must provide information for all of the conditionally required columns:</p>
 <ul>
-<li>**default* - Select the default license if applicable to your project.</li>
+<li>
+<strong>default_license</strong> - Select the default license if applicable to your project.</li>
 <li>
 <strong>license_name (conditionally required)</strong> - The official name of the license that applies to the data and metadata</li>
 <li>
