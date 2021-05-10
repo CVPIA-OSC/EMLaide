@@ -14,8 +14,8 @@ home:
     href: http://cvpia.scienceintegrationteam.com/
     
 reference:
-- title: EML EDI Functions
-  desc: Functions for building EML metadata for EDI's data repository.
+- title: EML Element Functions
+  desc: Functions for building EML metadata documents.
   contents:
   - add_access
   - add_pub_date
@@ -34,6 +34,13 @@ reference:
   - add_physical
   - add_data_table
   - add_raster
+- title: EDI
+  desc: Functions for interacting with EDI's data repository
+  contents:
+  - reserve_edi_id
+  - evaluate_edi_package
+  - upload_edi_package
+  - update_edi_package
 - title: Helper Data
   desc: Internal data for convenience.
   contents:
@@ -56,12 +63,10 @@ navbar:
     menu: 
       - text: 'Metadata Template Documentation'
         href: articles/template-doc.html
-      - text: 'EML Template Helper'
+      - text: 'Create EML Document from Template'
         href: articles/creating-EML.html
-      - text: 'EML Dataset Section'
+      - text: 'Handle Special Case Datasets'
         href: articles/Dataset-Element.html
-      - text: 'EML Custom Inputs to Inital Sections'
-        href: articles/Inital-Metadata-Information.html
       - text: 'EML Custom Units'
         href: articles/custom-units.html
 repo:

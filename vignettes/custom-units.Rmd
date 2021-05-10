@@ -1,8 +1,8 @@
 ---
-title: "Custom Units"
+title: "EML Custom Units"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{custom-units}
+  %\VignetteIndexEntry{EML Custom Units}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---

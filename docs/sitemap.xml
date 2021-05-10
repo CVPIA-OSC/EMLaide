@@ -73,16 +73,28 @@
     <loc>https://CVPIA-OSC.github.io/EMLaide//reference/CVPIA_funders.html</loc>
   </url>
   <url>
+    <loc>https://CVPIA-OSC.github.io/EMLaide//reference/evaluate_edi_package.html</loc>
+  </url>
+  <url>
     <loc>https://CVPIA-OSC.github.io/EMLaide//reference/measurement_scale.html</loc>
   </url>
   <url>
     <loc>https://CVPIA-OSC.github.io/EMLaide//reference/number_type.html</loc>
   </url>
   <url>
+    <loc>https://CVPIA-OSC.github.io/EMLaide//reference/reserve_edi_id.html</loc>
+  </url>
+  <url>
     <loc>https://CVPIA-OSC.github.io/EMLaide//reference/standard_units.html</loc>
   </url>
   <url>
     <loc>https://CVPIA-OSC.github.io/EMLaide//reference/storage_type.html</loc>
+  </url>
+  <url>
+    <loc>https://CVPIA-OSC.github.io/EMLaide//reference/update_edi_package.html</loc>
+  </url>
+  <url>
+    <loc>https://CVPIA-OSC.github.io/EMLaide//reference/upload_edi_package.html</loc>
   </url>
   <url>
     <loc>https://CVPIA-OSC.github.io/EMLaide//reference/word_example.html</loc>
