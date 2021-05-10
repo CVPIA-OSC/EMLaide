@@ -179,9 +179,7 @@ title <- add_title(list(), title = metadata$title$title,
 ### Keyword Set 
 The next item we will append is the keyword set. We can use the `add_keyword_set` 
 function to do so. The keyword set should include a list of words that help 
-identify your project or connect it with other similar projects. If you add keywords
-from a controlled vocabulary please see the detailed instructions on 
-[initial metadata information](https://cvpia-osc.github.io/EMLaide//articles/Inital-Metadata-Information.html).
+identify your project or connect it with other similar projects. 
 
 ```{r}
 keywords <- add_keyword_set(list(), metadata$keyword_set[,1])
@@ -201,7 +199,7 @@ abstract <- add_abstract(list(), abstract = abstract_docx)
 ### License and Intellectual Rights
 Following the abstract, we will append the license and intellectual rights information. 
 The `add_license` function allows you to append the licensing and usage information 
-to your file. If you are not adding a CC0 or CCBY default license please see [initial metadata information](https://cvpia-osc.github.io/EMLaide//articles/Inital-Metadata-Information.html) This information can be added to the 
+to your file. Information can be added to the 
 "license" tab in the excel file "example-metadata.xlsx".
 
 ```{r}
