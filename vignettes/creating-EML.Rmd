@@ -314,7 +314,7 @@ column in the dataTable must have a described attribute to match EDI congruence 
 
 #### Enumerated vs. Non Enumerated Attributes
 * Enumerated - If you are using a "nominal" or "ordinal" attribute which is "enumerated", (it has a specific code definition), you must also fill out the tab "code_definitions". The `code_helper()` function below helps adding `codeDefinitions` to the "enumerated" attributes. 
-* Non Enumberated - For Non Enumerated attributes the definition required by EML is simply the `attribute_defintion` given in the spreadsheet. 
+* Non Enumerated - For Non Enumerated attributes the definition required by EML is simply the `attribute_defintion` given in the spreadsheet. 
 
 ```{r}
 # Create helper function to add code definitions if domain is "enumerated"
@@ -354,7 +354,6 @@ adds_attribute <- function(attribute_name, attribute_definition, storage_type,
 }
 # Maps through entire attribute sheet adding to attribute_list
 attribute_list$attribute <- purrr::pmap(metadata$attribute, adds_attribute) 
-attribute_list <- purrr::map(attribute_list, na.omit)
 ```
 If your dataset contains units that are not part of the EML schema you may add them as custom units. To do so please see the vignette on [custom units.](https://cvpia-osc.github.io/EMLaide//articles/custom-units.html) 
 

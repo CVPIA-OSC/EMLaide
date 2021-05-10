@@ -342,7 +342,7 @@
 <a href="#enumerated-vs--non-enumerated-attributes" class="anchor"></a>Enumerated vs. Non Enumerated Attributes</h4>
 <ul>
 <li>Enumerated - If you are using a “nominal” or “ordinal” attribute which is “enumerated”, (it has a specific code definition), you must also fill out the tab “code_definitions”. The <code>code_helper()</code> function below helps adding <code>codeDefinitions</code> to the “enumerated” attributes.</li>
-<li>Non Enumberated - For Non Enumerated attributes the definition required by EML is simply the <code>attribute_defintion</code> given in the spreadsheet.</li>
+<li>Non Enumerated - For Non Enumerated attributes the definition required by EML is simply the <code>attribute_defintion</code> given in the spreadsheet.</li>
 </ul>
 <div class="sourceCode" id="cb21"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># Create helper function to add code definitions if domain is "enumerated"</span>
@@ -381,8 +381,7 @@
                                  attribute_label <span class="op">=</span> <span class="va">attribute_label</span><span class="op">)</span>
 <span class="op">}</span>
 <span class="co"># Maps through entire attribute sheet adding to attribute_list</span>
-<span class="va">attribute_list</span><span class="op">$</span><span class="va">attribute</span> <span class="op">&lt;-</span> <span class="fu">purrr</span><span class="fu">::</span><span class="fu"><a href="https://purrr.tidyverse.org/reference/map2.html">pmap</a></span><span class="op">(</span><span class="va">metadata</span><span class="op">$</span><span class="va">attribute</span>, <span class="va">adds_attribute</span><span class="op">)</span> 
-<span class="va">attribute_list</span> <span class="op">&lt;-</span> <span class="fu">purrr</span><span class="fu">::</span><span class="fu"><a href="https://purrr.tidyverse.org/reference/map.html">map</a></span><span class="op">(</span><span class="va">attribute_list</span>, <span class="va">na.omit</span><span class="op">)</span></code></pre></div>
+<span class="va">attribute_list</span><span class="op">$</span><span class="va">attribute</span> <span class="op">&lt;-</span> <span class="fu">purrr</span><span class="fu">::</span><span class="fu"><a href="https://purrr.tidyverse.org/reference/map2.html">pmap</a></span><span class="op">(</span><span class="va">metadata</span><span class="op">$</span><span class="va">attribute</span>, <span class="va">adds_attribute</span><span class="op">)</span> </code></pre></div>
 <p>If your dataset contains units that are not part of the EML schema you may add them as custom units. To do so please see the vignette on <a href="https://cvpia-osc.github.io/EMLaide//articles/custom-units.html">custom units.</a></p>
 </div>
 <div id="putting-the-data-table-together" class="section level4">
