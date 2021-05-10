@@ -2,7 +2,7 @@
 title: "Handle Special Case Datasets"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{Dataset-Element}
+  %\VignetteIndexEntry{Handle Special Case Datasets}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
@@ -18,7 +18,7 @@ library(readxl)
 library(EML)
 ```
 
-# Dataset Element 
+# Handle Special Case Datasets
 This document explains how to add multiple datasets to one EML document and how to 
 add non tabular data to an EML document. This document will not explain how to create a complete valid EML document to upload to the EDI repository. Please use this article just for the dataset section of the EML document and refer to [the EML template helper](https://cvpia-osc.github.io/EMLaide//articles/creating-EML.html) to generate the entire document. 
 

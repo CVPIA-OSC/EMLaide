@@ -2,7 +2,7 @@
 title: "Create EML Document from Template"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{Creating EML Using EMLaide}
+  %\VignetteIndexEntry{Create EML Document from Template}
   %\VignetteEngine{knitr::rmarkdown}
   \usepackage[utf8]{inputenc}
 ---
