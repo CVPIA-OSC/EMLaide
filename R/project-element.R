@@ -98,11 +98,11 @@ add_project <- function(parent_element, project_title,
                                        individualName = "Please provide a name for the project personnel.",
                                        organization = "Please provide an organization for the project personnel.")
 
-    stop(requirment_error_message, call. = FALSE)
+    warning(requirment_error_message, call. = FALSE)
   }
   project_personnel$role <- "Project Lead"
   parent_element$project <- list(title = project_title,
-                                 personnel = project_personnel,
-                                 award = award_information)
+                                 personnel = project_personnel)
+  parent_element$project$award <- award_information
   return(parent_element)
 }

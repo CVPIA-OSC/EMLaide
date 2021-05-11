@@ -28,7 +28,7 @@
 
 add_funding <- function(funder_name, award_title, funder_identifier = NULL, 
                         award_number = NULL, award_url = NULL, funding_description = NULL)  {
-  
+  parent_element <- list()
   award <- list()
   required_arguments <- c("funder_name", "award_title", "funder_identifier", 
                           "award_number", "award_url", "funding_description")
