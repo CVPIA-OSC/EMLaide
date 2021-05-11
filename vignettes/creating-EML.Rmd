@@ -387,6 +387,7 @@ dataset <- list(title = title$title,
                 intellectualRights = license$intellectualRights,
                 licensed = license$licensed,
                 methods = methods,
+                project = project$project, 
                 maintenance = maintenance$maintenance,
                 dataTable = dataTable) 
 ```
