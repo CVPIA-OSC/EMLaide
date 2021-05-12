@@ -27,12 +27,10 @@
 #'               organization = 'IBM')
 #' @export
 create_person <- function(role, first_name, last_name, email, organization, orcid = NULL) {
-  
   required_arguments <- c("first_name", "last_name", "email", "role", "organization")
   missing_argument_index <- which(c(missing(first_name), missing(last_name), 
-                                missing(email), missing(role), 
-                                missing(organization)))
-  
+                                    missing(email), missing(role), 
+                                    missing(organization)))
   if (length(missing_argument_index) > 0) {
     person_error <- required_arguments[missing_argument_index][1]
     person_error_message <- switch(person_error,
@@ -43,38 +41,37 @@ create_person <- function(role, first_name, last_name, email, organization, orci
                                    organization = "Please supply the name of the organization employing the personnel")
     stop(person_error_message, call. = FALSE)
   } 
-  
   person <- list(individualName = list(givenName = first_name, 
                                        surName = last_name),
                  electronicMailAddress = email, 
                  organizationName = organization)
-  
-  if(!is.null(orcid)) {
+  if(!is.null(orcid) && !is.na(orcid)) {
     person$'@id' <- orcid 
   }
-  
   if(role != 'creator') {
     person$role <- role
   }
-  
   return(person)
-  
 }
-
 #' Add personnel
 #' @param parent_element A list representing the EML project or dataset
 #' @param personnel_metadata A list or dataframe of personnel information see \code{\link{create_person}}
 #' @export
 add_personnel <- function(parent_element, personnel_metadata) {
-  
-  for (row in seq_along(personnel_metadata)) {
-    if (personnel_metadata[row, 'role'] == 'creator') {
-      parent_element$creator <- create_person(personnel_metadata[row, ])
-      parent_element$contact <- create_person(personnel_metadata[row, ])
-    }
-    else {
-      parent_element$associatedParty <- list(parent_element$associatedParty, create_person(personnel_metadata[row, ]))
-    }
-  }
+  creator <- dplyr::filter(personnel_metadata, role == 'creator')
+  associatedParties <- dplyr::filter(personnel_metadata, role != 'creator')
+  parent_element$creator <- create_person(role = creator$role,
+                                          first_name = creator$first_name,
+                                          last_name = creator$last_name,
+                                          email = creator$email,
+                                          organization = creator$organization,
+                                          orcid = creator$orcid)
+  parent_element$contact <- create_person(role = creator$role,
+                                          first_name = creator$first_name,
+                                          last_name = creator$last_name,
+                                          email = creator$email,
+                                          organization = creator$organization,
+                                          orcid = NULL)
+  parent_element$associatedParty <- purrr::pmap(associatedParties, create_person) %>% flatten()
   return(parent_element)
 }

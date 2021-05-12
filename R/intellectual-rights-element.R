@@ -1,6 +1,5 @@
-#' Add License and Intellectual Rights
+#' Create License and Intellectual Rights
 #' @description Adds the intellectual rights information of a dataset based off of EML standards.
-#' @param parent_element A list representing the EML project or dataset.
 #' @param default_license Use "CCO" or "CCBY" as argument value to use one of the 
 #' CVPIA default licenses. Supply NULL if using another license.
 #' @param license_name Optional if using default_license = "CCO" or "CCBY" as 
@@ -33,11 +32,11 @@
 #' @return The project or dataset list with the intellectual rights appended.
 #' 
 #' @examples 
-#' add_license(parent_element = list()) # defaults to CCO
+#' create_license() # defaults to CCO
 #' 
-#' add_license(parent_element = list(), default_license = "CCBY")
+#' create_license(default_license = "CCBY")
 #' 
-#' add_license(parent_element = list(), default_license = NULL, 
+#' create_license(default_license = NULL, 
 #'            license_name = "Creative Commons Attribution Non Commercial Share Alike 4.0 International", 
 #'            license_url = "https://spdx.org/licenses/CC-BY-NC-SA-4.0.html", 
 #'            license_identifier = "CC-BY-NC-SA-4.0", 
@@ -65,13 +64,14 @@
 #'            distribute your contributions on this same license. Thank you.&#13;")
 #' 
 #' @export
-add_license <- function(parent_element, default_license = c("CCO", "CCBY"), 
-                        license_name = NULL, license_url = NULL, 
-                        license_identifier = NULL, intellectual_rights_descripiton = NULL) {
+
+create_license <- function(default_license = c("CCO", "CCBY"), 
+                           license_name = NULL, license_url = NULL, 
+                           license_identifier = NULL, intellectual_rights_descripiton = NULL) {
   
   default_license <- match.arg(default_license)
   
-  if (!is.null(license_name)) {
+  if (!is.null(license_name) && !is.na(license_name)) {
     
       required_arguments <- c("license_url", "license_identifier", "intellectual_rights_descripiton")
       missing_argument_index <- which(c(missing(license_url), missing(license_identifier), 
@@ -87,25 +87,47 @@ add_license <- function(parent_element, default_license = c("CCO", "CCBY"),
         stop(ir_error_message, call. = FALSE)
     }
     
-    parent_element$intellectualRights <- list(para = intellectual_rights_descripiton)
-    parent_element$licensed <- list(licenseName = license_name, 
+    intellectualRights <- list(para = intellectual_rights_descripiton)
+    licensed <- list(licenseName = license_name, 
                                     url = license_url,
                                     identifier = license_identifier)
   } else {
     if (default_license == "CCO") {
-      parent_element$intellectualRights <- list(para = "This data package is released to the \"public domain\" under Creative Commons CC0 1.0 \"No Rights Reserved\" (see: https://creativecommons.org/publicdomain/zero/1.0/). It is considered professional etiquette to provide attribution of the original work if this data package is shared in whole or by individual components. A generic citation is provided for this data package on the website https://portal.edirepository.org (herein \"website\") in the summary metadata page. Communication (and collaboration) with the creators of this data package is recommended to prevent duplicate research or publication. This data package (and its components) is made available \"as is\" and with no warranty of accuracy or fitness for use. The creators of this data package and the website shall not be liable for any damages resulting from misinterpretation or misuse of the data package or its components. Periodic updates of this data package may be available from the website. Thank you.")
-      parent_element$licensed <- list(licenseName = "Creative Commons Zero v1.0 Universal", 
+      intellectualRights <- list(para = "This data package is released to the \"public domain\" under Creative Commons CC0 1.0 \"No Rights Reserved\" (see: https://creativecommons.org/publicdomain/zero/1.0/). It is considered professional etiquette to provide attribution of the original work if this data package is shared in whole or by individual components. A generic citation is provided for this data package on the website https://portal.edirepository.org (herein \"website\") in the summary metadata page. Communication (and collaboration) with the creators of this data package is recommended to prevent duplicate research or publication. This data package (and its components) is made available \"as is\" and with no warranty of accuracy or fitness for use. The creators of this data package and the website shall not be liable for any damages resulting from misinterpretation or misuse of the data package or its components. Periodic updates of this data package may be available from the website. Thank you.")
+      licensed <- list(licenseName = "Creative Commons Zero v1.0 Universal", 
                                       url = "https://spdx.org/licenses/CC0-1.0.html",
                                       identifier = "CC0-1.0")
     }
     
     if (default_license == "CCBY") {
-      parent_element$intellectualRights <- list(para = "This information is released under the Creative Commons license - Attribution - CC BY (https://creativecommons.org/licenses/by/4.0/). The consumer of these data (\"Data User\" herein) is required to cite it appropriately in any publication that results from its use. The Data User should realize that these data may be actively used by others for ongoing research and that coordination may be necessary to prevent duplicate publication. The Data User is urged to contact the authors of these data if any questions about methodology or results occur. Where appropriate, the Data User is encouraged to consider collaboration or co-authorship with the authors. The Data User should realize that misinterpretation of data may occur if used out of context of the original study. While substantial efforts are made to ensure the accuracy of data and associated documentation, complete accuracy of data sets cannot be guaranteed. All data are made available \"as is.\" The Data User should be aware, however, that data are updated periodically and it is the responsibility of the Data User to check for new versions of the data. The data authors and the repository where these data were obtained shall not be liable for damages resulting from any use or misinterpretation of the data. Thank you.")
-      parent_element$licensed <- list(licenseName = "Creative Commons Attribution 4.0 International", 
+      intellectualRights <- list(para = "This information is released under the Creative Commons license - Attribution - CC BY (https://creativecommons.org/licenses/by/4.0/). The consumer of these data (\"Data User\" herein) is required to cite it appropriately in any publication that results from its use. The Data User should realize that these data may be actively used by others for ongoing research and that coordination may be necessary to prevent duplicate publication. The Data User is urged to contact the authors of these data if any questions about methodology or results occur. Where appropriate, the Data User is encouraged to consider collaboration or co-authorship with the authors. The Data User should realize that misinterpretation of data may occur if used out of context of the original study. While substantial efforts are made to ensure the accuracy of data and associated documentation, complete accuracy of data sets cannot be guaranteed. All data are made available \"as is.\" The Data User should be aware, however, that data are updated periodically and it is the responsibility of the Data User to check for new versions of the data. The data authors and the repository where these data were obtained shall not be liable for damages resulting from any use or misinterpretation of the data. Thank you.")
+      licensed <- list(licenseName = "Creative Commons Attribution 4.0 International", 
                                       url = "https://spdx.org/licenses/CC-BY-4.0.html",
                                       identifier = "CC-BY-4.0")
     }
   }
   
+  return(list(intellectualRights = intellectualRights, licensed = licensed))
+}
+
+#' Add License
+#' @param parent_element A list representing the EML project or dataset.
+#' @param license_metadata A table or list containing license metadata: see \code{\link{create_license}} 
+#' @examples 
+#' license_metadata = list(default_license = "CCBY")
+#' dataset <- list() %>%
+#'     add_license(license_metadata)
+#' 
+#' @export
+
+add_license <- function(parent_element, license_metadata) {
+  license_list <- create_license(default_license = license_metadata$default_license,
+                                 license_name = license_metadata$license_name, 
+                                 license_url = license_metadata$license_url, 
+                                 license_identifier = license_metadata$license_identifier, 
+                                 intellectual_rights_descripiton = license_metadata$intellectual_rights_description)
+  parent_element$intellectualRights <- license_list$intellectualRights
+  parent_element$licensed <- license_list$licensed
+
   return(parent_element)
 }

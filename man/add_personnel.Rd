@@ -2,53 +2,15 @@
 % Please edit documentation in R/personnel-element.R
 \name{add_personnel}
 \alias{add_personnel}
-\title{Add Personnel Element}
+\title{Add personnel}
 \usage{
-add_personnel(
-  parent_element,
-  first_name,
-  last_name,
-  email,
-  role,
-  organization,
-  orcid = NULL
-)
+add_personnel(parent_element, personnel_metadata)
 }
 \arguments{
 \item{parent_element}{A list representing the EML project or dataset}
 
-\item{first_name}{Person's given name}
-
-\item{last_name}{Person's surname}
-
-\item{email}{Person's email address}
-
-\item{role}{Use "creator" if you are one of the primary originators of the data.
-Other possible roles "Data Manager", "Field Technician", or "Assistant Researcher".
-There can be multiple personnel on a project with the same role.}
-
-\item{organization}{Person's employer or the entity they are associated
-with for this dataset or project}
-
-\item{orcid}{(Optional) ORCID iD is a persistent digital identifier for researchers,
-register at \url{http://orcid.org/}}
+\item{personnel_metadata}{A list or dataframe of personnel information see \code{\link{create_person}}}
 }
 \description{
-Adds personel according to EML standards
-}
-\examples{
-add_personnel(parent_element = list(),
-              first_name = 'Katherine', 
-              last_name = "Johnson", 
-              email = 'kjohnson@nasa.gov', 
-              role = 'creator', 
-              organization = 'NASA',
-              orcid = '12345')
-
-add_personnel(parent_element = list(), 
-              first_name = "Edith", 
-              last_name = "Windsor", 
-              email = 'ewindsor@ibm.com', 
-              role = 'Data Manager', 
-              organization = 'IBM')
+Add personnel
 }

@@ -30,12 +30,12 @@ add_method <- function(parent_element,
     stop('Please provide the document of which your methods information resides.', call. = FALSE)
   }
   
-  parent_element <- EML::set_methods(methods_file = methods_file,
-                                     instrumentation = instrumentation,
-                                     software = software,
-                                     sampling_file = sampling_file,
-                                     sampling_coverage = sampling_coverage,
-                                     sampling_citation = sampling_citation,
-                                     qualityControl_file = qualityControl_file)
+  parent_element$methods <- EML::set_methods(methods_file = methods_file,
+                                             instrumentation = instrumentation,
+                                             software = software,
+                                             sampling_file = sampling_file,
+                                             sampling_coverage = sampling_coverage,
+                                             sampling_citation = sampling_citation,
+                                             qualityControl_file = qualityControl_file)
   return(parent_element)
 }

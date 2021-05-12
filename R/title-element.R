@@ -43,6 +43,6 @@ create_title <- function(title, short_name) {
 add_title <- function(parent_element, title_metadata) {
   title_list <- create_title(title = title_metadata$title, short_name = title_metadata$short_name)
   parent_element$title <- title_list$title
-  parent_element$short_name <- title_list$short_name
+  parent_element$shortName <- title_list$short_name
   return(parent_element)
 }
