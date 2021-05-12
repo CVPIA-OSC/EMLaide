@@ -70,8 +70,7 @@
 #'                  end_date = "2010-12-31", 
 #'                  taxonomic_coverage = taxonomic_coverage)
 #' @export
-
-add_taxonomic_coverage <- function(CVPIA_common_species = NULL,
+create_taxonomic_coverage <- function(CVPIA_common_species = NULL,
                                    kingdom = "kingdom", kingdom_value,
                                    phylum = "phylum", phylum_value,
                                    class = "class", class_value,
@@ -156,4 +155,16 @@ add_taxonomic_coverage <- function(CVPIA_common_species = NULL,
             taxonId = taxon_id)
   }
   return(taxonomicCoverage)
+}
+
+#' Add Taxonomic Coverage
+#' @param parent_element A list representing the EML project or dataset.
+#' @param taxonomic_metadata see \code{\link{create_taxonomic_coverage}} 
+#' @export
+add_taxonomic_coverage <- function(parent_element, taxonomic_metadata){
+  if(is.null(taxonomic_metadata)) {
+    return(NULL)
+  }
+  purrr::pmap(taxonomic_metadata, create_taxonomic_coverage) %>% flatten()
+  
 }

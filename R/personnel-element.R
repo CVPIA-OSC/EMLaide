@@ -1,6 +1,5 @@
 #' Add Personnel Element
 #' @description Adds personel according to EML standards
-#' @param parent_element A list representing the EML project or dataset
 #' @param role Use "creator" if you are one of the primary originators of the data. 
 #' Other possible roles "Data Manager", "Field Technician", or "Assistant Researcher". 
 #' There can be multiple personnel on a project with the same role.
@@ -27,8 +26,7 @@
 #'               role = 'Data Manager', 
 #'               organization = 'IBM')
 #' @export
-add_personnel <- function(parent_element, first_name, last_name, email, 
-                          role, organization, orcid = NULL) {
+create_person <- function(role, first_name, last_name, email, organization, orcid = NULL) {
   
   required_arguments <- c("first_name", "last_name", "email", "role", "organization")
   missing_argument_index <- which(c(missing(first_name), missing(last_name), 
@@ -51,27 +49,32 @@ add_personnel <- function(parent_element, first_name, last_name, email,
                  electronicMailAddress = email, 
                  organizationName = organization)
   
-  if (tolower(role) == "creator") {
-    parent_element$contact <- person
-    if (!is.null(orcid)) {
-      if (!is.na(orcid)) {
-        person$'@id' <- orcid 
-      }
-   }
-    if (is.null(parent_element$creator)) {
-      parent_element$creator <- person
-    } else {
-      parent_element$creator <- list(parent_element$creator, person)
-    }
-  } else {
-    person$role <- role
-    if (is.null(parent_element$associatedParty)) {
-      parent_element$associatedParty <- person
-    } else {
-      parent_element$associatedParty <- list(parent_element$associatedParty, person)
-    }
+  if(!is.null(orcid)) {
+    person$'@id' <- orcid 
   }
   
-  return(parent_element)
+  if(role != 'creator') {
+    person$role <- role
+  }
   
+  return(person)
+  
+}
+
+#' Add personnel
+#' @param parent_element A list representing the EML project or dataset
+#' @param personnel_metadata A list or dataframe of personnel information see \code{\link{create_person}}
+#' @export
+add_personnel <- function(parent_element, personnel_metadata) {
+  
+  for (row in seq_along(personnel_metadata)) {
+    if (personnel_metadata[row, 'role'] == 'creator') {
+      parent_element$creator <- create_person(personnel_metadata[row, ])
+      parent_element$contact <- create_person(personnel_metadata[row, ])
+    }
+    else {
+      parent_element$associatedParty <- list(parent_element$associatedParty, create_person(personnel_metadata[row, ]))
+    }
+  }
+  return(parent_element)
 }
