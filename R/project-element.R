@@ -1,108 +1,55 @@
-#' @title Add project element 
-#' @description This function creates a project node within the parent element that 
-#' contains all the required elements for the project section of an EML document.
-#' This function can be used in combination with \code{add_personnel}
-#' and \code{add_funding}. \code{add_personnel} can be used to generate the \code{project_personnel} 
-#' input and \code{add_funding} can be used to generate the \code{award_information} input.  
-#' @param parent_element A list in which the project node should be nested in. 
-#' @param project_title The title of the project that the funding is awarded to. 
-#' @param award_information A list that includes the required funding information 
-#' for an EML document.This list must include the award title and the funderName.
-#' This list can be created by calling the \code{add_funding} function 
-#' on the funding information or by manually inputting the required information. 
-#' If the list is written manually it must be formatted as follows. 
-#'
-#' \code{award_infomation = list(funderName = "Name", title = "Award Title")}
-#'
-#' Additional information about the funding may be added to the list. See the 
-#' \code{\link{add_funding}} documentation for more information. 
-#'                         
-#' @param project_personnel A list that includes the required information on project 
-#' personnel for an EML document. It must include the first name, last name, 
-#' organization, and personnel role for this project. This list can be created 
-#' by calling the \code{add_personnel} function on the project personnel or by manually inputting the required
-#' information. If the list is written manually it must be formatted as follows. 
-#'
-#' \code{project_personnel = list(individualName = list(givenName = "First Name", surName = "Last Name"),
-#' role = "Position", organization = "Organization")}
-#'
-#' Additional information about the project personnel may be added to the list. See the 
-#' \code{\link{add_personnel}} documentation for more information.
-#' 
-#' @return This function returns the parent element with a new project node containing 
+#' @title Create project element 
+#' @description This function creates a project element from metadata inputs using  \code{add_personnel}
+#' and \code{add_funding}.  
+#' @param project_metadata A list or datatable describing the project, this should 
+#' include a \code{project_title} and information on a \code{project_personnel} if project personnel differs from other personnel, see See structure of personnel information 
+#' by looking at required inputs of \code{\link{create_person}}
+#' @param personnel_metadata A named list or datatable describing the personnel. See structure by looking at required inputs of \code{\link{create_person}}
+#' @param funding_metadata A named list or datatable describing the project funding. See structure by looking at required inputs of \code{\link{create_funding}}
+#' @return This function returns project element containing 
 #' all project information required for an EML document. 
-#' @examples
-#' add_project(parent_element = list(), 
-#'             project_title = "my project title", 
-#'             award_information = add_funding(funder_name = "Bank",
-#'                                             funder_identifier = "Funder 1",
-#'                                             award_number = "000",
-#'                                             award_title = "Money up for grabs",
-#'                                             award_url = "awardforme.com"),
-#'             project_personnel = add_personnel(parent_element = list(),
-#'                                               first_name = "Smithy",
-#'                                               last_name = "Smith",
-#'                                               email = "myemail@mail.gov",
-#'                                               role = "Manager",
-#'                                               organization = "US GOV"))
-#'                                               
-#' add_project(parent_element = list(), 
-#'             project_title = "my project title", 
-#'             award_information = list(funderName = "Bank",
-#'                                      funderIdentifier = "Funder 1",
-#'                                      awardNumber = "000",
-#'                                      title = "Money up for grabs",
-#'                                      awardUrl = "awardforme.com"),
-#'             project_personnel = list(individualName = list(givenName = "Smithy",
-#'                                                            surName = "Smith"),
-#'                                      electronicMailAddress = "myemail@mail.gov",
-#'                                      role = "Manager",
-#'                                      organizationName = "US GOV"))
 #' 
 #' @export                                                                          
 
-add_project <- function(parent_element, project_title, 
-                        award_information, project_personnel) {
+create_project <- function(project_metadata, personnel_metadata, funding_metadata) {
+  project_title <- project_metadata$project_title
+  award_information <- create_funding(funder_name = funding_metadata$funder_name, 
+                                      award_title = funding_metadata$award_title, 
+                                      funder_identifier = funding_metadata$funder_identifier, 
+                                      award_number = funding_metadata$award_number, 
+                                      award_url = funding_metadata$award_url, 
+                                      funding_description = funding_metadata$funding_description)
   
-  required_arguments <- c("project_title", "award_infomration", "project_personnel")
-  
-  missing_argument_index <- which(c(missing(project_title), missing(award_information),
-                                    missing(project_personnel)))
-  
-  if (length(missing_argument_index) > 0) {
-    project_error <- required_arguments[missing_argument_index][1]
-    project_error_message <- switch(project_error, 
-                                    project_title = "Please provide the project title",
-                                    award_infomration = "Please provide the award information.",
-                                    project_personnel = "Please provide the project personnel")
-    
-    stop(project_error_message, call. = FALSE)
+  if (!is.na(project_metadata$first_name)) {
+    creator <- dplyr::filter(personnel_metadata, role == 'creator')
+    project_personnel <- create_person(role = "Project Lead",
+                                       first_name = creator$first_name,
+                                       last_name = creator$last_name,
+                                       email = creator$email,
+                                       organization = creator$organization,
+                                       orcid = NULL)
   }
-  required_information <- c("funderName", "title", "individualName", "organization",
-                            "role")
-  
-  null_required_information <- which(c(is.null(award_information$funderName), 
-                                       is.null(award_information$title),
-                                       (is.null(project_personnel$individualName) & 
-                                          is.null(project_personnel$associatedParty$individualName) &
-                                          is.null(project_personnel$creator$individualName)),
-                                       (is.null(project_personnel$organization) & 
-                                          is.null(project_personnel$associatedParty$organization) &
-                                          is.null(project_personnel$creator$organization))))
-  
-  if (length(null_required_information) > 0) {
-    missing_requirment_error <- required_information[null_required_information][1]
-    requirment_error_message <- switch(missing_requirment_error, 
-                                       funderName = "Please provide a list that includes the funderName.",
-                                       title = "Please provide a list that includes the title for this award.",
-                                       individualName = "Please provide a name for the project personnel.",
-                                       organization = "Please provide an organization for the project personnel.")
+  else {
+    project_personnel <- create_person(role = project_metadata$role,
+                                       first_name = project_metadata$first_name,
+                                       last_name = project_metadata$last_name,
+                                       email = project_metadata$email,
+                                       organization = project_metadata$organization,
+                                       orcid = NULL)
+  }
+  project <- list(title = project_title,
+                  personnel = project_personnel,
+                  award = award_information)
+}
+#' Add Project 
+#' @param parent_element A list representing the EML project or dataset.
+#' @param project_metadata see \code{\link{create_project}} 
+#' @param personnel_metadata see \code{\link{create_project}}
+#' @param funding_metadata see \code{\link{create_project}}
+#' 
+#' @export
 
-    stop(requirment_error_message, call. = FALSE)
-  }
-  project_personnel$role <- "Project Lead"
-  parent_element$project <- list(title = project_title,
-                                 personnel = project_personnel,
-                                 award = award_information)
+add_project <- function(parent_element, project_metadata, personnel_metadata, funding_metadata) {
+  parent_element$project <- create_project(project_metadata, personnel_metadata, funding_metadata)
   return(parent_element)
 }

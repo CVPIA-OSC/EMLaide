@@ -53,6 +53,7 @@ create_person <- function(role, first_name, last_name, email, organization, orci
   }
   return(person)
 }
+
 #' Add personnel
 #' @param parent_element A list representing the EML project or dataset
 #' @param personnel_metadata A list or dataframe of personnel information see \code{\link{create_person}}
@@ -72,6 +73,7 @@ add_personnel <- function(parent_element, personnel_metadata) {
                                           email = creator$email,
                                           organization = creator$organization,
                                           orcid = NULL)
-  parent_element$associatedParty <- purrr::pmap(associatedParties, create_person) %>% flatten()
+  
+  parent_element$associatedParty <- purrr::pmap(associatedParties, create_person) 
   return(parent_element)
 }
