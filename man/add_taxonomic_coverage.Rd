@@ -4,11 +4,9 @@
 \alias{add_taxonomic_coverage}
 \title{Add Taxonomic Coverage}
 \usage{
-add_taxonomic_coverage(parent_element, taxonomic_metadata)
+add_taxonomic_coverage(taxonomic_metadata)
 }
 \arguments{
-\item{parent_element}{A list representing the EML project or dataset.}
-
 \item{taxonomic_metadata}{see \code{\link{create_taxonomic_coverage}}}
 }
 \description{

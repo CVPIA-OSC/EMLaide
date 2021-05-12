@@ -158,13 +158,12 @@ create_taxonomic_coverage <- function(CVPIA_common_species = NULL,
 }
 
 #' Add Taxonomic Coverage
-#' @param parent_element A list representing the EML project or dataset.
 #' @param taxonomic_metadata see \code{\link{create_taxonomic_coverage}} 
 #' @export
-add_taxonomic_coverage <- function(parent_element, taxonomic_metadata){
+add_taxonomic_coverage <- function(taxonomic_metadata){
   if(is.null(taxonomic_metadata)) {
     return(NULL)
   }
-  purrr::pmap(taxonomic_metadata, create_taxonomic_coverage) %>% flatten()
+  purrr::pmap(taxonomic_metadata, create_taxonomic_coverage)
   
 }
