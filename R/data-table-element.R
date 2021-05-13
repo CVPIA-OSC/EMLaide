@@ -1,96 +1,78 @@
-#' @title Add Data Table 
-#' @description Adds the data table elements according to EML standards. 
-#' @param parent_element A list representing the EML project or dataset.
-#' @param alternate_identifier Optional. Provide when a dataset or project belongs 
-#' to more than the contributing organization. Please include each additional 
-#' individual ID with its own alternate_identifier.
-#' @param entity_name The name of the table, file, or database table. Often 
-#' thought of as the original ascii file name. 
-#' @param entity_description A longer, more descriptive explanation of the data in the entity. 
-#' @param physical A description of the physical format of the entity.
-#' This includes it file name, authentication code, and data format. Further information
-#' can be seen at \code{\link{add_physical}} . 
-#' @param attribute_list Describes all variables in a data entity in individual 
-#' attribute elements. These descriptions include the name and definition of each 
-#' attribute, its domain, definition of coded values, and other pertinent information. 
-#' It is further explained and can be appended with the \code{\link{add_attribute}} function.
+#' @title Create Data Table 
+#' @description Creates the data table elements according to EML standards. 
+#' @param filename Name of the file you would like added to the datatable element
+#' @param attribute_info File path to the attribute sheet that contains metadata on attributes for your file
+#' @param datatable_description Short description of contents of datatable you are adding 
+#' @param datatable_url The URL to the datatable you are adding
+#' @param dataset_methods Optional if there are methods that are specific to a datatable
+#' @param additional_info Option if there is additional metadata information that is important to the datatable 
 #' @param methods A set of information of the specific methods used to collect
 #' information in this entity.  
-#' @param number_of_records Optional. A count of the number of records in the data table. 
-#' @return the project or dataset list with a data table appended
+#' @return A data table element listed in a formate to be added to a dataset element and turned into EML 
 #' @examples
-#' attribute_1 <- add_attribute(attribute_name = "site_id",
-#'                              attribute_definition = "Site id as used in sites table",
-#'                              storage_type = EMLaide::storage_type$integer,
-#'                              measurement_scale = EMLaide::measurement_scale$nominal,
-#'                              domain = "text",
-#'                              definition = "Site id as used in sites table.")
-#' attribute_2 <- add_attribute(attribute_name = "LatitudeDD", 
-#'                              attribute_definition = "Latitude",
-#'                              storage_type = EMLaide::storage_type$string,
-#'                              measurement_scale = EMLaide::measurement_scale$ordinal,
-#'                              domain = "text", 
-#'                              definition = "Latitude")
-#' attribute_list <- list(attribute_1, attribute_2)
-#' physical <- add_physical(file_path = "User/data/example.csv",
-#'                          data_url = "https://mydata.org/etc")
-#' method <- add_method(parent_element = method_list, 
-#'                      methods_file = word_example("methods-template.docx"))
-#' add_data_table(parent_element = list(), 
-#'                entity_name = "692_EML_IncubationByDepth_SoilCO2Fluxes.csv",
-#'                entity_description = "Soil CO2 Fluxes 2013-2014", 
-#'                physical = physical, 
-#'                attribute_list = attribute_list, 
-#'                methods = method,
-#'                number_of_records = "1")
+#' 
 #' @export
-add_data_table <- function(parent_element, entity_name, entity_description, 
-                           physical, attribute_list, methods = NULL,
-                           number_of_records = NULL, alternate_identifier = NULL) {
+create_data_table <- function(filename, 
+                              attribute_info, 
+                              datatable_description, 
+                              datatable_url = NULL, 
+                              dataset_methods = NULL, 
+                              additional_info = NULL){
   
-  required_arguments <- c("entity_name", "entity_description", 
-                          "physical", "attribute_list")
-  missing_argument_index <- which(c(missing(entity_name), missing(entity_description),
-                                    missing(physical), missing(attribute_list)))
+  attribute_table <- readxl::read_xlsx(attribute_info, sheet = "attribute")
+  codes <- readxl::read_xlsx(attribute_info, sheet = "code_definitions")
+  attribute_list <- list()
+  attribute_names <- unique(codes$attribute_name)
   
-  if (length(missing_argument_index) > 0) {
-    missing <- required_arguments[missing_argument_index][1]
-    error_message <- switch(missing,
-                            entity_name = "Please provide an entity name i.e. a file name, name of database table, etc.",
-                            entity_description = "Please provide a brief description of the entity and its contents.",
-                            physical = "Please provide a full description of the full format of the physical element of your entity using the add_physical function.",
-                            attribute_list = "Please provide a list of attributes which were used in this data table.")
-    stop(error_message, call. = FALSE)
+  # Code helper function 
+  code_helper <- function(code, definitions) {
+    codeDefinition <- list(code = code, definition = definitions)
   }
-  
-  data_table <- list(entityName = entity_name,
-                     entityDescription = entity_description,
-                     physical = physical,
-                     attributeList = attribute_list)
-  
-
-  if (is.null(number_of_records)) {
-    message('The number of records was not provided.')
-  } else {
-    data_table$numberOfRecords <- number_of_records
+  # Attribute helper function to input into pmap
+  attributes_and_codes <- function(attribute_name, attribute_definition, storage_type, 
+                                   measurement_scale, domain, type, units, unit_precision, 
+                                   number_type, date_time_format, date_time_precision, minimum, maximum, 
+                                   attribute_label){
+    if (domain %in% "enumerated") { 
+      definition <- list()
+      current_codes <- codes[codes$attribute_name == attribute_name, ]
+      definition$codeDefinition <- purrr::pmap(current_codes %>% select(-attribute_name), code_helper) 
+    } else {
+      definition = attribute_definition
+    }
+    new_attribute <- add_attribute(attribute_name = attribute_name, attribute_definition = attribute_definition,
+                                   storage_type = storage_type, measurement_scale = measurement_scale, 
+                                   domain = domain, definition = definition, type = type, units = units, 
+                                   unit_precision = unit_precision, number_type = number_type, 
+                                   date_time_format = date_time_format, date_time_precision = date_time_precision, 
+                                   minimum = minimum, maximum = maximum, attribute_label = attribute_label)
   }
+  attribute_list$attribute <- purrr::pmap(attribute_table, attributes_and_codes)
   
-  if (is.null(alternate_identifier)) {
-    message('An alternate identifier was not provided.')
-  } else {
-    data_table$alternateIdentifier <- alternate_identifier
-  }
-  
-  if (is.null(methods)) {
-    message('No method of data collection was provided.')
-  } else {
-    data_table <- append(data_table, methods)
-  }
-  
-  if (is.null(parent_element$dataTable)) {
-    parent_element$dataTable <- data_table 
-  } else {
-    parent_element$dataTable <- list(parent_element$dataTable, data_table)
-  }
+  physical <- add_physical(file_path = filename, data_url = datatable_url)
+  dataTable <- list(entityName = filename,
+                                 entityDescription = datatable_description,
+                                 physical = physical,
+                                 attributeList = attribute_list,
+                                 numberOfRecords = nrow(read_csv(file_name)))
+  return(dataTable)
+}
+#' Add Data Table 
+#' @param parent_element A list representing the EML project or dataset.
+#' @param datatable_metadata A named list or dataframe containing datatable elements: see \code{\link{create_data_table}} 
+#' 
+#' @export
+#' datatable_metadata <- dplyr::tibble(filename =  c("enclosure-study-growth-rate-data.csv", "enclosure-study-gut-contents-data.csv"), 
+#'                                     attribute_info = c("enclosure-study-growth-rates-metadata.xlsx","enclosure-study-gut-contents-metadata.xlsx"),
+#'                                     datatable_description = c("Growth Rates - Enclosure Study","Gut Contents - Enclosure Study"),
+#'                                     datatable_url = c("https://raw.githubusercontent.com/FlowWest/CVPIA_Salmonid_Habitat_Monitoring/make-xml/data/enclosure-study-growth-rate-data.csv?token=AMGEQ7R4E5RMNKRMD57BBQTAOSW6W",
+#'                                                      "https://raw.githubusercontent.com/FlowWest/CVPIA_Salmonid_Habitat_Monitoring/make-xml/data/enclosure-study-gut-contents-data.csv?token=AMGEQ7VJADFEYARKPUM4AYTAOSXAQ"))
+#' 
+#' dataset <- list() %>%
+#'     add_data_table(datatable_metadata)
+#' 
+add_data_table <- function(parent_element, datatable_metadata) {
+  data_tables <- purrr::pmap(datatable_metadata, create_data_table) 
+  parent_element$dataTable <- data_tables
   return(parent_element)
 }

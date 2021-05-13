@@ -6,17 +6,17 @@
 \usage{
 add_project(
   parent_element,
-  project_metadata,
-  personnel_metadata,
+  title_metadata,
+  project_personnel_metadata,
   funding_metadata
 )
 }
 \arguments{
 \item{parent_element}{A list representing the EML project or dataset.}
 
-\item{project_metadata}{see \code{\link{create_project}}}
+\item{title_metadata}{see \code{\link{create_project}}}
 
-\item{personnel_metadata}{see \code{\link{create_project}}}
+\item{project_personnel_metadata}{see \code{\link{create_project}}}
 
 \item{funding_metadata}{see \code{\link{create_project}}}
 }

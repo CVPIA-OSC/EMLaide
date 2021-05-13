@@ -11,20 +11,18 @@
 #' @param orcid (Optional) ORCID iD is a persistent digital identifier for researchers,
 #' register at \url{http://orcid.org/}
 #' @examples 
-#' add_personnel(parent_element = list(),
-#'               first_name = 'Katherine', 
-#'               last_name = "Johnson", 
-#'               email = 'kjohnson@nasa.gov', 
-#'               role = 'creator', 
-#'               organization = 'NASA',
-#'               orcid = '12345')
+#' create_personnel(first_name = 'Katherine', 
+#'                  last_name = "Johnson", 
+#'                  email = 'kjohnson@nasa.gov', 
+#'                  role = 'creator', 
+#'                  organization = 'NASA',
+#'                  orcid = '12345')
 #' 
-#' add_personnel(parent_element = list(), 
-#'               first_name = "Edith", 
-#'               last_name = "Windsor", 
-#'               email = 'ewindsor@ibm.com', 
-#'               role = 'Data Manager', 
-#'               organization = 'IBM')
+#' create_personnel(first_name = "Edith", 
+#'                  last_name = "Windsor", 
+#'                  email = 'ewindsor@ibm.com', 
+#'                  role = 'Data Manager', 
+#'                  organization = 'IBM')
 #' @export
 create_person <- function(role, first_name, last_name, email, organization, orcid = NULL) {
   required_arguments <- c("first_name", "last_name", "email", "role", "organization")
@@ -57,6 +55,11 @@ create_person <- function(role, first_name, last_name, email, organization, orci
 #' Add personnel
 #' @param parent_element A list representing the EML project or dataset
 #' @param personnel_metadata A list or dataframe of personnel information see \code{\link{create_person}}
+#' @example 
+#' personnel_metadata <- list(first_name = "Stacy", last_name = "Banet", email = "Stacy@aol.com", 
+#'                            role = "creator", organization = "USBR")
+#' dataset <- list() %>%
+#'    add_person(personnel_metadata)
 #' @export
 add_personnel <- function(parent_element, personnel_metadata) {
   creator <- dplyr::filter(personnel_metadata, role == 'creator')

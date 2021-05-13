@@ -1,6 +1,5 @@
-#' Add Keyword Set Element
-#' @description Adds keyword set according to EML standards.
-#' @param parent_element A list representing the EML project or dataset.
+#' Creates Keyword Set Element
+#' @description Creates keyword set according to EML standards.
 #' @param keyword_set A keyword set or list of keyword sets.
 #' @details A keyword set is a list with two elements: 
 #' \enumerate{
@@ -24,29 +23,44 @@
 #' \href{https://geonames.usgs.gov/apex/f?p=138:1:5668294677959}{U.S. Board on Geographic Names} - 
 #' USGS place names dictionary.
 #' 
-#' @return The project or dataset list with the keyword set appended.
+#' @return The keyword list.
 #' @examples 
-#' add_keyword_set(parent_element = list(), 
-#'                 keyword_set = list(keyword = list('stream discharge', 'discharge'), 
+#' create_keyword_set(keyword_set = list(keyword = list('stream discharge', 'discharge'), 
 #'                                    keywordThesaurus = 'LTER Controlled Vocabulary'))
 #'                                    
-#' add_keyword_set(parent_element = list(), 
-#'                 keyword_set = list(list(keyword = list('stream discharge', 'discharge'), 
+#' create_keyword_set(keyword_set = list(list(keyword = list('stream discharge', 'discharge'), 
 #'                                         keywordThesaurus = 'LTER Controlled Vocabulary'),
 #'                                    list(keyword = list('Sacramento River'))))                                    
 #' @export
-add_keyword_set <- function(parent_element, keyword_set) {
-  
+create_keyword_set <- function(keyword_set) {
+  keywords <- list()
   if (length(keyword_set) < 1) {
     warning("Please supply at least one keyword")
   }
+  keywords <- keyword_set
   
-  if (is.null(parent_element$keywordSet)) {
-    parent_element$keywordSet <- keyword_set
+  return(keywords)
+}
+#' Add Keywords
+#' @param parent_element A list representing the EML project or dataset.
+#' @param keyword_metadata A named list or dataframe containing keyword elements: see \code{\link{create_keywords}} 
+#' 
+#' @export
+#' 
+add_keyword_set <- function(parent_element, keyword_metadata) {
+  unique_thesaurus <- unique(keyword_metadata$keywordThesaurus)
+  if (is.na(unique_thesaurus)) {
+    keywords <- create_keyword_set(keyword_metadata$keyword)
+    parent_element$keywordSet <- keywords
   } else {
-    parent_element$keywordSet <- list(parent_element$keywordSet, keyword_set)
+    keywords <- list()
+    add_keywords = function(unique_thesaurus){
+      keywords <- add_keyword_set(keywords, 
+                                  keyword_set = list(keyword = keyword_metadata$keyword[keyword_metadata$keywordThesaurus == unique_thesaurus],
+                                                     keywordThesaurus = unique_thesaurus))
+    }
+    parent_element$keywordSet <- purrr::map(unique_thesaurus, add_keywords) %>% flatten()
   }
-  
   return(parent_element)
   
 }

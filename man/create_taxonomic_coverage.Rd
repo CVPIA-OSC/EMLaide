@@ -2,7 +2,7 @@
 % Please edit documentation in R/taxonomic-coverage-element.R
 \name{create_taxonomic_coverage}
 \alias{create_taxonomic_coverage}
-\title{Add Taxonomic Coverage}
+\title{Create Taxonomic Coverage}
 \usage{
 create_taxonomic_coverage(
   CVPIA_common_species = NULL,
@@ -93,15 +93,15 @@ full coverage information.
 \examples{
 taxonomic_coverage <- add_taxonomic_coverage(CVPIA_common_species = "chinook")
 
-taxonomic_coverage <- add_taxonomic_coverage(CVPIA_common_species = "delta_smelt")
+taxonomic_coverage <- create_taxonomic_coverage(CVPIA_common_species = "delta_smelt")
 
-taxonomic_coverage <- add_taxonomic_coverage(CVPIA_common_species = "white_sturgeon")
+taxonomic_coverage <- create_taxonomic_coverage(CVPIA_common_species = "white_sturgeon")
 
-taxonomic_coverage <- add_taxonomic_coverage(CVPIA_common_species = "green_sturgeon")
+taxonomic_coverage <- create_taxonomic_coverage(CVPIA_common_species = "green_sturgeon")
 
-taxonomic_coverage <- add_taxonomic_coverage(CVPIA_common_species = "steelhead")
+taxonomic_coverage <- create_taxonomic_coverage(CVPIA_common_species = "steelhead")
 
-taxonomic_coverage <- add_taxonomic_coverage(kingdom_value = "Animalia",
+taxonomic_coverage <- create_taxonomic_coverage(kingdom_value = "Animalia",
                        phylum_value = "Chordata",
                        class_value = "Mammalia",
                        order_value = "Carnivora",
@@ -112,7 +112,7 @@ taxonomic_coverage <- add_taxonomic_coverage(kingdom_value = "Animalia",
                        taxon_id = "183803")   
                                             
 # To append this information to the dataset or project:                        
-    add_coverage(parent_element = list(), geographic_description = "Description",
+    create_coverage(parent_element = list(), geographic_description = "Description",
                  west_bounding_coordinate = "-160.594000", 
                  east_bounding_coordinate = "-134.104800",
                  north_bounding_coordinate = "71.238300", 

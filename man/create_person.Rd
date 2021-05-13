@@ -27,18 +27,16 @@ register at \url{http://orcid.org/}}
 Adds personel according to EML standards
 }
 \examples{
-add_personnel(parent_element = list(),
-              first_name = 'Katherine', 
-              last_name = "Johnson", 
-              email = 'kjohnson@nasa.gov', 
-              role = 'creator', 
-              organization = 'NASA',
-              orcid = '12345')
+create_personnel(first_name = 'Katherine', 
+                 last_name = "Johnson", 
+                 email = 'kjohnson@nasa.gov', 
+                 role = 'creator', 
+                 organization = 'NASA',
+                 orcid = '12345')
 
-add_personnel(parent_element = list(), 
-              first_name = "Edith", 
-              last_name = "Windsor", 
-              email = 'ewindsor@ibm.com', 
-              role = 'Data Manager', 
-              organization = 'IBM')
+create_personnel(first_name = "Edith", 
+                 last_name = "Windsor", 
+                 email = 'ewindsor@ibm.com', 
+                 role = 'Data Manager', 
+                 organization = 'IBM')
 }

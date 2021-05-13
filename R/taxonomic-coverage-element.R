@@ -1,4 +1,4 @@
-#' @title Add Taxonomic Coverage 
+#' @title Create Taxonomic Coverage 
 #' @description Adds the taxonomic coverage information of a dataset based off of 
 #' EML standards. The addition of taxonomic coverage is optional, however defaults 
 #' of chinook, sturgeon, smelt, and steelhead are provided. While single or 
@@ -42,15 +42,15 @@
 #' @examples 
 #' taxonomic_coverage <- add_taxonomic_coverage(CVPIA_common_species = "chinook")
 #' 
-#' taxonomic_coverage <- add_taxonomic_coverage(CVPIA_common_species = "delta_smelt")
+#' taxonomic_coverage <- create_taxonomic_coverage(CVPIA_common_species = "delta_smelt")
 #' 
-#' taxonomic_coverage <- add_taxonomic_coverage(CVPIA_common_species = "white_sturgeon")
+#' taxonomic_coverage <- create_taxonomic_coverage(CVPIA_common_species = "white_sturgeon")
 #' 
-#' taxonomic_coverage <- add_taxonomic_coverage(CVPIA_common_species = "green_sturgeon")
+#' taxonomic_coverage <- create_taxonomic_coverage(CVPIA_common_species = "green_sturgeon")
 #' 
-#' taxonomic_coverage <- add_taxonomic_coverage(CVPIA_common_species = "steelhead")
+#' taxonomic_coverage <- create_taxonomic_coverage(CVPIA_common_species = "steelhead")
 #' 
-#' taxonomic_coverage <- add_taxonomic_coverage(kingdom_value = "Animalia",
+#' taxonomic_coverage <- create_taxonomic_coverage(kingdom_value = "Animalia",
 #'                        phylum_value = "Chordata",
 #'                        class_value = "Mammalia",
 #'                        order_value = "Carnivora",
@@ -61,7 +61,7 @@
 #'                        taxon_id = "183803")   
 #'                                             
 #' # To append this information to the dataset or project:                        
-#'     add_coverage(parent_element = list(), geographic_description = "Description",
+#'     create_coverage(parent_element = list(), geographic_description = "Description",
 #'                  west_bounding_coordinate = "-160.594000", 
 #'                  east_bounding_coordinate = "-134.104800",
 #'                  north_bounding_coordinate = "71.238300", 
@@ -159,6 +159,14 @@ create_taxonomic_coverage <- function(CVPIA_common_species = NULL,
 
 #' Add Taxonomic Coverage
 #' @param taxonomic_metadata see \code{\link{create_taxonomic_coverage}} 
+#' 
+#' @example  
+#' taxonomic_metadata <- list(CVPIA_common_species = c("chinook", "steelhead"), common_name = c(NA, ), 
+#'                            kingdom = c(NA, NA), phylum = c(NA, NA), class = c(NA, NA), 
+#'                            order = c(NA, NA), family = c(NA, NA), genus = c(NA, NA), species = c(NA, NA), 
+#'                            taxon_id = c(NA, NA))
+#'                            
+#' add_taxonomic_coverage(taxonomic_metadata)
 #' @export
 add_taxonomic_coverage <- function(taxonomic_metadata){
   if(is.null(taxonomic_metadata)) {

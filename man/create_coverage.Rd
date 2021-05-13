@@ -2,7 +2,7 @@
 % Please edit documentation in R/coverage-element.R
 \name{create_coverage}
 \alias{create_coverage}
-\title{Add Coverage Element}
+\title{Create Coverage Element}
 \usage{
 create_coverage(
   geographic_description,
@@ -40,13 +40,13 @@ of how to append this information using the add_taxonomic_coverage
 function is given down below.}
 }
 \value{
-The dataset or project with coverage information appended.
+A project element that can be appended to a dataset.
 }
 \description{
 Adds the coverage information of a dataset based off of EML standards.
 }
 \examples{
-add_coverage(parent_element = list(), geographic_description = "North Slope
+create_coverage(geographic_description = "North Slope
              drainage basin: Bounding box encompasses 42 drainage basins
              totaling the North Slope drainage basin, Alaska, USA.",
              west_bounding_coordinate = "-160.594000",
@@ -57,7 +57,7 @@ add_coverage(parent_element = list(), geographic_description = "North Slope
              end_date = "2010-12-31")
              
 taxonomic_coverage <- add_taxonomic_coverage(CVPIA_common_species = "chinook")
-add_coverage(parent_element = list(), geographic_description = "Description",
+create_coverage(geographic_description = "Description",
              west_bounding_coordinate = "-160.594000", 
              east_bounding_coordinate = "-134.104800",
              north_bounding_coordinate = "71.238300", 
@@ -70,7 +70,7 @@ add_coverage(parent_element = list(), geographic_description = "Description",
 chinook <- add_taxonomic_coverage(CVPIA_common_species = "chinook")
 delta <- add_taxonomic_coverage(CVPIA_common_species = "delta_smelt")
 taxonomic_coverage <- list(chinook, delta)
-add_coverage(parent_element = list(), geographic_description = "Description",
+create_coverage(geographic_description = "Description",
              west_bounding_coordinate = "-160.594000", 
              east_bounding_coordinate = "-134.104800",
              north_bounding_coordinate = "71.238300", 

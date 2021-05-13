@@ -13,10 +13,14 @@ add_coverage(parent_element, coverage_metadata, taxonomic_metadata = NULL)
 
 \item{taxonomic_metadata}{a list or datatable of taxonomic metadata see \code{\link{create_taxonomic_coverage}}}
 }
+\value{
+The dataset or project with coverage information appended.
+}
 \description{
 Add Coverage
 }
 \examples{
+
 coverage <- list(geographic_description = "Description",
              west_bounding_coordinate = "-160.594000", 
              east_bounding_coordinate = "-134.104800",

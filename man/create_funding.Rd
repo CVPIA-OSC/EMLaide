@@ -42,11 +42,11 @@ This award element is then nested within a project node to complete a funding se
 }
 \examples{
 create_funding(funder_name = "National Science Foundation",
-            funder_identifier = "http://dx.doi.org/10.13039/100000001",
-            award_number = "1656026",
-            award_title = "National Science Foundation Grant",
-            award_url = "https://www.nsf.gov/awardsearch/showAward?AWD_ID=1656026",
-            funding_description = "BLE LTER is supported by the National Science 
-                                   Foundation under award #1656026 
-                                   (2017-08-01 to 2022-07-31)." )
+               funder_identifier = "http://dx.doi.org/10.13039/100000001",
+               award_number = "1656026",
+               award_title = "National Science Foundation Grant",
+               award_url = "https://www.nsf.gov/awardsearch/showAward?AWD_ID=1656026",
+               funding_description = "BLE LTER is supported by the National Science 
+                                     Foundation under award #1656026 
+                                      (2017-08-01 to 2022-07-31)." )
 }

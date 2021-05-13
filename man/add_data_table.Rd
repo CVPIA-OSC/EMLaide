@@ -4,72 +4,13 @@
 \alias{add_data_table}
 \title{Add Data Table}
 \usage{
-add_data_table(
-  parent_element,
-  entity_name,
-  entity_description,
-  physical,
-  attribute_list,
-  methods = NULL,
-  number_of_records = NULL,
-  alternate_identifier = NULL
-)
+add_data_table(parent_element, datatable_metadata)
 }
 \arguments{
 \item{parent_element}{A list representing the EML project or dataset.}
 
-\item{entity_name}{The name of the table, file, or database table. Often
-thought of as the original ascii file name.}
-
-\item{entity_description}{A longer, more descriptive explanation of the data in the entity.}
-
-\item{physical}{A description of the physical format of the entity.
-This includes it file name, authentication code, and data format. Further information
-can be seen at \code{\link{add_physical}} .}
-
-\item{attribute_list}{Describes all variables in a data entity in individual
-attribute elements. These descriptions include the name and definition of each
-attribute, its domain, definition of coded values, and other pertinent information.
-It is further explained and can be appended with the \code{\link{add_attribute}} function.}
-
-\item{methods}{A set of information of the specific methods used to collect
-information in this entity.}
-
-\item{number_of_records}{Optional. A count of the number of records in the data table.}
-
-\item{alternate_identifier}{Optional. Provide when a dataset or project belongs
-to more than the contributing organization. Please include each additional
-individual ID with its own alternate_identifier.}
-}
-\value{
-the project or dataset list with a data table appended
+\item{datatable_metadata}{A named list or dataframe containing datatable elements: see \code{\link{create_data_table}}}
 }
 \description{
-Adds the data table elements according to EML standards.
-}
-\examples{
-attribute_1 <- add_attribute(attribute_name = "site_id",
-                             attribute_definition = "Site id as used in sites table",
-                             storage_type = EMLaide::storage_type$integer,
-                             measurement_scale = EMLaide::measurement_scale$nominal,
-                             domain = "text",
-                             definition = "Site id as used in sites table.")
-attribute_2 <- add_attribute(attribute_name = "LatitudeDD", 
-                             attribute_definition = "Latitude",
-                             storage_type = EMLaide::storage_type$string,
-                             measurement_scale = EMLaide::measurement_scale$ordinal,
-                             domain = "text", 
-                             definition = "Latitude")
-attribute_list <- list(attribute_1, attribute_2)
-physical <- add_physical(file_path = "User/data/example.csv",
-                         data_url = "https://mydata.org/etc")
-method <- add_method(parent_element = method_list, 
-                     methods_file = word_example("methods-template.docx"))
-add_data_table(parent_element = list(), 
-               entity_name = "692_EML_IncubationByDepth_SoilCO2Fluxes.csv",
-               entity_description = "Soil CO2 Fluxes 2013-2014", 
-               physical = physical, 
-               attribute_list = attribute_list, 
-               methods = method,
-               number_of_records = "1")
+Add Data Table
 }

@@ -1,4 +1,4 @@
-#' @title Add Coverage Element
+#' @title Create Coverage Element
 #' @description Adds the coverage information of a dataset based off of EML standards.
 #' @param geographic_description A description of the locations	of research sites
 #' and areas related to the data.
@@ -15,9 +15,9 @@
 #' and mandates the input of the taxonomy levels of kingdom-species. An example 
 #' of how to append this information using the add_taxonomic_coverage
 #' function is given down below.  
-#' @return The dataset or project with coverage information appended.
+#' @return A project element that can be appended to a dataset.
 #' @examples 
-#' add_coverage(parent_element = list(), geographic_description = "North Slope
+#' create_coverage(geographic_description = "North Slope
 #'              drainage basin: Bounding box encompasses 42 drainage basins
 #'              totaling the North Slope drainage basin, Alaska, USA.",
 #'              west_bounding_coordinate = "-160.594000",
@@ -28,7 +28,7 @@
 #'              end_date = "2010-12-31")
 #'              
 #' taxonomic_coverage <- add_taxonomic_coverage(CVPIA_common_species = "chinook")
-#' add_coverage(parent_element = list(), geographic_description = "Description",
+#' create_coverage(geographic_description = "Description",
 #'              west_bounding_coordinate = "-160.594000", 
 #'              east_bounding_coordinate = "-134.104800",
 #'              north_bounding_coordinate = "71.238300", 
@@ -41,7 +41,7 @@
 #' chinook <- add_taxonomic_coverage(CVPIA_common_species = "chinook")
 #' delta <- add_taxonomic_coverage(CVPIA_common_species = "delta_smelt")
 #' taxonomic_coverage <- list(chinook, delta)
-#' add_coverage(parent_element = list(), geographic_description = "Description",
+#' create_coverage(geographic_description = "Description",
 #'              west_bounding_coordinate = "-160.594000", 
 #'              east_bounding_coordinate = "-134.104800",
 #'              north_bounding_coordinate = "71.238300", 
@@ -100,7 +100,9 @@ create_coverage <- function(geographic_description, west_bounding_coordinate,
 #' @param parent_element A list representing the EML project or dataset.
 #' @param coverage_metadata a list or datatable of coverage metadata see \code{\link{create_coverage}} 
 #' @param taxonomic_metadata a list or datatable of taxonomic metadata see \code{\link{create_taxonomic_coverage}} 
+#' @return The dataset or project with coverage information appended.
 #' @examples 
+#' 
 #' coverage <- list(geographic_description = "Description",
 #'              west_bounding_coordinate = "-160.594000", 
 #'              east_bounding_coordinate = "-134.104800",
