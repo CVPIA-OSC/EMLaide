@@ -2,7 +2,7 @@
 % Please edit documentation in R/publication-date-element.R
 \name{add_pub_date}
 \alias{add_pub_date}
-\title{Add Publication Date}
+\title{Add Abstract}
 \usage{
 add_pub_date(parent_element, date = NULL)
 }
@@ -10,18 +10,8 @@ add_pub_date(parent_element, date = NULL)
 \item{parent_element}{A list representing the EML project or dataset.}
 
 \item{date}{The publication date. If left null, it will be assigned the current
-date. This can be overriden by putting in a specific date.}
-}
-\value{
-The dataset or project with the publication date appended.
+date. This can be overriden by putting in a specific date: see \code{\link{create_pub_date}}}
 }
 \description{
-Adds publication date according to EML standards.
-}
-\examples{
-add_pub_date(parent_element = list(),
-             date = "2020-08-19")
-             
-# Appends current date:              
-add_pub_date(parent_element = list()) 
+Add Abstract
 }
