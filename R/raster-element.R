@@ -1,6 +1,6 @@
-#'
-#' @title Add Raster Element
-#' @description This function adds all the required elements for a \code{spatialRaster} section of
+#' Create Raster Element 
+#' @title Create Raster Element
+#' @description This function creates all the required elements for a \code{spatialRaster} section of
 #' an ELM document. 
 #' @param parent_element A list to append \code{spatialRaster} to 
 #' @param file_name The name of your raster file
@@ -31,32 +31,31 @@
 #' @export
 #'
 #' @examples
-#' add_raster(parent_element = list(),
-#'            file_name = "Rasterfiles.zip" ,
-#'            file_description = "A Raster File",
-#'            attribute_list =  add_attribute(attribute_name = "Yrs", attribute_label = "Years", 
-#'                                            attribute_definition = "Calendar year of the observation from years 1990 - 2010.", 
-#'                                            storage_type = EMLaide::storage_type$date, 
-#'                                            measurement_scale = EMLaide::measurement_scale$dateTime, 
-#'                                            date_time_format = "YYYY",
-#'                                            date_time_precision = "1", minimum = "1993", maximum = "2003"),
-#'            physical = add_physical("Rasterfiles.zip"),
-#'            spatial_reference = "NAD_1983_StatePlane_California_I_FIPS_0401",
-#'            horizontal_accuracy = "No Information",
-#'            vertical_accuracy =  "No Information",
-#'            cell_size_x = "25",
-#'            cell_size_y = "25",
-#'            number_of_bands = "10",
-#'            raster_origin = "Upper Left",
-#'            rows = "200",
-#'            columns = "6",
-#'            verticals = "1",
-#'            cell_geometry = "pixel")
+#' create_raster(file_name = "Rasterfiles.zip" ,
+#'               file_description = "A Raster File",
+#'               attribute_list =  create_attribute(attribute_name = "Yrs", attribute_label = "Years", 
+#'                                               attribute_definition = "Calendar year of the observation from years 1990 - 2010.", 
+#'                                               storage_type = EMLaide::storage_type$date, 
+#'                                               measurement_scale = EMLaide::measurement_scale$dateTime, 
+#'                                               date_time_format = "YYYY",
+#'                                               date_time_precision = "1", minimum = "1993", maximum = "2003"),
+#'               physical = add_physical("Rasterfiles.zip"),
+#'               spatial_reference = "NAD_1983_StatePlane_California_I_FIPS_0401",
+#'               horizontal_accuracy = "No Information",
+#'               vertical_accuracy =  "No Information",
+#'               cell_size_x = "25",
+#'               cell_size_y = "25",
+#'               number_of_bands = "10",
+#'               raster_origin = "Upper Left",
+#'               rows = "200",
+#'               columns = "6",
+#'               verticals = "1",
+#'               cell_geometry = "pixel")
 #'            
-add_raster <- function(parent_element, file_name, file_description, attribute_list, physical,
-                       spatial_reference, horizontal_accuracy, vertical_accuracy, 
-                       cell_size_x, cell_size_y, number_of_bands, raster_origin, 
-                       rows, columns, verticals, cell_geometry) {
+create_raster <- function(file_name, file_description, attribute_list, physical,
+                          spatial_reference, horizontal_accuracy, vertical_accuracy, 
+                          cell_size_x, cell_size_y, number_of_bands, raster_origin, 
+                          rows, columns, verticals, cell_geometry) {
   
   required_arguments <- c("parent_element", "file_name", "file_description", "attribute_list", "physical",
                           "spatial_reference", "horizontal_accuracy", "vertical_accuracy",
@@ -76,20 +75,71 @@ add_raster <- function(parent_element, file_name, file_description, attribute_li
     stop(raster_error_message, call. = FALSE)
   }
 
-  parent_element$spatialRaster <- list(entityName = file_name, 
-                                       entityDescription = file_description,
-                                       attributeList = attribute_list,
-                                       physical = physical,
-                                       spatialReference = list(horizCoordSysName = spatial_reference),
-                                       horizontalAccuracy = list(accuracyReport = horizontal_accuracy), 
-                                       verticalAccuracy = list(accuracyReport = vertical_accuracy), 
-                                       cellSizeXdirection = cell_size_x, 
-                                       cellSizeYDirection = cell_size_y,
-                                       numberOfBands = number_of_bands, 
-                                       rasterOrigin = raster_origin, 
-                                       rows = rows, 
-                                       columns = columns, 
-                                       verticals = verticals, 
-                                       cellGeometry = cell_geometry)
+  spatialRaster <- list(entityName = file_name, 
+                        entityDescription = file_description,
+                        attributeList = attribute_list,
+                        physical = physical,
+                        spatialReference = list(horizCoordSysName = spatial_reference),
+                        horizontalAccuracy = list(accuracyReport = horizontal_accuracy), 
+                        verticalAccuracy = list(accuracyReport = vertical_accuracy), 
+                        cellSizeXdirection = cell_size_x, 
+                        cellSizeYDirection = cell_size_y,
+                        numberOfBands = number_of_bands, 
+                        rasterOrigin = raster_origin, 
+                        rows = rows, 
+                        columns = columns, 
+                        verticals = verticals, 
+                        cellGeometry = cell_geometry)
+  return(spatialRaster)
+}
+#' Add Raster File
+#' @description Adds the raster elements to a dataset list according to EML standards. 
+#' @param parent_element A list representing the EML project or dataset.
+#' @param raster_metadata A named list or dataframe containing raster metadata elements
+#' (file_name, file_description, attribute_list, physical, spatial_reference, horizontal_accuracy, vertical_accuracy, 
+#' cell_size_x, cell_size_y, number_of_bands, raster_origin, rows, columns, verticals, cell_geometry): see \code{\link{create_raster}} 
+#' @return The dataset list or project with raster file information appended.
+#' @example 
+#' raster_metadata <- list("file_name" = "Rasterfiles.zip" ,
+#'                         "file_description" = "A Raster File",
+#'                         "attribute_list" =  create_attribute("attribute_name" = "Yrs", attribute_label = "Years", 
+#'                                                         "attribute_definition" = "Calendar year of the observation from years 1990 - 2010.", 
+#'                                                         "storage_type" = EMLaide::storage_type$date, 
+#'                                                         "measurement_scale" = EMLaide::measurement_scale$dateTime, 
+#'                                                         "date_time_format" = "YYYY",
+#'                                                         "date_time_precision" = "1", minimum = "1993", maximum = "2003"),
+#'                         "physical" = create_physical("Rasterfiles.zip"),
+#'                         "spatial_reference" = "NAD_1983_StatePlane_California_I_FIPS_0401",
+#'                         "horizontal_accuracy" = "No Information",
+#'                         "vertical_accuracy" =  "No Information",
+#'                         "cell_size_x" = "25",
+#'                         "cell_size_y" = "25",
+#'                         "number_of_bands" = "10",
+#'                         "raster_origin" = "Upper Left",
+#'                         "rows" = "200",
+#'                         "columns" = "6",
+#'                         "verticals" = "1",
+#'                         "cell_geometry" = "pixel")
+#' 
+#' dataset <- list() %>%
+#'     add_raster(raster_metadata)
+#' 
+#' @export
+add_raster <- function(parent_element, raster_metadata) {
+  parent_element$spatialRaster <- create_raster(file_name = raster_metadata$file_name, 
+                                                file_description = raster_metadata$file_description, 
+                                                attribute_list = raster_metadata$attribute_list, 
+                                                physical = raster_metadata$physical,
+                                                spatial_reference = raster_metadata$spatial_reference, 
+                                                horizontal_accuracy = raster_metadata$horizontal_accuracy, 
+                                                vertical_accuracy = raster_metadata$vertical_accuracy, 
+                                                cell_size_x = raster_metadata$cell_size_x, 
+                                                cell_size_y = raster_metadata$cell_size_y, 
+                                                number_of_bands = raster_metadata$number_of_bands, 
+                                                raster_origin = raster_metadata$raster_origin, 
+                                                rows = raster_metadata$rows, 
+                                                columns = raster_metadata$columns, 
+                                                verticals = raster_metadata$verticals, 
+                                                cell_geometry = raster_metadata$cell_geometry)
   return(parent_element)
 }
