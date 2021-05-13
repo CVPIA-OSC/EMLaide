@@ -40,10 +40,10 @@ of how to append this information using the add_taxonomic_coverage
 function is given down below.}
 }
 \value{
-A project element that can be appended to a dataset.
+A coverage element that can be appended to a dataset.
 }
 \description{
-Adds the coverage information of a dataset based off of EML standards.
+Creates the coverage information of a dataset based off of EML standards.
 }
 \examples{
 create_coverage(geographic_description = "North Slope

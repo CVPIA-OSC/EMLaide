@@ -2,7 +2,7 @@
 % Please edit documentation in R/methods-element.R
 \name{create_method}
 \alias{create_method}
-\title{Add Data Collection Method Element}
+\title{Create Data Collection Method Element}
 \usage{
 create_method(
   methods_file,
@@ -19,7 +19,7 @@ create_method(
 function will then append it properly. An example word document can be found in
 "~/EMLaide/inst/extdata/methods-template.docx".}
 
-\item{instrumentation}{Optional. What is being used to conduct the method.}
+\item{instrumentation}{Optional. What instruments are being used to conduct the method.}
 
 \item{software}{Optional.}
 
@@ -38,7 +38,7 @@ The methods information.
 Creates the data collection method information of a dataset based off of EML standards.
 }
 \examples{
-create_method( methods_file = word_example("methods-template.docx"),
-           instrumentation = "Thermometer")
+create_method(methods_file = word_example("methods-template.docx"),
+              instrumentation = "Thermometer")
  
 }

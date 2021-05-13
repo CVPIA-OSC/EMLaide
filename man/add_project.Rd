@@ -14,12 +14,15 @@ add_project(
 \arguments{
 \item{parent_element}{A list representing the EML project or dataset.}
 
-\item{funding_metadata}{see \code{\link{create_project}}}
+\item{funding_metadata}{Add a named list or dataframe containing funding metadata: see \code{\link{create_project}}}
 
-\item{project_title}{see \code{\link{create_project}}}
+\item{project_title}{Optionally add a project_title that is different from dataset title: see \code{\link{create_project}}}
 
-\item{project_lead}{see \code{\link{create_project}}}
+\item{project_lead}{Optionally add metadata describing a specific project personnel: see \code{\link{create_project}}}
+}
+\value{
+The dataset list with project information appended.
 }
 \description{
-Add Project
+Adds the project metadata elements according to EML standards.
 }

@@ -9,17 +9,12 @@ add_datatable(parent_element, datatable_metadata)
 \arguments{
 \item{parent_element}{A list representing the EML project or dataset.}
 
-\item{datatable_metadata}{A named list or dataframe containing datatable elements: see \code{\link{create_datatable}}
-
-datatable_metadata <- dplyr::tibble(filename =  c("enclosure-study-growth-rate-data.csv", "enclosure-study-gut-contents-data.csv"),
-attribute_info = c("enclosure-study-growth-rates-metadata.xlsx","enclosure-study-gut-contents-metadata.xlsx"),
-datatable_description = c("Growth Rates - Enclosure Study","Gut Contents - Enclosure Study"),
-datatable_url = c("https://raw.githubusercontent.com/FlowWest/CVPIA_Salmonid_Habitat_Monitoring/make-xml/data/enclosure-study-growth-rate-data.csv?token=AMGEQ7R4E5RMNKRMD57BBQTAOSW6W",
-"https://raw.githubusercontent.com/FlowWest/CVPIA_Salmonid_Habitat_Monitoring/make-xml/data/enclosure-study-gut-contents-data.csv?token=AMGEQ7VJADFEYARKPUM4AYTAOSXAQ"))
-
-dataset <- list() \%>\%
-add_datatable(datatable_metadata)}
+\item{datatable_metadata}{A named list or dataframe containing datatable metadata elements
+(filepath, attribute_info, datatable_description, datatable_url): see \code{\link{create_datatable}}}
+}
+\value{
+The dataset list or project with datatable information appended.
 }
 \description{
-Add Data Table
+Adds the data table elements to a dataset list according to EML standards.
 }

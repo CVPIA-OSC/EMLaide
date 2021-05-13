@@ -13,10 +13,10 @@ You can copy and paste your abstract in this document and set the parameter of
 \code{abstract} equal to this file path.}
 }
 \value{
-The dataset or project with abstract appended
+A abstract element formated according to EML standards
 }
 \description{
-Adds the abstract of a dataset according to EML standards.
+Creates the abstract of a dataset according to EML standards.
 }
 \details{
 For	a	dataset,	the	abstract	element	can	appear	at	the	resource	level	or	the	project level.

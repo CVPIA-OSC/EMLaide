@@ -12,7 +12,7 @@ add_title(parent_element, title_metadata)
 \item{title_metadata}{A list or dataframe containing a title and shortname: see \code{\link{create_title}}}
 }
 \description{
-Add Title
+Adds the title elements to a dataset list according to EML standards.
 }
 \examples{
 title_metadata <- list(title = "Eight Mile Lake Research Watershed, Carbon in Permafrost Experimental Heating Research.",

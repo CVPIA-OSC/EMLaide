@@ -1,5 +1,5 @@
 #' Create License and Intellectual Rights
-#' @description Adds the intellectual rights information of a dataset based off of EML standards.
+#' @description Creates the intellectual rights information of a dataset based off of EML standards.
 #' @param default_license Use "CCO" or "CCBY" as argument value to use one of the 
 #' CVPIA default licenses. Supply NULL if using another license.
 #' @param license_name Optional if using default_license = "CCO" or "CCBY" as 
@@ -111,8 +111,10 @@ create_license <- function(default_license = c("CCO", "CCBY"),
 }
 
 #' Add License
+#' @description Adds the license element to a dataset list according to EML standards. 
 #' @param parent_element A list representing the EML project or dataset.
 #' @param license_metadata A table or list containing license metadata: see \code{\link{create_license}} 
+#' @return The dataset list or project with intellectual rights information appended.
 #' @examples 
 #' license_metadata = list(default_license = "CCBY")
 #' dataset <- list() %>%

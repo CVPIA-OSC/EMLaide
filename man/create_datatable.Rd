@@ -14,27 +14,32 @@ create_datatable(
 )
 }
 \arguments{
-\item{attribute_info}{File path to the attribute sheet that contains metadata on attributes for your file}
+\item{attribute_info}{File path to the attribute sheet that contains metadata describing all attributes for your datatable.}
 
 \item{datatable_description}{Short description of contents of datatable you are adding}
 
-\item{datatable_url}{The URL to the datatable you are adding}
+\item{datatable_url}{A URL that links to the datatable you are adding (ex: dataset on AWS public bucket)}
 
-\item{dataset_methods}{Optional if there are methods that are specific to a datatable}
+\item{dataset_methods}{Optional metadata describing methods if there are methods that are specific to a datatable}
 
-\item{additional_info}{Option if there is additional metadata information that is important to the datatable}
+\item{additional_info}{Option additional metadata info if there is additional metadata information that is important to the datatable}
 
 \item{filename}{Name of the file you would like added to the datatable element}
-
-\item{methods}{A set of information of the specific methods used to collect
-information in this entity.}
 }
 \value{
-A data table element listed in a formate to be added to a dataset element and turned into EML
+A data table element listed in a format to be added to a dataset element and turned into EML
 }
 \description{
 Creates the data table elements according to EML standards.
 }
+\details{
+Create Data Table
+}
 \examples{
+filepath =  "data/enclosure-study-growth-rate-data.csv"
+attribute_info = "enclosure-study-growth-rates-metadata.xlsx")
+datatable_description = "Growth Rates - Enclosure Study")
+datatable_url = "https://raw.githubusercontent.com/FlowWest/CVPIA_Salmonid_Habitat_Monitoring/make-xml/data/enclosure-study-growth-rate-data.csv?token=AMGEQ7R4E5RMNKRMD57BBQTAOSW6W")
 
+create_datatable(filepath, attribute_info, datatable_description, datatable_url)
 }

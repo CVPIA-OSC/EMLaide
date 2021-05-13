@@ -11,6 +11,9 @@ add_personnel(parent_element, personnel_metadata)
 
 \item{personnel_metadata}{A list or dataframe of personnel information see \code{\link{create_person}}}
 }
+\value{
+The dataset list or project with personnel information appended.
+}
 \description{
-Add personnel
+Adds the personnel metadata elements to a dataset list according to EML standards.
 }

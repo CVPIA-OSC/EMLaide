@@ -68,7 +68,7 @@ name taxonomic_coverage to append it to the dataset or project. Example of how
 to incorporate it into the add_coverage function is seen below.
 }
 \description{
-Adds the taxonomic coverage information of a dataset based off of
+Create the taxonomic coverage information of a dataset based off of
 EML standards. The addition of taxonomic coverage is optional, however defaults
 of chinook, sturgeon, smelt, and steelhead are provided. While single or
 multiple taxonomies can be applied, the full set of information must be
@@ -91,7 +91,7 @@ full coverage information.
 }
 
 \examples{
-taxonomic_coverage <- add_taxonomic_coverage(CVPIA_common_species = "chinook")
+taxonomic_coverage <- create_taxonomic_coverage(CVPIA_common_species = "chinook")
 
 taxonomic_coverage <- create_taxonomic_coverage(CVPIA_common_species = "delta_smelt")
 
@@ -113,11 +113,11 @@ taxonomic_coverage <- create_taxonomic_coverage(kingdom_value = "Animalia",
                                             
 # To append this information to the dataset or project:                        
     create_coverage(parent_element = list(), geographic_description = "Description",
-                 west_bounding_coordinate = "-160.594000", 
-                 east_bounding_coordinate = "-134.104800",
-                 north_bounding_coordinate = "71.238300", 
-                 south_bounding_coordinate = "67.865000",
-                 begin_date = "1980-01-01", 
-                 end_date = "2010-12-31", 
-                 taxonomic_coverage = taxonomic_coverage)
+                    west_bounding_coordinate = "-160.594000", 
+                    east_bounding_coordinate = "-134.104800",
+                    north_bounding_coordinate = "71.238300", 
+                    south_bounding_coordinate = "67.865000",
+                    begin_date = "1980-01-01", 
+                    end_date = "2010-12-31", 
+                    taxonomic_coverage = taxonomic_coverage)
 }

@@ -11,6 +11,9 @@ add_method(parent_element, methods_file)
 
 \item{methods_file}{A file containing methods information (word or markdown): see \code{\link{create_methods}}}
 }
+\value{
+The dataset list or project with methods information appended.
+}
 \description{
-Add Methods
+Adds the methods metadata elements according to EML standards.
 }

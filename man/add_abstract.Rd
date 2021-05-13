@@ -11,6 +11,9 @@ add_abstract(parent_element, abstract_file)
 
 \item{abstract_file}{A file containing abstract information (word or markdown): see \code{\link{create_abstract}}}
 }
+\value{
+The dataset or project with abstract appended
+}
 \description{
-Add Abstract
+Adds the abstract metadata element to a dataset list according to EML standards.
 }

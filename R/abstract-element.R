@@ -1,5 +1,5 @@
 #' @title Create Abstract Element
-#' @description Adds the abstract of a dataset according to EML standards.
+#' @description Creates the abstract of a dataset according to EML standards.
 #' @param abstract Abstract paragraphs, requires a minimum of 20 words. A template 
 #' word document is accessible in "~/EMLaide/inst/extdata/abstract_template.docx".
 #' You can copy and paste your abstract in this document and set the parameter of 
@@ -14,7 +14,7 @@
 #' should	also	be	included.		For	a	large	number	of	parameters,	use	categories	instead	of	listing	
 #' all	parameters	(e.g.	use	the	term	"nutrients"	instead	of	nitrate,	phosphate,	calcium,	etc.),	in	
 #' combination	with	the	parameters	that	seem	most	relevant	for	searches.
-#' @return The dataset or project with abstract appended 
+#' @return A abstract element formated according to EML standards
 #' @examples
 #' create_abstract(abstract = word_example("abstract_template.docx"))
 #'           
@@ -27,8 +27,10 @@ create_abstract <- function(abstract) {
 }
 
 #' Add Abstract
+#' @description Adds the abstract metadata element to a dataset list according to EML standards. 
 #' @param parent_element A list representing the EML project or dataset.
 #' @param abstract_file A file containing abstract information (word or markdown): see \code{\link{create_abstract}} 
+#' @return The dataset or project with abstract appended 
 #' @example 
 #' dataset <- list() %>%
 #'     add_abstract("abstract.docx")

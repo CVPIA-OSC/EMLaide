@@ -2,7 +2,7 @@
 % Please edit documentation in R/title-element.R
 \name{create_title}
 \alias{create_title}
-\title{Add Title Elements}
+\title{Create Title Elements}
 \usage{
 create_title(title, short_name)
 }
@@ -16,7 +16,7 @@ create_title(title, short_name)
 The project or dataset list with title and short name appended.
 }
 \description{
-Adds title elements according to EML standards.
+Creates title elements according to EML standards.
 }
 \details{
 For a dataset, the title should be between 7 and 20 words long, with a short

@@ -11,8 +11,11 @@ add_license(parent_element, license_metadata)
 
 \item{license_metadata}{A table or list containing license metadata: see \code{\link{create_license}}}
 }
+\value{
+The dataset list or project with intellectual rights information appended.
+}
 \description{
-Add License
+Adds the license element to a dataset list according to EML standards.
 }
 \examples{
 license_metadata = list(default_license = "CCBY")

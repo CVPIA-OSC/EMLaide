@@ -11,14 +11,15 @@ create_maintenance(status = c("complete", "ongoing"), update_frequency = NULL)
 
 \item{update_frequency}{Only needed if the status of the project or dataset is ongoing.
 If this is the case, please provide the frequency of which the project or dataset is updated.}
-
-\item{parent_element}{A list representing the EML project or dataset.}
 }
 \value{
-The dataset or project with maintenance information appended.
+A maintenance element that can be appended to a dataset list.
 }
 \description{
-Adds the maintenance information of a dataset based off of EML standards.
+Creates the maintenance information of a dataset based off of EML standards.
+}
+\details{
+Create Maintenance
 }
 \examples{
 create_maintenance(status = "complete")

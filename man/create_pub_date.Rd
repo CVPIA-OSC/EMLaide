@@ -2,13 +2,13 @@
 % Please edit documentation in R/publication-date-element.R
 \name{create_pub_date}
 \alias{create_pub_date}
-\title{Add Publication Date}
+\title{Create Publication Date}
 \usage{
 create_pub_date(date = NULL)
 }
 \arguments{
 \item{date}{The publication date. If left null, it will be assigned the current
-date. This can be overriden by putting in a specific date.}
+date. This can be overridden by putting in a specific date.}
 
 \item{parent_element}{A list representing the EML project or dataset.}
 }
@@ -16,12 +16,11 @@ date. This can be overriden by putting in a specific date.}
 The dataset or project with the publication date appended.
 }
 \description{
-Adds publication date according to EML standards.
+Creates publication date according to EML standards.
 }
 \examples{
-add_pub_date(parent_element = list(),
-             date = "2020-08-19")
+create_pub_date(date = "2020-08-19")
              
-# Appends current date:              
-add_pub_date(parent_element = list()) 
+# Creates current date:              
+create_pub_date() 
 }

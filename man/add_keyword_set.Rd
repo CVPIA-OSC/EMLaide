@@ -11,6 +11,9 @@ add_keyword_set(parent_element, keyword_metadata)
 
 \item{keyword_metadata}{A named list or dataframe containing keyword elements: see \code{\link{create_keywords}}}
 }
+\value{
+The dataset list or project with keyword information appended.
+}
 \description{
-Add Keywords
+Adds the keyword metadata elements to a dataset list according to EML standards.
 }

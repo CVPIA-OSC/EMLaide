@@ -11,11 +11,14 @@ add_maintenance(parent_element, maintenance_metadata)
 
 \item{maintenance_metadata}{A table or list containing maintenance metadata: see \code{\link{create_maintenance}}}
 }
+\value{
+The dataset list or project with maintenance information appended.
+}
 \description{
-Add Maintenance
+Adds the maintenance metadata element to a dataset list according to EML standards.
 }
 \examples{
-maintenance_metadata <- list(status = "ongoing", update_frequencey = "complete")
+maintenance_metadata <- list(status = "ongoing", update_frequency = "complete")
 dataset <- list() \%>\%
      add_maintenance(maintenance_metadata) 
 

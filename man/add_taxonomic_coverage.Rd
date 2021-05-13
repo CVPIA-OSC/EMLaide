@@ -10,5 +10,5 @@ add_taxonomic_coverage(taxonomic_metadata)
 \item{taxonomic_metadata}{see \code{\link{create_taxonomic_coverage}}}
 }
 \description{
-Add Taxonomic Coverage
+Formats the taxonomic coverage elements in a nested list to easily be added as a parameter to the \code{add_coverage()} function.
 }

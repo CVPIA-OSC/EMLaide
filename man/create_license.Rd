@@ -37,7 +37,7 @@ description of the license being used and its regulations.}
 The project or dataset list with the intellectual rights appended.
 }
 \description{
-Adds the intellectual rights information of a dataset based off of EML standards.
+Creates the intellectual rights information of a dataset based off of EML standards.
 }
 \details{
 Learn more about the default CVPIA licese options from Creative Commons:

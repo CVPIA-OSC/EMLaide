@@ -2,7 +2,7 @@
 % Please edit documentation in R/personnel-element.R
 \name{create_person}
 \alias{create_person}
-\title{Add Personnel Element}
+\title{Create Personnel Element}
 \usage{
 create_person(role, first_name, last_name, email, organization, orcid = NULL)
 }
@@ -24,7 +24,7 @@ with for this dataset or project}
 register at \url{http://orcid.org/}}
 }
 \description{
-Adds personel according to EML standards
+Create personnel element according to EML standards
 }
 \examples{
 create_personnel(first_name = 'Katherine', 

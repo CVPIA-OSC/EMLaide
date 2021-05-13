@@ -1,5 +1,5 @@
-#' @title Add Title Elements
-#' @description Adds title elements according to EML standards.
+#' @title Create Title Elements
+#' @description Creates title elements according to EML standards.
 #' @param title The title of the project and/or dataset. A complete title is between 
 #' 7 and 20 words long and includes: What, Where, and When (and Who, if relevant).
 #' @param short_name Short name or nickname you use to refer to this dataset. 
@@ -31,6 +31,7 @@ create_title <- function(title, short_name) {
 }
 
 #' Add Title
+#' @description Adds the title elements to a dataset list according to EML standards. 
 #' @param parent_element A list representing the EML project or dataset.
 #' @param title_metadata A list or dataframe containing a title and shortname: see \code{\link{create_title}} 
 #' @examples 

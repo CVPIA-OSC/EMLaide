@@ -1,15 +1,14 @@
-#' @title Add Publication Date 
-#' @description Adds publication date according to EML standards.
+#' @title Create Publication Date 
+#' @description Creates publication date according to EML standards.
 #' @param parent_element A list representing the EML project or dataset.
 #' @param date The publication date. If left null, it will be assigned the current 
-#' date. This can be overriden by putting in a specific date. 
+#' date. This can be overridden by putting in a specific date. 
 #' @return The dataset or project with the publication date appended. 
 #' @examples 
-#' add_pub_date(parent_element = list(),
-#'              date = "2020-08-19")
+#' create_pub_date(date = "2020-08-19")
 #'              
-#' # Appends current date:              
-#' add_pub_date(parent_element = list()) 
+#' # Creates current date:              
+#' create_pub_date() 
 #' @export 
 
 create_pub_date <- function(date = NULL) {
@@ -20,10 +19,12 @@ create_pub_date <- function(date = NULL) {
   }
   return(date)
 }
-#' Add Abstract
+#' Add Pub Date
+#' @description Adds the pub date element to a dataset list according to EML standards. 
 #' @param parent_element A list representing the EML project or dataset.
 #' @param date The publication date. If left null, it will be assigned the current 
-#' date. This can be overriden by putting in a specific date: see \code{\link{create_pub_date}} 
+#' date. This can be overridden by putting in a specific date: see \code{\link{create_pub_date}} 
+#' @return The dataset list or project with publication date information appended.
 #' @example 
 #' dataset <- list() %>%
 #'     add_pub_date()

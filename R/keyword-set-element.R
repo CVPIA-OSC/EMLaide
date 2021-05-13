@@ -53,8 +53,10 @@ create_keyword_set <- function(keyword_metadata) {
 
 
 #' Add Keywords
+#' @description Adds the keyword metadata elements to a dataset list according to EML standards. 
 #' @param parent_element A list representing the EML project or dataset.
-#' @param keyword_metadata A named list or dataframe containing keyword elements: see \code{\link{create_keywords}} 
+#' @param keyword_metadata A named list or dataframe containing keyword elements: see \code{\link{create_keywords}}
+#' @return The dataset list or project with keyword information appended.
 #' @example
 #' keyword_metadata <- list(keyword = c("Sacramento River", "Salmonid Habitat Restoration Projects", "Effectiveness Monitoring", "Pacific Salmon", "CVPIA"), keywordThesaurus = c(NA, NA, NA, NA, NA))
 #' 

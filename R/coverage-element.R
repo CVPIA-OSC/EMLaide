@@ -1,5 +1,5 @@
 #' @title Create Coverage Element
-#' @description Adds the coverage information of a dataset based off of EML standards.
+#' @description Creates the coverage information of a dataset based off of EML standards.
 #' @param geographic_description A description of the locations	of research sites
 #' and areas related to the data.
 #' @param west_bounding_coordinate The west cardinality limit.
@@ -15,7 +15,7 @@
 #' and mandates the input of the taxonomy levels of kingdom-species. An example 
 #' of how to append this information using the add_taxonomic_coverage
 #' function is given down below.  
-#' @return A project element that can be appended to a dataset.
+#' @return A coverage element that can be appended to a dataset.
 #' @examples 
 #' create_coverage(geographic_description = "North Slope
 #'              drainage basin: Bounding box encompasses 42 drainage basins
@@ -97,10 +97,11 @@ create_coverage <- function(geographic_description, west_bounding_coordinate,
 }
 
 #' Add Coverage
+#' @description Adds the coverage metadata elements to a dataset list according to EML standards. 
 #' @param parent_element A list representing the EML project or dataset.
 #' @param coverage_metadata a list or datatable of coverage metadata see \code{\link{create_coverage}} 
 #' @param taxonomic_metadata a list or datatable of taxonomic metadata see \code{\link{create_taxonomic_coverage}} 
-#' @return The dataset or project with coverage information appended.
+#' @return The dataset list or project with coverage information appended.
 #' @examples 
 #' 
 #' coverage <- list(geographic_description = "Description",

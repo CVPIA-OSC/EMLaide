@@ -14,10 +14,10 @@ add_coverage(parent_element, coverage_metadata, taxonomic_metadata = NULL)
 \item{taxonomic_metadata}{a list or datatable of taxonomic metadata see \code{\link{create_taxonomic_coverage}}}
 }
 \value{
-The dataset or project with coverage information appended.
+The dataset list or project with coverage information appended.
 }
 \description{
-Add Coverage
+Adds the coverage metadata elements to a dataset list according to EML standards.
 }
 \examples{
 

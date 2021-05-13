@@ -1,5 +1,5 @@
-#' Add Personnel Element
-#' @description Adds personel according to EML standards
+#' Create Personnel Element
+#' @description Create personnel element according to EML standards
 #' @param role Use "creator" if you are one of the primary originators of the data. 
 #' Other possible roles "Data Manager", "Field Technician", or "Assistant Researcher". 
 #' There can be multiple personnel on a project with the same role.
@@ -53,8 +53,10 @@ create_person <- function(role, first_name, last_name, email, organization, orci
 }
 
 #' Add personnel
+#' @description Adds the personnel metadata elements to a dataset list according to EML standards. 
 #' @param parent_element A list representing the EML project or dataset
 #' @param personnel_metadata A list or dataframe of personnel information see \code{\link{create_person}}
+#' @return The dataset list or project with personnel information appended.
 #' @example 
 #' personnel_metadata <- list(first_name = "Stacy", last_name = "Banet", email = "Stacy@aol.com", 
 #'                            role = "creator", organization = "USBR")

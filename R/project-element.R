@@ -6,7 +6,16 @@
 #' @param funding_metadata A named list or datatable describing the project funding. See structure by looking at required inputs of \code{\link{create_funding}}
 #' @return This function returns project element containing 
 #' all project information required for an EML document. 
+#' @example
+#' project_title("Salmonid Habitat Monitoring")
+#' project_lead <- list(first_name = "Stacy", last_name = "Banet", email = "Stacy@aol.com", 
+#'                                    role = "creator", organization = "USBR")
+#' funding_metadata <- list(funder_name = "USBR", funder_identifier = NA, award_number = "R14AC00096", 
+#'                          award_title = "Salmonid Spawning and Rearing Habitat Restoration in the Sacramento River", 
+#'                          award_url = NA, funding_description = NA)
 #' 
+#' dataset <- list() %>%
+#'    create_project(project_title, project_lead, funding_metadata)
 #' @export                                                                          
 
 create_project <- function(project_title, project_lead, funding_metadata) {
@@ -30,10 +39,12 @@ create_project <- function(project_title, project_lead, funding_metadata) {
                   award = award_information)
 }
 #' Add Project 
+#' @description Adds the project metadata elements according to EML standards.  
 #' @param parent_element A list representing the EML project or dataset.
-#' @param funding_metadata see \code{\link{create_project}}
-#' @param project_title see \code{\link{create_project}} 
-#' @param project_lead see \code{\link{create_project}}
+#' @param funding_metadata Add a named list or dataframe containing funding metadata: see \code{\link{create_project}}
+#' @param project_title Optionally add a project_title that is different from dataset title: see \code{\link{create_project}} 
+#' @param project_lead Optionally add metadata describing a specific project personnel: see \code{\link{create_project}}
+#' @return The dataset list with project information appended.
 #' 
 #' @example 
 #' project_lead <- list(first_name = "Stacy", last_name = "Banet", email = "Stacy@aol.com", 
