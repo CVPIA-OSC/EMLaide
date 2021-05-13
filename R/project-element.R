@@ -19,8 +19,8 @@ create_project <- function(project_title, project_lead, funding_metadata) {
                                       funding_description = funding_metadata$funding_description)
   
   project_personnel <- create_person(role = "Project Lead",
-                                     first_name = project_lead$first_name,
-                                     last_name = project_lead$last_name,
+                                     first_name = project_lead$individualName$givenName,
+                                     last_name = project_lead$individualName$surName,
                                      email = project_lead$email,
                                      organization = project_lead$organization,
                                      orcid = NULL)
@@ -36,16 +36,17 @@ create_project <- function(project_title, project_lead, funding_metadata) {
 #' @param project_lead see \code{\link{create_project}}
 #' 
 #' @example 
-#' title_metadata <- list("title" = "Salmonid Habitat monitoring in the Central Valley", 
-#'                         "short_name" = "Salmonid Monitoring Project")
-#' project_personnel_metadata <- list(first_name = "Stacy", last_name = "Banet", email = "Stacy@aol.com", 
+#' project_lead <- list(first_name = "Stacy", last_name = "Banet", email = "Stacy@aol.com", 
 #'                                    role = "creator", organization = "USBR")
 #' funding_metadata <- list(funder_name = "USBR", funder_identifier = NA, award_number = "R14AC00096", 
 #'                          award_title = "Salmonid Spawning and Rearing Habitat Restoration in the Sacramento River", 
 #'                          award_url = NA, funding_description = NA)
 #' 
 #' dataset <- list() %>%
-#'    add_project(title_metadata, project_personnel_metadata, funding_metadata)
+#'    add_project(funding_metadata)
+#'    
+#' dataset <- list() %>%
+#'    add_project(funding_metadata, project_title = "Salmonid Habitat monitoring in the Central Valley", project_lead = project_lead)   
 #' 
 #' @export
 
@@ -55,7 +56,7 @@ add_project <- function(parent_element, funding_metadata, project_title = NULL, 
       stop('please supply information about the project lead or run add_personnel first and the dataset creator will be used')
     }
     project_lead <- parent_element$creator
-  }
+  } 
   if(is.null(project_title)) {
     if (is.null(parent_element$title)) {
       stop('please supply a project lead or run add_title first and the dataset title will be used')

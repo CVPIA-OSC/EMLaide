@@ -2,47 +2,15 @@
 % Please edit documentation in R/methods-element.R
 \name{add_method}
 \alias{add_method}
-\title{Add Data Collection Method Element}
+\title{Add Methods}
 \usage{
-add_method(
-  parent_element,
-  methods_file,
-  instrumentation = character(),
-  software = NULL,
-  sampling_file = NULL,
-  sampling_coverage = NULL,
-  sampling_citation = NULL,
-  qualityControl_file = NULL
-)
+add_method(parent_element, methods_file)
 }
 \arguments{
-\item{parent_element}{Please provide a parent element to append methods to.}
+\item{parent_element}{A list representing the EML project or dataset.}
 
-\item{methods_file}{Please provide a word document with proper formatting. The
-function will then append it properly. An example word document can be found in
-"~/EMLaide/inst/extdata/methods-template.docx".}
-
-\item{instrumentation}{Optional. What is being used to conduct the method.}
-
-\item{software}{Optional.}
-
-\item{sampling_file}{Optional.}
-
-\item{sampling_coverage}{Optional.}
-
-\item{sampling_citation}{Optional.}
-
-\item{qualityControl_file}{Optional.}
-}
-\value{
-The methods information.
+\item{methods_file}{A file containing methods information (word or markdown): see \code{\link{create_methods}}}
 }
 \description{
-Adds the data collection method information of a dataset based off of EML standards.
-}
-\examples{
-add_method(parent_element = list(), 
-           methods_file = word_example("methods-template.docx"),
-           instrumentation = "Thermometer")
- 
+Add Methods
 }

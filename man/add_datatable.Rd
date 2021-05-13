@@ -9,7 +9,7 @@ add_datatable(parent_element, datatable_metadata)
 \arguments{
 \item{parent_element}{A list representing the EML project or dataset.}
 
-\item{datatable_metadata}{A named list or dataframe containing datatable elements: see \code{\link{create_data_table}}
+\item{datatable_metadata}{A named list or dataframe containing datatable elements: see \code{\link{create_datatable}}
 
 datatable_metadata <- dplyr::tibble(filename =  c("enclosure-study-growth-rate-data.csv", "enclosure-study-gut-contents-data.csv"),
 attribute_info = c("enclosure-study-growth-rates-metadata.xlsx","enclosure-study-gut-contents-metadata.xlsx"),

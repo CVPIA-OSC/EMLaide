@@ -4,13 +4,12 @@
 \alias{create_project}
 \title{Create project element}
 \usage{
-create_project(title_metadata, project_personnel_metadata, funding_metadata)
+create_project(project_title, project_lead, funding_metadata)
 }
 \arguments{
-\item{title_metadata}{A list or datatable describing the project title, this should
-include a \code{project_title}}
+\item{project_title}{A project title as a string}
 
-\item{project_personnel_metadata}{A named list or datatable describing the personnel for the project. See structure by looking at required inputs of \code{\link{create_person}}}
+\item{project_lead}{A named list or datatable describing the project lead for the project. See structure by looking at required inputs of \code{\link{create_person}}}
 
 \item{funding_metadata}{A named list or datatable describing the project funding. See structure by looking at required inputs of \code{\link{create_funding}}}
 }
