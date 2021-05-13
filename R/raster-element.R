@@ -28,7 +28,6 @@
 #'
 #' @return A list that contains all the required elements of the spatialRaster 
 #' section of an EML document. 
-#' @export
 #'
 #' @examples
 #' create_raster(file_name = "Rasterfiles.zip" ,
@@ -51,7 +50,8 @@
 #'               columns = "6",
 #'               verticals = "1",
 #'               cell_geometry = "pixel")
-#'            
+#'
+#' @export            
 create_raster <- function(file_name, file_description, attribute_list, physical,
                           spatial_reference, horizontal_accuracy, vertical_accuracy, 
                           cell_size_x, cell_size_y, number_of_bands, raster_origin, 
