@@ -49,12 +49,12 @@ create_data_table <- function(filename,
   }
   attribute_list$attribute <- purrr::pmap(attribute_table, attributes_and_codes)
   
-  physical <- add_physical(file_path = filename, data_url = datatable_url)
+  physical <- add_physical(file_path = paste0("data/", filename), data_url = datatable_url)
   dataTable <- list(entityName = filename,
                                  entityDescription = datatable_description,
                                  physical = physical,
                                  attributeList = attribute_list,
-                                 numberOfRecords = nrow(read_csv(file_name)))
+                                 numberOfRecords = nrow(read_csv(paste0("data/", filename))))
   return(dataTable)
 }
 #' Add Data Table 

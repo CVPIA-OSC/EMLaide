@@ -37,15 +37,15 @@ create_keyword_set <- function(keyword_metadata) {
   for (i in 1:length(unique_thesaurus)){
     rel_thesaurus = unique_thesaurus[i]
     if (is.na(rel_thesaurus)) {
-      rel_keywords = keyword_metadata %>%
+      filtered_keywords = keyword_metadata %>%
         filter(is.na(keywordThesaurus)) %>%
         pull(keyword)
-      keywords[[i]] = list(keyword = rel_keywords)
+      keywords[[i]] = list(keyword = filtered_keywords)
     } else {
-      rel_keywords = keyword_metadata %>%
+      filtered_keywords = keyword_metadata %>%
         filter((keywordThesaurus == rel_thesaurus)) %>%
         pull(keyword)
-      keywords[[i]] = list(keyword = rel_keywords, keywordThesaurus = rel_thesaurus)
+      keywords[[i]] = list(keyword = filtered_keywords, keywordThesaurus = rel_thesaurus)
     } 
   }
   return(keywords)
@@ -55,7 +55,12 @@ create_keyword_set <- function(keyword_metadata) {
 #' Add Keywords
 #' @param parent_element A list representing the EML project or dataset.
 #' @param keyword_metadata A named list or dataframe containing keyword elements: see \code{\link{create_keywords}} 
+#' @example
+#' keyword_metadata <- list(keyword = c("Sacramento River", "Salmonid Habitat Restoration Projects", "Effectiveness Monitoring", "Pacific Salmon", "CVPIA"), keywordThesaurus = c(NA, NA, NA, NA, NA))
 #' 
+#' dataset -> list() %>%
+#'      add_keyword_set(keyword_metadata)
+#'
 #' @export
 #' 
 add_keyword_set <- function(parent_element, keyword_metadata) {
