@@ -46,6 +46,6 @@ create_method <- function(methods_file,
 #' 
 #' @export
 add_method <- function(parent_element, methods_file) {
-  parent_element$methods <- create_method(method_file)
+  parent_element$methods <- create_method(methods_file)
   return(parent_element)
 }
