@@ -12,7 +12,7 @@
 #' @examples
 #' 
 #' @export
-create_data_table <- function(filename, 
+create_datatable <- function(filepath, 
                               attribute_info, 
                               datatable_description, 
                               datatable_url = NULL, 
@@ -49,12 +49,12 @@ create_data_table <- function(filename,
   }
   attribute_list$attribute <- purrr::pmap(attribute_table, attributes_and_codes)
   
-  physical <- add_physical(file_path = paste0("data/", filename), data_url = datatable_url)
-  dataTable <- list(entityName = filename,
+  physical <- add_physical(file_path = filepath, data_url = datatable_url)
+  dataTable <- list(entityName = basename(filepath),
                                  entityDescription = datatable_description,
                                  physical = physical,
                                  attributeList = attribute_list,
-                                 numberOfRecords = nrow(read_csv(paste0("data/", filename))))
+                                 numberOfRecords = nrow(read_csv(filepath)))
   return(dataTable)
 }
 #' Add Data Table 
@@ -68,11 +68,11 @@ create_data_table <- function(filename,
 #'                                                      "https://raw.githubusercontent.com/FlowWest/CVPIA_Salmonid_Habitat_Monitoring/make-xml/data/enclosure-study-gut-contents-data.csv?token=AMGEQ7VJADFEYARKPUM4AYTAOSXAQ"))
 #' 
 #' dataset <- list() %>%
-#'     add_data_table(datatable_metadata)
+#'     add_datatable(datatable_metadata)
 #' 
 #' @export
-add_data_table <- function(parent_element, datatable_metadata) {
-  data_tables <- purrr::pmap(datatable_metadata, create_data_table) 
+add_datatable <- function(parent_element, datatable_metadata) {
+  data_tables <- purrr::pmap(datatable_metadata, create_datatable) 
   parent_element$dataTable <- data_tables
   return(parent_element)
 }
