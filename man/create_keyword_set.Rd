@@ -4,25 +4,16 @@
 \alias{create_keyword_set}
 \title{Creates Keyword Set Element}
 \usage{
-create_keyword_set(keyword_set)
+create_keyword_set(keyword_metadata)
 }
 \arguments{
-\item{keyword_set}{A keyword set or list of keyword sets.}
+\item{keyword_metadata}{A named list or dataframe containing keywords and keywordThesuraus (if keyword is from a controlled vocabulary)}
 }
 \value{
 The keyword list.
 }
 \description{
 Creates keyword set according to EML standards.
-}
-\details{
-A keyword set is a list with two elements:
-\enumerate{
-\item keyword - A list of keywords
-\item keywordThesauraus - (optional) A string identifying the controlled
-vocabulary the keywords originate from, do not include if keywords are not
-from a controlled vocabulary
-}
 }
 \section{Controlled Vocabularies}{
 
@@ -41,10 +32,12 @@ USGS place names dictionary.
 }
 
 \examples{
-create_keyword_set(keyword_set = list(keyword = list('stream discharge', 'discharge'), 
-                                   keywordThesaurus = 'LTER Controlled Vocabulary'))
-                                   
-create_keyword_set(keyword_set = list(list(keyword = list('stream discharge', 'discharge'), 
-                                        keywordThesaurus = 'LTER Controlled Vocabulary'),
-                                   list(keyword = list('Sacramento River'))))                                    
+keyword_metadata <- list("keyword" = c("CVPIA", "dog", "shark", "cat"), 
+                         keywordThesaurus = c(NA, "pet", "ocean", "pet"))
+create_keyword_set(keyword_metadata)
+
+keyword_metadata <- tibble("keyword" = c("CVPIA", "dog", "shark", "cat"), 
+                           "keywordThesaurus" = c(NA, NA, NA, NA))                                   
+create_keyword_set(keyword_metadata)
+                                
 }

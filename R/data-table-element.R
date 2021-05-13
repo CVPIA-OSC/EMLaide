@@ -61,7 +61,6 @@ create_data_table <- function(filename,
 #' @param parent_element A list representing the EML project or dataset.
 #' @param datatable_metadata A named list or dataframe containing datatable elements: see \code{\link{create_data_table}} 
 #' 
-#' @export
 #' datatable_metadata <- dplyr::tibble(filename =  c("enclosure-study-growth-rate-data.csv", "enclosure-study-gut-contents-data.csv"), 
 #'                                     attribute_info = c("enclosure-study-growth-rates-metadata.xlsx","enclosure-study-gut-contents-metadata.xlsx"),
 #'                                     datatable_description = c("Growth Rates - Enclosure Study","Gut Contents - Enclosure Study"),
@@ -71,6 +70,7 @@ create_data_table <- function(filename,
 #' dataset <- list() %>%
 #'     add_data_table(datatable_metadata)
 #' 
+#' @export
 add_data_table <- function(parent_element, datatable_metadata) {
   data_tables <- purrr::pmap(datatable_metadata, create_data_table) 
   parent_element$dataTable <- data_tables

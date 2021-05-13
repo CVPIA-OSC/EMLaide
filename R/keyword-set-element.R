@@ -1,13 +1,6 @@
 #' Creates Keyword Set Element
 #' @description Creates keyword set according to EML standards.
-#' @param keyword_set A keyword set or list of keyword sets.
-#' @details A keyword set is a list with two elements: 
-#' \enumerate{
-#'   \item keyword - A list of keywords
-#'   \item keywordThesauraus - (optional) A string identifying the controlled 
-#'   vocabulary the keywords originate from, do not include if keywords are not
-#'   from a controlled vocabulary
-#' }
+#' @param keyword_metadata A named list or dataframe containing keywords and keywordThesuraus (if keyword is from a controlled vocabulary)
 #' 
 #' @section Controlled Vocabularies:
 #' 
@@ -25,22 +18,40 @@
 #' 
 #' @return The keyword list.
 #' @examples 
-#' create_keyword_set(keyword_set = list(keyword = list('stream discharge', 'discharge'), 
-#'                                    keywordThesaurus = 'LTER Controlled Vocabulary'))
-#'                                    
-#' create_keyword_set(keyword_set = list(list(keyword = list('stream discharge', 'discharge'), 
-#'                                         keywordThesaurus = 'LTER Controlled Vocabulary'),
-#'                                    list(keyword = list('Sacramento River'))))                                    
+#' keyword_metadata <- list("keyword" = c("CVPIA", "dog", "shark", "cat"), 
+#'                          keywordThesaurus = c(NA, "pet", "ocean", "pet"))
+#' create_keyword_set(keyword_metadata)
+#' 
+#' keyword_metadata <- tibble("keyword" = c("CVPIA", "dog", "shark", "cat"), 
+#'                            "keywordThesaurus" = c(NA, NA, NA, NA))                                   
+#' create_keyword_set(keyword_metadata)
+#'                                 
 #' @export
-create_keyword_set <- function(keyword_set) {
-  keywords <- list()
-  if (length(keyword_set) < 1) {
+create_keyword_set <- function(keyword_metadata) {
+  
+  if (length(keyword_metadata$keyword) < 1) {
     warning("Please supply at least one keyword")
   }
-  keywords <- keyword_set
-  
+  unique_thesaurus <- unique(keyword_metadata$keywordThesaurus)
+  keywords = list()
+  for (i in 1:length(unique_thesaurus)){
+    rel_thesaurus = unique_thesaurus[i]
+    if (is.na(rel_thesaurus)) {
+      rel_keywords = keyword_metadata %>%
+        filter(is.na(keywordThesaurus)) %>%
+        pull(keyword)
+      keywords[[i]] = list(keyword = rel_keywords)
+    } else {
+      rel_keywords = keyword_metadata %>%
+        filter((keywordThesaurus == rel_thesaurus)) %>%
+        pull(keyword)
+      keywords[[i]] = list(keyword = rel_keywords, keywordThesaurus = rel_thesaurus)
+    } 
+  }
   return(keywords)
 }
+
+
 #' Add Keywords
 #' @param parent_element A list representing the EML project or dataset.
 #' @param keyword_metadata A named list or dataframe containing keyword elements: see \code{\link{create_keywords}} 
@@ -48,19 +59,11 @@ create_keyword_set <- function(keyword_set) {
 #' @export
 #' 
 add_keyword_set <- function(parent_element, keyword_metadata) {
-  unique_thesaurus <- unique(keyword_metadata$keywordThesaurus)
-  if (is.na(unique_thesaurus)) {
-    keywords <- create_keyword_set(keyword_metadata$keyword)
-    parent_element$keywordSet <- keywords
-  } else {
-    keywords <- list()
-    add_keywords = function(unique_thesaurus){
-      keywords <- add_keyword_set(keywords, 
-                                  keyword_set = list(keyword = keyword_metadata$keyword[keyword_metadata$keywordThesaurus == unique_thesaurus],
-                                                     keywordThesaurus = unique_thesaurus))
-    }
-    parent_element$keywordSet <- purrr::map(unique_thesaurus, add_keywords) %>% flatten()
-  }
+  parent_element$keywordSet <- create_keyword_set(keyword_metadata = keyword_metadata) 
   return(parent_element)
-  
 }
+
+
+
+
+
