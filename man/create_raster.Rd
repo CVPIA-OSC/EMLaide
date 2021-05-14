@@ -28,12 +28,12 @@ create_raster(
 \item{file_description}{A short description of your file}
 
 \item{attribute_list}{A list of all the columns on your datatable.
-Use \code{\link{add_attribute}} to generate this attribute list and see the
-documentation for \code{\link{add_attribute}} for more information.}
+Use \code{\link{create_attribute}} to generate this attribute list and see the
+documentation for \code{\link{create_attribute}} for more information.}
 
 \item{physical}{A list of the physical descriptions of your file. Use
 \code{\link{add_physical}} to generate this physical list and see the
-documentation for \code{\link{add_physical}} for more information.}
+documentation for \code{\link{create_physical}} for more information.}
 
 \item{spatial_reference}{This is the name of a predefined coordinate system.
 The acceptable values for \code{spatial_reference} can be found at
