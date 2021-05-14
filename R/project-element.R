@@ -20,12 +20,7 @@
 
 create_project <- function(project_title, project_lead, funding_metadata) {
   
-  award_information <- create_funding(funder_name = funding_metadata$funder_name, 
-                                      award_title = funding_metadata$award_title, 
-                                      funder_identifier = funding_metadata$funder_identifier, 
-                                      award_number = funding_metadata$award_number, 
-                                      award_url = funding_metadata$award_url, 
-                                      funding_description = funding_metadata$funding_description)
+  award_information <- purrr::pmap(funding_metadata, create_funding)
   
   project_personnel <- create_person(role = "Project Lead",
                                      first_name = project_lead$individualName$givenName,

@@ -112,7 +112,7 @@ taxonomic_coverage <- create_taxonomic_coverage(kingdom_value = "Animalia",
                        taxon_id = "183803")   
                                             
 # To append this information to the dataset or project:                        
-    create_coverage(parent_element = list(), geographic_description = "Description",
+    create_coverage(geographic_description = "Description",
                     west_bounding_coordinate = "-160.594000", 
                     east_bounding_coordinate = "-134.104800",
                     north_bounding_coordinate = "71.238300", 
