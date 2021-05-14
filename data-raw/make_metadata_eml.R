@@ -18,9 +18,7 @@ datatable_metadata <- dplyr::tibble(filepath =  c("data-raw/Hannon-Example/enclo
                                     attribute_info = c("data-raw/Hannon-Example/enclosure-study-growth-rates-metadata.xlsx",
                                                        "data-raw/Hannon-Example/enclosure-study-gut-contents-metadata.xlsx"),
                       datatable_description = c("Growth Rates - Enclosure Study",
-                                                "Gut Contents - Enclosure Study"),
-                      datatable_url = c("https://raw.githubusercontent.com/FlowWest/CVPIA_Salmonid_Habitat_Monitoring/make-xml/data/enclosure-study-growth-rate-data.csv?token=AMGEQ7R4E5RMNKRMD57BBQTAOSW6W",
-                                        "https://raw.githubusercontent.com/FlowWest/CVPIA_Salmonid_Habitat_Monitoring/make-xml/data/enclosure-study-gut-contents-data.csv?token=AMGEQ7VJADFEYARKPUM4AYTAOSXAQ"))
+                                                "Gut Contents - Enclosure Study"))
 
 # Create dataset list and pipe on metadata elements 
 dataset <- list() %>% 

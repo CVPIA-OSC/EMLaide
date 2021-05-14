@@ -1,0 +1,354 @@
+﻿enclosure,fish_code,length_begin,length_middle,length_end,condition_beginning,condition_ending,density_start,density_middle,density_end,atu,habitat,site_id,days
+1,1,58,63,68,1.021464595,1.116298596,20,20,20,606.897,Control Side Channel,Bourbon Island,48
+1,2,67,72,74,0.875107643,1.133693957,20,20,20,606.897,Control Side Channel,Bourbon Island,48
+1,3,61,65,69,0.944572453,0.951267697,20,20,20,606.897,Control Side Channel,Bourbon Island,48
+1,4,69,68,70,0.764058215,1.070845481,20,20,20,606.897,Control Side Channel,Bourbon Island,48
+1,5,66,70,73,0.932186883,1.001498649,20,20,20,606.897,Control Side Channel,Bourbon Island,48
+1,6,78,73,75,0.63723259,1.007407407,20,20,20,606.897,Control Side Channel,Bourbon Island,48
+1,7,61,64,67,0.932236619,1.037694131,20,20,20,606.897,Control Side Channel,Bourbon Island,48
+1,8,63,68,72,0.945822185,1.014874829,20,20,20,606.897,Control Side Channel,Bourbon Island,48
+1,9,62,69,72,1.064499345,1.099537037,20,20,20,606.897,Control Side Channel,Bourbon Island,48
+1,10,59,60,62,1.000589155,1.007854721,20,20,20,606.897,Control Side Channel,Bourbon Island,48
+1,11,63,69,72,0.90303023,0.974419153,20,20,20,606.897,Control Side Channel,Bourbon Island,48
+1,12,67,71,74,1.018409844,0.913075237,20,20,20,606.897,Control Side Channel,Bourbon Island,48
+1,13,58,53,65,0.930747468,1.011197087,20,20,20,606.897,Control Side Channel,Bourbon Island,48
+1,14,63,66,70,0.90303023,0.734110787,20,20,20,606.897,Control Side Channel,Bourbon Island,48
+1,15,57,60,62,0.927140875,0.990231949,20,20,20,606.897,Control Side Channel,Bourbon Island,48
+1,16,57,63,66,0.977898733,1.068188775,20,20,20,606.897,Control Side Channel,Bourbon Island,48
+1,17,63,68,72,0.890632561,0.991833848,20,20,20,606.897,Control Side Channel,Bourbon Island,48
+1,18,65,NA,77,1.016294948,1.038479146,20,20,20,606.897,Control Side Channel,Bourbon Island,48
+1,19,64,71,78,0.970840454,1.098931202,20,20,20,606.897,Control Side Channel,Bourbon Island,48
+1,20,59,64,69,0.844292747,0.904998037,20,20,20,606.897,Control Side Channel,Bourbon Island,48
+2,1,63,68,72,1.045403464,1.074084791,20,20,20,606.897,Control Side Channel,Bourbon Island,48
+2,2,67,75,79,0.667967802,0.957327919,20,20,20,606.897,Control Side Channel,Bourbon Island,48
+2,3,64,69,71,0.935745239,1.010586431,20,20,20,606.897,Control Side Channel,Bourbon Island,48
+2,4,68,74,78,0.961416141,1.027706131,20,20,20,606.897,Control Side Channel,Bourbon Island,48
+2,5,64,70,72,0.982284546,0.957004458,20,20,20,606.897,Control Side Channel,Bourbon Island,48
+2,6,66,72,78,0.973578763,0.982610968,20,20,20,606.897,Control Side Channel,Bourbon Island,48
+2,7,67,70,73,0.964214348,0.95625641,20,20,20,606.897,Control Side Channel,Bourbon Island,48
+2,8,59,69,71,1.227973649,1.057246075,20,20,20,606.897,Control Side Channel,Bourbon Island,48
+2,9,63,70,75,0.875835343,1.003614815,20,20,20,606.897,Control Side Channel,Bourbon Island,48
+2,10,65,72,76,0.976604461,1.08661977,20,20,20,606.897,Control Side Channel,Bourbon Island,48
+2,11,66,74,79,0.934621699,0.952662974,20,20,20,606.897,Control Side Channel,Bourbon Island,48
+2,12,67,74,80,0.948587426,1.065820313,20,20,20,606.897,Control Side Channel,Bourbon Island,48
+2,13,57,65,71,0.961699416,1.056128479,20,20,20,606.897,Control Side Channel,Bourbon Island,48
+2,14,65,71,78,0.959854347,0.847325478,20,20,20,606.897,Control Side Channel,Bourbon Island,48
+2,15,64,68,72,0.931167603,1.007908951,20,20,20,606.897,Control Side Channel,Bourbon Island,48
+2,16,65,70,71,0.885935366,0.954147819,20,20,20,606.897,Control Side Channel,Bourbon Island,48
+2,17,53,68,70,1.718868596,1.062099125,20,20,20,606.897,Control Side Channel,Bourbon Island,48
+2,18,63,68,70,0.95861978,1.183673469,20,20,20,606.897,Control Side Channel,Bourbon Island,48
+2,19,64,71,73,1.029586792,1.026947408,20,20,20,606.897,Control Side Channel,Bourbon Island,48
+2,20,59,65,67,1.453410524,1.025724574,20,20,20,606.897,Control Side Channel,Bourbon Island,48
+3,1,60,67,74,0.938888889,1.022150712,20,20,20,606.897,Control Side Channel,Bourbon Island,48
+3,2,62,78,74,0.989812359,1.048309083,20,20,20,606.897,Control Side Channel,Bourbon Island,48
+3,3,70,75,78,1.057725948,1.07259057,20,20,20,606.897,Control Side Channel,Bourbon Island,48
+3,4,62,69,77,0.897502602,1.040450526,20,20,20,606.897,Control Side Channel,Bourbon Island,48
+3,5,63,73,84,0.899430907,1.084858547,20,20,20,606.897,Control Side Channel,Bourbon Island,48
+3,6,67,74,83,0.911348803,1.096737072,20,20,20,606.897,Control Side Channel,Bourbon Island,48
+3,7,56,64,75,0.875774417,1.067851852,20,20,20,606.897,Control Side Channel,Bourbon Island,48
+3,8,54,72,77,1.749606259,1.075935365,20,20,20,606.897,Control Side Channel,Bourbon Island,48
+3,9,63,74,85,0.980615644,1.136250763,20,20,20,606.897,Control Side Channel,Bourbon Island,48
+3,10,68,65,72,0.610306839,0.866715964,20,20,20,606.897,Control Side Channel,Bourbon Island,48
+3,11,68,68,84,NA,1.030193824,20,20,20,606.897,Control Side Channel,Bourbon Island,48
+3,12,64,69,73,0.918579102,0.748553405,20,20,20,606.897,Control Side Channel,Bourbon Island,48
+3,13,64,68,72,1.012420654,1.064171811,20,20,20,606.897,Control Side Channel,Bourbon Island,48
+3,14,63,70,76,1.026606998,1.152454804,20,20,20,606.897,Control Side Channel,Bourbon Island,48
+3,15,64,75,87,1.025772095,1.126494488,20,20,20,606.897,Control Side Channel,Bourbon Island,48
+3,16,68,NA,80,0.907668431,0.841992188,20,20,20,606.897,Control Side Channel,Bourbon Island,48
+3,17,58,64,70,1.034277748,1.118367347,20,20,20,606.897,Control Side Channel,Bourbon Island,48
+3,18,68,76,86,0.894947079,1.01893544,20,20,20,606.897,Control Side Channel,Bourbon Island,48
+3,19,61,65,70,0.948096977,1.066180758,20,20,20,606.897,Control Side Channel,Bourbon Island,48
+3,20,62,73,79,1.189956698,1.096870633,20,20,20,606.897,Control Side Channel,Bourbon Island,48
+4,1,71,NA,76,1.029585567,0.975224158,20,19,17,593.2456667,Control Side Channel,Bourbon Island,48
+4,2,67,72,74,0.972526541,1.078909443,20,19,17,593.2456667,Control Side Channel,Bourbon Island,48
+4,3,64,66,66,0.932312012,0.910969196,20,19,17,593.2456667,Control Side Channel,Bourbon Island,48
+4,4,64,74,NA,0.930786133,NA,20,19,17,593.2456667,Control Side Channel,Bourbon Island,48
+4,5,66,73,75,1.022275093,1.038222222,20,19,17,593.2456667,Control Side Channel,Bourbon Island,48
+4,6,66,73,82,0.878273089,0.99244062,20,19,17,593.2456667,Control Side Channel,Bourbon Island,48
+4,7,69,73,90,0.729051563,1.170781893,20,19,17,593.2456667,Control Side Channel,Bourbon Island,48
+4,8,56,64,68,0.883176932,1.044104926,20,19,17,593.2456667,Control Side Channel,Bourbon Island,48
+4,9,65,67,67,0.993354574,0.980838734,20,19,17,593.2456667,Control Side Channel,Bourbon Island,48
+4,10,71,78,76,0.994940083,1.052221534,20,19,17,593.2456667,Control Side Channel,Bourbon Island,48
+4,11,68,70,74,0.902261856,0.925660869,20,19,17,593.2456667,Control Side Channel,Bourbon Island,48
+4,12,62,61,68,0.960860663,1.011983513,20,19,17,593.2456667,Control Side Channel,Bourbon Island,48
+4,13,62,67,68,0.98855359,1.04696723,20,19,17,593.2456667,Control Side Channel,Bourbon Island,48
+4,14,66,71,78,0.951317584,0.894527892,20,19,17,593.2456667,Control Side Channel,Bourbon Island,48
+4,15,59,64,69,0.833580843,0.981403858,20,19,17,593.2456667,Control Side Channel,Bourbon Island,48
+4,16,61,64,68,0.946334715,1.041560655,20,19,17,593.2456667,Control Side Channel,Bourbon Island,48
+4,17,58,62,65,0.885645168,1.001729631,20,19,17,593.2456667,Control Side Channel,Bourbon Island,48
+4,18,61,67,72,0.887739502,1.078907322,20,19,17,593.2456667,Control Side Channel,Bourbon Island,48
+4,19,63,69,NA,0.465112559,NA,20,19,17,593.2456667,Control Side Channel,Bourbon Island,48
+4,20,65,71,72,0.536731907,1.05104381,20,19,17,593.2456667,Control Side Channel,Bourbon Island,48
+5,1,72,81,86,0.815007716,1.043147144,20,18,18,593.2456667,Control Side Channel,Bourbon Island,48
+5,2,62,68,70,0.898341781,0.943148688,20,18,18,593.2456667,Control Side Channel,Bourbon Island,48
+5,3,57,63,68,0.94927994,1.05619021,20,18,18,593.2456667,Control Side Channel,Bourbon Island,48
+5,4,64,71,75,0.966644287,1.020207407,20,18,18,593.2456667,Control Side Channel,Bourbon Island,48
+5,5,60,73,72,0.909722222,0.732756773,20,18,18,593.2456667,Control Side Channel,Bourbon Island,48
+5,6,60,NA,NA,0.896759259,NA,20,18,18,593.2456667,Control Side Channel,Bourbon Island,48
+5,7,54,59,61,0.902428492,0.927390398,20,18,18,593.2456667,Control Side Channel,Bourbon Island,48
+5,8,63,68,78,0.992613389,1.032763533,20,18,18,593.2456667,Control Side Channel,Bourbon Island,48
+5,9,71,77,81,0.916149546,0.987315619,20,18,18,593.2456667,Control Side Channel,Bourbon Island,48
+5,10,60,65,69,0.933333333,0.993275679,20,18,18,593.2456667,Control Side Channel,Bourbon Island,48
+5,11,61,67,72,1.009335583,1.080514832,20,18,18,593.2456667,Control Side Channel,Bourbon Island,48
+5,12,64,70,73,1.000213623,1.045455597,20,18,18,593.2456667,Control Side Channel,Bourbon Island,48
+5,13,60,64,65,0.975,0.965316341,20,18,18,593.2456667,Control Side Channel,Bourbon Island,48
+5,14,68,76,81,0.997353959,1.072179226,20,18,18,593.2456667,Control Side Channel,Bourbon Island,48
+5,15,58,NA,NA,0.943560622,NA,20,18,18,593.2456667,Control Side Channel,Bourbon Island,48
+5,16,68,77,86,0.929294728,0.856842794,20,18,18,593.2456667,Control Side Channel,Bourbon Island,48
+5,17,55,60,69,0.885950413,0.771059545,20,18,18,593.2456667,Control Side Channel,Bourbon Island,48
+5,18,62,65,68,0.907153167,0.977635864,20,18,18,593.2456667,Control Side Channel,Bourbon Island,48
+5,19,65,72,75,0.900500683,0.980148148,20,18,18,593.2456667,Control Side Channel,Bourbon Island,48
+5,20,70,79,82,0.924781341,1.013116467,20,18,18,593.2456667,Control Side Channel,Bourbon Island,48
+6,1,66,70,73,1.008709686,1.127714213,20,17,17,593.2456667,Control Side Channel,Bourbon Island,48
+6,2,57,64,70,0.955759667,1.089504373,20,17,17,593.2456667,Control Side Channel,Bourbon Island,48
+6,3,55,62,66,0.988129226,1.119667752,20,17,17,593.2456667,Control Side Channel,Bourbon Island,48
+6,4,66,72,76,0.950969753,1.064750693,20,17,17,593.2456667,Control Side Channel,Bourbon Island,48
+6,5,56,NA,71,0.891718295,0.909164569,20,17,17,593.2456667,Control Side Channel,Bourbon Island,48
+6,6,54,70,67,1.32982777,1.086569824,20,17,17,593.2456667,Control Side Channel,Bourbon Island,48
+6,7,64,68,68,0.93460083,1.001806432,20,17,17,593.2456667,Control Side Channel,Bourbon Island,48
+6,8,56,66,NA,0.893995991,NA,20,17,17,593.2456667,Control Side Channel,Bourbon Island,48
+6,9,65,NA,NA,0.970050068,NA,20,17,17,593.2456667,Control Side Channel,Bourbon Island,48
+6,10,68,73,77,1.003714635,1.09126832,20,17,17,593.2456667,Control Side Channel,Bourbon Island,48
+6,11,60,64,NA,0.868981482,NA,20,17,17,593.2456667,Control Side Channel,Bourbon Island,48
+6,12,59,64,59,0.930961783,1.485546234,20,17,17,593.2456667,Control Side Channel,Bourbon Island,48
+6,13,56,NA,70,0.905953899,1.006413994,20,17,17,593.2456667,Control Side Channel,Bourbon Island,48
+6,14,67,72,75,0.908023926,0.980622222,20,17,17,593.2456667,Control Side Channel,Bourbon Island,48
+6,15,64,70,75,0.972747803,1.003140741,20,17,17,593.2456667,Control Side Channel,Bourbon Island,48
+6,16,67,68,73,1.050661152,1.096096057,20,17,17,593.2456667,Control Side Channel,Bourbon Island,48
+6,17,63,69,73,0.894631809,0.991216322,20,17,17,593.2456667,Control Side Channel,Bourbon Island,48
+6,18,67,75,79,0.980506246,1.110459822,20,17,17,593.2456667,Control Side Channel,Bourbon Island,48
+6,19,64,70,73,0.954055786,1.144680053,20,17,17,593.2456667,Control Side Channel,Bourbon Island,48
+6,20,66,70,75,0.975317918,1.114548148,20,17,17,593.2456667,Control Side Channel,Bourbon Island,48
+1,1,71,77,88,1.011704027,1.185521929,20,14,5,601.372,Mainstem Control,Mainstem North,43
+1,2,66,71,NA,1.068884437,NA,20,14,5,601.372,Mainstem Control,Mainstem North,43
+1,3,66,68,NA,1.067840944,NA,20,14,5,601.372,Mainstem Control,Mainstem North,43
+1,4,71,77,94,1.01393922,1.144616318,20,14,5,601.372,Mainstem Control,Mainstem North,43
+1,5,54,73,83,0.992607834,1.14815482,20,14,5,601.372,Mainstem Control,Mainstem North,43
+1,6,69,74,79,1.015497292,1.136421257,20,14,5,601.372,Mainstem Control,Mainstem North,43
+1,7,68,66,NA,0.950921026,NA,20,14,5,601.372,Mainstem Control,Mainstem North,43
+1,8,60,NA,NA,0.951388889,NA,20,14,5,601.372,Mainstem Control,Mainstem North,43
+1,9,59,63,NA,0.728896333,NA,20,14,5,601.372,Mainstem Control,Mainstem North,43
+1,10,48,68,NA,1.017252604,NA,20,14,5,601.372,Mainstem Control,Mainstem North,43
+1,11,60,NA,NA,1.134722222,NA,20,14,5,601.372,Mainstem Control,Mainstem North,43
+1,12,61,67,NA,0.905362123,NA,20,14,5,601.372,Mainstem Control,Mainstem North,43
+1,13,62,NA,NA,0.927293478,NA,20,14,5,601.372,Mainstem Control,Mainstem North,43
+1,14,73,67,NA,1.036201503,NA,20,14,5,601.372,Mainstem Control,Mainstem North,43
+1,15,72,78,NA,0.98326046,NA,20,14,5,601.372,Mainstem Control,Mainstem North,43
+1,16,65,68,NA,0.335002276,NA,20,14,5,601.372,Mainstem Control,Mainstem North,43
+1,17,73,NA,NA,0.928494128,NA,20,14,5,601.372,Mainstem Control,Mainstem North,43
+1,18,70,NA,NA,1.016326531,NA,20,14,5,601.372,Mainstem Control,Mainstem North,43
+1,19,59,NA,NA,1.028829627,NA,20,14,5,601.372,Mainstem Control,Mainstem North,43
+1,20,59,68,75,1.090666524,1.116918519,20,14,5,601.372,Mainstem Control,Mainstem North,43
+2,1,62,71,75,1.115269712,1.159348148,20,20,17,593.193,Mainstem Control,Mainstem North,43
+2,2,61,67,80,0.877606496,1.183203125,20,20,17,593.193,Mainstem Control,Mainstem North,43
+2,3,67,78,93,1.029049451,1.157819227,20,20,17,593.193,Mainstem Control,Mainstem North,43
+2,4,64,69,80,0.972366333,1.094921875,20,20,17,593.193,Mainstem Control,Mainstem North,43
+2,5,70,74,80,1.270553936,1.079101563,20,20,17,593.193,Mainstem Control,Mainstem North,43
+2,6,63,66,74,0.967418125,0.989576136,20,20,17,593.193,Mainstem Control,Mainstem North,43
+2,7,73,82,95,1.054709691,1.069077125,20,20,17,593.193,Mainstem Control,Mainstem North,43
+2,8,65,69,NA,0.909604006,NA,20,20,17,593.193,Mainstem Control,Mainstem North,43
+2,9,61,66,75,1.014181804,1.094874074,20,20,17,593.193,Mainstem Control,Mainstem North,43
+2,10,65,70,74,1.082567137,1.126537421,20,20,17,593.193,Mainstem Control,Mainstem North,43
+2,11,60,67,76,1.012037037,1.053816154,20,20,17,593.193,Mainstem Control,Mainstem North,43
+2,12,69,81,90,1.188704115,1.059533608,20,20,17,593.193,Mainstem Control,Mainstem North,43
+2,13,51,65,72,1.551439492,1.083461934,20,20,17,593.193,Mainstem Control,Mainstem North,43
+2,14,65,80,90,1.168502503,1.003017833,20,20,17,593.193,Mainstem Control,Mainstem North,43
+2,15,60,70,84,1.37037037,1.12180785,20,20,17,593.193,Mainstem Control,Mainstem North,43
+2,16,69,78,83,1.029499953,1.009641702,20,20,17,593.193,Mainstem Control,Mainstem North,43
+2,17,51,68,NA,2.700318882,NA,20,20,17,593.193,Mainstem Control,Mainstem North,43
+2,18,69,73,81,0.938178254,1.161747024,20,20,17,593.193,Mainstem Control,Mainstem North,43
+2,19,60,65,NA,0.9375,NA,20,20,17,593.193,Mainstem Control,Mainstem North,43
+2,20,68,68,86,1.090855893,1.181499742,20,20,17,593.193,Mainstem Control,Mainstem North,43
+3,1,68,NA,NA,0.88826837,NA,19,18,16,596.342,Mainstem Control,Mainstem North,43
+3,2,70,75,80,1.117784257,1.054492188,19,18,16,596.342,Mainstem Control,Mainstem North,43
+3,3,60,65,70,1.161111111,1.118075802,19,18,16,596.342,Mainstem Control,Mainstem North,43
+3,4,67,70,71,0.944930061,0.912237959,19,18,16,596.342,Mainstem Control,Mainstem North,43
+3,5,73,77,79,1.005097464,1.031561398,19,18,16,596.342,Mainstem Control,Mainstem North,43
+3,6,65,66,68,0.866272189,1.024704865,19,18,16,596.342,Mainstem Control,Mainstem North,43
+3,7,68,70,71,0.962688276,1.03182076,19,18,16,596.342,Mainstem Control,Mainstem North,43
+3,8,63,72,NA,1.095394066,NA,19,18,16,596.342,Mainstem Control,Mainstem North,43
+3,9,68,68,69,1.255597395,0.999668198,19,18,16,596.342,Mainstem Control,Mainstem North,43
+3,10,70,75,80,0.898250729,0.990820313,19,18,16,596.342,Mainstem Control,Mainstem North,43
+3,11,62,73,75,1.247020912,1.03917037,19,18,16,596.342,Mainstem Control,Mainstem North,43
+3,12,70,63,64,1.043731778,0.939941406,19,18,16,596.342,Mainstem Control,Mainstem North,43
+3,13,67,75,82,0.985493561,0.92061926,19,18,16,596.342,Mainstem Control,Mainstem North,43
+3,14,67,72,82,1.066620562,1.043586135,19,18,16,596.342,Mainstem Control,Mainstem North,43
+3,15,68,70,72,0.942970181,0.985939643,19,18,16,596.342,Mainstem Control,Mainstem North,43
+3,16,65,70,73,1.219481111,0.932607058,19,18,16,596.342,Mainstem Control,Mainstem North,43
+3,17,67,68,74,1.268773087,1.064596371,19,18,16,596.342,Mainstem Control,Mainstem North,43
+3,18,73,74,80,1.014608616,1.081640625,19,18,16,596.342,Mainstem Control,Mainstem North,43
+3,19,69,79,86,1.09920885,1.038116141,19,18,16,596.342,Mainstem Control,Mainstem North,43
+4,1,68,74,80,1.057753847,1.06473496,20,11,11,596.342,Mainstem Control,Mainstem North,43
+4,2,66,71,73,0.935685274,1.049837037,20,11,11,596.342,Mainstem Control,Mainstem North,43
+4,3,62,67,75,0.976681763,NA,20,11,11,596.342,Mainstem Control,Mainstem North,43
+4,4,68,NA,NA,0.969387755,0.957622634,20,11,11,596.342,Mainstem Control,Mainstem North,43
+4,5,70,76,85,1.013755016,NA,20,11,11,596.342,Mainstem Control,Mainstem North,43
+4,6,67,NA,NA,0.972859029,NA,20,11,11,596.342,Mainstem Control,Mainstem North,43
+4,7,67,71,NA,0.950601131,NA,20,11,11,596.342,Mainstem Control,Mainstem North,43
+4,8,73,NA,NA,1.002332362,1.054826693,20,11,11,596.342,Mainstem Control,Mainstem North,43
+4,9,70,78,84,0.923425309,NA,20,11,11,596.342,Mainstem Control,Mainstem North,43
+4,10,61,NA,NA,1.043701172,1.075001822,20,11,11,596.342,Mainstem Control,Mainstem North,43
+4,11,64,68,76,1.345046502,0.9608793,20,11,11,596.342,Mainstem Control,Mainstem North,43
+4,12,61,78,85,0.940961049,NA,20,11,11,596.342,Mainstem Control,Mainstem North,43
+4,13,74,NA,NA,0.785714286,1.136141818,20,11,11,596.342,Mainstem Control,Mainstem North,43
+4,14,70,76,92,0.932909402,1.021657158,20,11,11,596.342,Mainstem Control,Mainstem North,43
+4,15,59,71,74,0.561728648,NA,20,11,11,596.342,Mainstem Control,Mainstem North,43
+4,16,58,NA,NA,0.959126081,1.001799037,20,11,11,596.342,Mainstem Control,Mainstem North,43
+4,17,65,68,69,0.983015193,NA,20,11,11,596.342,Mainstem Control,Mainstem North,43
+4,18,63,NA,NA,0.984828586,NA,20,11,11,596.342,Mainstem Control,Mainstem North,43
+4,19,67,NA,NA,0.917783074,NA,20,11,11,596.342,Mainstem Control,Mainstem North,43
+4,20,69,NA,NA,0.985707783,NA,20,11,11,596.342,Mainstem Control,Mainstem North,43
+5,1,65,68,NA,0.887314268,NA,18,13,7,628.55,Mainstem Control,Mainstem North,45
+5,2,68,71,NA,0.789658302,NA,18,13,7,628.55,Mainstem Control,Mainstem North,45
+5,3,67,69,NA,0.941467285,NA,18,13,7,628.55,Mainstem Control,Mainstem North,45
+5,4,64,74,NA,1.010610005,1.123082542,18,13,7,628.55,Mainstem Control,Mainstem North,45
+5,5,63,69,74,0.917333582,NA,18,13,7,628.55,Mainstem Control,Mainstem North,45
+5,6,67,74,NA,0.473061626,NA,18,13,7,628.55,Mainstem Control,Mainstem North,45
+5,7,58,65,NA,0.885082274,1.096911962,18,13,7,628.55,Mainstem Control,Mainstem North,45
+5,8,67,NA,83,0.610992165,NA,18,13,7,628.55,Mainstem Control,Mainstem North,45
+5,9,56,72,NA,0.840464036,1.10037905,18,13,7,628.55,Mainstem Control,Mainstem North,45
+5,10,69,76,74,0.680592306,NA,18,13,7,628.55,Mainstem Control,Mainstem North,45
+5,11,68,NA,NA,0.871209008,1.100827728,18,13,7,628.55,Mainstem Control,Mainstem North,45
+5,12,69,71,78,0.910848769,1.19004228,18,13,7,628.55,Mainstem Control,Mainstem North,45
+5,13,68,56,76,1.206620191,1.100827728,18,13,7,628.55,Mainstem Control,Mainstem North,45
+5,14,68,71,78,0.965232546,1.06883031,18,13,7,628.55,Mainstem Control,Mainstem North,45
+5,15,68,NA,84,1.013090041,NA,18,13,7,628.55,Mainstem Control,Mainstem North,45
+5,16,67,77,NA,0.927334699,NA,18,13,7,628.55,Mainstem Control,Mainstem North,45
+5,17,49,NA,NA,0.90787172,NA,18,13,7,628.55,Mainstem Control,Mainstem North,45
+5,18,70,NA,NA,0.909051071,NA,18,13,7,628.55,Mainstem Control,Mainstem North,45
+6,1,59,NA,85,1.046581644,1.027966619,20,19,14,624.575,Mainstem Control,Mainstem North,45
+6,2,74,82,NA,0.881757397,NA,20,19,14,624.575,Mainstem Control,Mainstem North,45
+6,3,67,72,67,0.849914551,1.052988566,20,19,14,624.575,Mainstem Control,Mainstem North,45
+6,4,64,64,65,1.728920118,1.104779244,20,19,14,624.575,Mainstem Control,Mainstem North,45
+6,5,52,64,NA,0.881092422,NA,20,19,14,624.575,Mainstem Control,Mainstem North,45
+6,6,67,64,67,0.92309758,0.965876787,20,19,14,624.575,Mainstem Control,Mainstem North,45
+6,7,62,72,64,0.899830832,0.905990601,20,19,14,624.575,Mainstem Control,Mainstem North,45
+6,8,63,72,NA,0.846846188,NA,20,19,14,624.575,Mainstem Control,Mainstem North,45
+6,9,67,66,69,0.895831584,1.069377095,20,19,14,624.575,Mainstem Control,Mainstem North,45
+6,10,63,65,73,1.003997488,0.975535774,20,19,14,624.575,Mainstem Control,Mainstem North,45
+6,11,59,62,70,1.037979126,1.079300292,20,19,14,624.575,Mainstem Control,Mainstem North,45
+6,12,64,69,64,0.862637824,1.139068604,20,19,14,624.575,Mainstem Control,Mainstem North,45
+6,13,63,63,66,0.599887221,0.907490887,20,19,14,624.575,Mainstem Control,Mainstem North,45
+6,14,63,65,NA,0.928708573,NA,20,19,14,624.575,Mainstem Control,Mainstem North,45
+6,15,66,68,NA,1.029968262,NA,20,19,14,624.575,Mainstem Control,Mainstem North,45
+6,16,64,64,84,1.02284934,1.073554422,20,19,14,624.575,Mainstem Control,Mainstem North,45
+6,17,65,78,76,1.036834717,1.191181295,20,19,14,624.575,Mainstem Control,Mainstem North,45
+6,18,64,73,68,0.773458172,1.009757277,20,19,14,624.575,Mainstem Control,Mainstem North,45
+6,19,68,66,77,0.992971273,0.908806154,20,19,14,624.575,Mainstem Control,Mainstem North,45
+6,20,69,74,NA,0.851168528,NA,20,19,14,624.575,Mainstem Control,Mainstem North,45
+1,1,64,69,75,0.923156738,1.048888889,20,20,18,594.108,Restored Side Channel,Lake California,43
+1,2,69,71,91,0.993580085,1.030427126,20,20,18,594.108,Restored Side Channel,Lake California,43
+1,3,63,68,71,0.990613765,1.024556384,20,20,18,594.108,Restored Side Channel,Lake California,43
+1,4,65,69,72,1.055621302,1.066047239,20,20,18,594.108,Restored Side Channel,Lake California,43
+1,5,59,65,72,0.904182025,1.063368056,20,20,18,594.108,Restored Side Channel,Lake California,43
+1,6,69,72,75,1.004234283,1.090133333,20,20,18,594.108,Restored Side Channel,Lake California,43
+1,7,60,65,70,0.93287037,1.044023324,20,20,18,594.108,Restored Side Channel,Lake California,43
+1,8,69,75,NA,0.995406519,NA,20,20,18,594.108,Restored Side Channel,Lake California,43
+1,9,72,82,NA,1.045685442,NA,20,20,18,594.108,Restored Side Channel,Lake California,43
+1,10,65,69,74,0.899772417,1.089274081,20,20,18,594.108,Restored Side Channel,Lake California,43
+1,11,66,69,82,0.967317806,0.982646799,20,20,18,594.108,Restored Side Channel,Lake California,43
+1,12,67,72,80,1.134448054,1.18984375,20,20,18,594.108,Restored Side Channel,Lake California,43
+1,13,70,77,86,1.004081633,1.216716767,20,20,18,594.108,Restored Side Channel,Lake California,43
+1,14,60,68,73,0.988425926,1.133883609,20,20,18,594.108,Restored Side Channel,Lake California,43
+1,15,65,73,80,0.992262176,1.023632813,20,20,18,594.108,Restored Side Channel,Lake California,43
+1,16,73,80,88,0.988131624,0.961741642,20,20,18,594.108,Restored Side Channel,Lake California,43
+1,17,74,82,89,0.991056798,1.040613133,20,20,18,594.108,Restored Side Channel,Lake California,43
+1,18,72,77,82,0.923514661,0.970676572,20,20,18,594.108,Restored Side Channel,Lake California,43
+1,19,60,66,70,0.961111111,1.07638484,20,20,18,594.108,Restored Side Channel,Lake California,43
+1,20,64,68,75,0.940322876,1.001481481,20,20,18,594.108,Restored Side Channel,Lake California,43
+2,1,68,70,75,1.111528089,1.011674074,20,16,14,594.108,Restored Side Channel,Lake California,43
+2,2,68,69,76,0.79508447,1.04880449,20,16,14,594.108,Restored Side Channel,Lake California,43
+2,3,61,66,71,0.938404536,1.033776553,20,16,14,594.108,Restored Side Channel,Lake California,43
+2,4,64,69,74,1.235961914,1.051763963,20,16,14,594.108,Restored Side Channel,Lake California,43
+2,5,60,70,NA,0.901388889,NA,20,16,14,594.108,Restored Side Channel,Lake California,43
+2,6,64,66,72,0.950622559,1.10730667,20,16,14,594.108,Restored Side Channel,Lake California,43
+2,7,69,67,76,0.969836443,1.04880449,20,16,14,594.108,Restored Side Channel,Lake California,43
+2,8,75,70,75,0.942933333,1.10957037,20,16,14,594.108,Restored Side Channel,Lake California,43
+2,9,68,67,71,0.886042133,0.981249529,20,16,14,594.108,Restored Side Channel,Lake California,43
+2,10,60,69,72,1.000925926,1.014338992,20,16,14,594.108,Restored Side Channel,Lake California,43
+2,11,67,69,NA,0.941272696,NA,20,16,14,594.108,Restored Side Channel,Lake California,43
+2,12,70,61,69,1.109912536,1.01915016,20,16,14,594.108,Restored Side Channel,Lake California,43
+2,13,66,68,78,0.984361522,0.975657041,20,16,14,594.108,Restored Side Channel,Lake California,43
+2,14,71,70,79,1.012542224,1.022231507,20,16,14,594.108,Restored Side Channel,Lake California,43
+2,15,63,NA,NA,0.90462993,NA,20,16,14,594.108,Restored Side Channel,Lake California,43
+2,16,69,NA,NA,1.000277009,NA,20,16,14,594.108,Restored Side Channel,Lake California,43
+2,17,70,NA,NA,1.023323615,1.085131284,20,16,14,594.108,Restored Side Channel,Lake California,43
+2,18,67,67,78,0.900044221,1.015484078,20,16,14,594.108,Restored Side Channel,Lake California,43
+2,19,61,NA,NA,0.926068702,NA,20,16,14,594.108,Restored Side Channel,Lake California,43
+2,20,67,75,86,1.011095115,1.01201781,20,16,14,594.108,Restored Side Channel,Lake California,43
+3,1,65,68,NA,1.063632226,NA,19,16,14,597.193,Restored Side Channel,Lake California,43
+3,2,68,NA,NA,0.965868614,NA,19,16,14,597.193,Restored Side Channel,Lake California,43
+3,3,64,75,69,0.933456421,0.987796377,19,16,14,597.193,Restored Side Channel,Lake California,43
+3,4,68,71,78,0.807487788,1.05762909,19,16,14,597.193,Restored Side Channel,Lake California,43
+3,5,70,84,93,1.19271137,1.19859714,19,16,14,597.193,Restored Side Channel,Lake California,43
+3,6,64,71,88,0.883102417,1.00532377,19,16,14,597.193,Restored Side Channel,Lake California,43
+3,7,64,NA,76,1.182174683,0.926929946,19,16,14,597.193,Restored Side Channel,Lake California,43
+3,8,63,65,NA,1.230968578,NA,19,16,14,597.193,Restored Side Channel,Lake California,43
+3,9,63,NA,72,0.980215719,0.974151235,19,16,14,597.193,Restored Side Channel,Lake California,43
+3,10,64,66,72,0.9765625,1.100608711,19,16,14,597.193,Restored Side Channel,Lake California,43
+3,11,67,80,NA,1.097209431,NA,19,16,14,597.193,Restored Side Channel,Lake California,43
+3,12,65,71,NA,0.939462904,NA,19,16,14,597.193,Restored Side Channel,Lake California,43
+3,13,64,74,77,0.916290283,0.976928283,19,16,14,597.193,Restored Side Channel,Lake California,43
+3,14,70,81,87,1.169387755,1.037808484,19,16,14,597.193,Restored Side Channel,Lake California,43
+3,15,67,76,78,1.234194366,1.0064229,19,16,14,597.193,Restored Side Channel,Lake California,43
+3,16,62,68,72,0.805612433,1.069798097,19,16,14,597.193,Restored Side Channel,Lake California,43
+3,17,62,66,70,0.935265684,1.021865889,19,16,14,597.193,Restored Side Channel,Lake California,43
+3,18,62,69,69,1.278909738,1.590976199,19,16,14,597.193,Restored Side Channel,Lake California,43
+3,19,60,75,75,1.135185185,0.95122963,19,16,14,597.193,Restored Side Channel,Lake California,43
+4,1,70,73,75,1.011078717,1.066903704,19,17,13,625.968,Restored Side Channel,Lake California,45
+4,2,63,69,68,0.497506469,1.156370853,19,17,13,625.968,Restored Side Channel,Lake California,45
+4,3,67,69,88,0.824237024,1.12051559,19,17,13,625.968,Restored Side Channel,Lake California,45
+4,4,69,74,77,0.97988183,1.080754294,19,17,13,625.968,Restored Side Channel,Lake California,45
+4,5,69,67,70,1.050503944,1.042565598,19,17,13,625.968,Restored Side Channel,Lake California,45
+4,6,56,69,71,1.419005102,0.973146956,19,17,13,625.968,Restored Side Channel,Lake California,45
+4,7,67,72,75,1.110508939,1.293748148,19,17,13,625.968,Restored Side Channel,Lake California,45
+4,8,68,78,75,0.998626094,1.161955556,19,17,13,625.968,Restored Side Channel,Lake California,45
+4,9,71,NA,NA,0.970911763,NA,19,17,13,625.968,Restored Side Channel,Lake California,45
+4,10,53,NA,NA,0.928283079,NA,19,17,13,625.968,Restored Side Channel,Lake California,45
+4,11,62,71,76,1.083380887,0.980691427,19,17,13,625.968,Restored Side Channel,Lake California,45
+4,12,66,NA,NA,0.960013357,NA,19,17,13,625.968,Restored Side Channel,Lake California,45
+4,13,67,63,80,0.965876787,1.134179688,19,17,13,625.968,Restored Side Channel,Lake California,45
+4,14,68,70,NA,1.036790149,NA,19,17,13,625.968,Restored Side Channel,Lake California,45
+4,15,64,77,NA,0.984573364,NA,19,17,13,625.968,Restored Side Channel,Lake California,45
+4,16,68,67,68,1.010393344,0.970639121,19,17,13,625.968,Restored Side Channel,Lake California,45
+4,17,68,81,NA,NA,NA,19,17,13,625.968,Restored Side Channel,Lake California,45
+4,18,56,66,68,0.898551385,1.018662223,19,17,13,625.968,Restored Side Channel,Lake California,45
+4,19,63,64,82,0.954220607,1.037238287,19,17,13,625.968,Restored Side Channel,Lake California,45
+5,1,69,71,71,0.981403858,1.011145229,20,20,14,621.224,Restored Side Channel,Lake California,45
+5,2,67,66,NA,0.94360011,NA,20,20,14,621.224,Restored Side Channel,Lake California,45
+5,3,63,63,64,0.953420757,0.92048645,20,20,14,621.224,Restored Side Channel,Lake California,45
+5,4,67,65,65,1.139767857,0.830223031,20,20,14,621.224,Restored Side Channel,Lake California,45
+5,5,70,64,63,0.99941691,0.898231133,20,20,14,621.224,Restored Side Channel,Lake California,45
+5,6,65,64,NA,0.98279472,NA,20,20,14,621.224,Restored Side Channel,Lake California,45
+5,7,62,70,69,1.022959954,0.935438603,20,20,14,621.224,Restored Side Channel,Lake California,45
+5,8,67,77,NA,1.065623099,NA,20,20,14,621.224,Restored Side Channel,Lake California,45
+5,9,66,59,NA,0.933926037,NA,20,20,14,621.224,Restored Side Channel,Lake California,45
+5,10,69,61,NA,0.965574764,NA,20,20,14,621.224,Restored Side Channel,Lake California,45
+5,11,67,68,NA,0.95955952,NA,20,20,14,621.224,Restored Side Channel,Lake California,45
+5,12,59,72,74,0.843805842,1.074220678,20,20,14,621.224,Restored Side Channel,Lake California,45
+5,13,70,68,69,0.894169096,0.994797707,20,20,14,621.224,Restored Side Channel,Lake California,45
+5,14,68,72,79,0.98145227,1.15406692,20,20,14,621.224,Restored Side Channel,Lake California,45
+5,15,59,63,63,0.957741541,0.79585038,20,20,14,621.224,Restored Side Channel,Lake California,45
+5,16,58,72,76,0.748288163,1.062017058,20,20,14,621.224,Restored Side Channel,Lake California,45
+5,17,61,72,73,0.998762011,1.008696278,20,20,14,621.224,Restored Side Channel,Lake California,45
+5,18,64,68,70,0.866699219,0.954227405,20,20,14,621.224,Restored Side Channel,Lake California,45
+5,19,50,64,65,0.8728,0.931087847,20,20,14,621.224,Restored Side Channel,Lake California,45
+5,20,72,68,68,0.951914009,0.960144006,20,20,14,621.224,Restored Side Channel,Lake California,45
+6,1,65,NA,NA,1.19435594,NA,18,16,14,620.286,Restored Side Channel,Lake California,45
+6,2,67,72,NA,1.238516706,NA,18,16,14,620.286,Restored Side Channel,Lake California,45
+6,3,67,67,81,1.042348959,1.164193203,18,16,14,620.286,Restored Side Channel,Lake California,45
+6,4,69,NA,77,0.928741678,1.007813236,18,16,14,620.286,Restored Side Channel,Lake California,45
+6,5,62,69,70,1.133312074,0.990379009,18,16,14,620.286,Restored Side Channel,Lake California,45
+6,6,56,66,68,0.622380649,0.84883218,18,16,14,620.286,Restored Side Channel,Lake California,45
+6,7,69,70,74,0.946397207,0.856316506,18,16,14,620.286,Restored Side Channel,Lake California,45
+6,8,67,70,70,1.049331201,0.908454811,18,16,14,620.286,Restored Side Channel,Lake California,45
+6,9,68,69,75,0.967458783,0.972088889,18,16,14,620.286,Restored Side Channel,Lake California,45
+6,10,67,63,65,1.080585045,0.924533455,18,16,14,620.286,Restored Side Channel,Lake California,45
+6,11,63,75,68,1.273360608,0.960144006,18,16,14,620.286,Restored Side Channel,Lake California,45
+6,12,67,74,76,0.898381782,0.942648345,18,16,14,620.286,Restored Side Channel,Lake California,45
+6,13,68,72,73,0.942970181,0.959855225,18,16,14,620.286,Restored Side Channel,Lake California,45
+6,14,62,63,63,0.917642912,0.932624667,18,16,14,620.286,Restored Side Channel,Lake California,45
+6,15,68,72,NA,1.127429778,NA,18,16,14,620.286,Restored Side Channel,Lake California,45
+6,16,67,70,72,0.90303661,0.995316787,18,16,14,620.286,Restored Side Channel,Lake California,45
+6,17,62,72,64,1.013309389,0.888442993,18,16,14,620.286,Restored Side Channel,Lake California,45
+6,18,72,74,NA,0.890292781,NA,18,16,14,620.286,Restored Side Channel,Lake California,45
