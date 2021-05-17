@@ -155,6 +155,35 @@
 
     <p>The dataset list or project with methods information appended.</p>
 
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'><span class='va'>methods_docx</span> <span class='op'>&lt;-</span> <span class='va'>methods_docx</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/system.file.html'>system.file</a></span><span class='op'>(</span><span class='st'>"extdata"</span>, <span class='st'>"Banet-Example"</span>, <span class='st'>"metadata"</span>, <span class='st'>"methods.docx"</span>, 
+                                             package <span class='op'>=</span> <span class='st'>"EMLaide"</span>, mustWork <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span>
+<span class='va'>dataset</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
+    <span class='fu'>add_method</span><span class='op'>(</span><span class='va'>methods_docx</span><span class='op'>)</span>
+<span class='va'>dataset</span>
+</div><div class='output co'>#&gt; $methods
+#&gt; $methods$sampling
+#&gt; NULL
+#&gt; 
+#&gt; $methods$methodStep
+#&gt; $methods$methodStep$instrumentation
+#&gt; character(0)
+#&gt; 
+#&gt; $methods$methodStep$software
+#&gt; NULL
+#&gt; 
+#&gt; $methods$methodStep$description
+#&gt; $methods$methodStep$description$section
+#&gt; $methods$methodStep$description$section[[1]]
+#&gt; [1] "&lt;title&gt;Enclosure Study: Growth Rate Methods.&lt;/title&gt;\n&lt;para&gt;\n      Data was collected following methods described at the following\n      link:\n    &lt;/para&gt;\n&lt;para&gt;\n  &lt;link xlink:href=\"https://www.sacramentoriver.org/forum/publications/side_channels/Monitoring%20Plan%20(final)%20170831.pdf\"&gt;\n    &lt;emphasis role=\"underline\"&gt;https://www.sacramentoriver.org/forum/publications/side_channels/Monitoring%20Plan%20(final)%20170831.pdf&lt;/emphasis&gt;\n  &lt;/link&gt;\n&lt;/para&gt;\n&lt;para&gt;\n      Monitoring efforts will generate data for the presented response\n      variables for the purpose of testing the hypotheses presented in\n      table 1 of the aforementioned document. Specific response variable\n      metrics are identified while methods reference field protocols\n      that are documented in Appendix A (Table A-1).\n    &lt;/para&gt;\n&lt;para&gt;\n      Note that the above referenced protocol includes additional types\n      of data collection. Enclosure study methods are identified and\n      clearly labeled throughout the document.\n    &lt;/para&gt;\n&lt;para&gt;\n      Caveats to using this data: Some enclosures lost fish due to\n      mortality or escape, and others did not. This resulted in\n      different densities between habitat types, and confounded habitat\n      type with density dependent effects on growth. Logistical\n      constraints prevented removal of all enclosures on the same day,\n      so the total time from start to finish was not identical between\n      habitat types.\n    &lt;/para&gt;"
+#&gt; 
+#&gt; 
+#&gt; $methods$methodStep$description$para
+#&gt; list()
+#&gt; 
+#&gt; 
+#&gt; 
+#&gt; </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

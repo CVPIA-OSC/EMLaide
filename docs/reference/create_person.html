@@ -171,21 +171,56 @@ register at <a href='http://orcid.org/'>http://orcid.org/</a></p></td>
     </tr>
     </table>
 
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+
+    <p>A person element that can be appended to a dataset or project list.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>create_personnel</span><span class='op'>(</span>first_name <span class='op'>=</span> <span class='st'>'Katherine'</span>, 
-                 last_name <span class='op'>=</span> <span class='st'>"Johnson"</span>, 
-                 email <span class='op'>=</span> <span class='st'>'kjohnson@nasa.gov'</span>, 
-                 role <span class='op'>=</span> <span class='st'>'creator'</span>, 
-                 organization <span class='op'>=</span> <span class='st'>'NASA'</span>,
-                 orcid <span class='op'>=</span> <span class='st'>'12345'</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; <span class='error'>Error in create_personnel(first_name = "Katherine", last_name = "Johnson",     email = "kjohnson@nasa.gov", role = "creator", organization = "NASA",     orcid = "12345"): could not find function "create_personnel"</span></div><div class='input'>
-<span class='fu'>create_personnel</span><span class='op'>(</span>first_name <span class='op'>=</span> <span class='st'>"Edith"</span>, 
-                 last_name <span class='op'>=</span> <span class='st'>"Windsor"</span>, 
-                 email <span class='op'>=</span> <span class='st'>'ewindsor@ibm.com'</span>, 
-                 role <span class='op'>=</span> <span class='st'>'Data Manager'</span>, 
-                 organization <span class='op'>=</span> <span class='st'>'IBM'</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; <span class='error'>Error in create_personnel(first_name = "Edith", last_name = "Windsor",     email = "ewindsor@ibm.com", role = "Data Manager", organization = "IBM"): could not find function "create_personnel"</span></div></pre>
+    <pre class="examples"><div class='input'><span class='fu'>create_person</span><span class='op'>(</span>first_name <span class='op'>=</span> <span class='st'>'Katherine'</span>, 
+              last_name <span class='op'>=</span> <span class='st'>"Johnson"</span>, 
+              email <span class='op'>=</span> <span class='st'>'kjohnson@nasa.gov'</span>, 
+              role <span class='op'>=</span> <span class='st'>'creator'</span>, 
+              organization <span class='op'>=</span> <span class='st'>'NASA'</span>,
+              orcid <span class='op'>=</span> <span class='st'>'12345'</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; $individualName
+#&gt; $individualName$givenName
+#&gt; [1] "Katherine"
+#&gt; 
+#&gt; $individualName$surName
+#&gt; [1] "Johnson"
+#&gt; 
+#&gt; 
+#&gt; $electronicMailAddress
+#&gt; [1] "kjohnson@nasa.gov"
+#&gt; 
+#&gt; $organizationName
+#&gt; [1] "NASA"
+#&gt; 
+#&gt; $`@id`
+#&gt; [1] "12345"
+#&gt; </div><div class='input'>
+<span class='fu'>create_person</span><span class='op'>(</span>first_name <span class='op'>=</span> <span class='st'>"Edith"</span>, 
+              last_name <span class='op'>=</span> <span class='st'>"Windsor"</span>, 
+              email <span class='op'>=</span> <span class='st'>'ewindsor@ibm.com'</span>, 
+              role <span class='op'>=</span> <span class='st'>'Data Manager'</span>, 
+              organization <span class='op'>=</span> <span class='st'>'IBM'</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; $individualName
+#&gt; $individualName$givenName
+#&gt; [1] "Edith"
+#&gt; 
+#&gt; $individualName$surName
+#&gt; [1] "Windsor"
+#&gt; 
+#&gt; 
+#&gt; $electronicMailAddress
+#&gt; [1] "ewindsor@ibm.com"
+#&gt; 
+#&gt; $organizationName
+#&gt; [1] "IBM"
+#&gt; 
+#&gt; $role
+#&gt; [1] "Data Manager"
+#&gt; </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

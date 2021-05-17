@@ -39,6 +39,7 @@ create_title <- function(title, short_name) {
 #'                        short_name = "knb-lter-bnz.501.17")
 #' dataset <-list() %>% 
 #'    add_title(title_metadata)
+#' dataset
 #' @export
 #' 
 add_title <- function(parent_element, title_metadata) {

@@ -9,8 +9,7 @@
 #' create_maintenance(status = "complete")
 #' 
 #' create_maintenance(status = "ongoing",
-#'                    update_frequency = "Data are updated 
-#'                    annually at the end of the calendar year.")
+#'                    update_frequency = "anually")
 #' @export 
 create_maintenance <- function(status = c("complete", "ongoing"), 
                                update_frequency = NULL) {
@@ -35,10 +34,10 @@ create_maintenance <- function(status = c("complete", "ongoing"),
 #' @param maintenance_metadata A table or list containing maintenance metadata: see \code{\link{create_maintenance}} 
 #' @return The dataset list or project with maintenance information appended.
 #' @examples 
-#' maintenance_metadata <- list(status = "ongoing", update_frequency = "complete")
+#' maintenance_metadata <- list(status = "ongoing", update_frequency = "monthly")
 #' dataset <- list() %>%
 #'      add_maintenance(maintenance_metadata) 
-#' 
+#' dataset
 #' @export
 
 add_maintenance <- function(parent_element, maintenance_metadata) {

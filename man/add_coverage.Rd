@@ -31,4 +31,5 @@ coverage <- list(geographic_description = "Description",
              
 dataset <- list() \%>\% 
   add_coverage(coverage)
+dataset
 }

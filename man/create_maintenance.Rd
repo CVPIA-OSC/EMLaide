@@ -25,6 +25,5 @@ Create Maintenance
 create_maintenance(status = "complete")
 
 create_maintenance(status = "ongoing",
-                   update_frequency = "Data are updated 
-                   annually at the end of the calendar year.")
+                   update_frequency = "anually")
 }

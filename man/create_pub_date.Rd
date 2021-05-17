@@ -13,7 +13,7 @@ date. This can be overridden by putting in a specific date.}
 \item{parent_element}{A list representing the EML project or dataset.}
 }
 \value{
-The dataset or project with the publication date appended.
+A publication date object that can be appended to a dataset or project.
 }
 \description{
 Creates publication date according to EML standards.

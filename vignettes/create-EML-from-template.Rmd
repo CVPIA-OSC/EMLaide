@@ -20,6 +20,7 @@ library(tidyverse)
 library(EDIutils)
 library(readxl)
 library(EML)
+library(magrittr)
 ```
 
 
@@ -165,16 +166,16 @@ datatable_metadata <-
 
 ```{r, include = FALSE, eval = TRUE}
 excel_path <- system.file("extdata", "Banet-Example", "metadata", "data-package-metadata.xlsx", 
-                          package = "EMLaide", mustWork = TRUE) # UPDATE
+                          package = "EMLaide", mustWork = TRUE) 
 sheets <- readxl::excel_sheets(excel_path)
 metadata <- purrr::map(sheets, function(x) readxl::read_excel(excel_path, sheet = x))
 names(metadata) <- sheets
 
 abstract_docx <- system.file("extdata", "Banet-Example", "metadata","abstract.docx", 
-                             package = "EMLaide", mustWork = TRUE) #UPDATE
+                             package = "EMLaide", mustWork = TRUE) 
 
 methods_docx <- system.file("extdata", "Banet-Example", "metadata", "methods.docx", 
-                            package = "EMLaide", mustWork = TRUE)  #UPDATE
+                            package = "EMLaide", mustWork = TRUE)  
 
 ```
 

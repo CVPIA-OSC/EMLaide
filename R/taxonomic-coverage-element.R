@@ -160,8 +160,8 @@ create_taxonomic_coverage <- function(CVPIA_common_species = NULL,
 #' Add Taxonomic Coverage
 #' @description Formats the taxonomic coverage elements in a nested list to easily be added as a parameter to the `add_coverage()` function. 
 #' @param taxonomic_metadata see \code{\link{create_taxonomic_coverage}} 
-#' 
-#' @example  
+#' @return A complete list describing taxonomic coverage that can be added to the coverage list using `add_coverage()`
+#' @examples  
 #' taxonomic_metadata <- list(CVPIA_common_species = c("chinook", "steelhead"), common_name = c(NA, ), 
 #'                            kingdom = c(NA, NA), phylum = c(NA, NA), class = c(NA, NA), 
 #'                            order = c(NA, NA), family = c(NA, NA), genus = c(NA, NA), species = c(NA, NA), 

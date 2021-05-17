@@ -18,8 +18,8 @@ The dataset list or project with maintenance information appended.
 Adds the maintenance metadata element to a dataset list according to EML standards.
 }
 \examples{
-maintenance_metadata <- list(status = "ongoing", update_frequency = "complete")
+maintenance_metadata <- list(status = "ongoing", update_frequency = "monthly")
 dataset <- list() \%>\%
      add_maintenance(maintenance_metadata) 
-
+dataset
 }

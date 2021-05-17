@@ -269,7 +269,7 @@
 <h2 class="hasAnchor">
 <a href="#create-dataset-element" class="anchor"></a>Create Dataset Element</h2>
 <p>Beginning with an empty list, each function call appends and an EML element as a named list.</p>
-<p>The <code>add_[blank]</code> functions are wrappers on <code>create_[blank]</code> function to enable a <code>%&gt;%</code> workflow.</p>
+<p>The <code>add_[blank]</code> functions are wrappers on <code>create_[blank]</code> function to enable a <code><a href="../reference/%&gt;%.html">%&gt;%</a></code> workflow.</p>
 <p>For details on appropriate inputs to the functions see documentation at <code>?add_[blank]</code>.</p>
 <p>The <code>add_methods()</code> and <code><a href="../reference/add_abstract.html">add_abstract()</a></code> functions take in the <code>methods_docx</code> and the <code>abstract_doc</code>. The <code><a href="../reference/add_datatable.html">add_datatable()</a></code> function takes in the <code>datatable_metadata</code> defined and described above. Every other function takes in one or more sheets from the <code>metadata</code> object. For template items with multiple rows the <code>add_[blank]</code> functions map through each row and adds a named nested list for each row to the dataset element.</p>
 <p><strong>Ex:</strong> Add personnel will map through each row of <code>metadata$personnel</code> shown below and add all four personnel into the dataset element.</p>

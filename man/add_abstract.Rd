@@ -17,3 +17,10 @@ The dataset or project with abstract appended
 \description{
 Adds the abstract metadata element to a dataset list according to EML standards.
 }
+\examples{
+abstract_docx <- system.file("extdata", "Banet-Example", "metadata","abstract.docx", package = "EMLaide", mustWork = TRUE)  
+
+dataset <- list() \%>\%
+    add_abstract(abstract_docx)
+
+}

@@ -19,4 +19,5 @@ title_metadata <- list(title = "Eight Mile Lake Research Watershed, Carbon in Pe
                        short_name = "knb-lter-bnz.501.17")
 dataset <-list() \%>\% 
    add_title(title_metadata)
+dataset
 }

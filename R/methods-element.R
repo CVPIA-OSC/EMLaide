@@ -9,7 +9,7 @@
 #' @param sampling_coverage Optional.
 #' @param sampling_citation Optional.
 #' @param qualityControl_file Optional.
-#' @return The methods information.
+#' @return A list containing the methods information that can be appended to a dataset or project list.
 #' @examples 
 #' create_method(methods_file = word_example("methods-template.docx"),
 #'               instrumentation = "Thermometer")
@@ -42,10 +42,12 @@ create_method <- function(methods_file,
 #' @param parent_element A list representing the EML project or dataset.
 #' @param methods_file A file containing methods information (word or markdown): see \code{\link{create_methods}}
 #' @return The dataset list or project with methods information appended. 
-#' @example 
+#' @examples 
+#' methods_docx <- methods_docx <- system.file("extdata", "Banet-Example", "metadata", "methods.docx", 
+#'                                              package = "EMLaide", mustWork = TRUE)
 #' dataset <- list() %>%
-#'     add_method("methods.docx")
-#' 
+#'     add_method(methods_docx)
+#' dataset
 #' @export
 add_method <- function(parent_element, methods_file) {
   parent_element$methods <- create_method(methods_file)

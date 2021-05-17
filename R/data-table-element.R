@@ -67,19 +67,20 @@ create_datatable <- function(filepath,
 #' @param datatable_metadata A named list or dataframe containing datatable metadata elements
 #' (filepath, attribute_info, datatable_description, datatable_url): see \code{\link{create_datatable}} 
 #' @return The dataset list or project with datatable information appended.
-#' @example 
-#' datatable_metadata <- dplyr::tibble(filepath =  c("enclosure-study-growth-rate-data.csv", "enclosure-study-gut-contents-data.csv"), 
-#'                                     attribute_info = c("enclosure-study-growth-rates-metadata.xlsx","enclosure-study-gut-contents-metadata.xlsx"),
-#'                                     datatable_description = c("Growth Rates - Enclosure Study","Gut Contents - Enclosure Study"),
-#'                                     datatable_url = c("https://raw.githubusercontent.com/FlowWest/CVPIA_Salmonid_Habitat_Monitoring/make-xml/data/enclosure-study-growth-rate-data.csv?token=AMGEQ7R4E5RMNKRMD57BBQTAOSW6W",
-#'                                                      "https://raw.githubusercontent.com/FlowWest/CVPIA_Salmonid_Habitat_Monitoring/make-xml/data/enclosure-study-gut-contents-data.csv?token=AMGEQ7VJADFEYARKPUM4AYTAOSXAQ"))
+#' @examples 
+#' datatable_metadata <- dplyr::tibble(filepath =  filepath = c(system.file("extdata", "Banet-Example", "data", "enclosure-study-growth-rate-data.csv", package = "EMLaide", mustWork = TRUE), 
+#'                                                              system.file("extdata", "Banet-Example", "data", "enclosure-study-gut-contents-data.csv", package = "EMLaide", mustWork = TRUE)), 
+#'                                     attribute_info = c(system.file("extdata", "Banet-Example", "metadata", "enclosure-study-growth-rates-metadata.xlsx", package = "EMLaide", mustWork = TRUE), 
+#'                                     system.file("extdata", "Banet-Example", "metadata", "enclosure-study-gut-contents-metadata.xlsx", package = "EMLaide", mustWork = TRUE),
+#'                                     datatable_description = c("Growth Rates - Enclosure Study","Gut Contents - Enclosure Study"))
 #' 
 #' dataset <- list() %>%
 #'     add_datatable(datatable_metadata)
 #' 
 #' @export
 add_datatable <- function(parent_element, datatable_metadata) {
-  data_tables <- purrr::pmap(datatable_metadata, create_datatable) 
+  suppressMessages(suppressWarnings(
+  data_tables <- purrr::pmap(datatable_metadata, create_datatable)))
   parent_element$dataTable <- data_tables
   return(parent_element)
 }

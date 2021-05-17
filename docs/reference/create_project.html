@@ -49,8 +49,8 @@
   
 
 <meta property="og:title" content="Create project element — create_project" />
-<meta property="og:description" content="This function creates a project element from metadata inputs using  add_personnel
-and add_funding." />
+<meta property="og:description" content="This function creates a project element from metadata inputs using  create_person
+and create_funding." />
 <meta property="og:image" content="https://CVPIA-OSC.github.io/EMLaide/logo.png" />
 
 
@@ -134,8 +134,8 @@ and add_funding." />
     </div>
 
     <div class="ref-description">
-    <p>This function creates a project element from metadata inputs using  <code>add_personnel</code>
-and <code>add_funding</code>.</p>
+    <p>This function creates a project element from metadata inputs using  <code>create_person</code>
+and <code>create_funding</code>.</p>
     </div>
 
     <pre class="usage"><span class='fu'>create_project</span><span class='op'>(</span><span class='va'>project_title</span>, <span class='va'>project_lead</span>, <span class='va'>funding_metadata</span><span class='op'>)</span></pre>
@@ -162,6 +162,59 @@ and <code>add_funding</code>.</p>
     <p>This function returns project element containing
 all project information required for an EML document.</p>
 
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'><span class='va'>project_title</span> <span class='op'>&lt;-</span> <span class='st'>"Salmonid Habitat Monitoring"</span>
+<span class='va'>project_lead</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>first_name <span class='op'>=</span> <span class='st'>"Stacy"</span>, last_name <span class='op'>=</span> <span class='st'>"Banet"</span>, email <span class='op'>=</span> <span class='st'>"Stacy@aol.com"</span>, 
+                                   role <span class='op'>=</span> <span class='st'>"creator"</span>, organization <span class='op'>=</span> <span class='st'>"USBR"</span><span class='op'>)</span>
+<span class='va'>funding_metadata</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>funder_name <span class='op'>=</span> <span class='st'>"USBR"</span>, funder_identifier <span class='op'>=</span> <span class='cn'>NA</span>, award_number <span class='op'>=</span> <span class='st'>"R14AC00096"</span>, 
+                         award_title <span class='op'>=</span> <span class='st'>"Salmonid Spawning and Rearing Habitat Restoration in the Sacramento River"</span>, 
+                         award_url <span class='op'>=</span> <span class='cn'>NA</span>, funding_description <span class='op'>=</span> <span class='cn'>NA</span><span class='op'>)</span>
+
+<span class='fu'>create_project</span><span class='op'>(</span><span class='va'>project_title</span>, <span class='va'>project_lead</span>, <span class='va'>funding_metadata</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; $title
+#&gt; [1] "Salmonid Habitat Monitoring"
+#&gt; 
+#&gt; $personnel
+#&gt; $personnel$individualName
+#&gt; $personnel$individualName$givenName
+#&gt; NULL
+#&gt; 
+#&gt; $personnel$individualName$surName
+#&gt; NULL
+#&gt; 
+#&gt; 
+#&gt; $personnel$electronicMailAddress
+#&gt; [1] "Stacy@aol.com"
+#&gt; 
+#&gt; $personnel$organizationName
+#&gt; [1] "USBR"
+#&gt; 
+#&gt; $personnel$role
+#&gt; [1] "Project Lead"
+#&gt; 
+#&gt; 
+#&gt; $award
+#&gt; $award[[1]]
+#&gt; $award[[1]]$funderName
+#&gt; [1] "United States Bureau of Reclamation"
+#&gt; 
+#&gt; $award[[1]]$funderIdentifier
+#&gt; [1] "https://www.wikidata.org/wiki/Q1010548"
+#&gt; 
+#&gt; $award[[1]]$title
+#&gt; [1] "Salmonid Spawning and Rearing Habitat Restoration in the Sacramento River"
+#&gt; 
+#&gt; $award[[1]]$awardNumber
+#&gt; [1] "R14AC00096"
+#&gt; 
+#&gt; $award[[1]]$description
+#&gt; [1] NA
+#&gt; 
+#&gt; $award[[1]]$awardUrl
+#&gt; [1] NA
+#&gt; 
+#&gt; 
+#&gt; </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

@@ -1,6 +1,7 @@
 #' Creates Keyword Set Element
-#' @description Creates keyword set according to EML standards.
-#' @param keyword_metadata A named list or dataframe containing keywords and keywordThesuraus (if keyword is from a controlled vocabulary)
+#' @description Takes in keywords and associated keyword thesaurus and creates a keyword set according to EML standards.
+#' @param keyword_metadata A  dataframe containing `keyword` and `keywordThesuraus` (if keyword is from a controlled vocabulary). 
+#' The dataframe must have a `keyword` column and a `keywordThesaurus` column. If keywards are not from a controlled vocabulary please leave `keywordThesaurus` blank or NA.
 #' 
 #' @section Controlled Vocabularies:
 #' 
@@ -16,16 +17,16 @@
 #' \href{https://geonames.usgs.gov/apex/f?p=138:1:5668294677959}{U.S. Board on Geographic Names} - 
 #' USGS place names dictionary.
 #' 
-#' @return The keyword list.
+#' @return The keyword list that can be appended to a dataset or project list.
 #' @examples 
-#' keyword_metadata <- list("keyword" = c("CVPIA", "dog", "shark", "cat"), 
-#'                          keywordThesaurus = c(NA, "pet", "ocean", "pet"))
+#' keyword_metadata <- dplyr::tibble(keyword = c("CVPIA", "dog", "shark", "cat"), 
+#'                                   keywordThesaurus = c(NA, "pet", "ocean", "pet"))
 #' create_keyword_set(keyword_metadata)
 #' 
-#' keyword_metadata <- tibble("keyword" = c("CVPIA", "dog", "shark", "cat"), 
-#'                            "keywordThesaurus" = c(NA, NA, NA, NA))                                   
+#' keyword_metadata <- dplyr::tibble(keyword = c("CVPIA", "dog", "shark", "cat"), 
+#'                                   keywordThesaurus = c(NA, NA, NA, NA))                                   
 #' create_keyword_set(keyword_metadata)
-#'                                 
+#' @importFrom magrittr %>%                                
 #' @export
 create_keyword_set <- function(keyword_metadata) {
   
@@ -38,13 +39,13 @@ create_keyword_set <- function(keyword_metadata) {
     rel_thesaurus = unique_thesaurus[i]
     if (is.na(rel_thesaurus)) {
       filtered_keywords = keyword_metadata %>%
-        filter(is.na(keywordThesaurus)) %>%
-        pull(keyword)
+        dplyr::filter(is.na(keywordThesaurus)) %>%
+        dplyr::pull(keyword)
       keywords[[i]] = list(keyword = filtered_keywords)
     } else {
       filtered_keywords = keyword_metadata %>%
-        filter((keywordThesaurus == rel_thesaurus)) %>%
-        pull(keyword)
+        dplyr::filter((keywordThesaurus == rel_thesaurus)) %>%
+        dplyr::pull(keyword)
       keywords[[i]] = list(keyword = filtered_keywords, keywordThesaurus = rel_thesaurus)
     } 
   }
@@ -57,12 +58,13 @@ create_keyword_set <- function(keyword_metadata) {
 #' @param parent_element A list representing the EML project or dataset.
 #' @param keyword_metadata A named list or dataframe containing keyword elements: see \code{\link{create_keywords}}
 #' @return The dataset list or project with keyword information appended.
-#' @example
-#' keyword_metadata <- list(keyword = c("Sacramento River", "Salmonid Habitat Restoration Projects", "Effectiveness Monitoring", "Pacific Salmon", "CVPIA"), keywordThesaurus = c(NA, NA, NA, NA, NA))
+#' @examples
+#' keyword_metadata <- dplyr::tibble(keyword = c("Sacramento River", "Salmonid Habitat Restoration Projects", "Effectiveness Monitoring", "Pacific Salmon", "CVPIA"), 
+#'                                   keywordThesaurus = c(NA, NA, NA, NA, NA))
 #' 
-#' dataset -> list() %>%
+#' dataset <- list() %>%
 #'      add_keyword_set(keyword_metadata)
-#'
+#' dataset
 #' @export
 #' 
 add_keyword_set <- function(parent_element, keyword_metadata) {

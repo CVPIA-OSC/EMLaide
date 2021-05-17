@@ -18,3 +18,9 @@ The dataset list or project with publication date information appended.
 \description{
 Adds the pub date element to a dataset list according to EML standards.
 }
+\examples{
+ 
+dataset <- list() \%>\%
+    add_pub_date()
+dataset
+}

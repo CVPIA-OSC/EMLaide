@@ -32,7 +32,7 @@ function will then append it properly. An example word document can be found in
 \item{qualityControl_file}{Optional.}
 }
 \value{
-The methods information.
+A list containing the methods information that can be appended to a dataset or project list.
 }
 \description{
 Creates the data collection method information of a dataset based off of EML standards.

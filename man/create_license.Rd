@@ -34,7 +34,7 @@ or "CCBY" as default values are provided. Otherwise, please provide a short
 description of the license being used and its regulations.}
 }
 \value{
-The project or dataset list with the intellectual rights appended.
+A intellectual rights element that can be appended to a dataset or project list.
 }
 \description{
 Creates the intellectual rights information of a dataset based off of EML standards.

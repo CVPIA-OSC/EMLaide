@@ -29,7 +29,7 @@
 #' To view more license choices and find the appropriate url and identifier visit
 #' \href{https://spdx.org/licenses/CC0-1.0.html}{this} link. 
 #' 
-#' @return The project or dataset list with the intellectual rights appended.
+#' @return A intellectual rights element that can be appended to a dataset or project list. 
 #' 
 #' @examples 
 #' create_license() # defaults to CCO
@@ -119,7 +119,7 @@ create_license <- function(default_license = c("CCO", "CCBY"),
 #' license_metadata = list(default_license = "CCBY")
 #' dataset <- list() %>%
 #'     add_license(license_metadata)
-#' 
+#' dataset
 #' @export
 
 add_license <- function(parent_element, license_metadata) {

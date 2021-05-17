@@ -9,11 +9,18 @@ add_personnel(parent_element, personnel_metadata)
 \arguments{
 \item{parent_element}{A list representing the EML project or dataset}
 
-\item{personnel_metadata}{A list or dataframe of personnel information see \code{\link{create_person}}}
+\item{personnel_metadata}{A dataframe of personnel information see \code{\link{create_person}}}
 }
 \value{
 The dataset list or project with personnel information appended.
 }
 \description{
 Adds the personnel metadata elements to a dataset list according to EML standards.
+}
+\examples{
+personnel_metadata <- dplyr::tibble(first_name = "Stacy", last_name = "Banet", email = "Stacy@aol.com", 
+                                    role = "creator", organization = "USBR")
+dataset <- list() \%>\%
+   add_personnel(personnel_metadata)
+dataset
 }

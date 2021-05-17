@@ -10,19 +10,20 @@
 #' with for this dataset or project
 #' @param orcid (Optional) ORCID iD is a persistent digital identifier for researchers,
 #' register at \url{http://orcid.org/}
+#' @return A person element that can be appended to a dataset or project list. 
 #' @examples 
-#' create_personnel(first_name = 'Katherine', 
-#'                  last_name = "Johnson", 
-#'                  email = 'kjohnson@nasa.gov', 
-#'                  role = 'creator', 
-#'                  organization = 'NASA',
-#'                  orcid = '12345')
+#' create_person(first_name = 'Katherine', 
+#'               last_name = "Johnson", 
+#'               email = 'kjohnson@nasa.gov', 
+#'               role = 'creator', 
+#'               organization = 'NASA',
+#'               orcid = '12345')
 #' 
-#' create_personnel(first_name = "Edith", 
-#'                  last_name = "Windsor", 
-#'                  email = 'ewindsor@ibm.com', 
-#'                  role = 'Data Manager', 
-#'                  organization = 'IBM')
+#' create_person(first_name = "Edith", 
+#'               last_name = "Windsor", 
+#'               email = 'ewindsor@ibm.com', 
+#'               role = 'Data Manager', 
+#'               organization = 'IBM')
 #' @export
 create_person <- function(role, first_name, last_name, email, organization, orcid = NULL) {
   required_arguments <- c("first_name", "last_name", "email", "role", "organization")
@@ -55,13 +56,14 @@ create_person <- function(role, first_name, last_name, email, organization, orci
 #' Add personnel
 #' @description Adds the personnel metadata elements to a dataset list according to EML standards. 
 #' @param parent_element A list representing the EML project or dataset
-#' @param personnel_metadata A list or dataframe of personnel information see \code{\link{create_person}}
+#' @param personnel_metadata A dataframe of personnel information see \code{\link{create_person}}
 #' @return The dataset list or project with personnel information appended.
-#' @example 
-#' personnel_metadata <- list(first_name = "Stacy", last_name = "Banet", email = "Stacy@aol.com", 
-#'                            role = "creator", organization = "USBR")
+#' @examples 
+#' personnel_metadata <- dplyr::tibble(first_name = "Stacy", last_name = "Banet", email = "Stacy@aol.com", 
+#'                                     role = "creator", organization = "USBR")
 #' dataset <- list() %>%
-#'    add_person(personnel_metadata)
+#'    add_personnel(personnel_metadata)
+#' dataset
 #' @export
 add_personnel <- function(parent_element, personnel_metadata) {
   creator <- dplyr::filter(personnel_metadata, role == 'creator')

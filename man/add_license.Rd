@@ -21,5 +21,5 @@ Adds the license element to a dataset list according to EML standards.
 license_metadata = list(default_license = "CCBY")
 dataset <- list() \%>\%
     add_license(license_metadata)
-
+dataset
 }

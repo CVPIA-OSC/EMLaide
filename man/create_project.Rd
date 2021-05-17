@@ -18,6 +18,16 @@ This function returns project element containing
 all project information required for an EML document.
 }
 \description{
-This function creates a project element from metadata inputs using  \code{add_personnel}
-and \code{add_funding}.
+This function creates a project element from metadata inputs using  \code{create_person}
+and \code{create_funding}.
+}
+\examples{
+project_title <- "Salmonid Habitat Monitoring"
+project_lead <- list(first_name = "Stacy", last_name = "Banet", email = "Stacy@aol.com", 
+                                   role = "creator", organization = "USBR")
+funding_metadata <- list(funder_name = "USBR", funder_identifier = NA, award_number = "R14AC00096", 
+                         award_title = "Salmonid Spawning and Rearing Habitat Restoration in the Sacramento River", 
+                         award_url = NA, funding_description = NA)
+
+create_project(project_title, project_lead, funding_metadata)
 }

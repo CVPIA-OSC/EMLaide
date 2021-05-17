@@ -7,13 +7,14 @@
 create_keyword_set(keyword_metadata)
 }
 \arguments{
-\item{keyword_metadata}{A named list or dataframe containing keywords and keywordThesuraus (if keyword is from a controlled vocabulary)}
+\item{keyword_metadata}{A  dataframe containing \code{keyword} and \code{keywordThesuraus} (if keyword is from a controlled vocabulary).
+The dataframe must have a \code{keyword} column and a \code{keywordThesaurus} column. If keywards are not from a controlled vocabulary please leave \code{keywordThesaurus} blank or NA.}
 }
 \value{
-The keyword list.
+The keyword list that can be appended to a dataset or project list.
 }
 \description{
-Creates keyword set according to EML standards.
+Takes in keywords and associated keyword thesaurus and creates a keyword set according to EML standards.
 }
 \section{Controlled Vocabularies}{
 
@@ -32,12 +33,11 @@ USGS place names dictionary.
 }
 
 \examples{
-keyword_metadata <- list("keyword" = c("CVPIA", "dog", "shark", "cat"), 
-                         keywordThesaurus = c(NA, "pet", "ocean", "pet"))
+keyword_metadata <- dplyr::tibble(keyword = c("CVPIA", "dog", "shark", "cat"), 
+                                  keywordThesaurus = c(NA, "pet", "ocean", "pet"))
 create_keyword_set(keyword_metadata)
 
-keyword_metadata <- tibble("keyword" = c("CVPIA", "dog", "shark", "cat"), 
-                           "keywordThesaurus" = c(NA, NA, NA, NA))                                   
+keyword_metadata <- dplyr::tibble(keyword = c("CVPIA", "dog", "shark", "cat"), 
+                                  keywordThesaurus = c(NA, NA, NA, NA))                                   
 create_keyword_set(keyword_metadata)
-                                
 }

@@ -17,3 +17,10 @@ The dataset list or project with methods information appended.
 \description{
 Adds the methods metadata elements according to EML standards.
 }
+\examples{
+methods_docx <- methods_docx <- system.file("extdata", "Banet-Example", "metadata", "methods.docx", 
+                                             package = "EMLaide", mustWork = TRUE)
+dataset <- list() \%>\%
+    add_method(methods_docx)
+dataset
+}

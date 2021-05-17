@@ -49,7 +49,7 @@
   
 
 <meta property="og:title" content="Creates Keyword Set Element — create_keyword_set" />
-<meta property="og:description" content="Creates keyword set according to EML standards." />
+<meta property="og:description" content="Takes in keywords and associated keyword thesaurus and creates a keyword set according to EML standards." />
 <meta property="og:image" content="https://CVPIA-OSC.github.io/EMLaide/logo.png" />
 
 
@@ -133,7 +133,7 @@
     </div>
 
     <div class="ref-description">
-    <p>Creates keyword set according to EML standards.</p>
+    <p>Takes in keywords and associated keyword thesaurus and creates a keyword set according to EML standards.</p>
     </div>
 
     <pre class="usage"><span class='fu'>create_keyword_set</span><span class='op'>(</span><span class='va'>keyword_metadata</span><span class='op'>)</span></pre>
@@ -143,13 +143,14 @@
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>keyword_metadata</th>
-      <td><p>A named list or dataframe containing keywords and keywordThesuraus (if keyword is from a controlled vocabulary)</p></td>
+      <td><p>A  dataframe containing <code>keyword</code> and <code>keywordThesuraus</code> (if keyword is from a controlled vocabulary).
+The dataframe must have a <code>keyword</code> column and a <code>keywordThesaurus</code> column. If keywards are not from a controlled vocabulary please leave <code>keywordThesaurus</code> blank or NA.</p></td>
     </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>The keyword list.</p>
+    <p>The keyword list that can be appended to a dataset or project list.</p>
     <h2 class="hasAnchor" id="controlled-vocabularies"><a class="anchor" href="#controlled-vocabularies"></a>Controlled Vocabularies</h2>
 
     
@@ -165,15 +166,38 @@ fisheries, forestry, environment.</p>
 USGS place names dictionary.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='va'>keyword_metadata</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span><span class='st'>"keyword"</span> <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"CVPIA"</span>, <span class='st'>"dog"</span>, <span class='st'>"shark"</span>, <span class='st'>"cat"</span><span class='op'>)</span>, 
-                         keywordThesaurus <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='cn'>NA</span>, <span class='st'>"pet"</span>, <span class='st'>"ocean"</span>, <span class='st'>"pet"</span><span class='op'>)</span><span class='op'>)</span>
+    <pre class="examples"><div class='input'><span class='va'>keyword_metadata</span> <span class='op'>&lt;-</span> <span class='fu'>dplyr</span><span class='fu'>::</span><span class='fu'><a href='https://tibble.tidyverse.org/reference/tibble.html'>tibble</a></span><span class='op'>(</span>keyword <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"CVPIA"</span>, <span class='st'>"dog"</span>, <span class='st'>"shark"</span>, <span class='st'>"cat"</span><span class='op'>)</span>, 
+                                  keywordThesaurus <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='cn'>NA</span>, <span class='st'>"pet"</span>, <span class='st'>"ocean"</span>, <span class='st'>"pet"</span><span class='op'>)</span><span class='op'>)</span>
 <span class='fu'>create_keyword_set</span><span class='op'>(</span><span class='va'>keyword_metadata</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; <span class='error'>Error in keyword_metadata %&gt;% filter(is.na(keywordThesaurus)) %&gt;% pull(keyword): could not find function "%&gt;%"</span></div><div class='input'>
-<span class='va'>keyword_metadata</span> <span class='op'>&lt;-</span> <span class='fu'>tibble</span><span class='op'>(</span><span class='st'>"keyword"</span> <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"CVPIA"</span>, <span class='st'>"dog"</span>, <span class='st'>"shark"</span>, <span class='st'>"cat"</span><span class='op'>)</span>, 
-                           <span class='st'>"keywordThesaurus"</span> <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='cn'>NA</span>, <span class='cn'>NA</span>, <span class='cn'>NA</span>, <span class='cn'>NA</span><span class='op'>)</span><span class='op'>)</span>                                   
-</div><div class='output co'>#&gt; <span class='error'>Error in tibble(keyword = c("CVPIA", "dog", "shark", "cat"), keywordThesaurus = c(NA,     NA, NA, NA)): could not find function "tibble"</span></div><div class='input'><span class='fu'>create_keyword_set</span><span class='op'>(</span><span class='va'>keyword_metadata</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; <span class='error'>Error in keyword_metadata %&gt;% filter(is.na(keywordThesaurus)) %&gt;% pull(keyword): could not find function "%&gt;%"</span></div><div class='input'>                                
-</div></pre>
+</div><div class='output co'>#&gt; [[1]]
+#&gt; [[1]]$keyword
+#&gt; [1] "CVPIA"
+#&gt; 
+#&gt; 
+#&gt; [[2]]
+#&gt; [[2]]$keyword
+#&gt; [1] "dog" "cat"
+#&gt; 
+#&gt; [[2]]$keywordThesaurus
+#&gt; [1] "pet"
+#&gt; 
+#&gt; 
+#&gt; [[3]]
+#&gt; [[3]]$keyword
+#&gt; [1] "shark"
+#&gt; 
+#&gt; [[3]]$keywordThesaurus
+#&gt; [1] "ocean"
+#&gt; 
+#&gt; </div><div class='input'>
+<span class='va'>keyword_metadata</span> <span class='op'>&lt;-</span> <span class='fu'>dplyr</span><span class='fu'>::</span><span class='fu'><a href='https://tibble.tidyverse.org/reference/tibble.html'>tibble</a></span><span class='op'>(</span>keyword <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"CVPIA"</span>, <span class='st'>"dog"</span>, <span class='st'>"shark"</span>, <span class='st'>"cat"</span><span class='op'>)</span>, 
+                                  keywordThesaurus <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='cn'>NA</span>, <span class='cn'>NA</span>, <span class='cn'>NA</span>, <span class='cn'>NA</span><span class='op'>)</span><span class='op'>)</span>                                   
+<span class='fu'>create_keyword_set</span><span class='op'>(</span><span class='va'>keyword_metadata</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; [[1]]
+#&gt; [[1]]$keyword
+#&gt; [1] "CVPIA" "dog"   "shark" "cat"  
+#&gt; 
+#&gt; </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

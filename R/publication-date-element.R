@@ -3,7 +3,7 @@
 #' @param parent_element A list representing the EML project or dataset.
 #' @param date The publication date. If left null, it will be assigned the current 
 #' date. This can be overridden by putting in a specific date. 
-#' @return The dataset or project with the publication date appended. 
+#' @return A publication date object that can be appended to a dataset or project. 
 #' @examples 
 #' create_pub_date(date = "2020-08-19")
 #'              
@@ -25,10 +25,10 @@ create_pub_date <- function(date = NULL) {
 #' @param date The publication date. If left null, it will be assigned the current 
 #' date. This can be overridden by putting in a specific date: see \code{\link{create_pub_date}} 
 #' @return The dataset list or project with publication date information appended.
-#' @example 
+#' @examples  
 #' dataset <- list() %>%
 #'     add_pub_date()
-#' 
+#' dataset
 #' @export
 add_pub_date <- function(parent_element, date = NULL) {
   if (is.null(date)){

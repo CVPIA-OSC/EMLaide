@@ -31,9 +31,11 @@ create_abstract <- function(abstract) {
 #' @param parent_element A list representing the EML project or dataset.
 #' @param abstract_file A file containing abstract information (word or markdown): see \code{\link{create_abstract}} 
 #' @return The dataset or project with abstract appended 
-#' @example 
+#' @examples
+#' abstract_docx <- system.file("extdata", "Banet-Example", "metadata","abstract.docx", package = "EMLaide", mustWork = TRUE)  
+#' 
 #' dataset <- list() %>%
-#'     add_abstract("abstract.docx")
+#'     add_abstract(abstract_docx)
 #' 
 #' @export
 add_abstract <- function(parent_element, abstract_file) {

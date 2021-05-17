@@ -171,7 +171,42 @@
              
 <span class='va'>dataset</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'>%&gt;%</span> 
   <span class='fu'>add_coverage</span><span class='op'>(</span><span class='va'>coverage</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; <span class='error'>Error in list() %&gt;% add_coverage(coverage): could not find function "%&gt;%"</span></div></pre>
+<span class='va'>dataset</span>
+</div><div class='output co'>#&gt; $coverage
+#&gt; $coverage$geographicCoverage
+#&gt; $coverage$geographicCoverage$geographicDescription
+#&gt; [1] "Description"
+#&gt; 
+#&gt; $coverage$geographicCoverage$boundingCoordinates
+#&gt; $coverage$geographicCoverage$boundingCoordinates$westBoundingCoordinate
+#&gt; [1] "-160.594000"
+#&gt; 
+#&gt; $coverage$geographicCoverage$boundingCoordinates$eastBoundingCoordinate
+#&gt; [1] "-134.104800"
+#&gt; 
+#&gt; $coverage$geographicCoverage$boundingCoordinates$northBoundingCoordinate
+#&gt; [1] "71.238300"
+#&gt; 
+#&gt; $coverage$geographicCoverage$boundingCoordinates$southBoundingCoordinate
+#&gt; [1] "67.865000"
+#&gt; 
+#&gt; 
+#&gt; 
+#&gt; $coverage$temporalCoverage
+#&gt; $coverage$temporalCoverage$rangeOfDates
+#&gt; $coverage$temporalCoverage$rangeOfDates$beginDate
+#&gt; $coverage$temporalCoverage$rangeOfDates$beginDate$calendarDate
+#&gt; [1] "1980-01-01"
+#&gt; 
+#&gt; 
+#&gt; $coverage$temporalCoverage$rangeOfDates$endDate
+#&gt; $coverage$temporalCoverage$rangeOfDates$endDate$calendarDate
+#&gt; [1] "2010-12-31"
+#&gt; 
+#&gt; 
+#&gt; 
+#&gt; 
+#&gt; </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

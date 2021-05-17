@@ -56,7 +56,7 @@ create_coverage(geographic_description = "North Slope
              begin_date = "1980-01-01",
              end_date = "2010-12-31")
              
-taxonomic_coverage <- add_taxonomic_coverage(CVPIA_common_species = "chinook")
+taxonomic_coverage <- create_taxonomic_coverage(CVPIA_common_species = "chinook")
 create_coverage(geographic_description = "Description",
              west_bounding_coordinate = "-160.594000", 
              east_bounding_coordinate = "-134.104800",
@@ -67,8 +67,8 @@ create_coverage(geographic_description = "Description",
              taxonomic_coverage = taxonomic_coverage) 
              
 # For adding multiple taxonomies to the coverage: 
-chinook <- add_taxonomic_coverage(CVPIA_common_species = "chinook")
-delta <- add_taxonomic_coverage(CVPIA_common_species = "delta_smelt")
+chinook <- create_taxonomic_coverage(CVPIA_common_species = "chinook")
+delta <- create_taxonomic_coverage(CVPIA_common_species = "delta_smelt")
 taxonomic_coverage <- list(chinook, delta)
 create_coverage(geographic_description = "Description",
              west_bounding_coordinate = "-160.594000", 

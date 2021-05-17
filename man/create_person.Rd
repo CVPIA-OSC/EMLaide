@@ -23,20 +23,23 @@ with for this dataset or project}
 \item{orcid}{(Optional) ORCID iD is a persistent digital identifier for researchers,
 register at \url{http://orcid.org/}}
 }
+\value{
+A person element that can be appended to a dataset or project list.
+}
 \description{
 Create personnel element according to EML standards
 }
 \examples{
-create_personnel(first_name = 'Katherine', 
-                 last_name = "Johnson", 
-                 email = 'kjohnson@nasa.gov', 
-                 role = 'creator', 
-                 organization = 'NASA',
-                 orcid = '12345')
+create_person(first_name = 'Katherine', 
+              last_name = "Johnson", 
+              email = 'kjohnson@nasa.gov', 
+              role = 'creator', 
+              organization = 'NASA',
+              orcid = '12345')
 
-create_personnel(first_name = "Edith", 
-                 last_name = "Windsor", 
-                 email = 'ewindsor@ibm.com', 
-                 role = 'Data Manager', 
-                 organization = 'IBM')
+create_person(first_name = "Edith", 
+              last_name = "Windsor", 
+              email = 'ewindsor@ibm.com', 
+              role = 'Data Manager', 
+              organization = 'IBM')
 }

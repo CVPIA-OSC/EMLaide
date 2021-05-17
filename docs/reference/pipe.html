@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Add Maintenance — add_maintenance • EMLaide</title>
+<title>Pipe operator — %&gt;% • EMLaide</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -48,8 +48,8 @@
   <link href="../extra.css" rel="stylesheet">
   
 
-<meta property="og:title" content="Add Maintenance — add_maintenance" />
-<meta property="og:description" content="Adds the maintenance metadata element to a dataset list according to EML standards." />
+<meta property="og:title" content="Pipe operator — %&gt;%" />
+<meta property="og:description" content="See magrittr::%&amp;gt;% for details." />
 <meta property="og:image" content="https://CVPIA-OSC.github.io/EMLaide/logo.png" />
 
 
@@ -127,47 +127,19 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Add Maintenance</h1>
+    <h1>Pipe operator</h1>
     
-    <div class="hidden name"><code>add_maintenance.Rd</code></div>
+    <div class="hidden name"><code>pipe.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Adds the maintenance metadata element to a dataset list according to EML standards.</p>
+    <p>See <code>magrittr::%&gt;%</code> for details.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>add_maintenance</span><span class='op'>(</span><span class='va'>parent_element</span>, <span class='va'>maintenance_metadata</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='va'>lhs</span> <span class='op'>%&gt;%</span> <span class='va'>rhs</span></pre>
 
-    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
-    <table class="ref-arguments">
-    <colgroup><col class="name" /><col class="desc" /></colgroup>
-    <tr>
-      <th>parent_element</th>
-      <td><p>A list representing the EML project or dataset.</p></td>
-    </tr>
-    <tr>
-      <th>maintenance_metadata</th>
-      <td><p>A table or list containing maintenance metadata: see <code><a href='create_maintenance.html'>create_maintenance</a></code></p></td>
-    </tr>
-    </table>
 
-    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>The dataset list or project with maintenance information appended.</p>
-
-    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='va'>maintenance_metadata</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>status <span class='op'>=</span> <span class='st'>"ongoing"</span>, update_frequency <span class='op'>=</span> <span class='st'>"monthly"</span><span class='op'>)</span>
-<span class='va'>dataset</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
-     <span class='fu'>add_maintenance</span><span class='op'>(</span><span class='va'>maintenance_metadata</span><span class='op'>)</span> 
-<span class='va'>dataset</span>
-</div><div class='output co'>#&gt; $maintenance
-#&gt; $maintenance$description
-#&gt; [1] "ongoing"
-#&gt; 
-#&gt; $maintenance$maintenanceUpdateFrequency
-#&gt; [1] "monthly"
-#&gt; 
-#&gt; </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
