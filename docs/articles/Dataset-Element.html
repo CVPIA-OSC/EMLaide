@@ -59,13 +59,7 @@
       <a href="../articles/template-doc.html">Metadata Template Documentation</a>
     </li>
     <li>
-      <a href="../articles/creating-EML.html">Create EML Document from Template</a>
-    </li>
-    <li>
-      <a href="../articles/Dataset-Element.html">Handle Special Case Datasets</a>
-    </li>
-    <li>
-      <a href="../articles/custom-units.html">EML Custom Units</a>
+      <a href="../articles/create-EML-from-template.html">Create EML Document from Template</a>
     </li>
   </ul>
 </li>
@@ -165,7 +159,7 @@
     <span class="op">}</span> <span class="kw">else</span> <span class="op">{</span>
       <span class="va">definition</span> <span class="op">=</span> <span class="va">attribute_definition</span>
     <span class="op">}</span>
-    <span class="va">new_attribute</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/add_attribute.html">add_attribute</a></span><span class="op">(</span>attribute_name <span class="op">=</span> <span class="va">attribute_name</span>, attribute_definition <span class="op">=</span> <span class="va">attribute_definition</span>,
+    <span class="va">new_attribute</span> <span class="op">&lt;-</span> <span class="fu">add_attribute</span><span class="op">(</span>attribute_name <span class="op">=</span> <span class="va">attribute_name</span>, attribute_definition <span class="op">=</span> <span class="va">attribute_definition</span>,
                                    storage_type <span class="op">=</span> <span class="va">storage_type</span>, measurement_scale <span class="op">=</span> <span class="va">measurement_scale</span>, 
                                    domain <span class="op">=</span> <span class="va">domain</span>, definition <span class="op">=</span> <span class="va">definition</span>, type <span class="op">=</span> <span class="va">type</span>, units <span class="op">=</span> <span class="va">units</span>, 
                                    unit_precision <span class="op">=</span> <span class="va">unit_precision</span>, number_type <span class="op">=</span> <span class="va">number_type</span>, 
@@ -174,18 +168,13 @@
   <span class="op">}</span>
   <span class="va">attribute_list</span><span class="op">$</span><span class="va">attribute</span> <span class="op">&lt;-</span> <span class="fu">purrr</span><span class="fu">::</span><span class="fu"><a href="https://purrr.tidyverse.org/reference/map2.html">pmap</a></span><span class="op">(</span><span class="va">attribute_table</span>, <span class="va">attributes_and_codes</span><span class="op">)</span>
   
-  <span class="va">physical</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/add_physical.html">add_physical</a></span><span class="op">(</span>file_path <span class="op">=</span> <span class="va">datatable</span><span class="op">)</span>
+  <span class="va">physical</span> <span class="op">&lt;-</span> <span class="fu">add_physical</span><span class="op">(</span>file_path <span class="op">=</span> <span class="va">datatable</span><span class="op">)</span>
   <span class="va">dataTable</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>entityName <span class="op">=</span> <span class="va">datatable_name</span>,
                     entityDescription <span class="op">=</span> <span class="va">datatable_description</span>,
                     physical <span class="op">=</span> <span class="va">physical</span>,
                     attributeList <span class="op">=</span> <span class="va">attribute_list</span><span class="op">)</span>
 <span class="op">}</span>
 <span class="va">data_tables</span> <span class="op">&lt;-</span> <span class="fu">purrr</span><span class="fu">::</span><span class="fu"><a href="https://purrr.tidyverse.org/reference/map2.html">pmap</a></span><span class="op">(</span><span class="va">dataset_files</span>, <span class="va">adds_datatable</span><span class="op">)</span> </code></pre></div>
-<pre><code>## [1] "We identified the following custom unit: fishPerEnclosure , please make sure to add information on this custom unit in additional metadata information:"
-## [1] "We identified the following custom unit: fishPerEnclosure , please make sure to add information on this custom unit in additional metadata information:"
-## [1] "We identified the following custom unit: fishPerEnclosure , please make sure to add information on this custom unit in additional metadata information:"
-## [1] "We identified the following custom unit: thermal unit , please make sure to add information on this custom unit in additional metadata information:"
-## [1] "We identified the following custom unit: day , please make sure to add information on this custom unit in additional metadata information:"</code></pre>
 <p>This <code>data_table</code> list can now be added in as <code>dataTable = data_tables</code> in the dataset list.</p>
 </div>
 </div>
@@ -197,7 +186,7 @@
 <a href="#vector-data" class="anchor"></a>Vector Data</h3>
 <p>If you have vector data please append the data elements in a <code>spatialVector</code> named section of the dataset. In addition to the components that are required for tabular data you must include a geometry for your dataset. This should be added in the “dataset tab” of the “example-metadata.xlsx” excel file.</p>
 <p>To learn how to create the other dataset elements <code>physical</code> and <code>attribute_list</code> please see <a href="https://cvpia-osc.github.io/EMLaide//articles/creating-EML.html">the EML template helper</a></p>
-<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">data_tables</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>spatialVector <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>entityName <span class="op">=</span> <span class="va">dataset_file</span>,
                                          entityDescription <span class="op">=</span> <span class="va">metadata</span><span class="op">$</span><span class="va">dataset</span><span class="op">$</span><span class="va">name</span>,
                                          physical <span class="op">=</span> <span class="va">physical</span>,
@@ -223,7 +212,7 @@
 <li>
 <code>cell_geometry</code> All of these required fields must be added as inputs to the <code><a href="../reference/add_raster.html">add_raster()</a></code> function.</li>
 </ul>
-<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">data_tables</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>spatialRaster <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span><span class="fu"><a href="../reference/add_raster.html">add_raster</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></code></pre></div>
 <p>This <code>data_table</code> list can now be added in as <code>dataTable = data_tables</code> in the dataset list.</p>
 </div>

@@ -2,12 +2,13 @@ pandoc: '2.12'
 pkgdown: 1.6.1
 pkgdown_sha: ~
 articles:
+  create-EML-from-template: create-EML-from-template.html
   creating-EML: creating-EML.html
   custom-units: custom-units.html
   Dataset-Element: Dataset-Element.html
   Inital-Metadata-Information: Inital-Metadata-Information.html
   template-doc: template-doc.html
-last_built: 2021-05-11T23:01Z
+last_built: 2021-05-17T16:08Z
 urls:
   reference: https://CVPIA-OSC.github.io/EMLaide//reference
   article: https://CVPIA-OSC.github.io/EMLaide//articles

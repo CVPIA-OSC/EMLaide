@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Add Maintenance Element — add_maintenance • EMLaide</title>
+<title>Add Maintenance — add_maintenance • EMLaide</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -48,8 +48,8 @@
   <link href="../extra.css" rel="stylesheet">
   
 
-<meta property="og:title" content="Add Maintenance Element — add_maintenance" />
-<meta property="og:description" content="Adds the maintenance information of a dataset based off of EML standards." />
+<meta property="og:title" content="Add Maintenance — add_maintenance" />
+<meta property="og:description" content="Adds the maintenance metadata element to a dataset list according to EML standards." />
 <meta property="og:image" content="https://CVPIA-OSC.github.io/EMLaide/logo.png" />
 
 
@@ -102,13 +102,7 @@
       <a href="../articles/template-doc.html">Metadata Template Documentation</a>
     </li>
     <li>
-      <a href="../articles/creating-EML.html">Create EML Document from Template</a>
-    </li>
-    <li>
-      <a href="../articles/Dataset-Element.html">Handle Special Case Datasets</a>
-    </li>
-    <li>
-      <a href="../articles/custom-units.html">EML Custom Units</a>
+      <a href="../articles/create-EML-from-template.html">Create EML Document from Template</a>
     </li>
   </ul>
 </li>
@@ -133,20 +127,16 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Add Maintenance Element</h1>
+    <h1>Add Maintenance</h1>
     
     <div class="hidden name"><code>add_maintenance.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Adds the maintenance information of a dataset based off of EML standards.</p>
+    <p>Adds the maintenance metadata element to a dataset list according to EML standards.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>add_maintenance</span><span class='op'>(</span>
-  <span class='va'>parent_element</span>,
-  status <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"complete"</span>, <span class='st'>"ongoing"</span><span class='op'>)</span>,
-  update_frequency <span class='op'>=</span> <span class='cn'>NULL</span>
-<span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>add_maintenance</span><span class='op'>(</span><span class='va'>parent_element</span>, <span class='va'>maintenance_metadata</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -156,40 +146,21 @@
       <td><p>A list representing the EML project or dataset.</p></td>
     </tr>
     <tr>
-      <th>status</th>
-      <td><p>Provide the status of your project or dataset as either complete or ongoing.</p></td>
-    </tr>
-    <tr>
-      <th>update_frequency</th>
-      <td><p>Only needed if the status of the project or dataset is ongoing.
-If this is the case, please provide the frequency of which the project or dataset is updated.</p></td>
+      <th>maintenance_metadata</th>
+      <td><p>A table or list containing maintenance metadata: see <code><a href='create_maintenance.html'>create_maintenance</a></code></p></td>
     </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>The dataset or project with maintenance information appended.</p>
+    <p>The dataset list or project with maintenance information appended.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>add_maintenance</span><span class='op'>(</span>parent_element <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span><span class='op'>)</span>,
-                status <span class='op'>=</span> <span class='st'>"complete"</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; $maintenance
-#&gt; $maintenance$description
-#&gt; [1] "complete"
-#&gt; 
-#&gt; </div><div class='input'>
-<span class='fu'>add_maintenance</span><span class='op'>(</span>parent_element <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span><span class='op'>)</span>,
-                status <span class='op'>=</span> <span class='st'>"ongoing"</span>,
-                update_frequency <span class='op'>=</span> <span class='st'>"Data are updated 
-                annually at the end of the calendar year."</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; $maintenance
-#&gt; $maintenance$description
-#&gt; [1] "ongoing"
-#&gt; 
-#&gt; $maintenance$maintenanceUpdateFrequency
-#&gt; [1] "Data are updated \n                annually at the end of the calendar year."
-#&gt; 
-#&gt; </div></pre>
+    <pre class="examples"><div class='input'><span class='va'>maintenance_metadata</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>status <span class='op'>=</span> <span class='st'>"ongoing"</span>, update_frequency <span class='op'>=</span> <span class='st'>"complete"</span><span class='op'>)</span>
+<span class='va'>dataset</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
+     <span class='fu'>add_maintenance</span><span class='op'>(</span><span class='va'>maintenance_metadata</span><span class='op'>)</span> 
+</div><div class='output co'>#&gt; <span class='error'>Error in list() %&gt;% add_maintenance(maintenance_metadata): could not find function "%&gt;%"</span></div><div class='input'>
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

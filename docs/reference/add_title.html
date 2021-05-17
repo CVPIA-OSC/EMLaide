@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Add Title Elements — add_title • EMLaide</title>
+<title>Add Title — add_title • EMLaide</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -48,8 +48,8 @@
   <link href="../extra.css" rel="stylesheet">
   
 
-<meta property="og:title" content="Add Title Elements — add_title" />
-<meta property="og:description" content="Adds title elements according to EML standards." />
+<meta property="og:title" content="Add Title — add_title" />
+<meta property="og:description" content="Adds the title elements to a dataset list according to EML standards." />
 <meta property="og:image" content="https://CVPIA-OSC.github.io/EMLaide/logo.png" />
 
 
@@ -102,13 +102,7 @@
       <a href="../articles/template-doc.html">Metadata Template Documentation</a>
     </li>
     <li>
-      <a href="../articles/creating-EML.html">Create EML Document from Template</a>
-    </li>
-    <li>
-      <a href="../articles/Dataset-Element.html">Handle Special Case Datasets</a>
-    </li>
-    <li>
-      <a href="../articles/custom-units.html">EML Custom Units</a>
+      <a href="../articles/create-EML-from-template.html">Create EML Document from Template</a>
     </li>
   </ul>
 </li>
@@ -133,16 +127,16 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Add Title Elements</h1>
+    <h1>Add Title</h1>
     
     <div class="hidden name"><code>add_title.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Adds title elements according to EML standards.</p>
+    <p>Adds the title elements to a dataset list according to EML standards.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>add_title</span><span class='op'>(</span><span class='va'>parent_element</span>, <span class='va'>title</span>, <span class='va'>short_name</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>add_title</span><span class='op'>(</span><span class='va'>parent_element</span>, <span class='va'>title_metadata</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -152,36 +146,18 @@
       <td><p>A list representing the EML project or dataset.</p></td>
     </tr>
     <tr>
-      <th>title</th>
-      <td><p>The title of the project and/or dataset. A complete title is between
-7 and 20 words long and includes: What, Where, and When (and Who, if relevant).</p></td>
-    </tr>
-    <tr>
-      <th>short_name</th>
-      <td><p>Short name or nickname you use to refer to this dataset.</p></td>
+      <th>title_metadata</th>
+      <td><p>A list or dataframe containing a title and shortname: see <code><a href='create_title.html'>create_title</a></code></p></td>
     </tr>
     </table>
 
-    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
-
-    <p>The project or dataset list with title and short name appended.</p>
-    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
-
-    <p>For a dataset, the title should be between 7 and 20 words long, with a short
-name which is shorter than the title. If the title is too short, ensure that it
-is covering the 'what', 'where', and 'when'. If the title is too long, attempt
-to make it as concise as possible.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>add_title</span><span class='op'>(</span>parent_element <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span><span class='op'>)</span>,
-          title <span class='op'>=</span> <span class='st'>"Eight Mile Lake Research Watershed, Carbon in Permafrost Experimental Heating Research."</span>,
-          short_name <span class='op'>=</span> <span class='st'>"knb-lter-bnz.501.17"</span><span class='op'>)</span> 
-</div><div class='output co'>#&gt; $title
-#&gt; [1] "Eight Mile Lake Research Watershed, Carbon in Permafrost Experimental Heating Research."
-#&gt; 
-#&gt; $shortName
-#&gt; [1] "knb-lter-bnz.501.17"
-#&gt; </div></pre>
+    <pre class="examples"><div class='input'><span class='va'>title_metadata</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>title <span class='op'>=</span> <span class='st'>"Eight Mile Lake Research Watershed, Carbon in Permafrost Experimental Heating Research."</span>,
+                       short_name <span class='op'>=</span> <span class='st'>"knb-lter-bnz.501.17"</span><span class='op'>)</span>
+<span class='va'>dataset</span> <span class='op'>&lt;-</span><span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'>%&gt;%</span> 
+   <span class='fu'>add_title</span><span class='op'>(</span><span class='va'>title_metadata</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; <span class='error'>Error in list() %&gt;% add_title(title_metadata): could not find function "%&gt;%"</span></div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

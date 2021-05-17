@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Add Publication Date — add_pub_date • EMLaide</title>
+<title>Add Pub Date — add_pub_date • EMLaide</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -48,8 +48,8 @@
   <link href="../extra.css" rel="stylesheet">
   
 
-<meta property="og:title" content="Add Publication Date — add_pub_date" />
-<meta property="og:description" content="Adds publication date according to EML standards." />
+<meta property="og:title" content="Add Pub Date — add_pub_date" />
+<meta property="og:description" content="Adds the pub date element to a dataset list according to EML standards." />
 <meta property="og:image" content="https://CVPIA-OSC.github.io/EMLaide/logo.png" />
 
 
@@ -102,13 +102,7 @@
       <a href="../articles/template-doc.html">Metadata Template Documentation</a>
     </li>
     <li>
-      <a href="../articles/creating-EML.html">Create EML Document from Template</a>
-    </li>
-    <li>
-      <a href="../articles/Dataset-Element.html">Handle Special Case Datasets</a>
-    </li>
-    <li>
-      <a href="../articles/custom-units.html">EML Custom Units</a>
+      <a href="../articles/create-EML-from-template.html">Create EML Document from Template</a>
     </li>
   </ul>
 </li>
@@ -133,13 +127,13 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Add Publication Date</h1>
+    <h1>Add Pub Date</h1>
     
     <div class="hidden name"><code>add_pub_date.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Adds publication date according to EML standards.</p>
+    <p>Adds the pub date element to a dataset list according to EML standards.</p>
     </div>
 
     <pre class="usage"><span class='fu'>add_pub_date</span><span class='op'>(</span><span class='va'>parent_element</span>, date <span class='op'>=</span> <span class='cn'>NULL</span><span class='op'>)</span></pre>
@@ -154,25 +148,14 @@
     <tr>
       <th>date</th>
       <td><p>The publication date. If left null, it will be assigned the current
-date. This can be overriden by putting in a specific date.</p></td>
+date. This can be overridden by putting in a specific date: see <code><a href='create_pub_date.html'>create_pub_date</a></code></p></td>
     </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>The dataset or project with the publication date appended.</p>
+    <p>The dataset list or project with publication date information appended.</p>
 
-    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>add_pub_date</span><span class='op'>(</span>parent_element <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span><span class='op'>)</span>,
-             date <span class='op'>=</span> <span class='st'>"2020-08-19"</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; $pubDate
-#&gt; [1] "2020-08-19"
-#&gt; </div><div class='input'>             
-<span class='co'># Appends current date:              </span>
-<span class='fu'>add_pub_date</span><span class='op'>(</span>parent_element <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span><span class='op'>)</span><span class='op'>)</span> 
-</div><div class='output co'>#&gt; $pubDate
-#&gt; [1] "2021-05-11"
-#&gt; </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
