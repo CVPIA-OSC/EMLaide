@@ -157,7 +157,16 @@
     <p>The dataset list or project with datatable information appended.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"></pre>
+    <pre class="examples"><div class='input'><span class='co'># datatable_metadata &lt;- dplyr::tibble(filepath =  filepath = c(system.file("extdata", "Banet-Example", "data", "enclosure-study-growth-rate-data.csv", package = "EMLaide", mustWork = TRUE), </span>
+<span class='co'>#                                                              system.file("extdata", "Banet-Example", "data", "enclosure-study-gut-contents-data.csv", package = "EMLaide", mustWork = TRUE)), </span>
+<span class='co'>#                                     attribute_info = c(system.file("extdata", "Banet-Example", "metadata", "enclosure-study-growth-rates-metadata.xlsx", package = "EMLaide", mustWork = TRUE), </span>
+<span class='co'>#                                     system.file("extdata", "Banet-Example", "metadata", "enclosure-study-gut-contents-metadata.xlsx", package = "EMLaide", mustWork = TRUE),</span>
+<span class='co'>#                                     datatable_description = c("Growth Rates - Enclosure Study","Gut Contents - Enclosure Study"))</span>
+
+<span class='co'># dataset &lt;- list() %&gt;%</span>
+<span class='co'>#     add_datatable(datatable_metadata)</span>
+
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

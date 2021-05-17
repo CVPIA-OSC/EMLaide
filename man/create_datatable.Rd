@@ -36,10 +36,9 @@ Creates the data table elements according to EML standards.
 Create Data Table
 }
 \examples{
-filepath =  "data/enclosure-study-growth-rate-data.csv"
-attribute_info = "enclosure-study-growth-rates-metadata.xlsx")
-datatable_description = "Growth Rates - Enclosure Study")
-datatable_url = "https://raw.githubusercontent.com/FlowWest/CVPIA_Salmonid_Habitat_Monitoring/make-xml/data/enclosure-study-growth-rate-data.csv?token=AMGEQ7R4E5RMNKRMD57BBQTAOSW6W")
+# filepath =  system.file("extdata", "Banet-Example", "data", "enclosure-study-growth-rate-data.csv", package = "EMLaide", mustWork = TRUE)
+# attribute_info = system.file("extdata", "Banet-Example", "metadata", "enclosure-study-growth-rates-metadata.xlsx", package = "EMLaide", mustWork = TRUE)
+# datatable_description = "Growth Rates - Enclosure Study"))
 
-create_datatable(filepath, attribute_info, datatable_description, datatable_url)
+# create_datatable(filepath, attribute_info, datatable_description)
 }
