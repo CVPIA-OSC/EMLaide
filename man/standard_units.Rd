@@ -17,5 +17,7 @@ it will check that the units are in the standard unit list.
 }
 \examples{
 "meters" \%in\% standard_units
+"meter" \%in\% standard_units
+"m" \%in\% standard_units
 }
 \keyword{datasets}

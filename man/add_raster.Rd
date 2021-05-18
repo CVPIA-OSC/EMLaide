@@ -19,3 +19,30 @@ The dataset list or project with raster file information appended.
 \description{
 Adds the raster elements to a dataset list according to EML standards.
 }
+\examples{
+ 
+raster_metadata <- list("file_name" = "Rasterfiles.zip" ,
+                        "file_description" = "A Raster File",
+                        "attribute_list" =  create_attribute("attribute_name" = "Yrs", attribute_label = "Years", 
+                                                        "attribute_definition" = "Calendar year of the observation from years 1990 - 2010.", 
+                                                        "storage_type" = EMLaide::storage_type$date, 
+                                                        "measurement_scale" = EMLaide::measurement_scale$dateTime, 
+                                                        "date_time_format" = "YYYY",
+                                                        "date_time_precision" = "1", minimum = "1993", maximum = "2003"),
+                        "physical" = create_physical("Rasterfiles.zip"),
+                        "spatial_reference" = "NAD_1983_StatePlane_California_I_FIPS_0401",
+                        "horizontal_accuracy" = "No Information",
+                        "vertical_accuracy" =  "No Information",
+                        "cell_size_x" = "25",
+                        "cell_size_y" = "25",
+                        "number_of_bands" = "10",
+                        "raster_origin" = "Upper Left",
+                        "rows" = "200",
+                        "columns" = "6",
+                        "verticals" = "1",
+                        "cell_geometry" = "pixel")
+
+dataset <- list() \%>\%
+    add_raster(raster_metadata)
+dataset
+}

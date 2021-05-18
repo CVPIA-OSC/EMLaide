@@ -9,11 +9,11 @@
 #' @param additional_info Option additional metadata info if there is additional metadata information that is important to the datatable 
 #' @return A data table element listed in a format to be added to a dataset element and turned into EML 
 #' @examples
-#' # filepath =  system.file("extdata", "Banet-Example", "data", "enclosure-study-growth-rate-data.csv", package = "EMLaide", mustWork = TRUE)
-#' # attribute_info = system.file("extdata", "Banet-Example", "metadata", "enclosure-study-growth-rates-metadata.xlsx", package = "EMLaide", mustWork = TRUE)
-#' # datatable_description = "Growth Rates - Enclosure Study"))
+#' filepath =  system.file("extdata", "Banet-Example", "data", "enclosure-study-growth-rate-data.csv", package = "EMLaide", mustWork = TRUE)
+#' attribute_info = system.file("extdata", "Banet-Example", "metadata", "enclosure-study-growth-rates-metadata.xlsx", package = "EMLaide", mustWork = TRUE)
+#' datatable_description = "Growth Rates - Enclosure Study"
 #' 
-#' # create_datatable(filepath, attribute_info, datatable_description)
+#' create_datatable(filepath, attribute_info, datatable_description)
 #' @export
 create_datatable <- function(filepath, 
                               attribute_info, 
@@ -57,7 +57,7 @@ create_datatable <- function(filepath,
                                  entityDescription = datatable_description,
                                  physical = physical,
                                  attributeList = attribute_list,
-                                 numberOfRecords = nrow(read_csv(filepath)))
+                                 numberOfRecords = nrow(read.csv(filepath)))
   return(dataTable)
 }
 #' Add Data Table 
@@ -67,15 +67,15 @@ create_datatable <- function(filepath,
 #' (filepath, attribute_info, datatable_description, datatable_url): see \code{\link{create_datatable}} 
 #' @return The dataset list or project with datatable information appended.
 #' @examples 
-#' # datatable_metadata <- dplyr::tibble(filepath =  filepath = c(system.file("extdata", "Banet-Example", "data", "enclosure-study-growth-rate-data.csv", package = "EMLaide", mustWork = TRUE), 
-#' #                                                              system.file("extdata", "Banet-Example", "data", "enclosure-study-gut-contents-data.csv", package = "EMLaide", mustWork = TRUE)), 
-#' #                                     attribute_info = c(system.file("extdata", "Banet-Example", "metadata", "enclosure-study-growth-rates-metadata.xlsx", package = "EMLaide", mustWork = TRUE), 
-#' #                                     system.file("extdata", "Banet-Example", "metadata", "enclosure-study-gut-contents-metadata.xlsx", package = "EMLaide", mustWork = TRUE),
-#' #                                     datatable_description = c("Growth Rates - Enclosure Study","Gut Contents - Enclosure Study"))
-#' 
-#' # dataset <- list() %>%
-#' #     add_datatable(datatable_metadata)
-#' 
+#' datatable_metadata <- dplyr::tibble(filepath = c(system.file("extdata", "Banet-Example", "data", "enclosure-study-growth-rate-data.csv", package = "EMLaide", mustWork = TRUE), 
+#'                                                              system.file("extdata", "Banet-Example", "data", "enclosure-study-gut-contents-data.csv", package = "EMLaide", mustWork = TRUE)), 
+#'                                      attribute_info = c(system.file("extdata", "Banet-Example", "metadata", "enclosure-study-growth-rates-metadata.xlsx", package = "EMLaide", mustWork = TRUE), 
+#'                                      system.file("extdata", "Banet-Example", "metadata", "enclosure-study-gut-contents-metadata.xlsx", package = "EMLaide", mustWork = TRUE)),
+#'                                      datatable_description = c("Growth Rates - Enclosure Study","Gut Contents - Enclosure Study"))
+#'  
+#' dataset <- list() %>%
+#'     add_datatable(datatable_metadata)
+#' dataset
 #' @export
 add_datatable <- function(parent_element, datatable_metadata) {
   suppressMessages(suppressWarnings(

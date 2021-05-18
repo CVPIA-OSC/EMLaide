@@ -182,12 +182,638 @@
     <p>Create Data Table</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='co'># filepath =  system.file("extdata", "Banet-Example", "data", "enclosure-study-growth-rate-data.csv", package = "EMLaide", mustWork = TRUE)</span>
-<span class='co'># attribute_info = system.file("extdata", "Banet-Example", "metadata", "enclosure-study-growth-rates-metadata.xlsx", package = "EMLaide", mustWork = TRUE)</span>
-<span class='co'># datatable_description = "Growth Rates - Enclosure Study"))</span>
+    <pre class="examples"><div class='input'><span class='va'>filepath</span> <span class='op'>=</span>  <span class='fu'><a href='https://rdrr.io/r/base/system.file.html'>system.file</a></span><span class='op'>(</span><span class='st'>"extdata"</span>, <span class='st'>"Banet-Example"</span>, <span class='st'>"data"</span>, <span class='st'>"enclosure-study-growth-rate-data.csv"</span>, package <span class='op'>=</span> <span class='st'>"EMLaide"</span>, mustWork <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span>
+<span class='va'>attribute_info</span> <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/system.file.html'>system.file</a></span><span class='op'>(</span><span class='st'>"extdata"</span>, <span class='st'>"Banet-Example"</span>, <span class='st'>"metadata"</span>, <span class='st'>"enclosure-study-growth-rates-metadata.xlsx"</span>, package <span class='op'>=</span> <span class='st'>"EMLaide"</span>, mustWork <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span>
+<span class='va'>datatable_description</span> <span class='op'>=</span> <span class='st'>"Growth Rates - Enclosure Study"</span>
 
-<span class='co'># create_datatable(filepath, attribute_info, datatable_description)</span>
-</div></pre>
+<span class='fu'>create_datatable</span><span class='op'>(</span><span class='va'>filepath</span>, <span class='va'>attribute_info</span>, <span class='va'>datatable_description</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; <span class='message'>Warning: Please add text pattern if applicable.</span></div><div class='output co'>#&gt; <span class='message'>Warning: Please add text pattern if applicable.</span></div><div class='output co'>#&gt; [1] "We identified the following custom unit: fishPerEnclosure , please make sure to add information on this custom unit in additional metadata information:"
+#&gt; [1] "We identified the following custom unit: fishPerEnclosure , please make sure to add information on this custom unit in additional metadata information:"
+#&gt; [1] "We identified the following custom unit: fishPerEnclosure , please make sure to add information on this custom unit in additional metadata information:"
+#&gt; [1] "We identified the following custom unit: thermal unit , please make sure to add information on this custom unit in additional metadata information:"</div><div class='output co'>#&gt; <span class='message'>Warning: Please add text pattern if applicable.</span></div><div class='output co'>#&gt; <span class='message'>Warning: Please add text pattern if applicable.</span></div><div class='output co'>#&gt; [1] "We identified the following custom unit: day , please make sure to add information on this custom unit in additional metadata information:"</div><div class='output co'>#&gt; $entityName
+#&gt; [1] "enclosure-study-growth-rate-data.csv"
+#&gt; 
+#&gt; $entityDescription
+#&gt; [1] "Growth Rates - Enclosure Study"
+#&gt; 
+#&gt; $physical
+#&gt; $physical$objectName
+#&gt; [1] "enclosure-study-growth-rate-data.csv"
+#&gt; 
+#&gt; $physical$size
+#&gt; $physical$size$unit
+#&gt; [1] "bytes"
+#&gt; 
+#&gt; $physical$size$size
+#&gt; [1] "32636"
+#&gt; 
+#&gt; 
+#&gt; $physical$authentication
+#&gt; $physical$authentication$method
+#&gt; [1] "MD5"
+#&gt; 
+#&gt; $physical$authentication$authentication
+#&gt; [1] "44b508c45e3635e8d65a719631530a75"
+#&gt; 
+#&gt; 
+#&gt; $physical$dataFormat
+#&gt; $physical$dataFormat$textFormat
+#&gt; $physical$dataFormat$textFormat$numHeaderLines
+#&gt; [1] "1"
+#&gt; 
+#&gt; $physical$dataFormat$textFormat$recordDelimiter
+#&gt; [1] "\\r\\n"
+#&gt; 
+#&gt; $physical$dataFormat$textFormat$attributeOrientation
+#&gt; [1] "column"
+#&gt; 
+#&gt; $physical$dataFormat$textFormat$simpleDelimited
+#&gt; $physical$dataFormat$textFormat$simpleDelimited$fieldDelimiter
+#&gt; [1] ","
+#&gt; 
+#&gt; 
+#&gt; 
+#&gt; 
+#&gt; $physical$distribution
+#&gt; $physical$distribution$online
+#&gt; $physical$distribution$online$url
+#&gt; $physical$distribution$online$url$url
+#&gt; NULL
+#&gt; 
+#&gt; $physical$distribution$online$url$`function`
+#&gt; [1] "download"
+#&gt; 
+#&gt; 
+#&gt; 
+#&gt; 
+#&gt; 
+#&gt; $attributeList
+#&gt; $attributeList$attribute
+#&gt; $attributeList$attribute[[1]]
+#&gt; $attributeList$attribute[[1]]$attributeName
+#&gt; [1] "enclosure"
+#&gt; 
+#&gt; $attributeList$attribute[[1]]$attributeDefinition
+#&gt; [1] "Enclosure ID. Enclosures were number 1-6 in each site for identification."
+#&gt; 
+#&gt; $attributeList$attribute[[1]]$storageType
+#&gt; [1] "dbl"
+#&gt; 
+#&gt; $attributeList$attribute[[1]]$attributeLabel
+#&gt; [1] NA
+#&gt; 
+#&gt; $attributeList$attribute[[1]]$measurementScale
+#&gt; $attributeList$attribute[[1]]$measurementScale$nominal
+#&gt; $attributeList$attribute[[1]]$measurementScale$nominal$nonNumericDomain
+#&gt; $attributeList$attribute[[1]]$measurementScale$nominal$nonNumericDomain$textDomain
+#&gt; $attributeList$attribute[[1]]$measurementScale$nominal$nonNumericDomain$textDomain$definition
+#&gt; [1] "Enclosure ID. Enclosures were number 1-6 in each site for identification."
+#&gt; 
+#&gt; 
+#&gt; 
+#&gt; 
+#&gt; 
+#&gt; 
+#&gt; $attributeList$attribute[[2]]
+#&gt; $attributeList$attribute[[2]]$attributeName
+#&gt; [1] "fish_code"
+#&gt; 
+#&gt; $attributeList$attribute[[2]]$attributeDefinition
+#&gt; [1] "Unique identifying number for fish within an enclosure. Fish were numbered 1-20 within each enclosure."
+#&gt; 
+#&gt; $attributeList$attribute[[2]]$storageType
+#&gt; [1] "dbl"
+#&gt; 
+#&gt; $attributeList$attribute[[2]]$attributeLabel
+#&gt; [1] NA
+#&gt; 
+#&gt; $attributeList$attribute[[2]]$measurementScale
+#&gt; $attributeList$attribute[[2]]$measurementScale$nominal
+#&gt; $attributeList$attribute[[2]]$measurementScale$nominal$nonNumericDomain
+#&gt; $attributeList$attribute[[2]]$measurementScale$nominal$nonNumericDomain$textDomain
+#&gt; $attributeList$attribute[[2]]$measurementScale$nominal$nonNumericDomain$textDomain$definition
+#&gt; [1] "Unique identifying number for fish within an enclosure. Fish were numbered 1-20 within each enclosure."
+#&gt; 
+#&gt; 
+#&gt; 
+#&gt; 
+#&gt; 
+#&gt; 
+#&gt; $attributeList$attribute[[3]]
+#&gt; $attributeList$attribute[[3]]$attributeName
+#&gt; [1] "length_begin"
+#&gt; 
+#&gt; $attributeList$attribute[[3]]$attributeDefinition
+#&gt; [1] "fish fork length at the start of the study"
+#&gt; 
+#&gt; $attributeList$attribute[[3]]$storageType
+#&gt; [1] "dbl"
+#&gt; 
+#&gt; $attributeList$attribute[[3]]$attributeLabel
+#&gt; [1] NA
+#&gt; 
+#&gt; $attributeList$attribute[[3]]$measurementScale
+#&gt; $attributeList$attribute[[3]]$measurementScale$ratio
+#&gt; $attributeList$attribute[[3]]$measurementScale$ratio$unit
+#&gt; $attributeList$attribute[[3]]$measurementScale$ratio$unit$standardUnit
+#&gt; [1] "millimeter"
+#&gt; 
+#&gt; 
+#&gt; $attributeList$attribute[[3]]$measurementScale$ratio$numericDomain
+#&gt; $attributeList$attribute[[3]]$measurementScale$ratio$numericDomain$numberType
+#&gt; [1] "real"
+#&gt; 
+#&gt; $attributeList$attribute[[3]]$measurementScale$ratio$numericDomain$bounds
+#&gt; $attributeList$attribute[[3]]$measurementScale$ratio$numericDomain$bounds$minimum
+#&gt; $attributeList$attribute[[3]]$measurementScale$ratio$numericDomain$bounds$minimum$exclusive
+#&gt; [1] "false"
+#&gt; 
+#&gt; $attributeList$attribute[[3]]$measurementScale$ratio$numericDomain$bounds$minimum$minimum
+#&gt; [1] 48
+#&gt; 
+#&gt; 
+#&gt; $attributeList$attribute[[3]]$measurementScale$ratio$numericDomain$bounds$maximum
+#&gt; $attributeList$attribute[[3]]$measurementScale$ratio$numericDomain$bounds$maximum$exclusive
+#&gt; [1] "false"
+#&gt; 
+#&gt; $attributeList$attribute[[3]]$measurementScale$ratio$numericDomain$bounds$maximum$maximum
+#&gt; [1] 78
+#&gt; 
+#&gt; 
+#&gt; 
+#&gt; 
+#&gt; 
+#&gt; 
+#&gt; 
+#&gt; $attributeList$attribute[[4]]
+#&gt; $attributeList$attribute[[4]]$attributeName
+#&gt; [1] "length_middle"
+#&gt; 
+#&gt; $attributeList$attribute[[4]]$attributeDefinition
+#&gt; [1] "fish fork length at the mid-point of the study"
+#&gt; 
+#&gt; $attributeList$attribute[[4]]$storageType
+#&gt; [1] "dbl"
+#&gt; 
+#&gt; $attributeList$attribute[[4]]$attributeLabel
+#&gt; [1] NA
+#&gt; 
+#&gt; $attributeList$attribute[[4]]$measurementScale
+#&gt; $attributeList$attribute[[4]]$measurementScale$ratio
+#&gt; $attributeList$attribute[[4]]$measurementScale$ratio$unit
+#&gt; $attributeList$attribute[[4]]$measurementScale$ratio$unit$standardUnit
+#&gt; [1] "millimeter"
+#&gt; 
+#&gt; 
+#&gt; $attributeList$attribute[[4]]$measurementScale$ratio$numericDomain
+#&gt; $attributeList$attribute[[4]]$measurementScale$ratio$numericDomain$numberType
+#&gt; [1] "real"
+#&gt; 
+#&gt; $attributeList$attribute[[4]]$measurementScale$ratio$numericDomain$bounds
+#&gt; $attributeList$attribute[[4]]$measurementScale$ratio$numericDomain$bounds$minimum
+#&gt; $attributeList$attribute[[4]]$measurementScale$ratio$numericDomain$bounds$minimum$exclusive
+#&gt; [1] "false"
+#&gt; 
+#&gt; $attributeList$attribute[[4]]$measurementScale$ratio$numericDomain$bounds$minimum$minimum
+#&gt; [1] 68
+#&gt; 
+#&gt; 
+#&gt; $attributeList$attribute[[4]]$measurementScale$ratio$numericDomain$bounds$maximum
+#&gt; $attributeList$attribute[[4]]$measurementScale$ratio$numericDomain$bounds$maximum$exclusive
+#&gt; [1] "false"
+#&gt; 
+#&gt; $attributeList$attribute[[4]]$measurementScale$ratio$numericDomain$bounds$maximum$maximum
+#&gt; [1] 84
+#&gt; 
+#&gt; 
+#&gt; 
+#&gt; 
+#&gt; 
+#&gt; 
+#&gt; 
+#&gt; $attributeList$attribute[[5]]
+#&gt; $attributeList$attribute[[5]]$attributeName
+#&gt; [1] "length_end"
+#&gt; 
+#&gt; $attributeList$attribute[[5]]$attributeDefinition
+#&gt; [1] "fish fork length at the end of the study"
+#&gt; 
+#&gt; $attributeList$attribute[[5]]$storageType
+#&gt; [1] "dbl"
+#&gt; 
+#&gt; $attributeList$attribute[[5]]$attributeLabel
+#&gt; [1] NA
+#&gt; 
+#&gt; $attributeList$attribute[[5]]$measurementScale
+#&gt; $attributeList$attribute[[5]]$measurementScale$ratio
+#&gt; $attributeList$attribute[[5]]$measurementScale$ratio$unit
+#&gt; $attributeList$attribute[[5]]$measurementScale$ratio$unit$standardUnit
+#&gt; [1] "millimeter"
+#&gt; 
+#&gt; 
+#&gt; $attributeList$attribute[[5]]$measurementScale$ratio$numericDomain
+#&gt; $attributeList$attribute[[5]]$measurementScale$ratio$numericDomain$numberType
+#&gt; [1] "real"
+#&gt; 
+#&gt; $attributeList$attribute[[5]]$measurementScale$ratio$numericDomain$bounds
+#&gt; $attributeList$attribute[[5]]$measurementScale$ratio$numericDomain$bounds$minimum
+#&gt; $attributeList$attribute[[5]]$measurementScale$ratio$numericDomain$bounds$minimum$exclusive
+#&gt; [1] "false"
+#&gt; 
+#&gt; $attributeList$attribute[[5]]$measurementScale$ratio$numericDomain$bounds$minimum$minimum
+#&gt; [1] 65
+#&gt; 
+#&gt; 
+#&gt; $attributeList$attribute[[5]]$measurementScale$ratio$numericDomain$bounds$maximum
+#&gt; $attributeList$attribute[[5]]$measurementScale$ratio$numericDomain$bounds$maximum$exclusive
+#&gt; [1] "false"
+#&gt; 
+#&gt; $attributeList$attribute[[5]]$measurementScale$ratio$numericDomain$bounds$maximum$maximum
+#&gt; [1] 95
+#&gt; 
+#&gt; 
+#&gt; 
+#&gt; 
+#&gt; 
+#&gt; 
+#&gt; 
+#&gt; $attributeList$attribute[[6]]
+#&gt; $attributeList$attribute[[6]]$attributeName
+#&gt; [1] "condition_beginning"
+#&gt; 
+#&gt; $attributeList$attribute[[6]]$attributeDefinition
+#&gt; [1] "Fulton's condition factor at the beginning of the study"
+#&gt; 
+#&gt; $attributeList$attribute[[6]]$storageType
+#&gt; [1] "dbl"
+#&gt; 
+#&gt; $attributeList$attribute[[6]]$attributeLabel
+#&gt; [1] NA
+#&gt; 
+#&gt; $attributeList$attribute[[6]]$measurementScale
+#&gt; $attributeList$attribute[[6]]$measurementScale$ratio
+#&gt; $attributeList$attribute[[6]]$measurementScale$ratio$unit
+#&gt; $attributeList$attribute[[6]]$measurementScale$ratio$unit$standardUnit
+#&gt; [1] "dimensionless"
+#&gt; 
+#&gt; 
+#&gt; $attributeList$attribute[[6]]$measurementScale$ratio$numericDomain
+#&gt; $attributeList$attribute[[6]]$measurementScale$ratio$numericDomain$numberType
+#&gt; [1] "real"
+#&gt; 
+#&gt; $attributeList$attribute[[6]]$measurementScale$ratio$numericDomain$bounds
+#&gt; $attributeList$attribute[[6]]$measurementScale$ratio$numericDomain$bounds$minimum
+#&gt; $attributeList$attribute[[6]]$measurementScale$ratio$numericDomain$bounds$minimum$exclusive
+#&gt; [1] "false"
+#&gt; 
+#&gt; $attributeList$attribute[[6]]$measurementScale$ratio$numericDomain$bounds$minimum$minimum
+#&gt; [1] 0.3350023
+#&gt; 
+#&gt; 
+#&gt; $attributeList$attribute[[6]]$measurementScale$ratio$numericDomain$bounds$maximum
+#&gt; $attributeList$attribute[[6]]$measurementScale$ratio$numericDomain$bounds$maximum$exclusive
+#&gt; [1] "false"
+#&gt; 
+#&gt; $attributeList$attribute[[6]]$measurementScale$ratio$numericDomain$bounds$maximum$maximum
+#&gt; [1] 2.700319
+#&gt; 
+#&gt; 
+#&gt; 
+#&gt; 
+#&gt; 
+#&gt; 
+#&gt; 
+#&gt; $attributeList$attribute[[7]]
+#&gt; $attributeList$attribute[[7]]$attributeName
+#&gt; [1] "condition_ending"
+#&gt; 
+#&gt; $attributeList$attribute[[7]]$attributeDefinition
+#&gt; [1] "Fulton's condition factor at the end of the study"
+#&gt; 
+#&gt; $attributeList$attribute[[7]]$storageType
+#&gt; [1] "dbl"
+#&gt; 
+#&gt; $attributeList$attribute[[7]]$attributeLabel
+#&gt; [1] NA
+#&gt; 
+#&gt; $attributeList$attribute[[7]]$measurementScale
+#&gt; $attributeList$attribute[[7]]$measurementScale$ratio
+#&gt; $attributeList$attribute[[7]]$measurementScale$ratio$unit
+#&gt; $attributeList$attribute[[7]]$measurementScale$ratio$unit$standardUnit
+#&gt; [1] "dimensionless"
+#&gt; 
+#&gt; 
+#&gt; $attributeList$attribute[[7]]$measurementScale$ratio$numericDomain
+#&gt; $attributeList$attribute[[7]]$measurementScale$ratio$numericDomain$numberType
+#&gt; [1] "real"
+#&gt; 
+#&gt; $attributeList$attribute[[7]]$measurementScale$ratio$numericDomain$bounds
+#&gt; $attributeList$attribute[[7]]$measurementScale$ratio$numericDomain$bounds$minimum
+#&gt; $attributeList$attribute[[7]]$measurementScale$ratio$numericDomain$bounds$minimum$exclusive
+#&gt; [1] "false"
+#&gt; 
+#&gt; $attributeList$attribute[[7]]$measurementScale$ratio$numericDomain$bounds$minimum$minimum
+#&gt; [1] 0.7327568
+#&gt; 
+#&gt; 
+#&gt; $attributeList$attribute[[7]]$measurementScale$ratio$numericDomain$bounds$maximum
+#&gt; $attributeList$attribute[[7]]$measurementScale$ratio$numericDomain$bounds$maximum$exclusive
+#&gt; [1] "false"
+#&gt; 
+#&gt; $attributeList$attribute[[7]]$measurementScale$ratio$numericDomain$bounds$maximum$maximum
+#&gt; [1] 1.590976
+#&gt; 
+#&gt; 
+#&gt; 
+#&gt; 
+#&gt; 
+#&gt; 
+#&gt; 
+#&gt; $attributeList$attribute[[8]]
+#&gt; $attributeList$attribute[[8]]$attributeName
+#&gt; [1] "density_start"
+#&gt; 
+#&gt; $attributeList$attribute[[8]]$attributeDefinition
+#&gt; [1] "density at the start of the study, represented as the number of fish in the enclosure"
+#&gt; 
+#&gt; $attributeList$attribute[[8]]$storageType
+#&gt; [1] "dbl"
+#&gt; 
+#&gt; $attributeList$attribute[[8]]$attributeLabel
+#&gt; [1] NA
+#&gt; 
+#&gt; $attributeList$attribute[[8]]$measurementScale
+#&gt; $attributeList$attribute[[8]]$measurementScale$ratio
+#&gt; $attributeList$attribute[[8]]$measurementScale$ratio$unit
+#&gt; $attributeList$attribute[[8]]$measurementScale$ratio$unit$customUnit
+#&gt; [1] "fishPerEnclosure"
+#&gt; 
+#&gt; 
+#&gt; $attributeList$attribute[[8]]$measurementScale$ratio$numericDomain
+#&gt; $attributeList$attribute[[8]]$measurementScale$ratio$numericDomain$numberType
+#&gt; [1] "whole"
+#&gt; 
+#&gt; $attributeList$attribute[[8]]$measurementScale$ratio$numericDomain$bounds
+#&gt; $attributeList$attribute[[8]]$measurementScale$ratio$numericDomain$bounds$minimum
+#&gt; $attributeList$attribute[[8]]$measurementScale$ratio$numericDomain$bounds$minimum$exclusive
+#&gt; [1] "false"
+#&gt; 
+#&gt; $attributeList$attribute[[8]]$measurementScale$ratio$numericDomain$bounds$minimum$minimum
+#&gt; [1] 18
+#&gt; 
+#&gt; 
+#&gt; $attributeList$attribute[[8]]$measurementScale$ratio$numericDomain$bounds$maximum
+#&gt; $attributeList$attribute[[8]]$measurementScale$ratio$numericDomain$bounds$maximum$exclusive
+#&gt; [1] "false"
+#&gt; 
+#&gt; $attributeList$attribute[[8]]$measurementScale$ratio$numericDomain$bounds$maximum$maximum
+#&gt; [1] 20
+#&gt; 
+#&gt; 
+#&gt; 
+#&gt; 
+#&gt; 
+#&gt; 
+#&gt; 
+#&gt; $attributeList$attribute[[9]]
+#&gt; $attributeList$attribute[[9]]$attributeName
+#&gt; [1] "density_middle"
+#&gt; 
+#&gt; $attributeList$attribute[[9]]$attributeDefinition
+#&gt; [1] "density at the mid-point of the study, represented as the number of fish in the enclosure"
+#&gt; 
+#&gt; $attributeList$attribute[[9]]$storageType
+#&gt; [1] "dbl"
+#&gt; 
+#&gt; $attributeList$attribute[[9]]$attributeLabel
+#&gt; [1] NA
+#&gt; 
+#&gt; $attributeList$attribute[[9]]$measurementScale
+#&gt; $attributeList$attribute[[9]]$measurementScale$ratio
+#&gt; $attributeList$attribute[[9]]$measurementScale$ratio$unit
+#&gt; $attributeList$attribute[[9]]$measurementScale$ratio$unit$customUnit
+#&gt; [1] "fishPerEnclosure"
+#&gt; 
+#&gt; 
+#&gt; $attributeList$attribute[[9]]$measurementScale$ratio$numericDomain
+#&gt; $attributeList$attribute[[9]]$measurementScale$ratio$numericDomain$numberType
+#&gt; [1] "whole"
+#&gt; 
+#&gt; $attributeList$attribute[[9]]$measurementScale$ratio$numericDomain$bounds
+#&gt; $attributeList$attribute[[9]]$measurementScale$ratio$numericDomain$bounds$minimum
+#&gt; $attributeList$attribute[[9]]$measurementScale$ratio$numericDomain$bounds$minimum$exclusive
+#&gt; [1] "false"
+#&gt; 
+#&gt; $attributeList$attribute[[9]]$measurementScale$ratio$numericDomain$bounds$minimum$minimum
+#&gt; [1] 11
+#&gt; 
+#&gt; 
+#&gt; $attributeList$attribute[[9]]$measurementScale$ratio$numericDomain$bounds$maximum
+#&gt; $attributeList$attribute[[9]]$measurementScale$ratio$numericDomain$bounds$maximum$exclusive
+#&gt; [1] "false"
+#&gt; 
+#&gt; $attributeList$attribute[[9]]$measurementScale$ratio$numericDomain$bounds$maximum$maximum
+#&gt; [1] 20
+#&gt; 
+#&gt; 
+#&gt; 
+#&gt; 
+#&gt; 
+#&gt; 
+#&gt; 
+#&gt; $attributeList$attribute[[10]]
+#&gt; $attributeList$attribute[[10]]$attributeName
+#&gt; [1] "density_end"
+#&gt; 
+#&gt; $attributeList$attribute[[10]]$attributeDefinition
+#&gt; [1] "density at the end of the study, represented as the number of fish in the enclosure"
+#&gt; 
+#&gt; $attributeList$attribute[[10]]$storageType
+#&gt; [1] "dbl"
+#&gt; 
+#&gt; $attributeList$attribute[[10]]$attributeLabel
+#&gt; [1] NA
+#&gt; 
+#&gt; $attributeList$attribute[[10]]$measurementScale
+#&gt; $attributeList$attribute[[10]]$measurementScale$ratio
+#&gt; $attributeList$attribute[[10]]$measurementScale$ratio$unit
+#&gt; $attributeList$attribute[[10]]$measurementScale$ratio$unit$customUnit
+#&gt; [1] "fishPerEnclosure"
+#&gt; 
+#&gt; 
+#&gt; $attributeList$attribute[[10]]$measurementScale$ratio$numericDomain
+#&gt; $attributeList$attribute[[10]]$measurementScale$ratio$numericDomain$numberType
+#&gt; [1] "whole"
+#&gt; 
+#&gt; $attributeList$attribute[[10]]$measurementScale$ratio$numericDomain$bounds
+#&gt; $attributeList$attribute[[10]]$measurementScale$ratio$numericDomain$bounds$minimum
+#&gt; $attributeList$attribute[[10]]$measurementScale$ratio$numericDomain$bounds$minimum$exclusive
+#&gt; [1] "false"
+#&gt; 
+#&gt; $attributeList$attribute[[10]]$measurementScale$ratio$numericDomain$bounds$minimum$minimum
+#&gt; [1] 5
+#&gt; 
+#&gt; 
+#&gt; $attributeList$attribute[[10]]$measurementScale$ratio$numericDomain$bounds$maximum
+#&gt; $attributeList$attribute[[10]]$measurementScale$ratio$numericDomain$bounds$maximum$exclusive
+#&gt; [1] "false"
+#&gt; 
+#&gt; $attributeList$attribute[[10]]$measurementScale$ratio$numericDomain$bounds$maximum$maximum
+#&gt; [1] 20
+#&gt; 
+#&gt; 
+#&gt; 
+#&gt; 
+#&gt; 
+#&gt; 
+#&gt; 
+#&gt; $attributeList$attribute[[11]]
+#&gt; $attributeList$attribute[[11]]$attributeName
+#&gt; [1] "atu"
+#&gt; 
+#&gt; $attributeList$attribute[[11]]$attributeDefinition
+#&gt; [1] "acumulated thermal units experienced by the fish over the course of the study"
+#&gt; 
+#&gt; $attributeList$attribute[[11]]$storageType
+#&gt; [1] "dbl"
+#&gt; 
+#&gt; $attributeList$attribute[[11]]$attributeLabel
+#&gt; [1] NA
+#&gt; 
+#&gt; $attributeList$attribute[[11]]$measurementScale
+#&gt; $attributeList$attribute[[11]]$measurementScale$ratio
+#&gt; $attributeList$attribute[[11]]$measurementScale$ratio$unit
+#&gt; $attributeList$attribute[[11]]$measurementScale$ratio$unit$customUnit
+#&gt; [1] "thermal unit"
+#&gt; 
+#&gt; 
+#&gt; $attributeList$attribute[[11]]$measurementScale$ratio$numericDomain
+#&gt; $attributeList$attribute[[11]]$measurementScale$ratio$numericDomain$numberType
+#&gt; [1] "real"
+#&gt; 
+#&gt; $attributeList$attribute[[11]]$measurementScale$ratio$numericDomain$bounds
+#&gt; $attributeList$attribute[[11]]$measurementScale$ratio$numericDomain$bounds$minimum
+#&gt; $attributeList$attribute[[11]]$measurementScale$ratio$numericDomain$bounds$minimum$exclusive
+#&gt; [1] "false"
+#&gt; 
+#&gt; $attributeList$attribute[[11]]$measurementScale$ratio$numericDomain$bounds$minimum$minimum
+#&gt; [1] 593.193
+#&gt; 
+#&gt; 
+#&gt; $attributeList$attribute[[11]]$measurementScale$ratio$numericDomain$bounds$maximum
+#&gt; $attributeList$attribute[[11]]$measurementScale$ratio$numericDomain$bounds$maximum$exclusive
+#&gt; [1] "false"
+#&gt; 
+#&gt; $attributeList$attribute[[11]]$measurementScale$ratio$numericDomain$bounds$maximum$maximum
+#&gt; [1] 628.55
+#&gt; 
+#&gt; 
+#&gt; 
+#&gt; 
+#&gt; 
+#&gt; 
+#&gt; 
+#&gt; $attributeList$attribute[[12]]
+#&gt; $attributeList$attribute[[12]]$attributeName
+#&gt; [1] "habitat"
+#&gt; 
+#&gt; $attributeList$attribute[[12]]$attributeDefinition
+#&gt; [1] "The habitat type (mainstem/sidechannel) and treatment (control/restored) for each study site"
+#&gt; 
+#&gt; $attributeList$attribute[[12]]$storageType
+#&gt; [1] "string"
+#&gt; 
+#&gt; $attributeList$attribute[[12]]$attributeLabel
+#&gt; [1] NA
+#&gt; 
+#&gt; $attributeList$attribute[[12]]$measurementScale
+#&gt; $attributeList$attribute[[12]]$measurementScale$nominal
+#&gt; $attributeList$attribute[[12]]$measurementScale$nominal$nonNumericDomain
+#&gt; $attributeList$attribute[[12]]$measurementScale$nominal$nonNumericDomain$textDomain
+#&gt; $attributeList$attribute[[12]]$measurementScale$nominal$nonNumericDomain$textDomain$definition
+#&gt; [1] "The habitat type (mainstem/sidechannel) and treatment (control/restored) for each study site"
+#&gt; 
+#&gt; 
+#&gt; 
+#&gt; 
+#&gt; 
+#&gt; 
+#&gt; $attributeList$attribute[[13]]
+#&gt; $attributeList$attribute[[13]]$attributeName
+#&gt; [1] "site_id"
+#&gt; 
+#&gt; $attributeList$attribute[[13]]$attributeDefinition
+#&gt; [1] "site name for each study site"
+#&gt; 
+#&gt; $attributeList$attribute[[13]]$storageType
+#&gt; [1] "string"
+#&gt; 
+#&gt; $attributeList$attribute[[13]]$attributeLabel
+#&gt; [1] NA
+#&gt; 
+#&gt; $attributeList$attribute[[13]]$measurementScale
+#&gt; $attributeList$attribute[[13]]$measurementScale$nominal
+#&gt; $attributeList$attribute[[13]]$measurementScale$nominal$nonNumericDomain
+#&gt; $attributeList$attribute[[13]]$measurementScale$nominal$nonNumericDomain$textDomain
+#&gt; $attributeList$attribute[[13]]$measurementScale$nominal$nonNumericDomain$textDomain$definition
+#&gt; [1] "site name for each study site"
+#&gt; 
+#&gt; 
+#&gt; 
+#&gt; 
+#&gt; 
+#&gt; 
+#&gt; $attributeList$attribute[[14]]
+#&gt; $attributeList$attribute[[14]]$attributeName
+#&gt; [1] "days"
+#&gt; 
+#&gt; $attributeList$attribute[[14]]$attributeDefinition
+#&gt; [1] "number of days fish were in enclosure"
+#&gt; 
+#&gt; $attributeList$attribute[[14]]$storageType
+#&gt; [1] "dbl"
+#&gt; 
+#&gt; $attributeList$attribute[[14]]$attributeLabel
+#&gt; [1] NA
+#&gt; 
+#&gt; $attributeList$attribute[[14]]$measurementScale
+#&gt; $attributeList$attribute[[14]]$measurementScale$ratio
+#&gt; $attributeList$attribute[[14]]$measurementScale$ratio$unit
+#&gt; $attributeList$attribute[[14]]$measurementScale$ratio$unit$customUnit
+#&gt; [1] "day"
+#&gt; 
+#&gt; 
+#&gt; $attributeList$attribute[[14]]$measurementScale$ratio$numericDomain
+#&gt; $attributeList$attribute[[14]]$measurementScale$ratio$numericDomain$numberType
+#&gt; [1] "whole"
+#&gt; 
+#&gt; $attributeList$attribute[[14]]$measurementScale$ratio$numericDomain$bounds
+#&gt; $attributeList$attribute[[14]]$measurementScale$ratio$numericDomain$bounds$minimum
+#&gt; $attributeList$attribute[[14]]$measurementScale$ratio$numericDomain$bounds$minimum$exclusive
+#&gt; [1] "false"
+#&gt; 
+#&gt; $attributeList$attribute[[14]]$measurementScale$ratio$numericDomain$bounds$minimum$minimum
+#&gt; [1] 43
+#&gt; 
+#&gt; 
+#&gt; $attributeList$attribute[[14]]$measurementScale$ratio$numericDomain$bounds$maximum
+#&gt; $attributeList$attribute[[14]]$measurementScale$ratio$numericDomain$bounds$maximum$exclusive
+#&gt; [1] "false"
+#&gt; 
+#&gt; $attributeList$attribute[[14]]$measurementScale$ratio$numericDomain$bounds$maximum$maximum
+#&gt; [1] 48
+#&gt; 
+#&gt; 
+#&gt; 
+#&gt; 
+#&gt; 
+#&gt; 
+#&gt; 
+#&gt; 
+#&gt; 
+#&gt; $numberOfRecords
+#&gt; [1] 353
+#&gt; </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

@@ -17,7 +17,7 @@ Formats the taxonomic coverage elements in a nested list to easily be added as a
 }
 \examples{
  
-taxonomic_metadata <- list(CVPIA_common_species = c("chinook", "steelhead"), common_name = c(NA, ), 
+taxonomic_metadata <- list(CVPIA_common_species = c("chinook", "steelhead"), common_name = c(NA, NA), 
                            kingdom = c(NA, NA), phylum = c(NA, NA), class = c(NA, NA), 
                            order = c(NA, NA), family = c(NA, NA), genus = c(NA, NA), species = c(NA, NA), 
                            taxon_id = c(NA, NA))

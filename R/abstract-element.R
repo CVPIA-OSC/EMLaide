@@ -36,7 +36,7 @@ create_abstract <- function(abstract) {
 #' 
 #' dataset <- list() %>%
 #'     add_abstract(abstract_docx)
-#' 
+#' dataset
 #' @export
 add_abstract <- function(parent_element, abstract_file) {
   

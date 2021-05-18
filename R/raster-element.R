@@ -9,7 +9,7 @@
 #' Use \code{\link{create_attribute}} to generate this attribute list and see the 
 #' documentation for \code{\link{create_attribute}} for more information. 
 #' @param physical A list of the physical descriptions of your file. Use 
-#' \code{\link{add_physical}} to generate this physical list and see the 
+#' \code{\link{create_physical}} to generate this physical list and see the 
 #' documentation for \code{\link{create_physical}} for more information. 
 #' @param spatial_reference This is the name of a predefined coordinate system. 
 #' The acceptable values for \code{spatial_reference} can be found at 
@@ -38,7 +38,7 @@
 #'                                               measurement_scale = EMLaide::measurement_scale$dateTime, 
 #'                                               date_time_format = "YYYY",
 #'                                               date_time_precision = "1", minimum = "1993", maximum = "2003"),
-#'               physical = add_physical("Rasterfiles.zip"),
+#'               physical = create_physical("Rasterfiles.zip"),
 #'               spatial_reference = "NAD_1983_StatePlane_California_I_FIPS_0401",
 #'               horizontal_accuracy = "No Information",
 #'               vertical_accuracy =  "No Information",
@@ -57,12 +57,12 @@ create_raster <- function(file_name, file_description, attribute_list, physical,
                           cell_size_x, cell_size_y, number_of_bands, raster_origin, 
                           rows, columns, verticals, cell_geometry) {
   
-  required_arguments <- c("parent_element", "file_name", "file_description", "attribute_list", "physical",
+  required_arguments <- c("file_name", "file_description", "attribute_list", "physical",
                           "spatial_reference", "horizontal_accuracy", "vertical_accuracy",
                           "cell_size_x", "cell_size_y", "number_of_bands", "raster_origin",
                           "rows", "columns", "verticals", "cell_geometry")
 
-  missing_argument_index <- which(c(missing(parent_element), missing(file_name), missing(file_description), 
+  missing_argument_index <- which(c(missing(file_name), missing(file_description), 
                                     missing(attribute_list), missing(physical), missing(spatial_reference), 
                                     missing(horizontal_accuracy), missing(vertical_accuracy),
                                     missing(cell_size_x), missing(cell_size_y), missing(number_of_bands),
@@ -99,7 +99,7 @@ create_raster <- function(file_name, file_description, attribute_list, physical,
 #' (file_name, file_description, attribute_list, physical, spatial_reference, horizontal_accuracy, vertical_accuracy, 
 #' cell_size_x, cell_size_y, number_of_bands, raster_origin, rows, columns, verticals, cell_geometry): see \code{\link{create_raster}} 
 #' @return The dataset list or project with raster file information appended.
-#' @example 
+#' @examples  
 #' raster_metadata <- list("file_name" = "Rasterfiles.zip" ,
 #'                         "file_description" = "A Raster File",
 #'                         "attribute_list" =  create_attribute("attribute_name" = "Yrs", attribute_label = "Years", 
@@ -123,7 +123,7 @@ create_raster <- function(file_name, file_description, attribute_list, physical,
 #' 
 #' dataset <- list() %>%
 #'     add_raster(raster_metadata)
-#' 
+#' dataset
 #' @export
 add_raster <- function(parent_element, raster_metadata) {
   parent_element$spatialRaster <- create_raster(file_name = raster_metadata$file_name, 

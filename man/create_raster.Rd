@@ -32,7 +32,7 @@ Use \code{\link{create_attribute}} to generate this attribute list and see the
 documentation for \code{\link{create_attribute}} for more information.}
 
 \item{physical}{A list of the physical descriptions of your file. Use
-\code{\link{add_physical}} to generate this physical list and see the
+\code{\link{create_physical}} to generate this physical list and see the
 documentation for \code{\link{create_physical}} for more information.}
 
 \item{spatial_reference}{This is the name of a predefined coordinate system.
@@ -82,7 +82,7 @@ create_raster(file_name = "Rasterfiles.zip" ,
                                               measurement_scale = EMLaide::measurement_scale$dateTime, 
                                               date_time_format = "YYYY",
                                               date_time_precision = "1", minimum = "1993", maximum = "2003"),
-              physical = add_physical("Rasterfiles.zip"),
+              physical = create_physical("Rasterfiles.zip"),
               spatial_reference = "NAD_1983_StatePlane_California_I_FIPS_0401",
               horizontal_accuracy = "No Information",
               vertical_accuracy =  "No Information",

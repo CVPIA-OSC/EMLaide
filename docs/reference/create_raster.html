@@ -176,7 +176,7 @@ documentation for <code><a href='create_attribute.html'>create_attribute</a></co
     <tr>
       <th>physical</th>
       <td><p>A list of the physical descriptions of your file. Use
-<code>add_physical</code> to generate this physical list and see the
+<code><a href='create_physical.html'>create_physical</a></code> to generate this physical list and see the
 documentation for <code><a href='create_physical.html'>create_physical</a></code> for more information.</p></td>
     </tr>
     <tr>
@@ -249,7 +249,7 @@ section of an EML document.</p>
                                               measurement_scale <span class='op'>=</span> <span class='fu'>EMLaide</span><span class='fu'>::</span><span class='va'><a href='measurement_scale.html'>measurement_scale</a></span><span class='op'>$</span><span class='va'>dateTime</span>, 
                                               date_time_format <span class='op'>=</span> <span class='st'>"YYYY"</span>,
                                               date_time_precision <span class='op'>=</span> <span class='st'>"1"</span>, minimum <span class='op'>=</span> <span class='st'>"1993"</span>, maximum <span class='op'>=</span> <span class='st'>"2003"</span><span class='op'>)</span>,
-              physical <span class='op'>=</span> <span class='fu'>add_physical</span><span class='op'>(</span><span class='st'>"Rasterfiles.zip"</span><span class='op'>)</span>,
+              physical <span class='op'>=</span> <span class='fu'><a href='create_physical.html'>create_physical</a></span><span class='op'>(</span><span class='st'>"Rasterfiles.zip"</span><span class='op'>)</span>,
               spatial_reference <span class='op'>=</span> <span class='st'>"NAD_1983_StatePlane_California_I_FIPS_0401"</span>,
               horizontal_accuracy <span class='op'>=</span> <span class='st'>"No Information"</span>,
               vertical_accuracy <span class='op'>=</span>  <span class='st'>"No Information"</span>,
@@ -261,7 +261,146 @@ section of an EML document.</p>
               columns <span class='op'>=</span> <span class='st'>"6"</span>,
               verticals <span class='op'>=</span> <span class='st'>"1"</span>,
               cell_geometry <span class='op'>=</span> <span class='st'>"pixel"</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; <span class='error'>Error in missing(parent_element): 'missing' can only be used for arguments</span></div><div class='input'>
+</div><div class='output co'>#&gt; $entityName
+#&gt; [1] "Rasterfiles.zip"
+#&gt; 
+#&gt; $entityDescription
+#&gt; [1] "A Raster File"
+#&gt; 
+#&gt; $attributeList
+#&gt; $attributeList$attributeName
+#&gt; [1] "Yrs"
+#&gt; 
+#&gt; $attributeList$attributeDefinition
+#&gt; [1] "Calendar year of the observation from years 1990 - 2010."
+#&gt; 
+#&gt; $attributeList$storageType
+#&gt; [1] "date"
+#&gt; 
+#&gt; $attributeList$attributeLabel
+#&gt; [1] "Years"
+#&gt; 
+#&gt; $attributeList$measurementScale
+#&gt; $attributeList$measurementScale$dateTime
+#&gt; $attributeList$measurementScale$dateTime$formatString
+#&gt; [1] "YYYY"
+#&gt; 
+#&gt; $attributeList$measurementScale$dateTime$dateTimePrecision
+#&gt; [1] "1"
+#&gt; 
+#&gt; $attributeList$measurementScale$dateTime$dateTimeDomain
+#&gt; $attributeList$measurementScale$dateTime$dateTimeDomain$bounds
+#&gt; $attributeList$measurementScale$dateTime$dateTimeDomain$bounds$minimum
+#&gt; $attributeList$measurementScale$dateTime$dateTimeDomain$bounds$minimum$exclusive
+#&gt; [1] "false"
+#&gt; 
+#&gt; $attributeList$measurementScale$dateTime$dateTimeDomain$bounds$minimum$minimum
+#&gt; [1] "1993"
+#&gt; 
+#&gt; 
+#&gt; $attributeList$measurementScale$dateTime$dateTimeDomain$bounds$maximum
+#&gt; $attributeList$measurementScale$dateTime$dateTimeDomain$bounds$maximum$exclusive
+#&gt; [1] "false"
+#&gt; 
+#&gt; $attributeList$measurementScale$dateTime$dateTimeDomain$bounds$maximum$maximum
+#&gt; [1] "2003"
+#&gt; 
+#&gt; 
+#&gt; 
+#&gt; 
+#&gt; 
+#&gt; 
+#&gt; 
+#&gt; $physical
+#&gt; $physical$objectName
+#&gt; [1] "Rasterfiles.zip"
+#&gt; 
+#&gt; $physical$size
+#&gt; $physical$size$unit
+#&gt; [1] "bytes"
+#&gt; 
+#&gt; $physical$size$size
+#&gt; [1] "NA"
+#&gt; 
+#&gt; 
+#&gt; $physical$authentication
+#&gt; $physical$authentication$method
+#&gt; [1] "MD5"
+#&gt; 
+#&gt; $physical$authentication$authentication
+#&gt; [1] "NA"
+#&gt; 
+#&gt; 
+#&gt; $physical$dataFormat
+#&gt; $physical$dataFormat$textFormat
+#&gt; $physical$dataFormat$textFormat$numHeaderLines
+#&gt; [1] "1"
+#&gt; 
+#&gt; $physical$dataFormat$textFormat$recordDelimiter
+#&gt; [1] "\\r\\n"
+#&gt; 
+#&gt; $physical$dataFormat$textFormat$attributeOrientation
+#&gt; [1] "column"
+#&gt; 
+#&gt; $physical$dataFormat$textFormat$simpleDelimited
+#&gt; $physical$dataFormat$textFormat$simpleDelimited$fieldDelimiter
+#&gt; [1] ","
+#&gt; 
+#&gt; 
+#&gt; 
+#&gt; 
+#&gt; $physical$distribution
+#&gt; $physical$distribution$online
+#&gt; $physical$distribution$online$url
+#&gt; $physical$distribution$online$url$url
+#&gt; NULL
+#&gt; 
+#&gt; $physical$distribution$online$url$`function`
+#&gt; [1] "download"
+#&gt; 
+#&gt; 
+#&gt; 
+#&gt; 
+#&gt; 
+#&gt; $spatialReference
+#&gt; $spatialReference$horizCoordSysName
+#&gt; [1] "NAD_1983_StatePlane_California_I_FIPS_0401"
+#&gt; 
+#&gt; 
+#&gt; $horizontalAccuracy
+#&gt; $horizontalAccuracy$accuracyReport
+#&gt; [1] "No Information"
+#&gt; 
+#&gt; 
+#&gt; $verticalAccuracy
+#&gt; $verticalAccuracy$accuracyReport
+#&gt; [1] "No Information"
+#&gt; 
+#&gt; 
+#&gt; $cellSizeXdirection
+#&gt; [1] "25"
+#&gt; 
+#&gt; $cellSizeYDirection
+#&gt; [1] "25"
+#&gt; 
+#&gt; $numberOfBands
+#&gt; [1] "10"
+#&gt; 
+#&gt; $rasterOrigin
+#&gt; [1] "Upper Left"
+#&gt; 
+#&gt; $rows
+#&gt; [1] "200"
+#&gt; 
+#&gt; $columns
+#&gt; [1] "6"
+#&gt; 
+#&gt; $verticals
+#&gt; [1] "1"
+#&gt; 
+#&gt; $cellGeometry
+#&gt; [1] "pixel"
+#&gt; </div><div class='input'>
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">

@@ -22,5 +22,5 @@ abstract_docx <- system.file("extdata", "Banet-Example", "metadata","abstract.do
 
 dataset <- list() \%>\%
     add_abstract(abstract_docx)
-
+dataset
 }

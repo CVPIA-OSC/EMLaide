@@ -19,13 +19,13 @@ The dataset list or project with datatable information appended.
 Adds the data table elements to a dataset list according to EML standards.
 }
 \examples{
-# datatable_metadata <- dplyr::tibble(filepath =  filepath = c(system.file("extdata", "Banet-Example", "data", "enclosure-study-growth-rate-data.csv", package = "EMLaide", mustWork = TRUE), 
-#                                                              system.file("extdata", "Banet-Example", "data", "enclosure-study-gut-contents-data.csv", package = "EMLaide", mustWork = TRUE)), 
-#                                     attribute_info = c(system.file("extdata", "Banet-Example", "metadata", "enclosure-study-growth-rates-metadata.xlsx", package = "EMLaide", mustWork = TRUE), 
-#                                     system.file("extdata", "Banet-Example", "metadata", "enclosure-study-gut-contents-metadata.xlsx", package = "EMLaide", mustWork = TRUE),
-#                                     datatable_description = c("Growth Rates - Enclosure Study","Gut Contents - Enclosure Study"))
-
-# dataset <- list() \%>\%
-#     add_datatable(datatable_metadata)
-
+datatable_metadata <- dplyr::tibble(filepath = c(system.file("extdata", "Banet-Example", "data", "enclosure-study-growth-rate-data.csv", package = "EMLaide", mustWork = TRUE), 
+                                                             system.file("extdata", "Banet-Example", "data", "enclosure-study-gut-contents-data.csv", package = "EMLaide", mustWork = TRUE)), 
+                                     attribute_info = c(system.file("extdata", "Banet-Example", "metadata", "enclosure-study-growth-rates-metadata.xlsx", package = "EMLaide", mustWork = TRUE), 
+                                     system.file("extdata", "Banet-Example", "metadata", "enclosure-study-gut-contents-metadata.xlsx", package = "EMLaide", mustWork = TRUE)),
+                                     datatable_description = c("Growth Rates - Enclosure Study","Gut Contents - Enclosure Study"))
+ 
+dataset <- list() \%>\%
+    add_datatable(datatable_metadata)
+dataset
 }

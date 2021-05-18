@@ -34,6 +34,6 @@ fractions (such as the square root of 2).
 
 \examples{
 number_type$natural #"natural"
-  
+number_type$whole   
 }
 \keyword{datasets}

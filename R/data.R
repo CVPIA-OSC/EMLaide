@@ -147,7 +147,7 @@
 #'  }
 #' @examples 
 #' number_type$natural #"natural"
-#'   
+#' number_type$whole   
 "number_type"
 #' @title CVPIA_funders
 #' @description A list of CVPIA_funders that can be appended to the funding element. 
@@ -160,11 +160,7 @@
 #'     \item \strong{CDFW}
 #' }
 #' @examples 
-#' CVPIA_funders$USBR # $funderName
-#'                    #   [1] "United States Bureau of Reclamation"
-#' 
-#'                    # $funderIdentifier
-#'                    #   [1] "https://www.wikidata.org/wiki/Q1010548"
+#' CVPIA_funders$USBR 
 #'
 #'
 "CVPIA_funders"
@@ -196,4 +192,6 @@
 #' @format A list.   
 #' @examples 
 #' "meters" %in% standard_units
+#' "meter" %in% standard_units
+#' "m" %in% standard_units
 "standard_units"
