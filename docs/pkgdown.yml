@@ -3,12 +3,12 @@ pkgdown: 1.6.1
 pkgdown_sha: ~
 articles:
   create-EML-from-template: create-EML-from-template.html
-  origional-vignettes/creating-EML: creating-EML.html
-  origional-vignettes/custom-units: custom-units.html
-  origional-vignettes/Dataset-Element: Dataset-Element.html
-  origional-vignettes/Inital-Metadata-Information: Inital-Metadata-Information.html
+  original-vignettes/creating-EML: creating-EML.html
+  original-vignettes/custom-units: custom-units.html
+  original-vignettes/Dataset-Element: Dataset-Element.html
+  original-vignettes/Inital-Metadata-Information: Inital-Metadata-Information.html
   template-doc: template-doc.html
-last_built: 2021-05-17T18:17Z
+last_built: 2021-05-18T14:59Z
 urls:
   reference: https://CVPIA-OSC.github.io/EMLaide//reference
   article: https://CVPIA-OSC.github.io/EMLaide//articles

@@ -43,10 +43,10 @@ create_method <- function(methods_file,
 #' @param methods_file A file containing methods information (word or markdown): see \code{\link{create_methods}}
 #' @return The dataset list or project with methods information appended. 
 #' @examples 
-#' methods_docx <- methods_docx <- system.file("extdata", "Banet-Example", "metadata", "methods.docx", 
-#'                                              package = "EMLaide", mustWork = TRUE)
+#' methods_file = word_example("methods-template.docx")
+#' 
 #' dataset <- list() %>%
-#'     add_method(methods_docx)
+#'     add_method(methods_file)
 #' dataset
 #' @export
 add_method <- function(parent_element, methods_file) {
