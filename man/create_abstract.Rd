@@ -7,13 +7,10 @@
 create_abstract(abstract)
 }
 \arguments{
-\item{abstract}{Abstract paragraphs, requires a minimum of 20 words. A template
-word document is accessible in "~/EMLaide/inst/extdata/abstract_template.docx".
-You can copy and paste your abstract in this document and set the parameter of
-\code{abstract} equal to this file path.}
+\item{abstract}{path to file (.docx or .md) containing project abstract, requires a minimum of 20 words.}
 }
 \value{
-A abstract element formated according to EML standards
+An abstract element formatted according to EML standards
 }
 \description{
 Creates the abstract of a dataset according to EML standards.

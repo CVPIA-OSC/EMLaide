@@ -9,7 +9,7 @@ add_abstract(parent_element, abstract_file)
 \arguments{
 \item{parent_element}{A list representing the EML project or dataset.}
 
-\item{abstract_file}{A file containing abstract information (word or markdown): see \code{\link{create_abstract}}}
+\item{abstract_file}{file path to abstract (word or markdown): see \code{\link{create_abstract}}}
 }
 \value{
 The dataset or project with abstract appended

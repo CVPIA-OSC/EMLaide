@@ -29,6 +29,9 @@ This function takes in authentication info for EDI and an EML file to
 be evaluated using the EDI congruence checker. This package returns a data frame that contains the status of the
 package.
 }
+\details{
+For more information about the validation services see \href{https://pastaplus-core.readthedocs.io/en/latest/doc_tree/pasta_api/data_package_manager_api.html#upload-and-evaluation}{the PASTAplus docs}
+}
 \examples{
 evaluate_edi_package(user_id = "samuelwright", 
                       eml_file_path = "data/edi20.1.xml")

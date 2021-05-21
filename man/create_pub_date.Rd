@@ -9,8 +9,6 @@ create_pub_date(date = NULL)
 \arguments{
 \item{date}{The publication date. If left null, it will be assigned the current
 date. This can be overridden by putting in a specific date.}
-
-\item{parent_element}{A list representing the EML project or dataset.}
 }
 \value{
 A publication date object that can be appended to a dataset or project.

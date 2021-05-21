@@ -22,6 +22,9 @@ Message describing if your package was successfully updated or not.
 This function takes in authentication info for EDI and an EML file to
 be evaluated uploaded to EDI.
 }
+\details{
+For more information about the validation services see \href{https://pastaplus-core.readthedocs.io/en/latest/doc_tree/pasta_api/data_package_manager_api.html#upload-and-evaluation}{the PASTAplus docs}
+}
 \examples{
 upload_edi_package(user_id = "samuelwright", 
                eml_file_path = "data/edi20.1.xml")

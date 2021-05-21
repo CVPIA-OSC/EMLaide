@@ -12,7 +12,7 @@ number_type
 }
 \description{
 The 4 options for number types that can be appended to the dataset.
-A helper data object to be used with \code{\link{add_attribute}}.
+A helper data object to be used with \code{\link{create_attribute}}.
 }
 \section{Number Types}{
 

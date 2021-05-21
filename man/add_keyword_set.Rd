@@ -9,7 +9,7 @@ add_keyword_set(parent_element, keyword_metadata)
 \arguments{
 \item{parent_element}{A list representing the EML project or dataset.}
 
-\item{keyword_metadata}{A named list or dataframe containing keyword elements: see \code{\link{create_keywords}}}
+\item{keyword_metadata}{A named list or dataframe containing keyword elements: see \code{\link{create_keyword_set}}}
 }
 \value{
 The dataset list or project with keyword information appended.

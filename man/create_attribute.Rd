@@ -71,11 +71,10 @@ or equal to this number.}
 or equal to this number.}
 }
 \value{
-The project or dataset list with an attribute list appended.
+An attribute list
 }
 \description{
-Create an attribute element according to EML standards. Multiple
-attributes can be created. Will be appended to the attribute list.
+Create an attribute element according to EML standards.
 }
 \section{Measurement Scales}{
 

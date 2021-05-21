@@ -9,7 +9,7 @@ add_method(parent_element, methods_file)
 \arguments{
 \item{parent_element}{A list representing the EML project or dataset.}
 
-\item{methods_file}{A file containing methods information (word or markdown): see \code{\link{create_methods}}}
+\item{methods_file}{A file containing methods information (word or markdown): see \code{\link{create_method}}}
 }
 \value{
 The dataset list or project with methods information appended.

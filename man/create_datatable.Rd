@@ -18,7 +18,7 @@ create_datatable(
 
 \item{datatable_description}{Short description of contents of datatable you are adding}
 
-\item{datatable_url}{A URL that links to the datatable you are adding (ex: dataset on AWS public bucket)}
+\item{datatable_url}{A URL that links to the datatable you are adding (ex: dataset on AWS public bucket or https://raw.githubusercontent.com/)}
 
 \item{dataset_methods}{Optional metadata describing methods if there are methods that are specific to a datatable}
 

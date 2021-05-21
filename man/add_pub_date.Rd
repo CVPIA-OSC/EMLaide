@@ -2,7 +2,7 @@
 % Please edit documentation in R/publication-date-element.R
 \name{add_pub_date}
 \alias{add_pub_date}
-\title{Add Pub Date}
+\title{Add Publication Date}
 \usage{
 add_pub_date(parent_element, date = NULL)
 }
@@ -16,7 +16,7 @@ date. This can be overridden by putting in a specific date: see \code{\link{crea
 The dataset list or project with publication date information appended.
 }
 \description{
-Adds the pub date element to a dataset list according to EML standards.
+Adds the publication date element to a dataset list according to EML standards.
 }
 \examples{
  
