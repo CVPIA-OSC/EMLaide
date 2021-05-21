@@ -57,6 +57,7 @@ create_person <- function(role, first_name, last_name, email, organization, orci
 #' @description Adds the personnel metadata elements to a dataset list according to EML standards. 
 #' @param parent_element A list representing the EML project or dataset
 #' @param personnel_metadata A dataframe of personnel information see \code{\link{create_person}}
+#' @details On person within `personnel_metadata` must have role of 'creator'
 #' @return The dataset list or project with personnel information appended.
 #' @examples 
 #' personnel_metadata <- dplyr::tibble(first_name = "Stacy", last_name = "Banet", email = "Stacy@aol.com", 
