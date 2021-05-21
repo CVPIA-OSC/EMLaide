@@ -1,9 +1,6 @@
 #' @title Create Abstract Element
 #' @description Creates the abstract of a dataset according to EML standards.
-#' @param abstract Abstract paragraphs, requires a minimum of 20 words. A template 
-#' word document is accessible in "~/EMLaide/inst/extdata/abstract_template.docx".
-#' You can copy and paste your abstract in this document and set the parameter of 
-#' \code{abstract} equal to this file path. 
+#' @param abstract path to file (.docx or .md) containing project abstract, requires a minimum of 20 words. 
 #' @details 
 #' For	a	dataset,	the	abstract	element	can	appear	at	the	resource	level	or	the	project level.		
 #' The	\code{abstract}	element	will	be	used	for	full-text	searches,	and	it	should	be	rich	with	
@@ -14,7 +11,7 @@
 #' should	also	be	included.		For	a	large	number	of	parameters,	use	categories	instead	of	listing	
 #' all	parameters	(e.g.	use	the	term	"nutrients"	instead	of	nitrate,	phosphate,	calcium,	etc.),	in	
 #' combination	with	the	parameters	that	seem	most	relevant	for	searches.
-#' @return A abstract element formated according to EML standards
+#' @return A abstract element formatted according to EML standards
 #' @examples
 #' create_abstract(abstract = word_example("abstract_template.docx"))
 #'           
@@ -29,7 +26,7 @@ create_abstract <- function(abstract) {
 #' Add Abstract
 #' @description Adds the abstract metadata element to a dataset list according to EML standards. 
 #' @param parent_element A list representing the EML project or dataset.
-#' @param abstract_file A file containing abstract information (word or markdown): see \code{\link{create_abstract}} 
+#' @param abstract_file file path to abstract (word or markdown): see \code{\link{create_abstract}} 
 #' @return The dataset or project with abstract appended 
 #' @examples
 #' abstract_docx <- system.file("extdata", "Banet-Example", "metadata","abstract.docx", package = "EMLaide", mustWork = TRUE)  
