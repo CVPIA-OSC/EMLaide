@@ -13,7 +13,7 @@
 #' @param taxonomic_coverage Addition of taxonomic coverage is optional. The 
 #' taxonomic information for all organisms relevant to the study should be included
 #' and mandates the input of the taxonomy levels of kingdom-species. An example 
-#' of how to append this information using the add_taxonomic_coverage
+#' of how to append this information using the create_taxonomic_coverage
 #' function is given down below.  
 #' @return A coverage element that can be appended to a dataset.
 #' @examples 
