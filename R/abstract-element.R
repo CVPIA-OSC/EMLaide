@@ -11,7 +11,7 @@
 #' should	also	be	included.		For	a	large	number	of	parameters,	use	categories	instead	of	listing	
 #' all	parameters	(e.g.	use	the	term	"nutrients"	instead	of	nitrate,	phosphate,	calcium,	etc.),	in	
 #' combination	with	the	parameters	that	seem	most	relevant	for	searches.
-#' @return A abstract element formatted according to EML standards
+#' @return An abstract element formatted according to EML standards
 #' @examples
 #' create_abstract(abstract = word_example("abstract_template.docx"))
 #'           
