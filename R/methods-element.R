@@ -40,7 +40,7 @@ create_method <- function(methods_file,
 #' Add Methods
 #' @description Adds the methods metadata elements according to EML standards. 
 #' @param parent_element A list representing the EML project or dataset.
-#' @param methods_file A file containing methods information (word or markdown): see \code{\link{create_methods}}
+#' @param methods_file A file containing methods information (word or markdown): see \code{\link{create_method}}
 #' @return The dataset list or project with methods information appended. 
 #' @examples 
 #' methods_file = word_example("methods-template.docx")
