@@ -1,6 +1,5 @@
 #' @title Create Attribute  
-#' @description Create an attribute element according to EML standards. Multiple
-#' attributes can be created. Will be appended to the attribute list.  
+#' @description Create an attribute element according to EML standards.
 #' @param attribute_name The name	of a field in	a	data table. This is	often	a short
 #' and/or cryptic name. It is recommended that the attribute names	be suitable	for
 #' use	as a	variable,	e.g.,	composed of ASCII	characters,	and	that the attribute
@@ -61,7 +60,7 @@
 #' Used to define date and time attributes. Please provide the inputs of \code{date_time_format}, 
 #' \code{date_time_precision}, \code{minimum}, and \code{maximum}.
 #' 
-#' @return The project or dataset list with an attribute list appended.
+#' @return An attribute list
 #' 
 #' @export
 #' @examples
