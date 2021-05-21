@@ -50,8 +50,8 @@ reference:
   - add_raster
   - add_taxonomic_coverage
   - add_title
-- title: EDI
-  desc: Functions for interacting with EDI's data repository
+- title: PASTAplus API Wrappers
+  desc: Functions for interacting with EDI's data package manager API
   contents:
   - reserve_edi_id
   - evaluate_edi_package
