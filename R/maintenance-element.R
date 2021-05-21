@@ -9,7 +9,7 @@
 #' create_maintenance(status = "complete")
 #' 
 #' create_maintenance(status = "ongoing",
-#'                    update_frequency = "anually")
+#'                    update_frequency = "annually")
 #' @export 
 create_maintenance <- function(status = c("complete", "ongoing"), 
                                update_frequency = NULL) {
