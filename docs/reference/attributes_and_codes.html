@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Upload EDI Data Package — upload_edi_package • EMLaide</title>
+<title>Attribute helper function to input into pmap — attributes_and_codes • EMLaide</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -48,9 +48,8 @@
   <link href="../extra.css" rel="stylesheet">
   
 
-<meta property="og:title" content="Upload EDI Data Package — upload_edi_package" />
-<meta property="og:description" content="This function takes in authentication info for EDI and an EML file to
-be evaluated uploaded to EDI." />
+<meta property="og:title" content="Attribute helper function to input into pmap — attributes_and_codes" />
+<meta property="og:description" content="Attribute helper function to input into pmap" />
 <meta property="og:image" content="https://CVPIA-OSC.github.io/EMLaide/logo.png" />
 
 
@@ -128,48 +127,34 @@ be evaluated uploaded to EDI." />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Upload EDI Data Package</h1>
+    <h1>Attribute helper function to input into pmap</h1>
     
-    <div class="hidden name"><code>upload_edi_package.Rd</code></div>
+    <div class="hidden name"><code>attributes_and_codes.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>This function takes in authentication info for EDI and an EML file to
-be evaluated uploaded to EDI.</p>
+    <p>Attribute helper function to input into pmap</p>
     </div>
 
-    <pre class="usage"><span class='fu'>upload_edi_package</span><span class='op'>(</span><span class='va'>user_id</span>, <span class='va'>password</span>, <span class='va'>eml_file_path</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>attributes_and_codes</span><span class='op'>(</span>
+  <span class='va'>attribute_name</span>,
+  <span class='va'>attribute_definition</span>,
+  <span class='va'>storage_type</span>,
+  <span class='va'>measurement_scale</span>,
+  <span class='va'>domain</span>,
+  <span class='va'>type</span>,
+  <span class='va'>units</span>,
+  <span class='va'>unit_precision</span>,
+  <span class='va'>number_type</span>,
+  <span class='va'>date_time_format</span>,
+  <span class='va'>date_time_precision</span>,
+  <span class='va'>minimum</span>,
+  <span class='va'>maximum</span>,
+  <span class='va'>attribute_label</span>
+<span class='op'>)</span></pre>
 
-    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
-    <table class="ref-arguments">
-    <colgroup><col class="name" /><col class="desc" /></colgroup>
-    <tr>
-      <th>user_id</th>
-      <td><p>EDI data portal user ID. Create an account an
-EDI <a href='https://portal.edirepository.org/nis/login.jsp'>here</a></p></td>
-    </tr>
-    <tr>
-      <th>password</th>
-      <td><p>EDI data portal user password</p></td>
-    </tr>
-    <tr>
-      <th>eml_file_path</th>
-      <td><p>The file path to the EML metadata document that you wish to evaluate.
-(A web link to the csv must be included in the dataset information in the EML in order for a data package to be evaluated.)</p></td>
-    </tr>
-    </table>
 
-    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>Message describing if your package was successfully updated or not.</p>
-    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
-
-    <p>For more information about the validation services see <a href='https://pastaplus-core.readthedocs.io/en/latest/doc_tree/pasta_api/data_package_manager_api.html#upload-and-evaluation'>the PASTAplus docs</a></p>
-
-    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>upload_edi_package</span><span class='op'>(</span>user_id <span class='op'>=</span> <span class='st'>"samuelwright"</span>, 
-               eml_file_path <span class='op'>=</span> <span class='st'>"data/edi20.1.xml"</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; <span class='error'>Error in httr::upload_file(eml_file_path): file.exists(path) is not TRUE</span></div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

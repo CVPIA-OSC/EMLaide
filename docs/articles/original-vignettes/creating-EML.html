@@ -81,7 +81,7 @@
 
       
 
-      </header><script src="creating-EML_files/header-attrs-2.6/header-attrs.js"></script><div class="row">
+      </header><script src="creating-EML_files/header-attrs-2.8/header-attrs.js"></script><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
       <h1 data-toc-skip>Create EML Document from Template</h1>
@@ -98,7 +98,7 @@
 <p>The following libraries are needed to create a working EML document.</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://CVPIA-OSC.github.io/EMLaide/">EMLaide</a></span><span class="op">)</span>
-<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="http://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">tidyverse</span><span class="op">)</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://readxl.tidyverse.org">readxl</a></span><span class="op">)</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://docs.ropensci.org/EML/">EML</a></span><span class="op">)</span></code></pre></div>
 <div id="ecological-metadata-languageeml-schema-outline" class="section level2">
@@ -335,7 +335,7 @@
 <h4 class="hasAnchor">
 <a href="#enumerated-vs--non-enumerated-attributes" class="anchor"></a>Enumerated vs. Non Enumerated Attributes</h4>
 <ul>
-<li>Enumerated - If you are using a “nominal” or “ordinal” attribute which is “enumerated”, (it has a specific code definition), you must also fill out the tab “code_definitions”. The <code>code_helper()</code> function below helps adding <code>codeDefinitions</code> to the “enumerated” attributes.</li>
+<li>Enumerated - If you are using a “nominal” or “ordinal” attribute which is “enumerated”, (it has a specific code definition), you must also fill out the tab “code_definitions”. The <code><a href="../../reference/code_helper.html">code_helper()</a></code> function below helps adding <code>codeDefinitions</code> to the “enumerated” attributes.</li>
 <li>Non Enumerated - For Non Enumerated attributes the definition required by EML is simply the <code>attribute_defintion</code> given in the spreadsheet.</li>
 </ul>
 <div class="sourceCode" id="cb21"><pre class="downlit sourceCode r">
