@@ -17,40 +17,39 @@ reference:
 - title: Create EML Element Functions
   desc: Functions for creating metadata sections.
   contents:
-  - create_pub_date
-  - create_person
-  - create_title
-  - create_keyword_set
   - create_abstract
-  - create_license
+  - create_attribute
+  - create_coverage
+  - create_datatable
   - create_funding
-  - create_project
+  - create_keyword_set
+  - create_license
   - create_maintenance
   - create_method
-  - create_coverage
-  - create_taxonomic_coverage
-  - create_attribute
+  - create_person
   - create_physical
-  - create_datatable
+  - create_project
+  - create_pub_date
   - create_raster
-  
+  - create_taxonomic_coverage
+  - create_title
 - title: Add EML Element Functions
   desc: Functions for building EML metadata documents.
   contents:
-  - add_access
-  - add_pub_date
-  - add_personnel
-  - add_title
-  - add_keyword_set
   - add_abstract
+  - add_access
+  - add_coverage
+  - add_datatable
+  - add_keyword_set
   - add_license
-  - add_project
   - add_maintenance
   - add_method
-  - add_coverage
-  - add_taxonomic_coverage
-  - add_datatable
+  - add_personnel
+  - add_project
+  - add_pub_date
   - add_raster
+  - add_taxonomic_coverage
+  - add_title
 - title: EDI
   desc: Functions for interacting with EDI's data repository
   contents:
@@ -65,8 +64,8 @@ reference:
   - CVPIA_funders
   - measurement_scale
   - number_type
-  - storage_type
   - standard_units
+  - storage_type
 
 navbar:
   structure:
