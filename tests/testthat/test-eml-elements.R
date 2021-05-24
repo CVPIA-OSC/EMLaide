@@ -218,7 +218,7 @@ test_that('The method function errors when missing mandatory identifier inputs.'
 })
 
 test_that('The method function adds the method elements', {
-  method <- create_method(methods_file = "tests/testthat/methods_test.docx",
+  method <- create_method(methods_file = "methods_test.docx",
              instrumentation = "Thermometer")
   expect_equal(method,
                list(sampling = NULL, methodStep = list(instrumentation = "Thermometer", 
