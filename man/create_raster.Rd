@@ -74,7 +74,7 @@ an ELM document.
 Create Raster Element
 }
 \examples{
-create_raster(file_name = "Rasterfiles.zip" ,
+create_raster(file_name = "Rasterfiles.tif" ,
               file_description = "A Raster File",
               attribute_list =  create_attribute(attribute_name = "Yrs", attribute_label = "Years", 
                                               attribute_definition = "Calendar year of the observation from years 1990 - 2010.", 
@@ -82,7 +82,7 @@ create_raster(file_name = "Rasterfiles.zip" ,
                                               measurement_scale = EMLaide::measurement_scale$dateTime, 
                                               date_time_format = "YYYY",
                                               date_time_precision = "1", minimum = "1993", maximum = "2003"),
-              physical = create_physical("Rasterfiles.zip"),
+              physical = create_physical("Rasterfiles.tif"),
               spatial_reference = "NAD_1983_StatePlane_California_I_FIPS_0401",
               horizontal_accuracy = "No Information",
               vertical_accuracy =  "No Information",
