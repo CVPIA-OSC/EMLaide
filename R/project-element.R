@@ -22,8 +22,8 @@ create_project <- function(project_title, project_lead, funding_metadata) {
   award_information <- purrr::pmap(funding_metadata, create_funding)
   
   project_personnel <- create_person(role = "Project Lead",
-                                     first_name = project_lead$individualName$givenName,
-                                     last_name = project_lead$individualName$surName,
+                                     first_name = ifelse(is.null(project_lead$first_name), project_lead$individualName$givenName, project_lead$first_name),
+                                     last_name = ifelse(is.null(project_lead$last_name), project_lead$individualName$surName, project_lead$last_name),
                                      email = project_lead$email,
                                      organization = project_lead$organization,
                                      orcid = NULL)
@@ -68,7 +68,7 @@ add_project <- function(parent_element, funding_metadata, project_title = NULL, 
   } 
   if(is.null(project_title)) {
     if (is.null(parent_element$title)) {
-      stop('please supply a project lead or run add_title first and the dataset title will be used')
+      stop('please supply a project title or run add_title first and the dataset title will be used')
     }
     project_title <- parent_element$title
   }
