@@ -27,6 +27,24 @@ create_datatable <- function(filepath,
   attribute_list <- list()
   attribute_names <- unique(codes$attribute_name)
   
+  attributes_and_codes <- function(attribute_name, attribute_definition, storage_type, 
+                                   measurement_scale, domain, type, units, unit_precision, 
+                                   number_type, date_time_format, date_time_precision, minimum, maximum, 
+                                   attribute_label){
+    if (domain %in% "enumerated") { 
+      definition <- list()
+      current_codes <- codes[codes$attribute_name == attribute_name, ]
+      definition$codeDefinition <- purrr::pmap(current_codes %>% select(-attribute_name), code_helper) 
+    } else {
+      definition = attribute_definition
+    }
+    new_attribute <- create_attribute(attribute_name = attribute_name, attribute_definition = attribute_definition,
+                                      storage_type = storage_type, measurement_scale = measurement_scale, 
+                                      domain = domain, definition = definition, type = type, units = units, 
+                                      unit_precision = unit_precision, number_type = number_type, 
+                                      date_time_format = date_time_format, date_time_precision = date_time_precision, 
+                                      minimum = minimum, maximum = maximum, attribute_label = attribute_label)
+  }
   attribute_list$attribute <- purrr::pmap(attribute_table, attributes_and_codes)
   
   physical <- create_physical(file_path = filepath, data_url = datatable_url)
@@ -42,27 +60,6 @@ create_datatable <- function(filepath,
 #' @keywords internal  
 code_helper <- function(code, definitions) {
   codeDefinition <- list(code = code, definition = definitions)
-}
-
-#' Attribute helper function to input into pmap
-#' @keywords internal  
-attributes_and_codes <- function(attribute_name, attribute_definition, storage_type, 
-                                 measurement_scale, domain, type, units, unit_precision, 
-                                 number_type, date_time_format, date_time_precision, minimum, maximum, 
-                                 attribute_label){
-  if (domain %in% "enumerated") { 
-    definition <- list()
-    current_codes <- codes[codes$attribute_name == attribute_name, ]
-    definition$codeDefinition <- purrr::pmap(current_codes %>% select(-attribute_name), code_helper) 
-  } else {
-    definition = attribute_definition
-  }
-  new_attribute <- create_attribute(attribute_name = attribute_name, attribute_definition = attribute_definition,
-                                    storage_type = storage_type, measurement_scale = measurement_scale, 
-                                    domain = domain, definition = definition, type = type, units = units, 
-                                    unit_precision = unit_precision, number_type = number_type, 
-                                    date_time_format = date_time_format, date_time_precision = date_time_precision, 
-                                    minimum = minimum, maximum = maximum, attribute_label = attribute_label)
 }
 
 #' Add Data Table 

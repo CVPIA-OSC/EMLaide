@@ -153,7 +153,7 @@ test_that("Add coverage adds the appropriate coverage information to the parent 
 
 # tests add functions in a pipe
 test_that("You can append all metadata inputs (except datatable) to parent element", {
-  expected_parent_element <- list(pubDate = structure(18771, class = "Date"), title = "Salmonid habitat use monitoring used to determine effectiveness of habitat improvement projects in the Sacramento River, CA", 
+  expected_parent_element <- list(pubDate = structure(Sys.Date(), class = "Date"), title = "Salmonid habitat use monitoring used to determine effectiveness of habitat improvement projects in the Sacramento River, CA", 
                                 shortName = "CVPIA Salmonid Habitat Monitoring Data", creator = list(
                                   individualName = list(givenName = "Amanda", surName = "Banet"), 
                                   electronicMailAddress = "abanet@csuchico edu", organizationName = "CSU Chico", 
@@ -234,3 +234,101 @@ test_that("You can append all metadata inputs (except datatable) to parent eleme
     add_coverage(coverage_metadata, taxonomic_metadata) 
   expect_equal(dataset, expected_parent_element)
 })
+
+# Test add datatable element 
+datatable_metadata <- 
+  dplyr::tibble(filepath = c(system.file("extdata", "Banet-Example", "data", "enclosure-study-growth-rate-data.csv", 
+                                         package = "EMLaide", mustWork = TRUE)),  
+                attribute_info = c(system.file("extdata", "Banet-Example", 
+                                               "metadata", "enclosure-study-growth-rates-metadata.xlsx", 
+                                               package = "EMLaide", mustWork = TRUE)),
+                datatable_description = c("Growth Rates - Enclosure Study"))
+expected_datatabletable <- list(dataTable = list(list(entityName = "enclosure-study-growth-rate-data.csv", 
+                           entityDescription = "Growth Rates - Enclosure Study", physical = list(
+                             objectName = "enclosure-study-growth-rate-data.csv", 
+                             size = list(unit = "bytes", size = "32636"), authentication = list(
+                               method = "MD5", authentication = "44b508c45e3635e8d65a719631530a75"), 
+                             dataFormat = list(textFormat = list(numHeaderLines = "1", 
+                                                                 recordDelimiter = "\\r\\n", attributeOrientation = "column", 
+                                                                 simpleDelimited = list(fieldDelimiter = ","))), distribution = list(
+                                                                   online = list(url = list(url = NULL, `function` = "download")))), 
+                           attributeList = list(attribute = list(list(attributeName = "enclosure", 
+                                                                      attributeDefinition = "Enclosure ID. Enclosures were number 1-6 in each site for identification.", 
+                                                                      storageType = "dbl", attributeLabel = NA, measurementScale = list(
+                                                                        nominal = list(nonNumericDomain = list(textDomain = list(
+                                                                          definition = "Enclosure ID. Enclosures were number 1-6 in each site for identification."))))), 
+                                                                 list(attributeName = "fish_code", attributeDefinition = "Unique identifying number for fish within an enclosure. Fish were numbered 1-20 within each enclosure.", 
+                                                                      storageType = "dbl", attributeLabel = NA, measurementScale = list(
+                                                                        nominal = list(nonNumericDomain = list(textDomain = list(
+                                                                          definition = "Unique identifying number for fish within an enclosure. Fish were numbered 1-20 within each enclosure."))))), 
+                                                                 list(attributeName = "length_begin", attributeDefinition = "fish fork length at the start of the study", 
+                                                                      storageType = "dbl", attributeLabel = NA, measurementScale = list(
+                                                                        ratio = list(unit = list(standardUnit = "millimeter"), 
+                                                                                     numericDomain = list(numberType = "real", bounds = list(
+                                                                                       minimum = list(exclusive = "false", minimum = 48), 
+                                                                                       maximum = list(exclusive = "false", maximum = 78)))))), 
+                                                                 list(attributeName = "length_middle", attributeDefinition = "fish fork length at the mid-point of the study", 
+                                                                      storageType = "dbl", attributeLabel = NA, measurementScale = list(
+                                                                        ratio = list(unit = list(standardUnit = "millimeter"), 
+                                                                                     numericDomain = list(numberType = "real", bounds = list(
+                                                                                       minimum = list(exclusive = "false", minimum = 68), 
+                                                                                       maximum = list(exclusive = "false", maximum = 84)))))), 
+                                                                 list(attributeName = "length_end", attributeDefinition = "fish fork length at the end of the study", 
+                                                                      storageType = "dbl", attributeLabel = NA, measurementScale = list(
+                                                                        ratio = list(unit = list(standardUnit = "millimeter"), 
+                                                                                     numericDomain = list(numberType = "real", bounds = list(
+                                                                                       minimum = list(exclusive = "false", minimum = 65), 
+                                                                                       maximum = list(exclusive = "false", maximum = 95)))))), 
+                                                                 list(attributeName = "condition_beginning", attributeDefinition = "Fulton's condition factor at the beginning of the study", 
+                                                                      storageType = "dbl", attributeLabel = NA, measurementScale = list(
+                                                                        ratio = list(unit = list(standardUnit = "dimensionless"), 
+                                                                                     numericDomain = list(numberType = "real", bounds = list(
+                                                                                       minimum = list(exclusive = "false", minimum = 0.3350022758), 
+                                                                                       maximum = list(exclusive = "false", maximum = 2.700318882)))))), 
+                                                                 list(attributeName = "condition_ending", attributeDefinition = "Fulton's condition factor at the end of the study", 
+                                                                      storageType = "dbl", attributeLabel = NA, measurementScale = list(
+                                                                        ratio = list(unit = list(standardUnit = "dimensionless"), 
+                                                                                     numericDomain = list(numberType = "real", bounds = list(
+                                                                                       minimum = list(exclusive = "false", minimum = 0.732756773), 
+                                                                                       maximum = list(exclusive = "false", maximum = 1.590976199)))))), 
+                                                                 list(attributeName = "density_start", attributeDefinition = "density at the start of the study, represented as the number of fish in the enclosure", 
+                                                                      storageType = "dbl", attributeLabel = NA, 
+                                                                      measurementScale = list(
+                                                                        ratio = list(unit = list(customUnit = "fishPerEnclosure"), 
+                                                                                     numericDomain = list(numberType = "whole", 
+                                                                                                          bounds = list(minimum = list(exclusive = "false", 
+                                                                                                                                       minimum = 18), 
+                                                                                                                        maximum = list(exclusive = "false", 
+                                                                                                                                       maximum = 20)))))), 
+                                                                 list(attributeName = "density_middle",  attributeDefinition = "density at the mid-point of the study, represented as the number of fish in the enclosure", 
+                                                                      storageType = "dbl", attributeLabel = NA, 
+                                                                      measurementScale = list(ratio = list(unit = list(customUnit = "fishPerEnclosure"), 
+                                                                                                           numericDomain = list(numberType = "whole", bounds = list(minimum = list(exclusive = "false",  minimum = 11), maximum = list(exclusive = "false", maximum = 20)))))), 
+                                                                 list(attributeName = "density_end",  attributeDefinition = "density at the end of the study, represented as the number of fish in the enclosure", storageType = "dbl", attributeLabel = NA, 
+                                                                      measurementScale = list(ratio = list(unit = list(customUnit = "fishPerEnclosure"), numericDomain = list(numberType = "whole",  bounds = list(minimum = list(exclusive = "false",  minimum = 5),
+                                                                                                                                                                                                                   maximum = list(exclusive = "false", maximum = 20)))))), 
+                                                                 list(attributeName = "atu",  attributeDefinition = "acumulated thermal units experienced by the fish over the course of the study", storageType = "dbl", 
+                                                                      attributeLabel = NA, measurementScale = list( ratio = list(unit = list(customUnit = "thermal unit"), 
+                                                                                                                                 numericDomain = list(numberType = "real", bounds = list(
+                                                                                                                                   minimum = list(exclusive = "false", minimum = 593.193),  maximum = list(exclusive = "false", maximum = 628.55)))))), 
+                                                                 list(attributeName = "habitat", attributeDefinition = "The habitat type (mainstem/sidechannel) and treatment (control/restored) for each study site", 
+                                                                      storageType = "string", attributeLabel = NA, measurementScale = list(
+                                                                        nominal = list(nonNumericDomain = list(textDomain = list(
+                                                                          definition = "The habitat type (mainstem/sidechannel) and treatment (control/restored) for each study site"))))), 
+                                                                 list(attributeName = "site_id", attributeDefinition = "site name for each study site", 
+                                                                      storageType = "string", attributeLabel = NA, measurementScale = list(
+                                                                        nominal = list(nonNumericDomain = list(textDomain = list(
+                                                                          definition = "site name for each study site"))))), 
+                                                                 list(attributeName = "days", attributeDefinition = "number of days fish were in enclosure", 
+                                                                      storageType = "dbl", attributeLabel = NA, measurementScale = list(
+                                                                        ratio = list(unit = list(customUnit = "day"), 
+                                                                                     numericDomain = list(numberType = "whole", 
+                                                                                                          bounds = list(minimum = list(exclusive = "false", 
+                                                                                                                                       minimum = 43), maximum = list(exclusive = "false", 
+                                                                                                                                                                     maximum = 48)))))))), numberOfRecords = 353L)))
+test_that("Add datatable adds the datatable", {
+  
+ expect_equal(add_datatable(list(), datatable_metadata), expected_datatabletable)
+})
+               
+               
