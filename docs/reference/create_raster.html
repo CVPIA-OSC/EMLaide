@@ -241,7 +241,7 @@ section of an EML document.</p>
     <p>Create Raster Element</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>create_raster</span><span class='op'>(</span>file_name <span class='op'>=</span> <span class='st'>"Rasterfiles.zip"</span> ,
+    <pre class="examples"><div class='input'><span class='fu'>create_raster</span><span class='op'>(</span>file_name <span class='op'>=</span> <span class='st'>"Rasterfiles.tif"</span> ,
               file_description <span class='op'>=</span> <span class='st'>"A Raster File"</span>,
               attribute_list <span class='op'>=</span>  <span class='fu'><a href='create_attribute.html'>create_attribute</a></span><span class='op'>(</span>attribute_name <span class='op'>=</span> <span class='st'>"Yrs"</span>, attribute_label <span class='op'>=</span> <span class='st'>"Years"</span>, 
                                               attribute_definition <span class='op'>=</span> <span class='st'>"Calendar year of the observation from years 1990 - 2010."</span>, 
@@ -249,7 +249,7 @@ section of an EML document.</p>
                                               measurement_scale <span class='op'>=</span> <span class='fu'>EMLaide</span><span class='fu'>::</span><span class='va'><a href='measurement_scale.html'>measurement_scale</a></span><span class='op'>$</span><span class='va'>dateTime</span>, 
                                               date_time_format <span class='op'>=</span> <span class='st'>"YYYY"</span>,
                                               date_time_precision <span class='op'>=</span> <span class='st'>"1"</span>, minimum <span class='op'>=</span> <span class='st'>"1993"</span>, maximum <span class='op'>=</span> <span class='st'>"2003"</span><span class='op'>)</span>,
-              physical <span class='op'>=</span> <span class='fu'><a href='create_physical.html'>create_physical</a></span><span class='op'>(</span><span class='st'>"Rasterfiles.zip"</span><span class='op'>)</span>,
+              physical <span class='op'>=</span> <span class='fu'><a href='create_physical.html'>create_physical</a></span><span class='op'>(</span><span class='st'>"Rasterfiles.tif"</span><span class='op'>)</span>,
               spatial_reference <span class='op'>=</span> <span class='st'>"NAD_1983_StatePlane_California_I_FIPS_0401"</span>,
               horizontal_accuracy <span class='op'>=</span> <span class='st'>"No Information"</span>,
               vertical_accuracy <span class='op'>=</span>  <span class='st'>"No Information"</span>,
@@ -262,7 +262,7 @@ section of an EML document.</p>
               verticals <span class='op'>=</span> <span class='st'>"1"</span>,
               cell_geometry <span class='op'>=</span> <span class='st'>"pixel"</span><span class='op'>)</span>
 </div><div class='output co'>#&gt; $entityName
-#&gt; [1] "Rasterfiles.zip"
+#&gt; [1] "Rasterfiles.tif"
 #&gt; 
 #&gt; $entityDescription
 #&gt; [1] "A Raster File"
@@ -313,7 +313,7 @@ section of an EML document.</p>
 #&gt; 
 #&gt; $physical
 #&gt; $physical$objectName
-#&gt; [1] "Rasterfiles.zip"
+#&gt; [1] "Rasterfiles.tif"
 #&gt; 
 #&gt; $physical$size
 #&gt; $physical$size$unit

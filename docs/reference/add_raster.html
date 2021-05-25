@@ -159,7 +159,7 @@ cell_size_x, cell_size_y, number_of_bands, raster_origin, rows, columns, vertica
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'> 
-<span class='va'>raster_metadata</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span><span class='st'>"file_name"</span> <span class='op'>=</span> <span class='st'>"Rasterfiles.zip"</span> ,
+<span class='va'>raster_metadata</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span><span class='st'>"file_name"</span> <span class='op'>=</span> <span class='st'>"Rasterfiles.tif"</span>,
                         <span class='st'>"file_description"</span> <span class='op'>=</span> <span class='st'>"A Raster File"</span>,
                         <span class='st'>"attribute_list"</span> <span class='op'>=</span>  <span class='fu'><a href='create_attribute.html'>create_attribute</a></span><span class='op'>(</span><span class='st'>"attribute_name"</span> <span class='op'>=</span> <span class='st'>"Yrs"</span>, attribute_label <span class='op'>=</span> <span class='st'>"Years"</span>, 
                                                         <span class='st'>"attribute_definition"</span> <span class='op'>=</span> <span class='st'>"Calendar year of the observation from years 1990 - 2010."</span>, 
@@ -167,7 +167,7 @@ cell_size_x, cell_size_y, number_of_bands, raster_origin, rows, columns, vertica
                                                         <span class='st'>"measurement_scale"</span> <span class='op'>=</span> <span class='fu'>EMLaide</span><span class='fu'>::</span><span class='va'><a href='measurement_scale.html'>measurement_scale</a></span><span class='op'>$</span><span class='va'>dateTime</span>, 
                                                         <span class='st'>"date_time_format"</span> <span class='op'>=</span> <span class='st'>"YYYY"</span>,
                                                         <span class='st'>"date_time_precision"</span> <span class='op'>=</span> <span class='st'>"1"</span>, minimum <span class='op'>=</span> <span class='st'>"1993"</span>, maximum <span class='op'>=</span> <span class='st'>"2003"</span><span class='op'>)</span>,
-                        <span class='st'>"physical"</span> <span class='op'>=</span> <span class='fu'><a href='create_physical.html'>create_physical</a></span><span class='op'>(</span><span class='st'>"Rasterfiles.zip"</span><span class='op'>)</span>,
+                        <span class='st'>"physical"</span> <span class='op'>=</span> <span class='fu'><a href='create_physical.html'>create_physical</a></span><span class='op'>(</span><span class='st'>"Rasterfiles.tif"</span><span class='op'>)</span>,
                         <span class='st'>"spatial_reference"</span> <span class='op'>=</span> <span class='st'>"NAD_1983_StatePlane_California_I_FIPS_0401"</span>,
                         <span class='st'>"horizontal_accuracy"</span> <span class='op'>=</span> <span class='st'>"No Information"</span>,
                         <span class='st'>"vertical_accuracy"</span> <span class='op'>=</span>  <span class='st'>"No Information"</span>,
@@ -185,7 +185,7 @@ cell_size_x, cell_size_y, number_of_bands, raster_origin, rows, columns, vertica
 <span class='va'>dataset</span>
 </div><div class='output co'>#&gt; $spatialRaster
 #&gt; $spatialRaster$entityName
-#&gt; [1] "Rasterfiles.zip"
+#&gt; [1] "Rasterfiles.tif"
 #&gt; 
 #&gt; $spatialRaster$entityDescription
 #&gt; [1] "A Raster File"
@@ -236,7 +236,7 @@ cell_size_x, cell_size_y, number_of_bands, raster_origin, rows, columns, vertica
 #&gt; 
 #&gt; $spatialRaster$physical
 #&gt; $spatialRaster$physical$objectName
-#&gt; [1] "Rasterfiles.zip"
+#&gt; [1] "Rasterfiles.tif"
 #&gt; 
 #&gt; $spatialRaster$physical$size
 #&gt; $spatialRaster$physical$size$unit
