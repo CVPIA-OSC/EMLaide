@@ -28,8 +28,9 @@ coverage <- list(geographic_description = "Description",
              south_bounding_coordinate = "67.865000",
              begin_date = "1980-01-01", 
              end_date = "2010-12-31")
-             
+\dontrun{             
 dataset <- list() \%>\% 
   add_coverage(coverage)
 dataset
+}
 }

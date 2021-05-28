@@ -7,7 +7,8 @@
 #' @details For more information about the identifier reservation services see \href{https://pastaplus-core.readthedocs.io/en/latest/doc_tree/pasta_api/data_package_manager_api.html#reservations}{the PASTAplus docs}
 #' @return This function returns a edi identifier number. 
 #' @examples 
-#' reserve_edi_id(user_id = "samuelwright")
+#' \dontrun{
+#' reserve_edi_id(user_id = "samuelwright")}
 #' @export                
 
 reserve_edi_id <- function(user_id, password) {
@@ -43,8 +44,8 @@ reserve_edi_id <- function(user_id, password) {
 #' * A description of what each status is referring to 
 #' * A suggestion of how to fix the status or improve the package. 
 #' @examples 
-#' evaluate_edi_package(user_id = "samuelwright", 
-#'                       eml_file_path = "data/edi20.1.xml")
+#' \dontrun{evaluate_edi_package(user_id = "samuelwright", 
+#'                               eml_file_path = "data/edi20.1.xml")}
 #' @export   
 evaluate_edi_package <- function(user_id, password, eml_file_path) {
   response <- httr::POST(
@@ -105,8 +106,8 @@ evaluate_edi_package <- function(user_id, password, eml_file_path) {
 #' @details For more information about the validation services see \href{https://pastaplus-core.readthedocs.io/en/latest/doc_tree/pasta_api/data_package_manager_api.html#upload-and-evaluation}{the PASTAplus docs}
 #' @return Message describing if your package was successfully updated or not. 
 #' @examples 
-#' upload_edi_package(user_id = "samuelwright", 
-#'                eml_file_path = "data/edi20.1.xml")
+#' \dontrun{upload_edi_package(user_id = "samuelwright", 
+#'                             eml_file_path = "data/edi20.1.xml")}
 #' @export   
 
 upload_edi_package <- function(user_id, password, eml_file_path) {
@@ -165,8 +166,9 @@ upload_edi_package <- function(user_id, password, eml_file_path) {
 #' (A web link to the csv must be included in the dataset information in the EML in order for a data package to be evaluated.) 
 #' @return Message describing if your package was successfully updated or not. 
 #' @examples 
-#' update_edi_package(user_id = "samuelwright", existing_packge_identifier = "740.1",
-#'                    eml_file_path = "data/edi20.1.xml")
+#' \dontrun{update_edi_package(user_id = "samuelwright", 
+#'                             existing_packge_identifier = "740.1",
+#'                             eml_file_path = "data/edi20.1.xml")}
 #' @export   
 
 update_edi_package <- function(user_id, password, existing_package_identifier, eml_file_path) {

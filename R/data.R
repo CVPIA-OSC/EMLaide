@@ -84,7 +84,7 @@
 #'   would be inputted as 03. 
 #'  }
 #' @examples 
-#' storage_type$integer #"integer"
+#' storage_type$boolean
 #' 
 "storage_type"
 

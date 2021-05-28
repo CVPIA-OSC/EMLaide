@@ -27,8 +27,8 @@ The dataset list with project information appended.
 Adds the project metadata elements according to EML standards.
 }
 \examples{
-project_lead <- dplyr::tibble(first_name = "Stacy", last_name = "Banet", email = "Stacy@aol.com", 
-                                   role = "creator", organization = "USBR")
+project_lead <- dplyr::tibble(first_name = "Stacy", last_name = "Banet", email = "Stacy@aol.com" , 
+                              role = "creator", organization = "USBR", orcid = NA)
 funding_metadata <- list(funder_name = "USBR", funder_identifier = NA, award_number = "R14AC00096", 
                          award_title = "Salmonid Spawning and Rearing Habitat Restoration in the Sacramento River", 
                          award_url = NA, funding_description = NA)
@@ -38,7 +38,7 @@ dataset <- list() \%>\%
    add_personnel(project_lead) \%>\%
    add_project(funding_metadata)
 dataset
-   
+
 dataset <- list() \%>\%
    add_project(funding_metadata, project_title = "Salmonid Habitat monitoring in the Central Valley", project_lead = project_lead)   
 dataset

@@ -74,6 +74,7 @@ an ELM document.
 Create Raster Element
 }
 \examples{
+\dontrun{
 create_raster(file_name = "Rasterfiles.tif" ,
               file_description = "A Raster File",
               attribute_list =  create_attribute(attribute_name = "Yrs", attribute_label = "Years", 
@@ -93,6 +94,6 @@ create_raster(file_name = "Rasterfiles.tif" ,
               rows = "200",
               columns = "6",
               verticals = "1",
-              cell_geometry = "pixel")
+              cell_geometry = "pixel")}
 
 }

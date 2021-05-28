@@ -102,9 +102,8 @@ test_that("Add maintenance adds the appropriate maintenance infomration to the p
 
 test_that("Add project adds the approprite project information to the parent element", {
   expected_project <- list(project = list(title = "My project", personnel = list(individualName = list(givenName = "Amanda", surName = "Banet"), 
-    electronicMailAddress = c("abanet@csuchico edu", "jhannon@usbr.gov", "sptussing@earthlink.net", "rgreathouse@psmfc.org"), 
-    organizationName = c("CSU Chico", "US Bureau of Reclamation", 
-                            "Tussing Ecological Services", "PSMFC"), role = "Project Lead"), 
+    electronicMailAddress = "abanet@csuchico edu", 
+    organizationName ="CSU Chico", role = "Project Lead"), 
     award = list(list(funderName = "United States Bureau of Reclamation", 
                       funderIdentifier = "https://www.wikidata.org/wiki/Q1010548", 
                       title = "Salmonid Spawning and Rearing Habitat Restoration in the Sacramento River", 
@@ -182,7 +181,7 @@ test_that("You can append all metadata inputs (except datatable) to parent eleme
                                                                                                                                                            maintenanceUpdateFrequency = "annually"), project = list(
                                                                                                                                                              title = "Salmonid habitat use monitoring used to determine effectiveness of habitat improvement projects in the Sacramento River, CA", 
                                                                                                                                                              personnel = list(individualName = list(givenName = "Amanda", 
-                                                                                                                                                                                                    surName = "Banet"), electronicMailAddress = NULL, 
+                                                                                                                                                                                                    surName = "Banet"), electronicMailAddress = "abanet@csuchico edu", 
                                                                                                                                                                               organizationName = "CSU Chico", role = "Project Lead"), 
                                                                                                                                                              award = list(list(funderName = "United States Bureau of Reclamation", 
                                                                                                                                                                                funderIdentifier = "https://www.wikidata.org/wiki/Q1010548", 

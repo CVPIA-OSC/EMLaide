@@ -164,93 +164,26 @@ Examples are seen in exported documentation.</p></td>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'># Ordinal(text):</span>
-<span class='fu'><a href='create_attribute.html'>create_attribute</a></span><span class='op'>(</span>attribute_name <span class='op'>=</span> <span class='st'>"LatitudeDD"</span>, 
-              attribute_definition <span class='op'>=</span> <span class='st'>"Latitude"</span>,
-              storage_type <span class='op'>=</span> <span class='fu'>EMLaide</span><span class='fu'>::</span><span class='va'><a href='storage_type.html'>storage_type</a></span><span class='op'>$</span><span class='va'>string</span>,
-              measurement_scale <span class='op'>=</span> <span class='fu'>EMLaide</span><span class='fu'>::</span><span class='va'><a href='measurement_scale.html'>measurement_scale</a></span><span class='op'>$</span><span class='va'>ordinal</span>,
-              domain<span class='op'>=</span> <span class='st'>"text"</span>, 
-              definition <span class='op'>=</span> <span class='st'>"Latitude"</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; <span class='message'>No attribute label provided.</span></div><div class='output co'>#&gt; <span class='message'>Warning: Please add text pattern if applicable.</span></div><div class='output co'>#&gt; $attributeName
-#&gt; [1] "LatitudeDD"
-#&gt; 
-#&gt; $attributeDefinition
-#&gt; [1] "Latitude"
-#&gt; 
-#&gt; $storageType
-#&gt; [1] "string"
-#&gt; 
-#&gt; $measurementScale
-#&gt; $measurementScale$ordinal
-#&gt; $measurementScale$ordinal$nonNumericDomain
-#&gt; $measurementScale$ordinal$nonNumericDomain$textDomain
-#&gt; $measurementScale$ordinal$nonNumericDomain$textDomain$definition
-#&gt; [1] "Latitude"
-#&gt; 
-#&gt; 
-#&gt; 
-#&gt; 
-#&gt; </div><div class='input'>              
+<span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='fu'><a href='create_attribute.html'>create_attribute</a></span><span class='op'>(</span>attribute_name <span class='op'>=</span> <span class='st'>"LatitudeDD"</span>, 
+                          attribute_definition <span class='op'>=</span> <span class='st'>"Latitude"</span>,
+                          storage_type <span class='op'>=</span> <span class='fu'>EMLaide</span><span class='fu'>::</span><span class='va'><a href='storage_type.html'>storage_type</a></span><span class='op'>$</span><span class='va'>string</span>,
+                          measurement_scale <span class='op'>=</span> <span class='fu'>EMLaide</span><span class='fu'>::</span><span class='va'><a href='measurement_scale.html'>measurement_scale</a></span><span class='op'>$</span><span class='va'>ordinal</span>,
+                          domain<span class='op'>=</span> <span class='st'>"text"</span>, 
+                          definition <span class='op'>=</span> <span class='st'>"Latitude"</span><span class='op'>)</span>
+              
 <span class='co'># Ordinal(enumerated): </span>
 <span class='va'>code_def_0</span> <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>code <span class='op'>=</span> <span class='st'>"0"</span>, definition <span class='op'>=</span> <span class='st'>"0 insects per meter of branch"</span><span class='op'>)</span>
 <span class='va'>code_def_1</span> <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>code <span class='op'>=</span> <span class='st'>"1"</span>, definition <span class='op'>=</span> <span class='st'>"1-10 insects per meter"</span><span class='op'>)</span>
 <span class='va'>code_def_2</span> <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>code <span class='op'>=</span> <span class='st'>"2"</span>, definition <span class='op'>=</span> <span class='st'>"11 â€“ 100 insects per meter"</span><span class='op'>)</span>
 <span class='va'>code_def_3</span> <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>code <span class='op'>=</span> <span class='st'>"3"</span>, definition <span class='op'>=</span> <span class='st'>"more than 100 insects per meter"</span><span class='op'>)</span>
 <span class='va'>code_definition</span> <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span><span class='va'>code_def_0</span>, <span class='va'>code_def_1</span>, <span class='va'>code_def_2</span>, <span class='va'>code_def_3</span><span class='op'>)</span>
-<span class='fu'><a href='create_attribute.html'>create_attribute</a></span><span class='op'>(</span>attribute_name <span class='op'>=</span> <span class='st'>"hwa"</span>,
-              attribute_definition <span class='op'>=</span> <span class='st'>"Hemlock woolly adelgid density per meter of branch"</span>,
-              storage_type <span class='op'>=</span> <span class='fu'>EMLaide</span><span class='fu'>::</span><span class='va'><a href='storage_type.html'>storage_type</a></span><span class='op'>$</span><span class='va'>decimal</span>,
-              measurement_scale <span class='op'>=</span> <span class='fu'>EMLaide</span><span class='fu'>::</span><span class='va'><a href='measurement_scale.html'>measurement_scale</a></span><span class='op'>$</span><span class='va'>ordinal</span>,
-              domain <span class='op'>=</span> <span class='st'>"enumerated"</span>,
-              definition <span class='op'>=</span> <span class='va'>code_definition</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; <span class='message'>No attribute label provided.</span></div><div class='output co'>#&gt; $attributeName
-#&gt; [1] "hwa"
-#&gt; 
-#&gt; $attributeDefinition
-#&gt; [1] "Hemlock woolly adelgid density per meter of branch"
-#&gt; 
-#&gt; $storageType
-#&gt; [1] "decimal"
-#&gt; 
-#&gt; $measurementScale
-#&gt; $measurementScale$ordinal
-#&gt; $measurementScale$ordinal$nonNumericDomain
-#&gt; $measurementScale$ordinal$nonNumericDomain$enumeratedDomain
-#&gt; $measurementScale$ordinal$nonNumericDomain$enumeratedDomain[[1]]
-#&gt; $measurementScale$ordinal$nonNumericDomain$enumeratedDomain[[1]]$code
-#&gt; [1] "0"
-#&gt; 
-#&gt; $measurementScale$ordinal$nonNumericDomain$enumeratedDomain[[1]]$definition
-#&gt; [1] "0 insects per meter of branch"
-#&gt; 
-#&gt; 
-#&gt; $measurementScale$ordinal$nonNumericDomain$enumeratedDomain[[2]]
-#&gt; $measurementScale$ordinal$nonNumericDomain$enumeratedDomain[[2]]$code
-#&gt; [1] "1"
-#&gt; 
-#&gt; $measurementScale$ordinal$nonNumericDomain$enumeratedDomain[[2]]$definition
-#&gt; [1] "1-10 insects per meter"
-#&gt; 
-#&gt; 
-#&gt; $measurementScale$ordinal$nonNumericDomain$enumeratedDomain[[3]]
-#&gt; $measurementScale$ordinal$nonNumericDomain$enumeratedDomain[[3]]$code
-#&gt; [1] "2"
-#&gt; 
-#&gt; $measurementScale$ordinal$nonNumericDomain$enumeratedDomain[[3]]$definition
-#&gt; [1] "11 â\200“ 100 insects per meter"
-#&gt; 
-#&gt; 
-#&gt; $measurementScale$ordinal$nonNumericDomain$enumeratedDomain[[4]]
-#&gt; $measurementScale$ordinal$nonNumericDomain$enumeratedDomain[[4]]$code
-#&gt; [1] "3"
-#&gt; 
-#&gt; $measurementScale$ordinal$nonNumericDomain$enumeratedDomain[[4]]$definition
-#&gt; [1] "more than 100 insects per meter"
-#&gt; 
-#&gt; 
-#&gt; 
-#&gt; 
-#&gt; 
-#&gt; </div></pre>
+<span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='fu'><a href='create_attribute.html'>create_attribute</a></span><span class='op'>(</span>attribute_name <span class='op'>=</span> <span class='st'>"hwa"</span>,
+                          attribute_definition <span class='op'>=</span> <span class='st'>"Hemlock woolly adelgid density per meter of branch"</span>,
+                          storage_type <span class='op'>=</span> <span class='fu'>EMLaide</span><span class='fu'>::</span><span class='va'><a href='storage_type.html'>storage_type</a></span><span class='op'>$</span><span class='va'>decimal</span>,
+                          measurement_scale <span class='op'>=</span> <span class='fu'>EMLaide</span><span class='fu'>::</span><span class='va'><a href='measurement_scale.html'>measurement_scale</a></span><span class='op'>$</span><span class='va'>ordinal</span>,
+                          domain <span class='op'>=</span> <span class='st'>"enumerated"</span>,
+                          definition <span class='op'>=</span> <span class='va'>code_definition</span><span class='op'>)</span>
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

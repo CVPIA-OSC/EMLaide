@@ -12,7 +12,7 @@
 #' @param field_delimiter Character used to delimit each field. The options 
 #' provided are commas (","), space (" "), tab ("\\t"), or colon (":"). The 
 #' default is comma, as csv's are most common. 
-#' @param data_url Optional. A url, if possible, of which the data file can be 
+#' @param data_url (Optional). A url, if possible, of which the data file can be 
 #' downloaded. 
 #' @return A complete set of information on the physical format. 
 #' @examples

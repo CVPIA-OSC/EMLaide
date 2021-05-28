@@ -2,7 +2,7 @@ library(EMLaide)
 library(vcr)
 library(testthat)
 # Define variables -------------------------------------------------------------
-eml_file_path <- "../../vignettes/edi.678.1.xml"
+eml_file_path <- "edi.678.1.xml"
 user_id <- "ecain"
 
 # Test data package id reservation ----------------------------------------------

@@ -241,7 +241,8 @@ section of an EML document.</p>
     <p>Create Raster Element</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>create_raster</span><span class='op'>(</span>file_name <span class='op'>=</span> <span class='st'>"Rasterfiles.tif"</span> ,
+    <pre class="examples"><div class='input'><span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>{</span>
+<span class='fu'>create_raster</span><span class='op'>(</span>file_name <span class='op'>=</span> <span class='st'>"Rasterfiles.tif"</span> ,
               file_description <span class='op'>=</span> <span class='st'>"A Raster File"</span>,
               attribute_list <span class='op'>=</span>  <span class='fu'><a href='create_attribute.html'>create_attribute</a></span><span class='op'>(</span>attribute_name <span class='op'>=</span> <span class='st'>"Yrs"</span>, attribute_label <span class='op'>=</span> <span class='st'>"Years"</span>, 
                                               attribute_definition <span class='op'>=</span> <span class='st'>"Calendar year of the observation from years 1990 - 2010."</span>, 
@@ -260,147 +261,8 @@ section of an EML document.</p>
               rows <span class='op'>=</span> <span class='st'>"200"</span>,
               columns <span class='op'>=</span> <span class='st'>"6"</span>,
               verticals <span class='op'>=</span> <span class='st'>"1"</span>,
-              cell_geometry <span class='op'>=</span> <span class='st'>"pixel"</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; $entityName
-#&gt; [1] "Rasterfiles.tif"
-#&gt; 
-#&gt; $entityDescription
-#&gt; [1] "A Raster File"
-#&gt; 
-#&gt; $attributeList
-#&gt; $attributeList$attributeName
-#&gt; [1] "Yrs"
-#&gt; 
-#&gt; $attributeList$attributeDefinition
-#&gt; [1] "Calendar year of the observation from years 1990 - 2010."
-#&gt; 
-#&gt; $attributeList$storageType
-#&gt; [1] "date"
-#&gt; 
-#&gt; $attributeList$attributeLabel
-#&gt; [1] "Years"
-#&gt; 
-#&gt; $attributeList$measurementScale
-#&gt; $attributeList$measurementScale$dateTime
-#&gt; $attributeList$measurementScale$dateTime$formatString
-#&gt; [1] "YYYY"
-#&gt; 
-#&gt; $attributeList$measurementScale$dateTime$dateTimePrecision
-#&gt; [1] "1"
-#&gt; 
-#&gt; $attributeList$measurementScale$dateTime$dateTimeDomain
-#&gt; $attributeList$measurementScale$dateTime$dateTimeDomain$bounds
-#&gt; $attributeList$measurementScale$dateTime$dateTimeDomain$bounds$minimum
-#&gt; $attributeList$measurementScale$dateTime$dateTimeDomain$bounds$minimum$exclusive
-#&gt; [1] "false"
-#&gt; 
-#&gt; $attributeList$measurementScale$dateTime$dateTimeDomain$bounds$minimum$minimum
-#&gt; [1] "1993"
-#&gt; 
-#&gt; 
-#&gt; $attributeList$measurementScale$dateTime$dateTimeDomain$bounds$maximum
-#&gt; $attributeList$measurementScale$dateTime$dateTimeDomain$bounds$maximum$exclusive
-#&gt; [1] "false"
-#&gt; 
-#&gt; $attributeList$measurementScale$dateTime$dateTimeDomain$bounds$maximum$maximum
-#&gt; [1] "2003"
-#&gt; 
-#&gt; 
-#&gt; 
-#&gt; 
-#&gt; 
-#&gt; 
-#&gt; 
-#&gt; $physical
-#&gt; $physical$objectName
-#&gt; [1] "Rasterfiles.tif"
-#&gt; 
-#&gt; $physical$size
-#&gt; $physical$size$unit
-#&gt; [1] "bytes"
-#&gt; 
-#&gt; $physical$size$size
-#&gt; [1] "NA"
-#&gt; 
-#&gt; 
-#&gt; $physical$authentication
-#&gt; $physical$authentication$method
-#&gt; [1] "MD5"
-#&gt; 
-#&gt; $physical$authentication$authentication
-#&gt; [1] "NA"
-#&gt; 
-#&gt; 
-#&gt; $physical$dataFormat
-#&gt; $physical$dataFormat$textFormat
-#&gt; $physical$dataFormat$textFormat$numHeaderLines
-#&gt; [1] "1"
-#&gt; 
-#&gt; $physical$dataFormat$textFormat$recordDelimiter
-#&gt; [1] "\\r\\n"
-#&gt; 
-#&gt; $physical$dataFormat$textFormat$attributeOrientation
-#&gt; [1] "column"
-#&gt; 
-#&gt; $physical$dataFormat$textFormat$simpleDelimited
-#&gt; $physical$dataFormat$textFormat$simpleDelimited$fieldDelimiter
-#&gt; [1] ","
-#&gt; 
-#&gt; 
-#&gt; 
-#&gt; 
-#&gt; $physical$distribution
-#&gt; $physical$distribution$online
-#&gt; $physical$distribution$online$url
-#&gt; $physical$distribution$online$url$url
-#&gt; NULL
-#&gt; 
-#&gt; $physical$distribution$online$url$`function`
-#&gt; [1] "download"
-#&gt; 
-#&gt; 
-#&gt; 
-#&gt; 
-#&gt; 
-#&gt; $spatialReference
-#&gt; $spatialReference$horizCoordSysName
-#&gt; [1] "NAD_1983_StatePlane_California_I_FIPS_0401"
-#&gt; 
-#&gt; 
-#&gt; $horizontalAccuracy
-#&gt; $horizontalAccuracy$accuracyReport
-#&gt; [1] "No Information"
-#&gt; 
-#&gt; 
-#&gt; $verticalAccuracy
-#&gt; $verticalAccuracy$accuracyReport
-#&gt; [1] "No Information"
-#&gt; 
-#&gt; 
-#&gt; $cellSizeXdirection
-#&gt; [1] "25"
-#&gt; 
-#&gt; $cellSizeYDirection
-#&gt; [1] "25"
-#&gt; 
-#&gt; $numberOfBands
-#&gt; [1] "10"
-#&gt; 
-#&gt; $rasterOrigin
-#&gt; [1] "Upper Left"
-#&gt; 
-#&gt; $rows
-#&gt; [1] "200"
-#&gt; 
-#&gt; $columns
-#&gt; [1] "6"
-#&gt; 
-#&gt; $verticals
-#&gt; [1] "1"
-#&gt; 
-#&gt; $cellGeometry
-#&gt; [1] "pixel"
-#&gt; </div><div class='input'>
+              cell_geometry <span class='op'>=</span> <span class='st'>"pixel"</span><span class='op'>)</span><span class='op'>}</span>
+
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">

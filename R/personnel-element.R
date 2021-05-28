@@ -60,8 +60,9 @@ create_person <- function(role, first_name, last_name, email, organization, orci
 #' @details On person within `personnel_metadata` must have role of 'creator'
 #' @return The dataset list or project with personnel information appended.
 #' @examples 
-#' personnel_metadata <- dplyr::tibble(first_name = "Stacy", last_name = "Banet", email = "Stacy@aol.com", 
-#'                                     role = "creator", organization = "USBR")
+#' personnel_metadata <- dplyr::tibble(first_name = "Stacy", last_name = "Banet", 
+#'                                     email = "Stacy@aol.com", 
+#'                                     role = "creator", organization = "USBR", orcid = NA)
 #' dataset <- list() %>%
 #'    add_personnel(personnel_metadata)
 #' dataset

@@ -24,12 +24,12 @@ Create an attribute in Ordinal Measurement Scale
 }
 \examples{
 # Ordinal(text):
-create_attribute(attribute_name = "LatitudeDD", 
-              attribute_definition = "Latitude",
-              storage_type = EMLaide::storage_type$string,
-              measurement_scale = EMLaide::measurement_scale$ordinal,
-              domain= "text", 
-              definition = "Latitude")
+\dontrun{create_attribute(attribute_name = "LatitudeDD", 
+                          attribute_definition = "Latitude",
+                          storage_type = EMLaide::storage_type$string,
+                          measurement_scale = EMLaide::measurement_scale$ordinal,
+                          domain= "text", 
+                          definition = "Latitude")}
               
 # Ordinal(enumerated): 
 code_def_0 = list(code = "0", definition = "0 insects per meter of branch")
@@ -37,11 +37,11 @@ code_def_1 = list(code = "1", definition = "1-10 insects per meter")
 code_def_2 = list(code = "2", definition = "11 â€“ 100 insects per meter")
 code_def_3 = list(code = "3", definition = "more than 100 insects per meter")
 code_definition = list(code_def_0, code_def_1, code_def_2, code_def_3)
-create_attribute(attribute_name = "hwa",
-              attribute_definition = "Hemlock woolly adelgid density per meter of branch",
-              storage_type = EMLaide::storage_type$decimal,
-              measurement_scale = EMLaide::measurement_scale$ordinal,
-              domain = "enumerated",
-              definition = code_definition)
+\dontrun{create_attribute(attribute_name = "hwa",
+                          attribute_definition = "Hemlock woolly adelgid density per meter of branch",
+                          storage_type = EMLaide::storage_type$decimal,
+                          measurement_scale = EMLaide::measurement_scale$ordinal,
+                          domain = "enumerated",
+                          definition = code_definition)}
 }
 \keyword{internal}

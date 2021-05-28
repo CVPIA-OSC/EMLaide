@@ -21,8 +21,9 @@ Adds the personnel metadata elements to a dataset list according to EML standard
 On person within \code{personnel_metadata} must have role of 'creator'
 }
 \examples{
-personnel_metadata <- dplyr::tibble(first_name = "Stacy", last_name = "Banet", email = "Stacy@aol.com", 
-                                    role = "creator", organization = "USBR")
+personnel_metadata <- dplyr::tibble(first_name = "Stacy", last_name = "Banet", 
+                                    email = "Stacy@aol.com", 
+                                    role = "creator", organization = "USBR", orcid = NA)
 dataset <- list() \%>\%
    add_personnel(personnel_metadata)
 dataset

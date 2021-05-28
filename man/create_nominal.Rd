@@ -23,22 +23,22 @@ Create an Attribute in Nominal Measurement Scale
 }
 \examples{
 # Nominal(text):
-create_attribute(attribute_name = "site_id",
-              attribute_definition = "Site id as used in sites table",
-              storage_type = EMLaide::storage_type$integer,
-              measurement_scale = EMLaide::measurement_scale$nominal,
-              domain= "text",
-              definition = "Site id as used in sites table.")
+\dontrun{create_attribute(attribute_name = "site_id",
+                          attribute_definition = "Site id as used in sites table",
+                          storage_type = EMLaide::storage_type$integer,
+                          measurement_scale = EMLaide::measurement_scale$nominal,
+                          domain= "text",
+                          definition = "Site id as used in sites table.")}
 
 # Nominal(enumerated):
 code_def_1 = list(code = "yes", definition = "has been captured previously")
 code_def_2 = list(code = "no", definition = "has not been captured previously")
 code_definition = list(code_def_1, code_def_2)
-create_attribute(attribute_name = "Recap", 
-              attribute_definition = "Has the Turtle been captured and tagged previously",
-              storage_type = EMLaide::storage_type$text, 
-              measurement_scale = EMLaide::measurement_scale$nominal, 
-              domain = "enumerated",
-              definition = code_definition)
+\dontrun{create_attribute(attribute_name = "Recap", 
+                          attribute_definition = "Has the Turtle been captured and tagged previously",
+                          storage_type = EMLaide::storage_type$text, 
+                          measurement_scale = EMLaide::measurement_scale$nominal, 
+                          domain = "enumerated",
+                          definition = code_definition)}
 }
 \keyword{internal}

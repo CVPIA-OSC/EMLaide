@@ -65,31 +65,31 @@
 #' @export
 #' @examples
 #' # Nominal(text):
-#' create_attribute(attribute_name = "site_id",
-#'               attribute_definition = "Site id as used in sites table",
-#'               storage_type = EMLaide::storage_type$integer,
-#'               measurement_scale = EMLaide::measurement_scale$nominal,
-#'               domain= "text",
-#'               definition = "Site id as used in sites table.")
+#' \dontrun{create_attribute(attribute_name = "site_id",
+#'                           attribute_definition = "Site id as used in sites table",
+#'                           storage_type = EMLaide::storage_type$integer,
+#'                           measurement_scale = EMLaide::measurement_scale$nominal,
+#'                           domain= "text",
+#'                           definition = "Site id as used in sites table.")}
 #'
 #' # Nominal(enumerated):
 #' code_def_1 = list(code = "yes", definition = "has been captured previously")
 #' code_def_2 = list(code = "no", definition = "has not been captured previously")
 #' code_definition = list(code_def_1, code_def_2)
-#' create_attribute(attribute_name = "Recap", 
-#'               attribute_definition = "Has the Turtle been captured and tagged previously",
-#'               storage_type = EMLaide::storage_type$text, 
-#'               measurement_scale = EMLaide::measurement_scale$nominal, 
-#'               domain = "enumerated",
-#'               definition = code_definition)
+#' \dontrun{create_attribute(attribute_name = "Recap", 
+#'                           attribute_definition = "Has the Turtle been captured and tagged previously",
+#'                           storage_type = EMLaide::storage_type$text, 
+#'                           measurement_scale = EMLaide::measurement_scale$nominal, 
+#'                           domain = "enumerated",
+#'                           definition = code_definition)}
 #'               
 #' # Ordinal(text):
-#' create_attribute(attribute_name = "LatitudeDD", 
-#'               attribute_definition = "Latitude",
-#'               storage_type = EMLaide::storage_type$string,
-#'               measurement_scale = EMLaide::measurement_scale$ordinal,
-#'               domain= "text", 
-#'               definition = "Latitude")
+#' \dontrun{create_attribute(attribute_name = "LatitudeDD", 
+#'                           attribute_definition = "Latitude",
+#'                           storage_type = EMLaide::storage_type$string,
+#'                           measurement_scale = EMLaide::measurement_scale$ordinal,
+#'                           domain= "text", 
+#'                           definition = "Latitude")}
 #'               
 #' # Ordinal(enumerated): 
 #' code_def_0 = list(code = "0", definition = "0 insects per meter of branch")
@@ -97,44 +97,44 @@
 #' code_def_2 = list(code = "2", definition = "11 – 100 insects per meter")
 #' code_def_3 = list(code = "3", definition = "more than 100 insects per meter")
 #' code_definition = list(code_def_0, code_def_1, code_def_2, code_def_3)
-#' create_attribute(attribute_name = "hwa",
-#'               attribute_definition = "Hemlock woolly adelgid density per meter of branch",
-#'               storage_type = EMLaide::storage_type$decimal,
-#'               measurement_scale = EMLaide::measurement_scale$ordinal,
-#'               domain = "enumerated",
-#'               definition = code_definition)
+#' \dontrun{create_attribute(attribute_name = "hwa",
+#'                           attribute_definition = "Hemlock woolly adelgid density per meter of branch",
+#'                           storage_type = EMLaide::storage_type$decimal,
+#'                           measurement_scale = EMLaide::measurement_scale$ordinal,
+#'                           domain = "enumerated",
+#'                           definition = code_definition)}
 #'               
 #' # Interval:
-#' create_attribute(attribute_name = "Count",
-#'               attribute_definition = "Number of individuals observed",
-#'               measurement_scale = EMLaide::measurement_scale$interval, 
-#'               storage_type = EMLaide::storage_type$integer,
-#'               type = "interval",
-#'               units = "number",
-#'               unit_precision = "1",
-#'               number_type = EMLaide::number_type$whole, 
-#'               minimum = "0")
+#' \dontrun{create_attribute(attribute_name = "Count",
+#'                           attribute_definition = "Number of individuals observed",
+#'                           measurement_scale = EMLaide::measurement_scale$interval, 
+#'                           storage_type = EMLaide::storage_type$integer,
+#'                           type = "interval",
+#'                           units = "number",
+#'                           unit_precision = "1",
+#'                           number_type = EMLaide::number_type$whole, 
+#'                           minimum = "0")}
 #'                    
 #' # Ratio: 
-#' create_attribute(attribute_name = "pH",
-#'               attribute_definition = "pH of soil solution",
-#'               storage_type = EMLaide::storage_type$float,
-#'               measurement_scale = EMLaide::measurement_scale$ratio,
-#'               type = "ratio",
-#'               units = "dimensionless",
-#'               unit_precision = "0.01",
-#'               number_type = EMLaide::number_type$real)
+#' \dontrun{create_attribute(attribute_name = "pH",
+#'                           attribute_definition = "pH of soil solution",
+#'                           storage_type = EMLaide::storage_type$float,
+#'                           measurement_scale = EMLaide::measurement_scale$ratio,
+#'                           type = "ratio",
+#'                           units = "dimensionless",
+#'                           unit_precision = "0.01",
+#'                           number_type = EMLaide::number_type$real)}
 #'                    
 #' # dateTime:
-#' create_attribute(attribute_name = "Yrs", 
-#'               attribute_definition = "Calendar year of the observation from years 1990 - 2010.",
-#'               storage_type = EMLaide::storage_type$integer,
-#'               measurement_scale = EMLaide::measurement_scale$dateTime,
-#'               attribute_label = "Years",
-#'               date_time_format = "YYYY", 
-#'               date_time_precision = "1", 
-#'               minimum = "1993", 
-#'               maximum = "2003")
+#' \dontrun{create_attribute(attribute_name = "Yrs", 
+#'                           attribute_definition = "Calendar year of the observation from years 1990 - 2010.",
+#'                           storage_type = EMLaide::storage_type$integer,
+#'                           measurement_scale = EMLaide::measurement_scale$dateTime,
+#'                           attribute_label = "Years",
+#'                           date_time_format = "YYYY", 
+#'                           date_time_precision = "1", 
+#'                           minimum = "1993", 
+#'                           maximum = "2003")}
 create_attribute <- function(attribute_name, attribute_definition, storage_type,
                           measurement_scale, attribute_label = NULL, domain = NULL,
                           definition = NULL, text_pattern = NULL, type = NULL, 
@@ -205,23 +205,23 @@ create_attribute <- function(attribute_name, attribute_definition, storage_type,
 #' If the domain is "enumerated", provide a list of the attributes code definitions. 
 #' @examples 
 #' # Nominal(text):
-#' create_attribute(attribute_name = "site_id",
-#'               attribute_definition = "Site id as used in sites table",
-#'               storage_type = EMLaide::storage_type$integer,
-#'               measurement_scale = EMLaide::measurement_scale$nominal,
-#'               domain= "text",
-#'               definition = "Site id as used in sites table.")
+#' \dontrun{create_attribute(attribute_name = "site_id",
+#'                           attribute_definition = "Site id as used in sites table",
+#'                           storage_type = EMLaide::storage_type$integer,
+#'                           measurement_scale = EMLaide::measurement_scale$nominal,
+#'                           domain= "text",
+#'                           definition = "Site id as used in sites table.")}
 #'
 #' # Nominal(enumerated):
 #' code_def_1 = list(code = "yes", definition = "has been captured previously")
 #' code_def_2 = list(code = "no", definition = "has not been captured previously")
 #' code_definition = list(code_def_1, code_def_2)
-#' create_attribute(attribute_name = "Recap", 
-#'               attribute_definition = "Has the Turtle been captured and tagged previously",
-#'               storage_type = EMLaide::storage_type$text, 
-#'               measurement_scale = EMLaide::measurement_scale$nominal, 
-#'               domain = "enumerated",
-#'               definition = code_definition)
+#' \dontrun{create_attribute(attribute_name = "Recap", 
+#'                           attribute_definition = "Has the Turtle been captured and tagged previously",
+#'                           storage_type = EMLaide::storage_type$text, 
+#'                           measurement_scale = EMLaide::measurement_scale$nominal, 
+#'                           domain = "enumerated",
+#'                           definition = code_definition)}
 #' @param text_pattern Optional. Only needed if applicable and the domain given is "text".
 #' @keywords internal  
 create_nominal <- function(domain = c("text", "enumerated"), definition, text_pattern = NULL) {
@@ -258,12 +258,12 @@ create_nominal <- function(domain = c("text", "enumerated"), definition, text_pa
 #' Examples are seen in exported documentation. 
 #' @examples 
 #' # Ordinal(text):
-#' create_attribute(attribute_name = "LatitudeDD", 
-#'               attribute_definition = "Latitude",
-#'               storage_type = EMLaide::storage_type$string,
-#'               measurement_scale = EMLaide::measurement_scale$ordinal,
-#'               domain= "text", 
-#'               definition = "Latitude")
+#' \dontrun{create_attribute(attribute_name = "LatitudeDD", 
+#'                           attribute_definition = "Latitude",
+#'                           storage_type = EMLaide::storage_type$string,
+#'                           measurement_scale = EMLaide::measurement_scale$ordinal,
+#'                           domain= "text", 
+#'                           definition = "Latitude")}
 #'               
 #' # Ordinal(enumerated): 
 #' code_def_0 = list(code = "0", definition = "0 insects per meter of branch")
@@ -271,12 +271,12 @@ create_nominal <- function(domain = c("text", "enumerated"), definition, text_pa
 #' code_def_2 = list(code = "2", definition = "11 – 100 insects per meter")
 #' code_def_3 = list(code = "3", definition = "more than 100 insects per meter")
 #' code_definition = list(code_def_0, code_def_1, code_def_2, code_def_3)
-#' create_attribute(attribute_name = "hwa",
-#'               attribute_definition = "Hemlock woolly adelgid density per meter of branch",
-#'               storage_type = EMLaide::storage_type$decimal,
-#'               measurement_scale = EMLaide::measurement_scale$ordinal,
-#'               domain = "enumerated",
-#'               definition = code_definition)
+#' \dontrun{create_attribute(attribute_name = "hwa",
+#'                           attribute_definition = "Hemlock woolly adelgid density per meter of branch",
+#'                           storage_type = EMLaide::storage_type$decimal,
+#'                           measurement_scale = EMLaide::measurement_scale$ordinal,
+#'                           domain = "enumerated",
+#'                           definition = code_definition)}
 #' @param text_pattern Optional. Only needed if applicable and the domain given is "text".
 #' @keywords internal
 create_ordinal <- function(domain = c("text", "enumerated"), definition, text_pattern = NULL) {
@@ -320,25 +320,25 @@ create_ordinal <- function(domain = c("text", "enumerated"), definition, text_pa
 #' or equal to this number.
 #' @examples 
 #' # Interval:
-#' create_attribute(attribute_name = "Count",
-#'                  attribute_definition = "Number of individuals observed",
-#'                  measurement_scale = EMLaide::measurement_scale$interval, 
-#'                  storage_type = EMLaide::storage_type$integer,
-#'                  type = "interval",
-#'                  units = "number",
-#'                  unit_precision = "1",
-#'                  number_type = EMLaide::number_type$whole, 
-#'                  minimum = "0")
+#' \dontrun{create_attribute(attribute_name = "Count",
+#'                           attribute_definition = "Number of individuals observed",
+#'                           measurement_scale = EMLaide::measurement_scale$interval, 
+#'                           storage_type = EMLaide::storage_type$integer,
+#'                           type = "interval",
+#'                           units = "number",
+#'                           unit_precision = "1",
+#'                           number_type = EMLaide::number_type$whole, 
+#'                           minimum = "0")}
 #'                    
 #' # Ratio: 
-#' create_attribute(attribute_name = "pH",
-#'                  attribute_definition = "pH of soil solution",
-#'                  storage_type = EMLaide::storage_type$float,
-#'                  measurement_scale = EMLaide::measurement_scale$ratio,
-#'                  type = "ratio",
-#'                  units = "dimensionless",
-#'                  unit_precision = "0.01",
-#'                  number_type = EMLaide::number_type$real)
+#' \dontrun{create_attribute(attribute_name = "pH",
+#'                           attribute_definition = "pH of soil solution",
+#'                           storage_type = EMLaide::storage_type$float,
+#'                           measurement_scale = EMLaide::measurement_scale$ratio,
+#'                           type = "ratio",
+#'                           units = "dimensionless",
+#'                           unit_precision = "0.01",
+#'                           number_type = EMLaide::number_type$real)}
 #' @keywords internal
 create_interval_ratio <- function(type = c("interval", "ratio"), units,  
                                number_type, unit_precision = NULL, minimum = NULL, maximum = NULL) {
@@ -423,15 +423,15 @@ create_interval_ratio <- function(type = c("interval", "ratio"), units,
 #' @param maximum The latest dateTime recorded. Values can be less than 
 #' or equal to this number. 
 #' @examples 
-#' create_attribute(attribute_name = "Yrs",
-#'               attribute_definition = "Calendar year of the observation from years 1990 - 2010.",
-#'               storage_type = EMLaide::storage_type$integer,
-#'               measurement_scale = EMLaide::measurement_scale$dateTime,
-#'               attribute_label = "Years",
-#'               date_time_format = "YYYY", 
-#'               date_time_precision = "1", 
-#'               minimum = "1993", 
-#'               maximum = "2003")
+#' \dontrun{create_attribute(attribute_name = "Yrs",
+#'                           attribute_definition = "Calendar year of the observation from years 1990 - 2010.",
+#'                           storage_type = EMLaide::storage_type$integer,
+#'                           measurement_scale = EMLaide::measurement_scale$dateTime,
+#'                           attribute_label = "Years",
+#'                           date_time_format = "YYYY", 
+#'                           date_time_precision = "1", 
+#'                           minimum = "1993", 
+#'                           maximum = "2003")}
 #' @keywords internal
 create_datetime <- function(date_time_format, date_time_precision, minimum, maximum) {
   

@@ -30,6 +30,7 @@
 #' section of an EML document. 
 #'
 #' @examples
+#' \dontrun{
 #' create_raster(file_name = "Rasterfiles.tif" ,
 #'               file_description = "A Raster File",
 #'               attribute_list =  create_attribute(attribute_name = "Yrs", attribute_label = "Years", 
@@ -49,7 +50,7 @@
 #'               rows = "200",
 #'               columns = "6",
 #'               verticals = "1",
-#'               cell_geometry = "pixel")
+#'               cell_geometry = "pixel")}
 #'
 #' @export            
 create_raster <- function(file_name, file_description, attribute_list, physical,
@@ -120,10 +121,11 @@ create_raster <- function(file_name, file_description, attribute_list, physical,
 #'                         "columns" = "6",
 #'                         "verticals" = "1",
 #'                         "cell_geometry" = "pixel")
-#' 
+#' \dontrun{
 #' dataset <- list() %>%
 #'     add_raster(raster_metadata)
 #' dataset
+#' }
 #' @export
 add_raster <- function(parent_element, raster_metadata) {
   parent_element$spatialRaster <- create_raster(file_name = raster_metadata$file_name, 

@@ -16,20 +16,20 @@ create_license(
 \item{default_license}{Use "CCO" or "CCBY" as argument value to use one of the
 CVPIA default licenses. Supply NULL if using another license.}
 
-\item{license_name}{Optional if using default_license = "CCO" or "CCBY" as
+\item{license_name}{(Optional) if using default_license = "CCO" or "CCBY" as
 default values are provided. Otherwise, please provide the appropriate license
 name. Other possible license examples include "MIT License" and "Creative Commons
 Attribution Non Commercial Share Alike 4.0 International".}
 
-\item{license_url}{Optional if using default_license = "CCO" or "CCBY" as default
+\item{license_url}{(Optional) if using default_license = "CCO" or "CCBY" as default
 values are provided. Otherwise, please provide the correct license url
 to view further license information.}
 
-\item{license_identifier}{Optional if using default_license = "CCO" or "CCBY"
+\item{license_identifier}{(Optional) if using default_license = "CCO" or "CCBY"
 as default values are provided. Otherwise, please provide the appropriate
 identifier. Other possible identifiers include "MIT" and "CC-BY-NC-SA".}
 
-\item{intellectual_rights_descripiton}{Optional if using default_license = "CCO"
+\item{intellectual_rights_descripiton}{(Optional) if using default_license = "CCO"
 or "CCBY" as default values are provided. Otherwise, please provide a short
 description of the license being used and its regulations.}
 }

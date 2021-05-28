@@ -41,8 +41,9 @@ raster_metadata <- list("file_name" = "Rasterfiles.tif",
                         "columns" = "6",
                         "verticals" = "1",
                         "cell_geometry" = "pixel")
-
+\dontrun{
 dataset <- list() \%>\%
     add_raster(raster_metadata)
 dataset
+}
 }

@@ -14,17 +14,17 @@ create_datatable(
 )
 }
 \arguments{
+\item{filepath}{Name of the file you would like added to the datatable element}
+
 \item{attribute_info}{File path to the attribute sheet that contains metadata describing all attributes for your datatable.}
 
 \item{datatable_description}{Short description of contents of datatable you are adding}
 
-\item{datatable_url}{A URL that links to the datatable you are adding (ex: dataset on AWS public bucket or https://raw.githubusercontent.com/)}
+\item{datatable_url}{(Optional) A URL that links to the datatable you are adding (ex: dataset on AWS public bucket or https://raw.githubusercontent.com/)}
 
-\item{dataset_methods}{Optional metadata describing methods if there are methods that are specific to a datatable}
+\item{dataset_methods}{(Optional) metadata describing methods if there are methods that are specific to a datatable}
 
-\item{additional_info}{Option additional metadata info if there is additional metadata information that is important to the datatable}
-
-\item{filename}{Name of the file you would like added to the datatable element}
+\item{additional_info}{(Optional) additional metadata info if there is additional metadata information that is important to the datatable}
 }
 \value{
 A data table element listed in a format to be added to a dataset element and turned into EML
@@ -40,5 +40,5 @@ filepath =  system.file("extdata", "Banet-Example", "data", "enclosure-study-gro
 attribute_info = system.file("extdata", "Banet-Example", "metadata", "enclosure-study-growth-rates-metadata.xlsx", package = "EMLaide", mustWork = TRUE)
 datatable_description = "Growth Rates - Enclosure Study"
 
-create_datatable(filepath, attribute_info, datatable_description)
+\dontrun{create_datatable(filepath, attribute_info, datatable_description)}
 }

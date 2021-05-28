@@ -21,14 +21,14 @@ or equal to this number.}
 Create an attribute in dateTime Measurement Scale
 }
 \examples{
-create_attribute(attribute_name = "Yrs",
-              attribute_definition = "Calendar year of the observation from years 1990 - 2010.",
-              storage_type = EMLaide::storage_type$integer,
-              measurement_scale = EMLaide::measurement_scale$dateTime,
-              attribute_label = "Years",
-              date_time_format = "YYYY", 
-              date_time_precision = "1", 
-              minimum = "1993", 
-              maximum = "2003")
+\dontrun{create_attribute(attribute_name = "Yrs",
+                          attribute_definition = "Calendar year of the observation from years 1990 - 2010.",
+                          storage_type = EMLaide::storage_type$integer,
+                          measurement_scale = EMLaide::measurement_scale$dateTime,
+                          attribute_label = "Years",
+                          date_time_format = "YYYY", 
+                          date_time_precision = "1", 
+                          minimum = "1993", 
+                          maximum = "2003")}
 }
 \keyword{internal}

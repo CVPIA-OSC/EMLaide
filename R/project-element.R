@@ -24,11 +24,12 @@ create_project <- function(project_title, project_lead, funding_metadata) {
   project_personnel <- create_person(role = "Project Lead",
                                      first_name = ifelse(is.null(project_lead$first_name), project_lead$individualName$givenName, project_lead$first_name),
                                      last_name = ifelse(is.null(project_lead$last_name), project_lead$individualName$surName, project_lead$last_name),
-                                     email = project_lead$email,
-                                     organization = project_lead$organization,
+                                     email = ifelse(is.null(project_lead$email), project_lead$electronicMailAddress, project_lead$email),
+                                     organization = ifelse(is.null(project_lead$organization), project_lead$organizationName, project_lead$organization),
                                      orcid = NULL)
 
   project <- list(title = project_title,
+                  
                   personnel = project_personnel,
                   award = award_information)
   return(project)
@@ -42,8 +43,8 @@ create_project <- function(project_title, project_lead, funding_metadata) {
 #' @return The dataset list with project information appended.
 #' 
 #' @examples 
-#' project_lead <- dplyr::tibble(first_name = "Stacy", last_name = "Banet", email = "Stacy@aol.com", 
-#'                                    role = "creator", organization = "USBR")
+#' project_lead <- dplyr::tibble(first_name = "Stacy", last_name = "Banet", email = "Stacy@aol.com" , 
+#'                               role = "creator", organization = "USBR", orcid = NA)
 #' funding_metadata <- list(funder_name = "USBR", funder_identifier = NA, award_number = "R14AC00096", 
 #'                          award_title = "Salmonid Spawning and Rearing Habitat Restoration in the Sacramento River", 
 #'                          award_url = NA, funding_description = NA)
@@ -53,7 +54,7 @@ create_project <- function(project_title, project_lead, funding_metadata) {
 #'    add_personnel(project_lead) %>%
 #'    add_project(funding_metadata)
 #' dataset
-#'    
+#' 
 #' dataset <- list() %>%
 #'    add_project(funding_metadata, project_title = "Salmonid Habitat monitoring in the Central Valley", project_lead = project_lead)   
 #' dataset

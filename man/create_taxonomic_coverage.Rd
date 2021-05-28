@@ -60,7 +60,7 @@ information from ITIS.}
 
 \item{common_name}{The common name of the organism.}
 
-\item{taxon_id}{Optional. The taxonomic serial number provided by ITIS.}
+\item{taxon_id}{(Optional). The taxonomic serial number provided by ITIS.}
 }
 \value{
 Taxonomic coverage information. The function should be assigned to the
@@ -69,7 +69,7 @@ to incorporate it into the add_coverage function is seen below.
 }
 \description{
 Create the taxonomic coverage information of a dataset based off of
-EML standards. The addition of taxonomic coverage is optional, however defaults
+EML standards. The addition of taxonomic coverage is (Optional), however defaults
 of chinook, sturgeon, smelt, and steelhead are provided. While single or
 multiple taxonomies can be applied, the full set of information must be
 provided if chosen to be included.
@@ -90,34 +90,3 @@ these species, you can visit: \href{https://www.itis.gov/}{ITIS}'s webpage for
 full coverage information.
 }
 
-\examples{
-taxonomic_coverage <- create_taxonomic_coverage(CVPIA_common_species = "chinook")
-
-taxonomic_coverage <- create_taxonomic_coverage(CVPIA_common_species = "delta_smelt")
-
-taxonomic_coverage <- create_taxonomic_coverage(CVPIA_common_species = "white_sturgeon")
-
-taxonomic_coverage <- create_taxonomic_coverage(CVPIA_common_species = "green_sturgeon")
-
-taxonomic_coverage <- create_taxonomic_coverage(CVPIA_common_species = "steelhead")
-
-taxonomic_coverage <- create_taxonomic_coverage(kingdom_value = "Animalia",
-                       phylum_value = "Chordata",
-                       class_value = "Mammalia",
-                       order_value = "Carnivora",
-                       family_value = "Felidae",
-                       genus_value = "Panthera", 
-                       species_value = "Panthera Leo",
-                       common_name = "Lion", 
-                       taxon_id = "183803")   
-                                            
-# To append this information to the dataset or project:                        
-    create_coverage(geographic_description = "Description",
-                    west_bounding_coordinate = "-160.594000", 
-                    east_bounding_coordinate = "-134.104800",
-                    north_bounding_coordinate = "71.238300", 
-                    south_bounding_coordinate = "67.865000",
-                    begin_date = "1980-01-01", 
-                    end_date = "2010-12-31", 
-                    taxonomic_coverage = taxonomic_coverage)
-}

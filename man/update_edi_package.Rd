@@ -31,6 +31,7 @@ This function takes in authentication info for EDI, a packge number, and an upda
 updated an existing package on EDI.
 }
 \examples{
-update_edi_package(user_id = "samuelwright", existing_packge_identifier = "740.1",
-                   eml_file_path = "data/edi20.1.xml")
+\dontrun{update_edi_package(user_id = "samuelwright", 
+                            existing_packge_identifier = "740.1",
+                            eml_file_path = "data/edi20.1.xml")}
 }

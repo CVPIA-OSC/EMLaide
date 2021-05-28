@@ -1,0 +1,61 @@
+http_interactions:
+- request:
+    method: post
+    uri: https://pasta-d.lternet.edu/package/evaluate/eml
+    body:
+      encoding: ''
+      string: 'upload, file size: 29457'
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+      Content-Type: application/xml
+  response:
+    status:
+      status_code: 202
+      category: Success
+      reason: Accepted
+      message: 'Success: (202) Accepted'
+    headers:
+      server: nginx/1.14.0 (Ubuntu)
+      date: Fri, 28 May 2021 16:08:01 GMT
+      content-type: text/plain
+      content-length: '25'
+      connection: keep-alive
+      set-cookie: auth-token=dWlkPWVjYWluLG89RURJLGRjPWVkaXJlcG9zaXRvcnksZGM9b3JnKmh0dHBzOi8vcGFzdGEuZWRpcmVwb3NpdG9yeS5vcmcvYXV0aGVudGljYXRpb24qMTYyMjI0Njg4MTI5MyphdXRoZW50aWNhdGVkKnZldHRlZA==-bBF4Et6i2xj5PatRGEnQhRpOKhehsXOg1CqAMeYVe/n3VLkazz7rdJkgiRbHhmLxh98N+NXSL4IoIHloszSxScuOUsYMSNYl+RUl1/2R8GWl8AgtKcPoWMVzMNZgE4EWgqtKdN7XernLRcdFy+7qt4t5PITVSPdLnHW4vkrxv3gX9pNtftBwvERZyrSpfWmv7rUHJAQevDl7mbSmC2mzCjyuqEYLzrVLtM7tKh7mlaJ+r09LKm3djIemTAGNmGTzamOyrBpmtQzVqfHEF/JxQo7ujxOVduUWaxUVp5pgo7HQoN57Aafm+tChIOg2PBSg9gMzda0YrFnVhLfA3qiz+g==;Expires=Sun,
+        23-Oct-2072 16:16:02 GMT;Max-Age=1622246881
+      expires: Thu, 01 Jan 1970 00:00:00 GMT
+      web-service: DataPackageManager-1.0
+    body:
+      encoding: UTF-8
+      file: no
+      string: create_162221808137547990
+  recorded_at: 2021-05-28 16:08:12 GMT
+  recorded_with: vcr/1.0.0, webmockr/0.8.0
+  http_interactions:
+- request:
+    method: get
+    uri: https://pasta-d.lternet.edu/package/evaluate/report/eml/create_162221808137547990
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: 404
+      category: Client error
+      reason: Not Found
+      message: 'Client error: (404) Not Found'
+    headers:
+      server: nginx/1.14.0 (Ubuntu)
+      date: Fri, 28 May 2021 16:14:47 GMT
+      content-type: text/plain
+      content-length: '97'
+      connection: keep-alive
+      web-service: DataPackageManager-1.0
+    body:
+      encoding: UTF-8
+      file: no
+      string: 'Unable to access data package evaluate report file for transaction
+        id: create_162221821648879852 '
+  recorded_at: 2021-05-28 16:15:02 GMT
+  recorded_with: vcr/1.0.0, webmockr/0.8.0

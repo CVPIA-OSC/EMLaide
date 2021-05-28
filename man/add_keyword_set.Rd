@@ -18,7 +18,11 @@ The dataset list or project with keyword information appended.
 Adds the keyword metadata elements to a dataset list according to EML standards.
 }
 \examples{
-keyword_metadata <- dplyr::tibble(keyword = c("Sacramento River", "Salmonid Habitat Restoration Projects", "Effectiveness Monitoring", "Pacific Salmon", "CVPIA"), 
+keyword_metadata <- dplyr::tibble(keyword = c("Sacramento River", 
+                                              "Salmonid Habitat Restoration Projects", 
+                                              "Effectiveness Monitoring", 
+                                              "Pacific Salmon", 
+                                              "CVPIA"), 
                                   keywordThesaurus = c(NA, NA, NA, NA, NA))
 
 dataset <- list() \%>\%

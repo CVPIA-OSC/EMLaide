@@ -31,7 +31,7 @@ inputted the default value of '\\r\\n' is assigned.}
 provided are commas (","), space (" "), tab ("\\t"), or colon (":"). The
 default is comma, as csv's are most common.}
 
-\item{data_url}{Optional. A url, if possible, of which the data file can be
+\item{data_url}{(Optional). A url, if possible, of which the data file can be
 downloaded.}
 }
 \value{
