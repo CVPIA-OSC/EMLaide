@@ -11,39 +11,11 @@ vignette: >
 knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE, eval = FALSE)
 ```
 
-This document walks through the creation of an EML document based on example data and metadata. 
+This article demonstrates how to create an EML document for a data package containing multiple data entities. To follow along with this example, please download the [Banet-Example](https://cvpia-data-stewardship.s3-us-west-1.amazonaws.com/Banet-Example.zip). 
 
-The following libraries are needed to create a working EML document. 
-```{r}
-library(EMLaide)
-library(tidyverse)
-library(EDIutils)
-library(readxl)
-library(EML)
-library(magrittr)
-```
+We will create a nested list from our metadata templates and then use the [EML](https://docs.ropensci.org/EML/) R package's [`write_eml`](https://docs.ropensci.org/EML/reference/write_eml.html) function to convert our list into a valid EML document. 
 
-
-## Ecological Metadata Language(EML) Schema Outline 
-
-We use the EML package to generate the EML document based on our metadata inputs. The EML package `write_eml()` function takes in a nested list and formats the list into an EML document. 
-To create valid EML the nested list must:
-
-* Contain all required EML fields
-* nest all fields under the correct sub sections
-
-We have two main sections within our EML document:
-
-* Access - The [Access Section](https://eml.ecoinformatics.org/schema/eml_xsd.html#eml_access) defines the access for the entire resource (entire EML document)
-* Dataset - The [Dataset Resource](https://eml.ecoinformatics.org/schema/eml_xsd.html#eml_dataset) contains the descriptive metadata information on a data set. A data set can contain one or more data entities. A data entity is a tabular data table or a vector or raster image. 
-
-The Dataset element contains all of the additional metadata information. The Dataset element is composed of nested lists. Some information is at the top level and is applicable to all elements in the Dataset but other information is nested within subsections and is metadata specific to that subsection. 
-
-For a more in depth description of EML please see [EML Specification.](https://eml.ecoinformatics.org/)
-
-In this document, we can quickly create an EML file which has the opportunity to 
-append the following elements. For more detailed instructions on a specific section 
-please see section specific articles. 
+Our EML file will contain the following elements:
 
 ```yaml
 - eml 
@@ -63,34 +35,48 @@ please see section specific articles.
     - data table 
 ```
 
-## Our Example
-We will use the data provided by Amanda Banet to show an example of how to compile
-metadata in a valid EML document that can be uploaded to the EDI data portal website. 
-To follow along with this example please download the [Banet-Example zip folder](https://cvpia-data-stewardship.s3-us-west-1.amazonaws.com/Banet-Example.zip). 
+We have two main sections within our EML document:
 
-### Required Files 
-At least four files must be uploaded to make a complete EML document. To follow along with this example please load the following files from the `Banet-Example` folder into your environment.
+1. Access - The [Access Section](https://eml.ecoinformatics.org/schema/eml_xsd.html#eml_access) defines the access for the entire resource (entire EML document)
+2. Dataset - The [Dataset Resource](https://eml.ecoinformatics.org/schema/eml_xsd.html#eml_dataset) contains the descriptive metadata information on a data set. A data set can contain one or more data entities. A data entity is a tabular data table or a vector or raster image. 
 
-* **Datatable(s) and associated metadata** One or more files stored in a dataframe that contains the data (preferably csv if tabular data) and associated datatable specific metadata. (see datatables and assocaited metadata section below)
-* **Data Package Metadata** An excel spreadsheet containing the majority of the metadata 
-* **Abstract Document** A word or markdown document containing the abstract text 
-* **Methods Document** A word or markdown document containing the methods text 
+For a more in depth description of EML please see the [EML Specification.](https://eml.ecoinformatics.org/)
 
 
-### Datatable(s) and associated metadata
-This section provides the actual datatables that you wish to upload to EDI and metadata describing the attributes of the datatables. The files are organized in a dataframe with each row representing a different datatable. 
+## Required R Packages
+The following libraries are needed to create a working EML document. 
+```{r}
+library(EMLaide)
+library(tidyverse)
+library(EDIutils)
+library(readxl)
+library(EML)
+```
 
-This dataframe is input to `add_datatable`. Within the `add_datatable` function we generate attribute metadata from the `atribute_info` files and physical information describing the datatable from the `filepath` and `datatable_url` information. We then combine these into a list of one or more `dataTable` elements that are appended to our `dataset` list. 
 
-Datatables and associated metadata should be added in a nested list or tibble that contains the following information:
+## Datatable(s) and associated metadata
 
-  * A `filepath` column or named list which contains the names file paths of the datatables
-  * An `attribute_info` column or named list which contains the file path to the metadata describing the specific datatable (should be a metadata.xlsx)
-  * A `datatable_description` column or named list that contains a brief description of datatable 
-  * (Optional) A `datattable_url` column or named list that provides a link to the datatables. This is optional but if you would like to evaluate or upload your EML document directly from RStudio using `EMLaide` `evaluate_edi_package()` or `upload_edi_package()` then the `dattable_url` must link to a publicly accessible file hosted online. 
-  * (Optional) A `datatable_methods` column or named list that reads file path to datatable specific methods
-  * (Optional) An `additional_information` column or named list that adds additional information that is pertinent to the entry, please add it as a string description. 
-  
+To follow along with this example please download the files from the [Banet-Example](https://cvpia-data-stewardship.s3-us-west-1.amazonaws.com/Banet-Example.zip).
+Within the directory, there are two subdirectories ("data" and "metadata") which contain all the necessary data and metadata to create a valid EML document using EMLaide.
+
+At minimum, four files are needed to use our tools:
+
+1. **Dataset** text file containing machine readable tabular data 
+2. **Metadata Template** An [excel workbook](https://cvpia-data-stewardship.s3-us-west-1.amazonaws.com/metadata+template.zip) containing the majority of the metadata. Full documentation on the template materials are [here](https://cvpia-osc.github.io/EMLaide/articles/template-doc.html).  
+3. **Abstract Document** A word or markdown document containing the abstract text 
+4. **Methods Document** A word or markdown document containing the methods text 
+
+Because our data set is composed of multiple data entities, we are creating a dataframe with each row representing a different data entity with the following information:
+
+  * *filepath* - filepath of the data entity (datatables)
+  * *attribute_info* - filepath to the metadata describing the specific data entity (should be a metadata.xlsx)
+  * *datatable_description* - brief description of data entity 
+  * *datattable_url* - (Optional) url to a publicly accessible file hosted online. Required if using `EMLaide::evaluate_edi_package()` or `EMLaide::upload_edi_package()` to evaluate or upload your EML document to EDI from R. 
+  * *datatable_methods* - (Optional) filepath data entity specific methods document
+  * *additional_information* - (Optional) brief text description containing additional information that is pertinent to a specific data entity. 
+
+This dataframe is the input to the [`add_datatable`](https://cvpia-osc.github.io/EMLaide/reference/add_datatable.html) function which function generates [attribute metadata](https://cvpia-osc.github.io/EMLaide/reference/create_attribute.html) from the *atribute_info* files and [physical information](https://cvpia-osc.github.io/EMLaide/reference/create_physical.html) describing the datatable from the *filepath* and *datatable_url* information. 
+
 **Example Dataframe Structure for `datatable_metadata`** 
 
 ```{r, eval = TRUE}
@@ -118,8 +104,9 @@ datatable_metadata <-
                                          "snorkel-index-data-2015-2020.csv")))
 ```
 
-The final tibble should have the same structure as our `datatable_metadata`. Each row contains all information needed on a datatable to add to the datapackage. If you only have one datatable keep this structure or use a named list with the same information.
-```{r, eval=TRUE}
+Each row contains all information needed for a data entity to be added to the dataset element of a data package. If you only have one datatable keep this structure or use a named list with the same information.
+
+```{r, eval=TRUE, echo=FALSE}
 
 knitr::kable(datatable_metadata)
 ```
@@ -163,7 +150,6 @@ datatable_metadata <-
 
 
 
-
 ```{r, include = FALSE, eval = TRUE}
 excel_path <- system.file("extdata", "Banet-Example", "metadata", "data-package-metadata.xlsx", 
                           package = "EMLaide", mustWork = TRUE) 
@@ -181,7 +167,7 @@ methods_docx <- system.file("extdata", "Banet-Example", "metadata", "methods.doc
 
 ### Data Package Metadata, Methods, and Abstract 
 
-The following code block loads the `data-package-metadata.xlsx`, `abstrac_docs`, and `methods_docx`. The data package metadata excel document contains metadata that is relevant to the entire datapackge and has different sheets pertaining to different metadata elements. In the create dataset element section below the `add_[blank]` functions below will take in sheets of the `metadata` object as inputs.  
+The following code loads the "data-package-metadata.xlsx", "abstrac.docx", and "methods.docx". Each sheet of the excel workbook pertains to a different metadata element and will be the input to the `add_[blank]` functions used throughout this example.  
 ```{r, eval = FALSE}
 excel_path <- "Banet-Example/metadata/data-package-metadata.xlsx"
 sheets <- readxl::excel_sheets(excel_path)
@@ -193,38 +179,28 @@ methods_docx <- "metadata/methods.docx"
 ```
 
 
-### EDI Number
-In addition to these files an EDI number must be defined. 
-The EDI number should be a unique data package identifier. You can reserve this 
-data package identifier number on the [EDI data repository under tools.](https://portal.edirepository.org/nis/reservations.jsp)
+### EDI Identifier
+In addition to these files, we will need a unique EDI data package identifier.  We use the function [`reserve_edi_id`](https://cvpia-osc.github.io/EMLaide/reference/reserve_edi_id.html) to generate a EDI id. You must already have an account associated with EDI to do this. 
+```{r, eval = FALSE}
+edi_number <- reserve_edi_id(user_id = "your user id", password = "your user password ")
+```
+You can also reserve this data package identifier on the [EDI data repository under tools](https://portal.edirepository.org/nis/reservations.jsp).
+
+For this example, we will use the following identifier.
 ```{r}
 edi_number <- "edi.750.1" 
 ```
 
-It is also possible to use the `EMLaide` function \code{\link{reserve_edi_id}} to generate a EDI number without visiting the EDI website. You must already have an account associated with EDI to do this. 
-```{r, eval = FALSE}
-edi_number <- reserve_edi_id(user_id = "your user id", password = "your user password ")
-```
-
-
 
 ## Create Dataset Element
 
-Beginning with an empty list, each function call appends and an EML element as a named list.
-
-The `add_[blank]` functions are wrappers on `create_[blank]` function to enable a `%>%` workflow.
+We will use `magrittr::%>%` with our `add_[blank]` functions to append each EML element to a list. The `%>%` is a pipe like operator which takes the left-hand side as the first argument of the function appearing on the right-hand side.
 
 For details on appropriate inputs to the functions see documentation at `?add_[blank]`.
 
+The `add_methods()` and `add_abstract()` functions take in the `methods_docx` and the `abstract_docx`. The `add_datatable()` function takes in the `datatable_metadata` defined and described above. Every other function takes in one or more sheets from the `metadata` object. For template items with multiple rows, the `add_[blank]` functions map through each row and adds a named nested list for each row to the dataset element. 
 
-The `add_methods()` and `add_abstract()` functions take in the `methods_docx` and the `abstract_doc`. The `add_datatable()` function takes in the `datatable_metadata` defined and described above. Every other function takes in one or more sheets from the `metadata` object. For template items with multiple rows the `add_[blank]` functions map through each row and adds a named nested list for each row to the dataset element. 
-
-**Ex:** Add personnel will map through each row of `metadata$personnel` shown below and add all four personnel into the dataset element. 
-```{r, eval=TRUE, include = TRUE}
-knitr::kable(metadata$personnel)
-```
-
-The code below adds all dataset elements to a dataset list. 
+The code below adds all dataset elements. 
 ```{r}
 dataset <- list() %>%
   add_pub_date() %>%
@@ -275,14 +251,14 @@ eml <- list(packageId = edi_number,
             additionalMetadata = list(metadata = list(unitList = unitList)))
 ```
 
-Once all of our information is appended to our eml list we can use the `write_eml` and `eml_validate` functions from the `EML` package to convert our list to EML and check validity.
+Once all of our information is appended to our eml list we can use the [`write_eml`](https://docs.ropensci.org/EML/reference/write_eml.html) and [`eml_validate`](https://docs.ropensci.org/EML/reference/eml_validate.html) functions from the [EML](https://docs.ropensci.org/EML/index.html) package to convert our list to EML and check validity.
 ```{r}
 EML::write_eml(eml, "edi.750.1.xml")
 EML::eml_validate("edi.750.1.xml")
 ```
 
-## Evaluation using the EDI Congruency Checker
-To evaluate your document in R using the EDI congruence checker you can use `evaluate_edi_package()`. To use this function you must have the data table accessible by a URL that can be accessed through the EDI repository. This URL must be added in the `datatable_metadata` section above. If you do not have a URL available then you can upload the EML document and the dataset on the [EDI data portal.](https://portal.edirepository.org/nis/home.jsp) 
+## Evaluation using the EDI's EML Congruency Checker
+To evaluate your document in R using [EDI's EML Congruence Checker](https://github.com/EDIorg/ecc) you can use `evaluate_edi_package()`. To use this function you must have the data entities text files publically accessible by a URL. This URL must be added in the `datatable_metadata` section above. If you do not have a URL available then you can upload the EML document and the dataset on the [EDI data portal.](https://portal.edirepository.org/nis/home.jsp) 
 
 ```{r, eval = FALSE}
 evaluate_edi_package(user_id = "Your User Id", password = "Your password", eml_file_path = "edi.750.1.xml")

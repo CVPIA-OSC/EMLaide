@@ -81,7 +81,7 @@
 
       
 
-      </header><script src="create-EML-from-template_files/header-attrs-2.6/header-attrs.js"></script><div class="row">
+      </header><script src="create-EML-from-template_files/header-attrs-2.8/header-attrs.js"></script><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
       <h1 data-toc-skip>Create EML from Template</h1>
@@ -94,80 +94,73 @@
 
     
     
-<p>This document walks through the creation of an EML document based on example data and metadata.</p>
-<p>The following libraries are needed to create a working EML document.</p>
-<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://CVPIA-OSC.github.io/EMLaide/">EMLaide</a></span><span class="op">)</span>
-<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="http://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span>
-<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/EDIorg/EDIutils">EDIutils</a></span><span class="op">)</span>
-<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://readxl.tidyverse.org">readxl</a></span><span class="op">)</span>
-<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://docs.ropensci.org/EML/">EML</a></span><span class="op">)</span>
-<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://magrittr.tidyverse.org">magrittr</a></span><span class="op">)</span></code></pre></div>
-<div id="ecological-metadata-languageeml-schema-outline" class="section level2">
-<h2 class="hasAnchor">
-<a href="#ecological-metadata-languageeml-schema-outline" class="anchor"></a>Ecological Metadata Language(EML) Schema Outline</h2>
-<p>We use the EML package to generate the EML document based on our metadata inputs. The EML package <code><a href="https://docs.ropensci.org/EML/reference/write_eml.html">write_eml()</a></code> function takes in a nested list and formats the list into an EML document. To create valid EML the nested list must:</p>
-<ul>
-<li>Contain all required EML fields</li>
-<li>nest all fields under the correct sub sections</li>
-</ul>
+<p>This article demonstrates how to create an EML document for a data package containing multiple data entities. To follow along with this example, please download the <a href="https://cvpia-data-stewardship.s3-us-west-1.amazonaws.com/Banet-Example.zip">Banet-Example</a>.</p>
+<p>We will create a nested list from our metadata templates and then use the <a href="https://docs.ropensci.org/EML/">EML</a> R package’s <a href="https://docs.ropensci.org/EML/reference/write_eml.html"><code>write_eml</code></a> function to convert our list into a valid EML document.</p>
+<p>Our EML file will contain the following elements:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">-</span><span class="at"> eml </span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="at">  -access</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="at">  -dataset</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> creator</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> contact</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> associated parties</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> title  </span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> abstract </span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> keyword set  </span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> license </span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> methods </span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> maintenance </span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> project</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> coverage </span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> data table </span></span></code></pre></div>
 <p>We have two main sections within our EML document:</p>
-<ul>
+<ol style="list-style-type: decimal">
 <li>Access - The <a href="https://eml.ecoinformatics.org/schema/eml_xsd.html#eml_access">Access Section</a> defines the access for the entire resource (entire EML document)</li>
 <li>Dataset - The <a href="https://eml.ecoinformatics.org/schema/eml_xsd.html#eml_dataset">Dataset Resource</a> contains the descriptive metadata information on a data set. A data set can contain one or more data entities. A data entity is a tabular data table or a vector or raster image.</li>
-</ul>
-<p>The Dataset element contains all of the additional metadata information. The Dataset element is composed of nested lists. Some information is at the top level and is applicable to all elements in the Dataset but other information is nested within subsections and is metadata specific to that subsection.</p>
-<p>For a more in depth description of EML please see <a href="https://eml.ecoinformatics.org/">EML Specification.</a></p>
-<p>In this document, we can quickly create an EML file which has the opportunity to append the following elements. For more detailed instructions on a specific section please see section specific articles.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">-</span><span class="at"> eml </span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="at">  -access</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="at">  -dataset</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> creator</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> contact</span></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> associated parties</span></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> title  </span></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> abstract </span></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> keyword set  </span></span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> license </span></span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> methods </span></span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> maintenance </span></span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> project</span></span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> coverage </span></span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> data table </span></span></code></pre></div>
-</div>
-<div id="our-example" class="section level2">
+</ol>
+<p>For a more in depth description of EML please see the <a href="https://eml.ecoinformatics.org/">EML Specification.</a></p>
+<div id="required-r-packages" class="section level2">
 <h2 class="hasAnchor">
-<a href="#our-example" class="anchor"></a>Our Example</h2>
-<p>We will use the data provided by Amanda Banet to show an example of how to compile metadata in a valid EML document that can be uploaded to the EDI data portal website. To follow along with this example please download the <a href="https://cvpia-data-stewardship.s3-us-west-1.amazonaws.com/Banet-Example.zip">Banet-Example zip folder</a>.</p>
-<div id="required-files" class="section level3">
-<h3 class="hasAnchor">
-<a href="#required-files" class="anchor"></a>Required Files</h3>
-<p>At least four files must be uploaded to make a complete EML document. To follow along with this example please load the following files from the <code>Banet-Example</code> folder into your environment.</p>
-<ul>
+<a href="#required-r-packages" class="anchor"></a>Required R Packages</h2>
+<p>The following libraries are needed to create a working EML document.</p>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://CVPIA-OSC.github.io/EMLaide/">EMLaide</a></span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">EDIutils</span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://readxl.tidyverse.org">readxl</a></span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://docs.ropensci.org/EML/">EML</a></span><span class="op">)</span></code></pre></div>
+</div>
+<div id="datatables-and-associated-metadata" class="section level2">
+<h2 class="hasAnchor">
+<a href="#datatables-and-associated-metadata" class="anchor"></a>Datatable(s) and associated metadata</h2>
+<p>To follow along with this example please download the files from the <a href="https://cvpia-data-stewardship.s3-us-west-1.amazonaws.com/Banet-Example.zip">Banet-Example</a>. Within the directory, there are two subdirectories (“data” and “metadata”) which contain all the necessary data and metadata to create a valid EML document using EMLaide.</p>
+<p>At minimum, four files are needed to use our tools:</p>
+<ol style="list-style-type: decimal">
 <li>
-<strong>Datatable(s) and associated metadata</strong> One or more files stored in a dataframe that contains the data (preferably csv if tabular data) and associated datatable specific metadata. (see datatables and assocaited metadata section below)</li>
+<strong>Dataset</strong> text file containing machine readable tabular data</li>
 <li>
-<strong>Data Package Metadata</strong> An excel spreadsheet containing the majority of the metadata</li>
+<strong>Metadata Template</strong> An <a href="https://cvpia-data-stewardship.s3-us-west-1.amazonaws.com/metadata+template.zip">excel workbook</a> containing the majority of the metadata. Full documentation on the template materials are <a href="https://cvpia-osc.github.io/EMLaide/articles/template-doc.html">here</a>.<br>
+</li>
 <li>
 <strong>Abstract Document</strong> A word or markdown document containing the abstract text</li>
 <li>
 <strong>Methods Document</strong> A word or markdown document containing the methods text</li>
-</ul>
-</div>
-<div id="datatables-and-associated-metadata" class="section level3">
-<h3 class="hasAnchor">
-<a href="#datatables-and-associated-metadata" class="anchor"></a>Datatable(s) and associated metadata</h3>
-<p>This section provides the actual datatables that you wish to upload to EDI and metadata describing the attributes of the datatables. The files are organized in a dataframe with each row representing a different datatable.</p>
-<p>This dataframe is input to <code>add_datatable</code>. Within the <code>add_datatable</code> function we generate attribute metadata from the <code>atribute_info</code> files and physical information describing the datatable from the <code>filepath</code> and <code>datatable_url</code> information. We then combine these into a list of one or more <code>dataTable</code> elements that are appended to our <code>dataset</code> list.</p>
-<p>Datatables and associated metadata should be added in a nested list or tibble that contains the following information:</p>
+</ol>
+<p>Because our data set is composed of multiple data entities, we are creating a dataframe with each row representing a different data entity with the following information:</p>
 <ul>
-<li>A <code>filepath</code> column or named list which contains the names file paths of the datatables</li>
-<li>An <code>attribute_info</code> column or named list which contains the file path to the metadata describing the specific datatable (should be a metadata.xlsx)</li>
-<li>A <code>datatable_description</code> column or named list that contains a brief description of datatable</li>
-<li>(Optional) A <code>datattable_url</code> column or named list that provides a link to the datatables. This is optional but if you would like to evaluate or upload your EML document directly from RStudio using <code>EMLaide</code> <code><a href="../reference/evaluate_edi_package.html">evaluate_edi_package()</a></code> or <code><a href="../reference/upload_edi_package.html">upload_edi_package()</a></code> then the <code>dattable_url</code> must link to a publicly accessible file hosted online.</li>
-<li>(Optional) A <code>datatable_methods</code> column or named list that reads file path to datatable specific methods</li>
-<li>(Optional) An <code>additional_information</code> column or named list that adds additional information that is pertinent to the entry, please add it as a string description.</li>
+<li>
+<em>filepath</em> - filepath of the data entity (datatables)</li>
+<li>
+<em>attribute_info</em> - filepath to the metadata describing the specific data entity (should be a metadata.xlsx)</li>
+<li>
+<em>datatable_description</em> - brief description of data entity</li>
+<li>
+<em>datattable_url</em> - (Optional) url to a publicly accessible file hosted online. Required if using <code><a href="../reference/evaluate_edi_package.html">EMLaide::evaluate_edi_package()</a></code> or <code><a href="../reference/upload_edi_package.html">EMLaide::upload_edi_package()</a></code> to evaluate or upload your EML document to EDI from R.</li>
+<li>
+<em>datatable_methods</em> - (Optional) filepath data entity specific methods document</li>
+<li>
+<em>additional_information</em> - (Optional) brief text description containing additional information that is pertinent to a specific data entity.</li>
 </ul>
+<p>This dataframe is the input to the <a href="https://cvpia-osc.github.io/EMLaide/reference/add_datatable.html"><code>add_datatable</code></a> function which function generates <a href="https://cvpia-osc.github.io/EMLaide/reference/create_attribute.html">attribute metadata</a> from the <em>atribute_info</em> files and <a href="https://cvpia-osc.github.io/EMLaide/reference/create_physical.html">physical information</a> describing the datatable from the <em>filepath</em> and <em>datatable_url</em> information.</p>
 <p><strong>Example Dataframe Structure for <code>datatable_metadata</code></strong></p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">datatable_metadata</span> <span class="op">&lt;-</span> 
@@ -192,9 +185,7 @@
                                          <span class="st">"microhabitat-use-data-2018-2020.csv"</span>,
                                          <span class="st">"seining-weight-lengths-2018-2020.csv"</span>,
                                          <span class="st">"snorkel-index-data-2015-2020.csv"</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></code></pre></div>
-<p>The final tibble should have the same structure as our <code>datatable_metadata</code>. Each row contains all information needed on a datatable to add to the datapackage. If you only have one datatable keep this structure or use a named list with the same information.</p>
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu">knitr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html">kable</a></span><span class="op">(</span><span class="va">datatable_metadata</span><span class="op">)</span></code></pre></div>
+<p>Each row contains all information needed for a data entity to be added to the dataset element of a data package. If you only have one datatable keep this structure or use a named list with the same information.</p>
 <table class="table">
 <colgroup>
 <col width="18%">
@@ -241,12 +232,11 @@
 </tr>
 </tbody>
 </table>
-</div>
 <div id="data-package-metadata-methods-and-abstract" class="section level3">
 <h3 class="hasAnchor">
 <a href="#data-package-metadata-methods-and-abstract" class="anchor"></a>Data Package Metadata, Methods, and Abstract</h3>
-<p>The following code block loads the <code>data-package-metadata.xlsx</code>, <code>abstrac_docs</code>, and <code>methods_docx</code>. The data package metadata excel document contains metadata that is relevant to the entire datapackge and has different sheets pertaining to different metadata elements. In the create dataset element section below the <code>add_[blank]</code> functions below will take in sheets of the <code>metadata</code> object as inputs.</p>
-<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<p>The following code loads the “data-package-metadata.xlsx”, “abstrac.docx”, and “methods.docx”. Each sheet of the excel workbook pertains to a different metadata element and will be the input to the <code>add_[blank]</code> functions used throughout this example.</p>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">excel_path</span> <span class="op">&lt;-</span> <span class="st">"Banet-Example/metadata/data-package-metadata.xlsx"</span>
 <span class="va">sheets</span> <span class="op">&lt;-</span> <span class="fu">readxl</span><span class="fu">::</span><span class="fu"><a href="https://readxl.tidyverse.org/reference/excel_sheets.html">excel_sheets</a></span><span class="op">(</span><span class="va">excel_path</span><span class="op">)</span>
 <span class="va">metadata</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/lapply.html">lapply</a></span><span class="op">(</span><span class="va">sheets</span>, <span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="fu">readxl</span><span class="fu">::</span><span class="fu"><a href="https://readxl.tidyverse.org/reference/read_excel.html">read_excel</a></span><span class="op">(</span><span class="va">excel_path</span>, sheet <span class="op">=</span> <span class="va">x</span><span class="op">)</span><span class="op">)</span>
@@ -255,81 +245,26 @@
 <span class="va">abstract_docx</span> <span class="op">&lt;-</span> <span class="st">"metadata/abstract.docx"</span>
 <span class="va">methods_docx</span> <span class="op">&lt;-</span> <span class="st">"metadata/methods.docx"</span></code></pre></div>
 </div>
-<div id="edi-number" class="section level3">
+<div id="edi-identifier" class="section level3">
 <h3 class="hasAnchor">
-<a href="#edi-number" class="anchor"></a>EDI Number</h3>
-<p>In addition to these files an EDI number must be defined. The EDI number should be a unique data package identifier. You can reserve this data package identifier number on the <a href="https://portal.edirepository.org/nis/reservations.jsp">EDI data repository under tools.</a></p>
+<a href="#edi-identifier" class="anchor"></a>EDI Identifier</h3>
+<p>In addition to these files, we will need a unique EDI data package identifier. We use the function <a href="https://cvpia-osc.github.io/EMLaide/reference/reserve_edi_id.html"><code>reserve_edi_id</code></a> to generate a EDI id. You must already have an account associated with EDI to do this.</p>
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">edi_number</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/reserve_edi_id.html">reserve_edi_id</a></span><span class="op">(</span>user_id <span class="op">=</span> <span class="st">"your user id"</span>, password <span class="op">=</span> <span class="st">"your user password "</span><span class="op">)</span></code></pre></div>
+<p>You can also reserve this data package identifier on the <a href="https://portal.edirepository.org/nis/reservations.jsp">EDI data repository under tools</a>.</p>
+<p>For this example, we will use the following identifier.</p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">edi_number</span> <span class="op">&lt;-</span> <span class="st">"edi.750.1"</span> </code></pre></div>
-<p>It is also possible to use the <code>EMLaide</code> function  to generate a EDI number without visiting the EDI website. You must already have an account associated with EDI to do this.</p>
-<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">edi_number</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/reserve_edi_id.html">reserve_edi_id</a></span><span class="op">(</span>user_id <span class="op">=</span> <span class="st">"your user id"</span>, password <span class="op">=</span> <span class="st">"your user password "</span><span class="op">)</span></code></pre></div>
 </div>
 </div>
 <div id="create-dataset-element" class="section level2">
 <h2 class="hasAnchor">
 <a href="#create-dataset-element" class="anchor"></a>Create Dataset Element</h2>
-<p>Beginning with an empty list, each function call appends and an EML element as a named list.</p>
-<p>The <code>add_[blank]</code> functions are wrappers on <code>create_[blank]</code> function to enable a <code><a href="../reference/%&gt;%.html">%&gt;%</a></code> workflow.</p>
+<p>We will use <code>magrittr::%&gt;%</code> with our <code>add_[blank]</code> functions to append each EML element to a list. The <code><a href="../reference/%&gt;%.html">%&gt;%</a></code> is a pipe like operator which takes the left-hand side as the first argument of the function appearing on the right-hand side.</p>
 <p>For details on appropriate inputs to the functions see documentation at <code>?add_[blank]</code>.</p>
-<p>The <code>add_methods()</code> and <code><a href="../reference/add_abstract.html">add_abstract()</a></code> functions take in the <code>methods_docx</code> and the <code>abstract_doc</code>. The <code><a href="../reference/add_datatable.html">add_datatable()</a></code> function takes in the <code>datatable_metadata</code> defined and described above. Every other function takes in one or more sheets from the <code>metadata</code> object. For template items with multiple rows the <code>add_[blank]</code> functions map through each row and adds a named nested list for each row to the dataset element.</p>
-<p><strong>Ex:</strong> Add personnel will map through each row of <code>metadata$personnel</code> shown below and add all four personnel into the dataset element.</p>
-<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu">knitr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html">kable</a></span><span class="op">(</span><span class="va">metadata</span><span class="op">$</span><span class="va">personnel</span><span class="op">)</span></code></pre></div>
-<table class="table">
-<colgroup>
-<col width="9%">
-<col width="9%">
-<col width="12%">
-<col width="13%">
-<col width="23%">
-<col width="31%">
-</colgroup>
-<thead><tr class="header">
-<th align="left">first_name</th>
-<th align="left">last_name</th>
-<th align="left">email</th>
-<th align="left">role</th>
-<th align="left">organization</th>
-<th align="left">orcid</th>
-</tr></thead>
-<tbody>
-<tr class="odd">
-<td align="left">Amanda</td>
-<td align="left">Banet</td>
-<td align="left"><a href="mailto:mail@mail.mail" class="email">mail@mail.mail</a></td>
-<td align="left">creator</td>
-<td align="left">CSU Chico</td>
-<td align="left"><a href="https://orcid.org/0000-0002-6225-2057" class="uri">https://orcid.org/0000-0002-6225-2057</a></td>
-</tr>
-<tr class="even">
-<td align="left">John</td>
-<td align="left">Hannon</td>
-<td align="left"><a href="mailto:mail@mail.mail" class="email">mail@mail.mail</a></td>
-<td align="left">program founder</td>
-<td align="left">US Bureau of Reclamation</td>
-<td align="left"><a href="http://orcid.org/0000-0001-9057-9084" class="uri">http://orcid.org/0000-0001-9057-9084</a></td>
-</tr>
-<tr class="odd">
-<td align="left">Steve</td>
-<td align="left">Tussing</td>
-<td align="left"><a href="mailto:mail@mail.mail" class="email">mail@mail.mail</a></td>
-<td align="left">other</td>
-<td align="left">Tussing Ecological Services</td>
-<td align="left">NA</td>
-</tr>
-<tr class="even">
-<td align="left">Ryan</td>
-<td align="left">Greathouse</td>
-<td align="left"><a href="mailto:mail@mail.mail" class="email">mail@mail.mail</a></td>
-<td align="left">other</td>
-<td align="left">PSMFC</td>
-<td align="left">NA</td>
-</tr>
-</tbody>
-</table>
-<p>The code below adds all dataset elements to a dataset list.</p>
-<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
+<p>The <code>add_methods()</code> and <code><a href="../reference/add_abstract.html">add_abstract()</a></code> functions take in the <code>methods_docx</code> and the <code>abstract_docx</code>. The <code><a href="../reference/add_datatable.html">add_datatable()</a></code> function takes in the <code>datatable_metadata</code> defined and described above. Every other function takes in one or more sheets from the <code>metadata</code> object. For template items with multiple rows, the <code>add_[blank]</code> functions map through each row and adds a named nested list for each row to the dataset element.</p>
+<p>The code below adds all dataset elements.</p>
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">dataset</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span><span class="op">)</span> <span class="op">%&gt;%</span>
   <span class="fu"><a href="../reference/add_pub_date.html">add_pub_date</a></span><span class="op">(</span><span class="op">)</span> <span class="op">%&gt;%</span>
   <span class="fu"><a href="../reference/add_title.html">add_title</a></span><span class="op">(</span><span class="va">metadata</span><span class="op">$</span><span class="va">title</span><span class="op">)</span> <span class="op">%&gt;%</span>
@@ -348,7 +283,7 @@
 <a href="#handle-custom-units" class="anchor"></a>Handle Custom Units</h2>
 <p>When units aren’t standard <code><a href="../reference/add_datatable.html">add_datatable()</a></code>will give a message like the following: <code>"We identified the following custom unit: fishPerSchool , please make sure to add information on this custom unit in additional metadata information:"</code>. We must formally define each of these custom units and add them to the EML document as an additional metadata section.</p>
 <p>The code below defines 4 custom units and uses the <code><a href="https://docs.ropensci.org/EML/reference/set_unitList.html">EML::set_unitList()</a></code> function to format them into a unitList that can be added to our EML document.</p>
-<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">custom_units</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span>id <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"fishPerEnclosure"</span>, <span class="st">"thermal unit"</span>, <span class="st">"day"</span>, <span class="st">"fishPerSchool"</span><span class="op">)</span>,
                            unitType <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"density"</span>, <span class="st">"temperature"</span>, <span class="st">"dimensionless"</span>, <span class="st">"density"</span><span class="op">)</span>,
                            parentSI <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="cn">NA</span>, <span class="cn">NA</span>, <span class="cn">NA</span>, <span class="cn">NA</span><span class="op">)</span>,
@@ -369,22 +304,22 @@
 <li>The <code>dataset</code> list from above contains all elements of the <code>dataset</code> section of the EML. This includes the <code>datatables</code>, <code>abstract</code>, <code>methods</code>, and all the other metadata sections appended above.</li>
 <li>The <code>addtionalMetadata</code> contains the <code>unitList</code> that we generated to hold our custom units.</li>
 </ul>
-<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">eml</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>packageId <span class="op">=</span> <span class="va">edi_number</span>,
             system <span class="op">=</span> <span class="st">"EDI"</span>,
             access <span class="op">=</span> <span class="fu"><a href="../reference/add_access.html">add_access</a></span><span class="op">(</span><span class="op">)</span>,
             dataset <span class="op">=</span> <span class="va">dataset</span>,
             additionalMetadata <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>metadata <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>unitList <span class="op">=</span> <span class="va">unitList</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></code></pre></div>
-<p>Once all of our information is appended to our eml list we can use the <code>write_eml</code> and <code>eml_validate</code> functions from the <code>EML</code> package to convert our list to EML and check validity.</p>
-<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
+<p>Once all of our information is appended to our eml list we can use the <a href="https://docs.ropensci.org/EML/reference/write_eml.html"><code>write_eml</code></a> and <a href="https://docs.ropensci.org/EML/reference/eml_validate.html"><code>eml_validate</code></a> functions from the <a href="https://docs.ropensci.org/EML/index.html">EML</a> package to convert our list to EML and check validity.</p>
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu">EML</span><span class="fu">::</span><span class="fu"><a href="https://docs.ropensci.org/EML/reference/write_eml.html">write_eml</a></span><span class="op">(</span><span class="va">eml</span>, <span class="st">"edi.750.1.xml"</span><span class="op">)</span>
 <span class="fu">EML</span><span class="fu">::</span><span class="fu"><a href="https://docs.ropensci.org/EML/reference/eml_validate.html">eml_validate</a></span><span class="op">(</span><span class="st">"edi.750.1.xml"</span><span class="op">)</span></code></pre></div>
 </div>
-<div id="evaluation-using-the-edi-congruency-checker" class="section level2">
+<div id="evaluation-using-the-edis-eml-congruency-checker" class="section level2">
 <h2 class="hasAnchor">
-<a href="#evaluation-using-the-edi-congruency-checker" class="anchor"></a>Evaluation using the EDI Congruency Checker</h2>
-<p>To evaluate your document in R using the EDI congruence checker you can use <code><a href="../reference/evaluate_edi_package.html">evaluate_edi_package()</a></code>. To use this function you must have the data table accessible by a URL that can be accessed through the EDI repository. This URL must be added in the <code>datatable_metadata</code> section above. If you do not have a URL available then you can upload the EML document and the dataset on the <a href="https://portal.edirepository.org/nis/home.jsp">EDI data portal.</a></p>
-<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
+<a href="#evaluation-using-the-edis-eml-congruency-checker" class="anchor"></a>Evaluation using the EDI’s EML Congruency Checker</h2>
+<p>To evaluate your document in R using <a href="https://github.com/EDIorg/ecc">EDI’s EML Congruence Checker</a> you can use <code><a href="../reference/evaluate_edi_package.html">evaluate_edi_package()</a></code>. To use this function you must have the data entities text files publically accessible by a URL. This URL must be added in the <code>datatable_metadata</code> section above. If you do not have a URL available then you can upload the EML document and the dataset on the <a href="https://portal.edirepository.org/nis/home.jsp">EDI data portal.</a></p>
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/evaluate_edi_package.html">evaluate_edi_package</a></span><span class="op">(</span>user_id <span class="op">=</span> <span class="st">"Your User Id"</span>, password <span class="op">=</span> <span class="st">"Your password"</span>, eml_file_path <span class="op">=</span> <span class="st">"edi.750.1.xml"</span><span class="op">)</span></code></pre></div>
 </div>
   </div>
