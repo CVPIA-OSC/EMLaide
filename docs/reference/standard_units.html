@@ -50,7 +50,7 @@
 
 <meta property="og:title" content="standard_units — standard_units" />
 <meta property="og:description" content="A list of all valid standard units accepted by EML schema. This list is used
-to by add_attribute(). As add_attribute() filters through all attribute components
+to by create_attribute(). As create_attribute() filters through all attribute components
 it will check that the units are in the standard unit list." />
 <meta property="og:image" content="https://CVPIA-OSC.github.io/EMLaide/logo.png" />
 
@@ -104,13 +104,7 @@ it will check that the units are in the standard unit list." />
       <a href="../articles/template-doc.html">Metadata Template Documentation</a>
     </li>
     <li>
-      <a href="../articles/creating-EML.html">Create EML Document from Template</a>
-    </li>
-    <li>
-      <a href="../articles/Dataset-Element.html">Handle Special Case Datasets</a>
-    </li>
-    <li>
-      <a href="../articles/custom-units.html">EML Custom Units</a>
+      <a href="../articles/create-EML-from-template.html">Create EML Document from Template</a>
     </li>
   </ul>
 </li>
@@ -142,7 +136,7 @@ it will check that the units are in the standard unit list." />
 
     <div class="ref-description">
     <p>A list of all valid standard units accepted by EML schema. This list is used
-to by <code><a href='add_attribute.html'>add_attribute()</a></code>. As <code><a href='add_attribute.html'>add_attribute()</a></code> filters through all attribute components
+to by <code><a href='create_attribute.html'>create_attribute()</a></code>. As <code><a href='create_attribute.html'>create_attribute()</a></code> filters through all attribute components
 it will check that the units are in the standard unit list.</p>
     </div>
 
@@ -155,6 +149,8 @@ it will check that the units are in the standard unit list.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='st'>"meters"</span> <span class='op'>%in%</span> <span class='va'>standard_units</span>
+</div><div class='output co'>#&gt; [1] FALSE</div><div class='input'><span class='st'>"meter"</span> <span class='op'>%in%</span> <span class='va'>standard_units</span>
+</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'><span class='st'>"m"</span> <span class='op'>%in%</span> <span class='va'>standard_units</span>
 </div><div class='output co'>#&gt; [1] FALSE</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">

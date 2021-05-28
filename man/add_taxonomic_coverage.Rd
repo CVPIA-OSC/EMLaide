@@ -4,120 +4,24 @@
 \alias{add_taxonomic_coverage}
 \title{Add Taxonomic Coverage}
 \usage{
-add_taxonomic_coverage(
-  CVPIA_common_species = NULL,
-  kingdom = "kingdom",
-  kingdom_value,
-  phylum = "phylum",
-  phylum_value,
-  class = "class",
-  class_value,
-  order = "order",
-  order_value,
-  family = "family",
-  family_value,
-  genus = "genus",
-  genus_value,
-  species = "species",
-  species_value,
-  common_name,
-  taxon_id = NULL
-)
+add_taxonomic_coverage(taxonomic_metadata)
 }
 \arguments{
-\item{CVPIA_common_species}{Use one of the following from the helper data
-\code{\link{CVPIA_common_species}}: "chinook", "delta_smelt",
-"white_sturgeon", "green_sturgeon", or "steelhead" to get pre-selected
-information from ITIS.}
-
-\item{kingdom}{Kingdom level present.}
-
-\item{kingdom_value}{The kingdom name.}
-
-\item{phylum}{Phylum level present.}
-
-\item{phylum_value}{The phylum name.}
-
-\item{class}{Class level present.}
-
-\item{class_value}{The class level name.}
-
-\item{order}{Order level present.}
-
-\item{order_value}{The order level name.}
-
-\item{family}{Family level present.}
-
-\item{family_value}{The family level name.}
-
-\item{genus}{Genus level present.}
-
-\item{genus_value}{The genus level name.}
-
-\item{species}{Species level present.}
-
-\item{species_value}{The species level name.}
-
-\item{common_name}{The common name of the organism.}
-
-\item{taxon_id}{Optional. The taxonomic serial number provided by ITIS.}
+\item{taxonomic_metadata}{see \code{\link{create_taxonomic_coverage}}}
 }
 \value{
-Taxonomic coverage information. The function should be assigned to the
-name taxonomic_coverage to append it to the dataset or project. Example of how
-to incorporate it into the add_coverage function is seen below.
+A complete list describing taxonomic coverage that can be added to the coverage list using \code{add_coverage()}
 }
 \description{
-Adds the taxonomic coverage information of a dataset based off of
-EML standards. The addition of taxonomic coverage is optional, however defaults
-of chinook, sturgeon, smelt, and steelhead are provided. While single or
-multiple taxonomies can be applied, the full set of information must be
-provided if chosen to be included.
+Formats the taxonomic coverage elements in a nested list to easily be added as a parameter to the \code{add_coverage()} function.
 }
-\section{CVPIA Common Species}{
-
-The following frequently cited species are available for convenience:
-\itemize{
-\item EMLaide::CVPIA_common_species$chinook - Oncorhynchus tshawytscha (ITIS: 161980)
-\item EMLaide::CVPIA_common_species$steelhead - Oncorhynchus mykiss (ITIS: 161989)
-\item EMLaide::CVPIA_common_species$delta_smelt - Hypomesus transpacificus (ITIS: 162032)
-\item EMLaide::CVPIA_common_species$white_sturgeon - Acipenser transmontanus (ITIS:161068)
-\item EMLaide::CVPIA_common_species$green_sturgeon - Acipenser medirostris (ITIS: 161067)
-}
-
-For further taxonomic coverage (i.e subkingdom, infrakingdom, etc.) on any of
-these species, you can visit: \href{https://www.itis.gov/}{ITIS}'s webpage for
-full coverage information.
-}
-
 \examples{
-taxonomic_coverage <- add_taxonomic_coverage(CVPIA_common_species = "chinook")
-
-taxonomic_coverage <- add_taxonomic_coverage(CVPIA_common_species = "delta_smelt")
-
-taxonomic_coverage <- add_taxonomic_coverage(CVPIA_common_species = "white_sturgeon")
-
-taxonomic_coverage <- add_taxonomic_coverage(CVPIA_common_species = "green_sturgeon")
-
-taxonomic_coverage <- add_taxonomic_coverage(CVPIA_common_species = "steelhead")
-
-taxonomic_coverage <- add_taxonomic_coverage(kingdom_value = "Animalia",
-                       phylum_value = "Chordata",
-                       class_value = "Mammalia",
-                       order_value = "Carnivora",
-                       family_value = "Felidae",
-                       genus_value = "Panthera", 
-                       species_value = "Panthera Leo",
-                       common_name = "Lion", 
-                       taxon_id = "183803")   
-                                            
-# To append this information to the dataset or project:                        
-    add_coverage(parent_element = list(), geographic_description = "Description",
-                 west_bounding_coordinate = "-160.594000", 
-                 east_bounding_coordinate = "-134.104800",
-                 north_bounding_coordinate = "71.238300", 
-                 south_bounding_coordinate = "67.865000",
-                 begin_date = "1980-01-01", 
-                 end_date = "2010-12-31", 
-                 taxonomic_coverage = taxonomic_coverage)
+\dontrun{
+taxonomic_metadata <- list(CVPIA_common_species = c("chinook", "steelhead"), common_name = c(NA, NA), 
+                           kingdom = c(NA, NA), phylum = c(NA, NA), class = c(NA, NA), 
+                           order = c(NA, NA), family = c(NA, NA), genus = c(NA, NA), species = c(NA, NA), 
+                           taxon_id = c(NA, NA))}
+\dontrun{                           
+add_taxonomic_coverage(taxonomic_metadata)
+}
 }

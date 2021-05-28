@@ -1,0 +1,725 @@
+﻿date,site_number,site_name,length_meters,river_mile,treatment,time,water_elevation,weather,water_temp,visibility_feet,visibility_meters,survey_method,video_or_observer,lfr_count,wr_count,sr_count,fr_count,trout_count,adult_predator_fish,other_juvenile_fish,comments,calculated_flow
+2/6/2020,228,East Sand Slough (BOTTOM),220,243,Baseline,1:30:00,NA,1,50,4,1.219140506,Snorkel Downstream,Observer,0,0,0,0,0,0,0,no fish,3982
+2/18/2020,228,East Sand Slough (BOTTOM),220,243,Baseline,3:00:00,NA,1,50,2,0.609570253,Snorkel Downstream,Observer,0,0,0,0,0,0,0,NA,3838
+3/3/2020,228,East Sand Slough (BOTTOM),220,243,Baseline,4:40:00,NA,1,62.6,10,3.047851265,Snorkel Downstream,Observer,0,0,0,240,0,0,0,NA,5551
+4/1/2020,228,East Sand Slough (BOTTOM),220,243,Baseline,3:40:00,NA,1,49,6,1.828710759,Snorkel Downstream,Observer,0,0,0,0,0,0,0,secchi 6 ft fish vis= 4 ft,5178
+4/20/2020,228,East Sand Slough (BOTTOM),220,243,Baseline,3:45:00,NA,2,58,8,2.438281012,Snorkel Downstream,Observer,0,0,0,0,0,0,1705,1700 larval juveniles 5 SACSUC,7534
+4/20/2020,228,East Sand Slough (BOTTOM),220,243,Baseline,3:45:00,NA,2,58,8,2.438281012,Snorkel Downstream,Observer,0,0,0,0,0,0,1705,1700 Larval Fish 5 Suckers,7534
+5/12/2020,228,East Sand Slough (BOTTOM),220,243,Baseline,3:15:00,NA,3,50,6,1.828710759,Snorkel Downstream,Observer,0,0,0,0,0,0,0,NA,9813
+5/27/2020,228,East Sand Slough (BOTTOM),220,243,Baseline,3:52:00,NA,1,59,10,3.047851265,Snorkel Downstream,Observer,0,0,0,0,0,5,1505,3 HH 2 sacsuc 1 otter 1500 minnows,9447
+6/18/2020,228,East Sand Slough (BOTTOM),220,243,Baseline,2:23:00,NA,1,57,5,1.523925632,Snorkel Downstream,Observer,0,0,0,0,0,0,0,NA,11818
+7/2/2020,228,East Sand Slough (BOTTOM),220,243,Baseline,1:30:00,NA,1,56,6,1.828710759,Snorkel Downstream,Observer,0,0,0,0,0,0,0,NA,12726
+2/4/2020,227,East Sand Slough (TOP),122,246,Baseline,5:27:00,NA,1,49,3,0.914355379,Snorkel Downstream,Observer,0,0,0,0,0,0,0,1SS,4565
+2/18/2020,227,East Sand Slough (TOP),122,246,Baseline,2:15:00,NA,1,50,4.5,1.371533069,Snorkel Downstream,Observer,0,0,0,0,0,0,0,NA,3867
+3/3/2020,227,East Sand Slough (TOP),122,246,Baseline,5:20:00,NA,1,62.6,10,3.047851265,Snorkel Downstream,Observer,0,0,0,0,0,0,0,NA,5562
+4/1/2020,227,East Sand Slough (TOP),122,246,Baseline,2:45:00,NA,1,49,6,1.828710759,Snorkel Downstream,Observer,0,0,0,0,0,0,0,secchi 6 ft fish visibility = 4ft,5211
+4/20/2020,227,East Sand Slough (TOP),122,246,Baseline,5:30:00,NA,2,58,5,1.523925632,Snorkel Downstream,Observer,0,0,0,0,0,0,16,16 larval juveniles 1 adult SACSUC,7480
+4/20/2020,227,East Sand Slough (TOP),122,246,Baseline,5:30:00,NA,2,58,5,1.523925632,Snorkel Downstream,Observer,0,0,0,0,0,0,17,16 Cyprinidae 1 Sucker,7480
+5/12/2020,227,East Sand Slough (TOP),122,246,Baseline,2:30:00,NA,3,52.6,10,3.047851265,Snorkel Downstream,Observer,0,0,0,0,0,0,340,20-SS 20-CYP 300-larval fish,9890
+5/27/2020,227,East Sand Slough (TOP),122,246,Baseline,5:00:00,NA,1,59,6,1.828710759,Snorkel Downstream,Observer,0,0,0,0,0,0,220,20 sacsuc 200 minnows,9281
+6/18/2020,227,East Sand Slough (TOP),122,246,Baseline,2:50:00,NA,1,56,7,2.133495885,Snorkel Downstream,Observer,0,0,0,0,0,0,0,NA,11818
+7/2/2020,227,East Sand Slough (TOP),122,246,Baseline,1:30:00,NA,1,52,7,2.133495885,Snorkel Downstream,Observer,0,0,0,0,0,0,75,70-HH 5-TSS,12726
+7/24/2017,216,Mainstem South,473,246,Control,4:00:00,NA,1,57,8,2.438281012,Snorkel Downstream,Observer,0,0,0,0,0,0,22,12 HH 1 SS 8 SB 1 PM,11328
+8/7/2017,216,Mainstem South,473,246,Control,5:50:00,NA,1,57,8,2.438281012,Snorkel Downstream,Observer,0,0,0,0,1,0,82,1 STB 3 TP 24 SP 53 SS 1 rifscu,11014
+8/23/2017,216,Mainstem South,473,246,Control,2:55:00,NA,1,56,9.5,2.895458702,Snorkel Downstream,Observer,0,0,0,0,0,0,35,24 HH 9SS 2 TSS,11199
+9/6/2017,216,Mainstem South,473,246,Control,6:06:00,NA,2,58.1,8,2.438281012,Snorkel Downstream,Observer,0,0,0,0,5,0,0,NA,10107
+9/20/2017,216,Mainstem South,473,246,Control,2:50:00,NA,2,54.2,8,2.438281012,Snorkel Downstream,Observer,0,0,0,0,2,0,155,100 HH 40 SS 15TSB,10118
+10/5/2017,216,Mainstem South,473,246,Control,3:30:00,NA,1,55,3,0.914355379,Snorkel Downstream,Observer,0,0,0,0,0,0,0,low visibility along banks due to silt,9086
+10/18/2017,216,Mainstem South,473,246,Control,2:55:00,NA,1,53,8,2.438281012,Snorkel Downstream,Observer,0,68,0,0,0,0,135,100 HH 35 SS,8444
+11/1/2017,216,Mainstem South,473,246,Control,3:19:00,NA,1,53,8,2.438281012,Snorkel Downstream,Observer,0,0,0,0,13,0,225,160 HH 60 SS 5 TSS,8732
+11/15/2017,216,Mainstem South,473,246,Control,2:25:00,NA,4,52,7,2.133495885,Snorkel Downstream,Observer,0,0,0,0,0,0,0,water very turbid,6118
+3/29/2018,216,Mainstem South,473,246,Control,2:45:00,NA,2,55,6,1.828710759,Snorkel Downstream,Observer,0,0,0,0,0,0,0,NA,5384
+4/3/2018,216,Mainstem South,473,246,Control,5:10:00,NA,1,55,7,2.133495885,Snorkel Downstream,Observer,0,0,0,1,0,0,0,NA,5166
+5/14/2018,216,Mainstem South,473,246,Control,3:15:00,NA,1,53,8,2.438281012,Snorkel Downstream,Observer,0,0,0,0,0,0,0,NA,9443
+6/14/2018,216,Mainstem South,473,246,Control,2:35:00,NA,1,60,5,1.523925632,Snorkel Downstream,Observer,0,0,0,0,0,0,2,1 HH 1 SACSUC,11056
+6/26/2018,216,Mainstem South,473,246,Control,4:04:00,NA,1,54,9,2.743066138,Snorkel Downstream,Observer,0,0,0,0,0,0,0,NA,12381
+7/10/2018,216,Mainstem South,473,246,Control,4:51:00,NA,1,56,7,2.133495885,Snorkel Downstream,Observer,0,0,0,0,0,0,2,2 TSS,13106
+7/24/2018,216,Mainstem South,473,246,Control,1:03:00,NA,1,60,10,3.047851265,Snorkel Downstream,Observer,0,0,0,0,0,0,0,NA,13047
+8/6/2018,216,Mainstem South,473,246,Control,2:53:00,NA,3,56,10,3.047851265,Snorkel Downstream,Observer,1,0,0,0,3,0,5,HH,12122
+8/21/2018,216,Mainstem South,473,246,Control,1:08:00,NA,1,58,10,3.047851265,Snorkel Downstream,Observer,0,1,0,0,0,1,0,1 HH,10835
+9/5/2018,216,Mainstem South,473,246,Control,5:10:00,NA,1,60,8,2.438281012,Snorkel Downstream,Observer,5,0,0,0,0,0,9,8 HH 1 SACSUC,9551
+9/17/2018,216,Mainstem South,473,246,Control,3:45:00,NA,1,58,8,2.438281012,Snorkel Downstream,Observer,1,0,0,0,0,0,15,15 HH,8640
+10/1/2018,216,Mainstem South,473,246,Control,4:49:00,NA,2,57,10,3.047851265,Snorkel Downstream,Observer,0,0,0,0,0,0,0,NA,7680
+10/15/2018,216,Mainstem South,473,246,Control,4:50:00,NA,1,55,7,2.133495885,Snorkel Downstream,Observer,50,30,0,0,0,0,0,NA,7926
+7/15/2019,216,Mainstem South,473,246,Control,6:50:00,NA,2,60,8,2.438281012,Snorkel Downstream,Observer,0,0,0,0,0,0,0,(* 355 MINNOWS),NA
+8/15/2019,216,Mainstem South,473,246,Control,3:20:00,NA,1,59,8,2.438281012,Snorkel Downstream,Observer,0,0,0,0,18,0,52,42 HH 10pkm,11373
+9/19/2019,216,Mainstem South,473,246,Control,6:41:00,NA,2,61,10,3.047851265,Snorkel Downstream,Observer,0,35,0,0,0,0,200,200sacsuc,8335
+11/11/2019,216,Mainstem South,473,246,Control,3:38:00,NA,1,57,7,2.133495885,Snorkel Downstream,Observer,0,12,0,0,0,0,3,3SS,4926
+11/26/2019,216,Mainstem South,473,246,Control,2:35:00,NA,3,54,7,2.133495885,Snorkel Downstream,Observer,0,0,0,0,0,0,590,550 HH 40 Suckers,4818
+1/6/2020,216,Mainstem South,473,246,Impact,3:47:00,NA,1,52,4,1.219140506,Snorkel Downstream,Observer,0,1,0,1,0,0,100,100 HH,5090
+1/21/2020,216,Mainstem South,473,246,Control,4:30:00,NA,3,50,6,1.828710759,Snorkel Downstream,Observer,0,0,0,0,0,0,955,825 HH 125MSQ 5TSB,5123
+2/3/2020,216,Mainstem South,473,246,Control,3:46:00,NA,1,49,6,1.828710759,Snorkel Downstream,Observer,0,0,0,135,0,0,0,NA,4617
+2/18/2020,216,Mainstem South,473,246,Control,2:35:00,NA,1,50,5,1.523925632,Snorkel Downstream,Observer,0,5,40,115,0,0,110,110 HH,3848
+3/3/2020,216,Mainstem South,473,246,Control,4:45:00,NA,1,62.6,10,3.047851265,Snorkel Downstream,Observer,0,0,10,160,0,0,0,NA,5551
+6/2/2020,216,Mainstem South,473,246,Control,5:30:00,NA,1,60,7,2.133495885,Snorkel Downstream,Observer,25,0,0,3,0,0,301,301MINNOWS,10905
+6/18/2020,216,Mainstem South,473,246,Control,1:45:00,NA,1,56,6,1.828710759,Snorkel Downstream,Observer,0,0,0,0,0,3,63,3 larval 55 Sac Suc 5 TSS,11903
+11/18/2019,221,Rio Vista (BOTTOM),505,247,Impact,1:50:00,NA,1,55,8,2.438281012,Snorkel Downstream,Observer,2,1,0,0,0,0,157,117HH 30SS 10TSB,4680
+11/26/2019,221,Rio Vista (BOTTOM),505,247,Impact,1:45:00,NA,3,54,5,1.523925632,Snorkel Downstream,Observer,0,5,0,0,0,0,197,160 HH 1 RiffScu 36 Suckers,4829
+1/6/2020,221,Rio Vista (BOTTOM),505,247,Impact,2:00:00,NA,1,51,8,2.438281012,Snorkel Downstream,Observer,0,0,0,0,0,0,1,1 HH,5035
+2/3/2020,221,Rio Vista (BOTTOM),505,247,Impact,2:30:00,NA,1,49,8,2.438281012,Snorkel Downstream,Observer,0,0,1,0,0,0,0,fish spoted size-60-70mm,4617
+2/18/2020,221,Rio Vista (BOTTOM),505,247,Impact,4:30:00,NA,1,53.6,10,3.047851265,Snorkel Downstream,Observer,0,95,65,113,2,0,0,NA,3819
+4/20/2020,221,Rio Vista (BOTTOM),505,247,Impact,2:45:00,NA,2,58,5,1.523925632,Snorkel Downstream,Observer,1,0,3,17,0,0,735,700 larval juveniles 12 TSS 21 HH 2 SACSUC,7520
+4/20/2020,221,Rio Vista (BOTTOM),505,247,Impact,2:45:00,NA,2,58,5,1.523925632,Snorkel Downstream,Observer,1,0,3,17,0,0,735,12- TSS 700 Larval Fish 2 - SS 21 HH,7520
+5/12/2020,221,Rio Vista (BOTTOM),505,247,Impact,1:15:00,NA,3,52.5,10,3.047851265,Snorkel Downstream,Observer,0,0,0,0,1,0,3521,3500-Larval fish,9828
+5/27/2020,221,Rio Vista (BOTTOM),505,247,Impact,2:30:00,NA,1,59,8,2.438281012,Snorkel Downstream,Observer,0,0,2,3,0,0,2330,2330 minnows,9073
+6/18/2020,221,Rio Vista (BOTTOM),505,247,Impact,3:35:00,NA,1,57,7,2.133495885,Snorkel Downstream,Observer,0,0,0,0,0,0,195,95 Sac Suc 100 Larval Fish,12005
+7/2/2020,221,Rio Vista (BOTTOM),505,247,Impact,2:20:00,NA,1,56,7,2.133495885,Snorkel Downstream,Observer,0,0,0,0,0,0,715,713-Cyprinid 2-HH,12634
+9/22/2016,211,Rio Vista (TOP),433,247,Baseline,5:00:00,NA,1,57,5,1.523925632,Snorkel Downstream,Observer,0,0,0,0,0,0,62,55 HH 1 SS 6 TSS,8415
+7/24/2017,211,Rio Vista (TOP),433,247,Baseline,2:30:00,NA,1,56,7,2.133495885,Snorkel Downstream,Observer,0,0,0,0,0,0,432,291 TSS 61 HH 70 SS 10 TP,11328
+8/7/2017,211,Rio Vista (TOP),433,247,Baseline,5:00:00,NA,1,59,4,1.219140506,Snorkel Downstream,Observer,0,0,0,0,0,0,0,NA,11014
+8/23/2017,211,Rio Vista (TOP),433,247,Baseline,1:30:00,NA,1,56,7,2.133495885,Snorkel Downstream,Observer,0,0,0,0,3,0,125,97 HH 27 TSS 1 SS,11199
+9/20/2017,211,Rio Vista (TOP),433,247,Baseline,1:40:00,NA,2,54.7,8,2.438281012,Snorkel Downstream,Observer,0,0,0,0,0,0,104,100HH 3 SS 1TSB mort,10118
+10/5/2017,211,Rio Vista (TOP),433,247,Baseline,1:40:00,NA,1,54,4.5,1.371533069,Snorkel Downstream,Observer,0,0,0,0,5,0,21,20 SS 1 PM,9086
+10/18/2017,211,Rio Vista (TOP),433,247,Baseline,1:20:00,NA,1,52,9,2.743066138,Snorkel Downstream,Observer,0,2,0,0,0,0,53,40 SS 13 HH WR had fungus on tail,8444
+11/1/2017,211,Rio Vista (TOP),433,247,Baseline,1:50:00,NA,1,52,9,2.743066138,Snorkel Downstream,Observer,0,0,0,0,1,0,78,25 SS 50 HH 3 TSS,8732
+11/15/2017,211,Rio Vista (TOP),433,247,Baseline,1:40:00,NA,4,52,7,2.133495885,Snorkel Downstream,Observer,0,0,0,0,0,0,189,110 HH 75 SS 4 TSS,6118
+3/29/2018,211,Rio Vista (TOP),433,247,Baseline,4:00:00,NA,2,60,2,0.609570253,Snorkel Downstream,Observer,0,0,0,0,0,0,0,NA,5384
+5/14/2018,211,Rio Vista (TOP),433,247,Baseline,5:00:00,NA,1,60,8,2.438281012,Snorkel Downstream,Observer,0,0,0,0,0,0,1142,140HH 1000SACSUC 2TP,9443
+6/14/2018,211,Rio Vista (TOP),433,247,Baseline,1:45:00,NA,1,59,8,2.438281012,Snorkel Downstream,Observer,0,0,0,0,0,0,112,51 HH 57 SACSUC 3 TP 1 TSS,11056
+7/10/2018,211,Rio Vista (TOP),433,247,Baseline,5:42:00,NA,1,60,10,3.047851265,Snorkel Downstream,Observer,0,0,0,0,0,0,216,80 PM 73 TSS 63 HH,13106
+7/24/2018,211,Rio Vista (TOP),433,247,Baseline,1:46:00,NA,1,60,8,2.438281012,Snorkel Downstream,Observer,0,0,0,0,0,0,656,330 HH 6 TSB 320 SS,13047
+8/6/2018,211,Rio Vista (TOP),433,247,Baseline,4:30:00,NA,3,56,10,3.047851265,Snorkel Downstream,Observer,0,0,0,0,0,3,166,54 TSS 100 HH 12 SS 1 PM Adult 2 HH adults,12122
+8/21/2018,211,Rio Vista (TOP),433,247,Baseline,1:55:00,NA,1,58,10,3.047851265,Snorkel Downstream,Observer,0,0,0,0,0,14,0,14 HH 3 turtle 1 minnow,10835
+9/5/2018,211,Rio Vista (TOP),433,247,Baseline,4:30:00,NA,1,60,10,3.047851265,Snorkel Downstream,Observer,0,0,0,0,0,0,0,NA,9551
+9/17/2018,211,Rio Vista (TOP),433,247,Baseline,4:30:00,NA,1,58,10,3.047851265,Snorkel Downstream,Observer,1,0,0,0,1,0,82,80 HH 2 TSS,8640
+10/1/2018,211,Rio Vista (TOP),433,247,Baseline,3:30:00,NA,3,55,8,2.438281012,Snorkel Downstream,Observer,0,0,0,0,1,0,0,NA,7680
+7/15/2019,211,Rio Vista (TOP),433,247,Baseline,6:00:00,NA,1,60,8,2.438281012,Snorkel Downstream,Observer,0,0,0,0,3,0,480,25 SS 455 HH (* 120 MINNOWS),NA
+8/15/2019,211,Rio Vista (TOP),433,247,Baseline,1:50:00,NA,1,59,10,3.047851265,Snorkel Downstream,Observer,0,4,0,0,27,0,3523,2132 HH 841sacsuc 500Pkm 50TSS,11373
+9/19/2019,211,Rio Vista (TOP),433,247,Baseline,5:50:00,NA,1,60,10,3.047851265,Snorkel Downstream,Observer,27,170,0,0,4,0,225,210HH 15sacsuc,8419
+11/18/2019,211,Rio Vista (TOP),396,247,Impact,1:30:00,NA,1,55,10,3.047851265,Snorkel Downstream,Observer,15,57,0,0,0,0,266,225HH 15SS 26TSB,4680
+11/26/2019,211,Rio Vista (TOP),396,247,Impact,1:25:00,NA,3,54,2,0.609570253,Snorkel Downstream,Observer,0,0,0,0,0,0,88,88 HH,4829
+1/6/2020,211,Rio Vista (TOP),396,247,Impact,1:30:00,NA,1,49,8,2.438281012,Snorkel Downstream,Observer,0,1,0,0,0,0,1,1 RIFSCU,5090
+2/3/2020,211,Rio Vista (TOP),396,247,Impact,1:40:00,NA,1,49,3,0.914355379,Snorkel Downstream,Observer,0,0,0,0,0,1,0,1 adult PM,4733
+2/18/2020,211,Rio Vista (TOP),396,247,Impact,4:10:00,NA,1,53.6,10,3.047851265,Snorkel Downstream,Observer,0,0,0,0,0,0,0,NA,3838
+3/3/2020,211,Rio Vista (TOP),396,247,Impact,5:40:00,NA,1,60.6,8,2.438281012,Snorkel Downstream,Observer,0,0,3,272,0,0,1,1HH,5516
+4/1/2020,211,Rio Vista (TOP),396,247,Impact,4:35:00,NA,1,49,6,1.828710759,Snorkel Downstream,Observer,0,0,1,30,1,0,7,NA,5156
+5/27/2020,211,Rio Vista (TOP),396,247,Impact,1:45:00,NA,1,59,8,2.438281012,Snorkel Downstream,Observer,0,0,0,80,26,0,2603,1920 minnows 495 sacsuc 178 HH 3 tsb 7pkm,9029
+6/18/2020,211,Rio Vista (TOP),396,247,Impact,3:20:00,NA,1,57,7,2.133495885,Snorkel Downstream,Observer,0,0,0,0,2,0,2,1 Adult Trout,12005
+7/2/2020,211,Rio Vista (TOP),396,247,Impact,2:00:00,NA,1,56,6,1.828710759,Snorkel Downstream,Observer,0,0,0,0,1,1,0,1 adult PKM,12708
+7/13/2016,205,Lake California,1623,269.5,Baseline,2:00:00,NA,1,55,6,1.828710759,Snorkel Downstream,Observer,0,0,0,0,0,0,155,65 PM 90 SS,10500
+8/25/2016,205,Lake California,1623,269.5,Baseline,2:00:00,NA,1,55,8,2.438281012,Snorkel Downstream,Observer,0,0,0,0,0,0,300,200 PM 100 SS,10400
+9/22/2016,205,Lake California,1623,269.5,Baseline,2:00:00,NA,1,53,7,2.133495885,Snorkel Downstream,Observer,1,0,0,0,8,0,85,81 PM 4 SS,8415
+7/24/2017,205,Lake California,1623,269.5,Baseline,3:00:00,NA,1,55,7,2.133495885,Snorkel Downstream,Observer,0,0,0,0,0,0,0,NA,11328
+8/7/2017,205,Lake California,1623,269.5,Baseline,2:15:00,NA,1,55,5,1.523925632,Snorkel Downstream,Observer,0,0,0,0,3,0,147,140 sacsuc 6 PM 1 TP,11014
+8/21/2017,205,Lake California,1623,269.5,Baseline,2:20:00,NA,2,55,9,2.743066138,Snorkel Downstream,Observer,0,0,0,0,6,0,0,NA,11057
+9/6/2017,205,Lake California,1623,269.5,Baseline,1:45:00,NA,2,54.7,5,1.523925632,Snorkel Downstream,Observer,0,0,0,0,6,0,0,NA,10107
+9/18/2017,205,Lake California,1623,269.5,Baseline,3:00:00,NA,3,52.1,9,2.743066138,Snorkel Downstream,Observer,0,0,0,0,1,0,0,NA,10067
+10/3/2017,205,Lake California,1623,269.5,Baseline,2:15:00,NA,1,58,5,1.523925632,Snorkel Downstream,Observer,0,0,0,0,22,0,4,2 PM 2 SS,9190
+10/16/2017,205,Lake California,1623,269.5,Baseline,3:00:00,NA,1,51,10,3.047851265,Snorkel Downstream,Observer,0,0,0,0,13,0,757,701 SS 56 HH,8424
+10/30/2017,205,Lake California,1623,269.5,Baseline,2:00:00,NA,1,52,9,2.743066138,Snorkel Downstream,Observer,0,0,0,0,7,0,196,35 HH 61 SS 100TSS,8708
+11/13/2017,205,Lake California,1623,269.5,Baseline,2:20:00,NA,3,54,8,2.438281012,Snorkel Downstream,Observer,0,0,0,0,38,0,83,60 SS 16 HH 7 TSS,6194
+11/29/2017,205,Lake California,1623,269.5,Baseline,2:20:00,NA,2,51,10,3.047851265,Snorkel Downstream,Observer,0,0,0,0,0,0,308,190 SS 100 SB 18 HH 103 RT,5948
+12/29/2017,205,Lake California,1623,269.5,Baseline,3:15:00,NA,2,48,9,2.743066138,Snorkel Downstream,Observer,0,1,0,0,3,0,94,63 HH 1 STB 30 SS,5637
+1/11/2018,205,Lake California,1623,269.5,Impact,4:00:00,NA,3,51,5,1.523925632,Snorkel Downstream,Observer,0,2,0,0,17,0,15,6 HH 9SS,5369
+2/6/2018,205,Lake California,1623,269.5,Impact,3:15:00,NA,1,51,10,3.047851265,Snorkel Downstream,Observer,0,198,0,0,19,0,129,118 HH 8 TSS 2 STB 1 RIFSCU,5201
+2/20/2018,205,Lake California,1623,269.5,Impact,2:20:00,NA,2,50,10,3.047851265,Snorkel Downstream,Observer,0,115,0,0,1,0,345,190HH 150 SACSUC 4STB 1 LAMSPP,4259
+3/8/2018,205,Lake California,1623,269.5,Impact,2:00:00,NA,3,52,10,3.047851265,Snorkel Downstream,Observer,0,40,0,60,0,0,225,101 SACSUC 100 TSS 20 HH 2 TP 2 SACPIK,4354
+3/20/2018,205,Lake California,1623,269.5,Impact,2:30:00,NA,3,53,6,1.828710759,Snorkel Downstream,Observer,0,9,0,15,3,0,72,51 sacsuc 21 hardhead,5096
+4/3/2018,205,Lake California,1623,269.5,Impact,3:00:00,NA,1,54,9,2.743066138,Snorkel Downstream,Observer,0,0,1,110,9,0,439,275 sacsuc 141 HH 20 stb 2 TP 1 rifscu,5166
+4/19/2018,205,Lake California,1623,269.5,Impact,3:45:00,NA,1,53,8,2.438281012,Snorkel Downstream,Observer,0,109,0,19,1,0,207,168 HH 35 sacsuc 1 TP 1 rifscu,5505
+5/3/2018,205,Lake California,1623,269.5,Impact,3:15:00,NA,1,54,9,2.743066138,Snorkel Downstream,Observer,1,31,0,54,1,0,336,235 HH 101 SS WR Were ad-clipped,8228
+5/14/2018,205,Lake California,1623,269.5,Impact,1:35:00,NA,1,53,8,2.438281012,Snorkel Downstream,Observer,0,18,0,8,4,0,277,121HH 155SACSUC 1 adult RBT,9443
+5/31/2018,205,Lake California,1623,269.5,Impact,2:15:00,NA,1,54,5,1.523925632,Snorkel Downstream,Observer,0,0,0,11,1,0,246,245 HH 1 SACSUC,9738
+6/12/2018,205,Lake California,1623,269.5,Impact,2:45:00,NA,1,56,10,3.047851265,Snorkel Downstream,Observer,0,0,0,0,0,0,135,111 HH 1 sculpin 21 SS,10592
+6/26/2018,205,Lake California,1623,269.5,Impact,2:26:00,NA,1,54,9,2.743066138,Snorkel Downstream,Observer,0,0,0,0,2,1,68,42 HH 15 SS 10 TSS 1 sculpin 1 adult trout,12381
+7/10/2018,205,Lake California,1623,269.5,Impact,1:30:00,NA,1,56,8,2.438281012,Snorkel Downstream,Observer,0,0,0,0,28,12,73,12 adult PM 69 hh 4 tss,13106
+7/24/2018,205,Lake California,1623,269.5,Impact,4:20:00,NA,1,60,10,3.047851265,Snorkel Downstream,Observer,0,0,0,0,14,4,372,TSS HH PM SS,13047
+8/6/2018,205,Lake California,1623,269.5,Impact,1:07:00,NA,3,56,10,3.047851265,Snorkel Downstream,Observer,0,0,0,35,35,23,91,9 PM 64 HH 12 TSS 6 SS,12122
+8/21/2018,205,Lake California,1623,269.5,Impact,3:59:00,NA,1,58,10,3.047851265,Snorkel Downstream,Observer,0,0,0,0,13,22,11,25 HH 1 sacsuc,10835
+9/5/2018,205,Lake California,1623,269.5,Impact,1:45:00,NA,1,58,9,2.743066138,Snorkel Downstream,Observer,0,0,0,6,5,2,302,2 adult HH,9551
+9/17/2018,205,Lake California,1623,269.5,Impact,1:15:00,NA,1,55,6,1.828710759,Snorkel Downstream,Observer,2,2,0,2,7,1,174,1 adult RT 114 HH 60 SS,8640
+10/1/2018,205,Lake California,1623,269.5,Impact,1:26:00,NA,3,56,8,2.438281012,Snorkel Downstream,Observer,0,8,0,0,22,52,100,HH 2 adult trout,7680
+10/15/2018,205,Lake California,1623,269.5,Impact,1:30:00,NA,1,56,7,2.133495885,Snorkel Downstream,Observer,37,18,0,17,32,0,301,300 Hardhead 1 Sucker,7212
+11/7/2018,205,Lake California,1623,269.5,Impact,1:00:00,NA,1,55,6,1.828710759,Snorkel Downstream,Observer,41,48,0,0,13,4,83,83 HH,5387
+11/26/2018,205,Lake California,1623,269.5,Impact,1:30:00,NA,3,56,6,1.828710759,Snorkel Downstream,Observer,6,3,0,0,8,0,300,300 HH,5280
+12/12/2018,205,Lake California,1623,269.5,Impact,1:45:00,NA,1,53,5,1.523925632,Snorkel Downstream,Observer,2,20,0,0,26,2,181,1 adult trout 160 HH(1 adult) 9 SS 12 PM 1 LMB,4908
+1/2/2019,205,Lake California,1623,269.5,Impact,2:30:00,NA,1,51,9,2.743066138,Snorkel Downstream,Observer,0,0,0,21,2,0,0,NA,5316
+1/31/2019,205,Lake California,1623,269.5,Impact,4:30:00,NA,1,56,6,1.828710759,Snorkel Downstream,Observer,0,0,0,104,0,0,207,207 HH,5634
+7/15/2019,205,Lake California,1623,269.5,Impact,2:14:00,NA,1,58,8,2.438281012,Snorkel Downstream,Observer,0,0,0,2,3,0,70,45 SS 25 HH (* 3000+ MINNOWS),NA
+8/15/2019,205,Lake California,1623,269.5,Impact,5:50:00,NA,1,61,10,3.047851265,Snorkel Downstream,Observer,1,20,0,0,16,0,172,140 HH 30sacsuc 2 trout adults,11404
+9/19/2019,205,Lake California,1623,269.5,Impact,2:20:00,NA,1,58,7,2.133495885,Snorkel Downstream,Observer,105,131,0,0,8,0,0,NA,8419
+10/21/2019,205,Lake California,1623,269.5,Impact,2:09:00,NA,1,56,10,3.047851265,Snorkel Downstream,Observer,290,643,0,30,24,0,65,60HH 2SS 3tsb,6649
+10/22/2019,205,Lake California,1623,269.5,Impact,2:15:00,NA,1,56,10,3.047851265,Snorkel Downstream,Observer,290,623,0,30,24,0,0,2 TSB 60HH 4SS,8690
+11/11/2019,205,Lake California,1623,269.5,Impact,1:15:00,NA,1,57,7,2.133495885,Snorkel Downstream,Observer,0,61,0,1,6,0,110,90HH 20SS,5046
+1/7/2020,205,Lake California,1623,269.5,Impact,1:40:00,NA,1,50.7,10,3.047851265,Snorkel Downstream,Observer,0,27,0,2,2,0,0,51 HH 1 sculp 41 skr,5112
+1/21/2020,205,Lake California,1623,269.5,Impact,1:30:00,NA,3,50,10,3.047851265,Snorkel Downstream,Observer,0,14,0,175,8,3,20,20 HH 2 adult HH 1 adult rbt,5035
+2/4/2020,205,Lake California,1623,269.5,Impact,1:15:00,NA,1,49,5,1.523925632,Snorkel Downstream,Observer,0,381,0,206,17,0,0,5HH/PM 1 tadpole,4421
+2/24/2020,205,Lake California,1623,269.5,Impact,1:00:00,NA,1,49,10,3.047851265,Snorkel Downstream,Observer,0,0,91,593,30,0,1,1 scu,5057
+3/3/2020,205,Lake California,1623,269.5,Impact,2:20:00,NA,1,62.6,10,3.047851265,Snorkel Downstream,Observer,0,32,292,389,0,0,55,55HH,5471
+3/26/2020,205,Lake California,1623,269.5,Impact,2:00:00,NA,1,49,7,2.133495885,Snorkel Downstream,Observer,0,0,27,190,0,0,23,CYPR - 21 BGL - 1 SCU - 1,4701
+4/14/2020,205,Lake California,1623,269.5,Impact,1:30:00,NA,1,52,5,1.523925632,Snorkel Downstream,Observer,6,55,85,91,0,50,1101,50 HH adults. 1100 larval fish 1 TSS,5189
+5/11/2020,205,Lake California,1623,269.5,Impact,2:00:00,NA,3,53,10,3.047851265,Snorkel Downstream,Observer,0,0,0,0,6,0,6131,6071-CYP 60-SS,9874
+6/2/2020,205,Lake California,1623,269.5,Impact,1:00:00,NA,1,59,8,2.438281012,Snorkel Downstream,Observer,0,0,3,7,22,2,995,2PKM 2TSS 989MINNOW 1SACSUC 1RBT,10775
+6/18/2020,205,Lake California,1623,269.5,Impact,4:25:00,NA,1,55,7,2.133495885,Snorkel Downstream,Observer,0,0,0,0,1,4,0,4 Adult Rainbow Trout,12391
+6/14/2017,214,Mainstem North,301,272,Control,2:35:00,NA,1,56,6,1.828710759,Snorkel Downstream,Observer,0,0,0,2,1,0,2,2 suckers,11679
+7/24/2017,214,Mainstem North,301,272,Control,4:30:00,NA,1,55,6,1.828710759,Snorkel Downstream,Observer,0,0,0,0,0,0,0,NA,11328
+8/7/2017,214,Mainstem North,301,272,Control,3:50:00,NA,1,55,10,3.047851265,Snorkel Downstream,Observer,0,0,0,0,3,0,0,NA,11014
+8/21/2017,214,Mainstem North,301,272,Control,4:40:00,NA,1,54,9,2.743066138,Snorkel Downstream,Observer,0,0,0,0,2,0,240,240 Sac Suckers,11057
+9/6/2017,214,Mainstem North,301,272,Control,4:15:00,NA,2,54.1,7,2.133495885,Snorkel Downstream,Observer,0,0,0,0,0,0,0,NA,10107
+9/18/2017,214,Mainstem North,301,272,Control,4:20:00,NA,2,52.4,9,2.743066138,Snorkel Downstream,Observer,0,0,0,0,0,0,0,NA,10067
+10/3/2017,214,Mainstem North,301,272,Control,4:30:00,NA,1,57,8,2.438281012,Snorkel Downstream,Observer,0,0,0,0,9,0,0,NA,9190
+10/16/2017,214,Mainstem North,301,272,Control,4:55:00,NA,1,52,10,3.047851265,Snorkel Downstream,Observer,0,0,0,0,12,0,0,NA,8424
+10/30/2017,214,Mainstem North,301,272,Control,3:25:00,NA,1,52,8,2.438281012,Snorkel Downstream,Observer,0,0,0,0,9,0,0,NA,8708
+11/13/2017,214,Mainstem North,301,272,Control,3:40:00,NA,3,53,8,2.438281012,Snorkel Downstream,Observer,0,2,0,0,0,0,0,NA,6194
+11/29/2017,214,Mainstem North,301,272,Control,4:15:00,NA,2,50,7,2.133495885,Snorkel Downstream,Observer,0,0,0,0,0,0,0,NA,5948
+12/29/2017,214,Mainstem North,301,272,Control,5:15:00,NA,2,48,9,2.743066138,Snorkel Downstream,Observer,0,0,0,0,0,0,0,NA,5637
+1/11/2018,214,Mainstem North,301,272,Control,6:00:00,NA,3,50,5,1.523925632,Snorkel Downstream,Observer,0,0,0,0,0,0,1,1 SS,5369
+2/6/2018,214,Mainstem North,301,272,Control,5:30:00,NA,1,51,10,3.047851265,Snorkel Downstream,Observer,0,17,0,0,0,0,0,NA,5201
+2/22/2018,214,Mainstem North,301,272,Control,7:00:00,NA,2,51,10,3.047851265,Snorkel Downstream,Observer,0,0,0,0,0,0,0,NA,4226
+3/8/2018,214,Mainstem North,301,272,Control,5:23:00,NA,3,52,10,3.047851265,Snorkel Downstream,Observer,0,0,0,0,0,0,0,NA,4354
+3/20/2018,214,Mainstem North,301,272,Control,4:35:00,NA,3,53,7,2.133495885,Snorkel Downstream,Observer,0,0,0,0,0,0,0,NA,5096
+4/19/2018,214,Mainstem North,301,272,Control,5:40:00,NA,1,54,4,1.219140506,Snorkel Downstream,Observer,0,0,0,0,0,0,0,NA,5505
+5/3/2018,214,Mainstem North,301,272,Control,5:00:00,NA,1,54,8,2.438281012,Snorkel Downstream,Observer,0,0,0,0,0,0,200,200 SS,8228
+5/14/2018,214,Mainstem North,301,272,Control,6:35:00,NA,1,58,9,2.743066138,Snorkel Downstream,Observer,0,0,0,0,3,0,166,115HH 11SACSUC,9443
+5/31/2018,214,Mainstem North,301,272,Control,3:45:00,NA,1,54,8,2.438281012,Snorkel Downstream,Observer,0,0,0,0,0,0,0,NA,9738
+6/12/2018,214,Mainstem North,301,272,Control,4:50:00,NA,1,59,10,3.047851265,Snorkel Downstream,Observer,0,0,0,0,0,0,0,NA,10592
+7/10/2018,214,Mainstem North,301,272,Control,3:20:00,NA,1,56,10,3.047851265,Snorkel Downstream,Observer,0,0,0,0,0,0,0,NA,13106
+7/24/2018,214,Mainstem North,301,272,Control,3:54:00,NA,1,59,10,3.047851265,Snorkel Downstream,Observer,0,0,0,0,3,0,1,1 TSS,13047
+8/21/2018,214,Mainstem North,301,272,Control,5:24:00,NA,1,58,10,3.047851265,Snorkel Downstream,Observer,0,0,0,0,0,1,0,1 HH,10835
+9/5/2018,214,Mainstem North,301,272,Control,2:48:00,NA,1,58,6,1.828710759,Snorkel Downstream,Observer,0,0,0,0,0,0,0,NA,9551
+9/17/2018,214,Mainstem North,301,272,Control,2:30:00,NA,1,54,10,3.047851265,Snorkel Downstream,Observer,0,0,0,0,0,0,0,NA,8640
+10/1/2018,214,Mainstem North,301,272,Control,2:40:00,NA,3,54,8,2.438281012,Snorkel Downstream,Observer,0,1,0,0,0,0,0,NA,7680
+10/15/2018,214,Mainstem North,301,272,Control,2:30:00,NA,1,56,7,2.133495885,Snorkel Downstream,Observer,0,0,0,0,5,0,0,NA,7926
+11/7/2018,214,Mainstem North,301,272,Control,2:00:00,NA,1,55,7,2.133495885,Snorkel Downstream,Observer,0,0,0,0,2,0,0,NA,4607
+11/26/2018,214,Mainstem North,301,272,Control,2:45:00,NA,3,55,6,1.828710759,Snorkel Downstream,Observer,0,0,0,0,0,0,0,NA,5280
+1/31/2019,214,Mainstem North,301,272,Control,5:30:00,NA,1,56,4,1.219140506,Snorkel Downstream,Observer,0,0,0,25,0,0,0,NA,5634
+7/15/2019,214,Mainstem North,301,272,Control,4:00:00,NA,1,58,8,2.438281012,Snorkel Downstream,Observer,2,0,0,0,0,0,40,40 HH (*1200 MINNOWS),NA
+8/15/2019,214,Mainstem North,301,272,Control,6:20:00,NA,1,59,5.6,1.706796708,Snorkel Downstream,Observer,0,0,0,7,20,0,100,100HH,11263
+9/19/2019,214,Mainstem North,301,272,Control,4:07:00,NA,1,59,10,3.047851265,Snorkel Downstream,Observer,0,187,0,0,0,0,0,NA,8349
+10/21/2019,214,Mainstem North,301,272,Control,3:50:00,NA,1,56,10,3.047851265,Snorkel Downstream,Observer,10,100,0,0,0,0,0,NA,6700
+10/22/2019,214,Mainstem North,301,272,Control,3:30:00,NA,1,55,8,2.438281012,Snorkel Downstream,Observer,10,100,0,0,0,0,0,NA,8733
+11/11/2019,214,Mainstem North,301,272,Control,2:15:00,NA,1,57,7,2.133495885,Snorkel Downstream,Observer,0,160,0,0,0,0,75,75HH,5024
+1/7/2020,214,Mainstem North,301,272,Control,3:04:00,NA,1,50.7,3,0.914355379,Snorkel Downstream,Observer,0,1,0,1,0,0,0,NA,5057
+1/21/2020,214,Mainstem North,301,272,Control,3:00:00,NA,3,50,10,3.047851265,Snorkel Downstream,Observer,0,3,0,20,0,0,0,NA,5222
+2/3/2020,214,Mainstem North,301,272,Control,4:40:00,NA,1,49,6,1.828710759,Snorkel Downstream,Observer,0,0,75,15,0,0,0,15:40-50mm 75:60-70mm,4628
+2/24/2020,214,Mainstem North,301,272,Control,2:30:00,NA,1,49,7,2.133495885,Snorkel Downstream,Observer,0,0,0,3,0,0,0,NA,5013
+3/3/2020,214,Mainstem North,301,272,Control,1:40:00,NA,1,62.6,10,3.047851265,Snorkel Downstream,Observer,0,0,4,165,0,0,1,1 red-eared slider,5493
+6/2/2020,214,Mainstem North,301,272,Control,2:30:00,NA,1,59,7,2.133495885,Snorkel Downstream,Observer,0,0,0,0,0,0,514,514MINNOWS,10840
+6/18/2020,214,Mainstem North,301,272,Control,5:35:00,NA,1,54,8,2.438281012,Snorkel Downstream,Observer,0,0,0,0,0,0,0,NA,12319
+8/12/2016,217,Reading Island (BOTTOM),267,274,Baseline,1:00:00,NA,1,70,2,0.609570253,Snorkel Downstream,Observer,0,0,0,0,0,2,0,2 LarBass Kayak survey,10558
+6/15/2018,217,Reading Island (BOTTOM),267,274,Baseline,2:08:00,NA,1,53,10,3.047851265,Snorkel Downstream,Observer,0,0,0,325,162,0,0,NA,10584
+8/22/2019,217,Reading Island (BOTTOM),267,274,Baseline,2:50:00,NA,1,74,5.6,1.706796708,Snorkel Downstream,Observer,0,0,0,0,0,1,17,17HH 1 large mouth bass 1 turtle,10691
+9/20/2019,217,Reading Island (BOTTOM),267,274,Baseline,3:45:00,NA,1,61.8,7,2.133495885,Snorkel Downstream,Observer,0,0,0,0,0,4,22,26 HH total,8015
+11/26/2019,217,Reading Island (BOTTOM),267,274,Baseline,4:50:00,NA,4,48,10,3.047851265,Snorkel Downstream,Observer,0,0,0,0,0,0,0,No fish,4861
+1/3/2020,217,Reading Island (BOTTOM),267,274,Impact,5:06:00,NA,1,50,10,3.047851265,Snorkel Downstream,Observer,0,0,0,0,0,0,0,NA,5013
+2/5/2020,217,Reading Island (BOTTOM),267,274,Impact,3:45:00,NA,3,46,3,0.914355379,Snorkel Downstream,Observer,0,0,0,0,0,0,0,NA,4269
+3/5/2020,217,Reading Island (BOTTOM),267,274,Impact,1:28:00,NA,1,53.6,5,1.523925632,Snorkel Downstream,Observer,0,0,0,134,0,0,0,1 snorkeler both sides,5408
+3/30/2020,217,Reading Island (BOTTOM),267,274,Impact,5:00:00,NA,3,50,1,0.304785126,Snorkel Downstream,Observer,0,0,0,0,0,0,0,NA,5256
+6/3/2020,217,Reading Island (BOTTOM),267,274,Impact,3:35:00,NA,1,60,6,1.828710759,Snorkel Downstream,Observer,0,0,0,0,0,0,0,NA,10727
+6/23/2020,217,Reading Island (BOTTOM),267,274,Impact,2:00:00,NA,1,57,8,2.438281012,Snorkel Downstream,Observer,1,0,0,0,0,0,45,44 Larval Fish 1 Sac Suc,12319
+1/3/2020,223,Reading Island (MIDDLE),498,274,Impact,3:30:00,NA,1,52,10,3.047851265,Snorkel Downstream,Observer,0,0,0,0,0,0,0,NA,5013
+2/5/2020,223,Reading Island (MIDDLE),498,274,Impact,3:00:00,NA,2,48,4,1.219140506,Snorkel Downstream,Observer,0,0,0,2,0,0,0,NA,4239
+3/4/2020,223,Reading Island (MIDDLE),498,274,Impact,3:00:00,NA,1,50,5,1.523925632,Snorkel Downstream,Observer,0,1,44,10,0,0,1,1HH,5608
+4/2/2020,223,Reading Island (MIDDLE),498,274,Impact,2:30:00,NA,1,49,6,1.828710759,Snorkel Downstream,Observer,0,1,10,60,0,0,1,1 Hard Head,5178
+6/3/2020,223,Reading Island (MIDDLE),498,274,Impact,2:15:00,NA,1,58,6,1.828710759,Snorkel Downstream,Observer,0,0,0,0,3,0,201,NA,10759
+6/23/2020,223,Reading Island (MIDDLE),498,274,Impact,2:15:00,NA,1,57,5,1.523925632,Snorkel Downstream,Observer,0,0,0,0,9,0,0,NA,12319
+1/3/2020,224,Reading Island (TOP),939,274,Impact,2:00:00,NA,1,49,10,3.047851265,Snorkel Downstream,Observer,0,20,0,34,19,0,73,15 HH 60 PKM 1 RIFSCU,5013
+2/5/2020,224,Reading Island (TOP),939,274,Impact,1:45:00,NA,1,48,8,2.438281012,Snorkel Downstream,Observer,0,39,405,198,0,0,17,11 adult tr 7 HH 10 mosquito fsh,4199
+3/4/2020,224,Reading Island (TOP),939,274,Impact,2:00:00,NA,1,49,9,2.743066138,Snorkel Downstream,Observer,0,61,196,258,0,0,0,NA,5562
+4/2/2020,224,Reading Island (TOP),939,274,Impact,1:30:00,NA,1,49,8,2.438281012,Snorkel Downstream,Observer,0,4,17,152,0,0,25,25 Minnows,5256
+4/13/2020,224,Reading Island (TOP),939,274,Impact,6:40:00,NA,1,51,6,1.828710759,Snorkel Downstream,Observer,0,0,0,4,0,1,0,1 Adult Cyprinidae (Hardhead or Pikeminnow),4628
+4/28/2020,224,Reading Island (TOP),939,274,Impact,1:30:00,NA,1,54,8,2.438281012,Snorkel Downstream,Observer,0,2,2,3,0,0,1500,1500 larval juveniles,9844
+6/3/2020,224,Reading Island (TOP),939,274,Impact,1:30:00,NA,1,58,6,1.828710759,Snorkel Downstream,Observer,1,0,0,57,69,0,1899,NA,10711
+6/23/2020,224,Reading Island (TOP),939,274,Impact,1:30:00,NA,1,57,6,1.828710759,Snorkel Downstream,Observer,0,0,0,3,18,0,0,1 Adult Trout 400 Larval Fish 100 Cal Roach,12319
+8/23/2016,215,Cow Creek,467,280,Baseline,3:00:00,NA,1,55,8,2.438281012,Snorkel Downstream,Observer,2,0,0,4,10,0,100,100 PM Potential impact site,10513
+5/16/2018,215,Cow Creek,467,280,Baseline,3:24:00,NA,2,54,10,3.047851265,Snorkel Downstream,Observer,0,0,0,0,1,0,50,50 pm,9226
+5/30/2018,215,Cow Creek,467,280,Baseline,3:00:00,NA,1,56,10,3.047851265,Snorkel Downstream,Observer,0,0,0,0,9,0,0,NA,9516
+6/15/2018,215,Cow Creek,467,280,Baseline,3:55:00,NA,1,55,10,3.047851265,Snorkel Downstream,Observer,0,0,0,30,13,0,0,NA,10584
+6/25/2018,215,Cow Creek,467,280,Baseline,2:50:00,NA,1,54,10,3.047851265,Snorkel Downstream,Observer,0,0,0,8,60,5,0,5 adult RT,12063
+7/11/2018,215,Cow Creek,467,280,Baseline,4:01:00,NA,1,57,10,3.047851265,Snorkel Downstream,Observer,0,0,0,13,52,1,0,1 adult trout 1 adult WR,12994
+7/23/2018,215,Cow Creek,467,280,Baseline,3:07:00,NA,1,56,10,3.047851265,Snorkel Downstream,Observer,0,0,0,219,48,0,5,5 SS,13070
+8/9/2018,215,Cow Creek,467,280,Baseline,1:50:00,NA,3,56,10,3.047851265,Snorkel Downstream,Observer,0,0,0,25,126,0,0,NA,11199
+9/5/2018,215,Cow Creek,467,280,Baseline,3:55:00,NA,1,57,10,3.047851265,Snorkel Downstream,Observer,2,0,0,1,117,0,695,670 HH 20 Dace 5 TSS,8714
+9/18/2018,215,Cow Creek,467,280,Baseline,2:00:00,NA,1,55,10,3.047851265,Snorkel Downstream,Observer,8,3,0,9,187,0,427,100PM 15 Dace 5TSS 1SS 300HH 1 Sculpin,8019
+10/3/2018,215,Cow Creek,467,280,Baseline,3:10:00,NA,2,54,10,3.047851265,Snorkel Downstream,Observer,35,0,0,0,99,0,45,PM,7269
+10/17/2018,215,Cow Creek,467,280,Baseline,4:24:00,NA,1,56,10,3.047851265,Snorkel Downstream,Observer,3,112,0,0,65,0,0,NA,7298
+8/17/2016,209,Anderson River Park,325,282,Baseline,1:45:00,NA,1,69,4,1.219140506,Snorkel Downstream,Video,0,0,0,0,0,0,0,Kayak survey too much vegetation 82 Bass,10521
+5/16/2018,209,Anderson River Park,325,282,Baseline,3:00:00,NA,2,56,7,2.133495885,Snorkel Downstream,Observer,0,0,0,0,0,0,0,ARP Downstream mouth phase 1,9226
+5/16/2018,209,Anderson River Park,325,282,Baseline,2:20:00,NA,2,54,10,3.047851265,Snorkel Downstream,Observer,9,0,0,0,0,0,2,ARP Upstream inlet phase 1 2 PM,9226
+5/30/2018,209,Anderson River Park,325,282,Baseline,2:15:00,NA,1,56,10,3.047851265,Snorkel Downstream,Observer,0,0,0,0,2,0,2,2PKM,9516
+6/25/2018,209,Anderson River Park,325,282,Baseline,3:28:00,NA,1,58,10,3.047851265,Snorkel Downstream,Observer,10,0,0,10,8,0,210,Temp taken in channel 10 PM 200 small minnows,12063
+7/11/2018,209,Anderson River Park,325,282,Baseline,3:30:00,NA,1,55,10,3.047851265,Snorkel Downstream,Observer,11,0,0,20,22,0,0,NA,12994
+7/23/2018,209,Anderson River Park,325,282,Baseline,2:14:00,NA,1,56,10,3.047851265,Snorkel Downstream,Observer,0,0,0,20,15,0,50,50 HH,13070
+8/9/2018,209,Anderson River Park,325,282,Baseline,2:40:00,NA,3,57,10,3.047851265,Snorkel Downstream,Observer,0,0,0,8,35,0,0,NA,11199
+9/5/2018,209,Anderson River Park,325,282,Baseline,3:20:00,NA,1,57,10,3.047851265,Snorkel Downstream,Observer,0,0,0,0,22,0,0,NA,8714
+9/18/2018,209,Anderson River Park,325,282,Baseline,2:40:00,NA,1,55,10,3.047851265,Snorkel Downstream,Observer,0,0,0,0,28,0,0,NA,8019
+10/3/2018,209,Anderson River Park,325,282,Baseline,2:25:00,NA,2,54,10,3.047851265,Snorkel Downstream,Observer,60,0,0,0,2,0,35,PM TSS,7269
+10/17/2018,209,Anderson River Park,325,282,Baseline,3:41:00,NA,1,56,10,3.047851265,Snorkel Downstream,Observer,25,100,0,0,0,0,10,10 TSS,7298
+10/30/2018,209,Anderson River Park,325,282,Baseline,4:20:00,NA,1,54,10,3.047851265,Snorkel Downstream,Observer,78,29,0,2,75,0,0,1 adult FR salmon,6004
+9/18/2019,209,Anderson River Park,325,282,Baseline,4:14:00,NA,2,58,10,3.047851265,Snorkel Downstream,Observer,0,40,0,0,20,0,200,200HH,8391
+1/9/2020,209,Anderson River Park,1405,282,Impact,2:00:00,NA,1,54,10,3.047851265,Snorkel Downstream,Observer,0,97,0,260,7,0,0,NA,5024
+1/30/2020,209,Anderson River Park,1405,282,Impact,3:00:00,NA,1,49,10,3.047851265,Snorkel Downstream,Observer,0,250,388,1350,2,0,0,NA,5134
+2/20/2020,209,Anderson River Park,1405,282,Impact,6:00:00,NA,3,48,4,1.219140506,Snorkel Downstream,Observer,0,25,296,272,3,0,35,NA,4119
+3/5/2020,209,Anderson River Park,1405,282,Impact,2:30:00,NA,1,50,10,3.047851265,Snorkel Downstream,Observer,0,0,11,237,0,0,0,1 swimmer RL then RR,5516
+3/30/2020,209,Anderson River Park,1405,282,Impact,3:00:00,NA,3,50,6,1.828710759,Snorkel Downstream,Observer,0,0,6,67,3,0,0,NA,5245
+4/13/2020,209,Anderson River Park,1405,282,Impact,2:15:00,NA,1,51,6.5,1.981103322,Snorkel Downstream,Observer,41,5,27,167,81,0,0,2 Spawning adult Pacific Lamprey,4680
+5/4/2020,209,Anderson River Park,1405,282,Impact,3:40:00,NA,1,53,10,3.047851265,Snorkel Downstream,Observer,2,10,6,24,30,0,0,40-HH,9828
+6/1/2020,209,Anderson River Park,1405,282,Impact,2:00:00,NA,3,56,8,2.438281012,Snorkel Downstream,Observer,53,0,13,122,164,0,0,NA,10407
+6/15/2020,209,Anderson River Park,1405,282,Impact,6:00:00,NA,3,56,6,1.828710759,Snorkel Downstream,Observer,7,0,1,0,8,0,0,NA,12355
+1/8/2020,225,Kapusta 1B,751,287,Baseline,4:30:00,NA,3,49,10,3.047851265,Snorkel Downstream,Observer,0,0,0,53,0,0,0,NA,5079
+1/23/2020,225,Kapusta 1B,751,287,Baseline,4:00:00,NA,3,50,10,3.047851265,Snorkel Downstream,Observer,0,0,0,200,0,0,0,NA,5035
+2/3/2020,225,Kapusta 1B,751,287,Baseline,3:15:00,NA,1,52,5,1.523925632,Snorkel Downstream,Observer,0,30,290,695,0,0,0,NA,4638
+2/18/2020,225,Kapusta 1B,751,287,Baseline,4:05:00,NA,1,48,4,1.219140506,Snorkel Downstream,Observer,0,0,0,200,0,0,0,NA,3819
+3/3/2020,225,Kapusta 1B,751,287,Baseline,5:30:00,NA,1,52,4.5,1.371533069,Snorkel Downstream,Observer,0,15,100,430,0,0,0,NA,5562
+3/24/2020,225,Kapusta 1B,751,287,Baseline,3:00:00,NA,4,48,4,1.219140506,Snorkel Downstream,Observer,0,0,0,27,0,0,1,1 Stickleback,4754
+4/15/2020,225,Kapusta 1B,751,287,Baseline,2:30:00,NA,1,51,7,2.133495885,Snorkel Downstream,Observer,0,0,10,200,2,0,0,top and bottom of section had varying visibility,5771
+5/6/2020,225,Kapusta 1B,751,287,Baseline,5:10:00,NA,1,51.8,7,2.133495885,Snorkel Downstream,Observer,5,0,0,3,23,0,0,NA,10014
+5/27/2020,225,Kapusta 1B,751,287,Baseline,6:10:00,NA,1,60,10,3.047851265,Snorkel Downstream,Observer,193,0,0,46,1,0,0,1 adult ss,9281
+6/18/2020,225,Kapusta 1B,751,287,Baseline,1:45:00,NA,1,53,8,2.438281012,Snorkel Downstream,Observer,0,0,0,0,0,15,0,15 Pikeminnow,11903
+6/30/2020,225,Kapusta 1B,751,287,Baseline,7:40:00,NA,1,54,10,3.047851265,Snorkel Downstream,Observer,18,0,0,41,9,0,0,NA,12678
+1/8/2020,226,Kapusta Island,339,287,Control,2:40:00,NA,3,49,10,3.047851265,Snorkel Downstream,Observer,47,37,0,44,31,0,6,1 mosquitofish 5 unknown salmonids,5013
+1/23/2020,226,Kapusta Island,339,287,Baseline,2:45:00,NA,3,54,10,3.047851265,Snorkel Downstream,Observer,4,60,0,77,27,0,0,NA,5046
+2/4/2020,226,Kapusta Island,339,287,Baseline,2:20:00,NA,1,48,5,1.523925632,Snorkel Downstream,Observer,30,70,238,427,13,0,0,4TSB 2 adult Trout,4534
+2/19/2020,226,Kapusta Island,339,287,Baseline,4:14:00,NA,1,50,10,3.047851265,Snorkel Downstream,Observer,17,142,347,895,20,9,1,NA,4100
+3/3/2020,226,Kapusta Island,339,287,Baseline,4:00:00,NA,1,48,4,1.219140506,Snorkel Downstream,Observer,0,20,104,383,2,0,1,11 adult trout 1sacsuc,5528
+3/25/2020,226,Kapusta Island,339,287,Baseline,1:45:00,NA,1,49,10,3.047851265,Snorkel Downstream,Observer,0,5,57,333,7,0,0,NA,4723
+4/15/2020,226,Kapusta Island,339,287,Baseline,4:15:00,NA,1,52,6,1.828710759,Snorkel Downstream,Observer,0,21,16,90,15,0,0,NA,5795
+5/6/2020,226,Kapusta Island,339,287,Baseline,3:20:00,NA,1,51.6,6,1.828710759,Snorkel Downstream,Observer,0,0,0,2,0,0,0,NA,9967
+5/27/2020,226,Kapusta Island,339,287,Baseline,5:10:00,NA,1,60,10,3.047851265,Snorkel Downstream,Observer,12,0,4,69,9,0,3,1 tsb 2 ss,9281
+6/16/2020,226,Kapusta Island,339,287,Baseline,6:25:00,NA,1,54,8,2.438281012,Snorkel Downstream,Observer,16,0,0,4,13,0,3,3TSS,12391
+6/29/2020,226,Kapusta Island,339,287,Baseline,3:15:00,NA,1,53.5,6,1.828710759,Snorkel Downstream,Observer,0,0,0,0,11,0,0,NA,12800
+12/8/2015,204,Bourbon,301,287.5,Control,6:17:00,NA,3,53,5,1.523925632,Snorkel Downstream,Observer,0,4,0,0,15,0,0,NA,4260
+12/15/2015,204,Bourbon,301,287.5,Control,3:15:00,NA,1,52,4,1.219140506,Snorkel Upstream,Observer,0,0,0,2,11,0,3,lamprey sculpin tts,4220
+2/1/2016,204,Bourbon,301,287.5,Control,4:25:00,NA,1,48,5,1.523925632,Snorkel Downstream,Video,0,0,0,0,0,0,0,NA,3290
+2/1/2016,204,Bourbon,301,287.5,Control,5:04:00,NA,1,48,5,1.523925632,Snorkel Downstream,Video,0,0,0,0,0,0,0,NA,3290
+2/25/2016,204,Bourbon,301,287.5,Control,4:32:00,NA,1,51,4,1.219140506,Snorkel Downstream,Observer,0,2,0,45,0,0,0,NA,3270
+3/2/2016,204,Bourbon,301,287.5,Control,3:25:00,NA,2,49,10,3.047851265,Snorkel Downstream,Observer,0,0,0,35,1,0,1,1 Sac sucker,3280
+4/12/2016,204,Bourbon,301,287.5,Control,4:50:00,NA,4,52,7,2.133495885,Snorkel Downstream,Observer,10,0,0,429,100,0,0,NA,5070
+4/21/2016,204,Bourbon,301,287.5,Control,6:00:00,NA,2,59,6,1.828710759,Snorkel Downstream,Observer,0,0,0,445,53,0,0,NA,5040
+4/25/2016,204,Bourbon,301,287.5,Control,2:45:00,NA,1,55,5,1.523925632,Snorkel Downstream,Observer,55,0,0,290,35,0,7,7 TSS,5040
+5/3/2016,204,Bourbon,301,287.5,Control,5:15:00,NA,2,58,6,1.828710759,Snorkel Downstream,Observer,0,0,0,260,69,1,1,1 adult pikeminnow 1 sac sucker,5550
+6/8/2016,204,Bourbon,301,287.5,Control,5:50:00,NA,2,58,6,1.828710759,Snorkel Downstream,Observer,475,0,0,840,98,0,2,2 TSS,8050
+6/29/2016,204,Bourbon,301,287.5,Control,1:55:00,NA,1,53,3.5,1.066747943,Snorkel Downstream,Observer,0,0,0,0,150,0,0,NA,9010
+7/28/2016,204,Bourbon,301,287.5,Control,3:15:00,NA,1,54,5.5,1.676318196,Snorkel Downstream,Observer,0,0,0,0,84,0,0,NA,10554
+8/15/2016,204,Bourbon,301,287.5,Control,2:45:00,NA,1,53,5,1.523925632,Snorkel Downstream,Observer,5,0,0,0,50,0,1,1 TSS,10530
+8/23/2016,204,Bourbon,301,287.5,Control,4:20:00,NA,1,54,7,2.133495885,Snorkel Downstream,Observer,17,0,0,0,24,0,0,NA,10513
+9/8/2016,204,Bourbon,301,287.5,Control,5:55:00,NA,1,55,8,2.438281012,Snorkel Downstream,Observer,18,1,0,0,35,0,0,NA,9546
+9/15/2016,204,Bourbon,301,287.5,Control,5:00:00,NA,1,55,10,3.047851265,Snorkel Downstream,Observer,0,1,0,65,188,1,5,1 adult PM 5 HH,9041
+9/27/2016,204,Bourbon,301,287.5,Control,4:00:00,NA,1,52,10,3.047851265,Snorkel Downstream,Observer,82,2,0,1,40,10,0,10 adult RT,7975
+10/11/2016,204,Bourbon,301,287.5,Control,3:20:00,NA,1,54,10,3.047851265,Snorkel Downstream,Observer,0,8,0,115,116,0,0,1 adult female FR salmon,7012
+10/27/2016,204,Bourbon,301,287.5,Control,4:00:00,NA,4,53,6,1.828710759,Snorkel Downstream,Observer,1,0,0,45,86,0,0,1 adult trout,5535
+11/17/2016,204,Bourbon,301,287.5,Control,5:06:00,NA,1,54,9,2.743066138,Snorkel Downstream,Observer,0,0,0,0,87,0,0,NA,5040
+11/29/2016,204,Bourbon,301,287.5,Control,5:30:00,NA,1,53,9,2.743066138,Snorkel Downstream,Observer,1,0,0,0,62,0,0,NA,5035
+12/20/2016,204,Bourbon,301,287.5,Control,5:40:00,NA,3,51,10,3.047851265,Snorkel Downstream,Observer,1,1,0,1,19,0,0,1 adult trout,5072
+6/19/2017,204,Bourbon,301,287.5,Control,2:30:00,NA,1,54,4,1.219140506,Snorkel Downstream,Observer,10,0,0,4,131,0,5,1 BASS 2 TSS 2PM,10303
+6/19/2017,204,Bourbon,301,287.5,Control,3:25:00,NA,2,52,5,1.523925632,Snorkel Downstream,Observer,0,0,0,10,53,0,4,4 STB,10303
+7/12/2017,204,Bourbon,301,287.5,Control,5:45:00,1.4,1,52,6,1.828710759,Snorkel Downstream,Observer,0,0,0,0,100,0,0,NA,10394
+7/25/2017,204,Bourbon,301,287.5,Control,1:45:00,1.4,1,52,5,1.523925632,Snorkel Downstream,Observer,0,0,0,0,120,0,0,NA,10666
+8/10/2017,204,Bourbon,301,287.5,Control,5:05:00,15,1,54,7.5,2.285888449,Snorkel Downstream,Observer,0,0,0,0,79,0,0,1 adult RT,10509
+8/24/2017,204,Bourbon,301,287.5,Control,5:00:00,NA,1,55,5,1.523925632,Snorkel Downstream,Observer,5,0,0,0,59,0,0,NA,10644
+9/5/2017,204,Bourbon,301,287.5,Control,2:00:00,14,1,53,8,2.438281012,Snorkel Downstream,Observer,0,0,0,0,45,0,0,NA,9114
+9/19/2017,204,Bourbon,301,287.5,Control,2:10:00,NA,1,52,5.5,1.676318196,Snorkel Downstream,Observer,0,0,0,0,2,0,0,adult rainbow,9042
+10/4/2017,204,Bourbon,301,287.5,Control,3:40:00,NA,1,51,10,3.047851265,Snorkel Downstream,Observer,0,1,0,0,1,0,1,1 Sculpin mort,7924
+10/17/2017,204,Bourbon,301,287.5,Control,1:55:00,1,1,51,10,3.047851265,Snorkel Downstream,Observer,0,0,0,0,69,0,0,NA,8026
+11/2/2017,204,Bourbon,301,287.5,Control,3:00:00,13,3,52,10,3.047851265,Snorkel Downstream,Observer,0,0,0,0,33,0,0,NA,8075
+11/14/2017,204,Bourbon,301,287.5,Control,3:00:00,9,1,53,10,3.047851265,Snorkel Downstream,Observer,0,0,0,0,16,0,0,8 trout are adults,5383
+11/28/2017,204,Bourbon,301,287.5,Control,2:00:00,9,2,52,10,3.047851265,Snorkel Downstream,Observer,0,0,0,0,15,0,0,NA,5000
+12/15/2017,204,Bourbon,301,287.5,Control,2:45:00,9,3,51,10,3.047851265,Snorkel Downstream,Observer,0,0,0,0,17,0,1,1 sculpin,5030
+12/26/2017,204,Bourbon,301,287.5,Control,2:00:00,9,2,50,10,3.047851265,Snorkel Downstream,Observer,25,27,0,0,40,0,4,4 sculpin,5072
+1/11/2018,204,Bourbon,301,287.5,Control,3:15:00,7,3,51,10,3.047851265,Snorkel Downstream,Observer,36,2,0,0,24,0,0,NA,4088
+1/22/2018,204,Bourbon,301,287.5,Control,2:00:00,8,3,50,10,3.047851265,Snorkel Downstream,Observer,0,15,0,0,0,0,0,NA,4052
+2/7/2018,204,Bourbon,301,287.5,Control,3:15:00,NA,1,50,10,3.047851265,Snorkel Downstream,Observer,0,41,48,85,0,0,0,NA,4010
+2/21/2018,204,Bourbon,301,287.5,Control,2:35:00,6.5,1,48,10,3.047851265,Snorkel Downstream,Observer,0,96,0,988,2,0,0,NA,3246
+3/5/2018,204,Bourbon,301,287.5,Control,2:14:00,NA,1,48,10,3.047851265,Snorkel Downstream,Observer,0,10,0,165,0,0,0,NA,3255
+3/22/2018,204,Bourbon,301,287.5,Control,3:50:00,6,3,50,5,1.523925632,Snorkel Downstream,Observer,0,0,0,137,0,0,0,NA,3201
+4/4/2018,204,Bourbon,301,287.5,Control,4:40:00,0.5,3,52,9,2.743066138,Snorkel Downstream,Observer,0,0,0,0,6,0,0,NA,3258
+4/17/2018,204,Bourbon,301,287.5,Control,4:30:00,NA,1,50,10,3.047851265,Snorkel Downstream,Observer,0,105,0,215,31,0,0,NA,3285
+4/30/2018,204,Bourbon,301,287.5,Control,3:24:00,NA,1,54,10,3.047851265,Snorkel Downstream,Observer,1,11,0,497,2,0,0,NA,7058
+5/16/2018,204,Bourbon,301,287.5,Control,2:45:00,15,2,54,10,3.047851265,Snorkel Downstream,Observer,0,0,0,290,0,0,13,1 sculpin 12 ss,9226
+5/29/2018,204,Bourbon,301,287.5,Control,3:40:00,NA,1,54,10,3.047851265,Snorkel Downstream,Observer,0,0,0,233,321,0,2,2 TP,9491
+6/15/2018,204,Bourbon,301,287.5,Control,2:50:00,16,1,53,10,3.047851265,Snorkel Downstream,Observer,0,0,0,23,43,0,0,NA,10584
+6/25/2018,204,Bourbon,301,287.5,Control,5:00:00,18,1,54,10,3.047851265,Snorkel Downstream,Observer,12,0,0,90,111,4,0,4 adult trout,12063
+7/11/2018,204,Bourbon,301,287.5,Control,2:20:00,19,1,55,10,3.047851265,Snorkel Downstream,Observer,0,0,0,7,152,0,0,NA,12994
+7/24/2018,204,Bourbon,301,287.5,Control,3:30:00,NA,1,56,10,3.047851265,Snorkel Downstream,Observer,0,0,0,2,40,0,0,NA,13044
+8/9/2018,204,Bourbon,301,287.5,Control,3:15:00,17,3,57,10,3.047851265,Snorkel Downstream,Observer,0,0,0,0,27,0,0,NA,11199
+8/23/2018,204,Bourbon,301,287.5,Control,5:45:00,15.5,1,54,10,3.047851265,Snorkel Downstream,Observer,0,0,0,1,34,0,0,NA,9541
+9/5/2018,204,Bourbon,301,287.5,Control,2:14:00,15,1,55,10,3.047851265,Snorkel Downstream,Observer,0,0,0,0,13,0,0,NA,8714
+9/18/2018,204,Bourbon,301,287.5,Control,3:30:00,13.5,1,54,10,3.047851265,Snorkel Downstream,Observer,4,0,0,3,90,0,0,NA,8019
+10/3/2018,204,Bourbon,301,287.5,Control,3:15:00,1,2,58,10,3.047851265,Snorkel Downstream,Observer,2,0,0,24,38,0,1,1 Hardhead,7269
+10/17/2018,204,Bourbon,301,287.5,Control,2:35:00,13,1,55,10,3.047851265,Snorkel Downstream,Observer,15,10,0,1,107,0,1,1 Sclupin,7298
+12/10/2018,204,Bourbon,301,287.5,Control,2:40:00,8,1,57,10,3.047851265,Snorkel Downstream,Observer,7,29,0,0,40,0,0,Visibility reduced durning snorkel,4018
+1/2/2019,204,Bourbon,301,287.5,Control,2:00:00,NA,1,48,5,1.523925632,Snorkel Downstream,Observer,0,20,0,520,2,2,0,2 AD LFR,4027
+1/29/2019,204,Bourbon,301,287.5,Control,2:20:00,NA,1,49,7,2.133495885,Snorkel Downstream,Observer,0,7,0,124,0,0,2,2 Sculp,3249
+7/9/2019,204,Bourbon,301,287.5,Control,3:24:00,NA,1,57,10,3.047851265,Snorkel Downstream,Observer,0,0,0,14,0,0,1,1 TSS,NA
+8/14/2019,204,Bourbon,301,287.5,Control,5:40:00,NA,1,54,10,3.047851265,Snorkel Downstream,Observer,26,3,0,2,133,0,0,NA,11357
+9/18/2019,204,Bourbon,301,287.5,Control,3:00:00,NA,3,57,10,3.047851265,Snorkel Downstream,Observer,207,9,0,40,177,0,0,NA,8691
+10/23/2019,204,Bourbon,301,287.5,Control,2:00:00,NA,1,55,5,1.523925632,Snorkel Downstream,Observer,85,398,0,24,57,0,4,2TSB 2HH,8661
+11/13/2019,204,Bourbon,301,287.5,Control,1:20:00,NA,1,55,8,2.438281012,Snorkel Downstream,Observer,20,141,0,0,22,0,57,12HH 15SS 30HH,4980
+1/6/2020,204,Bourbon,301,287.5,Control,4:30:00,NA,2,54,10,3.047851265,Snorkel Downstream,Observer,14,79,0,168,18,0,0,NA,5090
+1/21/2020,204,Bourbon,301,287.5,Control,3:30:00,NA,4,48,7,2.133495885,Snorkel Downstream,Observer,0,132,0,515,4,0,0,NA,5123
+2/3/2020,204,Bourbon,301,287.5,Control,6:30:00,NA,1,52,6,1.828710759,Snorkel Downstream,Observer,0,16,487,885,1,0,0,NA,4617
+2/18/2020,204,Bourbon,301,287.5,Control,6:15:00,NA,1,50,8,2.438281012,Snorkel Downstream,Observer,0,16,178,799,5,0,7,1 sculpin 1 sacsuc 2 adult trout,3838
+3/3/2020,204,Bourbon,301,287.5,Control,3:15:00,NA,1,48,6,1.828710759,Snorkel Downstream,Observer,0,1,137,761,1,0,0,NA,5516
+3/24/2020,204,Bourbon,301,287.5,Control,1:45:00,NA,4,49,5,1.523925632,Snorkel Downstream,Observer,0,5,101,469,2,0,0,NA,4754
+4/15/2020,204,Bourbon,301,287.5,Control,3:30:00,NA,1,51,7,2.133495885,Snorkel Downstream,Observer,14,50,96,184,5,0,0,NA,5760
+5/6/2020,204,Bourbon,301,287.5,Control,4:45:00,NA,1,51.8,10,3.047851265,Snorkel Downstream,Observer,7,0,2,7,0,0,0,NA,10030
+6/1/2020,204,Bourbon,301,287.5,Control,3:00:00,NA,2,55,10,3.047851265,Snorkel Downstream,Observer,2,0,2,102,373,0,8,8 minnow,10312
+6/16/2020,204,Bourbon,301,287.5,Control,6:00:00,NA,1,54,5,1.523925632,Snorkel Downstream,Observer,0,0,10,50,18,1,0,NA,12319
+6/29/2020,204,Bourbon,301,287.5,Control,2:15:00,NA,1,54,7,2.133495885,Snorkel Downstream,Observer,1,0,0,0,32,0,0,25 larval cyprinids,12726
+6/14/2017,203,Kapusta 1A,291,287.5,NA,2:45:00,NA,1,56,5,1.523925632,Snorkel Downstream,Observer,0,0,0,0,0,0,500,numerous juvenile suckers,10031
+4/30/2018,203,Kapusta 1A,291,287.5,Impact,2:40:00,NA,1,54,10,3.047851265,Snorkel Downstream,Observer,0,0,0,8,0,0,105,100 HH 2 TP 3 TSS,7058
+5/15/2018,203,Kapusta 1A,291,287.5,Impact,4:00:00,NA,1,55,10,3.047851265,Snorkel Downstream,Observer,5,0,0,65,1,0,601,50 TSS 500 PM 1 Sculpin 50 WESMOS,8737
+5/29/2018,203,Kapusta 1A,291,287.5,Impact,2:50:00,NA,1,53,10,3.047851265,Snorkel Downstream,Observer,14,0,0,65,36,0,145,145 HH,9491
+6/11/2018,203,Kapusta 1A,291,287.5,Impact,5:45:00,NA,1,55,10,3.047851265,Snorkel Downstream,Observer,80,0,25,75,24,0,0,NA,9743
+6/25/2018,203,Kapusta 1A,291,287.5,Impact,4:15:00,NA,1,54,10,3.047851265,Snorkel Downstream,Observer,8,0,0,20,34,0,26,25 HH 1 TSS,12063
+7/7/2018,203,Kapusta 1A,291,287.5,Impact,2:20:00,NA,3,56,10,3.047851265,Snorkel Downstream,Observer,1,0,0,0,99,0,0,NA,13008
+7/11/2018,203,Kapusta 1A,291,287.5,Impact,5:30:00,NA,1,54,10,3.047851265,Snorkel Downstream,Observer,0,0,0,55,103,0,0,PM Suckers,12994
+7/23/2018,203,Kapusta 1A,291,287.5,Impact,4:35:00,NA,1,57,10,3.047851265,Snorkel Downstream,Observer,7,0,0,11,0,0,1,1 Rifscu,13070
+8/23/2018,203,Kapusta 1A,291,287.5,Impact,5:00:00,NA,1,54,10,3.047851265,Snorkel Downstream,Observer,2,0,0,0,111,0,101,100 PM 1 TSS,9541
+9/5/2018,203,Kapusta 1A,291,287.5,Impact,2:50:00,NA,1,55,10,3.047851265,Snorkel Downstream,Observer,0,0,0,0,7,0,0,NA,8714
+9/18/2018,203,Kapusta 1A,291,287.5,Impact,4:45:00,NA,1,54,10,3.047851265,Snorkel Downstream,Observer,0,0,0,200,20,0,0,NA,8019
+10/3/2018,203,Kapusta 1A,291,287.5,Impact,4:15:00,NA,2,54,10,3.047851265,Snorkel Downstream,Observer,10,0,0,0,55,0,0,NA,7269
+10/17/2018,203,Kapusta 1A,291,287.5,Impact,1:00:00,NA,1,54,6,1.828710759,Snorkel Downstream,Observer,0,0,0,0,55,0,163,163 Hardhead,7298
+10/30/2018,203,Kapusta 1A,291,287.5,Impact,3:50:00,NA,1,54,10,3.047851265,Snorkel Downstream,Observer,1,26,0,4,15,0,105,100 HH5PM,6004
+11/14/2018,203,Kapusta 1A,291,287.5,Impact,6:00:00,NA,2,57,5,1.523925632,Snorkel Downstream,Observer,50,29,0,5,9,0,3,3 HH,4537
+12/10/2018,203,Kapusta 1A,291,287.5,Impact,3:00:00,NA,1,57,10,3.047851265,Snorkel Downstream,Observer,0,2,0,0,4,0,0,NA,4018
+1/2/2019,203,Kapusta 1A,291,287.5,Impact,2:30:00,NA,1,48,5,1.523925632,Snorkel Downstream,Observer,0,1,0,107,0,0,0,NA,4027
+1/29/2019,203,Kapusta 1A,291,287.5,Impact,3:00:00,NA,1,49,5,1.523925632,Snorkel Downstream,Observer,0,2,0,224,1,0,61,60 HH 1 TSS,3249
+7/9/2019,203,Kapusta 1A,291,287.5,Impact,4:50:00,NA,1,57,10,3.047851265,Snorkel Downstream,Observer,0,0,0,0,0,0,5,5 HH,NA
+8/14/2019,203,Kapusta 1A,291,287.5,Impact,6:30:00,NA,1,54,10,3.047851265,Snorkel Downstream,Observer,9,0,0,0,53,0,29,1 rifscu 25TSS 3HH,11310
+9/18/2019,203,Kapusta 1A,291,287.5,Impact,2:15:00,NA,3,57,8,2.438281012,Snorkel Downstream,Observer,7,18,0,0,24,0,0,NA,8636
+10/23/2019,203,Kapusta 1A,291,287.5,Impact,5:30:00,NA,1,51,10,3.047851265,Snorkel Downstream,Observer,8,48,0,0,15,0,0,NA,8718
+11/13/2019,203,Kapusta 1A,291,287.5,Impact,2:15:00,NA,1,55,8,2.438281012,Snorkel Downstream,Observer,0,30,0,0,13,0,20,20HH,4894
+1/8/2020,203,Kapusta 1A,291,287.5,Impact,3:39:00,NA,3,49,10,3.047851265,Snorkel Downstream,Observer,0,26,0,80,3,0,0,NA,5013
+1/21/2020,203,Kapusta 1A,291,287.5,Impact,4:00:00,NA,4,48,6.5,1.981103322,Snorkel Downstream,Observer,0,0,0,177,0,0,1,NA,5189
+2/3/2020,203,Kapusta 1A,291,287.5,Impact,2:30:00,NA,1,50,6,1.828710759,Snorkel Downstream,Observer,2,40,285,415,0,0,0,2TSB 3SCU,4617
+2/18/2020,203,Kapusta 1A,291,287.5,Impact,5:30:00,NA,1,50,8,2.438281012,Snorkel Downstream,Observer,0,103,315,967,3,0,2,2 adult trout 1 scuplin,3838
+3/3/2020,203,Kapusta 1A,291,287.5,Impact,6:05:00,NA,1,51,5,1.523925632,Snorkel Downstream,Observer,0,0,16,420,0,0,0,NA,5482
+4/2/2020,203,Kapusta 1A,291,287.5,Impact,5:30:00,NA,1,49,10,3.047851265,Snorkel Downstream,Observer,0,0,50,494,19,0,0,NA,5189
+4/13/2020,203,Kapusta 1A,291,287.5,Impact,4:15:00,NA,1,51,7,2.133495885,Snorkel Downstream,Observer,95,21,12,129,27,0,0,NA,4680
+5/5/2020,203,Kapusta 1A,291,287.5,Impact,5:00:00,NA,1,52.6,10,3.047851265,Snorkel Downstream,Observer,0,0,0,0,0,0,0,NA,9936
+5/27/2020,203,Kapusta 1A,291,287.5,Impact,3:40:00,NA,1,59,10,3.047851265,Snorkel Downstream,Observer,24,0,1,126,2,0,8,2 tsb 6 minnows,9447
+6/18/2020,203,Kapusta 1A,291,287.5,Impact,2:30:00,NA,1,53,8,2.438281012,Snorkel Downstream,Observer,0,0,0,0,2,0,0,NA,11818
+6/30/2020,203,Kapusta 1A,291,287.5,Impact,7:15:00,NA,1,52,7,2.133495885,Snorkel Downstream,Observer,0,0,0,26,9,0,0,NA,12689
+2/3/2016,206,Clear Creek,221,289,Control,2:15:00,NA,2,48,9,2.743066138,Snorkel Downstream,Observer,0,24,0,227,0,0,0,NA,3290
+2/5/2016,206,Clear Creek,221,289,Control,2:30:00,NA,1,47,6,1.828710759,Snorkel Downstream,Observer,0,9,0,261,0,0,0,NA,3310
+2/5/2016,206,Clear Creek,221,289,Control,3:10:00,NA,1,47,6,1.828710759,Snorkel Upstream,Observer,0,8,0,356,1,0,0,NA,3200
+2/25/2016,206,Clear Creek,221,289,Control,5:33:00,NA,1,51,4,1.219140506,Snorkel Downstream,Observer,0,0,0,27,222,0,500,500 ciprinids,3260
+3/2/2016,206,Clear Creek,221,289,Control,5:35:00,NA,1,49,10,3.047851265,Snorkel Downstream,Observer,0,0,0,58,40,0,271,40 roach 230 hard head 1 sunfish,3260
+4/12/2016,206,Clear Creek,221,289,Control,3:20:00,NA,4,56,10,3.047851265,Snorkel Downstream,Observer,0,0,0,230,55,0,470,240 PM 230 HH,5100
+4/25/2016,206,Clear Creek,221,289,Control,4:00:00,NA,1,56,10,3.047851265,Snorkel Downstream,Observer,0,0,0,77,160,0,702,700 Hardhead 2 Sac Suckers,5030
+5/3/2016,206,Clear Creek,221,289,Control,4:35:00,NA,2,58,10,3.047851265,Snorkel Downstream,Observer,0,0,0,125,627,0,1569,1063 HH 1 sculpin 503 sac suckers 2 sunfish,5530
+5/11/2016,206,Clear Creek,221,289,Control,5:20:00,NA,1,59,5,1.523925632,Snorkel Downstream,Observer,48,0,0,240,102,0,0,NA,6530
+5/12/2016,206,Clear Creek,221,289,Control,5:45:00,NA,1,59,10,3.047851265,Snorkel Downstream,Observer,0,0,0,0,338,0,1012,410 PM 320 HH 4 TSS 260 SS 18 TP,6560
+6/14/2016,206,Clear Creek,221,289,Control,2:10:00,NA,2,61,10,3.047851265,Snorkel Downstream,Observer,1,0,0,68,74,0,1659,9 TSS 1600 HH 50 SS,8790
+6/29/2016,206,Clear Creek,221,289,Control,3:00:00,NA,1,60,6,1.828710759,Snorkel Downstream,Observer,0,0,0,8,300,0,5525,4000 HARDHE 1500 SACSUC 25 THSPST,9020
+7/28/2016,206,Clear Creek,221,289,Control,4:50:00,NA,1,68,10,3.047851265,Snorkel Downstream,Observer,11,0,0,0,111,27,3278,1800 HH 770 SS 3 TP 705 PM 27 AdultPM/HH,10554
+8/15/2016,206,Clear Creek,221,289,Control,3:50:00,NA,1,62,8,2.438281012,Snorkel Downstream,Observer,0,0,0,25,65,0,2002,1000 HH 1000 SS 2 TSS,10530
+8/23/2016,206,Clear Creek,221,289,Control,4:00:00,NA,1,64,10,3.047851265,Snorkel Downstream,Observer,10,0,0,0,9,0,994,900 HH 80 SS 14 PM,10513
+9/8/2016,206,Clear Creek,221,289,Control,5:05:00,NA,1,64,10,3.047851265,Snorkel Downstream,Observer,17,0,0,0,18,0,1069,730 HH 192 SS 132 PM 15 tule P.,9546
+9/15/2016,206,Clear Creek,221,289,Control,5:50:00,NA,1,60,10,3.047851265,Snorkel Downstream,Observer,47,0,0,21,20,0,1340,685 HH 500 PM 150 SS 5 Tule P.,9041
+9/27/2016,206,Clear Creek,221,289,Control,5:20:00,NA,1,54,10,3.047851265,Snorkel Downstream,Observer,0,0,0,10,14,0,856,545 HH 264 PM 32 SS 10 TSS 5 Tule P.,7975
+10/11/2016,206,Clear Creek,221,289,Control,4:15:00,NA,1,58,10,3.047851265,Snorkel Downstream,Observer,0,1,0,20,0,0,137,100PM 2 SS 30 HH 5 Tule P.,7012
+10/27/2016,206,Clear Creek,221,289,Control,4:45:00,NA,4,58,2.5,0.761962816,Snorkel Downstream,Observer,0,0,0,0,1,0,9,6 PM 2 TSS 1 SS,5535
+11/17/2016,206,Clear Creek,221,289,Control,4:25:00,NA,1,55,10,3.047851265,Snorkel Downstream,Observer,9,1,0,0,1,0,735,510 HH 155 PM 50 SS 20 Tule P.,5040
+11/29/2016,206,Clear Creek,221,289,Control,4:55:00,NA,1,52,10,3.047851265,Snorkel Downstream,Observer,0,0,0,0,0,0,360,340 HH 20 PM,5035
+12/20/2016,206,Clear Creek,221,289,Control,5:00:00,NA,3,48,10,3.047851265,Snorkel Downstream,Observer,0,0,0,20,0,0,60,60HH,5072
+6/19/2017,206,Clear Creek,221,289,Control,2:40:00,NA,2,54,3,0.914355379,Snorkel Downstream,Observer,0,0,0,0,45,0,26,6 HH 20 WESMOS,10303
+7/25/2017,206,Clear Creek,221,289,Control,1:45:00,1.2,1,61,10,3.047851265,Snorkel Downstream,Observer,153,0,0,0,133,0,780,500 HH 100 PM 110 SS 30 TP 40 TSS,10666
+8/10/2017,206,Clear Creek,221,289,Control,3:45:00,14,1,66,10,3.047851265,Snorkel Downstream,Observer,179,0,0,3,67,0,1087,536 HH 166 SS 315 PM 70 TP,10509
+8/24/2017,206,Clear Creek,221,289,Control,3:35:00,NA,1,63,10,3.047851265,Snorkel Downstream,Observer,408,0,0,0,39,0,1700,500HH 200SS 300TP 700PM,10644
+9/5/2017,206,Clear Creek,221,289,Control,2:50:00,NA,1,62,10,3.047851265,Snorkel Downstream,Observer,185,3,0,0,160,0,908,618HH 88SS 197PM 5TP,9114
+9/19/2017,206,Clear Creek,221,289,Control,3:00:00,NA,1,58,10,3.047851265,Snorkel Downstream,Observer,161,1,0,0,40,0,1518,1100 HH 340 SS 28 TSS 50 PM,9042
+10/4/2017,206,Clear Creek,221,289,Control,2:40:00,NA,1,51,10,3.047851265,Snorkel Downstream,Observer,47,16,0,0,5,0,1283,80 SS 1200 HH 2TSB 1TP,7924
+10/17/2017,206,Clear Creek,221,289,Control,2:45:00,0.92,1,52,10,3.047851265,Snorkel Downstream,Observer,1,0,0,0,0,0,524,250 HH 270 PM 1 TP 1 TSS 1 SS 1 Sculpin,8026
+11/2/2017,206,Clear Creek,221,289,Control,4:00:00,NA,3,53,10,3.047851265,Snorkel Downstream,Observer,0,0,0,0,0,0,332,282 PM 50 HH 1 Adult Trout,8075
+11/14/2017,206,Clear Creek,221,289,Control,2:10:00,NA,1,52,10,3.047851265,Snorkel Downstream,Observer,0,0,0,0,0,0,105,30 TSS 75 HH,5383
+11/28/2017,206,Clear Creek,221,289,Control,3:00:00,NA,2,50,10,3.047851265,Snorkel Downstream,Observer,0,0,0,0,0,0,125,125 PM,5000
+12/15/2017,206,Clear Creek,221,289,Control,3:30:00,NA,3,48,10,3.047851265,Snorkel Downstream,Observer,0,0,0,0,0,0,112,110 HH 1 sculpin 1 tss,5030
+12/26/2017,206,Clear Creek,221,289,Control,3:00:00,NA,2,45,10,3.047851265,Snorkel Downstream,Observer,0,0,0,0,0,0,1,0.541666667,5072
+1/11/2018,206,Clear Creek,221,289,Control,4:30:00,NA,4,48,10,3.047851265,Snorkel Downstream,Observer,0,0,0,0,0,0,3,0.625,4088
+1/22/2018,206,Clear Creek,221,289,Control,2:35:00,NA,3,46,10,3.047851265,Snorkel Downstream,Observer,0,0,0,0,0,0,0,NA,4052
+2/7/2018,206,Clear Creek,221,289,Control,2:00:00,NA,1,46,10,3.047851265,Snorkel Downstream,Observer,0,0,0,240,0,0,32,32 PM,4010
+2/21/2018,206,Clear Creek,221,289,Control,4:00:00,NA,1,44,10,3.047851265,Snorkel Downstream,Observer,0,10,0,252,15,0,52,52 PKM,3246
+3/5/2018,206,Clear Creek,221,289,Control,3:00:00,NA,1,47,10,3.047851265,Snorkel Downstream,Observer,0,0,0,95,0,0,150,150 HH,3255
+3/22/2018,206,Clear Creek,221,289,Control,4:30:00,NA,2,48,1.5,0.45717769,Snorkel Downstream,Observer,0,5,0,0,0,0,50,50 hardhead,3201
+4/4/2018,206,Clear Creek,221,289,Control,3:20:00,NA,3,54,10,3.047851265,Snorkel Downstream,Observer,7,3,0,335,3,0,782,781 HH 1 rifscu,3258
+4/17/2018,206,Clear Creek,221,289,Control,3:10:00,NA,1,50,10,3.047851265,Snorkel Downstream,Observer,3,0,0,290,41,0,380,300 HH 30 sacsuc 50PM,3285
+4/30/2018,206,Clear Creek,221,289,Control,4:50:00,NA,1,58,10,3.047851265,Snorkel Downstream,Observer,33,1,0,246,20,0,492,480 HH 12 TSS,7058
+5/15/2018,206,Clear Creek,221,289,Control,5:36:00,NA,1,62,10,3.047851265,Snorkel Downstream,Observer,6,0,0,345,53,0,552,550 PM (1 adult) 2 TP,8737
+5/29/2018,206,Clear Creek,221,289,Control,2:09:00,NA,1,57,10,3.047851265,Snorkel Downstream,Observer,0,0,0,217,55,0,696,555 HH 2 TSB 12 TP 127 SS,9491
+6/11/2018,206,Clear Creek,221,289,Control,4:45:00,NA,1,62,10,3.047851265,Snorkel Downstream,Observer,45,0,0,340,3,0,600,600 pm,9743
+6/27/2018,206,Clear Creek,221,289,Control,2:15:00,NA,1,58,10,3.047851265,Snorkel Downstream,Observer,0,0,0,51,59,0,771,320 PM 1 HH 50 SS 400 minnows,12067
+7/11/2018,206,Clear Creek,221,289,Control,3:45:00,NA,1,62,10,3.047851265,Snorkel Downstream,Observer,0,0,0,66,11,0,0,hundreds of PM TSS Suckers TP,12994
+7/24/2018,206,Clear Creek,221,289,Control,4:28:00,NA,1,56,10,3.047851265,Snorkel Downstream,Observer,0,0,0,0,46,1,304,1 adult PM 300 HH 4 PM,13044
+8/9/2018,206,Clear Creek,221,289,Control,4:20:00,NA,3,66,10,3.047851265,Snorkel Downstream,Observer,0,0,0,83,128,0,426,204 HH 196 PM 26 TP,11199
+8/24/2018,206,Clear Creek,221,289,Control,1:55:00,NA,1,61,10,3.047851265,Snorkel Downstream,Observer,6,0,0,56,68,0,421,330 HH 51 sacsuc 40 sacperch,9496
+9/4/2018,206,Clear Creek,221,289,Control,5:44:00,NA,1,62,10,3.047851265,Snorkel Downstream,Observer,71,0,0,52,39,0,1000,300 HH 40 SACSUC 550 HH 110 TSS,9005
+9/19/2018,206,Clear Creek,221,289,Control,1:45:00,NA,1,62,10,3.047851265,Snorkel Downstream,Observer,18,0,0,30,2,0,553,550 PM 3 SS,7621
+10/3/2018,206,Clear Creek,221,289,Control,2:45:00,NA,2,57,10,3.047851265,Snorkel Downstream,Observer,9,0,0,29,43,0,505,250 Hardhead 20 Sucker 1 Adult Chinook,7269
+10/30/2018,206,Clear Creek,221,289,Control,5:00:00,NA,1,54,6,1.828710759,Snorkel Downstream,Observer,0,0,0,0,2,0,106,106 TSS,6004
+12/10/2018,206,Clear Creek,221,289,Control,2:00:00,NA,1,53,3,0.914355379,Snorkel Downstream,Observer,0,0,0,0,0,0,0,Did not snorkel,4018
+1/29/2019,206,Clear Creek,221,289,Control,1:50:00,NA,2,48,4,1.219140506,Snorkel Downstream,Observer,0,0,0,20,0,0,210,210 HH Visibility only 1-2' at bottom of reach,3249
+7/9/2019,206,Clear Creek,221,289,Control,2:20:00,NA,1,64,10,3.047851265,Snorkel Downstream,Observer,2,0,0,141,14,0,332,275 HH 32 sacsuc 25sacperch,NA
+8/14/2019,206,Clear Creek,221,289,Control,2:20:00,NA,1,54,10,3.047851265,Snorkel Downstream,Observer,12,0,0,87,16,0,600,500HH 100sacsuc,11341
+9/17/2019,206,Clear Creek,221,289,Control,5:04:00,NA,1,56,10,3.047851265,Snorkel Downstream,Observer,67,0,0,8,18,0,2686,2000HH  650sacsuc 25sacperch 10TSS 1rifscu,8500
+10/23/2019,206,Clear Creek,221,289,Control,3:00:00,NA,1,55,5,1.523925632,Snorkel Downstream,Observer,0,0,0,0,3,0,425,400HH 25SS,8647
+11/12/2019,206,Clear Creek,221,289,Control,4:40:00,NA,3,53,4.5,1.371533069,Snorkel Downstream,Observer,6,22,0,0,0,0,0,900pkm 36 TSS 40SS 100fathead minnow 50 tule,4958
+1/6/2020,206,Clear Creek,221,289,Control,3:30:00,NA,2,45,8,2.438281012,Snorkel Downstream,Observer,0,30,0,61,4,0,775,715 PKM 50 HH 10 TSS,5057
+1/21/2020,206,Clear Creek,221,289,Control,2:50:00,NA,4,46,6.5,1.981103322,Snorkel Downstream,Observer,0,0,0,3,0,0,548,NA,5222
+2/4/2020,206,Clear Creek,221,289,Control,3:00:00,NA,1,46,7,2.133495885,Snorkel Downstream,Observer,0,0,58,146,0,0,0,1mosquito fish3SS18TSB666HH1bluegill,4513
+2/19/2020,206,Clear Creek,221,289,Control,4:47:00,NA,1,49,10,3.047851265,Snorkel Downstream,Observer,0,0,87,388,0,0,535,NA,4090
+3/3/2020,206,Clear Creek,221,289,Control,2:20:00,NA,1,48,7,2.133495885,Snorkel Downstream,Observer,0,0,9,215,0,0,781,767cyprinidae 13tsb 1sacsuc,5505
+3/24/2020,206,Clear Creek,221,289,Control,4:00:00,NA,3,49,3,0.914355379,Snorkel Downstream,Observer,0,0,0,37,0,0,250,246 Cyprinidae 2 Lamprey 2 Sac Suckers,4754
+4/16/2020,206,Clear Creek,221,289,Control,0:45:00,NA,1,51.6,10,3.047851265,Snorkel Downstream,Observer,3,0,1,234,1,0,1037,1033 HH 3 TSB 1 RIFSCU,5842
+4/16/2020,206,Clear Creek,221,289,Control,1:45:00,NA,1,51.6,10,3.047851265,Snorkel Downstream,Observer,3,0,1,234,1,0,1037,3 HH 3 TSB 1 Sculpin 1030 HH,5830
+5/5/2020,206,Clear Creek,221,289,Control,2:30:00,NA,1,52.2,10,3.047851265,Snorkel Downstream,Observer,14,0,3,217,0,0,108,101-CYP6-SS 1-TSS,9983
+5/27/2020,206,Clear Creek,221,289,Control,3:00:00,NA,1,61,10,3.047851265,Snorkel Downstream,Observer,111,0,6,104,20,0,52,51 minnows 1 tsb,9029
+6/16/2020,206,Clear Creek,221,289,Control,4:45:00,NA,1,54,7,2.133495885,Snorkel Downstream,Observer,14,0,0,21,10,0,516,400MINNOWS 78PKM 35SACSUC 3TSS,12301
+6/30/2020,206,Clear Creek,221,289,Control,6:30:00,NA,1,54,5,1.523925632,Snorkel Downstream,Observer,27,0,0,35,5,0,70,15 TSS 10 SACSUC 45 HH,12652
+2/22/2016,207,Shea Island,683,290,Baseline,3:30:00,NA,1,54,4,1.219140506,Snorkel Downstream,Observer,0,2,0,3,2,0,0,NA,3310
+5/11/2016,207,Shea Island,683,290,Baseline,1:20:00,NA,1,60,2.5,0.761962816,Snorkel Downstream,Observer,0,0,0,0,0,0,510,500 SMALL MINNOWS 10 SS,6560
+7/21/2016,207,Shea Island,683,290,Baseline,2:00:00,NA,1,56,5,1.523925632,Snorkel Downstream,Observer,7,0,0,0,10,0,200,100 HH 100 SS,10517
+6/14/2017,207,Shea Island,683,290,Baseline,4:15:00,NA,1,56,6,1.828710759,Snorkel Downstream,Observer,0,0,0,0,1,0,33,10 TSS 1 PM 22 HH,10031
+6/14/2017,207,Shea Island,683,290,Baseline,4:20:00,NA,1,56,6,1.828710759,Snorkel Downstream,Observer,0,0,0,0,0,0,500,juvie suckers,10031
+8/2/2017,207,Shea Island,683,290,Baseline,2:40:00,NA,1,53,5,1.523925632,Snorkel Downstream,Observer,0,0,0,0,575,0,0,NA,10666
+8/10/2017,207,Shea Island,683,290,Baseline,2:30:00,NA,1,54,7.5,2.285888449,Snorkel Downstream,Observer,31,0,0,0,257,0,102,1 adult RT 32 PM 70 TSS,10509
+8/24/2017,207,Shea Island,683,290,Baseline,2:20:00,NA,1,53,5,1.523925632,Snorkel Downstream,Observer,0,0,0,0,182,0,0,NA,10644
+9/5/2017,207,Shea Island,683,290,Baseline,4:00:00,NA,1,54,6,1.828710759,Snorkel Downstream,Observer,0,0,0,0,0,0,42,30HH 12SS,9114
+9/19/2017,207,Shea Island,683,290,Baseline,4:05:00,NA,1,54,5.5,1.676318196,Snorkel Downstream,Observer,0,1,0,0,5,0,6,1 SS 5 HH 1 adult trout,9042
+10/4/2017,207,Shea Island,683,290,Baseline,1:25:00,NA,1,51,9,2.743066138,Snorkel Downstream,Observer,0,3,0,0,49,0,1,1 TSB 2 FR adults,7924
+10/17/2017,207,Shea Island,683,290,Baseline,3:45:00,NA,1,52,10,3.047851265,Snorkel Downstream,Observer,0,0,0,0,7,0,8,0.833333333,8026
+11/2/2017,207,Shea Island,683,290,Baseline,5:00:00,NA,3,52,10,3.047851265,Snorkel Downstream,Observer,0,0,0,0,7,0,30,5 Adult Salmon 30 PM,8075
+4/10/2018,207,Shea Island,683,290,Baseline,3:00:00,NA,3,66,8,2.438281012,Snorkel Downstream,Observer,0,1,0,0,30,0,255,9TSS 2SACSUC 244HH,3302
+5/1/2018,207,Shea Island,683,290,Baseline,2:30:00,NA,1,56,10,3.047851265,Snorkel Downstream,Observer,0,0,0,3,0,0,527,12 TSS 500 PM 15 SACSUC (fungus),7027
+5/15/2018,207,Shea Island,683,290,Baseline,1:30:00,NA,1,50,10,3.047851265,Snorkel Downstream,Observer,0,0,0,3,8,0,122,120 PM 2 TSS,8737
+5/30/2018,207,Shea Island,683,290,Baseline,5:36:00,NA,1,56,6,1.828710759,Snorkel Downstream,Observer,0,0,0,0,1,0,22,10TSS 12HH,9516
+6/11/2018,207,Shea Island,683,290,Baseline,3:20:00,NA,1,55,10,3.047851265,Snorkel Downstream,Observer,0,0,0,20,13,0,808,5 adult trout 2 sculpin 1 LMB 500 pm 300 tss,9743
+6/27/2018,207,Shea Island,683,290,Baseline,2:45:00,NA,1,55,10,3.047851265,Snorkel Downstream,Observer,0,0,0,40,206,1,114,104 PM 10 tss 1 adult trout,12067
+7/7/2018,207,Shea Island,683,290,Baseline,1:20:00,NA,3,55,9,2.743066138,Snorkel Downstream,Observer,0,0,0,0,133,11,30,26 SS 15 HH,13008
+7/11/2018,207,Shea Island,683,290,Baseline,2:40:00,NA,1,54,10,3.047851265,Snorkel Downstream,Observer,0,0,0,16,25,2,0,2 adult trout,12994
+7/24/2018,207,Shea Island,683,290,Baseline,5:31:00,NA,1,57,10,3.047851265,Snorkel Downstream,Observer,0,0,0,1,32,1,0,1 adult trout,13044
+8/24/2018,207,Shea Island,683,290,Baseline,2:35:00,NA,1,54,10,3.047851265,Snorkel Downstream,Observer,0,0,0,0,45,1,0,1 RBT adult,9496
+9/4/2018,207,Shea Island,683,290,Baseline,5:04:00,NA,1,56,10,3.047851265,Snorkel Downstream,Observer,0,0,0,0,0,0,25,PKM,9005
+9/19/2018,207,Shea Island,683,290,Baseline,2:27:00,NA,1,54,10,3.047851265,Snorkel Downstream,Observer,0,1,0,10,26,0,80,80 HH,7621
+10/3/2018,207,Shea Island,683,290,Baseline,1:42:00,NA,2,54,10,3.047851265,Snorkel Downstream,Observer,0,0,0,0,12,0,0,NA,7269
+10/16/2018,207,Shea Island,683,290,Baseline,4:58:00,NA,1,55,10,3.047851265,Snorkel Downstream,Observer,0,12,0,0,68,0,220,220 Hardhead,7225
+10/30/2018,207,Shea Island,683,290,Baseline,6:00:00,NA,1,54,10,3.047851265,Snorkel Downstream,Observer,1,35,0,0,140,1,1105,Adult RBT FR salmon,6004
+7/11/2019,207,Shea Island,683,290,Baseline,5:30:00,NA,1,57,10,3.047851265,Snorkel Downstream,Observer,0,0,0,103,224,0,280,270 HH 10 PKM 1 adult chisal carcass,NA
+8/14/2019,207,Shea Island,683,290,Baseline,3:45:00,NA,1,54,10,3.047851265,Snorkel Downstream,Observer,48,1,0,0,867,0,1205,1000HH 30sacsuc 75TSS,11357
+9/17/2019,207,Shea Island,683,290,Baseline,3:15:00,NA,1,56,8,2.438281012,Snorkel Downstream,Observer,19,0,0,0,124,0,150,150HH,8514
+10/22/2019,207,Shea Island,683,290,Baseline,3:00:00,NA,1,52,8,2.438281012,Snorkel Downstream,Observer,0,9,0,0,2,0,0,6 adult salmon 1HH 6 pikeminnow 1TSB,8661
+11/12/2019,207,Shea Island,683,290,Baseline,5:30:00,NA,NA,NA,NA,NA,Snorkel Downstream,Observer,0,0,0,0,0,0,0,Shae had no flows @ top didnâ€™t snorkel,5000
+3/10/2020,207,Shea Island,683,290,Baseline,2:00:00,NA,1,49,10,3.047851265,Snorkel Downstream,Observer,0,120,115,100,2,0,160,160HH,5090
+4/21/2020,207,Shea Island,683,290,Baseline,2:10:00,NA,1,56,6,1.828710759,Snorkel Downstream,Observer,1,0,0,6,0,0,8,6 HH 2 TSS,7915
+5/5/2020,207,Shea Island,683,290,Baseline,3:00:00,NA,1,52.3,10,3.047851265,Snorkel Downstream,Observer,1,0,0,10,0,0,111,100-CYP1-TSS,10030
+5/27/2020,207,Shea Island,683,290,Baseline,2:00:00,NA,1,59,10,3.047851265,Snorkel Downstream,Observer,6,2,1,67,30,0,111,11 tsb 100 minnows,9043
+6/16/2020,207,Shea Island,683,290,Baseline,4:10:00,NA,1,54,10,3.047851265,Snorkel Downstream,Observer,0,0,0,0,78,0,158,155MINNOWS 3TSS,12230
+6/29/2020,207,Shea Island,683,290,Baseline,3:15:00,NA,1,54,8,2.438281012,Snorkel Downstream,Observer,0,0,0,0,27,0,86,86-PKM,12800
+2/9/2016,208,Wyndham,458,293.5,Control,2:30:00,NA,1,49,6,1.828710759,Snorkel Downstream,Observer,0,49,0,449,0,0,0,NA,3170
+2/26/2016,208,Wyndham,458,293.5,Control,2:40:00,NA,1,51,4,1.219140506,Snorkel Upstream,Observer,0,0,0,135,0,0,0,NA,3270
+4/12/2016,208,Wyndham,458,293.5,Control,2:00:00,NA,4,52,7,2.133495885,Snorkel Downstream,Observer,81,0,0,11,69,0,25,25 TSS,5040
+4/21/2016,208,Wyndham,458,293.5,Control,4:50:00,NA,2,58,6,1.828710759,Snorkel Downstream,Observer,0,0,0,20,20,0,4,4 Three spine stickleback,5040
+4/25/2016,208,Wyndham,458,293.5,Control,5:20:00,NA,1,57,7,2.133495885,Snorkel Downstream,Observer,0,0,0,30,309,0,6,1 Cal. Roach 5 TSS,5040
+5/3/2016,208,Wyndham,458,293.5,Control,2:05:00,NA,2,56,6,1.828710759,Snorkel Downstream,Observer,0,0,0,0,140,0,0,NA,5530
+5/12/2016,208,Wyndham,458,293.5,Control,3:25:00,NA,1,58,5,1.523925632,Snorkel Downstream,Observer,0,0,0,0,269,0,1,1TSS,6530
+6/14/2016,208,Wyndham,458,293.5,Control,3:45:00,NA,2,55,5,1.523925632,Snorkel Downstream,Observer,0,0,0,0,39,0,0,NA,8080
+7/28/2016,208,Wyndham,458,293.5,Control,2:00:00,NA,1,53,6,1.828710759,Snorkel Downstream,Observer,0,0,0,0,414,0,2,2 TSS,10554
+8/16/2016,208,Wyndham,458,293.5,Control,2:00:00,NA,1,53,6,1.828710759,Snorkel Downstream,Observer,0,0,0,0,64,0,0,visibility in pool very poor,10483
+9/8/2016,208,Wyndham,458,293.5,Control,3:40:00,NA,1,54,8,2.438281012,Snorkel Downstream,Observer,1,0,0,0,37,0,0,NA,9546
+9/15/2016,208,Wyndham,458,293.5,Control,2:15:00,NA,1,54,8,2.438281012,Snorkel Downstream,Observer,2,0,0,0,90,0,0,NA,9041
+9/27/2016,208,Wyndham,458,293.5,Control,2:30:00,NA,1,52,10,3.047851265,Snorkel Downstream,Observer,1,2,0,0,114,0,0,NA,7975
+10/11/2016,208,Wyndham,458,293.5,Control,2:00:00,NA,1,52,8,2.438281012,Snorkel Downstream,Observer,0,31,0,0,53,0,0,NA,7012
+10/27/2016,208,Wyndham,458,293.5,Control,2:35:00,NA,4,53,10,3.047851265,Snorkel Downstream,Observer,2,0,0,0,56,0,0,2 adult trout 2 adult FR salmon,5535
+11/17/2016,208,Wyndham,458,293.5,Control,2:55:00,NA,1,54,9,2.743066138,Snorkel Downstream,Observer,0,0,0,0,2,0,0,adult trout,5040
+11/29/2016,208,Wyndham,458,293.5,Control,3:20:00,NA,1,53,9,2.743066138,Snorkel Downstream,Observer,0,0,0,0,5,0,2,2 TSS,5035
+12/20/2016,208,Wyndham,458,293.5,Control,4:35:00,NA,2,51,10,3.047851265,Snorkel Downstream,Observer,0,2,0,0,0,0,0,NA,5072
+7/12/2017,208,Wyndham,458,293.5,Control,3:50:00,1.3,1,51,5,1.523925632,Snorkel Downstream,Observer,3,0,0,0,325,0,0,NA,10394
+7/25/2017,208,Wyndham,458,293.5,Control,4:15:00,1.5,1,53,7,2.133495885,Snorkel Downstream,Observer,0,0,0,0,530,0,2,2 TSS,10666
+8/9/2017,208,Wyndham,458,293.5,Control,4:40:00,15,1,54,8,2.438281012,Snorkel Downstream,Observer,0,0,0,0,355,0,50,50 TSS,10313
+8/22/2017,208,Wyndham,458,293.5,Control,4:45:00,15,1,54,7,2.133495885,Snorkel Downstream,Observer,0,0,0,0,76,0,0,NA,10466
+9/7/2017,208,Wyndham,458,293.5,Control,2:33:00,13,4,53,3,0.914355379,Snorkel Downstream,Observer,0,0,0,0,6,0,0,NA,9131
+9/21/2017,208,Wyndham,458,293.5,Control,3:40:00,NA,1,54,5,1.523925632,Snorkel Downstream,Observer,0,4,0,0,23,0,0,NA,9029
+10/2/2017,208,Wyndham,458,293.5,Control,4:00:00,NA,1,51.3,10,3.047851265,Snorkel Downstream,Observer,0,0,0,0,76,0,1,1tss,8073
+10/19/2017,208,Wyndham,458,293.5,Control,2:00:00,10,2,52,10,3.047851265,Snorkel Downstream,Observer,0,19,0,0,111,0,0,Possible FR Redds,8019
+10/31/2017,208,Wyndham,458,293.5,Control,5:00:00,11,1,53,10,3.047851265,Snorkel Downstream,Observer,10,147,0,0,66,0,20,3 Adult FR 3 REDDS 20 TSS,8161
+11/16/2017,208,Wyndham,458,293.5,Control,2:00:00,4,2,52,10,3.047851265,Snorkel Downstream,Observer,1,42,0,0,0,0,1,1 sculpin,5007
+11/30/2017,208,Wyndham,458,293.5,Control,2:00:00,5,2,52,10,3.047851265,Snorkel Downstream,Observer,0,50,0,0,35,0,0,NA,5005
+12/17/2017,208,Wyndham,458,293.5,Control,2:00:00,5,2,49,10,3.047851265,Snorkel Downstream,Observer,0,9,0,0,0,0,0,NA,5026
+12/19/2017,208,Wyndham,458,293.5,Control,1:45:00,5,2,50,10,3.047851265,Snorkel Downstream,Observer,0,0,0,0,0,0,0,1 juvie trout mort,5080
+12/27/2017,208,Wyndham,458,293.5,Control,2:00:00,5,2,49,10,3.047851265,Snorkel Downstream,Observer,0,9,0,0,0,0,0,NA,5068
+1/9/2018,208,Wyndham,458,293.5,Control,3:30:00,NA,3,51,8,2.438281012,Snorkel Downstream,Observer,0,0,0,102,0,0,0,NA,4098
+1/23/2018,208,Wyndham,458,293.5,Control,4:15:00,NA,3,51,8,2.438281012,Snorkel Downstream,Observer,0,0,0,70,0,0,0,NA,4055
+2/5/2018,208,Wyndham,458,293.5,Control,6:00:00,NA,1,52,10,3.047851265,Snorkel Downstream,Observer,0,50,0,225,0,0,0,NA,4000
+2/23/2018,208,Wyndham,458,293.5,Control,5:15:00,NA,1,53,10,3.047851265,Snorkel Downstream,Observer,0,10,0,165,0,0,0,NA,3210
+3/5/2018,208,Wyndham,458,293.5,Control,3:47:00,NA,1,48,10,3.047851265,Snorkel Downstream,Observer,0,26,0,25,10,0,0,NA,3255
+3/20/2018,208,Wyndham,458,293.5,Control,4:08:00,NA,3,51,10,3.047851265,Snorkel Downstream,Observer,0,0,0,50,0,0,1,1 RIFSCU,3341
+4/4/2018,208,Wyndham,458,293.5,Control,2:10:00,1,3,52,9,2.743066138,Snorkel Downstream,Observer,3,3,0,118,17,0,0,NA,3258
+4/18/2018,208,Wyndham,458,293.5,Control,2:30:00,NA,3,52,10,3.047851265,Snorkel Downstream,Observer,0,0,0,20,5,0,0,NA,3253
+5/1/2018,208,Wyndham,458,293.5,Control,4:05:00,NA,1,57,10,3.047851265,Snorkel Downstream,Observer,0,0,0,10,0,0,0,NA,7027
+5/15/2018,208,Wyndham,458,293.5,Control,2:30:00,13,1,54,10,3.047851265,Snorkel Downstream,Observer,20,0,0,40,0,0,215,100 SS 55 TSS 60 WESMOS,8737
+5/30/2018,208,Wyndham,458,293.5,Control,3:27:00,1.2,1,54,10,3.047851265,Snorkel Downstream,Observer,12,0,0,50,5,0,1,1 adult RBT,9516
+6/11/2018,208,Wyndham,458,293.5,Control,2:00:00,16,1,54,10,3.047851265,Snorkel Downstream,Observer,80,0,0,105,125,0,0,NA,9743
+6/27/2018,208,Wyndham,458,293.5,Control,4:30:00,NA,1,54,10,3.047851265,Snorkel Downstream,Observer,30,0,0,509,231,0,2,2 TSS,12067
+7/10/2018,208,Wyndham,458,293.5,Control,5:00:00,NA,1,54,10,3.047851265,Snorkel Downstream,Observer,0,2,0,108,597,0,1,1 rifscu,13023
+7/25/2018,208,Wyndham,458,293.5,Control,2:05:00,NA,1,56,10,3.047851265,Snorkel Downstream,Observer,0,0,0,0,900,0,0,NA,13027
+8/8/2018,208,Wyndham,458,293.5,Control,2:20:00,18,3,54,10,3.047851265,Snorkel Downstream,Observer,0,0,0,60,1115,0,0,NA,11502
+8/22/2018,208,Wyndham,458,293.5,Control,5:00:00,16,1,56,10,3.047851265,Snorkel Downstream,Observer,183,40,0,20,300,0,543,1 rifscu,9704
+9/4/2018,208,Wyndham,458,293.5,Control,4:10:00,14,1,56,10,3.047851265,Snorkel Downstream,Observer,43,0,0,3,48,0,0,NA,9005
+9/19/2018,208,Wyndham,458,293.5,Control,3:30:00,NA,1,54,10,3.047851265,Snorkel Downstream,Observer,30,90,0,0,58,0,0,NA,7621
+10/1/2018,208,Wyndham,458,293.5,Control,4:15:00,NA,4,53,10,3.047851265,Snorkel Downstream,Observer,12,30,0,0,0,1,0,6 adult FR 1 adult trout,7233
+10/15/2018,208,Wyndham,458,293.5,Control,5:22:00,NA,1,55,10,3.047851265,Snorkel Downstream,Observer,66,108,0,0,0,1,0,1 Adult RBT,7212
+11/1/2018,208,Wyndham,458,293.5,Control,5:20:00,NA,1,56,10,3.047851265,Snorkel Downstream,Observer,30,301,0,0,0,0,0,NA,5708
+11/13/2018,208,Wyndham,458,293.5,Control,5:50:00,0.4,2,53,10,3.047851265,Snorkel Downstream,Observer,0,75,0,0,0,1,0,2 Adult FR 1 Adult RBT,4553
+11/28/2018,208,Wyndham,458,293.5,Control,2:40:00,NA,3,56,8,2.438281012,Snorkel Downstream,Observer,0,0,0,0,1,0,0,NA,3985
+12/10/2018,208,Wyndham,458,293.5,Control,4:40:00,NA,1,53,7,2.133495885,Snorkel Downstream,Observer,0,0,0,0,0,0,0,NA,4018
+12/31/2018,208,Wyndham,458,293.5,Control,2:15:00,3,1,48,6,1.828710759,Snorkel Downstream,Observer,0,8,0,559,2,0,0,NA,3990
+1/30/2019,208,Wyndham,458,293.5,Control,2:30:00,NA,2,50,5,1.523925632,Snorkel Downstream,Observer,0,0,0,50,0,0,200,200 TSS,3251
+7/11/2019,208,Wyndham,458,293.5,Control,2:30:00,NA,1,56,10,3.047851265,Snorkel Downstream,Observer,0,0,0,305,165,0,1,rifscu,NA
+8/14/2019,208,Wyndham,458,293.5,Control,2:30:00,NA,1,53,10,3.047851265,Snorkel Downstream,Observer,1,0,0,0,625,0,0,NA,11341
+9/17/2019,208,Wyndham,458,293.5,Control,2:00:00,NA,1,56,8,2.438281012,Snorkel Downstream,Observer,45,42,0,0,236,0,0,NA,8514
+10/24/2019,208,Wyndham,458,293.5,Control,3:30:00,NA,2,52,10,3.047851265,Snorkel Downstream,Observer,39,541,0,0,15,0,0,20 adult chinook,7320
+11/12/2019,208,Wyndham,458,293.5,Control,2:30:00,NA,3,52,8,2.438281012,Snorkel Downstream,Observer,0,221,0,0,9,0,4,4tsb 4 adult chinook swimmer 2 1 bluegill v,4904
+1/6/2020,208,Wyndham,458,293.5,Control,2:30:00,NA,2,50,10,3.047851265,Snorkel Downstream,Observer,0,104,0,315,0,0,3,1 TSS 2 RIFSCU,5046
+1/21/2020,208,Wyndham,458,293.5,Control,2:15:00,NA,4,46,8,2.438281012,Snorkel Downstream,Observer,0,507,0,812,10,0,0,NA,5167
+2/4/2020,208,Wyndham,458,293.5,Control,3:45:00,NA,2,48,8,2.438281012,Snorkel Downstream,Observer,0,4,731,828,0,0,0,NA,4421
+2/24/2020,208,Wyndham,458,293.5,Control,2:45:00,NA,1,49,6,1.828710759,Snorkel Downstream,Observer,0,1,74,889,2,0,2,2TSB,5013
+3/5/2020,208,Wyndham,458,293.5,Control,2:20:00,NA,1,50,7,2.133495885,Snorkel Downstream,Observer,0,0,20,682,0,0,0,NA,5516
+3/25/2020,208,Wyndham,458,293.5,Control,3:30:00,NA,1,50,8,2.438281012,Snorkel Downstream,Observer,0,0,95,627,2,0,0,NA,4723
+4/16/2020,208,Wyndham,458,293.5,Control,2:30:00,NA,1,51.8,10,3.047851265,Snorkel Downstream,Observer,0,0,8,955,3,0,1,1 minnow species,5842
+4/16/2020,208,Wyndham,458,293.5,Control,2:30:00,NA,1,51.8,10,3.047851265,Snorkel Downstream,Observer,0,0,8,955,3,0,1,NA,5842
+5/6/2020,208,Wyndham,458,293.5,Control,2:00:00,NA,1,51.6,10,3.047851265,Snorkel Downstream,Observer,9,0,2,196,2,0,0,NA,10061
+5/28/2020,208,Wyndham,458,293.5,Control,3:15:00,NA,1,57,10,3.047851265,Snorkel Downstream,Observer,47,0,0,89,89,0,1,1 sculpin,9782
+6/16/2020,208,Wyndham,458,293.5,Control,3:11:00,NA,1,53,7,2.133495885,Snorkel Downstream,Observer,3,0,0,1,16,0,3,NA,12248
+6/30/2020,208,Wyndham,458,293.5,Control,5:15:00,NA,1,52,10,3.047851265,Snorkel Downstream,Observer,8,0,0,19,397,0,15,15 TSS,12615
+5/30/2018,219,South Cypress,88,294,Baseline,2:47:00,NA,1,54,10,3.047851265,Snorkel Downstream,Observer,0,0,0,150,60,0,0,South Cypress,9516
+8/8/2018,219,South Cypress,88,294,Baseline,4:04:00,NA,3,55,10,3.047851265,Snorkel Downstream,Observer,0,0,0,0,94,0,0,NA,11502
+10/16/2018,219,South Cypress,88,294,Baseline,3:43:00,NA,1,54,10,3.047851265,Snorkel Downstream,Observer,0,750,0,0,0,0,0,NA,7225
+11/26/2019,219,South Cypress,88,294,Baseline,2:35:00,NA,3,49.5,10,3.047851265,Snorkel Downstream,Observer,0,0,0,0,0,0,1,1 TSS,4818
+1/23/2020,219,South Cypress,88,294,Baseline,2:30:00,NA,3,50,10,3.047851265,Snorkel Downstream,Observer,0,5,0,373,0,0,0,NA,5057
+2/4/2020,219,South Cypress,88,294,Baseline,5:30:00,NA,2,48,10,3.047851265,Snorkel Downstream,Observer,0,0,285,405,0,0,0,NA,4565
+2/24/2020,219,South Cypress,88,294,Baseline,2:25:00,NA,1,48,7,2.133495885,Snorkel Downstream,Observer,0,0,0,350,0,0,0,NA,5013
+3/5/2020,219,South Cypress,88,294,Baseline,3:20:00,NA,1,50,6,1.828710759,Snorkel Downstream,Observer,0,0,0,217,0,0,0,NA,5551
+3/25/2020,219,South Cypress,88,294,Baseline,2:45:00,NA,1,49,8,2.438281012,Snorkel Downstream,Observer,0,0,0,145,0,0,0,NA,4776
+4/16/2020,219,South Cypress,88,294,Baseline,6:00:00,NA,1,51.8,10,3.047851265,Snorkel Downstream,Observer,0,15,30,700,0,0,0,NA,5889
+4/16/2020,219,South Cypress,88,294,Baseline,6:00:00,NA,1,51.8,10,3.047851265,Snorkel Downstream,Observer,0,15,30,700,0,0,0,NA,5889
+5/14/2020,219,South Cypress,88,294,Baseline,3:15:00,NA,3,54,10,3.047851265,Snorkel Downstream,Observer,0,0,0,61,12,0,0,NA,9890
+7/1/2020,219,South Cypress,88,294,Baseline,5:30:00,NA,1,52,7,2.133495885,Snorkel Downstream,Observer,5,0,0,140,185,2,0,NA,12708
+12/20/2016,201,North Cypress,590,295.5,Impact,2:35:00,NA,2,50,6,1.828710759,Snorkel Downstream,Observer,0,0,0,0,1,0,0,adult steelhead,5072
+12/29/2016,201,North Cypress,590,295.5,Impact,2:30:00,NA,1,51,NA,NA,Snorkel Downstream,Observer,0,0,0,2,0,0,0,NA,1025
+6/19/2017,201,North Cypress,590,295.5,Impact,5:30:00,NA,1,53,3,0.914355379,Snorkel Downstream,Observer,0,0,0,5,283,0,0,Top and bottom channels combined,10303
+7/12/2017,201,North Cypress,590,295.5,Impact,2:05:00,NA,1,50,4.5,1.371533069,Snorkel Downstream,Observer,0,0,0,0,165,0,0,upper half of 201,10394
+7/12/2017,201,North Cypress,590,295.5,Impact,3:00:00,NA,1,50,4.5,1.371533069,Snorkel Downstream,Observer,10,0,0,0,265,0,0,lower half of 201,10394
+7/25/2017,201,North Cypress,590,295.5,Impact,5:42:00,NA,1,54,7,2.133495885,Snorkel Downstream,Observer,15,0,0,0,525,0,4,4 TSS,10666
+8/9/2017,201,North Cypress,590,295.5,Impact,2:50:00,NA,1,53,8,2.438281012,Snorkel Downstream,Observer,0,0,0,0,439,0,102,2 TSS 100 Sacsuc,10313
+8/22/2017,201,North Cypress,590,295.5,Impact,2:30:00,NA,1,54,7,2.133495885,Snorkel Downstream,Observer,0,0,0,0,234,0,3,3 TSS,10466
+9/7/2017,201,North Cypress,590,295.5,Impact,2:20:00,NA,3,53,3,0.914355379,Snorkel Downstream,Observer,0,0,0,0,19,0,0,NA,9131
+9/21/2017,201,North Cypress,590,295.5,Impact,2:45:00,NA,1,53,5,1.523925632,Snorkel Downstream,Observer,1,21,0,0,20,0,0,NA,9029
+10/2/2017,201,North Cypress,590,295.5,Impact,2:40:00,NA,1,49.8,8,2.438281012,Snorkel Downstream,Observer,0,2,0,0,62,0,0,NA,8073
+10/19/2017,201,North Cypress,590,295.5,Impact,3:25:00,NA,2,52,10,3.047851265,Snorkel Downstream,Observer,0,0,0,0,57,0,0,bottom of cypress silt= bad vis,8019
+10/19/2017,201,North Cypress,590,295.5,Impact,4:10:00,NA,2,52,10,3.047851265,Snorkel Downstream,Observer,0,0,0,0,110,0,0,top of cypress,8019
+10/31/2017,201,North Cypress,590,295.5,Impact,3:30:00,NA,1,53,10,3.047851265,Snorkel Downstream,Observer,40,563,0,0,98,0,3,2 Adult trout 3 TSS,8161
+11/16/2017,201,North Cypress,590,295.5,Impact,3:15:00,NA,2,53,10,3.047851265,Snorkel Downstream,Observer,0,0,0,0,0,0,0,bottom of cypress,5007
+11/16/2017,201,North Cypress,590,295.5,Impact,3:45:00,NA,2,53,10,3.047851265,Snorkel Downstream,Observer,0,166,0,0,18,0,1,1 sculpin top of cypress,5007
+11/30/2017,201,North Cypress,590,295.5,Impact,3:00:00,NA,2,52,10,3.047851265,Snorkel Downstream,Observer,0,0,0,0,20,0,0,Bottom of cypress,5005
+11/30/2017,201,North Cypress,590,295.5,Impact,3:20:00,NA,2,52,10,3.047851265,Snorkel Downstream,Observer,0,0,0,0,31,0,0,Top of cypress,5005
+12/17/2017,201,North Cypress,590,295.5,Impact,3:00:00,NA,2,50,10,3.047851265,Snorkel Downstream,Observer,0,0,0,0,1,0,0,bottom of cypress,5026
+12/17/2017,201,North Cypress,590,295.5,Impact,3:20:00,NA,1,50,10,3.047851265,Snorkel Downstream,Observer,0,100,0,0,18,0,0,top of cypress,5026
+12/19/2017,201,North Cypress,590,295.5,Impact,2:45:00,NA,2,50,10,3.047851265,Snorkel Downstream,Observer,0,0,0,0,2,0,0,bottom of cypress 1 adult trout mort,5080
+12/19/2017,201,North Cypress,590,295.5,Impact,3:15:00,NA,2,50,10,3.047851265,Snorkel Downstream,Observer,0,4,0,0,70,0,1,top of cypress 1 sculpin,5080
+12/27/2017,201,North Cypress,590,295.5,Impact,3:00:00,NA,2,50,10,3.047851265,Snorkel Downstream,Observer,0,0,0,0,1,0,0,bottom of north cypress,5068
+12/27/2017,201,North Cypress,590,295.5,Impact,3:20:00,NA,1,50,10,3.047851265,Snorkel Downstream,Observer,0,100,0,0,18,0,0,top of north cypress,5068
+1/9/2018,201,North Cypress,590,295.5,Impact,2:25:00,NA,3,51,8,2.438281012,Snorkel Downstream,Observer,0,50,0,290,0,0,0,NA,4098
+1/23/2018,201,North Cypress,590,295.5,Impact,2:45:00,NA,3,50,8,2.438281012,Snorkel Downstream,Observer,0,0,0,282,1,0,3,adult trout 2 sculpin 1 tss,4055
+2/5/2018,201,North Cypress,590,295.5,Impact,3:45:00,NA,1,52,10,3.047851265,Snorkel Downstream,Observer,0,0,0,935,0,0,0,top of cypress,4000
+2/5/2018,201,North Cypress,590,295.5,Impact,5:15:00,NA,1,52,10,3.047851265,Snorkel Downstream,Observer,0,0,0,310,0,0,0,1 adult salmon (bottom of cypress),4000
+2/23/2018,201,North Cypress,590,295.5,Impact,3:15:00,NA,1,52,10,3.047851265,Snorkel Downstream,Observer,0,24,0,1208,1,0,2,1 RIFSCU 1 TSS,3210
+3/5/2018,201,North Cypress,590,295.5,Impact,5:00:00,NA,1,51,10,3.047851265,Snorkel Downstream,Observer,0,200,0,1300,0,0,0,NA,3255
+3/20/2018,201,North Cypress,590,295.5,Impact,3:05:00,NA,3,50,10,3.047851265,Snorkel Downstream,Observer,0,0,0,1025,150,0,0,NA,3341
+4/2/2018,201,North Cypress,590,295.5,Impact,4:00:00,NA,1,52,10,3.047851265,Snorkel Downstream,Observer,0,41,0,2682,20,0,0,NA,3246
+4/16/2018,201,North Cypress,590,295.5,Impact,5:15:00,NA,3,52,10,3.047851265,Snorkel Downstream,Observer,1063,6,0,2060,98,0,0,NA,3264
+5/2/2018,201,North Cypress,590,295.5,Impact,1:30:00,NA,1,51,10,3.047851265,Snorkel Downstream,Observer,574,22,0,2153,214,0,1,1 SCULPIN,7236
+5/15/2018,201,North Cypress,590,295.5,Impact,4:00:00,NA,1,50,10,3.047851265,Snorkel Downstream,Observer,239,1,0,3400,717,0,0,Beaver,8737
+5/29/2018,201,North Cypress,590,295.5,Impact,4:24:00,NA,1,56,10,3.047851265,Snorkel Downstream,Observer,290,0,0,1948,516,0,0,NA,9491
+6/11/2018,201,North Cypress,590,295.5,Impact,5:40:00,NA,1,54,10,3.047851265,Snorkel Downstream,Observer,292,0,0,1424,347,0,1,1 adult rainbow trout,9743
+6/27/2018,201,North Cypress,590,295.5,Impact,5:20:00,NA,1,54,10,3.047851265,Snorkel Downstream,Observer,71,0,0,325,153,1,0,1 adult WR 1 Adult trout,12067
+7/10/2018,201,North Cypress,590,295.5,Impact,3:40:00,NA,1,54,10,3.047851265,Snorkel Downstream,Observer,10,0,0,80,110,0,0,NA,13023
+7/25/2018,201,North Cypress,590,295.5,Impact,3:00:00,NA,1,56,10,3.047851265,Snorkel Downstream,Observer,0,0,0,0,60,0,0,NA,13027
+8/8/2018,201,North Cypress,590,295.5,Impact,3:18:00,NA,3,54,10,3.047851265,Snorkel Downstream,Observer,0,0,0,170,362,0,1,1 Rifscu 1 adult WR,11502
+8/24/2018,201,North Cypress,590,295.5,Impact,4:20:00,NA,1,54,10,3.047851265,Snorkel Downstream,Observer,10,6,0,91,537,0,2,2 TSS,9496
+9/4/2018,201,North Cypress,590,295.5,Impact,2:25:00,NA,1,55,10,3.047851265,Snorkel Downstream,Observer,21,1,0,0,413,0,0,1 adult FR,9005
+9/21/2018,201,North Cypress,590,295.5,Impact,2:48:00,NA,1,52,10,3.047851265,Snorkel Downstream,Observer,2,163,0,0,74,0,0,NA,7269
+10/1/2018,201,North Cypress,590,295.5,Impact,3:20:00,NA,4,53,10,3.047851265,Snorkel Downstream,Observer,45,0,0,0,0,3,0,3 adult trout 1 adult FR,7233
+10/16/2018,201,North Cypress,590,295.5,Impact,2:30:00,NA,1,54,10,3.047851265,Snorkel Downstream,Observer,3140,1866,0,0,525,4,0,4 Adult RBT,7225
+11/1/2018,201,North Cypress,590,295.5,Impact,3:57:00,NA,1,55,10,3.047851265,Snorkel Downstream,Observer,416,3116,0,0,410,0,0,NA,5708
+11/13/2018,201,North Cypress,590,295.5,Impact,5:00:00,NA,2,53,10,3.047851265,Snorkel Downstream,Observer,0,520,0,0,1,0,1,1 Adult FR 1 Sculpin,4553
+11/28/2018,201,North Cypress,590,295.5,Impact,2:15:00,NA,3,55,7,2.133495885,Snorkel Downstream,Observer,0,0,0,0,1,0,2,1 Adult FR 2 TSS,3985
+12/10/2018,201,North Cypress,590,295.5,Impact,3:20:00,NA,1,53,7,2.133495885,Snorkel Downstream,Observer,0,5,0,2,0,0,0,NA,4018
+12/31/2018,201,North Cypress,590,295.5,Impact,3:10:00,NA,1,48,6,1.828710759,Snorkel Downstream,Observer,0,7,0,4616,1,1,0,1 Adult LFR,3990
+1/30/2019,201,North Cypress,590,295.5,Impact,3:05:00,NA,2,50,5,1.523925632,Snorkel Downstream,Observer,0,0,0,66,0,0,0,NA,3251
+7/12/2019,201,North Cypress,590,295.5,Impact,2:00:00,NA,1,56,10,3.047851265,Snorkel Downstream,Observer,67,0,0,34,37,0,2,Bluegil,NA
+8/13/2019,201,North Cypress,590,295.5,Impact,2:45:00,NA,1,51.6,10,3.047851265,Snorkel Downstream,Observer,1,0,0,0,214,0,110,110 minnows 1 adult trout,11404
+9/13/2019,201,North Cypress,590,295.5,Impact,1:30:00,NA,1,51.2,7,2.133495885,Snorkel Downstream,Observer,29,138,0,0,1,0,1,1 stickleback,8996
+10/23/2019,201,North Cypress,590,295.5,Impact,2:00:00,NA,1,51,10,3.047851265,Snorkel Downstream,Observer,842,2228,0,0,18,0,0,1 TSB 1 adult salmon,8661
+11/13/2019,201,North Cypress,590,295.5,Impact,2:00:00,NA,2,52,10,3.047851265,Snorkel Downstream,Observer,1,481,0,0,5,0,2,1 TSS 1 minnow 2 ad. Trout 1 adult fall run,5013
+11/26/2019,201,North Cypress,590,295.5,Impact,2:00:00,NA,3,49.5,10,3.047851265,Snorkel Downstream,Observer,0,10,0,0,1,0,0,NA,4776
+1/8/2020,201,North Cypress,590,295.5,Impact,2:00:00,NA,2,55,8,2.438281012,Snorkel Downstream,Observer,0,113,0,776,0,0,1,1 sculpin,5057
+1/22/2020,201,North Cypress,590,295.5,Impact,1:45:00,NA,3,49,8,2.438281012,Snorkel Downstream,Observer,0,373,0,1853,26,0,0,2 other fish; 1 adult O. mykiss with decaying fins,5035
+2/5/2020,201,North Cypress,590,295.5,Impact,5:20:00,NA,3,52,6,1.828710759,Snorkel Downstream,Observer,0,0,925,1226,0,0,0,NA,4249
+2/20/2020,201,North Cypress,590,295.5,Impact,3:00:00,NA,2,48,9,2.743066138,Snorkel Downstream,Observer,0,3,505,1112,0,0,2,NA,4100
+3/10/2020,201,North Cypress,590,295.5,Impact,3:30:00,NA,1,50,10,3.047851265,Snorkel Downstream,Observer,1,265,196,1110,0,0,0,NA,5068
+3/31/2020,201,North Cypress,590,295.5,Impact,6:00:00,NA,2,49,10,3.047851265,Snorkel Downstream,Observer,0,0,24,945,125,0,0,NA,5301
+4/16/2020,201,North Cypress,590,295.5,Impact,3:30:00,NA,1,51.8,10,3.047851265,Snorkel Downstream,Observer,8,0,1,1628,57,0,1,1 shad,5830
+4/16/2020,201,North Cypress,590,295.5,Impact,3:30:00,NA,1,51.8,10,3.047851265,Snorkel Downstream,Observer,8,0,1,1105,34,0,1,1 Shad,5830
+5/14/2020,201,North Cypress,590,295.5,Impact,1:45:00,NA,3,54,10,3.047851265,Snorkel Downstream,Observer,152,0,20,1168,352,0,0,NA,9874
+5/28/2020,201,North Cypress,590,295.5,Impact,2:00:00,NA,1,56,10,3.047851265,Snorkel Downstream,Observer,134,5,7,331,176,0,0,NA,9921
+6/1/2020,201,North Cypress,590,295.5,Impact,4:00:00,NA,1,55,10,3.047851265,Snorkel Downstream,Observer,61,0,0,47,301,0,2,1tsb 1 sculpin; bottom pool turbid,10265
+6/16/2020,201,North Cypress,590,295.5,Impact,2:15:00,NA,1,52,7,2.133495885,Snorkel Downstream,Observer,55,0,21,89,369,0,5,NA,12301
+6/30/2020,201,North Cypress,590,295.5,Impact,3:00:00,NA,1,53,7,2.133495885,Snorkel Downstream,Observer,3,0,0,16,475,1,0,1 adult PKM,12578
+11/15/2016,210,Painters,290,296,Impact,5:05:00,NA,3,53,8,2.438281012,Snorkel Downstream,Observer,1,10,0,0,0,0,0,NA,5003
+5/22/2017,210,Painters,290,296,Impact,4:00:00,NA,1,55,2,0.609570253,Snorkel Downstream,Observer,0,0,0,0,20,0,0,NA,13017
+7/25/2017,210,Painters,290,296,Impact,3:10:00,NA,1,52,7,2.133495885,Snorkel Downstream,Observer,0,0,0,0,900,0,0,NA,10666
+8/9/2017,210,Painters,290,296,Impact,2:10:00,NA,1,53,8,2.438281012,Snorkel Downstream,Observer,0,0,0,0,515,0,0,NA,10313
+8/22/2017,210,Painters,290,296,Impact,2:00:00,NA,1,54,7,2.133495885,Snorkel Downstream,Observer,0,0,0,0,209,0,0,NA,10466
+9/7/2017,210,Painters,290,296,Impact,2:15:00,NA,4,53,3,0.914355379,Snorkel Downstream,Observer,0,0,0,0,22,0,0,NA,9131
+9/21/2017,210,Painters,290,296,Impact,2:15:00,NA,1,52,6,1.828710759,Snorkel Downstream,Observer,0,0,0,0,53,0,0,NA,9029
+10/2/2017,210,Painters,290,296,Impact,2:00:00,NA,1,50.3,10,3.047851265,Snorkel Downstream,Observer,0,10,0,0,100,0,0,NA,8073
+10/17/2017,210,Painters,290,296,Impact,5:05:00,NA,1,52,10,3.047851265,Snorkel Downstream,Observer,0,0,0,0,182,0,0,NA,8026
+10/31/2017,210,Painters,290,296,Impact,2:40:00,NA,1,53,10,3.047851265,Snorkel Downstream,Observer,41,21,0,0,229,0,0,NA,8161
+11/16/2017,210,Painters,290,296,Impact,5:15:00,NA,2,52,10,3.047851265,Snorkel Downstream,Observer,0,5,0,0,1,0,0,NA,5007
+11/30/2017,210,Painters,290,296,Impact,4:15:00,NA,3,53,10,3.047851265,Snorkel Downstream,Observer,0,0,0,0,4,0,0,NA,5005
+12/17/2017,210,Painters,290,296,Impact,4:50:00,NA,1,51,10,3.047851265,Snorkel Downstream,Observer,0,0,0,0,0,0,0,NA,5026
+12/19/2017,210,Painters,290,296,Impact,4:21:00,NA,3,52,10,3.047851265,Snorkel Downstream,Observer,0,0,0,0,0,0,1,1 sculpin,5080
+12/27/2017,210,Painters,290,296,Impact,4:50:00,NA,1,51,10,3.047851265,Snorkel Downstream,Observer,0,0,0,0,0,0,0,NA,5068
+1/9/2018,210,Painters,290,296,Impact,2:00:00,NA,3,51,8,2.438281012,Snorkel Downstream,Observer,0,0,0,4,0,0,0,NA,4098
+1/23/2018,210,Painters,290,296,Impact,2:10:00,NA,3,50,8,2.438281012,Snorkel Downstream,Observer,0,0,0,4,0,0,0,NA,4055
+2/5/2018,210,Painters,290,296,Impact,2:45:00,NA,1,52,10,3.047851265,Snorkel Downstream,Observer,0,10,0,327,3,0,0,NA,4000
+2/23/2018,210,Painters,290,296,Impact,2:40:00,NA,1,50,10,3.047851265,Snorkel Downstream,Observer,0,50,0,52,7,0,0,NA,3210
+3/5/2018,210,Painters,290,296,Impact,6:07:00,NA,1,51,10,3.047851265,Snorkel Downstream,Observer,0,10,0,65,0,0,0,NA,3255
+3/20/2018,210,Painters,290,296,Impact,2:40:00,NA,3,50,10,3.047851265,Snorkel Downstream,Observer,0,0,0,0,50,0,0,NA,NA
+4/2/2018,210,Painters,290,296,Impact,3:30:00,NA,1,52,10,3.047851265,Snorkel Downstream,Observer,0,0,0,141,40,0,0,NA,3246
+5/2/2018,210,Painters,290,296,Impact,4:30:00,NA,1,51,10,3.047851265,Snorkel Downstream,Observer,11,0,0,100,57,0,3,3 SUCKERS,7236
+5/14/2018,210,Painters,290,296,Impact,4:20:00,NA,1,53,10,3.047851265,Snorkel Downstream,Observer,13,0,0,220,49,0,0,NA,8716
+5/29/2018,210,Painters,290,296,Impact,3:30:00,NA,1,54,10,3.047851265,Snorkel Downstream,Observer,191,0,0,1,149,0,0,NA,9491
+6/11/2018,210,Painters,290,296,Impact,4:50:00,NA,1,54,10,3.047851265,Snorkel Downstream,Observer,30,0,0,51,102,0,0,NA,9743
+6/28/2018,210,Painters,290,296,Impact,2:45:00,NA,1,54,10,3.047851265,Snorkel Downstream,Observer,0,0,0,25,54,0,0,NA,12065
+7/10/2018,210,Painters,290,296,Impact,2:00:00,NA,1,54,10,3.047851265,Snorkel Downstream,Observer,0,0,0,106,444,0,0,NA,13023
+7/25/2018,210,Painters,290,296,Impact,4:15:00,NA,1,55,10,3.047851265,Snorkel Downstream,Observer,0,0,0,7,168,0,0,NA,13027
+8/8/2018,210,Painters,290,296,Impact,4:24:00,NA,3,55,10,3.047851265,Snorkel Downstream,Observer,0,0,0,0,1015,0,0,NA,11502
+8/22/2018,210,Painters,290,296,Impact,6:18:00,NA,1,54,10,3.047851265,Snorkel Downstream,Observer,25,0,0,0,1461,0,0,NA,9704
+9/4/2018,210,Painters,290,296,Impact,2:07:00,NA,1,55,10,3.047851265,Snorkel Downstream,Observer,0,0,0,0,188,0,0,NA,9005
+9/21/2018,210,Painters,290,296,Impact,2:20:00,NA,1,52,10,3.047851265,Snorkel Downstream,Observer,1,24,0,0,38,0,0,4 dogs on RL,7269
+10/1/2018,210,Painters,290,296,Impact,3:00:00,NA,3,53,10,3.047851265,Snorkel Downstream,Observer,100,37,0,0,10,0,0,NA,7233
+10/15/2018,210,Painters,290,296,Impact,4:06:00,NA,1,54,10,3.047851265,Snorkel Downstream,Observer,198,450,0,0,22,0,0,NA,7212
+11/1/2018,210,Painters,290,296,Impact,3:25:00,NA,1,55,10,3.047851265,Snorkel Downstream,Observer,0,750,0,0,60,0,0,1 adult FR salmon,5708
+11/13/2018,210,Painters,290,296,Impact,3:45:00,NA,2,53,10,3.047851265,Snorkel Downstream,Observer,0,177,0,0,1,0,0,NA,4553
+11/28/2018,210,Painters,290,296,Impact,1:50:00,NA,3,55,7,2.133495885,Snorkel Downstream,Observer,0,0,0,0,0,0,0,NA,3985
+12/10/2018,210,Painters,290,296,Impact,3:00:00,NA,1,53,7,2.133495885,Snorkel Downstream,Observer,0,0,0,0,0,0,7,NA,4018
+12/31/2018,210,Painters,290,296,Impact,4:20:00,NA,1,48,6,1.828710759,Snorkel Downstream,Observer,0,0,0,458,0,0,0,NA,3990
+1/30/2019,210,Painters,290,296,Impact,4:35:00,NA,2,50,5,1.523925632,Snorkel Downstream,Observer,0,0,0,622,0,0,0,NA,3251
+7/11/2019,210,Painters,290,296,Impact,4:11:00,NA,1,56,10,3.047851265,Snorkel Downstream,Observer,0,0,0,25,162,0,0,1 adult chisal,NA
+8/13/2019,210,Painters,290,296,Impact,5:00:00,NA,1,51.6,10,3.047851265,Snorkel Downstream,Observer,11,0,0,0,229,0,0,NA,11341
+9/13/2019,210,Painters,290,296,Impact,4:45:00,NA,1,51.2,7,2.133495885,Snorkel Downstream,Observer,1,30,0,0,10,0,30,30PMN,9052
+10/23/2019,210,Painters,290,296,Impact,4:00:00,NA,1,51,10,3.047851265,Snorkel Downstream,Observer,0,985,0,0,50,0,0,NA,8647
+11/13/2019,210,Painters,290,296,Impact,4:20:00,NA,2,52,10,3.047851265,Snorkel Downstream,Observer,80,220,0,0,0,0,40,40 minnows,5046
+11/26/2019,210,Painters,290,296,Impact,3:00:00,NA,3,49.5,10,3.047851265,Snorkel Downstream,Observer,0,0,0,0,0,0,0,NA,4926
+1/8/2020,210,Painters,290,296,Impact,2:15:00,NA,2,54,8,2.438281012,Snorkel Downstream,Observer,0,83,0,945,0,0,0,NA,5013
+1/22/2020,210,Painters,290,296,Impact,3:15:00,NA,3,49,8,2.438281012,Snorkel Downstream,Observer,0,67,0,751,0,0,0,NA,5013
+2/5/2020,210,Painters,290,296,Impact,6:30:00,NA,1,49,8,2.438281012,Snorkel Downstream,Observer,0,17,696,2235,0,0,0,NA,4219
+2/19/2020,210,Painters,290,296,Impact,4:25:00,NA,1,53.6,10,3.047851265,Snorkel Downstream,Observer,0,0,90,1997,0,0,0,NA,4070
+3/10/2020,210,Painters,290,296,Impact,5:30:00,NA,1,49,10,3.047851265,Snorkel Downstream,Observer,0,25,130,848,0,0,0,NA,4991
+3/30/2020,210,Painters,290,296,Impact,1:30:00,NA,3,50,7,2.133495885,Snorkel Downstream,Observer,0,0,2,660,310,0,0,NA,5256
+4/21/2020,210,Painters,290,296,Impact,5:40:00,NA,1,54,6,1.828710759,Snorkel Downstream,Observer,7,0,12,604,205,0,1,1 SACSUC,7588
+5/11/2020,210,Painters,290,296,Impact,5:00:00,NA,4,53,10,3.047851265,Snorkel Downstream,Observer,16,0,6,293,362,0,1,1-SS,9859
+6/15/2020,210,Painters,290,296,Impact,4:00:00,NA,4,53,7,2.133495885,Snorkel Downstream,Observer,9,0,0,35,1176,0,0,NA,12320
+6/30/2020,210,Painters,290,296,Impact,1:45:00,NA,1,53,8,2.438281012,Snorkel Downstream,Observer,20,0,0,14,472,0,2,2 HH,12634

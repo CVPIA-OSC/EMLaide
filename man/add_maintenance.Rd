@@ -2,34 +2,24 @@
 % Please edit documentation in R/maintenance-element.R
 \name{add_maintenance}
 \alias{add_maintenance}
-\title{Add Maintenance Element}
+\title{Add Maintenance}
 \usage{
-add_maintenance(
-  parent_element,
-  status = c("complete", "ongoing"),
-  update_frequency = NULL
-)
+add_maintenance(parent_element, maintenance_metadata)
 }
 \arguments{
 \item{parent_element}{A list representing the EML project or dataset.}
 
-\item{status}{Provide the status of your project or dataset as either complete or ongoing.}
-
-\item{update_frequency}{Only needed if the status of the project or dataset is ongoing.
-If this is the case, please provide the frequency of which the project or dataset is updated.}
+\item{maintenance_metadata}{A table or list containing maintenance metadata: see \code{\link{create_maintenance}}}
 }
 \value{
-The dataset or project with maintenance information appended.
+The dataset list or project with maintenance information appended.
 }
 \description{
-Adds the maintenance information of a dataset based off of EML standards.
+Adds the maintenance metadata element to a dataset list according to EML standards.
 }
 \examples{
-add_maintenance(parent_element = list(),
-                status = "complete")
-
-add_maintenance(parent_element = list(),
-                status = "ongoing",
-                update_frequency = "Data are updated 
-                annually at the end of the calendar year.")
+maintenance_metadata <- list(status = "ongoing", update_frequency = "monthly")
+dataset <- list() \%>\%
+     add_maintenance(maintenance_metadata) 
+dataset
 }

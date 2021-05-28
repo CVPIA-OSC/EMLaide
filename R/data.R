@@ -1,6 +1,6 @@
 #' @title Attribute Storage Types
 #' @description A set of common options for different attribute storage types. 
-#' A helper data object to be used with \code{\link{add_attribute}}
+#' A helper data object to be used with \code{\link{create_attribute}}
 #' @format A named list, keys are named the same as values.
 #' @section Character Storage Types: 
 #' 
@@ -84,13 +84,13 @@
 #'   would be inputted as 03. 
 #'  }
 #' @examples 
-#' storage_type$integer #"integer"
+#' storage_type$boolean
 #' 
 "storage_type"
 
 #' @title Attribute Measurement Scales
 #' @description The 5 options for measurement scales which can be appended to the dataset. 
-#' A helper data object to be used with \code{\link{add_attribute}}.
+#' A helper data object to be used with \code{\link{create_attribute}}.
 #' @format A named list, keys are named the same as values.
 #' @section Measurement Scales:
 #' \itemize{ 
@@ -125,10 +125,9 @@
 #' 
 "measurement_scale"
 
-
 #' @title Attribute Number Types 
 #' @description The 4 options for number types that can be appended to the dataset.
-#' A helper data object to be used with \code{\link{add_attribute}}.
+#' A helper data object to be used with \code{\link{create_attribute}}.
 #' @format A named list, keys are named the same as values. 
 #' @section Number Types: 
 #' \itemize{ 
@@ -147,8 +146,9 @@
 #'  }
 #' @examples 
 #' number_type$natural #"natural"
-#'   
+#' number_type$whole   
 "number_type"
+
 #' @title CVPIA_funders
 #' @description A list of CVPIA_funders that can be appended to the funding element. 
 #' @format A named list, keys are names of CVPIA funding organizations and keys contain 
@@ -160,11 +160,7 @@
 #'     \item \strong{CDFW}
 #' }
 #' @examples 
-#' CVPIA_funders$USBR # $funderName
-#'                    #   [1] "United States Bureau of Reclamation"
-#' 
-#'                    # $funderIdentifier
-#'                    #   [1] "https://www.wikidata.org/wiki/Q1010548"
+#' CVPIA_funders$USBR 
 #'
 #'
 "CVPIA_funders"
@@ -191,9 +187,11 @@
 
 #' @title standard_units 
 #' @description A list of all valid standard units accepted by EML schema. This list is used 
-#' to by \code{add_attribute()}. As \code{add_attribute()} filters through all attribute components 
+#' to by \code{create_attribute()}. As \code{create_attribute()} filters through all attribute components 
 #' it will check that the units are in the standard unit list. 
 #' @format A list.   
 #' @examples 
 #' "meters" %in% standard_units
+#' "meter" %in% standard_units
+#' "m" %in% standard_units
 "standard_units"

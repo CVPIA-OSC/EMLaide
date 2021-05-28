@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Add Personnel Element — add_personnel • EMLaide</title>
+<title>Add personnel — add_personnel • EMLaide</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -48,8 +48,8 @@
   <link href="../extra.css" rel="stylesheet">
   
 
-<meta property="og:title" content="Add Personnel Element — add_personnel" />
-<meta property="og:description" content="Adds personel according to EML standards" />
+<meta property="og:title" content="Add personnel — add_personnel" />
+<meta property="og:description" content="Adds the personnel metadata elements to a dataset list according to EML standards." />
 <meta property="og:image" content="https://CVPIA-OSC.github.io/EMLaide/logo.png" />
 
 
@@ -102,13 +102,7 @@
       <a href="../articles/template-doc.html">Metadata Template Documentation</a>
     </li>
     <li>
-      <a href="../articles/creating-EML.html">Create EML Document from Template</a>
-    </li>
-    <li>
-      <a href="../articles/Dataset-Element.html">Handle Special Case Datasets</a>
-    </li>
-    <li>
-      <a href="../articles/custom-units.html">EML Custom Units</a>
+      <a href="../articles/create-EML-from-template.html">Create EML Document from Template</a>
     </li>
   </ul>
 </li>
@@ -133,24 +127,16 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Add Personnel Element</h1>
+    <h1>Add personnel</h1>
     
     <div class="hidden name"><code>add_personnel.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Adds personel according to EML standards</p>
+    <p>Adds the personnel metadata elements to a dataset list according to EML standards.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>add_personnel</span><span class='op'>(</span>
-  <span class='va'>parent_element</span>,
-  <span class='va'>first_name</span>,
-  <span class='va'>last_name</span>,
-  <span class='va'>email</span>,
-  <span class='va'>role</span>,
-  <span class='va'>organization</span>,
-  orcid <span class='op'>=</span> <span class='cn'>NULL</span>
-<span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>add_personnel</span><span class='op'>(</span><span class='va'>parent_element</span>, <span class='va'>personnel_metadata</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -160,103 +146,59 @@
       <td><p>A list representing the EML project or dataset</p></td>
     </tr>
     <tr>
-      <th>first_name</th>
-      <td><p>Person's given name</p></td>
-    </tr>
-    <tr>
-      <th>last_name</th>
-      <td><p>Person's surname</p></td>
-    </tr>
-    <tr>
-      <th>email</th>
-      <td><p>Person's email address</p></td>
-    </tr>
-    <tr>
-      <th>role</th>
-      <td><p>Use "creator" if you are one of the primary originators of the data.
-Other possible roles "Data Manager", "Field Technician", or "Assistant Researcher".
-There can be multiple personnel on a project with the same role.</p></td>
-    </tr>
-    <tr>
-      <th>organization</th>
-      <td><p>Person's employer or the entity they are associated
-with for this dataset or project</p></td>
-    </tr>
-    <tr>
-      <th>orcid</th>
-      <td><p>(Optional) ORCID iD is a persistent digital identifier for researchers,
-register at <a href='http://orcid.org/'>http://orcid.org/</a></p></td>
+      <th>personnel_metadata</th>
+      <td><p>A dataframe of personnel information see <code><a href='create_person.html'>create_person</a></code></p></td>
     </tr>
     </table>
 
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+
+    <p>The dataset list or project with personnel information appended.</p>
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+
+    <p>On person within <code>personnel_metadata</code> must have role of 'creator'</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>add_personnel</span><span class='op'>(</span>parent_element <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span><span class='op'>)</span>,
-              first_name <span class='op'>=</span> <span class='st'>'Katherine'</span>, 
-              last_name <span class='op'>=</span> <span class='st'>"Johnson"</span>, 
-              email <span class='op'>=</span> <span class='st'>'kjohnson@nasa.gov'</span>, 
-              role <span class='op'>=</span> <span class='st'>'creator'</span>, 
-              organization <span class='op'>=</span> <span class='st'>'NASA'</span>,
-              orcid <span class='op'>=</span> <span class='st'>'12345'</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; $contact
-#&gt; $contact$individualName
-#&gt; $contact$individualName$givenName
-#&gt; [1] "Katherine"
-#&gt; 
-#&gt; $contact$individualName$surName
-#&gt; [1] "Johnson"
-#&gt; 
-#&gt; 
-#&gt; $contact$electronicMailAddress
-#&gt; [1] "kjohnson@nasa.gov"
-#&gt; 
-#&gt; $contact$organizationName
-#&gt; [1] "NASA"
-#&gt; 
-#&gt; 
-#&gt; $creator
+    <pre class="examples"><div class='input'><span class='va'>personnel_metadata</span> <span class='op'>&lt;-</span> <span class='fu'>dplyr</span><span class='fu'>::</span><span class='fu'><a href='https://tibble.tidyverse.org/reference/tibble.html'>tibble</a></span><span class='op'>(</span>first_name <span class='op'>=</span> <span class='st'>"Stacy"</span>, last_name <span class='op'>=</span> <span class='st'>"Banet"</span>, 
+                                    email <span class='op'>=</span> <span class='st'>"Stacy@aol.com"</span>, 
+                                    role <span class='op'>=</span> <span class='st'>"creator"</span>, organization <span class='op'>=</span> <span class='st'>"USBR"</span>, orcid <span class='op'>=</span> <span class='cn'>NA</span><span class='op'>)</span>
+<span class='va'>dataset</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
+   <span class='fu'>add_personnel</span><span class='op'>(</span><span class='va'>personnel_metadata</span><span class='op'>)</span>
+<span class='va'>dataset</span>
+</div><div class='output co'>#&gt; $creator
 #&gt; $creator$individualName
 #&gt; $creator$individualName$givenName
-#&gt; [1] "Katherine"
+#&gt; [1] "Stacy"
 #&gt; 
 #&gt; $creator$individualName$surName
-#&gt; [1] "Johnson"
+#&gt; [1] "Banet"
 #&gt; 
 #&gt; 
 #&gt; $creator$electronicMailAddress
-#&gt; [1] "kjohnson@nasa.gov"
+#&gt; [1] "Stacy@aol.com"
 #&gt; 
 #&gt; $creator$organizationName
-#&gt; [1] "NASA"
-#&gt; 
-#&gt; $creator$`@id`
-#&gt; [1] "12345"
-#&gt; 
-#&gt; </div><div class='input'>
-<span class='fu'>add_personnel</span><span class='op'>(</span>parent_element <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span><span class='op'>)</span>, 
-              first_name <span class='op'>=</span> <span class='st'>"Edith"</span>, 
-              last_name <span class='op'>=</span> <span class='st'>"Windsor"</span>, 
-              email <span class='op'>=</span> <span class='st'>'ewindsor@ibm.com'</span>, 
-              role <span class='op'>=</span> <span class='st'>'Data Manager'</span>, 
-              organization <span class='op'>=</span> <span class='st'>'IBM'</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; $associatedParty
-#&gt; $associatedParty$individualName
-#&gt; $associatedParty$individualName$givenName
-#&gt; [1] "Edith"
-#&gt; 
-#&gt; $associatedParty$individualName$surName
-#&gt; [1] "Windsor"
+#&gt; [1] "USBR"
 #&gt; 
 #&gt; 
-#&gt; $associatedParty$electronicMailAddress
-#&gt; [1] "ewindsor@ibm.com"
+#&gt; $contact
+#&gt; $contact$individualName
+#&gt; $contact$individualName$givenName
+#&gt; [1] "Stacy"
 #&gt; 
-#&gt; $associatedParty$organizationName
-#&gt; [1] "IBM"
+#&gt; $contact$individualName$surName
+#&gt; [1] "Banet"
 #&gt; 
-#&gt; $associatedParty$role
-#&gt; [1] "Data Manager"
 #&gt; 
+#&gt; $contact$electronicMailAddress
+#&gt; [1] "Stacy@aol.com"
+#&gt; 
+#&gt; $contact$organizationName
+#&gt; [1] "USBR"
+#&gt; 
+#&gt; 
+#&gt; $associatedParty
+#&gt; list()
 #&gt; </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">

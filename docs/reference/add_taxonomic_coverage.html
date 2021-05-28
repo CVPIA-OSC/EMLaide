@@ -49,11 +49,7 @@
   
 
 <meta property="og:title" content="Add Taxonomic Coverage — add_taxonomic_coverage" />
-<meta property="og:description" content="Adds the taxonomic coverage information of a dataset based off of
-EML standards. The addition of taxonomic coverage is optional, however defaults
-of chinook, sturgeon, smelt, and steelhead are provided. While single or
-multiple taxonomies can be applied, the full set of information must be
-provided if chosen to be included." />
+<meta property="og:description" content="Formats the taxonomic coverage elements in a nested list to easily be added as a parameter to the add_coverage() function." />
 <meta property="og:image" content="https://CVPIA-OSC.github.io/EMLaide/logo.png" />
 
 
@@ -106,13 +102,7 @@ provided if chosen to be included." />
       <a href="../articles/template-doc.html">Metadata Template Documentation</a>
     </li>
     <li>
-      <a href="../articles/creating-EML.html">Create EML Document from Template</a>
-    </li>
-    <li>
-      <a href="../articles/Dataset-Element.html">Handle Special Case Datasets</a>
-    </li>
-    <li>
-      <a href="../articles/custom-units.html">EML Custom Units</a>
+      <a href="../articles/create-EML-from-template.html">Create EML Document from Template</a>
     </li>
   </ul>
 </li>
@@ -143,264 +133,34 @@ provided if chosen to be included." />
     </div>
 
     <div class="ref-description">
-    <p>Adds the taxonomic coverage information of a dataset based off of
-EML standards. The addition of taxonomic coverage is optional, however defaults
-of chinook, sturgeon, smelt, and steelhead are provided. While single or
-multiple taxonomies can be applied, the full set of information must be
-provided if chosen to be included.</p>
+    <p>Formats the taxonomic coverage elements in a nested list to easily be added as a parameter to the <code><a href='add_coverage.html'>add_coverage()</a></code> function.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>add_taxonomic_coverage</span><span class='op'>(</span>
-  CVPIA_common_species <span class='op'>=</span> <span class='cn'>NULL</span>,
-  kingdom <span class='op'>=</span> <span class='st'>"kingdom"</span>,
-  <span class='va'>kingdom_value</span>,
-  phylum <span class='op'>=</span> <span class='st'>"phylum"</span>,
-  <span class='va'>phylum_value</span>,
-  class <span class='op'>=</span> <span class='st'>"class"</span>,
-  <span class='va'>class_value</span>,
-  order <span class='op'>=</span> <span class='st'>"order"</span>,
-  <span class='va'>order_value</span>,
-  family <span class='op'>=</span> <span class='st'>"family"</span>,
-  <span class='va'>family_value</span>,
-  genus <span class='op'>=</span> <span class='st'>"genus"</span>,
-  <span class='va'>genus_value</span>,
-  species <span class='op'>=</span> <span class='st'>"species"</span>,
-  <span class='va'>species_value</span>,
-  <span class='va'>common_name</span>,
-  taxon_id <span class='op'>=</span> <span class='cn'>NULL</span>
-<span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>add_taxonomic_coverage</span><span class='op'>(</span><span class='va'>taxonomic_metadata</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>CVPIA_common_species</th>
-      <td><p>Use one of the following from the helper data
-<code><a href='CVPIA_common_species.html'>CVPIA_common_species</a></code>: "chinook", "delta_smelt",
-"white_sturgeon", "green_sturgeon", or "steelhead" to get pre-selected
-information from ITIS.</p></td>
-    </tr>
-    <tr>
-      <th>kingdom</th>
-      <td><p>Kingdom level present.</p></td>
-    </tr>
-    <tr>
-      <th>kingdom_value</th>
-      <td><p>The kingdom name.</p></td>
-    </tr>
-    <tr>
-      <th>phylum</th>
-      <td><p>Phylum level present.</p></td>
-    </tr>
-    <tr>
-      <th>phylum_value</th>
-      <td><p>The phylum name.</p></td>
-    </tr>
-    <tr>
-      <th>class</th>
-      <td><p>Class level present.</p></td>
-    </tr>
-    <tr>
-      <th>class_value</th>
-      <td><p>The class level name.</p></td>
-    </tr>
-    <tr>
-      <th>order</th>
-      <td><p>Order level present.</p></td>
-    </tr>
-    <tr>
-      <th>order_value</th>
-      <td><p>The order level name.</p></td>
-    </tr>
-    <tr>
-      <th>family</th>
-      <td><p>Family level present.</p></td>
-    </tr>
-    <tr>
-      <th>family_value</th>
-      <td><p>The family level name.</p></td>
-    </tr>
-    <tr>
-      <th>genus</th>
-      <td><p>Genus level present.</p></td>
-    </tr>
-    <tr>
-      <th>genus_value</th>
-      <td><p>The genus level name.</p></td>
-    </tr>
-    <tr>
-      <th>species</th>
-      <td><p>Species level present.</p></td>
-    </tr>
-    <tr>
-      <th>species_value</th>
-      <td><p>The species level name.</p></td>
-    </tr>
-    <tr>
-      <th>common_name</th>
-      <td><p>The common name of the organism.</p></td>
-    </tr>
-    <tr>
-      <th>taxon_id</th>
-      <td><p>Optional. The taxonomic serial number provided by ITIS.</p></td>
+      <th>taxonomic_metadata</th>
+      <td><p>see <code><a href='create_taxonomic_coverage.html'>create_taxonomic_coverage</a></code></p></td>
     </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>Taxonomic coverage information. The function should be assigned to the
-name taxonomic_coverage to append it to the dataset or project. Example of how
-to incorporate it into the add_coverage function is seen below.</p>
-    <h2 class="hasAnchor" id="cvpia-common-species"><a class="anchor" href="#cvpia-common-species"></a>CVPIA Common Species</h2>
-
-    
-
-<p>The following frequently cited species are available for convenience:</p><ul>
-<li><p>EMLaide::CVPIA_common_species$chinook - Oncorhynchus tshawytscha (ITIS: 161980)</p></li>
-<li><p>EMLaide::CVPIA_common_species$steelhead - Oncorhynchus mykiss (ITIS: 161989)</p></li>
-<li><p>EMLaide::CVPIA_common_species$delta_smelt - Hypomesus transpacificus (ITIS: 162032)</p></li>
-<li><p>EMLaide::CVPIA_common_species$white_sturgeon - Acipenser transmontanus (ITIS:161068)</p></li>
-<li><p>EMLaide::CVPIA_common_species$green_sturgeon - Acipenser medirostris (ITIS: 161067)</p></li>
-</ul>
-
-<p>For further taxonomic coverage (i.e subkingdom, infrakingdom, etc.) on any of
-these species, you can visit: <a href='https://www.itis.gov/'>ITIS</a>'s webpage for
-full coverage information.</p>
+    <p>A complete list describing taxonomic coverage that can be added to the coverage list using <code><a href='add_coverage.html'>add_coverage()</a></code></p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='va'>taxonomic_coverage</span> <span class='op'>&lt;-</span> <span class='fu'>add_taxonomic_coverage</span><span class='op'>(</span>CVPIA_common_species <span class='op'>=</span> <span class='st'>"chinook"</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; <span class='message'>No taxon id has been provided. This number can be found at ITIS.gov if you wish to append it.</span></div><div class='input'>
-<span class='va'>taxonomic_coverage</span> <span class='op'>&lt;-</span> <span class='fu'>add_taxonomic_coverage</span><span class='op'>(</span>CVPIA_common_species <span class='op'>=</span> <span class='st'>"delta_smelt"</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; <span class='message'>No taxon id has been provided. This number can be found at ITIS.gov if you wish to append it.</span></div><div class='input'>
-<span class='va'>taxonomic_coverage</span> <span class='op'>&lt;-</span> <span class='fu'>add_taxonomic_coverage</span><span class='op'>(</span>CVPIA_common_species <span class='op'>=</span> <span class='st'>"white_sturgeon"</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; <span class='message'>No taxon id has been provided. This number can be found at ITIS.gov if you wish to append it.</span></div><div class='input'>
-<span class='va'>taxonomic_coverage</span> <span class='op'>&lt;-</span> <span class='fu'>add_taxonomic_coverage</span><span class='op'>(</span>CVPIA_common_species <span class='op'>=</span> <span class='st'>"green_sturgeon"</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; <span class='message'>No taxon id has been provided. This number can be found at ITIS.gov if you wish to append it.</span></div><div class='input'>
-<span class='va'>taxonomic_coverage</span> <span class='op'>&lt;-</span> <span class='fu'>add_taxonomic_coverage</span><span class='op'>(</span>CVPIA_common_species <span class='op'>=</span> <span class='st'>"steelhead"</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; <span class='message'>No taxon id has been provided. This number can be found at ITIS.gov if you wish to append it.</span></div><div class='input'>
-<span class='va'>taxonomic_coverage</span> <span class='op'>&lt;-</span> <span class='fu'>add_taxonomic_coverage</span><span class='op'>(</span>kingdom_value <span class='op'>=</span> <span class='st'>"Animalia"</span>,
-                       phylum_value <span class='op'>=</span> <span class='st'>"Chordata"</span>,
-                       class_value <span class='op'>=</span> <span class='st'>"Mammalia"</span>,
-                       order_value <span class='op'>=</span> <span class='st'>"Carnivora"</span>,
-                       family_value <span class='op'>=</span> <span class='st'>"Felidae"</span>,
-                       genus_value <span class='op'>=</span> <span class='st'>"Panthera"</span>, 
-                       species_value <span class='op'>=</span> <span class='st'>"Panthera Leo"</span>,
-                       common_name <span class='op'>=</span> <span class='st'>"Lion"</span>, 
-                       taxon_id <span class='op'>=</span> <span class='st'>"183803"</span><span class='op'>)</span>   
-                                            
-<span class='co'># To append this information to the dataset or project:                        </span>
-    <span class='fu'><a href='add_coverage.html'>add_coverage</a></span><span class='op'>(</span>parent_element <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span><span class='op'>)</span>, geographic_description <span class='op'>=</span> <span class='st'>"Description"</span>,
-                 west_bounding_coordinate <span class='op'>=</span> <span class='st'>"-160.594000"</span>, 
-                 east_bounding_coordinate <span class='op'>=</span> <span class='st'>"-134.104800"</span>,
-                 north_bounding_coordinate <span class='op'>=</span> <span class='st'>"71.238300"</span>, 
-                 south_bounding_coordinate <span class='op'>=</span> <span class='st'>"67.865000"</span>,
-                 begin_date <span class='op'>=</span> <span class='st'>"1980-01-01"</span>, 
-                 end_date <span class='op'>=</span> <span class='st'>"2010-12-31"</span>, 
-                 taxonomic_coverage <span class='op'>=</span> <span class='va'>taxonomic_coverage</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; $coverage
-#&gt; $coverage$geographicCoverage
-#&gt; $coverage$geographicCoverage$geographicDescription
-#&gt; [1] "Description"
-#&gt; 
-#&gt; $coverage$geographicCoverage$boundingCoordinates
-#&gt; $coverage$geographicCoverage$boundingCoordinates$westBoundingCoordinate
-#&gt; [1] "-160.594000"
-#&gt; 
-#&gt; $coverage$geographicCoverage$boundingCoordinates$eastBoundingCoordinate
-#&gt; [1] "-134.104800"
-#&gt; 
-#&gt; $coverage$geographicCoverage$boundingCoordinates$northBoundingCoordinate
-#&gt; [1] "71.238300"
-#&gt; 
-#&gt; $coverage$geographicCoverage$boundingCoordinates$southBoundingCoordinate
-#&gt; [1] "67.865000"
-#&gt; 
-#&gt; 
-#&gt; 
-#&gt; $coverage$temporalCoverage
-#&gt; $coverage$temporalCoverage$rangeOfDates
-#&gt; $coverage$temporalCoverage$rangeOfDates$beginDate
-#&gt; $coverage$temporalCoverage$rangeOfDates$beginDate$calendarDate
-#&gt; [1] "1980-01-01"
-#&gt; 
-#&gt; 
-#&gt; $coverage$temporalCoverage$rangeOfDates$endDate
-#&gt; $coverage$temporalCoverage$rangeOfDates$endDate$calendarDate
-#&gt; [1] "2010-12-31"
-#&gt; 
-#&gt; 
-#&gt; 
-#&gt; 
-#&gt; $coverage$taxonomicCoverage
-#&gt; $coverage$taxonomicCoverage$taxonomicClassification
-#&gt; $coverage$taxonomicCoverage$taxonomicClassification$taxonRankName
-#&gt; [1] "kingdom"
-#&gt; 
-#&gt; $coverage$taxonomicCoverage$taxonomicClassification$taxonRankValue
-#&gt; [1] "Animalia"
-#&gt; 
-#&gt; $coverage$taxonomicCoverage$taxonomicClassification$taxonomicClassification
-#&gt; $coverage$taxonomicCoverage$taxonomicClassification$taxonomicClassification$taxonRankName
-#&gt; [1] "phylum"
-#&gt; 
-#&gt; $coverage$taxonomicCoverage$taxonomicClassification$taxonomicClassification$taxonRankValue
-#&gt; [1] "Chordata"
-#&gt; 
-#&gt; $coverage$taxonomicCoverage$taxonomicClassification$taxonomicClassification$taxonomicClassification
-#&gt; $coverage$taxonomicCoverage$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonRankName
-#&gt; [1] "class"
-#&gt; 
-#&gt; $coverage$taxonomicCoverage$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonRankValue
-#&gt; [1] "Mammalia"
-#&gt; 
-#&gt; $coverage$taxonomicCoverage$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification
-#&gt; $coverage$taxonomicCoverage$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonRankName
-#&gt; [1] "order"
-#&gt; 
-#&gt; $coverage$taxonomicCoverage$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonRankValue
-#&gt; [1] "Carnivora"
-#&gt; 
-#&gt; $coverage$taxonomicCoverage$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification
-#&gt; $coverage$taxonomicCoverage$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonRankName
-#&gt; [1] "family"
-#&gt; 
-#&gt; $coverage$taxonomicCoverage$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonRankValue
-#&gt; [1] "Felidae"
-#&gt; 
-#&gt; $coverage$taxonomicCoverage$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification
-#&gt; $coverage$taxonomicCoverage$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonRankName
-#&gt; [1] "genus"
-#&gt; 
-#&gt; $coverage$taxonomicCoverage$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonRankValue
-#&gt; [1] "Panthera"
-#&gt; 
-#&gt; $coverage$taxonomicCoverage$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification
-#&gt; $coverage$taxonomicCoverage$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonRankName
-#&gt; [1] "species"
-#&gt; 
-#&gt; $coverage$taxonomicCoverage$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonRankValue
-#&gt; [1] "Panthera Leo"
-#&gt; 
-#&gt; $coverage$taxonomicCoverage$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$commonName
-#&gt; [1] "Lion"
-#&gt; 
-#&gt; $coverage$taxonomicCoverage$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonId
-#&gt; $coverage$taxonomicCoverage$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonId$provider
-#&gt; [1] "https://itis.gov"
-#&gt; 
-#&gt; $coverage$taxonomicCoverage$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonId$taxonId
-#&gt; [1] "183803"
-#&gt; 
-#&gt; 
-#&gt; 
-#&gt; 
-#&gt; 
-#&gt; 
-#&gt; 
-#&gt; 
-#&gt; 
-#&gt; 
-#&gt; </div></pre>
+    <pre class="examples"><div class='input'><span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>{</span>
+<span class='va'>taxonomic_metadata</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>CVPIA_common_species <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"chinook"</span>, <span class='st'>"steelhead"</span><span class='op'>)</span>, common_name <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='cn'>NA</span>, <span class='cn'>NA</span><span class='op'>)</span>, 
+                           kingdom <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='cn'>NA</span>, <span class='cn'>NA</span><span class='op'>)</span>, phylum <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='cn'>NA</span>, <span class='cn'>NA</span><span class='op'>)</span>, class <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='cn'>NA</span>, <span class='cn'>NA</span><span class='op'>)</span>, 
+                           order <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='cn'>NA</span>, <span class='cn'>NA</span><span class='op'>)</span>, family <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='cn'>NA</span>, <span class='cn'>NA</span><span class='op'>)</span>, genus <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='cn'>NA</span>, <span class='cn'>NA</span><span class='op'>)</span>, species <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='cn'>NA</span>, <span class='cn'>NA</span><span class='op'>)</span>, 
+                           taxon_id <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='cn'>NA</span>, <span class='cn'>NA</span><span class='op'>)</span><span class='op'>)</span><span class='op'>}</span>
+<span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>{</span>                           
+<span class='fu'>add_taxonomic_coverage</span><span class='op'>(</span><span class='va'>taxonomic_metadata</span><span class='op'>)</span>
+<span class='op'>}</span>
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

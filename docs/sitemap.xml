@@ -10,22 +10,10 @@
     <loc>https://CVPIA-OSC.github.io/EMLaide//reference/add_access.html</loc>
   </url>
   <url>
-    <loc>https://CVPIA-OSC.github.io/EMLaide//reference/add_attribute.html</loc>
-  </url>
-  <url>
     <loc>https://CVPIA-OSC.github.io/EMLaide//reference/add_coverage.html</loc>
   </url>
   <url>
-    <loc>https://CVPIA-OSC.github.io/EMLaide//reference/add_data_table.html</loc>
-  </url>
-  <url>
-    <loc>https://CVPIA-OSC.github.io/EMLaide//reference/add_datetime.html</loc>
-  </url>
-  <url>
-    <loc>https://CVPIA-OSC.github.io/EMLaide//reference/add_funding.html</loc>
-  </url>
-  <url>
-    <loc>https://CVPIA-OSC.github.io/EMLaide//reference/add_interval_ratio.html</loc>
+    <loc>https://CVPIA-OSC.github.io/EMLaide//reference/add_datatable.html</loc>
   </url>
   <url>
     <loc>https://CVPIA-OSC.github.io/EMLaide//reference/add_keyword_set.html</loc>
@@ -40,16 +28,7 @@
     <loc>https://CVPIA-OSC.github.io/EMLaide//reference/add_method.html</loc>
   </url>
   <url>
-    <loc>https://CVPIA-OSC.github.io/EMLaide//reference/add_nominal.html</loc>
-  </url>
-  <url>
-    <loc>https://CVPIA-OSC.github.io/EMLaide//reference/add_ordinal.html</loc>
-  </url>
-  <url>
     <loc>https://CVPIA-OSC.github.io/EMLaide//reference/add_personnel.html</loc>
-  </url>
-  <url>
-    <loc>https://CVPIA-OSC.github.io/EMLaide//reference/add_physical.html</loc>
   </url>
   <url>
     <loc>https://CVPIA-OSC.github.io/EMLaide//reference/add_project.html</loc>
@@ -67,6 +46,69 @@
     <loc>https://CVPIA-OSC.github.io/EMLaide//reference/add_title.html</loc>
   </url>
   <url>
+    <loc>https://CVPIA-OSC.github.io/EMLaide//reference/code_helper.html</loc>
+  </url>
+  <url>
+    <loc>https://CVPIA-OSC.github.io/EMLaide//reference/create_abstract.html</loc>
+  </url>
+  <url>
+    <loc>https://CVPIA-OSC.github.io/EMLaide//reference/create_attribute.html</loc>
+  </url>
+  <url>
+    <loc>https://CVPIA-OSC.github.io/EMLaide//reference/create_coverage.html</loc>
+  </url>
+  <url>
+    <loc>https://CVPIA-OSC.github.io/EMLaide//reference/create_datatable.html</loc>
+  </url>
+  <url>
+    <loc>https://CVPIA-OSC.github.io/EMLaide//reference/create_datetime.html</loc>
+  </url>
+  <url>
+    <loc>https://CVPIA-OSC.github.io/EMLaide//reference/create_funding.html</loc>
+  </url>
+  <url>
+    <loc>https://CVPIA-OSC.github.io/EMLaide//reference/create_interval_ratio.html</loc>
+  </url>
+  <url>
+    <loc>https://CVPIA-OSC.github.io/EMLaide//reference/create_keyword_set.html</loc>
+  </url>
+  <url>
+    <loc>https://CVPIA-OSC.github.io/EMLaide//reference/create_license.html</loc>
+  </url>
+  <url>
+    <loc>https://CVPIA-OSC.github.io/EMLaide//reference/create_maintenance.html</loc>
+  </url>
+  <url>
+    <loc>https://CVPIA-OSC.github.io/EMLaide//reference/create_method.html</loc>
+  </url>
+  <url>
+    <loc>https://CVPIA-OSC.github.io/EMLaide//reference/create_nominal.html</loc>
+  </url>
+  <url>
+    <loc>https://CVPIA-OSC.github.io/EMLaide//reference/create_ordinal.html</loc>
+  </url>
+  <url>
+    <loc>https://CVPIA-OSC.github.io/EMLaide//reference/create_person.html</loc>
+  </url>
+  <url>
+    <loc>https://CVPIA-OSC.github.io/EMLaide//reference/create_physical.html</loc>
+  </url>
+  <url>
+    <loc>https://CVPIA-OSC.github.io/EMLaide//reference/create_project.html</loc>
+  </url>
+  <url>
+    <loc>https://CVPIA-OSC.github.io/EMLaide//reference/create_pub_date.html</loc>
+  </url>
+  <url>
+    <loc>https://CVPIA-OSC.github.io/EMLaide//reference/create_raster.html</loc>
+  </url>
+  <url>
+    <loc>https://CVPIA-OSC.github.io/EMLaide//reference/create_taxonomic_coverage.html</loc>
+  </url>
+  <url>
+    <loc>https://CVPIA-OSC.github.io/EMLaide//reference/create_title.html</loc>
+  </url>
+  <url>
     <loc>https://CVPIA-OSC.github.io/EMLaide//reference/CVPIA_common_species.html</loc>
   </url>
   <url>
@@ -80,6 +122,9 @@
   </url>
   <url>
     <loc>https://CVPIA-OSC.github.io/EMLaide//reference/number_type.html</loc>
+  </url>
+  <url>
+    <loc>https://CVPIA-OSC.github.io/EMLaide//reference/pipe.html</loc>
   </url>
   <url>
     <loc>https://CVPIA-OSC.github.io/EMLaide//reference/reserve_edi_id.html</loc>
@@ -100,16 +145,7 @@
     <loc>https://CVPIA-OSC.github.io/EMLaide//reference/word_example.html</loc>
   </url>
   <url>
-    <loc>https://CVPIA-OSC.github.io/EMLaide//articles/creating-EML.html</loc>
-  </url>
-  <url>
-    <loc>https://CVPIA-OSC.github.io/EMLaide//articles/custom-units.html</loc>
-  </url>
-  <url>
-    <loc>https://CVPIA-OSC.github.io/EMLaide//articles/Dataset-Element.html</loc>
-  </url>
-  <url>
-    <loc>https://CVPIA-OSC.github.io/EMLaide//articles/Inital-Metadata-Information.html</loc>
+    <loc>https://CVPIA-OSC.github.io/EMLaide//articles/create-EML-from-template.html</loc>
   </url>
   <url>
     <loc>https://CVPIA-OSC.github.io/EMLaide//articles/template-doc.html</loc>

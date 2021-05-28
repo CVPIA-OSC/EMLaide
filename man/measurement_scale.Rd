@@ -12,7 +12,7 @@ measurement_scale
 }
 \description{
 The 5 options for measurement scales which can be appended to the dataset.
-A helper data object to be used with \code{\link{add_attribute}}.
+A helper data object to be used with \code{\link{create_attribute}}.
 }
 \section{Measurement Scales}{
 

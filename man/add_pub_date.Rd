@@ -10,18 +10,17 @@ add_pub_date(parent_element, date = NULL)
 \item{parent_element}{A list representing the EML project or dataset.}
 
 \item{date}{The publication date. If left null, it will be assigned the current
-date. This can be overriden by putting in a specific date.}
+date. This can be overridden by putting in a specific date: see \code{\link{create_pub_date}}}
 }
 \value{
-The dataset or project with the publication date appended.
+The dataset list or project with publication date information appended.
 }
 \description{
-Adds publication date according to EML standards.
+Adds the publication date element to a dataset list according to EML standards.
 }
 \examples{
-add_pub_date(parent_element = list(),
-             date = "2020-08-19")
-             
-# Appends current date:              
-add_pub_date(parent_element = list()) 
+ 
+dataset <- list() \%>\%
+    add_pub_date()
+dataset
 }

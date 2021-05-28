@@ -12,7 +12,7 @@ storage_type
 }
 \description{
 A set of common options for different attribute storage types.
-A helper data object to be used with \code{\link{add_attribute}}
+A helper data object to be used with \code{\link{create_attribute}}
 }
 \section{Character Storage Types}{
 
@@ -108,7 +108,7 @@ would be inputted as 03.
 }
 
 \examples{
-storage_type$integer #"integer"
+storage_type$boolean
 
 }
 \keyword{datasets}

@@ -18,6 +18,10 @@ This function returns a edi identifier number.
 \description{
 This package reserves and returns a unique EDI number.
 }
+\details{
+For more information about the identifier reservation services see \href{https://pastaplus-core.readthedocs.io/en/latest/doc_tree/pasta_api/data_package_manager_api.html#reservations}{the PASTAplus docs}
+}
 \examples{
-reserve_edi_id(user_id = "samuelwright")
+\dontrun{
+reserve_edi_id(user_id = "samuelwright")}
 }

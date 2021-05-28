@@ -2,53 +2,29 @@
 % Please edit documentation in R/personnel-element.R
 \name{add_personnel}
 \alias{add_personnel}
-\title{Add Personnel Element}
+\title{Add personnel}
 \usage{
-add_personnel(
-  parent_element,
-  first_name,
-  last_name,
-  email,
-  role,
-  organization,
-  orcid = NULL
-)
+add_personnel(parent_element, personnel_metadata)
 }
 \arguments{
 \item{parent_element}{A list representing the EML project or dataset}
 
-\item{first_name}{Person's given name}
-
-\item{last_name}{Person's surname}
-
-\item{email}{Person's email address}
-
-\item{role}{Use "creator" if you are one of the primary originators of the data.
-Other possible roles "Data Manager", "Field Technician", or "Assistant Researcher".
-There can be multiple personnel on a project with the same role.}
-
-\item{organization}{Person's employer or the entity they are associated
-with for this dataset or project}
-
-\item{orcid}{(Optional) ORCID iD is a persistent digital identifier for researchers,
-register at \url{http://orcid.org/}}
+\item{personnel_metadata}{A dataframe of personnel information see \code{\link{create_person}}}
+}
+\value{
+The dataset list or project with personnel information appended.
 }
 \description{
-Adds personel according to EML standards
+Adds the personnel metadata elements to a dataset list according to EML standards.
+}
+\details{
+On person within \code{personnel_metadata} must have role of 'creator'
 }
 \examples{
-add_personnel(parent_element = list(),
-              first_name = 'Katherine', 
-              last_name = "Johnson", 
-              email = 'kjohnson@nasa.gov', 
-              role = 'creator', 
-              organization = 'NASA',
-              orcid = '12345')
-
-add_personnel(parent_element = list(), 
-              first_name = "Edith", 
-              last_name = "Windsor", 
-              email = 'ewindsor@ibm.com', 
-              role = 'Data Manager', 
-              organization = 'IBM')
+personnel_metadata <- dplyr::tibble(first_name = "Stacy", last_name = "Banet", 
+                                    email = "Stacy@aol.com", 
+                                    role = "creator", organization = "USBR", orcid = NA)
+dataset <- list() \%>\%
+   add_personnel(personnel_metadata)
+dataset
 }

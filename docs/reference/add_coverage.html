@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Add Coverage Element — add_coverage • EMLaide</title>
+<title>Add Coverage — add_coverage • EMLaide</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -48,8 +48,8 @@
   <link href="../extra.css" rel="stylesheet">
   
 
-<meta property="og:title" content="Add Coverage Element — add_coverage" />
-<meta property="og:description" content="Adds the coverage information of a dataset based off of EML standards." />
+<meta property="og:title" content="Add Coverage — add_coverage" />
+<meta property="og:description" content="Adds the coverage metadata elements to a dataset list according to EML standards." />
 <meta property="og:image" content="https://CVPIA-OSC.github.io/EMLaide/logo.png" />
 
 
@@ -102,13 +102,7 @@
       <a href="../articles/template-doc.html">Metadata Template Documentation</a>
     </li>
     <li>
-      <a href="../articles/creating-EML.html">Create EML Document from Template</a>
-    </li>
-    <li>
-      <a href="../articles/Dataset-Element.html">Handle Special Case Datasets</a>
-    </li>
-    <li>
-      <a href="../articles/custom-units.html">EML Custom Units</a>
+      <a href="../articles/create-EML-from-template.html">Create EML Document from Template</a>
     </li>
   </ul>
 </li>
@@ -133,26 +127,16 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Add Coverage Element</h1>
+    <h1>Add Coverage</h1>
     
     <div class="hidden name"><code>add_coverage.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Adds the coverage information of a dataset based off of EML standards.</p>
+    <p>Adds the coverage metadata elements to a dataset list according to EML standards.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>add_coverage</span><span class='op'>(</span>
-  <span class='va'>parent_element</span>,
-  <span class='va'>geographic_description</span>,
-  <span class='va'>west_bounding_coordinate</span>,
-  <span class='va'>east_bounding_coordinate</span>,
-  <span class='va'>north_bounding_coordinate</span>,
-  <span class='va'>south_bounding_coordinate</span>,
-  <span class='va'>begin_date</span>,
-  <span class='va'>end_date</span>,
-  taxonomic_coverage <span class='op'>=</span> <span class='cn'>NULL</span>
-<span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>add_coverage</span><span class='op'>(</span><span class='va'>parent_element</span>, <span class='va'>coverage_metadata</span>, taxonomic_metadata <span class='op'>=</span> <span class='cn'>NULL</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -162,395 +146,34 @@
       <td><p>A list representing the EML project or dataset.</p></td>
     </tr>
     <tr>
-      <th>geographic_description</th>
-      <td><p>A description of the locations    of research sites
-and areas related to the data.</p></td>
+      <th>coverage_metadata</th>
+      <td><p>a list or datatable of coverage metadata see <code><a href='create_coverage.html'>create_coverage</a></code></p></td>
     </tr>
     <tr>
-      <th>west_bounding_coordinate</th>
-      <td><p>The west cardinality limit.</p></td>
-    </tr>
-    <tr>
-      <th>east_bounding_coordinate</th>
-      <td><p>The east cardinality limit.</p></td>
-    </tr>
-    <tr>
-      <th>north_bounding_coordinate</th>
-      <td><p>The north cardinality limit.</p></td>
-    </tr>
-    <tr>
-      <th>south_bounding_coordinate</th>
-      <td><p>The south cardinality limit.</p></td>
-    </tr>
-    <tr>
-      <th>begin_date</th>
-      <td><p>The starting date for the dataset or project. Dates must be
-provided in ISO 8601 format, YYYY-MM-DD.</p></td>
-    </tr>
-    <tr>
-      <th>end_date</th>
-      <td><p>The projected or actual end date for the dataset or project.
-Dates must be provided in ISO 8601 format, YYYY-MM-DD.</p></td>
-    </tr>
-    <tr>
-      <th>taxonomic_coverage</th>
-      <td><p>Addition of taxonomic coverage is optional. The
-taxonomic information for all organisms relevant to the study should be included
-and mandates the input of the taxonomy levels of kingdom-species. An example
-of how to append this information using the add_taxonomic_coverage
-function is given down below.</p></td>
+      <th>taxonomic_metadata</th>
+      <td><p>a list or datatable of taxonomic metadata see <code><a href='create_taxonomic_coverage.html'>create_taxonomic_coverage</a></code></p></td>
     </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>The dataset or project with coverage information appended.</p>
+    <p>The dataset list or project with coverage information appended.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>add_coverage</span><span class='op'>(</span>parent_element <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span><span class='op'>)</span>, geographic_description <span class='op'>=</span> <span class='st'>"North Slope
-             drainage basin: Bounding box encompasses 42 drainage basins
-             totaling the North Slope drainage basin, Alaska, USA."</span>,
-             west_bounding_coordinate <span class='op'>=</span> <span class='st'>"-160.594000"</span>,
+    <pre class="examples"><div class='input'>
+<span class='va'>coverage</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>geographic_description <span class='op'>=</span> <span class='st'>"Description"</span>,
+             west_bounding_coordinate <span class='op'>=</span> <span class='st'>"-160.594000"</span>, 
              east_bounding_coordinate <span class='op'>=</span> <span class='st'>"-134.104800"</span>,
-             north_bounding_coordinate <span class='op'>=</span> <span class='st'>"71.238300"</span>,
-             south_bounding_coordinate <span class='op'>=</span> <span class='st'>"67.865000"</span>, 
-             begin_date <span class='op'>=</span> <span class='st'>"1980-01-01"</span>,
+             north_bounding_coordinate <span class='op'>=</span> <span class='st'>"71.238300"</span>, 
+             south_bounding_coordinate <span class='op'>=</span> <span class='st'>"67.865000"</span>,
+             begin_date <span class='op'>=</span> <span class='st'>"1980-01-01"</span>, 
              end_date <span class='op'>=</span> <span class='st'>"2010-12-31"</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; $coverage
-#&gt; $coverage$geographicCoverage
-#&gt; $coverage$geographicCoverage$geographicDescription
-#&gt; [1] "North Slope\n             drainage basin: Bounding box encompasses 42 drainage basins\n             totaling the North Slope drainage basin, Alaska, USA."
-#&gt; 
-#&gt; $coverage$geographicCoverage$boundingCoordinates
-#&gt; $coverage$geographicCoverage$boundingCoordinates$westBoundingCoordinate
-#&gt; [1] "-160.594000"
-#&gt; 
-#&gt; $coverage$geographicCoverage$boundingCoordinates$eastBoundingCoordinate
-#&gt; [1] "-134.104800"
-#&gt; 
-#&gt; $coverage$geographicCoverage$boundingCoordinates$northBoundingCoordinate
-#&gt; [1] "71.238300"
-#&gt; 
-#&gt; $coverage$geographicCoverage$boundingCoordinates$southBoundingCoordinate
-#&gt; [1] "67.865000"
-#&gt; 
-#&gt; 
-#&gt; 
-#&gt; $coverage$temporalCoverage
-#&gt; $coverage$temporalCoverage$rangeOfDates
-#&gt; $coverage$temporalCoverage$rangeOfDates$beginDate
-#&gt; $coverage$temporalCoverage$rangeOfDates$beginDate$calendarDate
-#&gt; [1] "1980-01-01"
-#&gt; 
-#&gt; 
-#&gt; $coverage$temporalCoverage$rangeOfDates$endDate
-#&gt; $coverage$temporalCoverage$rangeOfDates$endDate$calendarDate
-#&gt; [1] "2010-12-31"
-#&gt; 
-#&gt; 
-#&gt; 
-#&gt; 
-#&gt; </div><div class='input'>             
-<span class='va'>taxonomic_coverage</span> <span class='op'>&lt;-</span> <span class='fu'><a href='add_taxonomic_coverage.html'>add_taxonomic_coverage</a></span><span class='op'>(</span>CVPIA_common_species <span class='op'>=</span> <span class='st'>"chinook"</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; <span class='message'>No taxon id has been provided. This number can be found at ITIS.gov if you wish to append it.</span></div><div class='input'><span class='fu'>add_coverage</span><span class='op'>(</span>parent_element <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span><span class='op'>)</span>, geographic_description <span class='op'>=</span> <span class='st'>"Description"</span>,
-             west_bounding_coordinate <span class='op'>=</span> <span class='st'>"-160.594000"</span>, 
-             east_bounding_coordinate <span class='op'>=</span> <span class='st'>"-134.104800"</span>,
-             north_bounding_coordinate <span class='op'>=</span> <span class='st'>"71.238300"</span>, 
-             south_bounding_coordinate <span class='op'>=</span> <span class='st'>"67.865000"</span>,
-             begin_date <span class='op'>=</span> <span class='st'>"1980-01-01"</span>, 
-             end_date <span class='op'>=</span> <span class='st'>"2010-12-31"</span>, 
-             taxonomic_coverage <span class='op'>=</span> <span class='va'>taxonomic_coverage</span><span class='op'>)</span> 
-</div><div class='output co'>#&gt; $coverage
-#&gt; $coverage$geographicCoverage
-#&gt; $coverage$geographicCoverage$geographicDescription
-#&gt; [1] "Description"
-#&gt; 
-#&gt; $coverage$geographicCoverage$boundingCoordinates
-#&gt; $coverage$geographicCoverage$boundingCoordinates$westBoundingCoordinate
-#&gt; [1] "-160.594000"
-#&gt; 
-#&gt; $coverage$geographicCoverage$boundingCoordinates$eastBoundingCoordinate
-#&gt; [1] "-134.104800"
-#&gt; 
-#&gt; $coverage$geographicCoverage$boundingCoordinates$northBoundingCoordinate
-#&gt; [1] "71.238300"
-#&gt; 
-#&gt; $coverage$geographicCoverage$boundingCoordinates$southBoundingCoordinate
-#&gt; [1] "67.865000"
-#&gt; 
-#&gt; 
-#&gt; 
-#&gt; $coverage$temporalCoverage
-#&gt; $coverage$temporalCoverage$rangeOfDates
-#&gt; $coverage$temporalCoverage$rangeOfDates$beginDate
-#&gt; $coverage$temporalCoverage$rangeOfDates$beginDate$calendarDate
-#&gt; [1] "1980-01-01"
-#&gt; 
-#&gt; 
-#&gt; $coverage$temporalCoverage$rangeOfDates$endDate
-#&gt; $coverage$temporalCoverage$rangeOfDates$endDate$calendarDate
-#&gt; [1] "2010-12-31"
-#&gt; 
-#&gt; 
-#&gt; 
-#&gt; 
-#&gt; $coverage$taxonomicCoverage
-#&gt; $coverage$taxonomicCoverage$taxonomicClassification
-#&gt; $coverage$taxonomicCoverage$taxonomicClassification$taxonRankName
-#&gt; [1] "kingdom"
-#&gt; 
-#&gt; $coverage$taxonomicCoverage$taxonomicClassification$taxonRankValue
-#&gt; [1] "Animalia"
-#&gt; 
-#&gt; $coverage$taxonomicCoverage$taxonomicClassification$taxonomicClassification
-#&gt; $coverage$taxonomicCoverage$taxonomicClassification$taxonomicClassification$taxonRankName
-#&gt; [1] "phylum"
-#&gt; 
-#&gt; $coverage$taxonomicCoverage$taxonomicClassification$taxonomicClassification$taxonRankValue
-#&gt; [1] "Chordata"
-#&gt; 
-#&gt; $coverage$taxonomicCoverage$taxonomicClassification$taxonomicClassification$taxonomicClassification
-#&gt; $coverage$taxonomicCoverage$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonRankName
-#&gt; [1] "class"
-#&gt; 
-#&gt; $coverage$taxonomicCoverage$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonRankValue
-#&gt; [1] "Teleostei"
-#&gt; 
-#&gt; $coverage$taxonomicCoverage$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification
-#&gt; $coverage$taxonomicCoverage$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonRankName
-#&gt; [1] "order"
-#&gt; 
-#&gt; $coverage$taxonomicCoverage$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonRankValue
-#&gt; [1] "Salmoniformes"
-#&gt; 
-#&gt; $coverage$taxonomicCoverage$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification
-#&gt; $coverage$taxonomicCoverage$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonRankName
-#&gt; [1] "family"
-#&gt; 
-#&gt; $coverage$taxonomicCoverage$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonRankValue
-#&gt; [1] "Salmonidae"
-#&gt; 
-#&gt; $coverage$taxonomicCoverage$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification
-#&gt; $coverage$taxonomicCoverage$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonRankName
-#&gt; [1] "genus"
-#&gt; 
-#&gt; $coverage$taxonomicCoverage$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonRankValue
-#&gt; [1] "Oncorhynchus"
-#&gt; 
-#&gt; $coverage$taxonomicCoverage$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification
-#&gt; $coverage$taxonomicCoverage$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonRankName
-#&gt; [1] "species"
-#&gt; 
-#&gt; $coverage$taxonomicCoverage$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonRankValue
-#&gt; [1] "Oncorhynchus tshawytscha"
-#&gt; 
-#&gt; $coverage$taxonomicCoverage$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$commonName
-#&gt; [1] "Chinook Salmon"
-#&gt; 
-#&gt; $coverage$taxonomicCoverage$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonId
-#&gt; $coverage$taxonomicCoverage$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonId$provider
-#&gt; [1] "https://itis.gov"
-#&gt; 
-#&gt; $coverage$taxonomicCoverage$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonId$taxonId
-#&gt; [1] "161980"
-#&gt; 
-#&gt; 
-#&gt; 
-#&gt; 
-#&gt; 
-#&gt; 
-#&gt; 
-#&gt; 
-#&gt; 
-#&gt; 
-#&gt; </div><div class='input'>             
-<span class='co'># For adding multiple taxonomies to the coverage: </span>
-<span class='va'>chinook</span> <span class='op'>&lt;-</span> <span class='fu'><a href='add_taxonomic_coverage.html'>add_taxonomic_coverage</a></span><span class='op'>(</span>CVPIA_common_species <span class='op'>=</span> <span class='st'>"chinook"</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; <span class='message'>No taxon id has been provided. This number can be found at ITIS.gov if you wish to append it.</span></div><div class='input'><span class='va'>delta</span> <span class='op'>&lt;-</span> <span class='fu'><a href='add_taxonomic_coverage.html'>add_taxonomic_coverage</a></span><span class='op'>(</span>CVPIA_common_species <span class='op'>=</span> <span class='st'>"delta_smelt"</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; <span class='message'>No taxon id has been provided. This number can be found at ITIS.gov if you wish to append it.</span></div><div class='input'><span class='va'>taxonomic_coverage</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span><span class='va'>chinook</span>, <span class='va'>delta</span><span class='op'>)</span>
-<span class='fu'>add_coverage</span><span class='op'>(</span>parent_element <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span><span class='op'>)</span>, geographic_description <span class='op'>=</span> <span class='st'>"Description"</span>,
-             west_bounding_coordinate <span class='op'>=</span> <span class='st'>"-160.594000"</span>, 
-             east_bounding_coordinate <span class='op'>=</span> <span class='st'>"-134.104800"</span>,
-             north_bounding_coordinate <span class='op'>=</span> <span class='st'>"71.238300"</span>, 
-             south_bounding_coordinate <span class='op'>=</span> <span class='st'>"67.865000"</span>,
-             begin_date <span class='op'>=</span> <span class='st'>"1980-01-01"</span>, 
-             end_date <span class='op'>=</span> <span class='st'>"2010-12-31"</span>, 
-             taxonomic_coverage <span class='op'>=</span> <span class='va'>taxonomic_coverage</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; $coverage
-#&gt; $coverage$geographicCoverage
-#&gt; $coverage$geographicCoverage$geographicDescription
-#&gt; [1] "Description"
-#&gt; 
-#&gt; $coverage$geographicCoverage$boundingCoordinates
-#&gt; $coverage$geographicCoverage$boundingCoordinates$westBoundingCoordinate
-#&gt; [1] "-160.594000"
-#&gt; 
-#&gt; $coverage$geographicCoverage$boundingCoordinates$eastBoundingCoordinate
-#&gt; [1] "-134.104800"
-#&gt; 
-#&gt; $coverage$geographicCoverage$boundingCoordinates$northBoundingCoordinate
-#&gt; [1] "71.238300"
-#&gt; 
-#&gt; $coverage$geographicCoverage$boundingCoordinates$southBoundingCoordinate
-#&gt; [1] "67.865000"
-#&gt; 
-#&gt; 
-#&gt; 
-#&gt; $coverage$temporalCoverage
-#&gt; $coverage$temporalCoverage$rangeOfDates
-#&gt; $coverage$temporalCoverage$rangeOfDates$beginDate
-#&gt; $coverage$temporalCoverage$rangeOfDates$beginDate$calendarDate
-#&gt; [1] "1980-01-01"
-#&gt; 
-#&gt; 
-#&gt; $coverage$temporalCoverage$rangeOfDates$endDate
-#&gt; $coverage$temporalCoverage$rangeOfDates$endDate$calendarDate
-#&gt; [1] "2010-12-31"
-#&gt; 
-#&gt; 
-#&gt; 
-#&gt; 
-#&gt; $coverage$taxonomicCoverage
-#&gt; $coverage$taxonomicCoverage[[1]]
-#&gt; $coverage$taxonomicCoverage[[1]]$taxonomicClassification
-#&gt; $coverage$taxonomicCoverage[[1]]$taxonomicClassification$taxonRankName
-#&gt; [1] "kingdom"
-#&gt; 
-#&gt; $coverage$taxonomicCoverage[[1]]$taxonomicClassification$taxonRankValue
-#&gt; [1] "Animalia"
-#&gt; 
-#&gt; $coverage$taxonomicCoverage[[1]]$taxonomicClassification$taxonomicClassification
-#&gt; $coverage$taxonomicCoverage[[1]]$taxonomicClassification$taxonomicClassification$taxonRankName
-#&gt; [1] "phylum"
-#&gt; 
-#&gt; $coverage$taxonomicCoverage[[1]]$taxonomicClassification$taxonomicClassification$taxonRankValue
-#&gt; [1] "Chordata"
-#&gt; 
-#&gt; $coverage$taxonomicCoverage[[1]]$taxonomicClassification$taxonomicClassification$taxonomicClassification
-#&gt; $coverage$taxonomicCoverage[[1]]$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonRankName
-#&gt; [1] "class"
-#&gt; 
-#&gt; $coverage$taxonomicCoverage[[1]]$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonRankValue
-#&gt; [1] "Teleostei"
-#&gt; 
-#&gt; $coverage$taxonomicCoverage[[1]]$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification
-#&gt; $coverage$taxonomicCoverage[[1]]$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonRankName
-#&gt; [1] "order"
-#&gt; 
-#&gt; $coverage$taxonomicCoverage[[1]]$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonRankValue
-#&gt; [1] "Salmoniformes"
-#&gt; 
-#&gt; $coverage$taxonomicCoverage[[1]]$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification
-#&gt; $coverage$taxonomicCoverage[[1]]$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonRankName
-#&gt; [1] "family"
-#&gt; 
-#&gt; $coverage$taxonomicCoverage[[1]]$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonRankValue
-#&gt; [1] "Salmonidae"
-#&gt; 
-#&gt; $coverage$taxonomicCoverage[[1]]$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification
-#&gt; $coverage$taxonomicCoverage[[1]]$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonRankName
-#&gt; [1] "genus"
-#&gt; 
-#&gt; $coverage$taxonomicCoverage[[1]]$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonRankValue
-#&gt; [1] "Oncorhynchus"
-#&gt; 
-#&gt; $coverage$taxonomicCoverage[[1]]$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification
-#&gt; $coverage$taxonomicCoverage[[1]]$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonRankName
-#&gt; [1] "species"
-#&gt; 
-#&gt; $coverage$taxonomicCoverage[[1]]$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonRankValue
-#&gt; [1] "Oncorhynchus tshawytscha"
-#&gt; 
-#&gt; $coverage$taxonomicCoverage[[1]]$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$commonName
-#&gt; [1] "Chinook Salmon"
-#&gt; 
-#&gt; $coverage$taxonomicCoverage[[1]]$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonId
-#&gt; $coverage$taxonomicCoverage[[1]]$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonId$provider
-#&gt; [1] "https://itis.gov"
-#&gt; 
-#&gt; $coverage$taxonomicCoverage[[1]]$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonId$taxonId
-#&gt; [1] "161980"
-#&gt; 
-#&gt; 
-#&gt; 
-#&gt; 
-#&gt; 
-#&gt; 
-#&gt; 
-#&gt; 
-#&gt; 
-#&gt; 
-#&gt; $coverage$taxonomicCoverage[[2]]
-#&gt; $coverage$taxonomicCoverage[[2]]$taxonomicClassification
-#&gt; $coverage$taxonomicCoverage[[2]]$taxonomicClassification$taxonRankName
-#&gt; [1] "kingdom"
-#&gt; 
-#&gt; $coverage$taxonomicCoverage[[2]]$taxonomicClassification$taxonRankValue
-#&gt; [1] "Animalia"
-#&gt; 
-#&gt; $coverage$taxonomicCoverage[[2]]$taxonomicClassification$taxonomicClassification
-#&gt; $coverage$taxonomicCoverage[[2]]$taxonomicClassification$taxonomicClassification$taxonRankName
-#&gt; [1] "phylum"
-#&gt; 
-#&gt; $coverage$taxonomicCoverage[[2]]$taxonomicClassification$taxonomicClassification$taxonRankValue
-#&gt; [1] "Chordata"
-#&gt; 
-#&gt; $coverage$taxonomicCoverage[[2]]$taxonomicClassification$taxonomicClassification$taxonomicClassification
-#&gt; $coverage$taxonomicCoverage[[2]]$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonRankName
-#&gt; [1] "class"
-#&gt; 
-#&gt; $coverage$taxonomicCoverage[[2]]$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonRankValue
-#&gt; [1] "Teleostei"
-#&gt; 
-#&gt; $coverage$taxonomicCoverage[[2]]$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification
-#&gt; $coverage$taxonomicCoverage[[2]]$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonRankName
-#&gt; [1] "order"
-#&gt; 
-#&gt; $coverage$taxonomicCoverage[[2]]$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonRankValue
-#&gt; [1] "Osmeriformes"
-#&gt; 
-#&gt; $coverage$taxonomicCoverage[[2]]$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification
-#&gt; $coverage$taxonomicCoverage[[2]]$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonRankName
-#&gt; [1] "family"
-#&gt; 
-#&gt; $coverage$taxonomicCoverage[[2]]$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonRankValue
-#&gt; [1] "Osmeridae"
-#&gt; 
-#&gt; $coverage$taxonomicCoverage[[2]]$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification
-#&gt; $coverage$taxonomicCoverage[[2]]$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonRankName
-#&gt; [1] "genus"
-#&gt; 
-#&gt; $coverage$taxonomicCoverage[[2]]$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonRankValue
-#&gt; [1] "Hypomesus"
-#&gt; 
-#&gt; $coverage$taxonomicCoverage[[2]]$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification
-#&gt; $coverage$taxonomicCoverage[[2]]$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonRankName
-#&gt; [1] "species"
-#&gt; 
-#&gt; $coverage$taxonomicCoverage[[2]]$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonRankValue
-#&gt; [1] "Hypomesus transpacificus"
-#&gt; 
-#&gt; $coverage$taxonomicCoverage[[2]]$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$commonName
-#&gt; [1] "Delta Smelt"
-#&gt; 
-#&gt; $coverage$taxonomicCoverage[[2]]$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonId
-#&gt; $coverage$taxonomicCoverage[[2]]$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonId$provider
-#&gt; [1] "https://itis.gov"
-#&gt; 
-#&gt; $coverage$taxonomicCoverage[[2]]$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonId$taxonId
-#&gt; [1] "162032"
-#&gt; 
-#&gt; 
-#&gt; 
-#&gt; 
-#&gt; 
-#&gt; 
-#&gt; 
-#&gt; 
-#&gt; 
-#&gt; 
-#&gt; 
-#&gt; </div></pre>
+<span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>{</span>             
+<span class='va'>dataset</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'>%&gt;%</span> 
+  <span class='fu'>add_coverage</span><span class='op'>(</span><span class='va'>coverage</span><span class='op'>)</span>
+<span class='va'>dataset</span>
+<span class='op'>}</span>
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

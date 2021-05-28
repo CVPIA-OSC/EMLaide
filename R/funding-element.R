@@ -1,4 +1,4 @@
-#' @title Add Funding Element
+#' @title Create Funding Element
 #' @description Creates the award information of a project based off of EML standards. 
 #' This award element is then nested within a project node to complete a funding section. 
 #' @param funder_name Organization or individual providing the funding. If applicable, 
@@ -16,17 +16,17 @@
 #' @param funding_description (Optional) Provide a short description of the funding received.
 #' @return An award list that is then added to the project element of an EML file.  
 #' @examples 
-#' add_funding(funder_name = "National Science Foundation",
-#'             funder_identifier = "http://dx.doi.org/10.13039/100000001",
-#'             award_number = "1656026",
-#'             award_title = "National Science Foundation Grant",
-#'             award_url = "https://www.nsf.gov/awardsearch/showAward?AWD_ID=1656026",
-#'             funding_description = "BLE LTER is supported by the National Science 
-#'                                    Foundation under award #1656026 
-#'                                    (2017-08-01 to 2022-07-31)." )
+#' create_funding(funder_name = "National Science Foundation",
+#'                funder_identifier = "http://dx.doi.org/10.13039/100000001",
+#'                award_number = "1656026",
+#'                award_title = "National Science Foundation Grant",
+#'                award_url = "https://www.nsf.gov/awardsearch/showAward?AWD_ID=1656026",
+#'                funding_description = "BLE LTER is supported by the National Science 
+#'                                      Foundation under award #1656026 
+#'                                       (2017-08-01 to 2022-07-31)." )
 #' @export
 
-add_funding <- function(funder_name, award_title, funder_identifier = NULL, 
+create_funding <- function(funder_name, award_title, funder_identifier = NULL, 
                         award_number = NULL, award_url = NULL, funding_description = NULL)  {
   
   award <- list()

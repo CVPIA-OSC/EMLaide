@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Add project element — add_project • EMLaide</title>
+<title>Add Project — add_project • EMLaide</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -48,12 +48,8 @@
   <link href="../extra.css" rel="stylesheet">
   
 
-<meta property="og:title" content="Add project element — add_project" />
-<meta property="og:description" content="This function creates a project node within the parent element that
-contains all the required elements for the project section of an EML document.
-This function can be used in combination with add_personnel
-and add_funding. add_personnel can be used to generate the project_personnel
-input and add_funding can be used to generate the award_information input." />
+<meta property="og:title" content="Add Project — add_project" />
+<meta property="og:description" content="Adds the project metadata elements according to EML standards." />
 <meta property="og:image" content="https://CVPIA-OSC.github.io/EMLaide/logo.png" />
 
 
@@ -106,13 +102,7 @@ input and add_funding can be used to generate the award_information input." />
       <a href="../articles/template-doc.html">Metadata Template Documentation</a>
     </li>
     <li>
-      <a href="../articles/creating-EML.html">Create EML Document from Template</a>
-    </li>
-    <li>
-      <a href="../articles/Dataset-Element.html">Handle Special Case Datasets</a>
-    </li>
-    <li>
-      <a href="../articles/custom-units.html">EML Custom Units</a>
+      <a href="../articles/create-EML-from-template.html">Create EML Document from Template</a>
     </li>
   </ul>
 </li>
@@ -137,24 +127,20 @@ input and add_funding can be used to generate the award_information input." />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Add project element</h1>
+    <h1>Add Project</h1>
     
     <div class="hidden name"><code>add_project.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>This function creates a project node within the parent element that
-contains all the required elements for the project section of an EML document.
-This function can be used in combination with <code>add_personnel</code>
-and <code>add_funding</code>. <code>add_personnel</code> can be used to generate the <code>project_personnel</code>
-input and <code>add_funding</code> can be used to generate the <code>award_information</code> input.</p>
+    <p>Adds the project metadata elements according to EML standards.</p>
     </div>
 
     <pre class="usage"><span class='fu'>add_project</span><span class='op'>(</span>
   <span class='va'>parent_element</span>,
-  <span class='va'>project_title</span>,
-  <span class='va'>award_information</span>,
-  <span class='va'>project_personnel</span>
+  <span class='va'>funding_metadata</span>,
+  project_title <span class='op'>=</span> <span class='cn'>NULL</span>,
+  project_lead <span class='op'>=</span> <span class='cn'>NULL</span>
 <span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
@@ -162,156 +148,174 @@ input and <code>add_funding</code> can be used to generate the <code>award_infor
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>parent_element</th>
-      <td><p>A list in which the project node should be nested in.</p></td>
+      <td><p>A list representing the EML project or dataset.</p></td>
+    </tr>
+    <tr>
+      <th>funding_metadata</th>
+      <td><p>Add a named list or dataframe containing funding metadata: see <code><a href='create_project.html'>create_project</a></code></p></td>
     </tr>
     <tr>
       <th>project_title</th>
-      <td><p>The title of the project that the funding is awarded to.</p></td>
+      <td><p>Optionally add a project_title that is different from dataset title: see <code><a href='create_project.html'>create_project</a></code></p></td>
     </tr>
     <tr>
-      <th>award_information</th>
-      <td><p>A list that includes the required funding information
-for an EML document.This list must include the award title and the funderName.
-This list can be created by calling the <code>add_funding</code> function
-on the funding information or by manually inputting the required information.
-If the list is written manually it must be formatted as follows.</p>
-<p><code>award_infomation = list(funderName = "Name", title = "Award Title")</code></p>
-<p>Additional information about the funding may be added to the list. See the
-<code><a href='add_funding.html'>add_funding</a></code> documentation for more information.</p></td>
-    </tr>
-    <tr>
-      <th>project_personnel</th>
-      <td><p>A list that includes the required information on project
-personnel for an EML document. It must include the first name, last name,
-organization, and personnel role for this project. This list can be created
-by calling the <code>add_personnel</code> function on the project personnel or by manually inputting the required
-information. If the list is written manually it must be formatted as follows.</p>
-<p><code>project_personnel = list(individualName = list(givenName = "First Name", surName = "Last Name"),
-role = "Position", organization = "Organization")</code></p>
-<p>Additional information about the project personnel may be added to the list. See the
-<code><a href='add_personnel.html'>add_personnel</a></code> documentation for more information.</p></td>
+      <th>project_lead</th>
+      <td><p>Optionally add metadata describing a specific project personnel: see <code><a href='create_project.html'>create_project</a></code></p></td>
     </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>This function returns the parent element with a new project node containing
-all project information required for an EML document.</p>
+    <p>The dataset list with project information appended.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>add_project</span><span class='op'>(</span>parent_element <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span><span class='op'>)</span>, 
-            project_title <span class='op'>=</span> <span class='st'>"my project title"</span>, 
-            award_information <span class='op'>=</span> <span class='fu'><a href='add_funding.html'>add_funding</a></span><span class='op'>(</span>funder_name <span class='op'>=</span> <span class='st'>"Bank"</span>,
-                                            funder_identifier <span class='op'>=</span> <span class='st'>"Funder 1"</span>,
-                                            award_number <span class='op'>=</span> <span class='st'>"000"</span>,
-                                            award_title <span class='op'>=</span> <span class='st'>"Money up for grabs"</span>,
-                                            award_url <span class='op'>=</span> <span class='st'>"awardforme.com"</span><span class='op'>)</span>,
-            project_personnel <span class='op'>=</span> <span class='fu'><a href='add_personnel.html'>add_personnel</a></span><span class='op'>(</span>parent_element <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span><span class='op'>)</span>,
-                                              first_name <span class='op'>=</span> <span class='st'>"Smithy"</span>,
-                                              last_name <span class='op'>=</span> <span class='st'>"Smith"</span>,
-                                              email <span class='op'>=</span> <span class='st'>"myemail@mail.gov"</span>,
-                                              role <span class='op'>=</span> <span class='st'>"Manager"</span>,
-                                              organization <span class='op'>=</span> <span class='st'>"US GOV"</span><span class='op'>)</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; <span class='warning'>Warning: Please provide the funding_description</span></div><div class='output co'>#&gt; $project
+    <pre class="examples"><div class='input'><span class='va'>project_lead</span> <span class='op'>&lt;-</span> <span class='fu'>dplyr</span><span class='fu'>::</span><span class='fu'><a href='https://tibble.tidyverse.org/reference/tibble.html'>tibble</a></span><span class='op'>(</span>first_name <span class='op'>=</span> <span class='st'>"Stacy"</span>, last_name <span class='op'>=</span> <span class='st'>"Banet"</span>, email <span class='op'>=</span> <span class='st'>"Stacy@aol.com"</span> , 
+                              role <span class='op'>=</span> <span class='st'>"creator"</span>, organization <span class='op'>=</span> <span class='st'>"USBR"</span>, orcid <span class='op'>=</span> <span class='cn'>NA</span><span class='op'>)</span>
+<span class='va'>funding_metadata</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>funder_name <span class='op'>=</span> <span class='st'>"USBR"</span>, funder_identifier <span class='op'>=</span> <span class='cn'>NA</span>, award_number <span class='op'>=</span> <span class='st'>"R14AC00096"</span>, 
+                         award_title <span class='op'>=</span> <span class='st'>"Salmonid Spawning and Rearing Habitat Restoration in the Sacramento River"</span>, 
+                         award_url <span class='op'>=</span> <span class='cn'>NA</span>, funding_description <span class='op'>=</span> <span class='cn'>NA</span><span class='op'>)</span>
+
+<span class='va'>dataset</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
+   <span class='fu'><a href='add_title.html'>add_title</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>title <span class='op'>=</span> <span class='st'>"O.mykiss Habitat monitoring and contact point project"</span>, short_name <span class='op'>=</span> <span class='st'>"O.mykiss monitoring"</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
+   <span class='fu'><a href='add_personnel.html'>add_personnel</a></span><span class='op'>(</span><span class='va'>project_lead</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
+   <span class='fu'>add_project</span><span class='op'>(</span><span class='va'>funding_metadata</span><span class='op'>)</span>
+<span class='va'>dataset</span>
+</div><div class='output co'>#&gt; $title
+#&gt; [1] "O.mykiss Habitat monitoring and contact point project"
+#&gt; 
+#&gt; $shortName
+#&gt; [1] "O.mykiss monitoring"
+#&gt; 
+#&gt; $creator
+#&gt; $creator$individualName
+#&gt; $creator$individualName$givenName
+#&gt; [1] "Stacy"
+#&gt; 
+#&gt; $creator$individualName$surName
+#&gt; [1] "Banet"
+#&gt; 
+#&gt; 
+#&gt; $creator$electronicMailAddress
+#&gt; [1] "Stacy@aol.com"
+#&gt; 
+#&gt; $creator$organizationName
+#&gt; [1] "USBR"
+#&gt; 
+#&gt; 
+#&gt; $contact
+#&gt; $contact$individualName
+#&gt; $contact$individualName$givenName
+#&gt; [1] "Stacy"
+#&gt; 
+#&gt; $contact$individualName$surName
+#&gt; [1] "Banet"
+#&gt; 
+#&gt; 
+#&gt; $contact$electronicMailAddress
+#&gt; [1] "Stacy@aol.com"
+#&gt; 
+#&gt; $contact$organizationName
+#&gt; [1] "USBR"
+#&gt; 
+#&gt; 
+#&gt; $associatedParty
+#&gt; list()
+#&gt; 
+#&gt; $project
 #&gt; $project$title
-#&gt; [1] "my project title"
-#&gt; 
-#&gt; $project$personnel
-#&gt; $project$personnel$associatedParty
-#&gt; $project$personnel$associatedParty$individualName
-#&gt; $project$personnel$associatedParty$individualName$givenName
-#&gt; [1] "Smithy"
-#&gt; 
-#&gt; $project$personnel$associatedParty$individualName$surName
-#&gt; [1] "Smith"
-#&gt; 
-#&gt; 
-#&gt; $project$personnel$associatedParty$electronicMailAddress
-#&gt; [1] "myemail@mail.gov"
-#&gt; 
-#&gt; $project$personnel$associatedParty$organizationName
-#&gt; [1] "US GOV"
-#&gt; 
-#&gt; $project$personnel$associatedParty$role
-#&gt; [1] "Manager"
-#&gt; 
-#&gt; 
-#&gt; $project$personnel$role
-#&gt; [1] "Project Lead"
-#&gt; 
-#&gt; 
-#&gt; $project$award
-#&gt; $project$award$funderName
-#&gt; [1] "Bank"
-#&gt; 
-#&gt; $project$award$title
-#&gt; [1] "Money up for grabs"
-#&gt; 
-#&gt; $project$award$funderIdentifier
-#&gt; [1] "Funder 1"
-#&gt; 
-#&gt; $project$award$awardNumber
-#&gt; [1] "000"
-#&gt; 
-#&gt; $project$award$awardUrl
-#&gt; [1] "awardforme.com"
-#&gt; 
-#&gt; 
-#&gt; </div><div class='input'>                                              
-<span class='fu'>add_project</span><span class='op'>(</span>parent_element <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span><span class='op'>)</span>, 
-            project_title <span class='op'>=</span> <span class='st'>"my project title"</span>, 
-            award_information <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>funderName <span class='op'>=</span> <span class='st'>"Bank"</span>,
-                                     funderIdentifier <span class='op'>=</span> <span class='st'>"Funder 1"</span>,
-                                     awardNumber <span class='op'>=</span> <span class='st'>"000"</span>,
-                                     title <span class='op'>=</span> <span class='st'>"Money up for grabs"</span>,
-                                     awardUrl <span class='op'>=</span> <span class='st'>"awardforme.com"</span><span class='op'>)</span>,
-            project_personnel <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>individualName <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>givenName <span class='op'>=</span> <span class='st'>"Smithy"</span>,
-                                                           surName <span class='op'>=</span> <span class='st'>"Smith"</span><span class='op'>)</span>,
-                                     electronicMailAddress <span class='op'>=</span> <span class='st'>"myemail@mail.gov"</span>,
-                                     role <span class='op'>=</span> <span class='st'>"Manager"</span>,
-                                     organizationName <span class='op'>=</span> <span class='st'>"US GOV"</span><span class='op'>)</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; $project
-#&gt; $project$title
-#&gt; [1] "my project title"
+#&gt; [1] "O.mykiss Habitat monitoring and contact point project"
 #&gt; 
 #&gt; $project$personnel
 #&gt; $project$personnel$individualName
 #&gt; $project$personnel$individualName$givenName
-#&gt; [1] "Smithy"
+#&gt; [1] "Stacy"
 #&gt; 
 #&gt; $project$personnel$individualName$surName
-#&gt; [1] "Smith"
+#&gt; [1] "Banet"
 #&gt; 
 #&gt; 
 #&gt; $project$personnel$electronicMailAddress
-#&gt; [1] "myemail@mail.gov"
+#&gt; [1] "Stacy@aol.com"
+#&gt; 
+#&gt; $project$personnel$organizationName
+#&gt; [1] "USBR"
 #&gt; 
 #&gt; $project$personnel$role
 #&gt; [1] "Project Lead"
 #&gt; 
-#&gt; $project$personnel$organizationName
-#&gt; [1] "US GOV"
-#&gt; 
 #&gt; 
 #&gt; $project$award
-#&gt; $project$award$funderName
-#&gt; [1] "Bank"
+#&gt; $project$award[[1]]
+#&gt; $project$award[[1]]$funderName
+#&gt; [1] "United States Bureau of Reclamation"
 #&gt; 
-#&gt; $project$award$funderIdentifier
-#&gt; [1] "Funder 1"
+#&gt; $project$award[[1]]$funderIdentifier
+#&gt; [1] "https://www.wikidata.org/wiki/Q1010548"
 #&gt; 
-#&gt; $project$award$awardNumber
-#&gt; [1] "000"
+#&gt; $project$award[[1]]$title
+#&gt; [1] "Salmonid Spawning and Rearing Habitat Restoration in the Sacramento River"
 #&gt; 
-#&gt; $project$award$title
-#&gt; [1] "Money up for grabs"
+#&gt; $project$award[[1]]$awardNumber
+#&gt; [1] "R14AC00096"
 #&gt; 
-#&gt; $project$award$awardUrl
-#&gt; [1] "awardforme.com"
+#&gt; $project$award[[1]]$description
+#&gt; [1] NA
+#&gt; 
+#&gt; $project$award[[1]]$awardUrl
+#&gt; [1] NA
+#&gt; 
 #&gt; 
 #&gt; 
 #&gt; </div><div class='input'>
-</div></pre>
+<span class='va'>dataset</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
+   <span class='fu'>add_project</span><span class='op'>(</span><span class='va'>funding_metadata</span>, project_title <span class='op'>=</span> <span class='st'>"Salmonid Habitat monitoring in the Central Valley"</span>, project_lead <span class='op'>=</span> <span class='va'>project_lead</span><span class='op'>)</span>   
+<span class='va'>dataset</span>
+</div><div class='output co'>#&gt; $project
+#&gt; $project$title
+#&gt; [1] "Salmonid Habitat monitoring in the Central Valley"
+#&gt; 
+#&gt; $project$personnel
+#&gt; $project$personnel$individualName
+#&gt; $project$personnel$individualName$givenName
+#&gt; [1] "Stacy"
+#&gt; 
+#&gt; $project$personnel$individualName$surName
+#&gt; [1] "Banet"
+#&gt; 
+#&gt; 
+#&gt; $project$personnel$electronicMailAddress
+#&gt; [1] "Stacy@aol.com"
+#&gt; 
+#&gt; $project$personnel$organizationName
+#&gt; [1] "USBR"
+#&gt; 
+#&gt; $project$personnel$role
+#&gt; [1] "Project Lead"
+#&gt; 
+#&gt; 
+#&gt; $project$award
+#&gt; $project$award[[1]]
+#&gt; $project$award[[1]]$funderName
+#&gt; [1] "United States Bureau of Reclamation"
+#&gt; 
+#&gt; $project$award[[1]]$funderIdentifier
+#&gt; [1] "https://www.wikidata.org/wiki/Q1010548"
+#&gt; 
+#&gt; $project$award[[1]]$title
+#&gt; [1] "Salmonid Spawning and Rearing Habitat Restoration in the Sacramento River"
+#&gt; 
+#&gt; $project$award[[1]]$awardNumber
+#&gt; [1] "R14AC00096"
+#&gt; 
+#&gt; $project$award[[1]]$description
+#&gt; [1] NA
+#&gt; 
+#&gt; $project$award[[1]]$awardUrl
+#&gt; [1] NA
+#&gt; 
+#&gt; 
+#&gt; 
+#&gt; </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

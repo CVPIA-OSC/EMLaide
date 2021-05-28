@@ -2,83 +2,35 @@
 % Please edit documentation in R/coverage-element.R
 \name{add_coverage}
 \alias{add_coverage}
-\title{Add Coverage Element}
+\title{Add Coverage}
 \usage{
-add_coverage(
-  parent_element,
-  geographic_description,
-  west_bounding_coordinate,
-  east_bounding_coordinate,
-  north_bounding_coordinate,
-  south_bounding_coordinate,
-  begin_date,
-  end_date,
-  taxonomic_coverage = NULL
-)
+add_coverage(parent_element, coverage_metadata, taxonomic_metadata = NULL)
 }
 \arguments{
 \item{parent_element}{A list representing the EML project or dataset.}
 
-\item{geographic_description}{A description of the locations    of research sites
-and areas related to the data.}
+\item{coverage_metadata}{a list or datatable of coverage metadata see \code{\link{create_coverage}}}
 
-\item{west_bounding_coordinate}{The west cardinality limit.}
-
-\item{east_bounding_coordinate}{The east cardinality limit.}
-
-\item{north_bounding_coordinate}{The north cardinality limit.}
-
-\item{south_bounding_coordinate}{The south cardinality limit.}
-
-\item{begin_date}{The starting date for the dataset or project. Dates must be
-provided in ISO 8601 format, YYYY-MM-DD.}
-
-\item{end_date}{The projected or actual end date for the dataset or project.
-Dates must be provided in ISO 8601 format, YYYY-MM-DD.}
-
-\item{taxonomic_coverage}{Addition of taxonomic coverage is optional. The
-taxonomic information for all organisms relevant to the study should be included
-and mandates the input of the taxonomy levels of kingdom-species. An example
-of how to append this information using the add_taxonomic_coverage
-function is given down below.}
+\item{taxonomic_metadata}{a list or datatable of taxonomic metadata see \code{\link{create_taxonomic_coverage}}}
 }
 \value{
-The dataset or project with coverage information appended.
+The dataset list or project with coverage information appended.
 }
 \description{
-Adds the coverage information of a dataset based off of EML standards.
+Adds the coverage metadata elements to a dataset list according to EML standards.
 }
 \examples{
-add_coverage(parent_element = list(), geographic_description = "North Slope
-             drainage basin: Bounding box encompasses 42 drainage basins
-             totaling the North Slope drainage basin, Alaska, USA.",
-             west_bounding_coordinate = "-160.594000",
+
+coverage <- list(geographic_description = "Description",
+             west_bounding_coordinate = "-160.594000", 
              east_bounding_coordinate = "-134.104800",
-             north_bounding_coordinate = "71.238300",
-             south_bounding_coordinate = "67.865000", 
-             begin_date = "1980-01-01",
+             north_bounding_coordinate = "71.238300", 
+             south_bounding_coordinate = "67.865000",
+             begin_date = "1980-01-01", 
              end_date = "2010-12-31")
-             
-taxonomic_coverage <- add_taxonomic_coverage(CVPIA_common_species = "chinook")
-add_coverage(parent_element = list(), geographic_description = "Description",
-             west_bounding_coordinate = "-160.594000", 
-             east_bounding_coordinate = "-134.104800",
-             north_bounding_coordinate = "71.238300", 
-             south_bounding_coordinate = "67.865000",
-             begin_date = "1980-01-01", 
-             end_date = "2010-12-31", 
-             taxonomic_coverage = taxonomic_coverage) 
-             
-# For adding multiple taxonomies to the coverage: 
-chinook <- add_taxonomic_coverage(CVPIA_common_species = "chinook")
-delta <- add_taxonomic_coverage(CVPIA_common_species = "delta_smelt")
-taxonomic_coverage <- list(chinook, delta)
-add_coverage(parent_element = list(), geographic_description = "Description",
-             west_bounding_coordinate = "-160.594000", 
-             east_bounding_coordinate = "-134.104800",
-             north_bounding_coordinate = "71.238300", 
-             south_bounding_coordinate = "67.865000",
-             begin_date = "1980-01-01", 
-             end_date = "2010-12-31", 
-             taxonomic_coverage = taxonomic_coverage)
+\dontrun{             
+dataset <- list() \%>\% 
+  add_coverage(coverage)
+dataset
+}
 }
