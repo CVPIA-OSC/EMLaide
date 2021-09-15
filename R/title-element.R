@@ -18,7 +18,7 @@ create_title <- function(title, short_name) {
   short_name_number_of_words <- length(unlist(strsplit(short_name, " "))) 
   
   if (title_number_of_words < 7 | title_number_of_words > 20) {
-    stop("Please make sure your title is between 7 and 20 words long.")
+    warning("Please make sure your title is between 7 and 20 words long.")
   }
   
   if (short_name_number_of_words >= title_number_of_words) {
