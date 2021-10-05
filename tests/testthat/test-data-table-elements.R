@@ -11,12 +11,7 @@ test_that('Correct error and warning messages are produced.', {
                              attribute_label = "Lat", storage_type = "coordinate", measurement_scale = "ordinal",
                              domain = "text", definition = "Latitude", text_pattern = "Latitudes"),
                'Please provide a brief definition of the attribute you are including.')
-  
-  expect_error(create_attribute(attribute_name = "LatitudeDD", attribute_definition = "Latitude",
-                             attribute_label = "Lat", measurement_scale = "ordinal",
-                             domain = "text", definition = "Latitude", text_pattern = "Latitudes"),
-               'Please provide a storage type.')
-  
+
   expect_error(create_attribute(attribute_name = "LatitudeDD", attribute_definition = "Latitude",
                              attribute_label = "Lat", storage_type = "coordinate",
                              domain = "text", definition = "Latitude", text_pattern = "Latitudes"),

@@ -7,7 +7,7 @@
 create_attribute(
   attribute_name,
   attribute_definition,
-  storage_type,
+  storage_type = NULL,
   measurement_scale,
   attribute_label = NULL,
   domain = NULL,

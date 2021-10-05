@@ -135,23 +135,22 @@
 #'                           date_time_precision = "1", 
 #'                           minimum = "1993", 
 #'                           maximum = "2003")}
-create_attribute <- function(attribute_name, attribute_definition, storage_type,
+create_attribute <- function(attribute_name, attribute_definition, storage_type = NULL,
                           measurement_scale, attribute_label = NULL, domain = NULL,
                           definition = NULL, text_pattern = NULL, type = NULL, 
                           units = NULL, number_type = NULL, unit_precision = NULL,
                           date_time_format = NULL, date_time_precision = NULL,
                           minimum = NULL, maximum = NULL) {
   
-  required_arguments <- c("attribute_name", "attribute_definition", "storage_type", 
+  required_arguments <- c("attribute_name", "attribute_definition", 
                              "measurement_scale")
   missing_argument_index <- which(c(missing(attribute_name), missing(attribute_definition),
-                           missing(storage_type), missing(measurement_scale)))
+                            missing(measurement_scale)))
   
   if (length(missing_argument_index) > 0) {
     missing <- required_arguments[missing_argument_index][1]
     error_message <- switch(missing, attribute_name = "Please provide attribute name.",
                               attribute_definition = "Please provide a brief definition of the attribute you are including.",
-                              storage_type = "Please provide a storage type.",
                               measurement_scale = "Please provide a measurement scale.")
     stop(error_message, call. = FALSE)
   }
