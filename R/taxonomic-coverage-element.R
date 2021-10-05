@@ -50,7 +50,7 @@
 #' 
 #' \dontrun{taxonomic_coverage <- create_taxonomic_coverage(CVPIA_common_species = "steelhead")}
 #' 
-#' \dontrun{taxonomic_coverage <- create_taxonomic_coverage(kingdom_value = "Animalia",}
+#' \dontrun{taxonomic_coverage <- create_taxonomic_coverage(kingdom_value = "Animalia",
 #'                                                          phylum_value = "Chordata",
 #'                                                          class_value = "Mammalia",
 #'                                                          order_value = "Carnivora",
@@ -71,36 +71,17 @@
 #'                          taxonomic_coverage = taxonomic_coverage)}
 #' @export
 create_taxonomic_coverage <- function(CVPIA_common_species = NULL,
-                                   kingdom = "kingdom", kingdom_value,
-                                   phylum = "phylum", phylum_value,
-                                   class = "class", class_value,
-                                   order = "order", order_value,
-                                   family = "family", family_value,
-                                   genus = "genus", genus_value, 
-                                   species = "species", species_value,
-                                   common_name, taxon_id = NULL) {
+                                   kingdom = "kingdom", kingdom_value = NULL,
+                                   phylum = "phylum", phylum_value = NULL,
+                                   class = "class", class_value = NULL,
+                                   order = "order", order_value = NULL,
+                                   family = "family", family_value = NULL,
+                                   genus = "genus", genus_value = NULL , 
+                                   species = "species", species_value = NULL,
+                                   common_name = NULL, taxon_id = NULL) {  
   
   if (is.null(CVPIA_common_species)) {
-    required_arguments <- c("kingdom_value", "phylum_value", "class_value", "order_value",
-                       "family_value", "genus_value", "species_value", "common_name")
-    missing_argument_index <- which(c(missing(kingdom_value), missing(phylum_value),
-                               missing(class_value), missing(order_value),
-                               missing(family_value), missing(genus_value),
-                               missing(species_value), missing(common_name)))
     
-    if (length(missing_argument_index) > 0) {
-      tax_error <- required_arguments[missing_argument_index][1]
-      tax_error_message <- switch(tax_error,
-                                 kingdom_value = "Please provide a kingdom.",
-                                 phylum_value = "Please provide a phylum.",
-                                 class_value = "Please provide a class.",
-                                 order_value = "Please provide an order.", 
-                                 family_value = "Please provide a family.",
-                                 genus_value = "Please provide a genus.",
-                                 species_value = "Please provide a species.",
-                                 common_name = "Please provide a common name.")
-      stop(tax_error_message, call. = FALSE)
-    } 
     kingdom_value <- kingdom_value
     phylum_value <- phylum_value
     class_value <- class_value

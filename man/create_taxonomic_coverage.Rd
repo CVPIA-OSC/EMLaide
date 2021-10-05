@@ -7,20 +7,20 @@
 create_taxonomic_coverage(
   CVPIA_common_species = NULL,
   kingdom = "kingdom",
-  kingdom_value,
+  kingdom_value = NULL,
   phylum = "phylum",
-  phylum_value,
+  phylum_value = NULL,
   class = "class",
-  class_value,
+  class_value = NULL,
   order = "order",
-  order_value,
+  order_value = NULL,
   family = "family",
-  family_value,
+  family_value = NULL,
   genus = "genus",
-  genus_value,
+  genus_value = NULL,
   species = "species",
-  species_value,
-  common_name,
+  species_value = NULL,
+  common_name = NULL,
   taxon_id = NULL
 )
 }
@@ -90,3 +90,34 @@ these species, you can visit: \href{https://www.itis.gov/}{ITIS}'s webpage for
 full coverage information.
 }
 
+\examples{
+\dontrun{taxonomic_coverage <- create_taxonomic_coverage(CVPIA_common_species = "chinook")}
+
+\dontrun{taxonomic_coverage <- create_taxonomic_coverage(CVPIA_common_species = "delta_smelt")}
+
+\dontrun{taxonomic_coverage <- create_taxonomic_coverage(CVPIA_common_species = "white_sturgeon")}
+
+\dontrun{taxonomic_coverage <- create_taxonomic_coverage(CVPIA_common_species = "green_sturgeon")}
+
+\dontrun{taxonomic_coverage <- create_taxonomic_coverage(CVPIA_common_species = "steelhead")}
+
+\dontrun{taxonomic_coverage <- create_taxonomic_coverage(kingdom_value = "Animalia",
+                                                         phylum_value = "Chordata",
+                                                         class_value = "Mammalia",
+                                                         order_value = "Carnivora",
+                                                         family_value = "Felidae",
+                                                         genus_value = "Panthera", 
+                                                         species_value = "Panthera Leo",
+                                                         common_name = "Lion", 
+                                                         taxon_id = "183803")}
+                                            
+# To append this information to the dataset or project:                        
+\dontrun{create_coverage(geographic_description = "Description",
+                         west_bounding_coordinate = "-160.594000", 
+                         east_bounding_coordinate = "-134.104800",
+                         north_bounding_coordinate = "71.238300", 
+                         south_bounding_coordinate = "67.865000",
+                         begin_date = "1980-01-01", 
+                         end_date = "2010-12-31", 
+                         taxonomic_coverage = taxonomic_coverage)}
+}
