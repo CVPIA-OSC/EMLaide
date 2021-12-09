@@ -39,7 +39,6 @@ Create an attribute in Interval or Ratio Measurement Scales
 \dontrun{create_attribute(attribute_name = "Count",
                           attribute_definition = "Number of individuals observed",
                           measurement_scale = EMLaide::measurement_scale$interval, 
-                          storage_type = EMLaide::storage_type$integer,
                           type = "interval",
                           units = "number",
                           unit_precision = "1",
@@ -49,7 +48,6 @@ Create an attribute in Interval or Ratio Measurement Scales
 # Ratio: 
 \dontrun{create_attribute(attribute_name = "pH",
                           attribute_definition = "pH of soil solution",
-                          storage_type = EMLaide::storage_type$float,
                           measurement_scale = EMLaide::measurement_scale$ratio,
                           type = "ratio",
                           units = "dimensionless",
