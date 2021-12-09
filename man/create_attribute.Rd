@@ -7,7 +7,6 @@
 create_attribute(
   attribute_name,
   attribute_definition,
-  storage_type = NULL,
   measurement_scale,
   attribute_label = NULL,
   domain = NULL,
@@ -30,11 +29,6 @@ use    as a    variable,    e.g.,    composed of ASCII    characters,    and    
 names match the column headers of a CSV or other text table.}
 
 \item{attribute_definition}{A precise and complete    definition of the attribute    being    documented.}
-
-\item{storage_type}{An indicator    to processing    systems    as to    how    the    attribute
-might be represented in    a    system or    language,    but    is distinct    from the actual
-expression of    the    domain of    the    attribute. A list of approved storage types can be found at
-\code{\link{storage_type}}}
 
 \item{measurement_scale}{The    type of    scale    from which values are    drawn    for    the
 attribute. A list of approved measurement scales can be viewed at \code{\link{measurement_scale}}.
@@ -114,7 +108,6 @@ Used to define date and time attributes. Please provide the inputs of \code{date
 # Nominal(text):
 \dontrun{create_attribute(attribute_name = "site_id",
                           attribute_definition = "Site id as used in sites table",
-                          storage_type = EMLaide::storage_type$integer,
                           measurement_scale = EMLaide::measurement_scale$nominal,
                           domain= "text",
                           definition = "Site id as used in sites table.")}
@@ -125,7 +118,6 @@ code_def_2 = list(code = "no", definition = "has not been captured previously")
 code_definition = list(code_def_1, code_def_2)
 \dontrun{create_attribute(attribute_name = "Recap", 
                           attribute_definition = "Has the Turtle been captured and tagged previously",
-                          storage_type = EMLaide::storage_type$text, 
                           measurement_scale = EMLaide::measurement_scale$nominal, 
                           domain = "enumerated",
                           definition = code_definition)}
@@ -133,7 +125,6 @@ code_definition = list(code_def_1, code_def_2)
 # Ordinal(text):
 \dontrun{create_attribute(attribute_name = "LatitudeDD", 
                           attribute_definition = "Latitude",
-                          storage_type = EMLaide::storage_type$string,
                           measurement_scale = EMLaide::measurement_scale$ordinal,
                           domain= "text", 
                           definition = "Latitude")}
@@ -146,7 +137,6 @@ code_def_3 = list(code = "3", definition = "more than 100 insects per meter")
 code_definition = list(code_def_0, code_def_1, code_def_2, code_def_3)
 \dontrun{create_attribute(attribute_name = "hwa",
                           attribute_definition = "Hemlock woolly adelgid density per meter of branch",
-                          storage_type = EMLaide::storage_type$decimal,
                           measurement_scale = EMLaide::measurement_scale$ordinal,
                           domain = "enumerated",
                           definition = code_definition)}
@@ -155,7 +145,6 @@ code_definition = list(code_def_0, code_def_1, code_def_2, code_def_3)
 \dontrun{create_attribute(attribute_name = "Count",
                           attribute_definition = "Number of individuals observed",
                           measurement_scale = EMLaide::measurement_scale$interval, 
-                          storage_type = EMLaide::storage_type$integer,
                           type = "interval",
                           units = "number",
                           unit_precision = "1",
@@ -165,7 +154,6 @@ code_definition = list(code_def_0, code_def_1, code_def_2, code_def_3)
 # Ratio: 
 \dontrun{create_attribute(attribute_name = "pH",
                           attribute_definition = "pH of soil solution",
-                          storage_type = EMLaide::storage_type$float,
                           measurement_scale = EMLaide::measurement_scale$ratio,
                           type = "ratio",
                           units = "dimensionless",
@@ -175,7 +163,6 @@ code_definition = list(code_def_0, code_def_1, code_def_2, code_def_3)
 # dateTime:
 \dontrun{create_attribute(attribute_name = "Yrs", 
                           attribute_definition = "Calendar year of the observation from years 1990 - 2010.",
-                          storage_type = EMLaide::storage_type$integer,
                           measurement_scale = EMLaide::measurement_scale$dateTime,
                           attribute_label = "Years",
                           date_time_format = "YYYY", 

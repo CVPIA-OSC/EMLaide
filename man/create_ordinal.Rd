@@ -26,7 +26,6 @@ Create an attribute in Ordinal Measurement Scale
 # Ordinal(text):
 \dontrun{create_attribute(attribute_name = "LatitudeDD", 
                           attribute_definition = "Latitude",
-                          storage_type = EMLaide::storage_type$string,
                           measurement_scale = EMLaide::measurement_scale$ordinal,
                           domain= "text", 
                           definition = "Latitude")}
@@ -39,7 +38,6 @@ code_def_3 = list(code = "3", definition = "more than 100 insects per meter")
 code_definition = list(code_def_0, code_def_1, code_def_2, code_def_3)
 \dontrun{create_attribute(attribute_name = "hwa",
                           attribute_definition = "Hemlock woolly adelgid density per meter of branch",
-                          storage_type = EMLaide::storage_type$decimal,
                           measurement_scale = EMLaide::measurement_scale$ordinal,
                           domain = "enumerated",
                           definition = code_definition)}
