@@ -39,7 +39,7 @@ create_datatable <- function(filepath,
       definition = attribute_definition
     }
     new_attribute <- create_attribute(attribute_name = attribute_name, attribute_definition = attribute_definition,
-                                      storage_type = storage_type, measurement_scale = measurement_scale, 
+                                      measurement_scale = measurement_scale, 
                                       domain = domain, definition = definition, type = type, units = units, 
                                       unit_precision = unit_precision, number_type = number_type, 
                                       date_time_format = date_time_format, date_time_precision = date_time_precision, 
