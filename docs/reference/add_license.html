@@ -156,26 +156,27 @@
     <p>The dataset list or project with intellectual rights information appended.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='va'>license_metadata</span> <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>default_license <span class='op'>=</span> <span class='st'>"CCBY"</span><span class='op'>)</span>
-<span class='va'>dataset</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
-    <span class='fu'>add_license</span><span class='op'>(</span><span class='va'>license_metadata</span><span class='op'>)</span>
-<span class='va'>dataset</span>
-</div><div class='output co'>#&gt; $intellectualRights
-#&gt; $intellectualRights$para
-#&gt; [1] "This information is released under the Creative Commons license - Attribution - CC BY (https://creativecommons.org/licenses/by/4.0/). The consumer of these data (\"Data User\" herein) is required to cite it appropriately in any publication that results from its use. The Data User should realize that these data may be actively used by others for ongoing research and that coordination may be necessary to prevent duplicate publication. The Data User is urged to contact the authors of these data if any questions about methodology or results occur. Where appropriate, the Data User is encouraged to consider collaboration or co-authorship with the authors. The Data User should realize that misinterpretation of data may occur if used out of context of the original study. While substantial efforts are made to ensure the accuracy of data and associated documentation, complete accuracy of data sets cannot be guaranteed. All data are made available \"as is.\" The Data User should be aware, however, that data are updated periodically and it is the responsibility of the Data User to check for new versions of the data. The data authors and the repository where these data were obtained shall not be liable for damages resulting from any use or misinterpretation of the data. Thank you."
-#&gt; 
-#&gt; 
-#&gt; $licensed
-#&gt; $licensed$licenseName
-#&gt; [1] "Creative Commons Attribution 4.0 International"
-#&gt; 
-#&gt; $licensed$url
-#&gt; [1] "https://spdx.org/licenses/CC-BY-4.0.html"
-#&gt; 
-#&gt; $licensed$identifier
-#&gt; [1] "CC-BY-4.0"
-#&gt; 
-#&gt; </div></pre>
+    <pre class="examples"><span class='r-in'><span class='va'>license_metadata</span> <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>default_license <span class='op'>=</span> <span class='st'>"CCBY"</span><span class='op'>)</span></span>
+<span class='r-in'><span class='va'>dataset</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'><a href='%>%.html'>%&gt;%</a></span></span>
+<span class='r-in'>    <span class='fu'>add_license</span><span class='op'>(</span><span class='va'>license_metadata</span><span class='op'>)</span></span>
+<span class='r-in'><span class='va'>dataset</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> $intellectualRights</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> $intellectualRights$para</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [1] "This information is released under the Creative Commons license - Attribution - CC BY (https://creativecommons.org/licenses/by/4.0/). The consumer of these data (\"Data User\" herein) is required to cite it appropriately in any publication that results from its use. The Data User should realize that these data may be actively used by others for ongoing research and that coordination may be necessary to prevent duplicate publication. The Data User is urged to contact the authors of these data if any questions about methodology or results occur. Where appropriate, the Data User is encouraged to consider collaboration or co-authorship with the authors. The Data User should realize that misinterpretation of data may occur if used out of context of the original study. While substantial efforts are made to ensure the accuracy of data and associated documentation, complete accuracy of data sets cannot be guaranteed. All data are made available \"as is.\" The Data User should be aware, however, that data are updated periodically and it is the responsibility of the Data User to check for new versions of the data. The data authors and the repository where these data were obtained shall not be liable for damages resulting from any use or misinterpretation of the data. Thank you."</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> $licensed</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> $licensed$licenseName</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [1] "Creative Commons Attribution 4.0 International"</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> $licensed$url</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [1] "https://spdx.org/licenses/CC-BY-4.0.html"</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> $licensed$identifier</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [1] "CC-BY-4.0"</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> </span>
+</pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

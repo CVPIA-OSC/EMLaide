@@ -181,27 +181,25 @@ or equal to this number.</p></td>
 
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='co'># Interval:</span>
-<span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='fu'><a href='create_attribute.html'>create_attribute</a></span><span class='op'>(</span>attribute_name <span class='op'>=</span> <span class='st'>"Count"</span>,
-                          attribute_definition <span class='op'>=</span> <span class='st'>"Number of individuals observed"</span>,
-                          measurement_scale <span class='op'>=</span> <span class='fu'>EMLaide</span><span class='fu'>::</span><span class='va'><a href='measurement_scale.html'>measurement_scale</a></span><span class='op'>$</span><span class='va'>interval</span>, 
-                          storage_type <span class='op'>=</span> <span class='fu'>EMLaide</span><span class='fu'>::</span><span class='va'><a href='storage_type.html'>storage_type</a></span><span class='op'>$</span><span class='va'>integer</span>,
-                          type <span class='op'>=</span> <span class='st'>"interval"</span>,
-                          units <span class='op'>=</span> <span class='st'>"number"</span>,
-                          unit_precision <span class='op'>=</span> <span class='st'>"1"</span>,
-                          number_type <span class='op'>=</span> <span class='fu'>EMLaide</span><span class='fu'>::</span><span class='va'><a href='number_type.html'>number_type</a></span><span class='op'>$</span><span class='va'>whole</span>, 
-                          minimum <span class='op'>=</span> <span class='st'>"0"</span><span class='op'>)</span>
-                   
-<span class='co'># Ratio: </span>
-<span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='fu'><a href='create_attribute.html'>create_attribute</a></span><span class='op'>(</span>attribute_name <span class='op'>=</span> <span class='st'>"pH"</span>,
-                          attribute_definition <span class='op'>=</span> <span class='st'>"pH of soil solution"</span>,
-                          storage_type <span class='op'>=</span> <span class='fu'>EMLaide</span><span class='fu'>::</span><span class='va'><a href='storage_type.html'>storage_type</a></span><span class='op'>$</span><span class='va'>float</span>,
-                          measurement_scale <span class='op'>=</span> <span class='fu'>EMLaide</span><span class='fu'>::</span><span class='va'><a href='measurement_scale.html'>measurement_scale</a></span><span class='op'>$</span><span class='va'>ratio</span>,
-                          type <span class='op'>=</span> <span class='st'>"ratio"</span>,
-                          units <span class='op'>=</span> <span class='st'>"dimensionless"</span>,
-                          unit_precision <span class='op'>=</span> <span class='st'>"0.01"</span>,
-                          number_type <span class='op'>=</span> <span class='fu'>EMLaide</span><span class='fu'>::</span><span class='va'><a href='number_type.html'>number_type</a></span><span class='op'>$</span><span class='va'>real</span><span class='op'>)</span>
-</div></pre>
+    <pre class="examples"><span class='r-in'><span class='co'># Interval:</span></span>
+<span class='r-in'><span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='fu'><a href='create_attribute.html'>create_attribute</a></span><span class='op'>(</span>attribute_name <span class='op'>=</span> <span class='st'>"Count"</span>,</span>
+<span class='r-in'>                          attribute_definition <span class='op'>=</span> <span class='st'>"Number of individuals observed"</span>,</span>
+<span class='r-in'>                          measurement_scale <span class='op'>=</span> <span class='fu'>EMLaide</span><span class='fu'>::</span><span class='va'><a href='measurement_scale.html'>measurement_scale</a></span><span class='op'>$</span><span class='va'>interval</span>, </span>
+<span class='r-in'>                          type <span class='op'>=</span> <span class='st'>"interval"</span>,</span>
+<span class='r-in'>                          units <span class='op'>=</span> <span class='st'>"number"</span>,</span>
+<span class='r-in'>                          unit_precision <span class='op'>=</span> <span class='st'>"1"</span>,</span>
+<span class='r-in'>                          number_type <span class='op'>=</span> <span class='fu'>EMLaide</span><span class='fu'>::</span><span class='va'><a href='number_type.html'>number_type</a></span><span class='op'>$</span><span class='va'>whole</span>, </span>
+<span class='r-in'>                          minimum <span class='op'>=</span> <span class='st'>"0"</span><span class='op'>)</span></span>
+<span class='r-in'>                   </span>
+<span class='r-in'><span class='co'># Ratio: </span></span>
+<span class='r-in'><span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='fu'><a href='create_attribute.html'>create_attribute</a></span><span class='op'>(</span>attribute_name <span class='op'>=</span> <span class='st'>"pH"</span>,</span>
+<span class='r-in'>                          attribute_definition <span class='op'>=</span> <span class='st'>"pH of soil solution"</span>,</span>
+<span class='r-in'>                          measurement_scale <span class='op'>=</span> <span class='fu'>EMLaide</span><span class='fu'>::</span><span class='va'><a href='measurement_scale.html'>measurement_scale</a></span><span class='op'>$</span><span class='va'>ratio</span>,</span>
+<span class='r-in'>                          type <span class='op'>=</span> <span class='st'>"ratio"</span>,</span>
+<span class='r-in'>                          units <span class='op'>=</span> <span class='st'>"dimensionless"</span>,</span>
+<span class='r-in'>                          unit_precision <span class='op'>=</span> <span class='st'>"0.01"</span>,</span>
+<span class='r-in'>                          number_type <span class='op'>=</span> <span class='fu'>EMLaide</span><span class='fu'>::</span><span class='va'><a href='number_type.html'>number_type</a></span><span class='op'>$</span><span class='va'>real</span><span class='op'>)</span></span>
+</pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

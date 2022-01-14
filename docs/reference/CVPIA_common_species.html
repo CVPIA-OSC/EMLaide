@@ -161,74 +161,75 @@ lists containing complete taxonomic information for each species.</p>
 
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='va'>CVPIA_common_species</span><span class='op'>$</span><span class='va'>chinook</span> 
-</div><div class='output co'>#&gt; $taxonomicClassification
-#&gt; $taxonomicClassification$taxonRankName
-#&gt; [1] "kingdom"
-#&gt; 
-#&gt; $taxonomicClassification$taxonRankValue
-#&gt; [1] "Animalia"
-#&gt; 
-#&gt; $taxonomicClassification$taxonomicClassification
-#&gt; $taxonomicClassification$taxonomicClassification$taxonRankName
-#&gt; [1] "phylum"
-#&gt; 
-#&gt; $taxonomicClassification$taxonomicClassification$taxonRankValue
-#&gt; [1] "Chordata"
-#&gt; 
-#&gt; $taxonomicClassification$taxonomicClassification$taxonomicClassification
-#&gt; $taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonRankName
-#&gt; [1] "class"
-#&gt; 
-#&gt; $taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonRankValue
-#&gt; [1] "Teleostei"
-#&gt; 
-#&gt; $taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification
-#&gt; $taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonRankName
-#&gt; [1] "order"
-#&gt; 
-#&gt; $taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonRankValue
-#&gt; [1] "Salmoniformes"
-#&gt; 
-#&gt; $taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification
-#&gt; $taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonRankName
-#&gt; [1] "family"
-#&gt; 
-#&gt; $taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonRankValue
-#&gt; [1] "Salmonidae"
-#&gt; 
-#&gt; $taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification
-#&gt; $taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonRankName
-#&gt; [1] "genus"
-#&gt; 
-#&gt; $taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonRankValue
-#&gt; [1] "Oncorhynchus"
-#&gt; 
-#&gt; $taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification
-#&gt; $taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonRankName
-#&gt; [1] "species"
-#&gt; 
-#&gt; $taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonRankValue
-#&gt; [1] "Oncorhynchus tshawytscha"
-#&gt; 
-#&gt; $taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$commonName
-#&gt; [1] "Chinook Salmon"
-#&gt; 
-#&gt; $taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonId
-#&gt; $taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonId$provider
-#&gt; [1] "https://itis.gov"
-#&gt; 
-#&gt; $taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonId$taxonId
-#&gt; [1] "161980"
-#&gt; 
-#&gt; 
-#&gt; 
-#&gt; 
-#&gt; 
-#&gt; 
-#&gt; 
-#&gt; 
-#&gt; </div></pre>
+    <pre class="examples"><span class='r-in'><span class='va'>CVPIA_common_species</span><span class='op'>$</span><span class='va'>chinook</span> </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> $taxonomicClassification</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> $taxonomicClassification$taxonRankName</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [1] "kingdom"</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> $taxonomicClassification$taxonRankValue</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [1] "Animalia"</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> $taxonomicClassification$taxonomicClassification</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> $taxonomicClassification$taxonomicClassification$taxonRankName</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [1] "phylum"</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> $taxonomicClassification$taxonomicClassification$taxonRankValue</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [1] "Chordata"</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> $taxonomicClassification$taxonomicClassification$taxonomicClassification</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> $taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonRankName</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [1] "class"</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> $taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonRankValue</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [1] "Teleostei"</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> $taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> $taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonRankName</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [1] "order"</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> $taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonRankValue</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [1] "Salmoniformes"</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> $taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> $taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonRankName</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [1] "family"</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> $taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonRankValue</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [1] "Salmonidae"</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> $taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> $taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonRankName</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [1] "genus"</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> $taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonRankValue</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [1] "Oncorhynchus"</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> $taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> $taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonRankName</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [1] "species"</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> $taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonRankValue</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [1] "Oncorhynchus tshawytscha"</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> $taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$commonName</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [1] "Chinook Salmon"</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> $taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonId</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> $taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonId$provider</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [1] "https://itis.gov"</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> $taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonomicClassification$taxonId$taxonId</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [1] "161980"</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> </span>
+</pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

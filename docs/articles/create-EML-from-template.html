@@ -81,7 +81,7 @@
 
       
 
-      </header><script src="create-EML-from-template_files/header-attrs-2.8/header-attrs.js"></script><div class="row">
+      </header><script src="create-EML-from-template_files/header-attrs-2.11/header-attrs.js"></script><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
       <h1 data-toc-skip>Create EML from Template</h1>
@@ -125,7 +125,6 @@
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://CVPIA-OSC.github.io/EMLaide/">EMLaide</a></span><span class="op">)</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span>
-<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">EDIutils</span><span class="op">)</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://readxl.tidyverse.org">readxl</a></span><span class="op">)</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://docs.ropensci.org/EML/">EML</a></span><span class="op">)</span></code></pre></div>
 </div>
@@ -260,22 +259,22 @@
 <div id="create-dataset-element" class="section level2">
 <h2 class="hasAnchor">
 <a href="#create-dataset-element" class="anchor"></a>Create Dataset Element</h2>
-<p>We will use <code>magrittr::%&gt;%</code> with our <code>add_[blank]</code> functions to append each EML element to a list. The <code><a href="../reference/%&gt;%.html">%&gt;%</a></code> is a pipe like operator which takes the left-hand side as the first argument of the function appearing on the right-hand side.</p>
+<p>We will use <code>magrittr::%&gt;%</code> with our <code>add_[blank]</code> functions to append each EML element to a list. The <code>%&gt;%</code> is a pipe like operator which takes the left-hand side as the first argument of the function appearing on the right-hand side.</p>
 <p>For details on appropriate inputs to the functions see documentation at <code>?add_[blank]</code>.</p>
 <p>The <code>add_methods()</code> and <code><a href="../reference/add_abstract.html">add_abstract()</a></code> functions take in the <code>methods_docx</code> and the <code>abstract_docx</code>. The <code><a href="../reference/add_datatable.html">add_datatable()</a></code> function takes in the <code>datatable_metadata</code> defined and described above. Every other function takes in one or more sheets from the <code>metadata</code> object. For template items with multiple rows, the <code>add_[blank]</code> functions map through each row and adds a named nested list for each row to the dataset element.</p>
 <p>The code below adds all dataset elements.</p>
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">dataset</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span><span class="op">)</span> <span class="op">%&gt;%</span>
-  <span class="fu"><a href="../reference/add_pub_date.html">add_pub_date</a></span><span class="op">(</span><span class="op">)</span> <span class="op">%&gt;%</span>
-  <span class="fu"><a href="../reference/add_title.html">add_title</a></span><span class="op">(</span><span class="va">metadata</span><span class="op">$</span><span class="va">title</span><span class="op">)</span> <span class="op">%&gt;%</span>
-  <span class="fu"><a href="../reference/add_personnel.html">add_personnel</a></span><span class="op">(</span><span class="va">metadata</span><span class="op">$</span><span class="va">personnel</span><span class="op">)</span> <span class="op">%&gt;%</span>
-  <span class="fu"><a href="../reference/add_keyword_set.html">add_keyword_set</a></span><span class="op">(</span><span class="va">metadata</span><span class="op">$</span><span class="va">keyword_set</span><span class="op">)</span> <span class="op">%&gt;%</span>
-  <span class="fu"><a href="../reference/add_abstract.html">add_abstract</a></span><span class="op">(</span><span class="va">abstract_docx</span><span class="op">)</span> <span class="op">%&gt;%</span>
-  <span class="fu"><a href="../reference/add_license.html">add_license</a></span><span class="op">(</span><span class="va">metadata</span><span class="op">$</span><span class="va">license</span><span class="op">)</span> <span class="op">%&gt;%</span>
-  <span class="fu"><a href="../reference/add_method.html">add_method</a></span><span class="op">(</span><span class="va">methods_docx</span><span class="op">)</span> <span class="op">%&gt;%</span>
-  <span class="fu"><a href="../reference/add_maintenance.html">add_maintenance</a></span><span class="op">(</span><span class="va">metadata</span><span class="op">$</span><span class="va">maintenance</span><span class="op">)</span> <span class="op">%&gt;%</span>
-  <span class="fu"><a href="../reference/add_project.html">add_project</a></span><span class="op">(</span><span class="va">metadata</span><span class="op">$</span><span class="va">funding</span><span class="op">)</span> <span class="op">%&gt;%</span>
-  <span class="fu"><a href="../reference/add_coverage.html">add_coverage</a></span><span class="op">(</span><span class="va">metadata</span><span class="op">$</span><span class="va">coverage</span>, <span class="va">metadata</span><span class="op">$</span><span class="va">taxonomic_coverage</span><span class="op">)</span> <span class="op">%&gt;%</span>
+<code class="sourceCode R"><span class="va">dataset</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span><span class="op">)</span> <span class="op"><a href="../reference/%&gt;%.html">%&gt;%</a></span>
+  <span class="fu"><a href="../reference/add_pub_date.html">add_pub_date</a></span><span class="op">(</span><span class="op">)</span> <span class="op"><a href="../reference/%&gt;%.html">%&gt;%</a></span>
+  <span class="fu"><a href="../reference/add_title.html">add_title</a></span><span class="op">(</span><span class="va">metadata</span><span class="op">$</span><span class="va">title</span><span class="op">)</span> <span class="op"><a href="../reference/%&gt;%.html">%&gt;%</a></span>
+  <span class="fu"><a href="../reference/add_personnel.html">add_personnel</a></span><span class="op">(</span><span class="va">metadata</span><span class="op">$</span><span class="va">personnel</span><span class="op">)</span> <span class="op"><a href="../reference/%&gt;%.html">%&gt;%</a></span>
+  <span class="fu"><a href="../reference/add_keyword_set.html">add_keyword_set</a></span><span class="op">(</span><span class="va">metadata</span><span class="op">$</span><span class="va">keyword_set</span><span class="op">)</span> <span class="op"><a href="../reference/%&gt;%.html">%&gt;%</a></span>
+  <span class="fu"><a href="../reference/add_abstract.html">add_abstract</a></span><span class="op">(</span><span class="va">abstract_docx</span><span class="op">)</span> <span class="op"><a href="../reference/%&gt;%.html">%&gt;%</a></span>
+  <span class="fu"><a href="../reference/add_license.html">add_license</a></span><span class="op">(</span><span class="va">metadata</span><span class="op">$</span><span class="va">license</span><span class="op">)</span> <span class="op"><a href="../reference/%&gt;%.html">%&gt;%</a></span>
+  <span class="fu"><a href="../reference/add_method.html">add_method</a></span><span class="op">(</span><span class="va">methods_docx</span><span class="op">)</span> <span class="op"><a href="../reference/%&gt;%.html">%&gt;%</a></span>
+  <span class="fu"><a href="../reference/add_maintenance.html">add_maintenance</a></span><span class="op">(</span><span class="va">metadata</span><span class="op">$</span><span class="va">maintenance</span><span class="op">)</span> <span class="op"><a href="../reference/%&gt;%.html">%&gt;%</a></span>
+  <span class="fu"><a href="../reference/add_project.html">add_project</a></span><span class="op">(</span><span class="va">metadata</span><span class="op">$</span><span class="va">funding</span><span class="op">)</span> <span class="op"><a href="../reference/%&gt;%.html">%&gt;%</a></span>
+  <span class="fu"><a href="../reference/add_coverage.html">add_coverage</a></span><span class="op">(</span><span class="va">metadata</span><span class="op">$</span><span class="va">coverage</span>, <span class="va">metadata</span><span class="op">$</span><span class="va">taxonomic_coverage</span><span class="op">)</span> <span class="op"><a href="../reference/%&gt;%.html">%&gt;%</a></span>
   <span class="fu"><a href="../reference/add_datatable.html">add_datatable</a></span><span class="op">(</span><span class="va">datatable_metadata</span><span class="op">)</span></code></pre></div>
 </div>
 <div id="handle-custom-units" class="section level2">
