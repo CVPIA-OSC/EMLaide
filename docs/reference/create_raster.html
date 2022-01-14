@@ -241,29 +241,29 @@ section of an EML document.</p>
     <p>Create Raster Element</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>{</span>
-<span class='fu'>create_raster</span><span class='op'>(</span>file_name <span class='op'>=</span> <span class='st'>"Rasterfiles.tif"</span> ,
-              file_description <span class='op'>=</span> <span class='st'>"A Raster File"</span>,
-              attribute_list <span class='op'>=</span>  <span class='fu'><a href='create_attribute.html'>create_attribute</a></span><span class='op'>(</span>attribute_name <span class='op'>=</span> <span class='st'>"Yrs"</span>, attribute_label <span class='op'>=</span> <span class='st'>"Years"</span>, 
-                                              attribute_definition <span class='op'>=</span> <span class='st'>"Calendar year of the observation from years 1990 - 2010."</span>, 
-                                              storage_type <span class='op'>=</span> <span class='fu'>EMLaide</span><span class='fu'>::</span><span class='va'><a href='storage_type.html'>storage_type</a></span><span class='op'>$</span><span class='va'>date</span>, 
-                                              measurement_scale <span class='op'>=</span> <span class='fu'>EMLaide</span><span class='fu'>::</span><span class='va'><a href='measurement_scale.html'>measurement_scale</a></span><span class='op'>$</span><span class='va'>dateTime</span>, 
-                                              date_time_format <span class='op'>=</span> <span class='st'>"YYYY"</span>,
-                                              date_time_precision <span class='op'>=</span> <span class='st'>"1"</span>, minimum <span class='op'>=</span> <span class='st'>"1993"</span>, maximum <span class='op'>=</span> <span class='st'>"2003"</span><span class='op'>)</span>,
-              physical <span class='op'>=</span> <span class='fu'><a href='create_physical.html'>create_physical</a></span><span class='op'>(</span><span class='st'>"Rasterfiles.tif"</span><span class='op'>)</span>,
-              spatial_reference <span class='op'>=</span> <span class='st'>"NAD_1983_StatePlane_California_I_FIPS_0401"</span>,
-              horizontal_accuracy <span class='op'>=</span> <span class='st'>"No Information"</span>,
-              vertical_accuracy <span class='op'>=</span>  <span class='st'>"No Information"</span>,
-              cell_size_x <span class='op'>=</span> <span class='st'>"25"</span>,
-              cell_size_y <span class='op'>=</span> <span class='st'>"25"</span>,
-              number_of_bands <span class='op'>=</span> <span class='st'>"10"</span>,
-              raster_origin <span class='op'>=</span> <span class='st'>"Upper Left"</span>,
-              rows <span class='op'>=</span> <span class='st'>"200"</span>,
-              columns <span class='op'>=</span> <span class='st'>"6"</span>,
-              verticals <span class='op'>=</span> <span class='st'>"1"</span>,
-              cell_geometry <span class='op'>=</span> <span class='st'>"pixel"</span><span class='op'>)</span><span class='op'>}</span>
-
-</div></pre>
+    <pre class="examples"><span class='r-in'><span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>{</span></span>
+<span class='r-in'><span class='fu'>create_raster</span><span class='op'>(</span>file_name <span class='op'>=</span> <span class='st'>"Rasterfiles.tif"</span> ,</span>
+<span class='r-in'>              file_description <span class='op'>=</span> <span class='st'>"A Raster File"</span>,</span>
+<span class='r-in'>              attribute_list <span class='op'>=</span>  <span class='fu'><a href='create_attribute.html'>create_attribute</a></span><span class='op'>(</span>attribute_name <span class='op'>=</span> <span class='st'>"Yrs"</span>, attribute_label <span class='op'>=</span> <span class='st'>"Years"</span>, </span>
+<span class='r-in'>                                              attribute_definition <span class='op'>=</span> <span class='st'>"Calendar year of the observation from years 1990 - 2010."</span>, </span>
+<span class='r-in'>                                              storage_type <span class='op'>=</span> <span class='fu'>EMLaide</span><span class='fu'>::</span><span class='va'><a href='storage_type.html'>storage_type</a></span><span class='op'>$</span><span class='va'>date</span>, </span>
+<span class='r-in'>                                              measurement_scale <span class='op'>=</span> <span class='fu'>EMLaide</span><span class='fu'>::</span><span class='va'><a href='measurement_scale.html'>measurement_scale</a></span><span class='op'>$</span><span class='va'>dateTime</span>, </span>
+<span class='r-in'>                                              date_time_format <span class='op'>=</span> <span class='st'>"YYYY"</span>,</span>
+<span class='r-in'>                                              date_time_precision <span class='op'>=</span> <span class='st'>"1"</span>, minimum <span class='op'>=</span> <span class='st'>"1993"</span>, maximum <span class='op'>=</span> <span class='st'>"2003"</span><span class='op'>)</span>,</span>
+<span class='r-in'>              physical <span class='op'>=</span> <span class='fu'><a href='create_physical.html'>create_physical</a></span><span class='op'>(</span><span class='st'>"Rasterfiles.tif"</span><span class='op'>)</span>,</span>
+<span class='r-in'>              spatial_reference <span class='op'>=</span> <span class='st'>"NAD_1983_StatePlane_California_I_FIPS_0401"</span>,</span>
+<span class='r-in'>              horizontal_accuracy <span class='op'>=</span> <span class='st'>"No Information"</span>,</span>
+<span class='r-in'>              vertical_accuracy <span class='op'>=</span>  <span class='st'>"No Information"</span>,</span>
+<span class='r-in'>              cell_size_x <span class='op'>=</span> <span class='st'>"25"</span>,</span>
+<span class='r-in'>              cell_size_y <span class='op'>=</span> <span class='st'>"25"</span>,</span>
+<span class='r-in'>              number_of_bands <span class='op'>=</span> <span class='st'>"10"</span>,</span>
+<span class='r-in'>              raster_origin <span class='op'>=</span> <span class='st'>"Upper Left"</span>,</span>
+<span class='r-in'>              rows <span class='op'>=</span> <span class='st'>"200"</span>,</span>
+<span class='r-in'>              columns <span class='op'>=</span> <span class='st'>"6"</span>,</span>
+<span class='r-in'>              verticals <span class='op'>=</span> <span class='st'>"1"</span>,</span>
+<span class='r-in'>              cell_geometry <span class='op'>=</span> <span class='st'>"pixel"</span><span class='op'>)</span><span class='op'>}</span></span>
+<span class='r-in'></span>
+</pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

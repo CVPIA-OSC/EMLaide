@@ -147,20 +147,20 @@ provided if chosen to be included.</p>
     <pre class="usage"><span class='fu'>create_taxonomic_coverage</span><span class='op'>(</span>
   CVPIA_common_species <span class='op'>=</span> <span class='cn'>NULL</span>,
   kingdom <span class='op'>=</span> <span class='st'>"kingdom"</span>,
-  <span class='va'>kingdom_value</span>,
+  kingdom_value <span class='op'>=</span> <span class='cn'>NULL</span>,
   phylum <span class='op'>=</span> <span class='st'>"phylum"</span>,
-  <span class='va'>phylum_value</span>,
+  phylum_value <span class='op'>=</span> <span class='cn'>NULL</span>,
   class <span class='op'>=</span> <span class='st'>"class"</span>,
-  <span class='va'>class_value</span>,
+  class_value <span class='op'>=</span> <span class='cn'>NULL</span>,
   order <span class='op'>=</span> <span class='st'>"order"</span>,
-  <span class='va'>order_value</span>,
+  order_value <span class='op'>=</span> <span class='cn'>NULL</span>,
   family <span class='op'>=</span> <span class='st'>"family"</span>,
-  <span class='va'>family_value</span>,
+  family_value <span class='op'>=</span> <span class='cn'>NULL</span>,
   genus <span class='op'>=</span> <span class='st'>"genus"</span>,
-  <span class='va'>genus_value</span>,
+  genus_value <span class='op'>=</span> <span class='cn'>NULL</span>,
   species <span class='op'>=</span> <span class='st'>"species"</span>,
-  <span class='va'>species_value</span>,
-  <span class='va'>common_name</span>,
+  species_value <span class='op'>=</span> <span class='cn'>NULL</span>,
+  common_name <span class='op'>=</span> <span class='cn'>NULL</span>,
   taxon_id <span class='op'>=</span> <span class='cn'>NULL</span>
 <span class='op'>)</span></pre>
 
@@ -261,6 +261,37 @@ to incorporate it into the add_coverage function is seen below.</p>
 these species, you can visit: <a href='https://www.itis.gov/'>ITIS</a>'s webpage for
 full coverage information.</p>
 
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><span class='r-in'><span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='va'>taxonomic_coverage</span> <span class='op'>&lt;-</span> <span class='fu'>create_taxonomic_coverage</span><span class='op'>(</span>CVPIA_common_species <span class='op'>=</span> <span class='st'>"chinook"</span><span class='op'>)</span></span>
+<span class='r-in'></span>
+<span class='r-in'><span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='va'>taxonomic_coverage</span> <span class='op'>&lt;-</span> <span class='fu'>create_taxonomic_coverage</span><span class='op'>(</span>CVPIA_common_species <span class='op'>=</span> <span class='st'>"delta_smelt"</span><span class='op'>)</span></span>
+<span class='r-in'></span>
+<span class='r-in'><span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='va'>taxonomic_coverage</span> <span class='op'>&lt;-</span> <span class='fu'>create_taxonomic_coverage</span><span class='op'>(</span>CVPIA_common_species <span class='op'>=</span> <span class='st'>"white_sturgeon"</span><span class='op'>)</span></span>
+<span class='r-in'></span>
+<span class='r-in'><span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='va'>taxonomic_coverage</span> <span class='op'>&lt;-</span> <span class='fu'>create_taxonomic_coverage</span><span class='op'>(</span>CVPIA_common_species <span class='op'>=</span> <span class='st'>"green_sturgeon"</span><span class='op'>)</span></span>
+<span class='r-in'></span>
+<span class='r-in'><span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='va'>taxonomic_coverage</span> <span class='op'>&lt;-</span> <span class='fu'>create_taxonomic_coverage</span><span class='op'>(</span>CVPIA_common_species <span class='op'>=</span> <span class='st'>"steelhead"</span><span class='op'>)</span></span>
+<span class='r-in'></span>
+<span class='r-in'><span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='va'>taxonomic_coverage</span> <span class='op'>&lt;-</span> <span class='fu'>create_taxonomic_coverage</span><span class='op'>(</span>kingdom_value <span class='op'>=</span> <span class='st'>"Animalia"</span>,</span>
+<span class='r-in'>                                                         phylum_value <span class='op'>=</span> <span class='st'>"Chordata"</span>,</span>
+<span class='r-in'>                                                         class_value <span class='op'>=</span> <span class='st'>"Mammalia"</span>,</span>
+<span class='r-in'>                                                         order_value <span class='op'>=</span> <span class='st'>"Carnivora"</span>,</span>
+<span class='r-in'>                                                         family_value <span class='op'>=</span> <span class='st'>"Felidae"</span>,</span>
+<span class='r-in'>                                                         genus_value <span class='op'>=</span> <span class='st'>"Panthera"</span>, </span>
+<span class='r-in'>                                                         species_value <span class='op'>=</span> <span class='st'>"Panthera Leo"</span>,</span>
+<span class='r-in'>                                                         common_name <span class='op'>=</span> <span class='st'>"Lion"</span>, </span>
+<span class='r-in'>                                                         taxon_id <span class='op'>=</span> <span class='st'>"183803"</span><span class='op'>)</span></span>
+<span class='r-in'>                                            </span>
+<span class='r-in'><span class='co'># To append this information to the dataset or project:                        </span></span>
+<span class='r-in'><span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='fu'><a href='create_coverage.html'>create_coverage</a></span><span class='op'>(</span>geographic_description <span class='op'>=</span> <span class='st'>"Description"</span>,</span>
+<span class='r-in'>                         west_bounding_coordinate <span class='op'>=</span> <span class='st'>"-160.594000"</span>, </span>
+<span class='r-in'>                         east_bounding_coordinate <span class='op'>=</span> <span class='st'>"-134.104800"</span>,</span>
+<span class='r-in'>                         north_bounding_coordinate <span class='op'>=</span> <span class='st'>"71.238300"</span>, </span>
+<span class='r-in'>                         south_bounding_coordinate <span class='op'>=</span> <span class='st'>"67.865000"</span>,</span>
+<span class='r-in'>                         begin_date <span class='op'>=</span> <span class='st'>"1980-01-01"</span>, </span>
+<span class='r-in'>                         end_date <span class='op'>=</span> <span class='st'>"2010-12-31"</span>, </span>
+<span class='r-in'>                         taxonomic_coverage <span class='op'>=</span> <span class='va'>taxonomic_coverage</span><span class='op'>)</span></span>
+</pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

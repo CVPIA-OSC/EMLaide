@@ -187,112 +187,114 @@ downloaded.</p></td>
     <p>A complete set of information on the physical format.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>create_physical</span><span class='op'>(</span>file_path <span class='op'>=</span> <span class='st'>"User/data/example.csv"</span>, 
-             number_of_headers <span class='op'>=</span> <span class='st'>"1"</span>,
-             record_delimiter <span class='op'>=</span> <span class='st'>"\\r\\n"</span>, 
-             attribute_orientation <span class='op'>=</span> <span class='st'>"column"</span>, 
-             field_delimiter <span class='op'>=</span> <span class='st'>","</span>,
-             data_url <span class='op'>=</span> <span class='st'>"https://mydata.org/etc"</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; $objectName
-#&gt; [1] "example.csv"
-#&gt; 
-#&gt; $size
-#&gt; $size$unit
-#&gt; [1] "bytes"
-#&gt; 
-#&gt; $size$size
-#&gt; [1] "NA"
-#&gt; 
-#&gt; 
-#&gt; $authentication
-#&gt; $authentication$method
-#&gt; [1] "MD5"
-#&gt; 
-#&gt; $authentication$authentication
-#&gt; [1] "NA"
-#&gt; 
-#&gt; 
-#&gt; $dataFormat
-#&gt; $dataFormat$textFormat
-#&gt; $dataFormat$textFormat$numHeaderLines
-#&gt; [1] "1"
-#&gt; 
-#&gt; $dataFormat$textFormat$recordDelimiter
-#&gt; [1] "\\r\\n"
-#&gt; 
-#&gt; $dataFormat$textFormat$attributeOrientation
-#&gt; [1] "column"
-#&gt; 
-#&gt; $dataFormat$textFormat$simpleDelimited
-#&gt; $dataFormat$textFormat$simpleDelimited$fieldDelimiter
-#&gt; [1] ","
-#&gt; 
-#&gt; 
-#&gt; 
-#&gt; 
-#&gt; $distribution
-#&gt; $distribution$online
-#&gt; $distribution$online$url
-#&gt; $distribution$online$url$url
-#&gt; [1] "https://mydata.org/etc"
-#&gt; 
-#&gt; $distribution$online$url$`function`
-#&gt; [1] "download"
-#&gt; 
-#&gt; 
-#&gt; 
-#&gt; </div><div class='input'>             
-<span class='fu'>create_physical</span><span class='op'>(</span>file_path <span class='op'>=</span> <span class='st'>"User/data/example.csv"</span>,
-             data_url <span class='op'>=</span> <span class='st'>"https://mydata.org/etc"</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; $objectName
-#&gt; [1] "example.csv"
-#&gt; 
-#&gt; $size
-#&gt; $size$unit
-#&gt; [1] "bytes"
-#&gt; 
-#&gt; $size$size
-#&gt; [1] "NA"
-#&gt; 
-#&gt; 
-#&gt; $authentication
-#&gt; $authentication$method
-#&gt; [1] "MD5"
-#&gt; 
-#&gt; $authentication$authentication
-#&gt; [1] "NA"
-#&gt; 
-#&gt; 
-#&gt; $dataFormat
-#&gt; $dataFormat$textFormat
-#&gt; $dataFormat$textFormat$numHeaderLines
-#&gt; [1] "1"
-#&gt; 
-#&gt; $dataFormat$textFormat$recordDelimiter
-#&gt; [1] "\\r\\n"
-#&gt; 
-#&gt; $dataFormat$textFormat$attributeOrientation
-#&gt; [1] "column"
-#&gt; 
-#&gt; $dataFormat$textFormat$simpleDelimited
-#&gt; $dataFormat$textFormat$simpleDelimited$fieldDelimiter
-#&gt; [1] ","
-#&gt; 
-#&gt; 
-#&gt; 
-#&gt; 
-#&gt; $distribution
-#&gt; $distribution$online
-#&gt; $distribution$online$url
-#&gt; $distribution$online$url$url
-#&gt; [1] "https://mydata.org/etc"
-#&gt; 
-#&gt; $distribution$online$url$`function`
-#&gt; [1] "download"
-#&gt; 
-#&gt; 
-#&gt; 
-#&gt; </div></pre>
+    <pre class="examples"><span class='r-in'><span class='fu'>create_physical</span><span class='op'>(</span>file_path <span class='op'>=</span> <span class='st'>"User/data/example.csv"</span>, </span>
+<span class='r-in'>             number_of_headers <span class='op'>=</span> <span class='st'>"1"</span>,</span>
+<span class='r-in'>             record_delimiter <span class='op'>=</span> <span class='st'>"\\r\\n"</span>, </span>
+<span class='r-in'>             attribute_orientation <span class='op'>=</span> <span class='st'>"column"</span>, </span>
+<span class='r-in'>             field_delimiter <span class='op'>=</span> <span class='st'>","</span>,</span>
+<span class='r-in'>             data_url <span class='op'>=</span> <span class='st'>"https://mydata.org/etc"</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> $objectName</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [1] "example.csv"</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> $size</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> $size$unit</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [1] "bytes"</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> $size$size</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [1] "NA"</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> $authentication</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> $authentication$method</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [1] "MD5"</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> $authentication$authentication</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [1] "NA"</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> $dataFormat</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> $dataFormat$textFormat</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> $dataFormat$textFormat$numHeaderLines</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [1] "1"</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> $dataFormat$textFormat$recordDelimiter</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [1] "\\r\\n"</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> $dataFormat$textFormat$attributeOrientation</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [1] "column"</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> $dataFormat$textFormat$simpleDelimited</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> $dataFormat$textFormat$simpleDelimited$fieldDelimiter</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [1] ","</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> $distribution</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> $distribution$online</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> $distribution$online$url</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> $distribution$online$url$url</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [1] "https://mydata.org/etc"</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> $distribution$online$url$`function`</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [1] "download"</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> </span>
+<span class='r-in'>             </span>
+<span class='r-in'><span class='fu'>create_physical</span><span class='op'>(</span>file_path <span class='op'>=</span> <span class='st'>"User/data/example.csv"</span>,</span>
+<span class='r-in'>             data_url <span class='op'>=</span> <span class='st'>"https://mydata.org/etc"</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> $objectName</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [1] "example.csv"</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> $size</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> $size$unit</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [1] "bytes"</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> $size$size</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [1] "NA"</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> $authentication</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> $authentication$method</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [1] "MD5"</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> $authentication$authentication</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [1] "NA"</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> $dataFormat</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> $dataFormat$textFormat</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> $dataFormat$textFormat$numHeaderLines</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [1] "1"</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> $dataFormat$textFormat$recordDelimiter</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [1] "\\r\\n"</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> $dataFormat$textFormat$attributeOrientation</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [1] "column"</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> $dataFormat$textFormat$simpleDelimited</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> $dataFormat$textFormat$simpleDelimited$fieldDelimiter</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [1] ","</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> $distribution</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> $distribution$online</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> $distribution$online$url</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> $distribution$online$url$url</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [1] "https://mydata.org/etc"</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> $distribution$online$url$`function`</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [1] "download"</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> </span>
+</pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

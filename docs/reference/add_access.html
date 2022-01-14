@@ -181,42 +181,44 @@ permission please input a new permission.</p>
 of an EML document.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>add_access</span><span class='op'>(</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; $scope
-#&gt; [1] "document"
-#&gt; 
-#&gt; $order
-#&gt; [1] "allowFirst"
-#&gt; 
-#&gt; $authSystem
-#&gt; [1] "https://pasta.edirepository.org/authentication"
-#&gt; 
-#&gt; $allow
-#&gt; $allow$principal
-#&gt; [1] "public"
-#&gt; 
-#&gt; $allow$permission
-#&gt; [1] "read"
-#&gt; 
-#&gt; </div><div class='input'><span class='fu'>add_access</span><span class='op'>(</span>allow_principal <span class='op'>=</span> <span class='st'>"private"</span>,
-           allow_permission <span class='op'>=</span> <span class='st'>"none"</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; $scope
-#&gt; [1] "document"
-#&gt; 
-#&gt; $order
-#&gt; [1] "allowFirst"
-#&gt; 
-#&gt; $authSystem
-#&gt; [1] "https://pasta.edirepository.org/authentication"
-#&gt; 
-#&gt; $allow
-#&gt; $allow$principal
-#&gt; [1] "private"
-#&gt; 
-#&gt; $allow$permission
-#&gt; [1] "none"
-#&gt; 
-#&gt; </div></pre>
+    <pre class="examples"><span class='r-in'><span class='fu'>add_access</span><span class='op'>(</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> $scope</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [1] "document"</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> $order</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [1] "allowFirst"</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> $authSystem</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [1] "https://pasta.edirepository.org/authentication"</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> $allow</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> $allow$principal</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [1] "public"</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> $allow$permission</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [1] "read"</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> </span>
+<span class='r-in'><span class='fu'>add_access</span><span class='op'>(</span>allow_principal <span class='op'>=</span> <span class='st'>"private"</span>,</span>
+<span class='r-in'>           allow_permission <span class='op'>=</span> <span class='st'>"none"</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> $scope</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [1] "document"</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> $order</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [1] "allowFirst"</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> $authSystem</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [1] "https://pasta.edirepository.org/authentication"</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> $allow</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> $allow$principal</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [1] "private"</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> $allow$permission</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [1] "none"</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> </span>
+</pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

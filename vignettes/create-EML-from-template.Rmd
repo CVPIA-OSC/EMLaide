@@ -48,7 +48,6 @@ The following libraries are needed to create a working EML document.
 ```{r}
 library(EMLaide)
 library(tidyverse)
-library(EDIutils)
 library(readxl)
 library(EML)
 ```
