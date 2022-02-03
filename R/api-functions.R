@@ -4,6 +4,8 @@
 #' @param user_id EDI data portal user ID. Create an account an
 #' EDI \href{https://portal.edirepository.org/nis/login.jsp}{here}
 #' @param password EDI data portal user password
+#' @param environment EDI portal environment to run command in. Can be: "production" - environment for publishing to EDI , 
+#' "staging" - environment to test upload and rendering of new environment, "development"
 #' @details For more information about the identifier reservation services see \href{https://pastaplus-core.readthedocs.io/en/latest/doc_tree/pasta_api/data_package_manager_api.html#reservations}{the PASTAplus docs}
 #' @return This function returns a edi identifier number. 
 #' @examples 
@@ -12,8 +14,11 @@
 #' @export                
 
 reserve_edi_id <- function(user_id, password) {
+  base_url <- dplyr::case_when(environment == "staging" ~ "https://pasta-s.lternet.edu/package/reservations/eml/edi",
+                               environment == "development" ~ "https://pasta-d.lternet.edu/package/reservations/eml/edi",
+                               environment == "production" ~ "https://pasta.lternet.edu/package/reservations/eml/edi")
   response <-httr::POST(
-    url = "https://pasta.lternet.edu/package/reservations/eml/edi",
+    url = base_url,
     config = httr::authenticate(paste("uid=", user_id, ",o=EDI", ",dc=edirepository,dc=org"), password)
   )
   if (response$status_code == "201") {
