@@ -153,13 +153,13 @@
 <li>
 <em>datatable_description</em> - brief description of data entity</li>
 <li>
-<em>datattable_url</em> - (Optional) url to a publicly accessible file hosted online. Required if using <code><a href="../reference/evaluate_edi_package.html">EMLaide::evaluate_edi_package()</a></code> or <code><a href="../reference/upload_edi_package.html">EMLaide::upload_edi_package()</a></code> to evaluate or upload your EML document to EDI from R.</li>
+<em>datatable_url</em> - (Optional) url to a publicly accessible file hosted online. Required if using <code><a href="../reference/evaluate_edi_package.html">EMLaide::evaluate_edi_package()</a></code> or <code><a href="../reference/upload_edi_package.html">EMLaide::upload_edi_package()</a></code> to evaluate or upload your EML document to EDI from R.</li>
 <li>
 <em>datatable_methods</em> - (Optional) filepath data entity specific methods document</li>
 <li>
 <em>additional_information</em> - (Optional) brief text description containing additional information that is pertinent to a specific data entity.</li>
 </ul>
-<p>This dataframe is the input to the <a href="https://cvpia-osc.github.io/EMLaide/reference/add_datatable.html"><code>add_datatable</code></a> function which function generates <a href="https://cvpia-osc.github.io/EMLaide/reference/create_attribute.html">attribute metadata</a> from the <em>atribute_info</em> files and <a href="https://cvpia-osc.github.io/EMLaide/reference/create_physical.html">physical information</a> describing the datatable from the <em>filepath</em> and <em>datatable_url</em> information.</p>
+<p>This dataframe is the input to the <a href="https://cvpia-osc.github.io/EMLaide/reference/add_datatable.html"><code>add_datatable</code></a> function which function generates <a href="https://cvpia-osc.github.io/EMLaide/reference/create_attribute.html">attribute metadata</a> from the <em>attribute_info</em> files and <a href="https://cvpia-osc.github.io/EMLaide/reference/create_physical.html">physical information</a> describing the datatable from the <em>filepath</em> and <em>datatable_url</em> information.</p>
 <p><strong>Example Dataframe Structure for <code>datatable_metadata</code></strong></p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">datatable_metadata</span> <span class="op">&lt;-</span> 
@@ -234,7 +234,7 @@
 <div id="data-package-metadata-methods-and-abstract" class="section level3">
 <h3 class="hasAnchor">
 <a href="#data-package-metadata-methods-and-abstract" class="anchor"></a>Data Package Metadata, Methods, and Abstract</h3>
-<p>The following code loads the “data-package-metadata.xlsx”, “abstrac.docx”, and “methods.docx”. Each sheet of the excel workbook pertains to a different metadata element and will be the input to the <code>add_[blank]</code> functions used throughout this example.</p>
+<p>The following code loads the “data-package-metadata.xlsx”, “abstract.docx”, and “methods.docx”. Each sheet of the excel workbook pertains to a different metadata element and will be the input to the <code>add_[blank]</code> functions used throughout this example.</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">excel_path</span> <span class="op">&lt;-</span> <span class="st">"Banet-Example/metadata/data-package-metadata.xlsx"</span>
 <span class="va">sheets</span> <span class="op">&lt;-</span> <span class="fu">readxl</span><span class="fu">::</span><span class="fu"><a href="https://readxl.tidyverse.org/reference/excel_sheets.html">excel_sheets</a></span><span class="op">(</span><span class="va">excel_path</span><span class="op">)</span>
@@ -317,7 +317,7 @@
 <div id="evaluation-using-the-edis-eml-congruency-checker" class="section level2">
 <h2 class="hasAnchor">
 <a href="#evaluation-using-the-edis-eml-congruency-checker" class="anchor"></a>Evaluation using the EDI’s EML Congruency Checker</h2>
-<p>To evaluate your document in R using <a href="https://github.com/EDIorg/ecc">EDI’s EML Congruence Checker</a> you can use <code><a href="../reference/evaluate_edi_package.html">evaluate_edi_package()</a></code>. To use this function you must have the data entities text files publically accessible by a URL. This URL must be added in the <code>datatable_metadata</code> section above. If you do not have a URL available then you can upload the EML document and the dataset on the <a href="https://portal.edirepository.org/nis/home.jsp">EDI data portal.</a></p>
+<p>To evaluate your document in R using <a href="https://github.com/EDIorg/ecc">EDI’s EML Congruence Checker</a> you can use <code><a href="../reference/evaluate_edi_package.html">evaluate_edi_package()</a></code>. To use this function you must have the data entities text files publicly accessible by a URL. This URL must be added in the <code>datatable_metadata</code> section above. If you do not have a URL available then you can upload the EML document and the dataset on the <a href="https://portal.edirepository.org/nis/home.jsp">EDI data portal.</a></p>
 <div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/evaluate_edi_package.html">evaluate_edi_package</a></span><span class="op">(</span>user_id <span class="op">=</span> <span class="st">"Your User Id"</span>, password <span class="op">=</span> <span class="st">"Your password"</span>, eml_file_path <span class="op">=</span> <span class="st">"edi.750.1.xml"</span><span class="op">)</span></code></pre></div>
 </div>
