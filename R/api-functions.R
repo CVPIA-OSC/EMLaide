@@ -13,7 +13,7 @@
 #' reserve_edi_id(user_id = "samuelwright")}
 #' @export                
 
-reserve_edi_id <- function(user_id, password) {
+reserve_edi_id <- function(user_id, password, environment = "production") {
   base_url <- dplyr::case_when(environment == "staging" ~ "https://pasta-s.lternet.edu/package/reservations/eml/edi",
                                environment == "development" ~ "https://pasta-d.lternet.edu/package/reservations/eml/edi",
                                environment == "production" ~ "https://pasta.lternet.edu/package/reservations/eml/edi")
@@ -54,7 +54,7 @@ reserve_edi_id <- function(user_id, password) {
 #' \dontrun{evaluate_edi_package(user_id = "samuelwright", 
 #'                               eml_file_path = "data/edi20.1.xml")}
 #' @export   
-evaluate_edi_package <- function(user_id, password, eml_file_path) {
+evaluate_edi_package <- function(user_id, password, eml_file_path, environment = "production") {
   base_url <- dplyr::case_when(environment == "staging" ~ "https://pasta-s.lternet.edu/package/",
                                environment == "development" ~ "https://pasta-d.lternet.edu/package/",
                                environment == "production" ~ "https://pasta.lternet.edu/package/")
@@ -104,6 +104,8 @@ evaluate_edi_package <- function(user_id, password, eml_file_path) {
 #' @param user_id EDI data portal user ID. Create an account an
 #' EDI \href{https://portal.edirepository.org/nis/login.jsp}{here}
 #' @param password EDI data portal user password
+#' @param environment EDI portal environment to run command in. Can be: "production" - environment for publishing to EDI , 
+#' "staging" - environment to test upload and rendering of new environment, "development"
 #' @param eml_file_path The file path to the EML metadata document that you wish to evaluate. 
 #' (A web link to the csv must be included in the dataset information in the EML in order for a data package to be evaluated.) 
 #' @details For more information about the validation services see \href{https://pastaplus-core.readthedocs.io/en/latest/doc_tree/pasta_api/data_package_manager_api.html#upload-and-evaluation}{the PASTAplus docs}
@@ -113,41 +115,46 @@ evaluate_edi_package <- function(user_id, password, eml_file_path) {
 #'                             eml_file_path = "data/edi20.1.xml")}
 #' @export   
 
-upload_edi_package <- function(user_id, password, eml_file_path) {
+upload_edi_package <- function(user_id, password, eml_file_path, environment = "production") {
+  base_url <- dplyr::case_when(environment == "staging" ~ "https://pasta-s.lternet.edu/package/",
+                               environment == "development" ~ "https://pasta-d.lternet.edu/package/",
+                               environment == "production" ~ "https://pasta.lternet.edu/package/")
   response <- httr::POST(
-    url = "https://pasta.lternet.edu/package/eml",
+    url = paste0(base_url, "eml/"),
     config = httr::authenticate(paste('uid=', user_id, ",o=EDI", ',dc=edirepository,dc=org'), password),
     body = httr::upload_file(eml_file_path)
   )
   if (response$status_code == "202") {
+    Sys.sleep(2)
     transaction_id <- httr::content(response, as = 'text', encoding = 'UTF-8')
-    iter <- 0
-    max_iter <- 5
-    while(TRUE){
-      Sys.sleep(2)
-      response<- httr::GET(url = paste0("https://pasta-d.lternet.edu/package/report/eml/",
-                   transaction_id), config = httr::authenticate(paste('uid=', user_id, ",o=EDI", ',dc=edirepository,dc=org'), password))
-      iter <- iter + 1
-      if (response$status_code == "200") {
-         report <- httr::content(response, as = 'text', encoding = 'UTF-8')
-         name <- stringr::str_extract_all(report, "(?<=<name>)(.*)(?=</name>)")[[1]]
-         status <- stringr::str_extract_all(report, '[:alpha:]+(?=</status>)')[[1]]
-         suggestion <- stringr::str_extract_all(report, "(?<=<suggestion>)(.*)(?=</suggestion>)")[[1]]
-         
-         report_df <- dplyr::tibble("Status" = as.vector(status), 
-                                    "Element Checked" = as.vector(name),
-                                    "Suggestion to fix/imporve" = as.vector(suggestion))
-         View(report_df)
-         return(report_df)
-         break
-      }
-      if (max_iter > iter) {
-        print("Request timed out, check that you inputs are all valid and try again")
-        break 
+    check_error <- httr::GET(url = paste0(base_url, "error/eml/", transaction_id), 
+                             config = httr::authenticate(paste('uid=', user_id, ",o=EDI", ',dc=edirepository,dc=org'), password))
+    if (check_error$status_code == "200") {
+      report_df <- generate_report_df(check_error)
+      print("EML not valid. Please fix errors in report dataframe or if report dataframe comes back empty please try to evaluate_edi_package().")
+      return(report_df)
+      break
+    } else {
+      iter <- 0
+      max_iter <- 5
+      while(TRUE){
+        Sys.sleep(2)
+        check_upload <- httr::GET(url = paste0(base_url, 
+                                               "report/eml/", 
+                                               stringr::str_replace_all(basename(eml_file_path), "\\.", "/")), 
+                                  config = httr::authenticate(paste('uid=', user_id, ",o=EDI", ',dc=edirepository,dc=org'), password))
+        iter <- iter + 1
+        if (check_upload$status_code == "200") {
+          print("Your data package posted to EDI. Please check EDI portal to confirm")
+        }
+        else if(max_iter > iter) {
+          print("Request timed out, check that you inputs are all valid, rerun evalutate_edi_package(), and try again")
+          break 
+        }
       }
     }
   } else {
-    message("Your request to evaluate an EDI package failed,
+    message("Your request to upload an EDI package failed,
            please check that you entered a valid username, password, and XML document.
            That XML document must link to a csv accessible online.
            See more information on request status below")
@@ -155,7 +162,7 @@ upload_edi_package <- function(user_id, password, eml_file_path) {
   }
 }
 
-# TODO add test api funcitons
+# TODO add test api functions
 # Update Data package on EDI ---------------------------------------------------
 #' Update EDI Data Package 
 #' @description This function takes in authentication info for EDI, a package number, and an updated EML file to 
