@@ -40,6 +40,8 @@ reserve_edi_id <- function(user_id, password) {
 #' @param user_id EDI data portal user ID. Create an account an
 #' EDI \href{https://portal.edirepository.org/nis/login.jsp}{here}
 #' @param password EDI data portal user password
+#' @param environment EDI portal environment to run command in. Can be: "production" - environment for publishing to EDI , 
+#' "staging" - environment to test upload and rendering of new environment, "development"
 #' @param eml_file_path The file path to the EML metadata document that you wish to evaluate. 
 #' (A web link to the csv must be included in the dataset information in the EML in order for a data package to be evaluated.) 
 #' @details For more information about the validation services see \href{https://pastaplus-core.readthedocs.io/en/latest/doc_tree/pasta_api/data_package_manager_api.html#upload-and-evaluation}{the PASTAplus docs}
@@ -53,8 +55,11 @@ reserve_edi_id <- function(user_id, password) {
 #'                               eml_file_path = "data/edi20.1.xml")}
 #' @export   
 evaluate_edi_package <- function(user_id, password, eml_file_path) {
+  base_url <- dplyr::case_when(environment == "staging" ~ "https://pasta-s.lternet.edu/package/",
+                               environment == "development" ~ "https://pasta-d.lternet.edu/package/",
+                               environment == "production" ~ "https://pasta.lternet.edu/package/")
   response <- httr::POST(
-    url = "https://pasta.lternet.edu/package/evaluate/eml",
+    url = paste0(base_url, "evaluate/eml"),
     config = httr::authenticate(paste('uid=', user_id, ",o=EDI", ',dc=edirepository,dc=org'), password),
     body = httr::upload_file(eml_file_path)
   )
@@ -65,20 +70,13 @@ evaluate_edi_package <- function(user_id, password, eml_file_path) {
     while(TRUE){
       Sys.sleep(2)
       response<- httr::GET(
-        url = paste0("https://pasta.lternet.edu/package/evaluate/report/eml/",
-                     transaction_id),
+        url = paste0(base_url, "evaluate/report/eml/", transaction_id),
         config = httr::authenticate(paste('uid=', user_id, ",o=EDI", ',dc=edirepository,dc=org'), password)
       )
       iter <- iter + 1
       if (response$status_code == "200") {
-        report <- httr::content(response, as = 'text', encoding = 'UTF-8')
-        name <- stringr::str_extract_all(report, "(?<=<name>)(.*)(?=</name>)")[[1]]
-        status <- stringr::str_extract_all(report, '[:alpha:]+(?=</status>)')[[1]]
-        suggestion <- stringr::str_extract_all(report, "(?<=<suggestion>)(.*)(?=</suggestion>)")[[1]]
-        
-        report_df <- dplyr::tibble("Status" = as.vector(status), 
-                                   "Element Checked" = as.vector(name),
-                                   "Suggestion to fix/imporve" = as.vector(suggestion))
+        report_df <- generate_report_df(response)
+        print("Please check for errors in the report dataframe")
         View(report_df)
         return(report_df)
         break
@@ -219,4 +217,23 @@ update_edi_package <- function(user_id, password, existing_package_identifier, e
            See more information on request status below")
     print(response)
   }
+}
+
+# Helper functions 
+#' Generate Report Dataframe 
+#' @description Generates Package Report in Data Frame 
+#' @export   
+generate_report_df <- function(response) {
+  report <- httr::content(response, as = 'text', encoding = 'UTF-8')
+  name <- stringr::str_extract_all(report, "(?<=<name>)(.*)(?=</name>)")[[1]]
+  status <- stringr::str_extract_all(report, '[:alpha:]+(?=</status>)')[[1]]
+  suggestion <- stringr::str_extract_all(report, "(?<=<suggestion>)(.*)(?=</suggestion>)")[[1]]
+  
+  report_df <- dplyr::tibble("Status" = as.vector(status), 
+                             "Element Checked" = as.vector(name),
+                             "Suggestion to fix/imporve" = as.vector(suggestion))
+  if (nchar(report) <= 500){
+    print(report)
+  }
+  return(report_df)
 }

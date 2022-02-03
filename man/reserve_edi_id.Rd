@@ -11,6 +11,9 @@ reserve_edi_id(user_id, password)
 EDI \href{https://portal.edirepository.org/nis/login.jsp}{here}}
 
 \item{password}{EDI data portal user password}
+
+\item{environment}{EDI portal environment to run command in. Can be: "production" - environment for publishing to EDI ,
+"staging" - environment to test upload and rendering of new environment, "development"}
 }
 \value{
 This function returns a edi identifier number.

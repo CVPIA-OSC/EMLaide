@@ -14,6 +14,9 @@ EDI \href{https://portal.edirepository.org/nis/login.jsp}{here}}
 
 \item{eml_file_path}{The file path to the EML metadata document that you wish to evaluate.
 (A web link to the csv must be included in the dataset information in the EML in order for a data package to be evaluated.)}
+
+\item{environment}{EDI portal environment to run command in. Can be: "production" - environment for publishing to EDI ,
+"staging" - environment to test upload and rendering of new environment, "development"}
 }
 \value{
 This package returns a data frame that contains the status of the
