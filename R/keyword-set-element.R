@@ -1,7 +1,7 @@
 #' Creates Keyword Set Element
 #' @description Takes in keywords and associated keyword thesaurus and creates a keyword set according to EML standards.
 #' @param keyword_metadata A  dataframe containing `keyword` and `keywordThesuraus` (if keyword is from a controlled vocabulary). 
-#' The dataframe must have a `keyword` column and a `keywordThesaurus` column. If keywards are not from a controlled vocabulary please leave `keywordThesaurus` blank or NA.
+#' The dataframe must have a `keyword` column and a `keywordThesaurus` column. If keywords are not from a controlled vocabulary please leave `keywordThesaurus` blank or NA.
 #' 
 #' @section Controlled Vocabularies:
 #' 

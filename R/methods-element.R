@@ -4,10 +4,10 @@
 #' function will then append it properly. An example word document can be found in 
 #' "~/EMLaide/inst/extdata/methods-template.docx". 
 #' @param instrumentation Optional. What instruments are being used to conduct the method. 
-#' @param software Optional.
+#' @param software Optional. What software is being used to conduct the method. 
 #' @param sampling_file Optional.
 #' @param sampling_coverage Optional.
-#' @param sampling_citation Optional.
+#' @param sampling_citation Optional. Literature citation relating to the methods used.
 #' @param qualityControl_file Optional.
 #' @return A list containing the methods information that can be appended to a dataset or project list.
 #' @examples 

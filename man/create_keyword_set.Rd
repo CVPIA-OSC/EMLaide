@@ -8,7 +8,7 @@ create_keyword_set(keyword_metadata)
 }
 \arguments{
 \item{keyword_metadata}{A  dataframe containing \code{keyword} and \code{keywordThesuraus} (if keyword is from a controlled vocabulary).
-The dataframe must have a \code{keyword} column and a \code{keywordThesaurus} column. If keywards are not from a controlled vocabulary please leave \code{keywordThesaurus} blank or NA.}
+The dataframe must have a \code{keyword} column and a \code{keywordThesaurus} column. If keywords are not from a controlled vocabulary please leave \code{keywordThesaurus} blank or NA.}
 }
 \value{
 The keyword list that can be appended to a dataset or project list.

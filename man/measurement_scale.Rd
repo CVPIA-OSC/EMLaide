@@ -32,7 +32,7 @@ temperature data, mark grading, IQ scale, etc. Intervals can be negative
 while ratios cannot
 \item \strong{ratio}: Used to define ratio scale attributes. Ratios define
 data which consists not only of equidistant points but also has a meaningful zero
-point, which allows the ratio to have meaning. For example measurment heights,
+point, which allows the ratio to have meaning. For example measurement heights,
 flow rates, weight, length, etc.
 \item \strong{dateTime}: Used to define date and time attributes. DateTime
 is used when the values fall on the Gregorian calendar system.  DateTime values

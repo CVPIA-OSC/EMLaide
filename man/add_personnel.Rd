@@ -18,7 +18,7 @@ The dataset list or project with personnel information appended.
 Adds the personnel metadata elements to a dataset list according to EML standards.
 }
 \details{
-On person within \code{personnel_metadata} must have role of 'creator'
+One person within \code{personnel_metadata} must have role of 'creator'.
 }
 \examples{
 personnel_metadata <- dplyr::tibble(first_name = "Stacy", last_name = "Banet", 
