@@ -70,11 +70,11 @@ Because our data set is composed of multiple data entities, we are creating a da
   * *filepath* - filepath of the data entity (datatables)
   * *attribute_info* - filepath to the metadata describing the specific data entity (should be a metadata.xlsx)
   * *datatable_description* - brief description of data entity 
-  * *datattable_url* - (Optional) url to a publicly accessible file hosted online. Required if using `EMLaide::evaluate_edi_package()` or `EMLaide::upload_edi_package()` to evaluate or upload your EML document to EDI from R. 
+  * *datatable_url* - (Optional) url to a publicly accessible file hosted online. Required if using `EMLaide::evaluate_edi_package()` or `EMLaide::upload_edi_package()` to evaluate or upload your EML document to EDI from R. 
   * *datatable_methods* - (Optional) filepath data entity specific methods document
   * *additional_information* - (Optional) brief text description containing additional information that is pertinent to a specific data entity. 
 
-This dataframe is the input to the [`add_datatable`](https://cvpia-osc.github.io/EMLaide/reference/add_datatable.html) function which function generates [attribute metadata](https://cvpia-osc.github.io/EMLaide/reference/create_attribute.html) from the *atribute_info* files and [physical information](https://cvpia-osc.github.io/EMLaide/reference/create_physical.html) describing the datatable from the *filepath* and *datatable_url* information. 
+This dataframe is the input to the [`add_datatable`](https://cvpia-osc.github.io/EMLaide/reference/add_datatable.html) function which function generates [attribute metadata](https://cvpia-osc.github.io/EMLaide/reference/create_attribute.html) from the *attribute_info* files and [physical information](https://cvpia-osc.github.io/EMLaide/reference/create_physical.html) describing the datatable from the *filepath* and *datatable_url* information. 
 
 **Example Dataframe Structure for `datatable_metadata`** 
 
@@ -166,7 +166,7 @@ methods_docx <- system.file("extdata", "Banet-Example", "metadata", "methods.doc
 
 ### Data Package Metadata, Methods, and Abstract 
 
-The following code loads the "data-package-metadata.xlsx", "abstrac.docx", and "methods.docx". Each sheet of the excel workbook pertains to a different metadata element and will be the input to the `add_[blank]` functions used throughout this example.  
+The following code loads the "data-package-metadata.xlsx", "abstract.docx", and "methods.docx". Each sheet of the excel workbook pertains to a different metadata element and will be the input to the `add_[blank]` functions used throughout this example.  
 ```{r, eval = FALSE}
 excel_path <- "Banet-Example/metadata/data-package-metadata.xlsx"
 sheets <- readxl::excel_sheets(excel_path)
@@ -257,7 +257,7 @@ EML::eml_validate("edi.750.1.xml")
 ```
 
 ## Evaluation using the EDI's EML Congruency Checker
-To evaluate your document in R using [EDI's EML Congruence Checker](https://github.com/EDIorg/ecc) you can use `evaluate_edi_package()`. To use this function you must have the data entities text files publically accessible by a URL. This URL must be added in the `datatable_metadata` section above. If you do not have a URL available then you can upload the EML document and the dataset on the [EDI data portal.](https://portal.edirepository.org/nis/home.jsp) 
+To evaluate your document in R using [EDI's EML Congruence Checker](https://github.com/EDIorg/ecc) you can use `evaluate_edi_package()`. To use this function you must have the data entities text files publicly accessible by a URL. This URL must be added in the `datatable_metadata` section above. If you do not have a URL available then you can upload the EML document and the dataset on the [EDI data portal.](https://portal.edirepository.org/nis/home.jsp) 
 
 ```{r, eval = FALSE}
 evaluate_edi_package(user_id = "Your User Id", password = "Your password", eml_file_path = "edi.750.1.xml")
