@@ -27,11 +27,11 @@ Do not include the "edi" prefix, just put the number. (ex: For "edi.101.1" put 1
 Message describing if your package was successfully updated or not.
 }
 \description{
-This function takes in authentication info for EDI, a packge number, and an updated EML file to
+This function takes in authentication info for EDI, a package number, and an updated EML file to
 updated an existing package on EDI.
 }
 \examples{
 \dontrun{update_edi_package(user_id = "samuelwright", 
-                            existing_packge_identifier = "740.1",
+                            existing_package_identifier = "740.1",
                             eml_file_path = "data/edi20.1.xml")}
 }

@@ -19,6 +19,7 @@ test_that("reserve_edi_id() returns an edi number", {
 })
 
 # Test data package evaluation function ----------------------------------------
+# TODO fix 500 error on evaluate test (no longer have access to API Key)
 test_that("evaluate_edi_package() errors when arguments are not supplied", {
   expect_error(evaluate_edi_package(user_id = user_id, password = Sys.getenv("APIKEY")), "argument \"eml_file_path\" is missing, with no default")
   expect_error(evaluate_edi_package(password = Sys.getenv("APIKEY")))
@@ -63,3 +64,5 @@ test_that("evaluate_edi_package() returns the anticipated response object", {
                                     password = Sys.getenv("APIKEY"), 
                                     eml_file_path = eml_file_path), expected_return)
 })
+
+# TODO add tests for update and upload functions

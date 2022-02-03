@@ -13,7 +13,7 @@
 
 reserve_edi_id <- function(user_id, password) {
   response <-httr::POST(
-    url = "https://pasta-d.lternet.edu/package/reservations/eml/edi",
+    url = "https://pasta.lternet.edu/package/reservations/eml/edi",
     config = httr::authenticate(paste("uid=", user_id, ",o=EDI", ",dc=edirepository,dc=org"), password)
   )
   if (response$status_code == "201") {
@@ -49,7 +49,7 @@ reserve_edi_id <- function(user_id, password) {
 #' @export   
 evaluate_edi_package <- function(user_id, password, eml_file_path) {
   response <- httr::POST(
-    url = "https://pasta-d.lternet.edu/package/evaluate/eml",
+    url = "https://pasta.lternet.edu/package/evaluate/eml",
     config = httr::authenticate(paste('uid=', user_id, ",o=EDI", ',dc=edirepository,dc=org'), password),
     body = httr::upload_file(eml_file_path)
   )
@@ -60,7 +60,7 @@ evaluate_edi_package <- function(user_id, password, eml_file_path) {
     while(TRUE){
       Sys.sleep(2)
       response<- httr::GET(
-        url = paste0("https://pasta-d.lternet.edu/package/evaluate/report/eml/",
+        url = paste0("https://pasta.lternet.edu/package/evaluate/report/eml/",
                      transaction_id),
         config = httr::authenticate(paste('uid=', user_id, ",o=EDI", ',dc=edirepository,dc=org'), password)
       )
@@ -93,7 +93,7 @@ evaluate_edi_package <- function(user_id, password, eml_file_path) {
 }
 
 
-# Need to test out once I have a package to upload 
+# TODO add test api funcitons
 # Upload EDI Data package -------------------------------------------------------
 #' Upload EDI Data Package 
 #' @description This function takes in authentication info for EDI and an EML file to 
@@ -112,7 +112,7 @@ evaluate_edi_package <- function(user_id, password, eml_file_path) {
 
 upload_edi_package <- function(user_id, password, eml_file_path) {
   response <- httr::POST(
-    url = "https://pasta-d.lternet.edu/package/eml",
+    url = "https://pasta.lternet.edu/package/eml",
     config = httr::authenticate(paste('uid=', user_id, ",o=EDI", ',dc=edirepository,dc=org'), password),
     body = httr::upload_file(eml_file_path)
   )
@@ -152,10 +152,10 @@ upload_edi_package <- function(user_id, password, eml_file_path) {
   }
 }
 
-# Need to test out once I have a package to update 
-# Update EDI Data package -------------------------------------------------------
+# TODO add test api funcitons
+# Update Data package on EDI ---------------------------------------------------
 #' Update EDI Data Package 
-#' @description This function takes in authentication info for EDI, a packge number, and an updated EML file to 
+#' @description This function takes in authentication info for EDI, a package number, and an updated EML file to 
 #' updated an existing package on EDI. 
 #' @param user_id EDI data portal user ID. Create an account an
 #' EDI \href{https://portal.edirepository.org/nis/login.jsp}{here}
@@ -167,13 +167,13 @@ upload_edi_package <- function(user_id, password, eml_file_path) {
 #' @return Message describing if your package was successfully updated or not. 
 #' @examples 
 #' \dontrun{update_edi_package(user_id = "samuelwright", 
-#'                             existing_packge_identifier = "740.1",
+#'                             existing_package_identifier = "740.1",
 #'                             eml_file_path = "data/edi20.1.xml")}
 #' @export   
 
 update_edi_package <- function(user_id, password, existing_package_identifier, eml_file_path) {
   id <- stringr::str_replace_all(existing_package_identifier, "\\.", "/")
-  url_for_update <- paste0("https://pasta-d.lternet.edu/package/eml/", id)
+  url_for_update <- paste0("https://pasta.lternet.edu/package/eml/", id)
   response <- httr::PUT(
     url = url_for_update,
     config = httr::authenticate(paste('uid=', user_id, ",o=EDI", ',dc=edirepository,dc=org'), password),
@@ -185,7 +185,7 @@ update_edi_package <- function(user_id, password, existing_package_identifier, e
     max_iter <- 5
     while(TRUE){
       Sys.sleep(2)
-      response<- httr::GET(url = paste0("https://pasta-d.lternet.edu/package/report/eml/",
+      response<- httr::GET(url = paste0("https://pasta.lternet.edu/package/report/eml/",
                                         transaction_id), config = httr::authenticate(paste('uid=', user_id, ",o=EDI", ',dc=edirepository,dc=org'), password))
       iter <- iter + 1
       if (response$status_code == "200") {
