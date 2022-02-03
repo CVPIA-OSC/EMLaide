@@ -170,6 +170,8 @@ upload_edi_package <- function(user_id, password, eml_file_path, environment = "
 #' @param user_id EDI data portal user ID. Create an account an
 #' EDI \href{https://portal.edirepository.org/nis/login.jsp}{here}
 #' @param password EDI data portal user password
+#' @param environment EDI portal environment to run command in. Can be: "production" - environment for publishing to EDI , 
+#' "staging" - environment to test upload and rendering of new environment, "development"
 #' @param existing_package_identifier The current edi number of the package that you are trying to update. 
 #' Do not include the "edi" prefix, just put the number. (ex: For "edi.101.1" put 101.1)
 #' @param eml_file_path The file path to the EML metadata document that you wish to use to update. 
@@ -181,44 +183,45 @@ upload_edi_package <- function(user_id, password, eml_file_path, environment = "
 #'                             eml_file_path = "data/edi20.1.xml")}
 #' @export   
 
-update_edi_package <- function(user_id, password, existing_package_identifier, eml_file_path) {
+update_edi_package <- function(user_id, password, existing_package_identifier, eml_file_path, environment = "production") {
   id <- stringr::str_replace_all(existing_package_identifier, "\\.", "/")
-  url_for_update <- paste0("https://pasta.lternet.edu/package/eml/", id)
+  base_url <- dplyr::case_when(environment == "staging" ~ "https://pasta-s.lternet.edu/package/",
+                               environment == "development" ~ "https://pasta-d.lternet.edu/package/",
+                               environment == "production" ~ "https://pasta.lternet.edu/package/")
   response <- httr::PUT(
-    url = url_for_update,
+    url = paste0(base_url, "eml/", id),
     config = httr::authenticate(paste('uid=', user_id, ",o=EDI", ',dc=edirepository,dc=org'), password),
     body = httr::upload_file(eml_file_path)
   )
   if (response$status_code == "202") {
+    Sys.sleep(2)
     transaction_id <- httr::content(response, as = 'text', encoding = 'UTF-8')
-    iter <- 0
-    max_iter <- 5
-    while(TRUE){
-      Sys.sleep(2)
-      response<- httr::GET(url = paste0("https://pasta.lternet.edu/package/report/eml/",
-                                        transaction_id), config = httr::authenticate(paste('uid=', user_id, ",o=EDI", ',dc=edirepository,dc=org'), password))
-      iter <- iter + 1
-      if (response$status_code == "200") {
-        report <- httr::content(response, as = 'text', encoding = 'UTF-8')
-        name <- stringr::str_extract_all(report, "(?<=<name>)(.*)(?=</name>)")[[1]]
-        status <- stringr::str_extract_all(report, '[:alpha:]+(?=</status>)')[[1]]
-        suggestion <- stringr::str_extract_all(report, "(?<=<suggestion>)(.*)(?=</suggestion>)")[[1]]
-        
-        report_df <- dplyr::tibble("Status" = as.vector(status), 
-                                   "Element Checked" = as.vector(name),
-                                   "Suggestion to fix/imporve" = as.vector(suggestion))
-        print("Your package update was successful if no errors are reported in the results data frame.")
-        View(report_df)
-        return(report_df)
-        break
-      }
-      if (max_iter > iter) {
-        print("Request timed out, check that you inputs are all valid and try again")
-        break 
+    check_error <- httr::GET(url = paste0(base_url, "error/eml/", transaction_id), 
+                             config = httr::authenticate(paste('uid=', user_id, ",o=EDI", ',dc=edirepository,dc=org'), password))
+    if (check_error$status_code == "200") {
+      report_df <- generate_report_df(check_error)
+      print("EML not valid. Please fix errors in report dataframe")
+      return(report_df)
+      break
+    } else {
+      iter <- 0
+      max_iter <- 5
+      while(TRUE){
+        Sys.sleep(2)
+        check_upload <- httr::GET(url = paste0(base_url, "report/eml/", id), 
+                                  config = httr::authenticate(paste('uid=', user_id, ",o=EDI", ',dc=edirepository,dc=org'), password))
+        iter <- iter + 1
+        if (check_upload$status_code == "200") {
+          print("Your data package posted to EDI. Please check EDI portal to confirm")
+        }
+        else if(max_iter > iter) {
+          print("Request timed out, check that you inputs are all valid, rerun evalutate_edi_package(), and try again")
+          break 
+        }
       }
     }
   } else {
-    message("Your request to evaluate an EDI package failed,
+    message("Your request to update an EDI package failed,
            please check that you entered a valid username, password, and XML document.
            That XML document must link to a csv accessible online.
            See more information on request status below")

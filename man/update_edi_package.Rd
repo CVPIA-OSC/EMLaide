@@ -8,7 +8,8 @@ update_edi_package(
   user_id,
   password,
   existing_package_identifier,
-  eml_file_path
+  eml_file_path,
+  environment = "production"
 )
 }
 \arguments{
@@ -22,6 +23,9 @@ Do not include the "edi" prefix, just put the number. (ex: For "edi.101.1" put 1
 
 \item{eml_file_path}{The file path to the EML metadata document that you wish to use to update.
 (A web link to the csv must be included in the dataset information in the EML in order for a data package to be evaluated.)}
+
+\item{environment}{EDI portal environment to run command in. Can be: "production" - environment for publishing to EDI ,
+"staging" - environment to test upload and rendering of new environment, "development"}
 }
 \value{
 Message describing if your package was successfully updated or not.
