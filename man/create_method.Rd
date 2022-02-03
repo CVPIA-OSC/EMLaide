@@ -21,13 +21,13 @@ function will then append it properly. An example word document can be found in
 
 \item{instrumentation}{Optional. What instruments are being used to conduct the method.}
 
-\item{software}{Optional.}
+\item{software}{Optional. What software is being used to conduct the method.}
 
 \item{sampling_file}{Optional.}
 
 \item{sampling_coverage}{Optional.}
 
-\item{sampling_citation}{Optional.}
+\item{sampling_citation}{Optional. Literature citation relating to the methods used.}
 
 \item{qualityControl_file}{Optional.}
 }
