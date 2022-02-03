@@ -1,0 +1,29 @@
+---
+title: "Update Data Package"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{update_data_package}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(EMLaide)
+```
+
+## Updates to the EDI portal
+
+EDI updates are very simmilar to data package uploads. 
+
+## Generate EML (refer to other vignette)
+
+## Permissions for updates
+
+## Updating using API or via portal 
