@@ -34,12 +34,19 @@ create_physical <- function(file_path,
                          data_url = NULL) {
  
   field_delimiter <- match.arg(field_delimiter)
-  
   file_path_breaks <- unlist(strsplit(file_path, "/"))
   object_name <- paste(utils::tail(file_path_breaks, n = 1))
-  object_size <- paste(file.size(file_path))
-  authentication <- paste(tools::md5sum(file_path))
+  authentication <- paste(tools::md5sum(file_path))  
   
+  if (!is.null(data_url)){
+    td = tempdir()
+    tf = tempfile(tmpdir=td, fileext=".csv")
+    download.file(data_url, tf)
+    object_size <- paste(file.size(tf))
+
+  } else {
+    object_size <- paste(file.size(file_path))
+  }
   
   physical <- list(objectName = object_name,
                    size = list(unit = "bytes",
