@@ -36,14 +36,13 @@ create_physical <- function(file_path,
   field_delimiter <- match.arg(field_delimiter)
   file_path_breaks <- unlist(strsplit(file_path, "/"))
   object_name <- paste(utils::tail(file_path_breaks, n = 1))
-  authentication <- paste(tools::md5sum(file_path))  
   
   if (!is.null(data_url)){
     # td = tempdir()
     # tf = tempfile(tmpdir=td, fileext=".csv")
     # download.file(data_url, tf)
     # object_size <- paste(file.size(tf))
-    github_info <- rvest::read_html("https://github.com/FlowWest/edi.935/blob/main/data/Environmentals.csv") %>% 
+    github_info <- rvest::read_html(data_url) %>% 
       rvest::html_element("body") %>%
       rvest::html_nodes(css = ".text-mono") %>%
       rvest::html_text()
@@ -54,10 +53,24 @@ create_physical <- function(file_path,
     size_val <- stringr::str_extract(size_str, pattern = '[0-9\\.]+')
     size_unit <- stringr::str_extract(size_str, pattern = '[A-Z]+$')
     
+    to_bytes = function(val, unit){
+      unit_modifiers = c(
+        'B'= 1,
+        'KB'= 1000,
+        'MB'= 1000000,
+        'GB'= 1000000000
+      )
+      val = as.numeric(val)
+      out = unname(val * unit_modifiers[unit])
+      return(out)
+    }
+    
     object_size <- to_bytes(size_val, size_unit)
+    authentication <- paste(tools::md5sum(data_url))  # TODO figure out 
 
   } else {
     object_size <- paste(file.size(file_path))
+    authentication <- paste(tools::md5sum(file_path))  
   }
   
   physical <- list(objectName = object_name,
@@ -77,14 +90,4 @@ create_physical <- function(file_path,
   return(physical)
 }
 
-to_bytes = function(val, unit){
-  unit_modifiers = c(
-    'B'= 1,
-    'KB'= 1000,
-    'MB'= 1000000,
-    'GB'= 1000000000
-  )
-  val = as.numeric(val)
-  out = unname(val * unit_modifiers[unit])
-  return(out)
-}
+
