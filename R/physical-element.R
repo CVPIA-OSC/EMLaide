@@ -6,7 +6,7 @@
 #' of "1" is assigned if no input is given. Please refrain from inputting any other value
 #' if possible as it is bad practice to do so. 
 #' @param record_delimiter Character used to delimit records. If no value is
-#' inputted the default value of '\\r\\n' is assigned. 
+#' inputted the default value of '\\n' is assigned. 
 #' @param attribute_orientation The orientation of the attributes. A default of 
 #' "column" will be assigned if no input is given.  
 #' @param field_delimiter Character used to delimit each field. The options 

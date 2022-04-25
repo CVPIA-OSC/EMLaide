@@ -7,7 +7,7 @@
 create_physical(
   file_path,
   number_of_headers = "1",
-  record_delimiter = "\\\\r\\\\n",
+  record_delimiter = "\\\\n",
   attribute_orientation = "column",
   field_delimiter = c(",", " ", "\\\\t", ":"),
   data_url = NULL
@@ -22,7 +22,7 @@ of "1" is assigned if no input is given. Please refrain from inputting any other
 if possible as it is bad practice to do so.}
 
 \item{record_delimiter}{Character used to delimit records. If no value is
-inputted the default value of '\\r\\n' is assigned.}
+inputted the default value of '\\n' is assigned.}
 
 \item{attribute_orientation}{The orientation of the attributes. A default of
 "column" will be assigned if no input is given.}
