@@ -28,7 +28,7 @@
 #' @export
 create_physical <- function(file_path,
                          number_of_headers = "1", 
-                         record_delimiter = "\\r\\n", 
+                         record_delimiter = "\\n", 
                          attribute_orientation = "column", 
                          field_delimiter = c(",", " ", "\\t", ":"),
                          data_url = NULL) {
