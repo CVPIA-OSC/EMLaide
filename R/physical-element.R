@@ -38,35 +38,11 @@ create_physical <- function(file_path,
   object_name <- paste(utils::tail(file_path_breaks, n = 1))
   
   if (!is.null(data_url)){
-    # td = tempdir()
-    # tf = tempfile(tmpdir=td, fileext=".csv")
-    # download.file(data_url, tf)
-    # object_size <- paste(file.size(tf))
-    github_info <- rvest::read_html(data_url) %>% 
-      rvest::html_element("body") %>%
-      rvest::html_nodes(css = ".text-mono") %>%
-      rvest::html_text()
-    
-    line_and_size <- github_info[[3]]
-    line_and_size_split  <-  strsplit(line_and_size, split = '\n')[[1]]
-    size_str <- line_and_size_split[length(line_and_size_split) - 1]
-    size_val <- stringr::str_extract(size_str, pattern = '[0-9\\.]+')
-    size_unit <- stringr::str_extract(size_str, pattern = '[A-Z]+$')
-    
-    to_bytes = function(val, unit){
-      unit_modifiers = c(
-        'B'= 1,
-        'KB'= 1000,
-        'MB'= 1000000,
-        'GB'= 1000000000
-      )
-      val = as.numeric(val)
-      out = unname(val * unit_modifiers[unit])
-      return(out)
-    }
-    
-    object_size <- to_bytes(size_val, size_unit)
-    authentication <- paste(tools::md5sum(data_url))  # TODO figure out 
+    download.file(data_url, destfile = "temp_file.csv", method = "curl")
+    object_size <- file.size("temp_file.csv")
+    authentication <- paste(tools::md5sum("temp_file.csv")) 
+    object_size
+    unlink("temp_file.csv")
 
   } else {
     object_size <- paste(file.size(file_path))
