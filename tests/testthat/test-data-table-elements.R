@@ -257,10 +257,10 @@ test_that('The create_physical function adds the physical elements', {
   expect_equal(create_physical(file_path = "test_data.csv",
                                data_url = "https://github.com/FlowWest/edi.935.1/blob/main/data/Chinook.csv"),
                list(objectName = "test_data.csv", size = list(unit = "bytes", 
-                                                              size = "124145"), 
-                    authentication = list(method = "MD5", authentication = "NA"), 
+                                                              size = "128"), 
+                    authentication = list(method = "MD5", authentication = "087fcb503f9d2800d3d2695e4a371dfe"), 
                     dataFormat = list(textFormat = list(numHeaderLines = "1", 
-                                                        recordDelimiter = "\\r\\n", attributeOrientation = "column", 
+                                                        recordDelimiter = "\\n", attributeOrientation = "column", 
                                                         simpleDelimited = list(fieldDelimiter = ","))), distribution = list(
                                                           online = list(url = list(url = "https://github.com/FlowWest/edi.935.1/blob/main/data/Chinook.csv", 
                                                                                    `function` = "download")))))
@@ -272,8 +272,8 @@ test_that('The create_physical function adds the physical elements', {
                             field_delimiter = ",",
                             data_url = "https://github.com/FlowWest/edi.935.1/blob/main/data/Chinook.csv"),
                list(objectName = "test_data.csv", size = list(unit = "bytes", 
-                                                              size = "128783"), 
-                    authentication = list(method = "MD5", authentication = "NA"), 
+                                                              size = "128"), 
+                    authentication = list(method = "MD5", authentication = "087fcb503f9d2800d3d2695e4a371dfe"), 
                     dataFormat = list(textFormat = list(numHeaderLines = "1", 
                                                         recordDelimiter = "\\r\\n", attributeOrientation = "column", 
                                                         simpleDelimited = list(fieldDelimiter = ","))), distribution = list(
