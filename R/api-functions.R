@@ -119,17 +119,25 @@ upload_edi_package <- function(user_id, password, eml_file_path, environment = "
   base_url <- dplyr::case_when(environment == "staging" ~ "https://pasta-s.lternet.edu/package/",
                                environment == "development" ~ "https://pasta-d.lternet.edu/package/",
                                environment == "production" ~ "https://pasta.lternet.edu/package/")
+  eml_number <- eml_file_path
   response <- httr::POST(
     url = paste0(base_url, "eml/"),
     config = httr::authenticate(paste('uid=', user_id, ",o=EDI", ',dc=edirepository,dc=org'), password),
     body = httr::upload_file(eml_file_path)
   )
+  
   if (response$status_code == "202") {
     Sys.sleep(2)
     transaction_id <- httr::content(response, as = 'text', encoding = 'UTF-8')
     check_error <- httr::GET(url = paste0(base_url, "error/eml/", transaction_id), 
                              config = httr::authenticate(paste('uid=', user_id, ",o=EDI", ',dc=edirepository,dc=org'), password))
-    if (check_error$status_code == "200") {
+    message <- substr(httr::content(check_error, as = 'text', encoding = 'UTF-8'), 1, 64)
+    if (message == "Attempting to insert a data package that already exists in PASTA") {
+      print("Attempting to insert a data package that already exists in PASTA
+            Please reserve a different identifier or update the existing package using update_edi_package()")
+    }
+    else if (check_error$status_code == "200" & 
+             message != "Attempting to insert a data package that already exists in PASTA") { 
       report_df <- generate_report_df(check_error)
       print("EML not valid. Please fix errors in report dataframe or if report dataframe comes back empty please try to evaluate_edi_package().")
       return(report_df)
@@ -198,9 +206,15 @@ update_edi_package <- function(user_id, password, existing_package_identifier, e
     transaction_id <- httr::content(response, as = 'text', encoding = 'UTF-8')
     check_error <- httr::GET(url = paste0(base_url, "error/eml/", transaction_id), 
                              config = httr::authenticate(paste('uid=', user_id, ",o=EDI", ',dc=edirepository,dc=org'), password))
-    if (check_error$status_code == "200") {
+    message <- substr(httr::content(check_error, as = 'text', encoding = 'UTF-8'), 1, 64)
+    if (message == "Attempting to insert a data package that already exists in PASTA") {
+      print("Attempting to insert a data package that already exists in PASTA
+            Please reserve a different identifier or update the existing package using update_edi_package()")
+    }
+    else if (check_error$status_code == "200" & 
+             message != "Attempting to insert a data package that already exists in PASTA") { 
       report_df <- generate_report_df(check_error)
-      print("EML not valid. Please fix errors in report dataframe")
+      print("EML not valid. Please fix errors in report dataframe or if report dataframe comes back empty please try to evaluate_edi_package().")
       return(report_df)
       break
     } else {
