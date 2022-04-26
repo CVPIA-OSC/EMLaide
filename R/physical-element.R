@@ -6,7 +6,7 @@
 #' of "1" is assigned if no input is given. Please refrain from inputting any other value
 #' if possible as it is bad practice to do so. 
 #' @param record_delimiter Character used to delimit records. If no value is
-#' inputted the default value of '\\r\\n' is assigned. 
+#' inputted the default value of '\\n' is assigned. 
 #' @param attribute_orientation The orientation of the attributes. A default of 
 #' "column" will be assigned if no input is given.  
 #' @param field_delimiter Character used to delimit each field. The options 
@@ -28,18 +28,25 @@
 #' @export
 create_physical <- function(file_path,
                          number_of_headers = "1", 
-                         record_delimiter = "\\r\\n", 
+                         record_delimiter = "\\n", 
                          attribute_orientation = "column", 
                          field_delimiter = c(",", " ", "\\t", ":"),
                          data_url = NULL) {
  
   field_delimiter <- match.arg(field_delimiter)
-  
   file_path_breaks <- unlist(strsplit(file_path, "/"))
   object_name <- paste(utils::tail(file_path_breaks, n = 1))
-  object_size <- paste(file.size(file_path))
-  authentication <- paste(tools::md5sum(file_path))
   
+  if (!is.null(data_url)){
+    download.file(data_url, destfile = "temp_file.csv", method = "curl", quiet = TRUE)
+    object_size <- as.character(file.size("temp_file.csv"))
+    authentication <- paste(tools::md5sum("temp_file.csv")) 
+    unlink("temp_file.csv")
+
+  } else {
+    object_size <- paste(file.size(file_path))
+    authentication <- paste(tools::md5sum(file_path))  
+  }
   
   physical <- list(objectName = object_name,
                    size = list(unit = "bytes",
@@ -57,3 +64,5 @@ create_physical <- function(file_path,
 
   return(physical)
 }
+
+
