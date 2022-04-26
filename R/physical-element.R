@@ -38,7 +38,7 @@ create_physical <- function(file_path,
   object_name <- paste(utils::tail(file_path_breaks, n = 1))
   
   if (!is.null(data_url)){
-    download.file(data_url, destfile = "temp_file.csv", method = "curl")
+    download.file(data_url, destfile = "temp_file.csv", method = "curl", quiet = TRUE)
     object_size <- as.character(file.size("temp_file.csv"))
     authentication <- paste(tools::md5sum("temp_file.csv")) 
     unlink("temp_file.csv")
