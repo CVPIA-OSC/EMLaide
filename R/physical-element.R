@@ -41,7 +41,6 @@ create_physical <- function(file_path,
     download.file(data_url, destfile = "temp_file.csv", method = "curl")
     object_size <- as.character(file.size("temp_file.csv"))
     authentication <- paste(tools::md5sum("temp_file.csv")) 
-    object_size
     unlink("temp_file.csv")
 
   } else {
