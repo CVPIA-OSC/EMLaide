@@ -133,8 +133,7 @@ upload_edi_package <- function(user_id, password, eml_file_path, environment = "
                              config = httr::authenticate(paste('uid=', user_id, ",o=EDI", ',dc=edirepository,dc=org'), password))
     message <- substr(httr::content(check_error, as = 'text', encoding = 'UTF-8'), 1, 64)
     if (message == "Attempting to insert a data package that already exists in PASTA") {
-      print("Attempting to insert a data package that already exists in PASTA
-            Please reserve a different identifier or update the existing package using update_edi_package()")
+      print("Attempting to insert a data package that already exists in PASTA. Please reserve a different identifier or update the existing package using update_edi_package()")
     }
     else if (check_error$status_code == "200" & 
              message != "Attempting to insert a data package that already exists in PASTA") { 
@@ -180,24 +179,25 @@ upload_edi_package <- function(user_id, password, eml_file_path, environment = "
 #' @param password EDI data portal user password
 #' @param environment EDI portal environment to run command in. Can be: "production" - environment for publishing to EDI , 
 #' "staging" - environment to test upload and rendering of new environment, "development"
-#' @param existing_package_identifier The current edi number of the package that you are trying to update. 
-#' Do not include the "edi" prefix, just put the number. (ex: For "edi.101.1" put 101.1)
+#' @param existing_package_identifier The current edi number of the package that you are trying to update.(ex: "edi.101.1")
 #' @param eml_file_path The file path to the EML metadata document that you wish to use to update. 
 #' (A web link to the csv must be included in the dataset information in the EML in order for a data package to be evaluated.) 
 #' @return Message describing if your package was successfully updated or not. 
 #' @examples 
 #' \dontrun{update_edi_package(user_id = "samuelwright", 
-#'                             existing_package_identifier = "740.1",
+#'                             existing_package_identifier = "edi.740.1",
 #'                             eml_file_path = "data/edi20.1.xml")}
 #' @export   
 
 update_edi_package <- function(user_id, password, existing_package_identifier, eml_file_path, environment = "production") {
-  id <- stringr::str_replace_all(existing_package_identifier, "\\.", "/")
+  scope <- unlist(strsplit(existing_package_identifier, "\\."))[1]
+  identifier <- unlist(strsplit(existing_package_identifier, "\\."))[2]
+  
   base_url <- dplyr::case_when(environment == "staging" ~ "https://pasta-s.lternet.edu/package/",
                                environment == "development" ~ "https://pasta-d.lternet.edu/package/",
                                environment == "production" ~ "https://pasta.lternet.edu/package/")
   response <- httr::PUT(
-    url = paste0(base_url, "eml/", id),
+    url = paste0(base_url, "eml/", scope, "/", identifier),
     config = httr::authenticate(paste('uid=', user_id, ",o=EDI", ',dc=edirepository,dc=org'), password),
     body = httr::upload_file(eml_file_path)
   )
@@ -207,12 +207,12 @@ update_edi_package <- function(user_id, password, existing_package_identifier, e
     check_error <- httr::GET(url = paste0(base_url, "error/eml/", transaction_id), 
                              config = httr::authenticate(paste('uid=', user_id, ",o=EDI", ',dc=edirepository,dc=org'), password))
     message <- substr(httr::content(check_error, as = 'text', encoding = 'UTF-8'), 1, 64)
-    if (message == "Attempting to insert a data package that already exists in PASTA") {
-      print("Attempting to insert a data package that already exists in PASTA
-            Please reserve a different identifier or update the existing package using update_edi_package()")
+    revision_number <- unlist(strsplit(eml_file_path, "\\."))[3]
+    if (message == paste0("Attempting to update a data package to revision ", "'", revision_number, "' ", "but an equal")) {
+      print("Attempting to insert a version that already exists in PASTA. Please reserve a different identifier or update to the next revision")
     }
     else if (check_error$status_code == "200" & 
-             message != "Attempting to insert a data package that already exists in PASTA") { 
+             message != paste0("Attempting to update a data package to revision ", "'", revision_number, "' ", "but an equal")) { 
       report_df <- generate_report_df(check_error)
       print("EML not valid. Please fix errors in report dataframe or if report dataframe comes back empty please try to evaluate_edi_package().")
       return(report_df)
@@ -227,6 +227,7 @@ update_edi_package <- function(user_id, password, existing_package_identifier, e
         iter <- iter + 1
         if (check_upload$status_code == "200") {
           print("Your data package posted to EDI. Please check EDI portal to confirm")
+          break
         }
         else if(max_iter > iter) {
           print("Request timed out, check that you inputs are all valid, rerun evalutate_edi_package(), and try again")
