@@ -8,7 +8,8 @@ update_edi_package(
   user_id,
   password,
   existing_package_identifier,
-  eml_file_path
+  eml_file_path,
+  environment = "production"
 )
 }
 \arguments{
@@ -17,11 +18,13 @@ EDI \href{https://portal.edirepository.org/nis/login.jsp}{here}}
 
 \item{password}{EDI data portal user password}
 
-\item{existing_package_identifier}{The current edi number of the package that you are trying to update.
-Do not include the "edi" prefix, just put the number. (ex: For "edi.101.1" put 101.1)}
+\item{existing_package_identifier}{The current edi number of the package that you are trying to update.(ex: "edi.101.1")}
 
 \item{eml_file_path}{The file path to the EML metadata document that you wish to use to update.
 (A web link to the csv must be included in the dataset information in the EML in order for a data package to be evaluated.)}
+
+\item{environment}{EDI portal environment to run command in. Can be: "production" - environment for publishing to EDI ,
+"staging" - environment to test upload and rendering of new environment, "development"}
 }
 \value{
 Message describing if your package was successfully updated or not.
@@ -32,6 +35,6 @@ updated an existing package on EDI.
 }
 \examples{
 \dontrun{update_edi_package(user_id = "samuelwright", 
-                            existing_package_identifier = "740.1",
+                            existing_package_identifier = "edi.740.1",
                             eml_file_path = "data/edi20.1.xml")}
 }
