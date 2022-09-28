@@ -19,12 +19,7 @@
 #' \dontrun{
 #' create_vector(file_name = "vectorfiles.tif" ,
 #'               file_description = "A vector File",
-#'               attribute_list =  create_attribute(attribute_name = "Yrs", attribute_label = "Years", 
-#'                                               attribute_definition = "Calendar year of the observation from years 1990 - 2010.", 
-#'                                               storage_type = EMLaide::storage_type$date, 
-#'                                               measurement_scale = EMLaide::measurement_scale$dateTime, 
-#'                                               date_time_format = "YYYY",
-#'                                               date_time_precision = "1", minimum = "1993", maximum = "2003"),
+#'               attribute_info =  "metadata_vectorfiles.xlsx",
 #'               physical = create_physical("vectorfiles.tif"),
 #'               geometry = "pixel")}
 #'
@@ -43,15 +38,22 @@ create_vector <- function(file_name, file_description, attribute_info, physical,
     vector_error_message <- paste("Please supply the", vector_error)
     stop(vector_error_message, call. = FALSE)
   }
-  # TODO add this to template materials and then use xlsx instead of table generated in R
   attribute_table <- readxl::read_xlsx(attribute_info, sheet = "attribute")
+  codes <- readxl::read_xlsx(attribute_info, sheet = "code_definitions")
   attribute_list <- list()
-  attributes_mapping <- function(attribute_name, attribute_definition, storage_type, 
-                                 measurement_scale, domain, type, units, unit_precision, 
-                                 number_type, date_time_format, date_time_precision, minimum, maximum, 
-                                 attribute_label){
-    
-    definition = attribute_definition
+  attribute_names <- unique(codes$attribute_name)
+  
+  attributes_and_codes <- function(attribute_name, attribute_definition, storage_type, 
+                                   measurement_scale, domain, type, units, unit_precision, 
+                                   number_type, date_time_format, date_time_precision, minimum, maximum, 
+                                   attribute_label){
+    if (domain %in% "enumerated") { 
+      definition <- list()
+      current_codes <- codes[codes$attribute_name == attribute_name, ]
+      definition$codeDefinition <- purrr::pmap(current_codes %>% select(-attribute_name), code_helper) 
+    } else {
+      definition = attribute_definition
+    }
     new_attribute <- create_attribute(attribute_name = attribute_name, attribute_definition = attribute_definition,
                                       measurement_scale = measurement_scale, 
                                       domain = domain, definition = definition, type = type, units = units, 
@@ -59,7 +61,7 @@ create_vector <- function(file_name, file_description, attribute_info, physical,
                                       date_time_format = date_time_format, date_time_precision = date_time_precision, 
                                       minimum = minimum, maximum = maximum, attribute_label = attribute_label)
   }
-  attribute_list$attribute <- purrr::pmap(attribute_table, attributes_mapping)
+  attribute_list$attribute <- purrr::pmap(attribute_table, attributes_and_codes)
   
   spatialVector <- list(entityName = file_name, 
                         entityDescription = file_description,
@@ -72,18 +74,12 @@ create_vector <- function(file_name, file_description, attribute_info, physical,
 #' @description Adds the vector elements to a dataset list according to EML standards. 
 #' @param parent_element A list representing the EML project or dataset.
 #' @param vector_metadata A named list or dataframe containing vector metadata elements
-#' (file_name, file_description, attribute_list, physical, spatial_reference, horizontal_accuracy, vertical_accuracy, 
-#' cell_size_x, cell_size_y, number_of_bands, vector_origin, rows, columns, verticals, cell_geometry): see \code{\link{create_vector}} 
+#' (file_name, file_description, attribute_info, physical, geometetry): see \code{\link{create_vector}} 
 #' @return The dataset list or project with vector file information appended.
 #' @examples  
 #' vector_metadata <- list("file_name" = "vectorfiles.tif",
 #'                         "file_description" = "A vector File",
-#'                         "attribute_list" =  create_attribute("attribute_name" = "Yrs", attribute_label = "Years", 
-#'                                                         "attribute_definition" = "Calendar year of the observation from years 1990 - 2010.", 
-#'                                                         "storage_type" = EMLaide::storage_type$date, 
-#'                                                         "measurement_scale" = EMLaide::measurement_scale$dateTime, 
-#'                                                         "date_time_format" = "YYYY",
-#'                                                         "date_time_precision" = "1", minimum = "1993", maximum = "2003"),
+#'                         attribute_info =  "metadata_vectorfiles.xlsx",
 #'                         "physical" = create_physical("vectorfiles.tif"),
 #'                         "geometry" = "pixel")
 #' \dontrun{

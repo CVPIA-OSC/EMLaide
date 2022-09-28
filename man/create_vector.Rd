@@ -4,16 +4,15 @@
 \alias{create_vector}
 \title{Create Vector Element}
 \usage{
-create_vector(file_name, file_description, attribute_list, physical, geometry)
+create_vector(file_name, file_description, attribute_info, physical, geometry)
 }
 \arguments{
 \item{file_name}{The name of your vector file}
 
 \item{file_description}{A short description of your file}
 
-\item{attribute_list}{A list of all the columns on your datatable.
-Use \code{\link{create_attribute}} to generate this attribute list and see the
-documentation for \code{\link{create_attribute}} for more information.}
+\item{attribute_info}{File path to metadata excel that contains attribute
+information for vector data}
 
 \item{physical}{A list of the physical descriptions of your file. Use
 \code{\link{create_physical}} to generate this physical list and see the
@@ -38,12 +37,7 @@ Create Vector Element
 \dontrun{
 create_vector(file_name = "vectorfiles.tif" ,
               file_description = "A vector File",
-              attribute_list =  create_attribute(attribute_name = "Yrs", attribute_label = "Years", 
-                                              attribute_definition = "Calendar year of the observation from years 1990 - 2010.", 
-                                              storage_type = EMLaide::storage_type$date, 
-                                              measurement_scale = EMLaide::measurement_scale$dateTime, 
-                                              date_time_format = "YYYY",
-                                              date_time_precision = "1", minimum = "1993", maximum = "2003"),
+              attribute_info =  "metadata_vectorfiles.xlsx",
               physical = create_physical("vectorfiles.tif"),
               geometry = "pixel")}
 

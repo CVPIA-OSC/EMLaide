@@ -10,8 +10,7 @@ add_vector(parent_element, vector_metadata)
 \item{parent_element}{A list representing the EML project or dataset.}
 
 \item{vector_metadata}{A named list or dataframe containing vector metadata elements
-(file_name, file_description, attribute_list, physical, spatial_reference, horizontal_accuracy, vertical_accuracy,
-cell_size_x, cell_size_y, number_of_bands, vector_origin, rows, columns, verticals, cell_geometry): see \code{\link{create_vector}}}
+(file_name, file_description, attribute_info, physical, geometetry): see \code{\link{create_vector}}}
 }
 \value{
 The dataset list or project with vector file information appended.
@@ -23,12 +22,7 @@ Adds the vector elements to a dataset list according to EML standards.
  
 vector_metadata <- list("file_name" = "vectorfiles.tif",
                         "file_description" = "A vector File",
-                        "attribute_list" =  create_attribute("attribute_name" = "Yrs", attribute_label = "Years", 
-                                                        "attribute_definition" = "Calendar year of the observation from years 1990 - 2010.", 
-                                                        "storage_type" = EMLaide::storage_type$date, 
-                                                        "measurement_scale" = EMLaide::measurement_scale$dateTime, 
-                                                        "date_time_format" = "YYYY",
-                                                        "date_time_precision" = "1", minimum = "1993", maximum = "2003"),
+                        attribute_info =  "metadata_vectorfiles.xlsx",
                         "physical" = create_physical("vectorfiles.tif"),
                         "geometry" = "pixel")
 \dontrun{
