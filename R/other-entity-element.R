@@ -1,7 +1,7 @@
-#' Create Vector Element 
+#' Create Other Entity Element
 #' @title Create Other Entity Element
 #' @description This function creates all the required elements for a \code{otherEntity} section of
-#' an ELM document. 
+#' an ELM document. This should be used if data cannot be added using another more structured format. 
 #' @param parent_element A list to append \code{otherEntity} to 
 #' @param file_name The name of your entity file
 #' @param file_description A short description of your file
@@ -34,8 +34,8 @@ create_other_entity <- function(file_name, file_description, file_type) {
   )
   return(otherEntity)
 }
-#' Add vector File
-#' @description Adds the vector elements to a dataset list according to EML standards. 
+#' Add Other Entity 
+#' @description Adds the other elements to a dataset list according to EML standards. 
 #' @param parent_element A list representing the EML project or dataset.
 #' @param other_entity_metadata A named list or dataframe containing other entity metadata elements
 #' (file_name, file_description, file_type): see \code{\link{create_other_entity}} 
