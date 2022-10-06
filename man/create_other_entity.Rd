@@ -26,3 +26,11 @@ an ELM document. This should be used if data cannot be added using another more 
 \details{
 Create Other Entity Element
 }
+\examples{
+\dontrun{
+create_other_entity(file_name = "other_entity.zip" ,
+                    file_description = "An other entity zip"
+                    )
+}
+
+}
