@@ -21,8 +21,20 @@ create_datatable <- function(filepath,
                               datatable_url = NULL, 
                               dataset_methods = NULL, 
                               additional_info = NULL){
+ 
+  raw_attribute_table <- readxl::read_xlsx(attribute_info, sheet = "attribute") 
+  # Add in code to reorder columns to match columns in datatable 
+  current_metadata_order <- pull(raw_attribute_table, attribute_name)
+  current_data_order <- colnames(readr::read_csv(filepath))
+  if (length(current_metadata_order) != length(current_data_order)) {
+    error_message <- paste("Error with", attribute_info, 
+                           "Incorrect number of attribute names given. Please review the attribute tab of above metadata file to confirm that you have an attribute listed for each column in your datatable")
+    stop(error_message, call. = FALSE)
+  }
+  reorder_index <- match(current_data_order, current_metadata_order) 
   
-  attribute_table <- readxl::read_xlsx(attribute_info, sheet = "attribute")
+  attribute_table <- reorder_attributes_helper(raw_attribute_table, reorder_index)
+  
   codes <- readxl::read_xlsx(attribute_info, sheet = "code_definitions")
   attribute_list <- list()
   attribute_names <- unique(codes$attribute_name)
@@ -60,6 +72,12 @@ create_datatable <- function(filepath,
 #' @keywords internal  
 code_helper <- function(code, definitions) {
   codeDefinition <- list(code = code, definition = definitions)
+}
+
+#' Reorder helper function 
+#' @keywords internal
+reorder_attributes_helper <- function(attribute_metadata_to_reorder, index_of_csv_col_order) {
+  attribute_metadata_to_reorder[index_of_csv_col_order, ]
 }
 
 #' Add Data Table 
