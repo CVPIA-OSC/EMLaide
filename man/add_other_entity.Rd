@@ -10,7 +10,7 @@ add_other_entity(parent_element, other_entity_metadata)
 \item{parent_element}{A list representing the EML project or dataset.}
 
 \item{other_entity_metadata}{A named list or dataframe containing other entity metadata elements
-(file_name, file_description, file_type): see \code{\link{create_other_entity}}}
+(file_name, file_description, file_type, physical): see \code{\link{create_other_entity}}}
 }
 \value{
 The dataset list or project with other entity file information appended.
@@ -22,6 +22,7 @@ Adds the other elements to a dataset list according to EML standards.
  
 other_entity_metadata <- list("file_name" = "other_entity.zip",
                         "file_description" = "An other entity File",
+                        "physical" = add_physical("other_entity.zip")
                         )
 \dontrun{
 dataset <- list() \%>\%

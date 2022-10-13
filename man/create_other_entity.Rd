@@ -4,7 +4,7 @@
 \alias{create_other_entity}
 \title{Create Other Entity Element}
 \usage{
-create_other_entity(file_name, file_description, file_type)
+create_other_entity(file_name, file_description, file_type, physical)
 }
 \arguments{
 \item{file_name}{The name of your entity file}
@@ -12,6 +12,8 @@ create_other_entity(file_name, file_description, file_type)
 \item{file_description}{A short description of your file}
 
 \item{file_type}{Type of file added as another entity}
+
+\item{physical}{Physical describtion of object use \code{physical} to generate}
 
 \item{parent_element}{A list to append \code{otherEntity} to}
 }
@@ -29,7 +31,8 @@ Create Other Entity Element
 \examples{
 \dontrun{
 create_other_entity(file_name = "other_entity.zip" ,
-                    file_description = "An other entity zip"
+                    file_description = "An other entity zip",
+                    "physical" = add_physical("other_entity.zip")
                     )
 }
 
