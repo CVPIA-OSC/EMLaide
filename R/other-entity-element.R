@@ -13,8 +13,9 @@
 #' @examples
 #' \dontrun{
 #' create_other_entity(file_name = "other_entity.zip" ,
-#'                     file_description = "An other entity zip,
-#'                     )}
+#'                     file_description = "An other entity zip"
+#'                     )
+#' }
 #'
 #' @export            
 create_other_entity <- function(file_name, file_description, file_type, physical) {
