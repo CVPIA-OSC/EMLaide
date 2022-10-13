@@ -29,14 +29,14 @@ create_datatable <- function(filepath,
   reorder_index <- match(current_data_order, current_metadata_order) 
   
   if (length(current_metadata_order) != length(current_data_order)) {
-    error_message <- paste("Error with", attribute_info, 
-                           "Incorrect number of attribute names given. Please review the attribute tab of above metadata file to confirm that you have an attribute listed for each column in your datatable")
+    error_message <- paste0("Datatable contains ", length(current_data_order)," columns.", 
+                           "You provided attribute names for ", length(current_metadata_order), ". Please review ", attribute_info)
     stop(error_message, call. = FALSE)
   }
   if (any(is.na(reorder_index))) {
     current_metadata_diff <- paste0(setdiff(current_metadata_order, current_data_order), collapse = ", ")
     current_data_diff <- paste0(setdiff(current_data_order, current_metadata_order), collapse = ", ")
-    error_message <- paste("These columns from the metadata attribute tab:", current_metadata_diff, "do not match these columns in the current datatable:", current_data_diff, "Please review", attribute_info)
+    error_message <- paste0("These columns from the metadata attribute tab: ", current_metadata_diff, " do not match these columns in the current datatable: ", current_data_diff, ". Please review ", attribute_info)
     stop(error_message, call. = FALSE)
   }
   
