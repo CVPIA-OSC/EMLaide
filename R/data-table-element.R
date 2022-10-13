@@ -26,12 +26,19 @@ create_datatable <- function(filepath,
   # Add in code to reorder columns to match columns in datatable 
   current_metadata_order <- pull(raw_attribute_table, attribute_name)
   current_data_order <- colnames(readr::read_csv(filepath))
+  reorder_index <- match(current_data_order, current_metadata_order) 
+  
   if (length(current_metadata_order) != length(current_data_order)) {
     error_message <- paste("Error with", attribute_info, 
                            "Incorrect number of attribute names given. Please review the attribute tab of above metadata file to confirm that you have an attribute listed for each column in your datatable")
     stop(error_message, call. = FALSE)
   }
-  reorder_index <- match(current_data_order, current_metadata_order) 
+  if (any(is.na(reorder_index))) {
+    current_metadata_diff <- paste0(setdiff(current_metadata_order, current_data_order), collapse = ", ")
+    current_data_diff <- paste0(setdiff(current_data_order, current_metadata_order), collapse = ", ")
+    error_message <- paste("These columns from the metadata attribute tab:", current_metadata_diff, "do not match these columns in the current datatable:", current_data_diff, "Please review", attribute_info)
+    stop(error_message, call. = FALSE)
+  }
   
   attribute_table <- reorder_attributes_helper(raw_attribute_table, reorder_index)
   
