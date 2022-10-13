@@ -22,6 +22,7 @@ Adds the other elements to a dataset list according to EML standards.
  
 other_entity_metadata <- list("file_name" = "other_entity.zip",
                         "file_description" = "An other entity File",
+                        "physical" = add_physical("other_entity.zip")
                         )
 \dontrun{
 dataset <- list() \%>\%

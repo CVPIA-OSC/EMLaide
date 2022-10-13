@@ -13,7 +13,8 @@
 #' @examples
 #' \dontrun{
 #' create_other_entity(file_name = "other_entity.zip" ,
-#'                     file_description = "An other entity zip"
+#'                     file_description = "An other entity zip",
+#'                     "physical" = add_physical("other_entity.zip")
 #'                     )
 #' }
 #'
@@ -47,6 +48,7 @@ create_other_entity <- function(file_name, file_description, file_type, physical
 #' @examples  
 #' other_entity_metadata <- list("file_name" = "other_entity.zip",
 #'                         "file_description" = "An other entity File",
+#'                         "physical" = add_physical("other_entity.zip")
 #'                         )
 #' \dontrun{
 #' dataset <- list() %>%

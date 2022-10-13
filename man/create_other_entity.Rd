@@ -31,7 +31,8 @@ Create Other Entity Element
 \examples{
 \dontrun{
 create_other_entity(file_name = "other_entity.zip" ,
-                    file_description = "An other entity zip"
+                    file_description = "An other entity zip",
+                    "physical" = add_physical("other_entity.zip")
                     )
 }
 
