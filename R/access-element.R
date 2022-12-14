@@ -25,15 +25,17 @@
 #'   * 'changePermission' - modifications including access rules, and  
 #'   * 'all' - all of the above.  
 #'   
-#' @param cvpia_access The cvpia_access argument allows for more than one set of permissions
-#' and takes a logical TRUE or FALSE value. With no input the default is TRUE, giving
-#' public "read" access and a CVPIA user group "write" access. If FALSE, the inputs
-#' for allow_permission and allow_principal are used as the single set of permissions.
+#' @param cvpia_access The cvpia_access argument allows for an additional set of permissions 
+#' for a cvpia user group. 
+#' The valid options for cvpia_access are:
+#'   * TRUE - default. Gives public "read" access and a CVPIA user group "write" access.
+#'   * FALSE - Inputs for allow_permission and allow_principal are used as the single set of permissions.
 #'   
 #' @return Returns an list with all the information required for the access section 
 #' of an EML document.
 #' @examples
 #' add_access()
+#' 
 #' add_access(allow_principal = "private",
 #'            allow_permission = "none"
 #'            cvpia_acceess = FALSE)

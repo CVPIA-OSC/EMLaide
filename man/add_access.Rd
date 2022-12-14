@@ -4,7 +4,11 @@
 \alias{add_access}
 \title{Add Access Element}
 \usage{
-add_access(allow_principal = NULL, allow_permission = NULL)
+add_access(
+  allow_principal = NULL,
+  allow_permission = NULL,
+  cvpia_access = TRUE
+)
 }
 \arguments{
 \item{allow_principal}{The principal argument refers to who will have access
@@ -32,6 +36,11 @@ The valid options for permission are:
 \item 'changePermission' - modifications including access rules, and
 \item 'all' - all of the above.
 }}
+
+\item{cvpia_access}{The cvpia_access argument allows for more than one set of permissions
+and takes a logical TRUE or FALSE value. With no input the default is TRUE, giving
+public "read" access and a CVPIA user group "write" access. If FALSE, the inputs
+for allow_permission and allow_principal are used as the single set of permissions.}
 }
 \value{
 Returns an list with all the information required for the access section
@@ -40,11 +49,13 @@ of an EML document.
 \description{
 The add access element creates a list that includes all the required
 elements for the access section of an EML document. Calling add_access() will output the
-default public access permissions. To customize the access level provide values
-for the allow_principal and add_permission arguments.
+default public access permissions and cvpia write access permissions. To customize the access
+level provide values for the allow_principal, add_permission, and cvpia_access arguments.
 }
 \examples{
 add_access()
+
 add_access(allow_principal = "private",
-           allow_permission = "none")
+           allow_permission = "none"
+           cvpia_acceess = FALSE)
 }
