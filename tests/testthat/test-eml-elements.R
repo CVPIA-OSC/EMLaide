@@ -4,10 +4,12 @@ test_that('create_accesss function returns proper default and non default access
   access <- list(scope = "document",
                  order = "allowFirst", 
                  authSystem = "https://pasta.edirepository.org/authentication",
-                 allow = list(principal = "public", permission = "read"))
+                 allow = list(list(principal = "public", permission = "read"),
+                              list(principal = "cvpia", permission = "write")))
   expect_equal(add_access(), access)
   expect_equal(add_access(allow_principal = "private", 
-                          allow_permission = "none"), 
+                          allow_permission = "none",
+                          cvpia_access = FALSE), 
                list(scope = "document",
                     order = "allowFirst", 
                     authSystem = "https://pasta.edirepository.org/authentication",
