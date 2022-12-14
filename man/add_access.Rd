@@ -37,10 +37,13 @@ The valid options for permission are:
 \item 'all' - all of the above.
 }}
 
-\item{cvpia_access}{The cvpia_access argument allows for more than one set of permissions
-and takes a logical TRUE or FALSE value. With no input the default is TRUE, giving
-public "read" access and a CVPIA user group "write" access. If FALSE, the inputs
-for allow_permission and allow_principal are used as the single set of permissions.}
+\item{cvpia_access}{The cvpia_access argument allows for an additional set of permissions
+for a cvpia user group.
+The valid options for cvpia_access are:
+\itemize{
+\item TRUE - default. Gives public "read" access and a CVPIA user group "write" access.
+\item FALSE - Inputs for allow_permission and allow_principal are used as the single set of permissions.
+}}
 }
 \value{
 Returns an list with all the information required for the access section
@@ -56,6 +59,6 @@ level provide values for the allow_principal, add_permission, and cvpia_access a
 add_access()
 
 add_access(allow_principal = "private",
-           allow_permission = "none"
-           cvpia_acceess = FALSE)
+           allow_permission = "none",
+           cvpia_access = FALSE)
 }

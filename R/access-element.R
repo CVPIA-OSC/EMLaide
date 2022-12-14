@@ -37,8 +37,8 @@
 #' add_access()
 #' 
 #' add_access(allow_principal = "private",
-#'            allow_permission = "none"
-#'            cvpia_acceess = FALSE)
+#'            allow_permission = "none",
+#'            cvpia_access = FALSE)
 #' @export
  
 add_access <- function(allow_principal = NULL, allow_permission = NULL, cvpia_access = TRUE){

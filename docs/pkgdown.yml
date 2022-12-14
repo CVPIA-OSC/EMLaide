@@ -1,11 +1,11 @@
-pandoc: '2.12'
-pkgdown: 1.6.1
+pandoc: 2.19.2
+pkgdown: 2.0.6
 pkgdown_sha: ~
 articles:
   create-EML-from-template: create-EML-from-template.html
   template-doc: template-doc.html
-last_built: 2022-02-03T17:16Z
+last_built: 2022-12-14T19:53Z
 urls:
-  reference: https://CVPIA-OSC.github.io/EMLaide//reference
-  article: https://CVPIA-OSC.github.io/EMLaide//articles
+  reference: https://CVPIA-OSC.github.io/EMLaide/reference
+  article: https://CVPIA-OSC.github.io/EMLaide/articles
 
