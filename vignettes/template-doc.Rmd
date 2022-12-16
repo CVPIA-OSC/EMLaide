@@ -65,7 +65,7 @@ The abstract can be at the project level or you can provide an abstract
 for each dataset associated with the project.
 
 
-# Metadata Workbook
+# Metadata Workbooks
 
 
 All other information will be inputted into project-metadata.xlsx (for project-level information, like funding and personnel) and datatable-metadata.xlsx (for each datatable).
