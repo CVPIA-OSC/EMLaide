@@ -26,6 +26,7 @@ reference:
   - create_license
   - create_maintenance
   - create_method
+  - create_other_entity
   - create_person
   - create_physical
   - create_project
@@ -44,6 +45,7 @@ reference:
   - add_license
   - add_maintenance
   - add_method
+  - add_other_entity
   - add_personnel
   - add_project
   - add_pub_date
@@ -62,10 +64,12 @@ reference:
   contents:
   - CVPIA_common_species
   - CVPIA_funders
+  - generate_report_df
   - measurement_scale
   - number_type
   - standard_units
   - storage_type
+  - word_example
 
 navbar:
   structure:
