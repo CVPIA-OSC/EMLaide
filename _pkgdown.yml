@@ -69,6 +69,7 @@ reference:
   - number_type
   - standard_units
   - storage_type
+  - generate_report_df
   - word_example
 
 navbar:

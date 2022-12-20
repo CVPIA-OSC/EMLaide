@@ -1,4 +1,4 @@
-# EMLaide <a href='https://CVPIA-OSC.github.io/EMLaide'><img src='man/figures/hex_logo.png' align ="right" height="200" /></a> 
+# EMLaide <a href='https://CVPIA-OSC.github.io/EMLaide'><img src='man/figures/hex_logo.png' align="right" height="200" style="float:right; height:200px;"/></a> 
 
 ### Installation
 This package can be installed using the following commands: 
