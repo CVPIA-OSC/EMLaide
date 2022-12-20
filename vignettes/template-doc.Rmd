@@ -19,15 +19,15 @@ will find the following assets for recording your projects metadata:
 
 * methods.docx
 * abstract.docx
-* metadata.xlsx
+* project-metadata.xlsx
+* datatable-metadata.xlsx
 
 Additionally, within the metadata template directory is a sub directory
 with completed examples.
 
 If you have any questions regarding metadata, please contact the acting
-CVPIA data managers at [ecain\@flowwest.com](mailto:ecain@flowwest.com),
-[erodriguez\@flowwest.com](mailto:erodriguez@flowwest.com),
-or [sgill\@flowwest.com](mailto:sgill@flowwest.com).
+CVPIA data managers at [ecain\@flowwest.com](mailto:ecain@flowwest.com) or
+[erodriguez\@flowwest.com](mailto:erodriguez@flowwest.com).
 
 
 # Methods
@@ -65,23 +65,25 @@ The abstract can be at the project level or you can provide an abstract
 for each dataset associated with the project.
 
 
-# Metadata Workbook
+# Metadata Workbooks
 
 
-All other information will be inputted into metadata.xlsx. Each section
-below corresponds to a sheet of the xlsx document. Columns that are gray
+All other information will be inputted into project-metadata.xlsx (for project-level information, like funding and personnel) and datatable-metadata.xlsx (for each datatable).
+Sections below are split into those falling under Project Metadata and Data Table Metadata.
+Each section below corresponds to a sheet of the xlsx document. Columns that are gray
 are optional and columns that are blue are conditionally required
 but every other column must be filled out. Some columns
 contain drop down menus of acceptable values. In these columns you must
 input one of the predefined options listed in the dropdown menu.
 
 If multiple data tables are associated with your project, fill out a
-different metadata.xlsx for each data table. If methodology or abstract
-differ between the data tables, you can add subsections with headers
+different datatable-metadata.xlsx for each data table and a single project-metadata.xlsx. 
+If methodology or abstract differ between the data tables, you can add subsections with headers
 labeled for each data table to the abstract and methods documents.
 
+## Project Metadata Sections
 
-## Dataset
+### Dataset
 
 In the dataset sheet you will provide information on the name and type
 of dataset. If the type of your dataset is not tabular or vector contact
@@ -94,9 +96,9 @@ required.
 * **geometry (conditionally required)** - **Required only if the dataset is type vector** EML schema accepts eight geometry values: Point, LineString, LinearRing, Polygon, Multipoint, MultiLineString, MultiPolygon, MultiGeometry.
 
 
-### Spatial Data 
+#### Spatial Data 
 
-#### Vector
+##### Vector
 
 For a dataset that contains vector data please fill out the metadata,
 abstract, and methods docs following the above instructions. Make sure to
@@ -105,7 +107,7 @@ the geometry tab. EML schema accepts eight geometry values: Point,
 LineString, LinearRing, Polygon, Multipoint, MultiLineString,
 MultiPolygon, MultiGeometry.
 
-#### Raster
+##### Raster
 
 For a dataset that contains raster data please contact the acting CVPIA
 data managers at [ecain\@flowwest.com](mailto:ecain@flowwest.com),
@@ -114,7 +116,7 @@ or [sgill\@flowwest.com](mailto:sgill@flowwest.com). They will provide you with 
 to format the metadata for raster data.
 
 
-## Personnel 
+### Personnel 
 
 In the personnel sheet you will provide information on the creator and
 the associated parties to the dataset. The creator is any person or
@@ -131,7 +133,7 @@ but every other column must be filled out.
 * **orcid (optional)** - ORCID ID is a persistent digital identifier for researchers, register at [http://orcid.org/](http://orcid.org/)
 
 
-## Title
+### Title
 
 The title should be fairly descriptive and between 7 and 20 words long.
 The short name must be less than the number of words present in the
@@ -142,7 +144,7 @@ the dataset.
 * **short\_name** - The short name provides a concise name that describes the dataset being documented. For example "vernal-data-1999".
 
 
-## Keyword Set
+### Keyword Set
 
 The keyword set should include a list of keywords and the name of the
 controlled vocabulary registry (keyword thesaurus) they belong to.
@@ -162,7 +164,7 @@ for keywords:
 * [U.S. Board on Geographic Names](https://geonames.usgs.gov/apex/f?p=138:1:5668294677959) - USGS place names dictionary.
 
 
-## License
+### License
 
 
 The intellectual rights information associated with the dataset. For
@@ -201,7 +203,7 @@ license used by Wikipedia, and is recommended for materials that would
 benefit from incorporating content from Wikipedia and similarly licensed
 projects.
 
-## Project
+### Project
 
 Use this sheet to input a project personnel if you wish to specify a
 specific project personnel. If project personnel is left blank we will
@@ -217,7 +219,7 @@ required and columns that are gray are optional.
 * **organization (conditionally required)** - **Required if you want to add a specific project personnel** The name of the organization that the person is employed by
 * **orcid (optional)** - ORCID iD is a persistent digital identifier for researchers, register at  [http://orcid.org/](http://orcid.org/)
 
-## Funding
+### Funding
 
 Funding information of the dataset. Use this sheet to describe the
 funding awarded to the project. We have provided a set of CVPIA default
@@ -247,7 +249,7 @@ but every other column must be filled out.
 *award\_url - https://www.nsf.gov/awardsearch/showAward?AWD\_ID=1656026
 *funding\_description- BLE LTER is supported by the National Science Funder award \#1656026 (2017-08-01 to 2022-07-31).
 
-## Maintenance
+### Maintenance
 
 Maintenance information of the dataset. Use this sheet to describe the
 status of the data collection as well as the frequency at which you plan
@@ -261,7 +263,7 @@ to update the data. All columns required.
 * status: ongoing
 * update\_frequency: monthly
 
-## Coverage
+### Coverage
 
 Geographical and temporal coverage associated with the dataset, all
 columns are required. Geographic and temporal will allow users to
@@ -285,7 +287,7 @@ quickly search for your dataset based on geographic location and time.
 * begin\_date: 1980-01-01
 * end\_date: 2010-12-31
 
-## Taxonomic Coverage
+### Taxonomic Coverage
 
 Taxonomic coverage for the dataset, this sheet is optional. We have
 provided a set of CVPIA common taxa: \"chinook\", \"delta\_smelt\",
@@ -310,7 +312,9 @@ required and only need to be filled out if you do not select a **CVPIA\_common\_
 * **common\_name** - Lion
 * **taxon\_id** - 183803
 
-## Attribute
+## Data Table Sections
+
+### Attribute
 
 
 For each column in your dataset, you need to describe in detail the type
@@ -342,26 +346,26 @@ required depending on the type of measurement scale:
 The 'attributes' tab is the most in the metadata standards weeds, we can
 provide technical assistance with completing this tab.
 
-###  Measurement Scales
+####  Measurement Scales
 
 There are five types of measurement scales to choose from. Based on the selected measurement scale, additional columns must be filled out to produce a valid EML document. Below each measurement scale is defined and guidance on the additional required columns are provided.
 
 
-#### Nominal
+##### Nominal
 
 Used to define categorical scale attributes. Nominal is used when numbers have only been assigned to a variable for the purpose of categorizing the variable. An example of a nominal scale is assigning the number 1 for male and 2 for female.
 
 * **domain** - Please list either \"text\" or \"enumerated\". A nominal attribute with domain "enumerated" is one in which the variable types can be encoded with integers. For example 1 = "cloudy", 2 = "sunny". A "text" type usually denotes a name or an id for example a site name or number.
   + if "enumerated" you need to provide a definition for each code in the **code\_definitions** (see [Code Definitions](#code-definitions) section) sheet.
 
-#### Ordinal
+##### Ordinal
 
 Used to define ordered scale attributes. Ordinal is used when the categories have a logical or ordered relationship to each other. These types of scale allow one to distinguish the order of values, but not the magnitude of the difference between values. An example of an ordinal scale is a categorical survey where you rank a variable 1=good, 2=fair, 3=poor.
 
 * **domain** - Please list either \"text\" or \"enumerated\". A nominal attribute with domain "enumerated" is one in which the variable types can be encoded with integers. For example 1 = "cloudy", 2 = "sunny". A "text" type usually denotes a name or an id for example a site name or number.
   + if "enumerated" you need to provide a definition for each code in the **code\_definitions** (see [Code Definitions](#code-definitions) section) sheet.
 
-#### Interval
+##### Interval
 
 Used to define interval scale attributes. Intervals define data which consist of equidistant points on a scale. For example temperature data, mark grading, IQ scale, etc. Intervals can be negative while ratios cannot
 
@@ -373,7 +377,7 @@ Used to define interval scale attributes. Intervals define data which consist of
 * **minimum** - Theoretical or allowable minimum value. Values can be larger than or equal to this number.
 * **maximum** - Theoretical or allowable maximum value. Values can be less than or equal to this number.
 
-#### Ratio
+##### Ratio
 
 Used to define ratio scale attributes. Ratios define data which consists not only of equidistant points but also has a meaningful zero point, which allows the ratio to have meaning. For example measurement heights, flow rates, weight, length, etc.
 
@@ -385,7 +389,7 @@ Used to define ratio scale attributes. Ratios define data which consists not onl
 * **minimum** - Theoretical or allowable minimum value. Values can be larger than or equal to this number.
 * **maximum** - Theoretical or allowable maximum value. Values can be less than or equal to this number.
 
-#### Datetime
+##### Datetime
 
 Used to define date and time attributes. DateTime is used when the values fall on the Gregorian calendar system. DateTime values are special because they have properties of interval values (most of the time it is legitimate to treat them as interval values by converting them to a duration from a fixed point) but they sometimes only behave as ordinals (because the calendar is not predetermined, for some dateTime values one can only find out the order of the points and not the magnitude of the duration between those points). The most encompassing format is: YYYY-MM-DDThh:mm:ss.
 
@@ -395,7 +399,7 @@ Used to define date and time attributes. DateTime is used when the values fall o
 * **minimum** - minimum allowable date/time
 * **maximum** - maximum allowable date/time or "ongoing"
 
-## Code Definitions
+### Code Definitions
 
 The code definitions sheet is where you will define the "enumerated"
 variable types specified in the attributes sheet. This is simply where

@@ -74,7 +74,7 @@
 
 <dt>other_entity_metadata</dt>
 <dd><p>A named list or dataframe containing other entity metadata elements
-(file_name, file_description, file_type): see <code><a href="create_other_entity.html">create_other_entity</a></code></p></dd>
+(file_name, file_description, file_type, physical): see <code><a href="create_other_entity.html">create_other_entity</a></code></p></dd>
 
 </dl></div>
     <div id="value">
@@ -89,8 +89,9 @@
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span> </span></span>
 <span class="r-in"><span><span class="va">other_entity_metadata</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span><span class="st">"file_name"</span> <span class="op">=</span> <span class="st">"other_entity.zip"</span>,</span></span>
 <span class="r-in"><span>                        <span class="st">"file_description"</span> <span class="op">=</span> <span class="st">"An other entity File"</span>,</span></span>
+<span class="r-in"><span>                        <span class="st">"physical"</span> <span class="op">=</span> <span class="fu">add_physical</span><span class="op">(</span><span class="st">"other_entity.zip"</span><span class="op">)</span></span></span>
 <span class="r-in"><span>                        <span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in list(file_name = "other_entity.zip", file_description = "An other entity File",     ):</span> argument 3 is empty</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in add_physical("other_entity.zip"):</span> could not find function "add_physical"</span>
 <span class="r-in"><span><span class="kw">if</span> <span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span> <span class="op">{</span></span></span>
 <span class="r-in"><span><span class="va">dataset</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span><span class="op">)</span> <span class="op"><a href="pipe.html">%&gt;%</a></span></span></span>
 <span class="r-in"><span>    <span class="fu">add_other_entity</span><span class="op">(</span><span class="va">other_entity_metadata</span><span class="op">)</span></span></span>

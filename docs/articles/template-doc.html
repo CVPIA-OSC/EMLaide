@@ -103,12 +103,13 @@ find the following assets for recording your projects metadata:</p>
 <ul>
 <li>methods.docx</li>
 <li>abstract.docx</li>
-<li>metadata.xlsx</li>
+<li>project-metadata.xlsx</li>
+<li>datatable-metadata.xlsx</li>
 </ul>
 <p>Additionally, within the metadata template directory is a sub
 directory with completed examples.</p>
 <p>If you have any questions regarding metadata, please contact the
-acting CVPIA data managers at <a href="mailto:ecain@flowwest.com">ecain@flowwest.com</a>, <a href="mailto:erodriguez@flowwest.com">erodriguez@flowwest.com</a>, or <a href="mailto:sgill@flowwest.com">sgill@flowwest.com</a>.</p>
+acting CVPIA data managers at <a href="mailto:ecain@flowwest.com">ecain@flowwest.com</a> or <a href="mailto:erodriguez@flowwest.com">erodriguez@flowwest.com</a>.</p>
 <div class="section level2">
 <h2 id="methods">Methods<a class="anchor" aria-label="anchor" href="#methods"></a>
 </h2>
@@ -144,21 +145,28 @@ that seem most relevant for searches.</p>
 abstract for each dataset associated with the project.</p>
 </div>
 <div class="section level2">
-<h2 id="metadata-workbook">Metadata Workbook<a class="anchor" aria-label="anchor" href="#metadata-workbook"></a>
+<h2 id="metadata-workbooks">Metadata Workbooks<a class="anchor" aria-label="anchor" href="#metadata-workbooks"></a>
 </h2>
-<p>All other information will be inputted into metadata.xlsx. Each
+<p>All other information will be inputted into project-metadata.xlsx
+(for project-level information, like funding and personnel) and
+datatable-metadata.xlsx (for each datatable). Sections below are split
+into those falling under Project Metadata and Data Table Metadata. Each
 section below corresponds to a sheet of the xlsx document. Columns that
 are gray are optional and columns that are blue are conditionally
 required but every other column must be filled out. Some columns contain
 drop down menus of acceptable values. In these columns you must input
 one of the predefined options listed in the dropdown menu.</p>
 <p>If multiple data tables are associated with your project, fill out a
-different metadata.xlsx for each data table. If methodology or abstract
-differ between the data tables, you can add subsections with headers
-labeled for each data table to the abstract and methods documents.</p>
+different datatable-metadata.xlsx for each data table and a single
+project-metadata.xlsx. If methodology or abstract differ between the
+data tables, you can add subsections with headers labeled for each data
+table to the abstract and methods documents.</p>
 <div class="section level3">
-<h3 id="dataset">Dataset<a class="anchor" aria-label="anchor" href="#dataset"></a>
+<h3 id="project-metadata-sections">Project Metadata Sections<a class="anchor" aria-label="anchor" href="#project-metadata-sections"></a>
 </h3>
+<div class="section level4">
+<h4 id="dataset">Dataset<a class="anchor" aria-label="anchor" href="#dataset"></a>
+</h4>
 <p>In the dataset sheet you will provide information on the name and
 type of dataset. If the type of your dataset is not tabular or vector
 contact the acting CVPIA data managers and we will help you prepare the
@@ -175,12 +183,12 @@ are conditionally required.</p>
 accepts eight geometry values: Point, LineString, LinearRing, Polygon,
 Multipoint, MultiLineString, MultiPolygon, MultiGeometry.</li>
 </ul>
-<div class="section level4">
-<h4 id="spatial-data">Spatial Data<a class="anchor" aria-label="anchor" href="#spatial-data"></a>
-</h4>
 <div class="section level5">
-<h5 id="vector">Vector<a class="anchor" aria-label="anchor" href="#vector"></a>
+<h5 id="spatial-data">Spatial Data<a class="anchor" aria-label="anchor" href="#spatial-data"></a>
 </h5>
+<div class="section level6">
+<h6 id="vector">Vector<a class="anchor" aria-label="anchor" href="#vector"></a>
+</h6>
 <p>For a dataset that contains vector data please fill out the metadata,
 abstract, and methods docs following the above instructions. Make sure
 to indicate type as vector in the dataset tab and to include a geometry
@@ -188,9 +196,9 @@ in the geometry tab. EML schema accepts eight geometry values: Point,
 LineString, LinearRing, Polygon, Multipoint, MultiLineString,
 MultiPolygon, MultiGeometry.</p>
 </div>
-<div class="section level5">
-<h5 id="raster">Raster<a class="anchor" aria-label="anchor" href="#raster"></a>
-</h5>
+<div class="section level6">
+<h6 id="raster">Raster<a class="anchor" aria-label="anchor" href="#raster"></a>
+</h6>
 <p>For a dataset that contains raster data please contact the acting
 CVPIA data managers at <a href="mailto:ecain@flowwest.com">ecain@flowwest.com</a>, <a href="mailto:erodriguez@flowwest.com">erodriguez@flowwest.com</a>, or <a href="mailto:sgill@flowwest.com">sgill@flowwest.com</a>. They will
 provide you with more information on how to format the metadata for
@@ -198,9 +206,9 @@ raster data.</p>
 </div>
 </div>
 </div>
-<div class="section level3">
-<h3 id="personnel">Personnel<a class="anchor" aria-label="anchor" href="#personnel"></a>
-</h3>
+<div class="section level4">
+<h4 id="personnel">Personnel<a class="anchor" aria-label="anchor" href="#personnel"></a>
+</h4>
 <p>In the personnel sheet you will provide information on the creator
 and the associated parties to the dataset. The creator is any person or
 organization who is responsible for the creation of the data, the
@@ -227,9 +235,9 @@ identifier for researchers, register at <a href="http://orcid.org/" class="exter
 </li>
 </ul>
 </div>
-<div class="section level3">
-<h3 id="title">Title<a class="anchor" aria-label="anchor" href="#title"></a>
-</h3>
+<div class="section level4">
+<h4 id="title">Title<a class="anchor" aria-label="anchor" href="#title"></a>
+</h4>
 <p>The title should be fairly descriptive and between 7 and 20 words
 long. The short name must be less than the number of words present in
 the title and is your opportunity to give viewers a more accessible name
@@ -246,9 +254,9 @@ that describes the dataset being documented. For example
 “vernal-data-1999”.</li>
 </ul>
 </div>
-<div class="section level3">
-<h3 id="keyword-set">Keyword Set<a class="anchor" aria-label="anchor" href="#keyword-set"></a>
-</h3>
+<div class="section level4">
+<h4 id="keyword-set">Keyword Set<a class="anchor" aria-label="anchor" href="#keyword-set"></a>
+</h4>
 <p>The keyword set should include a list of keywords and the name of the
 controlled vocabulary registry (keyword thesaurus) they belong to.
 Keywords help users identify your dataset and the use of controlled
@@ -282,9 +290,9 @@ nutrition, agriculture, fisheries, forestry, environment.</li>
 on Geographic Names</a> - USGS place names dictionary.</li>
 </ul>
 </div>
-<div class="section level3">
-<h3 id="license">License<a class="anchor" aria-label="anchor" href="#license"></a>
-</h3>
+<div class="section level4">
+<h4 id="license">License<a class="anchor" aria-label="anchor" href="#license"></a>
+</h4>
 <p>The intellectual rights information associated with the dataset. For
 projects funded under CVPIA authority, we have preselected two licenses,
 CC0 and CC BY. You can select either of these by adding “CC0” or “CCBY”
@@ -334,9 +342,9 @@ benefit from incorporating content from Wikipedia and similarly licensed
 projects.</li>
 </ul>
 </div>
-<div class="section level3">
-<h3 id="project">Project<a class="anchor" aria-label="anchor" href="#project"></a>
-</h3>
+<div class="section level4">
+<h4 id="project">Project<a class="anchor" aria-label="anchor" href="#project"></a>
+</h4>
 <p>Use this sheet to input a project personnel if you wish to specify a
 specific project personnel. If project personnel is left blank we will
 automatically assign project personnel to the prior defined personnel
@@ -371,9 +379,9 @@ identifier for researchers, register at <a href="http://orcid.org/" class="exter
 </li>
 </ul>
 </div>
-<div class="section level3">
-<h3 id="funding">Funding<a class="anchor" aria-label="anchor" href="#funding"></a>
-</h3>
+<div class="section level4">
+<h4 id="funding">Funding<a class="anchor" aria-label="anchor" href="#funding"></a>
+</h4>
 <p>Funding information of the dataset. Use this sheet to describe the
 funding awarded to the project. We have provided a set of CVPIA default
 funders: "USBR", "CDFW", "CDWR". If you input one of the previous listed
@@ -420,9 +428,9 @@ Ecosystem in Transition <em>award_url - <a href="https://www.nsf.gov/awardsearch
 Funder award #1656026 (2017-08-01 to 2022-07-31).</li>
 </ul>
 </div>
-<div class="section level3">
-<h3 id="maintenance">Maintenance<a class="anchor" aria-label="anchor" href="#maintenance"></a>
-</h3>
+<div class="section level4">
+<h4 id="maintenance">Maintenance<a class="anchor" aria-label="anchor" href="#maintenance"></a>
+</h4>
 <p>Maintenance information of the dataset. Use this sheet to describe
 the status of the data collection as well as the frequency at which you
 plan to update the data. All columns required.</p>
@@ -442,9 +450,9 @@ frequencies: daily, weekly, monthly, annual</li>
 <li>update_frequency: monthly</li>
 </ul>
 </div>
-<div class="section level3">
-<h3 id="coverage">Coverage<a class="anchor" aria-label="anchor" href="#coverage"></a>
-</h3>
+<div class="section level4">
+<h4 id="coverage">Coverage<a class="anchor" aria-label="anchor" href="#coverage"></a>
+</h4>
 <p>Geographical and temporal coverage associated with the dataset, all
 columns are required. Geographic and temporal will allow users to
 quickly search for your dataset based on geographic location and
@@ -486,9 +494,9 @@ Alaska, USA</li>
 <li>end_date: 2010-12-31</li>
 </ul>
 </div>
-<div class="section level3">
-<h3 id="taxonomic-coverage">Taxonomic Coverage<a class="anchor" aria-label="anchor" href="#taxonomic-coverage"></a>
-</h3>
+<div class="section level4">
+<h4 id="taxonomic-coverage">Taxonomic Coverage<a class="anchor" aria-label="anchor" href="#taxonomic-coverage"></a>
+</h4>
 <p>Taxonomic coverage for the dataset, this sheet is optional. We have
 provided a set of CVPIA common taxa: "chinook", "delta_smelt",
 "white_sturgeon", "green_sturgeon", or "steelhead". If you select one of
@@ -522,9 +530,13 @@ select a <strong>CVPIA_common_species</strong>.</p>
 <strong>taxon_id</strong> - 183803</li>
 </ul>
 </div>
+</div>
 <div class="section level3">
-<h3 id="attribute">Attribute<a class="anchor" aria-label="anchor" href="#attribute"></a>
+<h3 id="data-table-sections">Data Table Sections<a class="anchor" aria-label="anchor" href="#data-table-sections"></a>
 </h3>
+<div class="section level4">
+<h4 id="attribute">Attribute<a class="anchor" aria-label="anchor" href="#attribute"></a>
+</h4>
 <p>For each column in your dataset, you need to describe in detail the
 type of information encoded in that column. In EML, columns are
 “attributes”. The type of information needed for an attribute varies
@@ -599,16 +611,16 @@ values are appropriate for each measurement_scale.</li>
 </ul>
 <p>The ‘attributes’ tab is the most in the metadata standards weeds, we
 can provide technical assistance with completing this tab.</p>
-<div class="section level4">
-<h4 id="measurement-scales">Measurement Scales<a class="anchor" aria-label="anchor" href="#measurement-scales"></a>
-</h4>
+<div class="section level5">
+<h5 id="measurement-scales">Measurement Scales<a class="anchor" aria-label="anchor" href="#measurement-scales"></a>
+</h5>
 <p>There are five types of measurement scales to choose from. Based on
 the selected measurement scale, additional columns must be filled out to
 produce a valid EML document. Below each measurement scale is defined
 and guidance on the additional required columns are provided.</p>
-<div class="section level5">
-<h5 id="nominal">Nominal<a class="anchor" aria-label="anchor" href="#nominal"></a>
-</h5>
+<div class="section level6">
+<h6 id="nominal">Nominal<a class="anchor" aria-label="anchor" href="#nominal"></a>
+</h6>
 <p>Used to define categorical scale attributes. Nominal is used when
 numbers have only been assigned to a variable for the purpose of
 categorizing the variable. An example of a nominal scale is assigning
@@ -627,9 +639,9 @@ the <strong>code_definitions</strong> (see <a href="#code-definitions">Code Defi
 </li>
 </ul>
 </div>
-<div class="section level5">
-<h5 id="ordinal">Ordinal<a class="anchor" aria-label="anchor" href="#ordinal"></a>
-</h5>
+<div class="section level6">
+<h6 id="ordinal">Ordinal<a class="anchor" aria-label="anchor" href="#ordinal"></a>
+</h6>
 <p>Used to define ordered scale attributes. Ordinal is used when the
 categories have a logical or ordered relationship to each other. These
 types of scale allow one to distinguish the order of values, but not the
@@ -650,9 +662,9 @@ the <strong>code_definitions</strong> (see <a href="#code-definitions">Code Defi
 </li>
 </ul>
 </div>
-<div class="section level5">
-<h5 id="interval">Interval<a class="anchor" aria-label="anchor" href="#interval"></a>
-</h5>
+<div class="section level6">
+<h6 id="interval">Interval<a class="anchor" aria-label="anchor" href="#interval"></a>
+</h6>
 <p>Used to define interval scale attributes. Intervals define data which
 consist of equidistant points on a scale. For example temperature data,
 mark grading, IQ scale, etc. Intervals can be negative while ratios
@@ -682,9 +694,9 @@ Values can be larger than or equal to this number.</li>
 Values can be less than or equal to this number.</li>
 </ul>
 </div>
-<div class="section level5">
-<h5 id="ratio">Ratio<a class="anchor" aria-label="anchor" href="#ratio"></a>
-</h5>
+<div class="section level6">
+<h6 id="ratio">Ratio<a class="anchor" aria-label="anchor" href="#ratio"></a>
+</h6>
 <p>Used to define ratio scale attributes. Ratios define data which
 consists not only of equidistant points but also has a meaningful zero
 point, which allows the ratio to have meaning. For example measurement
@@ -714,9 +726,9 @@ Values can be larger than or equal to this number.</li>
 Values can be less than or equal to this number.</li>
 </ul>
 </div>
-<div class="section level5">
-<h5 id="datetime">Datetime<a class="anchor" aria-label="anchor" href="#datetime"></a>
-</h5>
+<div class="section level6">
+<h6 id="datetime">Datetime<a class="anchor" aria-label="anchor" href="#datetime"></a>
+</h6>
 <p>Used to define date and time attributes. DateTime is used when the
 values fall on the Gregorian calendar system. DateTime values are
 special because they have properties of interval values (most of the
@@ -747,9 +759,9 @@ is being measured</li>
 </div>
 </div>
 </div>
-<div class="section level3">
-<h3 id="code-definitions">Code Definitions<a class="anchor" aria-label="anchor" href="#code-definitions"></a>
-</h3>
+<div class="section level4">
+<h4 id="code-definitions">Code Definitions<a class="anchor" aria-label="anchor" href="#code-definitions"></a>
+</h4>
 <p>The code definitions sheet is where you will define the “enumerated”
 variable types specified in the attributes sheet. This is simply where
 you will list out all the types for an enumerated variable and each of
@@ -782,6 +794,7 @@ are “enumerated”.</p>
 </tr>
 </tbody>
 </table>
+</div>
 </div>
 </div>
   </div>

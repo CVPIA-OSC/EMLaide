@@ -65,7 +65,7 @@ an ELM document. This should be used if data cannot be added using another more 
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">create_other_entity</span><span class="op">(</span><span class="va">file_name</span>, <span class="va">file_description</span>, <span class="va">file_type</span><span class="op">)</span></span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">create_other_entity</span><span class="op">(</span><span class="va">file_name</span>, <span class="va">file_description</span>, <span class="va">file_type</span>, <span class="va">physical</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
@@ -80,6 +80,10 @@ an ELM document. This should be used if data cannot be added using another more 
 
 <dt>file_type</dt>
 <dd><p>Type of file added as another entity</p></dd>
+
+
+<dt>physical</dt>
+<dd><p>Physical describtion of object use <code>physical</code> to generate</p></dd>
 
 
 <dt>parent_element</dt>
@@ -102,7 +106,8 @@ section of an EML document.</p>
     <h2>Examples</h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="kw">if</span> <span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span> <span class="op">{</span></span></span>
 <span class="r-in"><span><span class="fu">create_other_entity</span><span class="op">(</span>file_name <span class="op">=</span> <span class="st">"other_entity.zip"</span> ,</span></span>
-<span class="r-in"><span>                    file_description <span class="op">=</span> <span class="st">"An other entity zip"</span></span></span>
+<span class="r-in"><span>                    file_description <span class="op">=</span> <span class="st">"An other entity zip"</span>,</span></span>
+<span class="r-in"><span>                    <span class="st">"physical"</span> <span class="op">=</span> <span class="fu">add_physical</span><span class="op">(</span><span class="st">"other_entity.zip"</span><span class="op">)</span></span></span>
 <span class="r-in"><span>                    <span class="op">)</span></span></span>
 <span class="r-in"><span><span class="op">}</span></span></span>
 <span class="r-in"><span></span></span>

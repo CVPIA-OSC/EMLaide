@@ -4,18 +4,6 @@
     <loc>https://CVPIA-OSC.github.io/EMLaide/404.html</loc>
   </url>
   <url>
-    <loc>https://CVPIA-OSC.github.io/EMLaide/LICENSE.html</loc>
-  </url>
-  <url>
-    <loc>https://CVPIA-OSC.github.io/EMLaide/articles/Dataset-Element.html</loc>
-  </url>
-  <url>
-    <loc>https://CVPIA-OSC.github.io/EMLaide/articles/EML-multiple-datasets.html</loc>
-  </url>
-  <url>
-    <loc>https://CVPIA-OSC.github.io/EMLaide/articles/Inital-Metadata-Information.html</loc>
-  </url>
-  <url>
     <loc>https://CVPIA-OSC.github.io/EMLaide/articles/create-EML-from-template.html</loc>
   </url>
   <url>
@@ -28,7 +16,16 @@
     <loc>https://CVPIA-OSC.github.io/EMLaide/articles/custom-units.html</loc>
   </url>
   <url>
+    <loc>https://CVPIA-OSC.github.io/EMLaide/articles/Dataset-Element.html</loc>
+  </url>
+  <url>
+    <loc>https://CVPIA-OSC.github.io/EMLaide/articles/EML-multiple-datasets.html</loc>
+  </url>
+  <url>
     <loc>https://CVPIA-OSC.github.io/EMLaide/articles/index.html</loc>
+  </url>
+  <url>
+    <loc>https://CVPIA-OSC.github.io/EMLaide/articles/Inital-Metadata-Information.html</loc>
   </url>
   <url>
     <loc>https://CVPIA-OSC.github.io/EMLaide/articles/new-example.html</loc>
@@ -37,28 +34,28 @@
     <loc>https://CVPIA-OSC.github.io/EMLaide/articles/old-vignette.html</loc>
   </url>
   <url>
-    <loc>https://CVPIA-OSC.github.io/EMLaide/articles/original-vignettes/Dataset-Element.html</loc>
-  </url>
-  <url>
-    <loc>https://CVPIA-OSC.github.io/EMLaide/articles/original-vignettes/Inital-Metadata-Information.html</loc>
-  </url>
-  <url>
     <loc>https://CVPIA-OSC.github.io/EMLaide/articles/original-vignettes/creating-EML.html</loc>
   </url>
   <url>
     <loc>https://CVPIA-OSC.github.io/EMLaide/articles/original-vignettes/custom-units.html</loc>
   </url>
   <url>
-    <loc>https://CVPIA-OSC.github.io/EMLaide/articles/origional-vignettes/Dataset-Element.html</loc>
+    <loc>https://CVPIA-OSC.github.io/EMLaide/articles/original-vignettes/Dataset-Element.html</loc>
   </url>
   <url>
-    <loc>https://CVPIA-OSC.github.io/EMLaide/articles/origional-vignettes/Inital-Metadata-Information.html</loc>
+    <loc>https://CVPIA-OSC.github.io/EMLaide/articles/original-vignettes/Inital-Metadata-Information.html</loc>
   </url>
   <url>
     <loc>https://CVPIA-OSC.github.io/EMLaide/articles/origional-vignettes/creating-EML.html</loc>
   </url>
   <url>
     <loc>https://CVPIA-OSC.github.io/EMLaide/articles/origional-vignettes/custom-units.html</loc>
+  </url>
+  <url>
+    <loc>https://CVPIA-OSC.github.io/EMLaide/articles/origional-vignettes/Dataset-Element.html</loc>
+  </url>
+  <url>
+    <loc>https://CVPIA-OSC.github.io/EMLaide/articles/origional-vignettes/Inital-Metadata-Information.html</loc>
   </url>
   <url>
     <loc>https://CVPIA-OSC.github.io/EMLaide/articles/template-doc.html</loc>
@@ -70,10 +67,7 @@
     <loc>https://CVPIA-OSC.github.io/EMLaide/index.html</loc>
   </url>
   <url>
-    <loc>https://CVPIA-OSC.github.io/EMLaide/reference/CVPIA_common_species.html</loc>
-  </url>
-  <url>
-    <loc>https://CVPIA-OSC.github.io/EMLaide/reference/CVPIA_funders.html</loc>
+    <loc>https://CVPIA-OSC.github.io/EMLaide/LICENSE.html</loc>
   </url>
   <url>
     <loc>https://CVPIA-OSC.github.io/EMLaide/reference/add_abstract.html</loc>
@@ -88,10 +82,10 @@
     <loc>https://CVPIA-OSC.github.io/EMLaide/reference/add_coverage.html</loc>
   </url>
   <url>
-    <loc>https://CVPIA-OSC.github.io/EMLaide/reference/add_data_table.html</loc>
+    <loc>https://CVPIA-OSC.github.io/EMLaide/reference/add_datatable.html</loc>
   </url>
   <url>
-    <loc>https://CVPIA-OSC.github.io/EMLaide/reference/add_datatable.html</loc>
+    <loc>https://CVPIA-OSC.github.io/EMLaide/reference/add_data_table.html</loc>
   </url>
   <url>
     <loc>https://CVPIA-OSC.github.io/EMLaide/reference/add_datetime.html</loc>
@@ -214,6 +208,12 @@
     <loc>https://CVPIA-OSC.github.io/EMLaide/reference/create_title.html</loc>
   </url>
   <url>
+    <loc>https://CVPIA-OSC.github.io/EMLaide/reference/CVPIA_common_species.html</loc>
+  </url>
+  <url>
+    <loc>https://CVPIA-OSC.github.io/EMLaide/reference/CVPIA_funders.html</loc>
+  </url>
+  <url>
     <loc>https://CVPIA-OSC.github.io/EMLaide/reference/evaluate_edi_package.html</loc>
   </url>
   <url>
@@ -230,6 +230,9 @@
   </url>
   <url>
     <loc>https://CVPIA-OSC.github.io/EMLaide/reference/pipe.html</loc>
+  </url>
+  <url>
+    <loc>https://CVPIA-OSC.github.io/EMLaide/reference/reorder_attributes_helper.html</loc>
   </url>
   <url>
     <loc>https://CVPIA-OSC.github.io/EMLaide/reference/reserve_edi_id.html</loc>
