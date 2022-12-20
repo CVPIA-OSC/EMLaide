@@ -35,6 +35,8 @@
 <![endif]-->
 </head>
 <body data-spy="scroll" data-target="#toc">
+    
+
     <div class="container template-home">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -47,7 +49,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">EMLaide</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.1</span>
       </span>
     </div>
 
@@ -57,7 +59,7 @@
   <a href="reference/index.html">Reference</a>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Articles
      
     <span class="caret"></span>
@@ -74,7 +76,7 @@
       </ul>
 <ul class="nav navbar-nav navbar-right">
 <li>
-  <a href="https://github.com/CVPIA-OSC/EMLaide">
+  <a href="https://github.com/CVPIA-OSC/EMLaide" class="external-link">
     <span class="fab fa-github fa-lg"></span>
      
   </a>
@@ -91,32 +93,32 @@
 
       </header><div class="row">
   <div class="contents col-md-9">
-<div id="emlaide-" class="section level1">
-<div class="page-header"><h1 class="hasAnchor">
-<a href="#emlaide-" class="anchor"></a>EMLaide <a href="https://CVPIA-OSC.github.io/EMLaide"><img src="reference/figures/hex_logo.png" align="right" height="200"></a>
+<div class="section level1">
+<div class="page-header"><h1 id="emlaide-">EMLaide <a href="https://CVPIA-OSC.github.io/EMLaide"><img src="reference/figures/hex_logo.png" align="right" height="200"></a>
+<a class="anchor" aria-label="anchor" href="#emlaide-"></a>
 </h1></div>
-<div id="installation" class="section level3">
-<h3 class="hasAnchor">
-<a href="#installation" class="anchor"></a>Installation</h3>
+<div class="section level3">
+<h3 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
+</h3>
 <p>This package can be installed using the following commands:</p>
-<pre class="{r}"><code># install.packages("remotes")
-remotes::install_github("CVPIA-OSC/EMLaide")</code></pre>
+<pre class="{r}"><code><span><span class="co"># install.packages("remotes")</span></span>
+<span><span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"CVPIA-OSC/EMLaide"</span><span class="op">)</span></span></code></pre>
 </div>
-<div id="overview" class="section level3">
-<h3 class="hasAnchor">
-<a href="#overview" class="anchor"></a>Overview</h3>
-<p>This package provides tools to create EML files that are compliant with the <a href="https://portal.edirepository.org/nis/home.jsp">Environmental Data Initiative</a> (EDI) standards. The package was designed to meet the specific needs of <a href="http://cvpia.scienceintegrationteam.com/">CVPIA’s</a> data guidance, but can be utilized by any persons wishing to create a working EML document that can be submitted to EDI. Documentation for each function can be found in the Reference tab. The full EML schema can be found on their <a href="https://eml.ecoinformatics.org/schema/index.html">website</a>.</p>
+<div class="section level3">
+<h3 id="overview">Overview<a class="anchor" aria-label="anchor" href="#overview"></a>
+</h3>
+<p>This package provides tools to create EML files that are compliant with the <a href="https://portal.edirepository.org/nis/home.jsp" class="external-link">Environmental Data Initiative</a> (EDI) standards. The package was designed to meet the specific needs of <a href="http://cvpia.scienceintegrationteam.com/" class="external-link">CVPIA’s</a> data guidance, but can be utilized by any persons wishing to create a working EML document that can be submitted to EDI. Documentation for each function can be found in the Reference tab. The full EML schema can be found on their <a href="https://eml.ecoinformatics.org/schema/index.html" class="external-link">website</a>.</p>
 </div>
-<div id="usage" class="section level3">
-<h3 class="hasAnchor">
-<a href="#usage" class="anchor"></a>Usage</h3>
+<div class="section level3">
+<h3 id="usage">Usage<a class="anchor" aria-label="anchor" href="#usage"></a>
+</h3>
 <p>A working template and additional guides can be found under the ‘Articles’ tab. These articles give step by step instructions for generating EML documents using EMLaide.</p>
 <p>Articles:</p>
 <ul>
 <li>
-<strong><a href="https://cvpia-osc.github.io/EMLaide/articles/template-doc.html">Metadata Template Documentation</a></strong> - Instructions for using our <a href="https://cvpia-data-stewardship.s3-us-west-1.amazonaws.com/metadata+template.zip">template materials</a> to create inputs for our functions to generate an EML document.</li>
+<strong><a href="https://cvpia-osc.github.io/EMLaide/articles/template-doc.html" class="external-link">Metadata Template Documentation</a></strong> - Instructions for using our <a href="https://cvpia-data-stewardship.s3-us-west-1.amazonaws.com/metadata+template.zip" class="external-link">template materials</a> to create inputs for our functions to generate an EML document.</li>
 <li>
-<strong><a href="https://cvpia-osc.github.io/EMLaide/articles/create-EML-from-template.html">Create EML Document from Template</a></strong> - Step by step instructions of how to generate a full EML document for an <a href="https://cvpia-data-stewardship.s3-us-west-1.amazonaws.com/hannon-example.zip">example dataset</a>.</li>
+<strong><a href="https://cvpia-osc.github.io/EMLaide/articles/create-EML-from-template.html" class="external-link">Create EML Document from Template</a></strong> - Step by step instructions of how to generate a full EML document for an <a href="https://cvpia-data-stewardship.s3-us-west-1.amazonaws.com/hannon-example.zip" class="external-link">example dataset</a>.</li>
 </ul>
 </div>
 </div>
@@ -124,25 +126,32 @@ remotes::install_github("CVPIA-OSC/EMLaide")</code></pre>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <div class="links">
-<h2>Links</h2>
+<h2 data-toc-skip>Links</h2>
 <ul class="list-unstyled">
-<li>Browse source code at <br><a href="https://github.com/CVPIA-OSC/EMLaide">https://​github.com/​CVPIA-OSC/​EMLaide</a>
-</li>
-<li>EDI's Data Repositroy at <br><a href="https://portal.edirepository.org/nis/home.jsp">https://​portal.edirepository.org/​nis/​home.jsp</a>
-</li>
-<li>CVPIA Science Integration Team at <br><a href="http://cvpia.scienceintegrationteam.com/">http://​cvpia.scienceintegrationteam.com/​</a>
-</li>
+<li><a href="https://github.com/CVPIA-OSC/EMLaide" class="external-link">Browse source code</a></li>
+<li><a href="https://portal.edirepository.org/nis/home.jsp" class="external-link">EDI's Data Repositroy</a></li>
+<li><a href="http://cvpia.scienceintegrationteam.com/" class="external-link">CVPIA Science Integration Team</a></li>
 </ul>
 </div>
+
 <div class="license">
-<h2>License</h2>
+<h2 data-toc-skip>License</h2>
 <ul class="list-unstyled">
 <li><a href="LICENSE.html">Full license</a></li>
 <li><small>CC0</small></li>
 </ul>
 </div>
+
+
+<div class="citation">
+<h2 data-toc-skip>Citation</h2>
+<ul class="list-unstyled">
+<li><a href="authors.html#citation">Citing EMLaide</a></li>
+</ul>
+</div>
+
 <div class="developers">
-<h2>Developers</h2>
+<h2 data-toc-skip>Developers</h2>
 <ul class="list-unstyled">
 <li>Sadie Gill <br><small class="roles"> Author, maintainer </small>  </li>
 <li>Elizabeth Shaw <br><small class="roles"> Author </small>  </li>
@@ -150,16 +159,20 @@ remotes::install_github("CVPIA-OSC/EMLaide")</code></pre>
 </ul>
 </div>
 
+
+
   </div>
 </div>
 
 
       <footer><div class="copyright">
-  <p>Developed by Sadie Gill, Elizabeth Shaw, Erin Cain.</p>
+  <p></p>
+<p>Developed by Sadie Gill, Elizabeth Shaw, Erin Cain.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
+  <p></p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.6.</p>
 </div>
 
       </footer>
@@ -167,6 +180,8 @@ remotes::install_github("CVPIA-OSC/EMLaide")</code></pre>
 
   
 
+
+  
 
   </body>
 </html>

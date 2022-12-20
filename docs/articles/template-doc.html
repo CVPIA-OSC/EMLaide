@@ -27,6 +27,8 @@
 <![endif]-->
 </head>
 <body data-spy="scroll" data-target="#toc">
+    
+
     <div class="container template-article">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -39,7 +41,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">EMLaide</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.1</span>
       </span>
     </div>
 
@@ -49,7 +51,7 @@
   <a href="../reference/index.html">Reference</a>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Articles
      
     <span class="caret"></span>
@@ -66,7 +68,7 @@
       </ul>
 <ul class="nav navbar-nav navbar-right">
 <li>
-  <a href="https://github.com/CVPIA-OSC/EMLaide">
+  <a href="https://github.com/CVPIA-OSC/EMLaide" class="external-link">
     <span class="fab fa-github fa-lg"></span>
      
   </a>
@@ -81,7 +83,7 @@
 
       
 
-      </header><script src="template-doc_files/header-attrs-2.11/header-attrs.js"></script><div class="row">
+      </header><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
       <h1 data-toc-skip>Metadata Template Documentation</h1>
@@ -94,63 +96,117 @@
 
     
     
-<p>This document provides guidance for completing each element within the <a href="https://cvpia-data-stewardship.s3-us-west-1.amazonaws.com/metadata+template.zip">metadata template directory</a>. Within the top level of the directory you will find the following assets for recording your projects metadata:</p>
+<p>This document provides guidance for completing each element within
+the <a href="https://cvpia-data-stewardship.s3-us-west-1.amazonaws.com/metadata+template.zip" class="external-link">metadata
+template directory</a>. Within the top level of the directory you will
+find the following assets for recording your projects metadata:</p>
 <ul>
 <li>methods.docx</li>
 <li>abstract.docx</li>
 <li>metadata.xlsx</li>
 </ul>
-<p>Additionally, within the metadata template directory is a sub directory with completed examples.</p>
-<p>If you have any questions regarding metadata, please contact the acting CVPIA data managers at <a href="mailto:ecain@flowwest.com">ecain@flowwest.com</a>, <a href="mailto:erodriguez@flowwest.com">erodriguez@flowwest.com</a>, or <a href="mailto:sgill@flowwest.com">sgill@flowwest.com</a>.</p>
-<div id="methods" class="section level1">
-<h1 class="hasAnchor">
-<a href="#methods" class="anchor"></a>Methods</h1>
-<p>In “method.docx” describe the methods followed in the creation of the dataset, including description of field, laboratory and processing steps, sampling methods and units, quality control procedures. What were the actual procedures that are used in the creation or the subsequent processing of the dataset? Also, describe processes that have been used to define or improve the quality of a data file, or to identify potential problems with the data file.</p>
-<p>Please be specific, include instrument descriptions, or point to a protocol online. If this is a data compilation please specify datasets used, preferably their DOI or URL plus general citation information.</p>
-<p>If the project includes more than one dataset, make a section in the document for each dataset and the method used.</p>
+<p>Additionally, within the metadata template directory is a sub
+directory with completed examples.</p>
+<p>If you have any questions regarding metadata, please contact the
+acting CVPIA data managers at <a href="mailto:ecain@flowwest.com">ecain@flowwest.com</a>, <a href="mailto:erodriguez@flowwest.com">erodriguez@flowwest.com</a>, or <a href="mailto:sgill@flowwest.com">sgill@flowwest.com</a>.</p>
+<div class="section level2">
+<h2 id="methods">Methods<a class="anchor" aria-label="anchor" href="#methods"></a>
+</h2>
+<p>In “method.docx” describe the methods followed in the creation of the
+dataset, including description of field, laboratory and processing
+steps, sampling methods and units, quality control procedures. What were
+the actual procedures that are used in the creation or the subsequent
+processing of the dataset? Also, describe processes that have been used
+to define or improve the quality of a data file, or to identify
+potential problems with the data file.</p>
+<p>Please be specific, include instrument descriptions, or point to a
+protocol online. If this is a data compilation please specify datasets
+used, preferably their DOI or URL plus general citation information.</p>
+<p>If the project includes more than one dataset, make a section in the
+document for each dataset and the method used.</p>
 </div>
-<div id="abstract" class="section level1">
-<h1 class="hasAnchor">
-<a href="#abstract" class="anchor"></a>Abstract</h1>
-<p>In “abstract.docx” give a brief overview of the data resource, dataset, and/or project. The abstract will be used for full-text searches, and it should be rich with descriptive text. In particular, descriptions should include information that does not fit into structured metadata, and focus on the “what”, “when”, and “where” information, general taxonomic information, as well as whether the dataset is ongoing or completed. Some general methods description is appropriate, and broad classes of measured parameters should also be included. For a large number of parameters, use categories instead of listing all parameters (e.g. use the term “nutrients” instead of nitrate, phosphate, calcium, etc.), in combination with the parameters that seem most relevant for searches.</p>
-<p>The abstract can be at the project level or you can provide an abstract for each dataset associated with the project.</p>
+<div class="section level2">
+<h2 id="abstract">Abstract<a class="anchor" aria-label="anchor" href="#abstract"></a>
+</h2>
+<p>In “abstract.docx” give a brief overview of the data resource,
+dataset, and/or project. The abstract will be used for full-text
+searches, and it should be rich with descriptive text. In particular,
+descriptions should include information that does not fit into
+structured metadata, and focus on the “what”, “when”, and “where”
+information, general taxonomic information, as well as whether the
+dataset is ongoing or completed. Some general methods description is
+appropriate, and broad classes of measured parameters should also be
+included. For a large number of parameters, use categories instead of
+listing all parameters (e.g. use the term “nutrients” instead of
+nitrate, phosphate, calcium, etc.), in combination with the parameters
+that seem most relevant for searches.</p>
+<p>The abstract can be at the project level or you can provide an
+abstract for each dataset associated with the project.</p>
 </div>
-<div id="metadata-workbook" class="section level1">
-<h1 class="hasAnchor">
-<a href="#metadata-workbook" class="anchor"></a>Metadata Workbook</h1>
-<p>All other information will be inputted into metadata.xlsx. Each section below corresponds to a sheet of the xlsx document. Columns that are gray are optional and columns that are blue are conditionally required but every other column must be filled out. Some columns contain drop down menus of acceptable values. In these columns you must input one of the predefined options listed in the dropdown menu.</p>
-<p>If multiple data tables are associated with your project, fill out a different metadata.xlsx for each data table. If methodology or abstract differ between the data tables, you can add subsections with headers labeled for each data table to the abstract and methods documents.</p>
-<div id="dataset" class="section level2">
-<h2 class="hasAnchor">
-<a href="#dataset" class="anchor"></a>Dataset</h2>
-<p>In the dataset sheet you will provide information on the name and type of dataset. If the type of your dataset is not tabular or vector contact the acting CVPIA data managers and we will help you prepare the metadata. Columns that are white are required and columns that are blue are conditionally required.</p>
+<div class="section level2">
+<h2 id="metadata-workbook">Metadata Workbook<a class="anchor" aria-label="anchor" href="#metadata-workbook"></a>
+</h2>
+<p>All other information will be inputted into metadata.xlsx. Each
+section below corresponds to a sheet of the xlsx document. Columns that
+are gray are optional and columns that are blue are conditionally
+required but every other column must be filled out. Some columns contain
+drop down menus of acceptable values. In these columns you must input
+one of the predefined options listed in the dropdown menu.</p>
+<p>If multiple data tables are associated with your project, fill out a
+different metadata.xlsx for each data table. If methodology or abstract
+differ between the data tables, you can add subsections with headers
+labeled for each data table to the abstract and methods documents.</p>
+<div class="section level3">
+<h3 id="dataset">Dataset<a class="anchor" aria-label="anchor" href="#dataset"></a>
+</h3>
+<p>In the dataset sheet you will provide information on the name and
+type of dataset. If the type of your dataset is not tabular or vector
+contact the acting CVPIA data managers and we will help you prepare the
+metadata. Columns that are white are required and columns that are blue
+are conditionally required.</p>
 <ul>
 <li>
 <strong>name</strong> - Name of the dataset you are submitting</li>
 <li>
 <strong>type</strong> - Type of data (tabular, vector, raster)</li>
 <li>
-<strong>geometry (conditionally required)</strong> - <strong>Required only if the dataset is type vector</strong> EML schema accepts eight geometry values: Point, LineString, LinearRing, Polygon, Multipoint, MultiLineString, MultiPolygon, MultiGeometry.</li>
+<strong>geometry (conditionally required)</strong> -
+<strong>Required only if the dataset is type vector</strong> EML schema
+accepts eight geometry values: Point, LineString, LinearRing, Polygon,
+Multipoint, MultiLineString, MultiPolygon, MultiGeometry.</li>
 </ul>
-<div id="spatial-data" class="section level3">
-<h3 class="hasAnchor">
-<a href="#spatial-data" class="anchor"></a>Spatial Data</h3>
-<div id="vector" class="section level4">
-<h4 class="hasAnchor">
-<a href="#vector" class="anchor"></a>Vector</h4>
-<p>For a dataset that contains vector data please fill out the metadata, abstract, and methods docs following the above instructions. Make sure to indicate type as vector in the dataset tab and to include a geometry in the geometry tab. EML schema accepts eight geometry values: Point, LineString, LinearRing, Polygon, Multipoint, MultiLineString, MultiPolygon, MultiGeometry.</p>
+<div class="section level4">
+<h4 id="spatial-data">Spatial Data<a class="anchor" aria-label="anchor" href="#spatial-data"></a>
+</h4>
+<div class="section level5">
+<h5 id="vector">Vector<a class="anchor" aria-label="anchor" href="#vector"></a>
+</h5>
+<p>For a dataset that contains vector data please fill out the metadata,
+abstract, and methods docs following the above instructions. Make sure
+to indicate type as vector in the dataset tab and to include a geometry
+in the geometry tab. EML schema accepts eight geometry values: Point,
+LineString, LinearRing, Polygon, Multipoint, MultiLineString,
+MultiPolygon, MultiGeometry.</p>
 </div>
-<div id="raster" class="section level4">
-<h4 class="hasAnchor">
-<a href="#raster" class="anchor"></a>Raster</h4>
-<p>For a dataset that contains raster data please contact the acting CVPIA data managers at <a href="mailto:ecain@flowwest.com">ecain@flowwest.com</a>, <a href="mailto:erodriguez@flowwest.com">erodriguez@flowwest.com</a>, or <a href="mailto:sgill@flowwest.com">sgill@flowwest.com</a>. They will provide you with more information on how to format the metadata for raster data.</p>
+<div class="section level5">
+<h5 id="raster">Raster<a class="anchor" aria-label="anchor" href="#raster"></a>
+</h5>
+<p>For a dataset that contains raster data please contact the acting
+CVPIA data managers at <a href="mailto:ecain@flowwest.com">ecain@flowwest.com</a>, <a href="mailto:erodriguez@flowwest.com">erodriguez@flowwest.com</a>, or <a href="mailto:sgill@flowwest.com">sgill@flowwest.com</a>. They will
+provide you with more information on how to format the metadata for
+raster data.</p>
 </div>
 </div>
 </div>
-<div id="personnel" class="section level2">
-<h2 class="hasAnchor">
-<a href="#personnel" class="anchor"></a>Personnel</h2>
-<p>In the personnel sheet you will provide information on the creator and the associated parties to the dataset. The creator is any person or organization who is responsible for the creation of the data, the creator will also be the contact for this dataset. You must have one person with the role “creator”. Columns that are gray are optional but every other column must be filled out.</p>
+<div class="section level3">
+<h3 id="personnel">Personnel<a class="anchor" aria-label="anchor" href="#personnel"></a>
+</h3>
+<p>In the personnel sheet you will provide information on the creator
+and the associated parties to the dataset. The creator is any person or
+organization who is responsible for the creation of the data, the
+creator will also be the contact for this dataset. You must have one
+person with the role “creator”. Columns that are gray are optional but
+every other column must be filled out.</p>
 <ul>
 <li>
 <strong>first_name</strong> - Person’s given name</li>
@@ -159,130 +215,226 @@
 <li>
 <strong>email</strong> - Person’s email address</li>
 <li>
-<strong>role</strong> - Select the appropriate role from the dropdown, contact CVPIA data manager if you would like a role added to the template options</li>
+<strong>role</strong> - Select the appropriate role from the
+dropdown, contact CVPIA data manager if you would like a role added to
+the template options</li>
 <li>
-<strong>organization</strong> - The organization that employs the person</li>
+<strong>organization</strong> - The organization that employs the
+person</li>
 <li>
-<strong>orcid (optional)</strong> - ORCID ID is a persistent digital identifier for researchers, register at <a href="http://orcid.org/">http://orcid.org/</a>
+<strong>orcid (optional)</strong> - ORCID ID is a persistent digital
+identifier for researchers, register at <a href="http://orcid.org/" class="external-link">http://orcid.org/</a>
 </li>
 </ul>
 </div>
-<div id="title" class="section level2">
-<h2 class="hasAnchor">
-<a href="#title" class="anchor"></a>Title</h2>
-<p>The title should be fairly descriptive and between 7 and 20 words long. The short name must be less than the number of words present in the title and is your opportunity to give viewers a more accessible name to the dataset.</p>
+<div class="section level3">
+<h3 id="title">Title<a class="anchor" aria-label="anchor" href="#title"></a>
+</h3>
+<p>The title should be fairly descriptive and between 7 and 20 words
+long. The short name must be less than the number of words present in
+the title and is your opportunity to give viewers a more accessible name
+to the dataset.</p>
 <ul>
 <li>
-<strong>title</strong> - A brief description of the dataset, providing enough detail to differentiate it from other similar datasets. For example: “Vernal pool amphibian density data, Isla Vista 1990-1996”.</li>
+<strong>title</strong> - A brief description of the dataset,
+providing enough detail to differentiate it from other similar datasets.
+For example: “Vernal pool amphibian density data, Isla Vista
+1990-1996”.</li>
 <li>
-<strong>short_name</strong> - The short name provides a concise name that describes the dataset being documented. For example “vernal-data-1999”.</li>
+<strong>short_name</strong> - The short name provides a concise name
+that describes the dataset being documented. For example
+“vernal-data-1999”.</li>
 </ul>
 </div>
-<div id="keyword-set" class="section level2">
-<h2 class="hasAnchor">
-<a href="#keyword-set" class="anchor"></a>Keyword Set</h2>
-<p>The keyword set should include a list of keywords and the name of the controlled vocabulary registry (keyword thesaurus) they belong to. Keywords help users identify your dataset and the use of controlled vocabulary sets are helpful to keep keywords consistent across many different research efforts. If you choose not to use one of the controlled vocabularies linked to below, leave keywordThesaurus blank.</p>
+<div class="section level3">
+<h3 id="keyword-set">Keyword Set<a class="anchor" aria-label="anchor" href="#keyword-set"></a>
+</h3>
+<p>The keyword set should include a list of keywords and the name of the
+controlled vocabulary registry (keyword thesaurus) they belong to.
+Keywords help users identify your dataset and the use of controlled
+vocabulary sets are helpful to keep keywords consistent across many
+different research efforts. If you choose not to use one of the
+controlled vocabularies linked to below, leave keywordThesaurus
+blank.</p>
 <ul>
 <li>
 <strong>keyword</strong> - The keyword</li>
 <li>
-<strong>keywordThesaurus (conditionally required)</strong> - <strong>Required only when keyword is from a controlled vocabulary.</strong> A string identifying the controlled vocabulary the keywords originate from, do not include if keywords are not from a controlled vocabulary</li>
+<strong>keywordThesaurus (conditionally required)</strong> -
+<strong>Required only when keyword is from a controlled
+vocabulary.</strong> A string identifying the controlled vocabulary the
+keywords originate from, do not include if keywords are not from a
+controlled vocabulary</li>
 </ul>
-<p>In order to promote consistency, please search the following resources for keywords:</p>
+<p>In order to promote consistency, please search the following
+resources for keywords:</p>
 <ul>
 <li>
-<a href="https://vocab.lternet.edu/vocab/vocab/index.php">LTER</a> - Long Term Ecological Research.</li>
+<a href="https://vocab.lternet.edu/vocab/vocab/index.php" class="external-link">LTER</a> -
+Long Term Ecological Research.</li>
 <li>
-<a href="http://aims.fao.org/standards/agrovoc/functionalities/search">AGROVOC</a> - A controlled vocabulary covering all areas of interest of the Food and Agriculture Organization (FAO) of the United Nations, including food, nutrition, agriculture, fisheries, forestry, environment.</li>
+<a href="http://aims.fao.org/standards/agrovoc/functionalities/search" class="external-link">AGROVOC</a>
+- A controlled vocabulary covering all areas of interest of the Food and
+Agriculture Organization (FAO) of the United Nations, including food,
+nutrition, agriculture, fisheries, forestry, environment.</li>
 <li>
-<a href="https://geonames.usgs.gov/apex/f?p=138:1:5668294677959">U.S. Board on Geographic Names</a> - USGS place names dictionary.</li>
+<a href="https://geonames.usgs.gov/apex/f?p=138:1:5668294677959" class="external-link">U.S. Board
+on Geographic Names</a> - USGS place names dictionary.</li>
 </ul>
 </div>
-<div id="license" class="section level2">
-<h2 class="hasAnchor">
-<a href="#license" class="anchor"></a>License</h2>
-<p>The intellectual rights information associated with the dataset. For projects funded under CVPIA authority, we have preselected two licenses, CC0 and CC BY. You can select either of these by adding “CC0” or “CCBY” in the default_license column and leave the rest of the columns blank.</p>
-<p><a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0</a> - The most permissive license, appropriate for data in the public domain.</p>
-<p><a href="https://creativecommons.org/licenses/by/4.0/">CC BY</a> - Attribution required</p>
-<p>If neither of these two licenses fit the intellectual right associated with the dataset you must provide information for all of the conditionally required columns:</p>
+<div class="section level3">
+<h3 id="license">License<a class="anchor" aria-label="anchor" href="#license"></a>
+</h3>
+<p>The intellectual rights information associated with the dataset. For
+projects funded under CVPIA authority, we have preselected two licenses,
+CC0 and CC BY. You can select either of these by adding “CC0” or “CCBY”
+in the default_license column and leave the rest of the columns
+blank.</p>
+<p><a href="https://creativecommons.org/publicdomain/zero/1.0/" class="external-link">CC0</a>
+- The most permissive license, appropriate for data in the public
+domain.</p>
+<p><a href="https://creativecommons.org/licenses/by/4.0/" class="external-link">CC BY</a> -
+Attribution required</p>
+<p>If neither of these two licenses fit the intellectual right
+associated with the dataset you must provide information for all of the
+conditionally required columns:</p>
 <ul>
 <li>
-<strong>default_license</strong> - Select the default license if applicable to your project.</li>
+<strong>default_license</strong> - Select the default license if
+applicable to your project.</li>
 <li>
-<strong>license_name (conditionally required)</strong> - The official name of the license that applies to the data and metadata</li>
+<strong>license_name (conditionally required)</strong> - The
+official name of the license that applies to the data and metadata</li>
 <li>
-<strong>license_url (conditionally required)</strong> - The persistent URL for the license</li>
+<strong>license_url (conditionally required)</strong> - The
+persistent URL for the license</li>
 <li>
-<strong>license_identifier (conditionally required)</strong> - The official identifier for the license, which should be drawn from the SPDX license list, or a similar well-known license registry</li>
+<strong>license_identifier (conditionally required)</strong> - The
+official identifier for the license, which should be drawn from the SPDX
+license list, or a similar well-known license registry</li>
 <li>
-<strong>intellectual_rights_description (conditionally required)</strong> - Description of rights under the license</li>
+<strong>intellectual_rights_description (conditionally
+required)</strong> - Description of rights under the license</li>
 </ul>
 <p><strong>Example:</strong></p>
 <ul>
-<li>license_name: Creative Commons Attribution Non Commercial Share Alike 4.0 International</li>
-<li>license_url:<a href="https://spdx.org/licenses/CC-BY-NC-SA-4.0.html">https://spdx.org/licenses/CC-BY-NC-SA-4.0.html</a>
+<li>license_name: Creative Commons Attribution Non Commercial Share
+Alike 4.0 International</li>
+<li>license_url:<a href="https://spdx.org/licenses/CC-BY-NC-SA-4.0.html" class="external-link">https://spdx.org/licenses/CC-BY-NC-SA-4.0.html</a>
 </li>
-<li>license_identifier: CC-BY-NC-SA-4.0 *intellectual_rights_description: This license lets others remix, adapt, and build upon your work even for commercial purposes, as long as they credit you and license their new creations under the identical terms. This license is often compared to “copyleft” free and open source software licenses. All new works based on yours will carry the same license, so any derivatives will also allow commercial use. This is the license used by Wikipedia, and is recommended for materials that would benefit from incorporating content from Wikipedia and similarly licensed projects.</li>
+<li>license_identifier: CC-BY-NC-SA-4.0
+*intellectual_rights_description: This license lets others remix, adapt,
+and build upon your work even for commercial purposes, as long as they
+credit you and license their new creations under the identical terms.
+This license is often compared to “copyleft” free and open source
+software licenses. All new works based on yours will carry the same
+license, so any derivatives will also allow commercial use. This is the
+license used by Wikipedia, and is recommended for materials that would
+benefit from incorporating content from Wikipedia and similarly licensed
+projects.</li>
 </ul>
 </div>
-<div id="project" class="section level2">
-<h2 class="hasAnchor">
-<a href="#project" class="anchor"></a>Project</h2>
-<p>Use this sheet to input a project personnel if you wish to specify a specific project personnel. If project personnel is left blank we will automatically assign project personnel to the prior defined personnel with the role of creator. To give a different project personnel please fill out all sections of this sheet. Columns that are blue are conditionally required and columns that are gray are optional.</p>
+<div class="section level3">
+<h3 id="project">Project<a class="anchor" aria-label="anchor" href="#project"></a>
+</h3>
+<p>Use this sheet to input a project personnel if you wish to specify a
+specific project personnel. If project personnel is left blank we will
+automatically assign project personnel to the prior defined personnel
+with the role of creator. To give a different project personnel please
+fill out all sections of this sheet. Columns that are blue are
+conditionally required and columns that are gray are optional.</p>
 <ul>
 <li>
-<strong>first_name (conditionally required)</strong> - <strong>Required if you want to add a specific project personnel</strong> Person’s given name</li>
+<strong>first_name (conditionally required)</strong> -
+<strong>Required if you want to add a specific project
+personnel</strong> Person’s given name</li>
 <li>
-<strong>last_name (conditionally required)</strong> - <strong>Required if you want to add a specific project personnel</strong> Person’s given last name</li>
+<strong>last_name (conditionally required)</strong> -
+<strong>Required if you want to add a specific project
+personnel</strong> Person’s given last name</li>
 <li>
-<strong>email (optional)</strong>- <strong>Required if you want to add a specific project personnel</strong> Person’s email address</li>
+<strong>email (optional)</strong>- <strong>Required if you want to
+add a specific project personnel</strong> Person’s email address</li>
 <li>
-<strong>role (conditionally required)</strong> - <strong>Required if you want to add a specific project personnel</strong> Select the appropriate role from the dropdown, contact CVPIA data manager if you would like a role added to the template options</li>
+<strong>role (conditionally required)</strong> - <strong>Required if
+you want to add a specific project personnel</strong> Select the
+appropriate role from the dropdown, contact CVPIA data manager if you
+would like a role added to the template options</li>
 <li>
-<strong>organization (conditionally required)</strong> - <strong>Required if you want to add a specific project personnel</strong> The name of the organization that the person is employed by</li>
+<strong>organization (conditionally required)</strong> -
+<strong>Required if you want to add a specific project
+personnel</strong> The name of the organization that the person is
+employed by</li>
 <li>
-<strong>orcid (optional)</strong> - ORCID iD is a persistent digital identifier for researchers, register at <a href="http://orcid.org/">http://orcid.org/</a>
+<strong>orcid (optional)</strong> - ORCID iD is a persistent digital
+identifier for researchers, register at <a href="http://orcid.org/" class="external-link">http://orcid.org/</a>
 </li>
 </ul>
 </div>
-<div id="funding" class="section level2">
-<h2 class="hasAnchor">
-<a href="#funding" class="anchor"></a>Funding</h2>
-<p>Funding information of the dataset. Use this sheet to describe the funding awarded to the project. We have provided a set of CVPIA default funders: "USBR", "CDFW", "CDWR". If you input one of the previous listed in the <strong>funder_name</strong> column you must still provide an <strong>award_title</strong> but you may leave the remaining columns blank.</p>
-<p>If the default funding options are not applicable to your project you must fill out all required and conditionally required columns. Columns that are blue are conditionally required and columns that are gray are optional but every other column must be filled out.</p>
+<div class="section level3">
+<h3 id="funding">Funding<a class="anchor" aria-label="anchor" href="#funding"></a>
+</h3>
+<p>Funding information of the dataset. Use this sheet to describe the
+funding awarded to the project. We have provided a set of CVPIA default
+funders: "USBR", "CDFW", "CDWR". If you input one of the previous listed
+in the <strong>funder_name</strong> column you must still provide an
+<strong>award_title</strong> but you may leave the remaining columns
+blank.</p>
+<p>If the default funding options are not applicable to your project you
+must fill out all required and conditionally required columns. Columns
+that are blue are conditionally required and columns that are gray are
+optional but every other column must be filled out.</p>
 <ul>
 <li>
-<strong>funder_name</strong> - Organization or individual providing the funding. If applicable select a default funder from the dropdown list.</li>
+<strong>funder_name</strong> - Organization or individual providing
+the funding. If applicable select a default funder from the dropdown
+list.</li>
 <li>
-<strong>funder_identifier</strong> <strong>(optional)</strong> - CVPIA specific finding identifiers are in development.<br>
+<strong>funder_identifier</strong> <strong>(optional)</strong> -
+CVPIA specific finding identifiers are in development.<br>
 </li>
 <li>
-<strong>award_number (conditionally required)</strong> - The identifier assigned by the funding agency to identify this funding award. Required if default funder is not selected.</li>
+<strong>award_number (conditionally required)</strong> - The
+identifier assigned by the funding agency to identify this funding
+award. Required if default funder is not selected.</li>
 <li>
-<strong>award_title -</strong> Title of the dataset or project which received funding.</li>
+<strong>award_title -</strong> Title of the dataset or project which
+received funding.</li>
 <li>
-<strong>award_url</strong> <strong>(optional)</strong> - to include a link to information about the funding award on the funding organization's webpage.</li>
+<strong>award_url</strong> <strong>(optional)</strong> - to include
+a link to information about the funding award on the funding
+organization's webpage.</li>
 <li>
-<strong>funding_description (optional)</strong> - To provide a short description of the funding received.</li>
+<strong>funding_description (optional)</strong> - To provide a short
+description of the funding received.</li>
 </ul>
 <p><strong>Example:</strong></p>
 <ul>
 <li>funder_name - National Science Foundation</li>
-<li>funder_identifier - <a href="http://dx.doi.org/10.13039/100000001" class="uri">http://dx.doi.org/10.13039/100000001</a>
+<li>funder_identifier - <a href="http://dx.doi.org/10.13039/100000001" class="external-link uri">http://dx.doi.org/10.13039/100000001</a>
 </li>
 <li>award_number - 1656026</li>
-<li>award_title - LTER: Beaufort Sea Lagoons: An Arctic Coastal Ecosystem in Transition <em>award_url - <a href="https://www.nsf.gov/awardsearch/showAward?AWD%5C_ID=1656026" class="uri">https://www.nsf.gov/awardsearch/showAward?AWD\_ID=1656026</a> </em>funding_description- BLE LTER is supported by the National Science Funder award #1656026 (2017-08-01 to 2022-07-31).</li>
+<li>award_title - LTER: Beaufort Sea Lagoons: An Arctic Coastal
+Ecosystem in Transition <em>award_url - <a href="https://www.nsf.gov/awardsearch/showAward?AWD%5C_ID=1656026" class="external-link uri">https://www.nsf.gov/awardsearch/showAward?AWD\_ID=1656026</a>
+</em>funding_description- BLE LTER is supported by the National Science
+Funder award #1656026 (2017-08-01 to 2022-07-31).</li>
 </ul>
 </div>
-<div id="maintenance" class="section level2">
-<h2 class="hasAnchor">
-<a href="#maintenance" class="anchor"></a>Maintenance</h2>
-<p>Maintenance information of the dataset. Use this sheet to describe the status of the data collection as well as the frequency at which you plan to update the data. All columns required.</p>
+<div class="section level3">
+<h3 id="maintenance">Maintenance<a class="anchor" aria-label="anchor" href="#maintenance"></a>
+</h3>
+<p>Maintenance information of the dataset. Use this sheet to describe
+the status of the data collection as well as the frequency at which you
+plan to update the data. All columns required.</p>
 <ul>
 <li>
-<strong>status</strong> - status of the project or dataset this can be either “ongoing” or “complete”</li>
+<strong>status</strong> - status of the project or dataset this can
+be either “ongoing” or “complete”</li>
 <li>
-<strong>update_frequency (conditionally required)</strong> - <strong>Required if status is “ongoing”</strong> provide the frequency of which the project or dataset is updated. Available update frequencies: daily, weekly, monthly, annual</li>
+<strong>update_frequency (conditionally required)</strong> -
+<strong>Required if status is “ongoing”</strong> provide the frequency
+of which the project or dataset is updated. Available update
+frequencies: daily, weekly, monthly, annual</li>
 </ul>
 <p><strong>Example (ongoing maintenance):</strong></p>
 <ul>
@@ -290,29 +442,42 @@
 <li>update_frequency: monthly</li>
 </ul>
 </div>
-<div id="coverage" class="section level2">
-<h2 class="hasAnchor">
-<a href="#coverage" class="anchor"></a>Coverage</h2>
-<p>Geographical and temporal coverage associated with the dataset, all columns are required. Geographic and temporal will allow users to quickly search for your dataset based on geographic location and time.</p>
+<div class="section level3">
+<h3 id="coverage">Coverage<a class="anchor" aria-label="anchor" href="#coverage"></a>
+</h3>
+<p>Geographical and temporal coverage associated with the dataset, all
+columns are required. Geographic and temporal will allow users to
+quickly search for your dataset based on geographic location and
+time.</p>
 <ul>
 <li>
-<strong>geographic_description</strong> - A description of the locations of research sites and areas related to the data</li>
+<strong>geographic_description</strong> - A description of the
+locations of research sites and areas related to the data</li>
 <li>
-<strong>west_bounding_coordinate</strong> - The west cardinality limit</li>
+<strong>west_bounding_coordinate</strong> - The west cardinality
+limit</li>
 <li>
-<strong>east_bounding_coordinate</strong> - The east cardinality limit</li>
+<strong>east_bounding_coordinate</strong> - The east cardinality
+limit</li>
 <li>
-<strong>north_bounding_coordinate</strong> - The north cardinality limit</li>
+<strong>north_bounding_coordinate</strong> - The north cardinality
+limit</li>
 <li>
-<strong>south_bounding_coordinate</strong> - The south cardinality limit</li>
+<strong>south_bounding_coordinate</strong> - The south cardinality
+limit</li>
 <li>
-<strong>begin_date</strong> - The starting date for the dataset or project. Dates must be provided in ISO 8601 format, YYYY-MM-DD</li>
+<strong>begin_date</strong> - The starting date for the dataset or
+project. Dates must be provided in ISO 8601 format, YYYY-MM-DD</li>
 <li>
-<strong>end_date</strong> - The projected or actual end date for the dataset or project. Dates must be provided in ISO 8601 format, YYYY-MM-DD.</li>
+<strong>end_date</strong> - The projected or actual end date for the
+dataset or project. Dates must be provided in ISO 8601 format,
+YYYY-MM-DD.</li>
 </ul>
 <p><strong>Example:</strong></p>
 <ul>
-<li>geographic_description: North Slope drainage basin: Bounding box encompasses 42 drainage basins totaling the North Slope drainage basin, Alaska, USA</li>
+<li>geographic_description: North Slope drainage basin: Bounding box
+encompasses 42 drainage basins totaling the North Slope drainage basin,
+Alaska, USA</li>
 <li>west_bound_coordinate: -160.594000</li>
 <li>east_bound_coordinate: -134.1048</li>
 <li>north_bound_coordinate: 71.2383</li>
@@ -321,10 +486,20 @@
 <li>end_date: 2010-12-31</li>
 </ul>
 </div>
-<div id="taxonomic-coverage" class="section level2">
-<h2 class="hasAnchor">
-<a href="#taxonomic-coverage" class="anchor"></a>Taxonomic Coverage</h2>
-<p>Taxonomic coverage for the dataset, this sheet is optional. We have provided a set of CVPIA common taxa: "chinook", "delta_smelt", "white_sturgeon", "green_sturgeon", or "steelhead". If you select one of the previous listed in the <strong>CVPIA_common_species</strong> column you can leave the remaining columns blank. If you are adding a new taxon you must fill out all of the other columns. When adding a new taxon please use <a href="https://www.itis.gov/">https://www.itis.gov/</a> for full taxonomic coverage. Contact the CVPIA data managers if you wish to add a set of taxa to the CVPIA common taxa list. All blue columns are conditionally required and only need to be filled out if you do not select a <strong>CVPIA_common_species</strong>.</p>
+<div class="section level3">
+<h3 id="taxonomic-coverage">Taxonomic Coverage<a class="anchor" aria-label="anchor" href="#taxonomic-coverage"></a>
+</h3>
+<p>Taxonomic coverage for the dataset, this sheet is optional. We have
+provided a set of CVPIA common taxa: "chinook", "delta_smelt",
+"white_sturgeon", "green_sturgeon", or "steelhead". If you select one of
+the previous listed in the <strong>CVPIA_common_species</strong> column
+you can leave the remaining columns blank. If you are adding a new taxon
+you must fill out all of the other columns. When adding a new taxon
+please use <a href="https://www.itis.gov/" class="external-link">https://www.itis.gov/</a> for
+full taxonomic coverage. Contact the CVPIA data managers if you wish to
+add a set of taxa to the CVPIA common taxa list. All blue columns are
+conditionally required and only need to be filled out if you do not
+select a <strong>CVPIA_common_species</strong>.</p>
 <p><strong>Example:</strong></p>
 <ul>
 <li>
@@ -347,136 +522,241 @@
 <strong>taxon_id</strong> - 183803</li>
 </ul>
 </div>
-<div id="attribute" class="section level2">
-<h2 class="hasAnchor">
-<a href="#attribute" class="anchor"></a>Attribute</h2>
-<p>For each column in your dataset, you need to describe in detail the type of information encoded in that column. In EML, columns are “attributes”. The type of information needed for an attribute varies based on its measurement scale. This document explains the different types of measurement scales, how to select the appropriate one given the data within a column, and which columns within the ‘attribute’ tab of the metadata excel workbook are required given the measurement scale.</p>
-<p>The instructions included below detail how to complete all the columns. Columns that are gray are optional and columns that are blue are conditionally required depending on the type of measurement scale:</p>
+<div class="section level3">
+<h3 id="attribute">Attribute<a class="anchor" aria-label="anchor" href="#attribute"></a>
+</h3>
+<p>For each column in your dataset, you need to describe in detail the
+type of information encoded in that column. In EML, columns are
+“attributes”. The type of information needed for an attribute varies
+based on its measurement scale. This document explains the different
+types of measurement scales, how to select the appropriate one given the
+data within a column, and which columns within the ‘attribute’ tab of
+the metadata excel workbook are required given the measurement
+scale.</p>
+<p>The instructions included below detail how to complete all the
+columns. Columns that are gray are optional and columns that are blue
+are conditionally required depending on the type of measurement
+scale:</p>
 <ul>
 <li>
-<strong>attribute_name</strong> - Name of the attribute as it appears in the dataset</li>
+<strong>attribute_name</strong> - Name of the attribute as it
+appears in the dataset</li>
 <li>
-<strong>attribute_definition</strong>- A precise and complete definition of the attribute being documented</li>
+<strong>attribute_definition</strong>- A precise and complete
+definition of the attribute being documented</li>
 <li>
-<strong>measurement_scale</strong>- The type of scale from which values are drawn for the attribute (allowed values and additional details see <a href="#measurement-scales"><u>Measurement Scales</u></a> section)</li>
+<strong>measurement_scale</strong>- The type of scale from which
+values are drawn for the attribute (allowed values and additional
+details see <a href="#measurement-scales"><u>Measurement Scales</u></a>
+section)</li>
 <li>
-<strong>attribute_label (optional)</strong> - A descriptive label that can be used to display the name of an attribute.</li>
+<strong>attribute_label (optional)</strong> - A descriptive label
+that can be used to display the name of an attribute.</li>
 <li>
-<strong>domain</strong> - Please select a domain from the dropdown. Domain options vary depending on measurement_scale. See the measurement_scale sections below to see which domains are appropriate for each measurement_scale.</li>
+<strong>domain</strong> - Please select a domain from the dropdown.
+Domain options vary depending on measurement_scale. See the
+measurement_scale sections below to see which domains are appropriate
+for each measurement_scale.</li>
 <li>
-<strong>type (conditionally required)</strong> - Required for measurement_scale: <em>Ratio</em>, <em>Interval</em>. See the measurement_scale sections on <em>Ratio</em> and <em>Interval</em> for additional information.</li>
+<strong>type (conditionally required)</strong> - Required for
+measurement_scale: <em>Ratio</em>, <em>Interval</em>. See the
+measurement_scale sections on <em>Ratio</em> and <em>Interval</em> for
+additional information.</li>
 <li>
-<strong>units (conditionally required)</strong> - Required for measurement_scale: <em>Ratio</em>, <em>Interval</em>. See the measurement_scale sections on <em>Ratio</em> and <em>Interval</em> for additional information.</li>
+<strong>units (conditionally required)</strong> - Required for
+measurement_scale: <em>Ratio</em>, <em>Interval</em>. See the
+measurement_scale sections on <em>Ratio</em> and <em>Interval</em> for
+additional information.</li>
 <li>
-<strong>number_type (conditionally required)</strong> - Required for measurement_scale: <em>Ratio</em>, <em>Interval</em>. See the measurement_scale sections on <em>Ratio</em> and <em>Interval</em> for additional information.</li>
+<strong>number_type (conditionally required)</strong> - Required for
+measurement_scale: <em>Ratio</em>, <em>Interval</em>. See the
+measurement_scale sections on <em>Ratio</em> and <em>Interval</em> for
+additional information.</li>
 <li>
-<strong>unit_precision (optional)</strong>- This is a decimal value indicating how precise the measured value is.</li>
+<strong>unit_precision (optional)</strong>- This is a decimal value
+indicating how precise the measured value is.</li>
 <li>
-<strong>date_time_format (conditionally required)</strong> - Required for measurement_scales: <em>Date Time</em> See the measurement_scale section on <em>Date Time</em> for additional information.</li>
+<strong>date_time_format (conditionally required)</strong> -
+Required for measurement_scales: <em>Date Time</em> See the
+measurement_scale section on <em>Date Time</em> for additional
+information.</li>
 <li>
-<strong>date_time_precision (optional)</strong> - Optional for measurement_scales: <em>Date Time</em> See the measurement_scale section on <em>Date Time</em> for additional information.</li>
+<strong>date_time_precision (optional)</strong> - Optional for
+measurement_scales: <em>Date Time</em> See the measurement_scale section
+on <em>Date Time</em> for additional information.</li>
 <li>
-<strong>minimum (conditionally required)</strong> - Required for measurement_scale: <em>Ratio</em>, <em>Interval</em>, <em>Date Time</em>. Appropriate minimum values vary depending on measurement_scale. See the measurement_scale sections below to see what values are appropriate for each measurement_scale.</li>
+<strong>minimum (conditionally required)</strong> - Required for
+measurement_scale: <em>Ratio</em>, <em>Interval</em>, <em>Date
+Time</em>. Appropriate minimum values vary depending on
+measurement_scale. See the measurement_scale sections below to see what
+values are appropriate for each measurement_scale.</li>
 <li>
-<strong>maximum (conditionally required)</strong> - Required for measurement_scale: <em>Ratio</em>, <em>Interval</em>, <em>Date Time</em>. Appropriate maximum values vary depending on measurement_scale. See the measurement_scale sections below to see what values are appropriate for each measurement_scale.</li>
+<strong>maximum (conditionally required)</strong> - Required for
+measurement_scale: <em>Ratio</em>, <em>Interval</em>, <em>Date
+Time</em>. Appropriate maximum values vary depending on
+measurement_scale. See the measurement_scale sections below to see what
+values are appropriate for each measurement_scale.</li>
 </ul>
-<p>The ‘attributes’ tab is the most in the metadata standards weeds, we can provide technical assistance with completing this tab.</p>
-<div id="measurement-scales" class="section level3">
-<h3 class="hasAnchor">
-<a href="#measurement-scales" class="anchor"></a>Measurement Scales</h3>
-<p>There are five types of measurement scales to choose from. Based on the selected measurement scale, additional columns must be filled out to produce a valid EML document. Below each measurement scale is defined and guidance on the additional required columns are provided.</p>
-<div id="nominal" class="section level4">
-<h4 class="hasAnchor">
-<a href="#nominal" class="anchor"></a>Nominal</h4>
-<p>Used to define categorical scale attributes. Nominal is used when numbers have only been assigned to a variable for the purpose of categorizing the variable. An example of a nominal scale is assigning the number 1 for male and 2 for female.</p>
+<p>The ‘attributes’ tab is the most in the metadata standards weeds, we
+can provide technical assistance with completing this tab.</p>
+<div class="section level4">
+<h4 id="measurement-scales">Measurement Scales<a class="anchor" aria-label="anchor" href="#measurement-scales"></a>
+</h4>
+<p>There are five types of measurement scales to choose from. Based on
+the selected measurement scale, additional columns must be filled out to
+produce a valid EML document. Below each measurement scale is defined
+and guidance on the additional required columns are provided.</p>
+<div class="section level5">
+<h5 id="nominal">Nominal<a class="anchor" aria-label="anchor" href="#nominal"></a>
+</h5>
+<p>Used to define categorical scale attributes. Nominal is used when
+numbers have only been assigned to a variable for the purpose of
+categorizing the variable. An example of a nominal scale is assigning
+the number 1 for male and 2 for female.</p>
 <ul>
 <li>
-<strong>domain</strong> - Please list either "text" or "enumerated". A nominal attribute with domain “enumerated” is one in which the variable types can be encoded with integers. For example 1 = “cloudy”, 2 = “sunny”. A “text” type usually denotes a name or an id for example a site name or number.
+<strong>domain</strong> - Please list either "text" or "enumerated".
+A nominal attribute with domain “enumerated” is one in which the
+variable types can be encoded with integers. For example 1 = “cloudy”, 2
+= “sunny”. A “text” type usually denotes a name or an id for example a
+site name or number.
 <ul>
-<li>if “enumerated” you need to provide a definition for each code in the <strong>code_definitions</strong> (see <a href="#code-definitions">Code Definitions</a> section) sheet.</li>
+<li>if “enumerated” you need to provide a definition for each code in
+the <strong>code_definitions</strong> (see <a href="#code-definitions">Code Definitions</a> section) sheet.</li>
 </ul>
 </li>
 </ul>
 </div>
-<div id="ordinal" class="section level4">
-<h4 class="hasAnchor">
-<a href="#ordinal" class="anchor"></a>Ordinal</h4>
-<p>Used to define ordered scale attributes. Ordinal is used when the categories have a logical or ordered relationship to each other. These types of scale allow one to distinguish the order of values, but not the magnitude of the difference between values. An example of an ordinal scale is a categorical survey where you rank a variable 1=good, 2=fair, 3=poor.</p>
+<div class="section level5">
+<h5 id="ordinal">Ordinal<a class="anchor" aria-label="anchor" href="#ordinal"></a>
+</h5>
+<p>Used to define ordered scale attributes. Ordinal is used when the
+categories have a logical or ordered relationship to each other. These
+types of scale allow one to distinguish the order of values, but not the
+magnitude of the difference between values. An example of an ordinal
+scale is a categorical survey where you rank a variable 1=good, 2=fair,
+3=poor.</p>
 <ul>
 <li>
-<strong>domain</strong> - Please list either "text" or "enumerated". A nominal attribute with domain “enumerated” is one in which the variable types can be encoded with integers. For example 1 = “cloudy”, 2 = “sunny”. A “text” type usually denotes a name or an id for example a site name or number.
+<strong>domain</strong> - Please list either "text" or "enumerated".
+A nominal attribute with domain “enumerated” is one in which the
+variable types can be encoded with integers. For example 1 = “cloudy”, 2
+= “sunny”. A “text” type usually denotes a name or an id for example a
+site name or number.
 <ul>
-<li>if “enumerated” you need to provide a definition for each code in the <strong>code_definitions</strong> (see <a href="#code-definitions">Code Definitions</a> section) sheet.</li>
+<li>if “enumerated” you need to provide a definition for each code in
+the <strong>code_definitions</strong> (see <a href="#code-definitions">Code Definitions</a> section) sheet.</li>
 </ul>
 </li>
 </ul>
 </div>
-<div id="interval" class="section level4">
-<h4 class="hasAnchor">
-<a href="#interval" class="anchor"></a>Interval</h4>
-<p>Used to define interval scale attributes. Intervals define data which consist of equidistant points on a scale. For example temperature data, mark grading, IQ scale, etc. Intervals can be negative while ratios cannot</p>
+<div class="section level5">
+<h5 id="interval">Interval<a class="anchor" aria-label="anchor" href="#interval"></a>
+</h5>
+<p>Used to define interval scale attributes. Intervals define data which
+consist of equidistant points on a scale. For example temperature data,
+mark grading, IQ scale, etc. Intervals can be negative while ratios
+cannot</p>
 <ul>
 <li>
-<strong>domain -</strong> The domain for an interval value should be numeric. Please select numeric from the dropdown menu.</li>
+<strong>domain -</strong> The domain for an interval value should be
+numeric. Please select numeric from the dropdown menu.</li>
 <li>
-<strong>type</strong> - The type for an interval value should be interval. Please select interval from the dropdown menu.</li>
+<strong>type</strong> - The type for an interval value should be
+interval. Please select interval from the dropdown menu.</li>
 <li>
-<strong>units</strong> - The units assigned to this attribute's values. These must be in standard units, other common non-SI units are also allowed. A full list of allowable units can be viewed <a href="https://eml.ecoinformatics.org/schema/eml-unittypedefinitions_xsd#otherUnitType">here</a>.</li>
+<strong>units</strong> - The units assigned to this attribute's
+values. These must be in standard units, other common non-SI units are
+also allowed. A full list of allowable units can be viewed <a href="https://eml.ecoinformatics.org/schema/eml-unittypedefinitions_xsd#otherUnitType" class="external-link">here</a>.</li>
 <li>
-<strong>unit_precision (optional)</strong>- This is a decimal value indicating how precise the measured value is.</li>
+<strong>unit_precision (optional)</strong>- This is a decimal value
+indicating how precise the measured value is.</li>
 <li>
-<strong>number_type</strong> - one of natural (1, 2, 3, …), whole (0, 1, 2, 3,…), integer (-2, -1, 0, 1, 2) or real.</li>
+<strong>number_type</strong> - one of natural (1, 2, 3, …), whole
+(0, 1, 2, 3,…), integer (-2, -1, 0, 1, 2) or real.</li>
 <li>
-<strong>minimum</strong> - Theoretical or allowable minimum value. Values can be larger than or equal to this number.</li>
+<strong>minimum</strong> - Theoretical or allowable minimum value.
+Values can be larger than or equal to this number.</li>
 <li>
-<strong>maximum</strong> - Theoretical or allowable maximum value. Values can be less than or equal to this number.</li>
+<strong>maximum</strong> - Theoretical or allowable maximum value.
+Values can be less than or equal to this number.</li>
 </ul>
 </div>
-<div id="ratio" class="section level4">
-<h4 class="hasAnchor">
-<a href="#ratio" class="anchor"></a>Ratio</h4>
-<p>Used to define ratio scale attributes. Ratios define data which consists not only of equidistant points but also has a meaningful zero point, which allows the ratio to have meaning. For example measurement heights, flow rates, weight, length, etc.</p>
+<div class="section level5">
+<h5 id="ratio">Ratio<a class="anchor" aria-label="anchor" href="#ratio"></a>
+</h5>
+<p>Used to define ratio scale attributes. Ratios define data which
+consists not only of equidistant points but also has a meaningful zero
+point, which allows the ratio to have meaning. For example measurement
+heights, flow rates, weight, length, etc.</p>
 <ul>
 <li>
-<strong>domain -</strong> The domain for a ratio value should be numeric. Please select numeric from the dropdown menu.</li>
+<strong>domain -</strong> The domain for a ratio value should be
+numeric. Please select numeric from the dropdown menu.</li>
 <li>
-<strong>type</strong> - The type for a ratio value should be ratio. Please select ratio from the dropdown menu.</li>
+<strong>type</strong> - The type for a ratio value should be ratio.
+Please select ratio from the dropdown menu.</li>
 <li>
-<strong>units -</strong> The units assigned to this attribute's values. These must be in standard units, other common non-SI units are also allowed. A full list of allowable units can be viewed <a href="https://eml.ecoinformatics.org/schema/eml-unittypedefinitions_xsd#otherUnitType">here</a>.</li>
+<strong>units -</strong> The units assigned to this attribute's
+values. These must be in standard units, other common non-SI units are
+also allowed. A full list of allowable units can be viewed <a href="https://eml.ecoinformatics.org/schema/eml-unittypedefinitions_xsd#otherUnitType" class="external-link">here</a>.</li>
 <li>
-<strong>unit_precision (optional)</strong>- This is a decimal value indicating how precise the measured value is.</li>
+<strong>unit_precision (optional)</strong>- This is a decimal value
+indicating how precise the measured value is.</li>
 <li>
-<strong>number_type</strong> - one of natural (1, 2, 3, …), whole (0, 1, 2, 3, …), integer (-2, -1, 0, 1, 2) or real.</li>
+<strong>number_type</strong> - one of natural (1, 2, 3, …), whole
+(0, 1, 2, 3, …), integer (-2, -1, 0, 1, 2) or real.</li>
 <li>
-<strong>minimum</strong> - Theoretical or allowable minimum value. Values can be larger than or equal to this number.</li>
+<strong>minimum</strong> - Theoretical or allowable minimum value.
+Values can be larger than or equal to this number.</li>
 <li>
-<strong>maximum</strong> - Theoretical or allowable maximum value. Values can be less than or equal to this number.</li>
+<strong>maximum</strong> - Theoretical or allowable maximum value.
+Values can be less than or equal to this number.</li>
 </ul>
 </div>
-<div id="datetime" class="section level4">
-<h4 class="hasAnchor">
-<a href="#datetime" class="anchor"></a>Datetime</h4>
-<p>Used to define date and time attributes. DateTime is used when the values fall on the Gregorian calendar system. DateTime values are special because they have properties of interval values (most of the time it is legitimate to treat them as interval values by converting them to a duration from a fixed point) but they sometimes only behave as ordinals (because the calendar is not predetermined, for some dateTime values one can only find out the order of the points and not the magnitude of the duration between those points). The most encompassing format is: YYYY-MM-DDThh:mm:ss.</p>
+<div class="section level5">
+<h5 id="datetime">Datetime<a class="anchor" aria-label="anchor" href="#datetime"></a>
+</h5>
+<p>Used to define date and time attributes. DateTime is used when the
+values fall on the Gregorian calendar system. DateTime values are
+special because they have properties of interval values (most of the
+time it is legitimate to treat them as interval values by converting
+them to a duration from a fixed point) but they sometimes only behave as
+ordinals (because the calendar is not predetermined, for some dateTime
+values one can only find out the order of the points and not the
+magnitude of the duration between those points). The most encompassing
+format is: YYYY-MM-DDThh:mm:ss.</p>
 <ul>
 <li>
-<strong>domain -</strong> The domain for a datetime value should be dateTime. Please select dateTime from the dropdown menu.</li>
+<strong>domain -</strong> The domain for a datetime value should be
+dateTime. Please select dateTime from the dropdown menu.</li>
 <li>
-<strong>date_time_format</strong> - The format your date/time attribute is recorded in. ISO 8601 standard should be used (YYYY-MM-DD) for date, (YYYY-MM-DDThh:mm:ss) for datetime and (hh:mm:ss) for time.</li>
+<strong>date_time_format</strong> - The format your date/time
+attribute is recorded in. ISO 8601 standard should be used (YYYY-MM-DD)
+for date, (YYYY-MM-DDThh:mm:ss) for datetime and (hh:mm:ss) for
+time.</li>
 <li>
-<strong>date_time_precision (optional)</strong> - To what level time is being measured</li>
+<strong>date_time_precision (optional)</strong> - To what level time
+is being measured</li>
 <li>
 <strong>minimum</strong> - minimum allowable date/time</li>
 <li>
-<strong>maximum</strong> - maximum allowable date/time or “ongoing”</li>
+<strong>maximum</strong> - maximum allowable date/time or
+“ongoing”</li>
 </ul>
 </div>
 </div>
 </div>
-<div id="code-definitions" class="section level2">
-<h2 class="hasAnchor">
-<a href="#code-definitions" class="anchor"></a>Code Definitions</h2>
-<p>The code definitions sheet is where you will define the “enumerated” variable types specified in the attributes sheet. This is simply where you will list out all the types for an enumerated variable and each of their definitions.</p>
-<p>All columns of this section are blue because they are conditionally required and only needs to be filled out if there are attributes that are “enumerated”.</p>
+<div class="section level3">
+<h3 id="code-definitions">Code Definitions<a class="anchor" aria-label="anchor" href="#code-definitions"></a>
+</h3>
+<p>The code definitions sheet is where you will define the “enumerated”
+variable types specified in the attributes sheet. This is simply where
+you will list out all the types for an enumerated variable and each of
+their definitions.</p>
+<p>All columns of this section are blue because they are conditionally
+required and only needs to be filled out if there are attributes that
+are “enumerated”.</p>
 <p><strong>Example:</strong></p>
 <table class="table">
 <thead><tr class="header">
@@ -517,11 +797,13 @@
 
 
       <footer><div class="copyright">
-  <p>Developed by Sadie Gill, Elizabeth Shaw, Erin Cain.</p>
+  <p></p>
+<p>Developed by Sadie Gill, Elizabeth Shaw, Erin Cain.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
+  <p></p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.6.</p>
 </div>
 
       </footer>
@@ -529,6 +811,8 @@
 
   
 
+
+  
 
   </body>
 </html>
