@@ -158,6 +158,7 @@
 #'     \item \strong{USBR}
 #'     \item \strong{CDWR}
 #'     \item \strong{CDFW}
+#'     \item \strong{USFWS}
 #' }
 #' @examples 
 #' CVPIA_funders$USBR 
