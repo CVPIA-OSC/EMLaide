@@ -84,7 +84,6 @@ evaluate_edi_package <- function(user_id, password, eml_file_path, environment =
         # content into a report_df table 
         report_df <- generate_report_df(response)
         print("Please check for errors in the report dataframe")
-        View(report_df)
         return(report_df)
         break
       }
