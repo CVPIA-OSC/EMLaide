@@ -223,7 +223,7 @@ required and columns that are gray are optional.
 
 Funding information of the dataset. Use this sheet to describe the
 funding awarded to the project. We have provided a set of CVPIA default
-funders: \"USBR\", \"CDFW\", \"CDWR\". If you input one of the previous
+funders: \"USBR\", \"CDFW\", \"CDWR\", and \"USFWS\". If you input one of the previous
 listed in the **funder\_name** column you must still provide an
 **award\_title** but you may leave the remaining columns blank. 
 

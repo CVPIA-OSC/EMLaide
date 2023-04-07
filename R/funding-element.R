@@ -3,7 +3,7 @@
 #' This award element is then nested within a project node to complete a funding section. 
 #' @param funder_name Organization or individual providing the funding. If applicable, 
 #' use one of the following from the helper data 
-#' \code{\link{CVPIA_funders}}: "USBR", "CDWR", or "CDFW" to get pre-selected funding 
+#' \code{\link{CVPIA_funders}}: "USBR", "CDWR", "CDFW", or "USFWS" to get pre-selected funding 
 #' information. If you are funded by one of these sources 
 #' please specify which one in \code{funder_name} and include an \code{award_title}. 
 #' @param award_title Title of the award granted to the project.
@@ -56,6 +56,10 @@ create_funding <- function(funder_name, award_title, funder_identifier = NULL,
     if (funder_name == "CDFW"){
     award <- EMLaide::CVPIA_funders$CDFW
     award$title = award_title
+    }
+    if (funder_name == "USFWS"){
+      award <- EMLaide::CVPIA_funders$USFWS
+      award$title = award_title
     }
   } 
   else {
