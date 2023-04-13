@@ -24,7 +24,7 @@ create_datatable <- function(filepath,
  
   raw_attribute_table <- readxl::read_xlsx(attribute_info, sheet = "attribute") 
   # Add in code to reorder columns to match columns in datatable 
-  current_metadata_order <- pull(raw_attribute_table, attribute_name)
+  current_metadata_order <- dplyr::pull(raw_attribute_table, attribute_name)
   current_data_order <- colnames(readr::read_csv(filepath))
   reorder_index <- match(current_data_order, current_metadata_order) 
   
