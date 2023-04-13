@@ -245,8 +245,8 @@ datatable_metadata <-
 expected_datatabletable <- list(dataTable = list(list(entityName = "enclosure-study-growth-rate-data.csv", 
                                                       entityDescription = "Growth Rates - Enclosure Study", physical = list(
                                                         objectName = "enclosure-study-growth-rate-data.csv", 
-                                                        size = list(unit = "bytes", size = "32636"), authentication = list(
-                                                          method = "MD5", authentication = "44b508c45e3635e8d65a719631530a75"), 
+                                                        size = list(unit = "bytes", size = "32282"), authentication = list(
+                                                          method = "MD5", authentication = "c6b5be608740c29c65cdc398039881a6"), 
                                                         dataFormat = list(textFormat = list(numHeaderLines = "1", 
                                                                                             recordDelimiter = "\\n", attributeOrientation = "column", 
                                                                                             simpleDelimited = list(fieldDelimiter = ","))),
