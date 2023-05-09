@@ -17,19 +17,22 @@ reserve_edi_id <- function(user_id, password, environment = "production") {
   base_url <- dplyr::case_when(environment == "staging" ~ "https://pasta-s.lternet.edu/package/reservations/eml/edi",
                                environment == "development" ~ "https://pasta-d.lternet.edu/package/reservations/eml/edi",
                                environment == "production" ~ "https://pasta.lternet.edu/package/reservations/eml/edi")
-  response <-httr::POST(
-    url = base_url,
-    config = httr::authenticate(paste("uid=", user_id, ",o=EDI", ",dc=edirepository,dc=org"), password)
-  )
-  if (response$status_code == "201") {
-  edi_number <- httr::content(response, as = "text", encoding = "UTF-8")
-  paste0("edi.", edi_number, ".1", sep = "")
-} else {
-  message("Your request to reserve an EDI number failed, 
+  tryCatch({
+    response <-httr::POST(
+      url = base_url,
+      config = httr::authenticate(paste("uid=", user_id, ",o=EDI", ",dc=edirepository,dc=org"), password)
+    )
+    if (response$status_code == "201") {
+      edi_number <- httr::content(response, as = "text", encoding = "UTF-8")
+      paste0("edi.", edi_number, ".1", sep = "")
+    } else {
+      stop("RequestFailed", "Your request to reserve an EDI number failed, 
           please check that you entered a valid username and password. 
-          See more information on request status below")
-  print(response)
-}
+          See more information on request status below,", response)
+      }
+    }, error = function(err){
+      stop("RequestError", "An error occurred while reserving an EDI number.", err)
+    })
 }
 
 # Evaluate EDI Data package -------------------------------------------------------
