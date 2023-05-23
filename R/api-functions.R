@@ -26,9 +26,9 @@ reserve_edi_id <-
       )
     response <- httr::POST(url = base_url,
                            config = httr::authenticate(
-                             paste("uid=", user_id, ",o=EDI", ",dc=edirepository,dc=org"),
+                             paste0("uid=", user_id, ",o=EDI", ",dc=edirepository,dc=org"),
                              password
-                           ), timeout = timeout(max_timeout))
+                           ), timeout = httr::timeout(max_timeout))
     if (response$status_code == "201") {
       edi_number <-
         httr::content(response, as = "text", encoding = "UTF-8")
@@ -80,9 +80,9 @@ evaluate_edi_package <-
   # post package to EDI for evaluation 
   response <- httr::POST(
     url = paste0(base_url, "evaluate/eml"),
-    config = httr::authenticate(paste('uid=', user_id, ",o=EDI", ',dc=edirepository,dc=org'), password),
+    config = httr::authenticate(paste0('uid=', user_id, ",o=EDI", ',dc=edirepository,dc=org'), password),
     body = httr::upload_file(eml_file_path),
-    timeout = timeout(max_timeout)
+    timeout = httr::timeout(max_timeout)
   )
   if (response$status_code == "202") {
     # pull transaction id from response content 
@@ -95,10 +95,10 @@ evaluate_edi_package <-
     response <- httr::GET(
       url = paste0(base_url, "evaluate/report/eml/", transaction_id),
       config = httr::authenticate(
-        paste('uid=', user_id, ",o=EDI", ',dc=edirepository,dc=org'),
+        paste0('uid=', user_id, ",o=EDI", ',dc=edirepository,dc=org'),
         password,
-        timeout = httr::timeout(max_timeout)
-      )
+      ),
+      timeout = httr::timeout(max_timeout)
     )
       # iter <- iter + 1
     if (response$status_code == "200") {
@@ -161,7 +161,7 @@ upload_edi_package <-
   # post package to EDI for upload 
   response <- httr::POST(
     url = paste0(base_url, "eml/"),
-    config = httr::authenticate(paste('uid=', user_id, ",o=EDI", ',dc=edirepository,dc=org'), password),
+    config = httr::authenticate(paste0('uid=', user_id, ",o=EDI", ',dc=edirepository,dc=org'), password),
     body = httr::upload_file(eml_file_path),
     timeout = httr::timeout(max_timeout)
   )
@@ -172,7 +172,7 @@ upload_edi_package <-
     check_error <- httr::GET(
       url = paste0(base_url, "error/eml/", transaction_id),
       config = httr::authenticate(
-        paste('uid=', user_id, ",o=EDI", ',dc=edirepository,dc=org'),
+        paste0('uid=', user_id, ",o=EDI", ',dc=edirepository,dc=org'),
         password
       ),timeout = httr::timeout(max_timeout)
     )
@@ -201,7 +201,7 @@ upload_edi_package <-
                      "report/eml/",
                      scope, "/", identifier, "/", revision),
         config = httr::authenticate(
-          paste('uid=', user_id, ",o=EDI", ',dc=edirepository,dc=org'),
+          paste0('uid=', user_id, ",o=EDI", ',dc=edirepository,dc=org'),
           password
         ),
         timeout = httr::timeout(max_timeout)
@@ -267,7 +267,7 @@ update_edi_package <-
   # post package to EDI for update
   response <- httr::PUT(
     url = paste0(base_url, "eml/", scope, "/", identifier),
-    config = httr::authenticate(paste('uid=', user_id, ",o=EDI", ',dc=edirepository,dc=org'), password),
+    config = httr::authenticate(paste0('uid=', user_id, ",o=EDI", ',dc=edirepository,dc=org'), password),
     body = httr::upload_file(eml_file_path),
     timeout = httr::timeout(max_timeout)
   )
@@ -277,7 +277,7 @@ update_edi_package <-
     check_error <- httr::GET(
       url = paste0(base_url, "error/eml/", transaction_id),
       config = httr::authenticate(
-        paste('uid=', user_id, ",o=EDI", ',dc=edirepository,dc=org'),
+        paste0('uid=', user_id, ",o=EDI", ',dc=edirepository,dc=org'),
         password
         ), 
       timeout = httr::timeout(max_timeout)
@@ -306,7 +306,7 @@ update_edi_package <-
         url = paste0(base_url, "report/eml/",
                      scope, "/", identifier, "/", revision),
         config = httr::authenticate(
-          paste('uid=', user_id, ",o=EDI", ',dc=edirepository,dc=org'),
+          paste0('uid=', user_id, ",o=EDI", ',dc=edirepository,dc=org'),
           password
         ),
         timeout = httr::timeout(max_timeout)
