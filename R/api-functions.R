@@ -167,6 +167,7 @@ upload_edi_package <-
   )
   
   if (response$status_code == "202") {
+    # TODO increase sys.sleep to get transaction i
     Sys.sleep(2) 
     transaction_id <- httr::content(response, as = 'text', encoding = 'UTF-8')
     check_error <- httr::GET(
