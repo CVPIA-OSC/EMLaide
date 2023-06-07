@@ -1,0 +1,1835 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<eml:eml xmlns:eml="https://eml.ecoinformatics.org/eml-2.2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:stmml="http://www.xml-cml.org/schema/stmml-1.2" packageId="edi.1046.1" system="EDI" xsi:schemaLocation="https://eml.ecoinformatics.org/eml-2.2.0 https://eml.ecoinformatics.org/eml-2.2.0/eml.xsd">
+  <access authSystem="https://pasta.edirepository.org/authentication" order="allowFirst" scope="document">
+    <allow>
+      <principal>public</principal>
+      <permission>read</permission>
+    </allow>
+    <allow>
+      <principal>cvpia</principal>
+      <permission>write</permission>
+    </allow>
+  </access>
+  <dataset>
+    <shortName>CVPIA Salmonid Habitat Monitoring Data</shortName>
+    <title>Salmonid habitat use monitoring used to determine effectiveness of habitat improvement projects in the Sacramento River, CA</title>
+    <creator id="https://orcid.org/0000-0002-6225-2057">
+      <individualName>
+        <givenName>Amanda</givenName>
+        <surName>Banet</surName>
+      </individualName>
+      <organizationName>CSU Chico</organizationName>
+      <electronicMailAddress>mail@mail.mail</electronicMailAddress>
+    </creator>
+    <associatedParty id="http://orcid.org/0000-0001-9057-9084">
+      <individualName>
+        <givenName>John</givenName>
+        <surName>Hannon</surName>
+      </individualName>
+      <organizationName>US Bureau of Reclamation</organizationName>
+      <electronicMailAddress>mail@mail.mail</electronicMailAddress>
+      <role>program founder</role>
+    </associatedParty>
+    <associatedParty>
+      <individualName>
+        <givenName>Steve</givenName>
+        <surName>Tussing</surName>
+      </individualName>
+      <organizationName>Tussing Ecological Services</organizationName>
+      <electronicMailAddress>mail@mail.mail</electronicMailAddress>
+      <role>other</role>
+    </associatedParty>
+    <associatedParty>
+      <individualName>
+        <givenName>Ryan</givenName>
+        <surName>Greathouse</surName>
+      </individualName>
+      <organizationName>PSMFC</organizationName>
+      <electronicMailAddress>mail@mail.mail</electronicMailAddress>
+      <role>other</role>
+    </associatedParty>
+    <pubDate>2023-06-06</pubDate>
+    <abstract>
+      <section>
+        <title>Overview</title>
+        <para>
+      The Central Valley Project Improvement Act (CVPIA) funds habitat
+      improvement work in the Central Valley of California to increase
+      salmonid populations in furtherance of meeting CVPIA fish doubling
+      goals. This data package contains five datasets.
+    </para>
+      </section>
+      <section>
+        <title>Enclosure Study – Growth Data</title>
+        <para>
+      This dataset covers enclosure studies that examined salmonid
+      growth rates in the Sacramento River and focused on assessing
+      effectiveness of salmonid habitat improvement projects. Data was
+      collected in July and August 2019 from project sites, constructed
+      habitat project sites, and control sites where no treatment is
+      planned. Six enclosures with juvenile Fall Run Chinook salmon from
+      Coleman National Fish Hatchery were placed in each habitat type.
+      Fish growth was tracked for approximately 6.5 weeks. Annual
+      reports summarize the survey findings.
+    </para>
+      </section>
+      <section>
+        <title>Enclosure Study – Gut Contents Data</title>
+        <para>
+      This dataset covers enclosure studies that examined salmonid
+      growth rates in the Sacramento River and focused on assessing
+      effectiveness of salmonid habitat improvement projects. Data was
+      collected in July and August 2019 from project sites, constructed
+      habitat project sites, and control sites where no treatment is
+      planned. Six enclosures with juvenile Fall Run Chinook salmon from
+      Coleman National Fish Hatchery were placed in each habitat type.
+      Enclosures remained in the river for approximately 6.5 weeks.  At
+      the end of the study, fish were euthanized, and we dissected their
+      guts and enumerated the taxa found. Annual reports summarize the
+      survey findings.
+    </para>
+      </section>
+      <section>
+        <title>Microhabitat Use Data</title>
+        <para>
+      This dataset covers salmonid microhabitat use conducted in the
+      Sacramento River and focused on assessing effectiveness of
+      salmonid habitat improvement projects.  Surveys are conducted
+      roughly monthly and include pre-project sites, constructed habitat
+      project sites, and control sites where no treatment is planned. 
+      Based upon habitat inventory data, annually identify which habitat
+      units within each side channel will be selected for the collection
+      of habitat-use data. Habitats are randomly selected but stratified
+      to include the full range of available habitat types to capture
+      the range in depths and velocities present, at approximately equal
+      surface areas each. Habitat selection attempts to capture the full
+      range of microhabitat cover types identified from microhabitat
+      mapping efforts. Snorkel surveys are conducted to achieve an
+      abundance index, with the addition that when a selected habitat
+      unit is encountered, the location of fish observed is marked with
+      a weighted flag on the stream bottom. The species / run, and size
+      of juvenile(s) and numbers observed at that location is recorded.
+      After the selected habitat unit has been completely surveyed,
+      flagged locations are revisited, and we collect habitat data
+      specific to each of those sample points.
+    </para>
+      </section>
+      <section>
+        <title>Seining Data</title>
+        <para>
+      This dataset covers salmonid lengths, weights, and conditions
+      collected via seining in the Sacramento River and focuses on
+      assessing effectiveness of salmonid habitat improvement projects. 
+      Surveys are conducted roughly monthly and include pre-project
+      sites, constructed habitat project sites, and control sites where
+      no treatment is planned.  Wandering pole seine and/or simple arc
+      set beach seine methods were used to capture juvenile salmonids.
+      Randomized sample locations within side channels for wandering
+      pole seining were stratified by habitat type so that the range of
+      available habitat type and quality were sampled. Beach seining
+      methods were implemented at fixed sites. Mainstem sites were
+      selected far enough away from side channels so that juvenile fish
+      are not likely to be using both habitats.
+    </para>
+      </section>
+      <section>
+        <title>Snorkel Index Data</title>
+        <para>
+      This dataset covers salmonid observations conducted in the
+      Sacramento River and focused on assessing effectiveness of
+      salmonid habitat improvement projects.  Surveys are conducted
+      roughly every other week and include pre-project sites,
+      constructed habitat project sites, and control sites where no
+      treatment is planned.  Sites are snorkeled by a crew of two to
+      three people and all salmonids are counted by size category within
+      pre-set survey reaches.  Snorkelers record data on dive slates and
+      then transcribe to paper data sheets and computer files.  Annual
+      reports summarize the survey findings.
+    </para>
+      </section>
+    </abstract>
+    <keywordSet>
+      <keyword>Sacramento River</keyword>
+      <keyword>Salmonid Habitat Restoration Projects</keyword>
+      <keyword>Effectiveness Monitoring</keyword>
+      <keyword>Pacific Salmon</keyword>
+      <keyword>CVPIA</keyword>
+    </keywordSet>
+    <intellectualRights>
+      <para>This data package is released to the "public domain" under Creative Commons CC0 1.0 "No Rights Reserved" (see: https://creativecommons.org/publicdomain/zero/1.0/). It is considered professional etiquette to provide attribution of the original work if this data package is shared in whole or by individual components. A generic citation is provided for this data package on the website https://portal.edirepository.org (herein "website") in the summary metadata page. Communication (and collaboration) with the creators of this data package is recommended to prevent duplicate research or publication. This data package (and its components) is made available "as is" and with no warranty of accuracy or fitness for use. The creators of this data package and the website shall not be liable for any damages resulting from misinterpretation or misuse of the data package or its components. Periodic updates of this data package may be available from the website. Thank you.</para>
+    </intellectualRights>
+    <licensed>
+      <licenseName>Creative Commons Zero v1.0 Universal</licenseName>
+      <url>https://spdx.org/licenses/CC0-1.0.html</url>
+      <identifier>CC0-1.0</identifier>
+    </licensed>
+    <coverage>
+      <geographicCoverage>
+        <geographicDescription>Sacramento Riverin northern California in the reach of the river between Keswick Dam and Sacramento</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-122.4482</westBoundingCoordinate>
+          <eastBoundingCoordinate>-121.4844</eastBoundingCoordinate>
+          <northBoundingCoordinate>40.6124</northBoundingCoordinate>
+          <southBoundingCoordinate>38.5094</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <temporalCoverage>
+        <rangeOfDates>
+          <beginDate>
+            <calendarDate>2015-12-08</calendarDate>
+          </beginDate>
+          <endDate>
+            <calendarDate>2020-07-02</calendarDate>
+          </endDate>
+        </rangeOfDates>
+      </temporalCoverage>
+      <taxonomicCoverage>
+        <taxonomicClassification>
+          <taxonRankName>kingdom</taxonRankName>
+          <taxonRankValue>Animalia</taxonRankValue>
+          <taxonomicClassification>
+            <taxonRankName>phylum</taxonRankName>
+            <taxonRankValue>Chordata</taxonRankValue>
+            <taxonomicClassification>
+              <taxonRankName>class</taxonRankName>
+              <taxonRankValue>Teleostei</taxonRankValue>
+              <taxonomicClassification>
+                <taxonRankName>order</taxonRankName>
+                <taxonRankValue>Salmoniformes</taxonRankValue>
+                <taxonomicClassification>
+                  <taxonRankName>family</taxonRankName>
+                  <taxonRankValue>Salmonidae</taxonRankValue>
+                  <taxonomicClassification>
+                    <taxonRankName>genus</taxonRankName>
+                    <taxonRankValue>Oncorhynchus</taxonRankValue>
+                    <taxonomicClassification>
+                      <taxonRankName>species</taxonRankName>
+                      <taxonRankValue>Oncorhynchus tshawytscha</taxonRankValue>
+                      <commonName>Chinook Salmon</commonName>
+                      <taxonId provider="https://itis.gov">161980</taxonId>
+                    </taxonomicClassification>
+                  </taxonomicClassification>
+                </taxonomicClassification>
+              </taxonomicClassification>
+            </taxonomicClassification>
+          </taxonomicClassification>
+        </taxonomicClassification>
+      </taxonomicCoverage>
+      <taxonomicCoverage>
+        <taxonomicClassification>
+          <taxonRankName>kingdom</taxonRankName>
+          <taxonRankValue>Animalia</taxonRankValue>
+          <taxonomicClassification>
+            <taxonRankName>phylum</taxonRankName>
+            <taxonRankValue>Chordata</taxonRankValue>
+            <taxonomicClassification>
+              <taxonRankName>class</taxonRankName>
+              <taxonRankValue>Teleostei</taxonRankValue>
+              <taxonomicClassification>
+                <taxonRankName>order</taxonRankName>
+                <taxonRankValue>Salmoniformes</taxonRankValue>
+                <taxonomicClassification>
+                  <taxonRankName>family</taxonRankName>
+                  <taxonRankValue>Salmonidae</taxonRankValue>
+                  <taxonomicClassification>
+                    <taxonRankName>genus</taxonRankName>
+                    <taxonRankValue>Oncorhynchus</taxonRankValue>
+                    <taxonomicClassification>
+                      <taxonRankName>species</taxonRankName>
+                      <taxonRankValue>Oncorhynchus mykiss</taxonRankValue>
+                      <commonName>Steelhead Trout</commonName>
+                      <taxonId provider="https://itis.gov">161989</taxonId>
+                    </taxonomicClassification>
+                  </taxonomicClassification>
+                </taxonomicClassification>
+              </taxonomicClassification>
+            </taxonomicClassification>
+          </taxonomicClassification>
+        </taxonomicClassification>
+      </taxonomicCoverage>
+    </coverage>
+    <maintenance>
+      <description>ongoing</description>
+      <maintenanceUpdateFrequency>annually</maintenanceUpdateFrequency>
+    </maintenance>
+    <contact>
+      <individualName>
+        <givenName>Amanda</givenName>
+        <surName>Banet</surName>
+      </individualName>
+      <organizationName>CSU Chico</organizationName>
+      <electronicMailAddress>mail@mail.mail</electronicMailAddress>
+    </contact>
+    <methods>
+      <methodStep>
+        <description>
+          <section>
+            <title>Enclosure Study: Growth Rate Methods.</title>
+            <para>
+      Data was collected following methods described at the following
+      link:
+    </para>
+            <para>
+      Monitoring efforts will generate data for the presented response
+      variables for the purpose of testing the hypotheses presented in
+      table 1 of the aforementioned document. Specific response variable
+      metrics are identified while methods reference field protocols
+      that are documented in Appendix A (Table A-1).
+    </para>
+            <para>
+      Note that the above referenced protocol includes additional types
+      of data collection. Enclosure study methods are identified and
+      clearly labeled throughout the document.
+    </para>
+            <para>
+      Caveats to using this data: Some enclosures lost fish due to
+      mortality or escape, and others did not. This resulted in
+      different densities between habitat types, and confounded habitat
+      type with density dependent effects on growth. Logistical
+      constraints prevented removal of all enclosures on the same day,
+      so the total time from start to finish was not identical between
+      habitat types.
+    </para>
+          </section>
+        </description>
+      </methodStep>
+    </methods>
+    <project>
+      <title>Salmonid habitat use monitoring used to determine effectiveness of habitat improvement projects in the Sacramento River, CA</title>
+      <personnel>
+        <individualName>
+          <givenName>Amanda</givenName>
+          <surName>Banet</surName>
+        </individualName>
+        <organizationName>CSU Chico</organizationName>
+        <electronicMailAddress>mail@mail.mail</electronicMailAddress>
+        <role>Project Lead</role>
+      </personnel>
+      <award>
+        <funderName>United States Bureau of Reclamation</funderName>
+        <funderIdentifier>https://www.wikidata.org/wiki/Q1010548</funderIdentifier>
+        <awardNumber>R14AC00096</awardNumber>
+        <title>Salmonid Spawning and Rearing Habitat Restoration in the Sacramento River</title>
+      </award>
+    </project>
+    <dataTable>
+      <entityName>enclosure-study-growth-rate-data.csv</entityName>
+      <entityDescription>Growth Rates - Enclosure Study</entityDescription>
+      <physical>
+        <objectName>enclosure-study-growth-rate-data.csv</objectName>
+        <size unit="bytes">32282</size>
+        <authentication method="MD5">c6b5be608740c29c65cdc398039881a6</authentication>
+        <dataFormat>
+          <textFormat>
+            <numHeaderLines>1</numHeaderLines>
+            <recordDelimiter>\n</recordDelimiter>
+            <attributeOrientation>column</attributeOrientation>
+            <simpleDelimited>
+              <fieldDelimiter>,</fieldDelimiter>
+            </simpleDelimited>
+          </textFormat>
+        </dataFormat>
+        <distribution>
+          <online>
+            <url function="download">https://raw.githubusercontent.com/FlowWest/edi.749.1/main/data/enclosure-study-growth-rate-data.csv</url>
+          </online>
+        </distribution>
+      </physical>
+      <attributeList>
+        <attribute>
+          <attributeName>enclosure</attributeName>
+          <attributeDefinition>Enclosure ID. Enclosures were number 1-6 in each site for identification.</attributeDefinition>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Enclosure ID. Enclosures were number 1-6 in each site for identification.</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>fish_code</attributeName>
+          <attributeDefinition>Unique identifying number for fish within an enclosure. Fish were numbered 1-20 within each enclosure.</attributeDefinition>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Unique identifying number for fish within an enclosure. Fish were numbered 1-20 within each enclosure.</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>length_begin</attributeName>
+          <attributeDefinition>fish fork length at the start of the study</attributeDefinition>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>millimeter</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+                <bounds>
+                  <minimum exclusive="false">48</minimum>
+                  <maximum exclusive="false">78</maximum>
+                </bounds>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>length_middle</attributeName>
+          <attributeDefinition>fish fork length at the mid-point of the study</attributeDefinition>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>millimeter</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+                <bounds>
+                  <minimum exclusive="false">68</minimum>
+                  <maximum exclusive="false">84</maximum>
+                </bounds>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>length_end</attributeName>
+          <attributeDefinition>fish fork length at the end of the study</attributeDefinition>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>millimeter</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+                <bounds>
+                  <minimum exclusive="false">65</minimum>
+                  <maximum exclusive="false">95</maximum>
+                </bounds>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>condition_beginning</attributeName>
+          <attributeDefinition>Fulton's condition factor at the beginning of the study</attributeDefinition>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>dimensionless</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+                <bounds>
+                  <minimum exclusive="false">0.335</minimum>
+                  <maximum exclusive="false">2.7003</maximum>
+                </bounds>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>condition_ending</attributeName>
+          <attributeDefinition>Fulton's condition factor at the end of the study</attributeDefinition>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>dimensionless</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+                <bounds>
+                  <minimum exclusive="false">0.7328</minimum>
+                  <maximum exclusive="false">1.591</maximum>
+                </bounds>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>density_start</attributeName>
+          <attributeDefinition>density at the start of the study, represented as the number of fish in the enclosure</attributeDefinition>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <customUnit>fishPerEnclosure</customUnit>
+              </unit>
+              <numericDomain>
+                <numberType>whole</numberType>
+                <bounds>
+                  <minimum exclusive="false">18</minimum>
+                  <maximum exclusive="false">20</maximum>
+                </bounds>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>density_middle</attributeName>
+          <attributeDefinition>density at the mid-point of the study, represented as the number of fish in the enclosure</attributeDefinition>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <customUnit>fishPerEnclosure</customUnit>
+              </unit>
+              <numericDomain>
+                <numberType>whole</numberType>
+                <bounds>
+                  <minimum exclusive="false">11</minimum>
+                  <maximum exclusive="false">20</maximum>
+                </bounds>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>density_end</attributeName>
+          <attributeDefinition>density at the end of the study, represented as the number of fish in the enclosure</attributeDefinition>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <customUnit>fishPerEnclosure</customUnit>
+              </unit>
+              <numericDomain>
+                <numberType>whole</numberType>
+                <bounds>
+                  <minimum exclusive="false">5</minimum>
+                  <maximum exclusive="false">20</maximum>
+                </bounds>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>atu</attributeName>
+          <attributeDefinition>acumulated thermal units experienced by the fish over the course of the study</attributeDefinition>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <customUnit>thermal unit</customUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+                <bounds>
+                  <minimum exclusive="false">593.193</minimum>
+                  <maximum exclusive="false">628.55</maximum>
+                </bounds>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>habitat</attributeName>
+          <attributeDefinition>The habitat type (mainstem/sidechannel) and treatment (control/restored) for each study site</attributeDefinition>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>The habitat type (mainstem/sidechannel) and treatment (control/restored) for each study site</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>site_id</attributeName>
+          <attributeDefinition>site name for each study site</attributeDefinition>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>site name for each study site</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>days</attributeName>
+          <attributeDefinition>number of days fish were in enclosure</attributeDefinition>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <customUnit>day</customUnit>
+              </unit>
+              <numericDomain>
+                <numberType>whole</numberType>
+                <bounds>
+                  <minimum exclusive="false">43</minimum>
+                  <maximum exclusive="false">48</maximum>
+                </bounds>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+      </attributeList>
+      <numberOfRecords>353</numberOfRecords>
+    </dataTable>
+    <dataTable>
+      <entityName>enclosure-study-gut-contents-data.csv</entityName>
+      <entityDescription>Gut Contents - Enclosure Study</entityDescription>
+      <physical>
+        <objectName>enclosure-study-gut-contents-data.csv</objectName>
+        <size unit="bytes">4826</size>
+        <authentication method="MD5">7ec487823196b41483b3ce411087de8c</authentication>
+        <dataFormat>
+          <textFormat>
+            <numHeaderLines>1</numHeaderLines>
+            <recordDelimiter>\n</recordDelimiter>
+            <attributeOrientation>column</attributeOrientation>
+            <simpleDelimited>
+              <fieldDelimiter>,</fieldDelimiter>
+            </simpleDelimited>
+          </textFormat>
+        </dataFormat>
+        <distribution>
+          <online>
+            <url function="download">https://raw.githubusercontent.com/FlowWest/edi.749.1/main/data/enclosure-study-gut-contents-data.csv</url>
+          </online>
+        </distribution>
+      </physical>
+      <attributeList>
+        <attribute>
+          <attributeName>habitat</attributeName>
+          <attributeDefinition>The habitat type (mainstem/sidechannel) and treatment (control/restored) for each study site</attributeDefinition>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>The habitat type (mainstem/sidechannel) and treatment (control/restored) for each study site</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>site_id</attributeName>
+          <attributeDefinition>site name for each study site</attributeDefinition>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>site name for each study site</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>enclosure_number</attributeName>
+          <attributeDefinition>Enclosure ID. Enclosures uniquely identified.</attributeDefinition>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Enclosure ID. Enclosures uniquely identified.</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>diptera</attributeName>
+          <attributeDefinition>Number of diptera found in the gut contents</attributeDefinition>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>dimensionless</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>whole</numberType>
+                <bounds>
+                  <minimum exclusive="false">0</minimum>
+                  <maximum exclusive="false">100000000</maximum>
+                </bounds>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>exuvium</attributeName>
+          <attributeDefinition>Number of exuvium found in the gut contents</attributeDefinition>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>dimensionless</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>whole</numberType>
+                <bounds>
+                  <minimum exclusive="false">0</minimum>
+                  <maximum exclusive="false">100000000</maximum>
+                </bounds>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>coleoptera</attributeName>
+          <attributeDefinition>Number of coleoptera found in the gut contents</attributeDefinition>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>dimensionless</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>whole</numberType>
+                <bounds>
+                  <minimum exclusive="false">0</minimum>
+                  <maximum exclusive="false">100000000</maximum>
+                </bounds>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>hemiptera</attributeName>
+          <attributeDefinition>Number of hemiptera found in the gut contents</attributeDefinition>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>dimensionless</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>whole</numberType>
+                <bounds>
+                  <minimum exclusive="false">0</minimum>
+                  <maximum exclusive="false">100000000</maximum>
+                </bounds>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>odonata</attributeName>
+          <attributeDefinition>Number of odonata found in the gut contents</attributeDefinition>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>dimensionless</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>whole</numberType>
+                <bounds>
+                  <minimum exclusive="false">0</minimum>
+                  <maximum exclusive="false">100000000</maximum>
+                </bounds>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>trichoptera</attributeName>
+          <attributeDefinition>Number of trichoptera found in the gut contents</attributeDefinition>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>dimensionless</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>whole</numberType>
+                <bounds>
+                  <minimum exclusive="false">0</minimum>
+                  <maximum exclusive="false">100000000</maximum>
+                </bounds>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>ephemeroptera</attributeName>
+          <attributeDefinition>Number of ephemeroptera found in the gut contents</attributeDefinition>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>dimensionless</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>whole</numberType>
+                <bounds>
+                  <minimum exclusive="false">0</minimum>
+                  <maximum exclusive="false">100000000</maximum>
+                </bounds>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>plecoptera</attributeName>
+          <attributeDefinition>Number of plecoptera found in the gut contents</attributeDefinition>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>dimensionless</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>whole</numberType>
+                <bounds>
+                  <minimum exclusive="false">0</minimum>
+                  <maximum exclusive="false">100000000</maximum>
+                </bounds>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>hymenoptera</attributeName>
+          <attributeDefinition>Number of hymenoptera found in the gut contents</attributeDefinition>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>dimensionless</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>whole</numberType>
+                <bounds>
+                  <minimum exclusive="false">0</minimum>
+                  <maximum exclusive="false">100000000</maximum>
+                </bounds>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>ostracoda</attributeName>
+          <attributeDefinition>Number of ostracoda found in the gut contents</attributeDefinition>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>dimensionless</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>whole</numberType>
+                <bounds>
+                  <minimum exclusive="false">0</minimum>
+                  <maximum exclusive="false">100000000</maximum>
+                </bounds>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>cladocera</attributeName>
+          <attributeDefinition>Number of cladocera found in the gut contents</attributeDefinition>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>dimensionless</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>whole</numberType>
+                <bounds>
+                  <minimum exclusive="false">0</minimum>
+                  <maximum exclusive="false">100000000</maximum>
+                </bounds>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>amphipoda</attributeName>
+          <attributeDefinition>Number of amphipodafound in the gut contents</attributeDefinition>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>dimensionless</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>whole</numberType>
+                <bounds>
+                  <minimum exclusive="false">0</minimum>
+                  <maximum exclusive="false">100000000</maximum>
+                </bounds>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>Sum</attributeName>
+          <attributeDefinition>Total food items found in gut</attributeDefinition>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>dimensionless</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>whole</numberType>
+                <bounds>
+                  <minimum exclusive="false">0</minimum>
+                  <maximum exclusive="false">100000000</maximum>
+                </bounds>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+      </attributeList>
+      <numberOfRecords>72</numberOfRecords>
+    </dataTable>
+    <dataTable>
+      <entityName>microhabitat-use-data-2018-2020.csv</entityName>
+      <entityDescription>Microhabitat Data</entityDescription>
+      <physical>
+        <objectName>microhabitat-use-data-2018-2020.csv</objectName>
+        <size unit="bytes">223841</size>
+        <authentication method="MD5">b2131f06d137ae484a8373afd840eefe</authentication>
+        <dataFormat>
+          <textFormat>
+            <numHeaderLines>1</numHeaderLines>
+            <recordDelimiter>\n</recordDelimiter>
+            <attributeOrientation>column</attributeOrientation>
+            <simpleDelimited>
+              <fieldDelimiter>,</fieldDelimiter>
+            </simpleDelimited>
+          </textFormat>
+        </dataFormat>
+        <distribution>
+          <online>
+            <url function="download">https://raw.githubusercontent.com/FlowWest/edi.749.1/main/data/microhabitat-use-data-2018-2020.csv</url>
+          </online>
+        </distribution>
+      </physical>
+      <attributeList>
+        <attribute>
+          <attributeName>date</attributeName>
+          <attributeDefinition>The day tha the data was collected</attributeDefinition>
+          <measurementScale>
+            <dateTime>
+              <formatString>YYYY-MM-DD</formatString>
+              <dateTimePrecision>YYYY-MM-DD</dateTimePrecision>
+              <dateTimeDomain>
+                <bounds>
+                  <minimum exclusive="false">43185</minimum>
+                  <maximum exclusive="false">NA</maximum>
+                </bounds>
+              </dateTimeDomain>
+            </dateTime>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>time</attributeName>
+          <attributeDefinition>time at which the data was collected</attributeDefinition>
+          <measurementScale>
+            <dateTime>
+              <formatString>hh:mm:ss</formatString>
+              <dateTimePrecision>hh:mm:ss</dateTimePrecision>
+              <dateTimeDomain>
+                <bounds>
+                  <minimum exclusive="false">NA</minimum>
+                  <maximum exclusive="false">NA</maximum>
+                </bounds>
+              </dateTimeDomain>
+            </dateTime>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>channel_id</attributeName>
+          <attributeDefinition>A name that uniquely indentifies the site at which the data was collected</attributeDefinition>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>A name that uniquely indentifies the site at which the data was collected</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>habitat_type</attributeName>
+          <attributeDefinition>A description of the habitat type linked to the observation</attributeDefinition>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>A description of the habitat type linked to the observation</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>visibility_ft</attributeName>
+          <attributeDefinition>The visability in feet measeured using a secchi disk</attributeDefinition>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>foot</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+                <bounds>
+                  <minimum exclusive="false">0</minimum>
+                  <maximum exclusive="false">12</maximum>
+                </bounds>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>depth_ft</attributeName>
+          <attributeDefinition>The water depth in feet</attributeDefinition>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>foot</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+                <bounds>
+                  <minimum exclusive="false">0</minimum>
+                  <maximum exclusive="false">100000000</maximum>
+                </bounds>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>distance_to_bank_ft</attributeName>
+          <attributeDefinition>The distance from the observed fish to the bank, in feet</attributeDefinition>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>foot</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+                <bounds>
+                  <minimum exclusive="false">0</minimum>
+                  <maximum exclusive="false">100000000</maximum>
+                </bounds>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>distance_to_cover_ft</attributeName>
+          <attributeDefinition>The distance from the observed fish to cover, in feet</attributeDefinition>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>foot</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+                <bounds>
+                  <minimum exclusive="false">0</minimum>
+                  <maximum exclusive="false">100000000</maximum>
+                </bounds>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>cover_type</attributeName>
+          <attributeDefinition>The nearest cover types to the observed fish</attributeDefinition>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>The nearest cover types to the observed fish</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>overhead</attributeName>
+          <attributeDefinition>Was there overhead vegetation - yes/no</attributeDefinition>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Was there overhead vegetation - yes/no</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>unembedded_cobble</attributeName>
+          <attributeDefinition>Was there unembedded cobble - yes/no</attributeDefinition>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Was there unembedded cobble - yes/no</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>distance to cobble_ft</attributeName>
+          <attributeDefinition>How far were the observed fish from cobble, in feet?</attributeDefinition>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>foot</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+                <bounds>
+                  <minimum exclusive="false">0</minimum>
+                  <maximum exclusive="false">100000000</maximum>
+                </bounds>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>velocity_fps</attributeName>
+          <attributeDefinition>What was the water velocity in feet per second?</attributeDefinition>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>feetPerSecond</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+                <bounds>
+                  <minimum exclusive="false">0</minimum>
+                  <maximum exclusive="false">100000000</maximum>
+                </bounds>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>substrate</attributeName>
+          <attributeDefinition>What was the substrate below the observed fish?</attributeDefinition>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>What was the substrate below the observed fish?</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>fish_type</attributeName>
+          <attributeDefinition>What fish population were the observed fish from?</attributeDefinition>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>What fish population were the observed fish from?</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>fish_size</attributeName>
+          <attributeDefinition>What was the average estimated size class of the fish observed in the school/shoal?</attributeDefinition>
+          <measurementScale>
+            <ordinal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>What was the average estimated size class of the fish observed in the school/shoal?</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </ordinal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>fish_number</attributeName>
+          <attributeDefinition>How many fish were observed observed in the school/shoal?</attributeDefinition>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <customUnit>fishPerSchool</customUnit>
+              </unit>
+              <numericDomain>
+                <numberType>natural</numberType>
+                <bounds>
+                  <minimum exclusive="false">1</minimum>
+                  <maximum exclusive="false">100000000</maximum>
+                </bounds>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>comments</attributeName>
+          <attributeDefinition>Any additional comments describing the data collected</attributeDefinition>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Any additional comments describing the data collected</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+      </attributeList>
+      <numberOfRecords>1680</numberOfRecords>
+    </dataTable>
+    <dataTable>
+      <entityName>seining-weight-lengths-2018-2020.csv</entityName>
+      <entityDescription>Seining Weight Lengths Data</entityDescription>
+      <physical>
+        <objectName>seining-weight-lengths-2018-2020.csv</objectName>
+        <size unit="bytes">316510</size>
+        <authentication method="MD5">e8312fe3582fddb2883d2822307b4bf5</authentication>
+        <dataFormat>
+          <textFormat>
+            <numHeaderLines>1</numHeaderLines>
+            <recordDelimiter>\n</recordDelimiter>
+            <attributeOrientation>column</attributeOrientation>
+            <simpleDelimited>
+              <fieldDelimiter>,</fieldDelimiter>
+            </simpleDelimited>
+          </textFormat>
+        </dataFormat>
+        <distribution>
+          <online>
+            <url function="download">https://raw.githubusercontent.com/FlowWest/edi.749.1/main/data/seining-weight-lengths-2018-2020.csv</url>
+          </online>
+        </distribution>
+      </physical>
+      <attributeList>
+        <attribute>
+          <attributeName>location_type</attributeName>
+          <attributeDefinition>Description of where the seining took place (mainstem vs side channel)</attributeDefinition>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Description of where the seining took place (mainstem vs side channel)</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>habitat_type</attributeName>
+          <attributeDefinition>A description of the habitat type that was seined</attributeDefinition>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>A description of the habitat type that was seined</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>fish_type</attributeName>
+          <attributeDefinition>A description of what population the observed fish were from, using length-to-date charts</attributeDefinition>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>A description of what population the observed fish were from, using length-to-date charts</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>fork_length_mm</attributeName>
+          <attributeDefinition>Fork length of the fish in millimeters</attributeDefinition>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>millimeter</standardUnit>
+              </unit>
+              <precision>1</precision>
+              <numericDomain>
+                <numberType>real</numberType>
+                <bounds>
+                  <minimum exclusive="false">0</minimum>
+                  <maximum exclusive="false">100000000</maximum>
+                </bounds>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>weight_g</attributeName>
+          <attributeDefinition>Weight in grams. Data could only be taken on larger fish on still days, due to scale limitations</attributeDefinition>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>gram</standardUnit>
+              </unit>
+              <precision>0.01</precision>
+              <numericDomain>
+                <numberType>real</numberType>
+                <bounds>
+                  <minimum exclusive="false">0</minimum>
+                  <maximum exclusive="false">100000000</maximum>
+                </bounds>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>condition_factor</attributeName>
+          <attributeDefinition>fulton's condition factor</attributeDefinition>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>dimensionless</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+                <bounds>
+                  <minimum exclusive="false">0</minimum>
+                  <maximum exclusive="false">100000000</maximum>
+                </bounds>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>date</attributeName>
+          <attributeDefinition>The date the data was collected</attributeDefinition>
+          <measurementScale>
+            <dateTime>
+              <formatString>ISO 8601</formatString>
+              <dateTimePrecision>day</dateTimePrecision>
+              <dateTimeDomain>
+                <bounds>
+                  <minimum exclusive="false">43441</minimum>
+                  <maximum exclusive="false">NA</maximum>
+                </bounds>
+              </dateTimeDomain>
+            </dateTime>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>side_channel</attributeName>
+          <attributeDefinition>The name of the side channel that the data was collected in, or the nearest side channel if the data was collected in the mainstem.</attributeDefinition>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>The name of the side channel that the data was collected in, or the nearest side channel if the data was collected in the mainstem.</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>control_impact</attributeName>
+          <attributeDefinition>Whether the seining site was a control site, or a a restored side channel (impact)</attributeDefinition>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Whether the seining site was a control site, or a a restored side channel (impact)</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>channel_status</attributeName>
+          <attributeDefinition>Combines location_type and control_impact into a single variable.</attributeDefinition>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Combines location_type and control_impact into a single variable.</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+      </attributeList>
+      <numberOfRecords>3809</numberOfRecords>
+    </dataTable>
+    <dataTable>
+      <entityName>snorkel-index-data-2015-2020.csv</entityName>
+      <entityDescription>Snorkel Survey Data</entityDescription>
+      <physical>
+        <objectName>snorkel-index-data-2015-2020.csv</objectName>
+        <size unit="bytes">98947</size>
+        <authentication method="MD5">4476b8a21959d5ef0482a356e295eff5</authentication>
+        <dataFormat>
+          <textFormat>
+            <numHeaderLines>1</numHeaderLines>
+            <recordDelimiter>\n</recordDelimiter>
+            <attributeOrientation>column</attributeOrientation>
+            <simpleDelimited>
+              <fieldDelimiter>,</fieldDelimiter>
+            </simpleDelimited>
+          </textFormat>
+        </dataFormat>
+        <distribution>
+          <online>
+            <url function="download">https://raw.githubusercontent.com/FlowWest/edi.749.1/main/data/snorkel-index-data-2015-2020.csv</url>
+          </online>
+        </distribution>
+      </physical>
+      <attributeList>
+        <attribute>
+          <attributeName>date</attributeName>
+          <attributeDefinition>The day tha the data was collected</attributeDefinition>
+          <measurementScale>
+            <dateTime>
+              <formatString>YYYY-MM-DD</formatString>
+              <dateTimePrecision>YYYY-MM-DD</dateTimePrecision>
+              <dateTimeDomain>
+                <bounds>
+                  <minimum exclusive="false">42019</minimum>
+                  <maximum exclusive="false">NA</maximum>
+                </bounds>
+              </dateTimeDomain>
+            </dateTime>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>site_number</attributeName>
+          <attributeDefinition>A number that uniquely identifies the site at which the data was collected</attributeDefinition>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>A number that uniquely identifies the site at which the data was collected</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>site_name</attributeName>
+          <attributeDefinition>A name that uniquely indentifies the site at which the data was collected</attributeDefinition>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>A name that uniquely indentifies the site at which the data was collected</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>length_meters</attributeName>
+          <attributeDefinition>The length of the site sampled</attributeDefinition>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>meter</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>natural</numberType>
+                <bounds>
+                  <minimum exclusive="false">88</minimum>
+                  <maximum exclusive="false">3526</maximum>
+                </bounds>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>river_mile</attributeName>
+          <attributeDefinition>The approximate river mile of the study site</attributeDefinition>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>mile</standardUnit>
+              </unit>
+              <precision>0.5</precision>
+              <numericDomain>
+                <numberType>natural</numberType>
+                <bounds>
+                  <minimum exclusive="false">0</minimum>
+                  <maximum exclusive="false">445</maximum>
+                </bounds>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>treatment</attributeName>
+          <attributeDefinition>indicates what treatment type was used for comparison</attributeDefinition>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <enumeratedDomain>
+                  <codeDefinition>
+                    <code>impact</code>
+                    <definition>area that have been restored</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>control</code>
+                    <definition>existing area used for comparison</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>baseline</code>
+                    <definition>area slotted for restoration</definition>
+                  </codeDefinition>
+                </enumeratedDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>time</attributeName>
+          <attributeDefinition>time at which the data was collected (24-hour notation)</attributeDefinition>
+          <measurementScale>
+            <dateTime>
+              <formatString>hh:mm:ss</formatString>
+              <dateTimePrecision>hh:mm:ss</dateTimePrecision>
+              <dateTimeDomain>
+                <bounds>
+                  <minimum exclusive="false">NA</minimum>
+                  <maximum exclusive="false">NA</maximum>
+                </bounds>
+              </dateTimeDomain>
+            </dateTime>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>water_elevation</attributeName>
+          <attributeDefinition>The water level on the day the data was collected</attributeDefinition>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>meter</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+                <bounds>
+                  <minimum exclusive="false">0.4</minimum>
+                  <maximum exclusive="false">19</maximum>
+                </bounds>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>weather</attributeName>
+          <attributeDefinition>The weather on day the data was collected</attributeDefinition>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <enumeratedDomain>
+                  <codeDefinition>
+                    <code>1</code>
+                    <definition>Clear</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>2</code>
+                    <definition>Partly Cloudy</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>3</code>
+                    <definition>Cloudy</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>4</code>
+                    <definition>Rain</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>5</code>
+                    <definition>Snow</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>6</code>
+                    <definition>Fog</definition>
+                  </codeDefinition>
+                </enumeratedDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>water_temp</attributeName>
+          <attributeDefinition>temperature of water at time of collection in Fahrenheit</attributeDefinition>
+          <measurementScale>
+            <interval>
+              <unit>
+                <standardUnit>fahrenheit</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+                <bounds>
+                  <minimum exclusive="false">44</minimum>
+                  <maximum exclusive="false">70</maximum>
+                </bounds>
+              </numericDomain>
+            </interval>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>visibility_feet</attributeName>
+          <attributeDefinition>The visability in feet measeured using a secchi disk</attributeDefinition>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>foot</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+                <bounds>
+                  <minimum exclusive="false">0</minimum>
+                  <maximum exclusive="false">12</maximum>
+                </bounds>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>visibility_meters</attributeName>
+          <attributeDefinition>The visability converted to meters</attributeDefinition>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>meter</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+                <bounds>
+                  <minimum exclusive="false">0.45</minimum>
+                  <maximum exclusive="false">3.66</maximum>
+                </bounds>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>survey_method</attributeName>
+          <attributeDefinition>method by which data was collected</attributeDefinition>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <enumeratedDomain>
+                  <codeDefinition>
+                    <code>snorkel downstream</code>
+                    <definition>snorkel downstream</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>snorkel upstream</code>
+                    <definition>snorkel upstream</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>wading</code>
+                    <definition>wading</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>seining</code>
+                    <definition>seining</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>e-fishing</code>
+                    <definition>E-fishing</definition>
+                  </codeDefinition>
+                </enumeratedDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>video_or_observer</attributeName>
+          <attributeDefinition>counting method used</attributeDefinition>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <enumeratedDomain>
+                  <codeDefinition>
+                    <code>video</code>
+                    <definition>video counted</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>observer</code>
+                    <definition>observer counted</definition>
+                  </codeDefinition>
+                </enumeratedDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>lfr_count</attributeName>
+          <attributeDefinition>late fall run counted</attributeDefinition>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>dimensionless</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>whole</numberType>
+                <bounds>
+                  <minimum exclusive="false">0</minimum>
+                  <maximum exclusive="false">100000000</maximum>
+                </bounds>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>wr_count</attributeName>
+          <attributeDefinition>winter run counted</attributeDefinition>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>dimensionless</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>whole</numberType>
+                <bounds>
+                  <minimum exclusive="false">0</minimum>
+                  <maximum exclusive="false">100000000</maximum>
+                </bounds>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>sr_count</attributeName>
+          <attributeDefinition>spring run counted</attributeDefinition>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>dimensionless</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>whole</numberType>
+                <bounds>
+                  <minimum exclusive="false">0</minimum>
+                  <maximum exclusive="false">100000000</maximum>
+                </bounds>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>fr_count</attributeName>
+          <attributeDefinition>fall run counted</attributeDefinition>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>dimensionless</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>whole</numberType>
+                <bounds>
+                  <minimum exclusive="false">0</minimum>
+                  <maximum exclusive="false">100000000</maximum>
+                </bounds>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>trout_count</attributeName>
+          <attributeDefinition>trout counted</attributeDefinition>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>dimensionless</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>whole</numberType>
+                <bounds>
+                  <minimum exclusive="false">0</minimum>
+                  <maximum exclusive="false">100000000</maximum>
+                </bounds>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>adult_predator_fish</attributeName>
+          <attributeDefinition>count of fish that were natural predators</attributeDefinition>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>dimensionless</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>whole</numberType>
+                <bounds>
+                  <minimum exclusive="false">0</minimum>
+                  <maximum exclusive="false">100000000</maximum>
+                </bounds>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>other_juvenile_fish</attributeName>
+          <attributeDefinition>other juvenile fish counted</attributeDefinition>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>dimensionless</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>whole</numberType>
+                <bounds>
+                  <minimum exclusive="false">0</minimum>
+                  <maximum exclusive="false">100000000</maximum>
+                </bounds>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>comments</attributeName>
+          <attributeDefinition>Any additional comments describing the data collected</attributeDefinition>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Any additional comments describing the data collected</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>calculated_flow</attributeName>
+          <attributeDefinition>estimated flow in cubic feet per second</attributeDefinition>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>cubicFeetPerSecond</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+                <bounds>
+                  <minimum exclusive="false">0</minimum>
+                  <maximum exclusive="false">10000000</maximum>
+                </bounds>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+      </attributeList>
+      <numberOfRecords>724</numberOfRecords>
+    </dataTable>
+  </dataset>
+  <additionalMetadata>
+    <metadata>
+      <unitList>
+        <unit id="fishPerEnclosure" name="fishPerEnclosure" unitType="density">
+          <description>Fish density in the enclosure, number of fish in total enclosure space</description>
+        </unit>
+        <unit id="thermal unit" name="thermal unit" unitType="temperature">
+          <description>thermal unit of energy given off of fish</description>
+        </unit>
+        <unit id="day" name="day" unitType="dimensionless">
+          <description>count of number of days that go by</description>
+        </unit>
+        <unit id="fishPerSchool" name="fishPerSchool" unitType="density">
+          <description>Number of fish counted per school</description>
+        </unit>
+      </unitList>
+    </metadata>
+  </additionalMetadata>
+</eml:eml>
