@@ -155,13 +155,13 @@ upload_edi_package <- function(user_id, password, eml_file_path, environment = "
     message <- substr(httr::content(check_error, as = 'text', encoding = 'UTF-8'), 1, 64)
     # the data package already exists in the staging area - first if statement
     if (message == "Attempting to insert a data package that already exists in PASTA") {
-      print("Attempting to insert a data package that already exists in PASTA. Please reserve a different identifier or update the existing package using update_edi_package()")
+      stop("Attempting to insert a data package that already exists in PASTA. Please reserve a different identifier or update the existing package using update_edi_package()")
     }
     # the EML is not valid - we must view errors in error report dataframe
     else if (check_error$status_code == "200" & 
              message != "Attempting to insert a data package that already exists in PASTA") { 
       report_df <- generate_report_df(check_error)
-      print("EML not valid. Please fix errors in report dataframe or if report dataframe comes back empty please try to evaluate_edi_package().")
+      stop("EML not valid. Please fix errors in report dataframe or if report dataframe comes back empty please try to evaluate_edi_package().")
       return(report_df)
       break
     } else {
@@ -181,14 +181,14 @@ upload_edi_package <- function(user_id, password, eml_file_path, environment = "
         }
         # Stop loop if iterating through more than 5 times 
         else if(max_iter > iter) {
-          print("Request timed out, check that you inputs are all valid, rerun evalutate_edi_package(), and try again")
+          stop("Request timed out, check that you inputs are all valid, rerun evalutate_edi_package(), and try again")
           break 
         }
       }
     }
     # Adds error handling message for 505, 405 & other errors that come from bad initial response 
   } else {
-    message("Your request to upload an EDI package failed,
+    stop("Your request to upload an EDI package failed,
            please check that you entered a valid username, password, and XML document.
            That XML document must link to a csv accessible online.
            See more information on request status below")
@@ -246,13 +246,13 @@ update_edi_package <- function(user_id, password, existing_package_identifier, e
     revision_number <- unlist(strsplit(eml_file_path, "\\."))[3]
     # the data package revision already exists in the staging area - first if statement
     if (message == paste0("Attempting to update a data package to revision ", "'", revision_number, "' ", "but an equal")) {
-      print("Attempting to insert a version that already exists in PASTA. Please reserve a different identifier or update to the next revision")
+      stop("Attempting to insert a version that already exists in PASTA. Please reserve a different identifier or update to the next revision")
     }
     # the EML is not valid - we must view errors in error report dataframe
     else if (check_error$status_code == "200" & 
              message != paste0("Attempting to update a data package to revision ", "'", revision_number, "' ", "but an equal")) { 
       report_df <- generate_report_df(check_error)
-      print("EML not valid. Please fix errors in report dataframe or if report dataframe comes back empty please try to evaluate_edi_package().")
+      stop("EML not valid. Please fix errors in report dataframe or if report dataframe comes back empty please try to evaluate_edi_package().")
       return(report_df)
       break
     } else {
@@ -271,7 +271,7 @@ update_edi_package <- function(user_id, password, existing_package_identifier, e
         }
         # Stop loop if iterating through more than 5 times 
         else if(max_iter > iter) {
-          print("Request timed out, check that you inputs are all valid, rerun evalutate_edi_package(), and try again")
+          stop("Request timed out, check that you inputs are all valid, rerun evalutate_edi_package(), and try again")
           break 
         }
       }
