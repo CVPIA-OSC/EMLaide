@@ -169,7 +169,6 @@ upload_edi_package <- function(user_id, password, eml_file_path, environment = "
       iter <- 0
       max_iter <- 20
       while(TRUE){ # Loop through a few times to give EDI time to upload package
-        print(c(iter, (iter*sleep_time)))
         Sys.sleep(sleep_time)
         # If check_error does not equal 200, run the check upload lines below to view upload
         check_upload <- httr::GET(url = paste0(base_url, 
