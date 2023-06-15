@@ -176,7 +176,6 @@ upload_edi_package <- function(user_id, password, eml_file_path, environment = "
                                                scope, "/", identifier, "/", revision), 
                                   config = httr::authenticate(paste0('uid=', user_id, ",o=EDI", ',dc=edirepository,dc=org'), password))
         
-        print(check_upload$status_code)
         if (check_upload$status_code == "200") {
           print("Your data package posted to EDI. Please check EDI portal to confirm")
           break
