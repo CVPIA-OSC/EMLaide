@@ -126,17 +126,18 @@ evaluate_edi_package <- function(user_id, password, eml_file_path, environment =
 #'                             eml_file_path = "data/edi20.1.xml")}
 #' @export   
 
-upload_edi_package <- function(user_id, password, eml_file_path, environment = "production", package_size = "medium") {
+upload_edi_package <- function(user_id, password, eml_file_path, environment = "production", package_size = "small") {
   sleep_time <- switch(package_size,
                        "small" = 5,
                        "medium" = 15,
-                       "large" = 60)
+                       "large" = 25)
   # Select package environment& define 
   base_url <- dplyr::case_when(environment == "staging" ~ "https://pasta-s.lternet.edu/package/",
                                environment == "development" ~ "https://pasta-d.lternet.edu/package/",
                                environment == "production" ~ "https://pasta.lternet.edu/package/")
   # Define scope (edi) and identifier (package number) and revision
-  scope <- unlist(strsplit(eml_file_path, "\\."))[1]
+  #scope <- unlist(strsplit(eml_file_path, "\\."))[1]
+  scope <- "edi"
   identifier <- unlist(strsplit(eml_file_path, "\\."))[2]
   revision <- unlist(strsplit(eml_file_path, "\\."))[3]
   # post package to EDI for upload 
@@ -166,24 +167,27 @@ upload_edi_package <- function(user_id, password, eml_file_path, environment = "
       break
     } else {
       iter <- 0
-      max_iter <- 10
-      while(TRUE){ # Loop through a few times to give EDI time to upload package 
+      max_iter <- 20
+      while(TRUE){ # Loop through a few times to give EDI time to upload package
+        print(c(iter, (iter*sleep_time)))
         Sys.sleep(sleep_time)
         # If check_error does not equal 200, run the check upload lines below to view upload
         check_upload <- httr::GET(url = paste0(base_url, 
                                                "report/eml/", 
                                                scope, "/", identifier, "/", revision), 
                                   config = httr::authenticate(paste0('uid=', user_id, ",o=EDI", ',dc=edirepository,dc=org'), password))
-        iter <- iter + 1
+        
+        print(check_upload$status_code)
         if (check_upload$status_code == "200") {
           print("Your data package posted to EDI. Please check EDI portal to confirm")
           break
         }
         # Stop loop if iterating through more than 5 times 
-        else if(max_iter > iter) {
-          stop("Request timed out, check that you inputs are all valid, rerun evalutate_edi_package(), and try again")
+        else if(iter > max_iter) {
+          stop("Request timed out, check that your inputs are all valid, rerun evaluate_edi_package(), and try again")
           break 
         }
+        iter <- iter + 1
       }
     }
     # Adds error handling message for 505, 405 & other errors that come from bad initial response 
