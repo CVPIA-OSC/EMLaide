@@ -92,7 +92,7 @@ evaluate_edi_package <- function(user_id, password, eml_file_path, environment =
         return(report_df)
         break
       }
-      if (max_iter > iter) {
+      else if(iter > max_iter) {
         print("Request timed out, check that your inputs are all valid and try again")
         break 
       }
@@ -272,7 +272,7 @@ update_edi_package <- function(user_id, password, existing_package_identifier, e
           break
         }
         # Stop loop if iterating through more than 5 times 
-        else if(max_iter > iter) {
+        else if(iter > max_iter) {
           stop("Request timed out, check that you inputs are all valid, rerun evalutate_edi_package(), and try again")
           break 
         }
