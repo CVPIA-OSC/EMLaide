@@ -20,7 +20,7 @@ library(EMLaide)
 
 ## Updates to the EDI portal
 
-This article describes how to update an EDI package using EMLaide. See the official EDI guidelines for when updating a package is appropriate at the link (here)[https://edirepository.org/resources/updating-a-data-package].
+This article describes how to update an EDI package using EMLaide. See the official EDI guidelines for when updating a package is appropriate at the link [here](https://edirepository.org/resources/updating-a-data-package).
 
 EDI updates are very similar to data package uploads.  
 
@@ -58,9 +58,40 @@ You must have the credentials for the account that uploaded the original EDI pac
 * a valid edi username
 * a valid edi password
 
-## Updating the package manually
+## Update the package
 
-To update the edi package manually, you can 
+### Update manually via portal
 
-## Updating using API or via portal 
+One option is to update the package manually on the (EDI portal)[https://portal.edirepository.org/nis/login.jsp]. The steps to updating your package on the portal are as follows: 
+
+1) Login using the credentials associated with the original EDI package
+2) Navigate to *Tools* --> *Evaluate/Upload Data Package*
+3) Upload your updated data package according to the instructions
+4) Ensure that the edi number reflects the updated versioning
+5) If applicable, under **Data Upload Options**, select *Allow PASTA+ to skip the upload of a data entity if it has a matching copy*.
+
+
+## Update using API 
+
+Assuming you have written your updated EML document with the identifier `updated_edi_number`, you can evalutae and update your package from RStudio using an API.
+
+To evaluate your updated edi package, use the function `evaluate_edi_package`. To update it, use the function `update_edi_package`.
+
+The following code evaluates a data package with identifier `updated_edi_number` and updates it by passing the updated .xml file and the past version's identifier `old_edi_number`:
+
+```{r, eval = FALSE}
+# test that the package passes EDIs evaluation criteria 
+evaluate_edi_package(user_id = "your user id", 
+                     password = "your user password",
+                     eml_file_path = paste0(updated_edi_number, ".xml"), 
+                     environment = "production")
+
+# update edi package 
+update_edi_package(user_id = "your user id", 
+                   password = "your user password",
+                   eml_file_path = paste0(updated_edi_number, ".xml"),
+                   package_size = "medium", # default
+                   existing_package_identifier = old_edi_number, 
+                   environment = "production")
+```
 

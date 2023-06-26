@@ -106,7 +106,7 @@
 </h2>
 <p>This article describes how to update an EDI package using EMLaide.
 See the official EDI guidelines for when updating a package is
-appropriate at the link (here)[<a href="https://edirepository.org/resources/updating-a-data-package" class="external-link uri">https://edirepository.org/resources/updating-a-data-package</a>].</p>
+appropriate at the link <a href="https://edirepository.org/resources/updating-a-data-package" class="external-link">here</a>.</p>
 <p>EDI updates are very similar to data package uploads.</p>
 </div>
 <div class="section level2">
@@ -150,13 +150,54 @@ original EDI package in order to update it:</p>
 </ul>
 </div>
 <div class="section level2">
-<h2 id="updating-the-package-manually">Updating the package manually<a class="anchor" aria-label="anchor" href="#updating-the-package-manually"></a>
+<h2 id="update-the-package">Update the package<a class="anchor" aria-label="anchor" href="#update-the-package"></a>
 </h2>
-<p>To update the edi package manually, you can</p>
+<div class="section level3">
+<h3 id="update-manually-via-portal">Update manually via portal<a class="anchor" aria-label="anchor" href="#update-manually-via-portal"></a>
+</h3>
+<p>One option is to update the package manually on the (EDI portal)[<a href="https://portal.edirepository.org/nis/login.jsp" class="external-link uri">https://portal.edirepository.org/nis/login.jsp</a>]. The
+steps to updating your package on the portal are as follows:</p>
+<ol style="list-style-type: decimal">
+<li>Login using the credentials associated with the original EDI
+package</li>
+<li>Navigate to <em>Tools</em> –&gt; <em>Evaluate/Upload Data
+Package</em>
+</li>
+<li>Upload your updated data package according to the instructions</li>
+<li>Ensure that the edi number reflects the updated versioning</li>
+<li>If applicable, under <strong>Data Upload Options</strong>, select
+<em>Allow PASTA+ to skip the upload of a data entity if it has a
+matching copy</em>.</li>
+</ol>
+</div>
 </div>
 <div class="section level2">
-<h2 id="updating-using-api-or-via-portal">Updating using API or via portal<a class="anchor" aria-label="anchor" href="#updating-using-api-or-via-portal"></a>
+<h2 id="update-using-api">Update using API<a class="anchor" aria-label="anchor" href="#update-using-api"></a>
 </h2>
+<p>Assuming you have written your updated EML document with the
+identifier <code>updated_edi_number</code>, you can evalutae and update
+your package from RStudio using an API.</p>
+<p>To evaluate your updated edi package, use the function
+<code>evaluate_edi_package</code>. To update it, use the function
+<code>update_edi_package</code>.</p>
+<p>The following code evaluates a data package with identifier
+<code>updated_edi_number</code> and updates it by passing the updated
+.xml file and the past version’s identifier
+<code>old_edi_number</code>:</p>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># test that the package passes EDIs evaluation criteria </span></span>
+<span><span class="fu"><a href="../reference/evaluate_edi_package.html">evaluate_edi_package</a></span><span class="op">(</span>user_id <span class="op">=</span> <span class="st">"your user id"</span>, </span>
+<span>                     password <span class="op">=</span> <span class="st">"your user password"</span>,</span>
+<span>                     eml_file_path <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste0</a></span><span class="op">(</span><span class="va">updated_edi_number</span>, <span class="st">".xml"</span><span class="op">)</span>, </span>
+<span>                     environment <span class="op">=</span> <span class="st">"production"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># update edi package </span></span>
+<span><span class="fu"><a href="../reference/update_edi_package.html">update_edi_package</a></span><span class="op">(</span>user_id <span class="op">=</span> <span class="st">"your user id"</span>, </span>
+<span>                   password <span class="op">=</span> <span class="st">"your user password"</span>,</span>
+<span>                   eml_file_path <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste0</a></span><span class="op">(</span><span class="va">updated_edi_number</span>, <span class="st">".xml"</span><span class="op">)</span>,</span>
+<span>                   package_size <span class="op">=</span> <span class="st">"medium"</span>, <span class="co"># default</span></span>
+<span>                   existing_package_identifier <span class="op">=</span> <span class="va">old_edi_number</span>, </span>
+<span>                   environment <span class="op">=</span> <span class="st">"production"</span><span class="op">)</span></span></code></pre></div>
 </div>
   </div>
 
