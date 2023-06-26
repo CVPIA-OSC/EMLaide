@@ -47,22 +47,19 @@ eml_updated <- list(packageId = updated_edi_number,
                    additionalMetadata = list(metadata = list(unitList = unitList)))
 
 # write and validate updated EML document
-EML::write_eml(eml, paste0(updated_edi_number, ".xml"))
+EML::write_eml(eml_updated, paste0(updated_edi_number, ".xml"))
 EML::eml_validate(paste0(updated_edi_number, ".xml"))
 ```
 
 ## Permissions for updates
 
-You must have the credentials for the account that uploaded the original EDI package in order to update it: 
-
-* a valid edi username
-* a valid edi password
+You must have the credentials (EDI username, EDI password) for the account that uploaded the original EDI package in order to update it.
 
 ## Update the package
 
 ### Update manually via portal
 
-One option is to update the package manually on the (EDI portal)[https://portal.edirepository.org/nis/login.jsp]. The steps to updating your package on the portal are as follows: 
+One option is to update the package manually on the [EDI portal](https://portal.edirepository.org/nis/login.jsp). The steps to updating your package on the portal are as follows: 
 
 1) Login using the credentials associated with the original EDI package
 2) Navigate to *Tools* --> *Evaluate/Upload Data Package*

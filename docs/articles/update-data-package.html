@@ -135,19 +135,16 @@ the package:</p>
 <span>                   additionalMetadata <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>metadata <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>unitList <span class="op">=</span> <span class="va">unitList</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># write and validate updated EML document</span></span>
-<span><span class="fu">EML</span><span class="fu">::</span><span class="fu"><a href="https://docs.ropensci.org/EML/reference/write_eml.html" class="external-link">write_eml</a></span><span class="op">(</span><span class="va">eml</span>, <span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste0</a></span><span class="op">(</span><span class="va">updated_edi_number</span>, <span class="st">".xml"</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="fu">EML</span><span class="fu">::</span><span class="fu"><a href="https://docs.ropensci.org/EML/reference/write_eml.html" class="external-link">write_eml</a></span><span class="op">(</span><span class="va">eml_updated</span>, <span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste0</a></span><span class="op">(</span><span class="va">updated_edi_number</span>, <span class="st">".xml"</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="fu">EML</span><span class="fu">::</span><span class="fu"><a href="https://docs.ropensci.org/emld/reference/eml_validate.html" class="external-link">eml_validate</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste0</a></span><span class="op">(</span><span class="va">updated_edi_number</span>, <span class="st">".xml"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 </div>
 </div>
 <div class="section level2">
 <h2 id="permissions-for-updates">Permissions for updates<a class="anchor" aria-label="anchor" href="#permissions-for-updates"></a>
 </h2>
-<p>You must have the credentials for the account that uploaded the
-original EDI package in order to update it:</p>
-<ul>
-<li>a valid edi username</li>
-<li>a valid edi password</li>
-</ul>
+<p>You must have the credentials (EDI username, EDI password) for the
+account that uploaded the original EDI package in order to update
+it.</p>
 </div>
 <div class="section level2">
 <h2 id="update-the-package">Update the package<a class="anchor" aria-label="anchor" href="#update-the-package"></a>
@@ -155,8 +152,8 @@ original EDI package in order to update it:</p>
 <div class="section level3">
 <h3 id="update-manually-via-portal">Update manually via portal<a class="anchor" aria-label="anchor" href="#update-manually-via-portal"></a>
 </h3>
-<p>One option is to update the package manually on the (EDI portal)[<a href="https://portal.edirepository.org/nis/login.jsp" class="external-link uri">https://portal.edirepository.org/nis/login.jsp</a>]. The
-steps to updating your package on the portal are as follows:</p>
+<p>One option is to update the package manually on the <a href="https://portal.edirepository.org/nis/login.jsp" class="external-link">EDI portal</a>.
+The steps to updating your package on the portal are as follows:</p>
 <ol style="list-style-type: decimal">
 <li>Login using the credentials associated with the original EDI
 package</li>
