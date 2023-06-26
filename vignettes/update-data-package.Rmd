@@ -72,7 +72,7 @@ One option is to update the package manually on the [EDI portal](https://portal.
 
 Assuming you have written your updated EML document with the identifier `updated_edi_number`, you can evalutae and update your package from RStudio using an API.
 
-To evaluate your updated edi package, use the function `evaluate_edi_package`. To update it, use the function `update_edi_package`.
+To evaluate your updated edi package, use the function `EMLaide::evaluate_edi_package()`. To update it, use the function `EMLaide::update_edi_package()`.
 
 The following code evaluates a data package with identifier `updated_edi_number` and updates it by passing the updated .xml file and the past version's identifier `old_edi_number`:
 
