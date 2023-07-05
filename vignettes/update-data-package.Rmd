@@ -1,0 +1,93 @@
+---
+title: "Update Data Package"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Update Data Package}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(EMLaide)
+```
+
+
+This article describes how to update an EDI package using EMLaide. See the official EDI guidelines for when to update a package (instead of creating a new one) at the link [here](https://edirepository.org/resources/updating-a-data-package).
+
+## Generate EML Document
+
+EDI updates are very similar to data package uploads.  
+
+To update an existing EDI package, you will have to first create a new EML with the updated tables and metadata. Please reference the article [Create EML from Template](https://cvpia-osc.github.io/EMLaide/articles/create-EML-from-template.html) to see specifications for creating an EML document using EMLaide.
+
+### Updating the EDI identifier
+
+When creating the EML document for an update (as opposed to a new EDI package), you must update your EDI identifier to reflect the version of the package:
+
+```{r}
+old_edi_number <- "edi.750.1" 
+updated_edi_number <- "edi.750.2"
+```
+
+This will be reflected when you write the updated XML:
+
+```{r, eval = FALSE}
+eml_updated <- list(packageId = updated_edi_number,
+                   system = "EDI",
+                   access = add_access(),
+                   dataset = dataset,
+                   additionalMetadata = list(metadata = list(unitList = unitList)))
+
+# write and validate updated EML document
+EML::write_eml(eml_updated, paste0(updated_edi_number, ".xml"))
+EML::eml_validate(paste0(updated_edi_number, ".xml"))
+```
+
+## Permissions for updates
+
+You must have the credentials (`EDI username`, `EDI password`) for the account that uploaded the original EDI package in order to update it.
+
+## Update the package
+
+### Update manually via portal
+
+One option is to update the package manually on the [EDI portal](https://portal.edirepository.org/nis/login.jsp). The steps to updating your package on the portal are as follows: 
+
+1) Login using the credentials associated with the original EDI package
+2) Navigate to *Tools* --> *Evaluate/Upload Data Package*
+3) Upload your updated data package according to the instructions
+4) Ensure that the edi number reflects the updated versioning
+5) If applicable, under **Data Upload Options**, select *Allow PASTA+ to skip the upload of a data entity if it has a matching copy*.
+
+
+### Update using API 
+
+Assuming you have written your updated EML document with the identifier `updated_edi_number`, you can evaluate and update your package from RStudio using an API.
+
+To evaluate your updated edi package, use the function `EMLaide::evaluate_edi_package()`. To update it, use the function `EMLaide::update_edi_package()`.
+
+The following code evaluates a data package with identifier `updated_edi_number` and updates it by passing the updated .xml file and the past version's identifier `old_edi_number`:
+
+```{r, eval = FALSE}
+# test that the package passes EDIs evaluation criteria 
+evaluate_edi_package(user_id = "your user id", 
+                     password = "your user password",
+                     eml_file_path = paste0(updated_edi_number, ".xml"), 
+                     environment = "production")
+
+# update edi package 
+update_edi_package(user_id = "your user id", 
+                   password = "your user password",
+                   eml_file_path = paste0(updated_edi_number, ".xml"),
+                   package_size = "medium", # default
+                   existing_package_identifier = old_edi_number, 
+                   environment = "production")
+```
+

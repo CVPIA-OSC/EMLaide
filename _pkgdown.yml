@@ -86,6 +86,8 @@ navbar:
         href: articles/template-doc.html
       - text: 'Create EML Document from Template'
         href: articles/create-EML-from-template.html
+      - text: 'Update Data Package'
+        href: articles/update-data-package.html
 repo:
  url:
   home: https://github.com/CVPIA-OSC/EMLaide
