@@ -132,7 +132,7 @@ code_definition = list(code_def_1, code_def_2)
 # Ordinal(enumerated): 
 code_def_0 = list(code = "0", definition = "0 insects per meter of branch")
 code_def_1 = list(code = "1", definition = "1-10 insects per meter")
-code_def_2 = list(code = "2", definition = "11 â€“ 100 insects per meter")
+code_def_2 = list(code = "2", definition = "11 – 100 insects per meter")
 code_def_3 = list(code = "3", definition = "more than 100 insects per meter")
 code_definition = list(code_def_0, code_def_1, code_def_2, code_def_3)
 \dontrun{create_attribute(attribute_name = "hwa",

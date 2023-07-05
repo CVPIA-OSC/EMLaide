@@ -20,6 +20,7 @@ A list of CVPIA_funders that can be appended to the funding element.
 \item \strong{USBR}
 \item \strong{CDWR}
 \item \strong{CDFW}
+\item \strong{USFWS}
 }
 }
 

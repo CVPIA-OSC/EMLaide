@@ -21,8 +21,27 @@ create_datatable <- function(filepath,
                               datatable_url = NULL, 
                               dataset_methods = NULL, 
                               additional_info = NULL){
+ 
+  raw_attribute_table <- readxl::read_xlsx(attribute_info, sheet = "attribute") 
+  # Add in code to reorder columns to match columns in datatable 
+  current_metadata_order <- pull(raw_attribute_table, attribute_name)
+  current_data_order <- colnames(readr::read_csv(filepath))
+  reorder_index <- match(current_data_order, current_metadata_order) 
   
-  attribute_table <- readxl::read_xlsx(attribute_info, sheet = "attribute")
+  if (length(current_metadata_order) != length(current_data_order)) {
+    error_message <- paste0("Datatable contains ", length(current_data_order)," columns.", 
+                           "You provided attribute names for ", length(current_metadata_order), ". Please review ", attribute_info)
+    stop(error_message, call. = FALSE)
+  }
+  if (any(is.na(reorder_index))) {
+    current_metadata_diff <- paste0(setdiff(current_metadata_order, current_data_order), collapse = ", ")
+    current_data_diff <- paste0(setdiff(current_data_order, current_metadata_order), collapse = ", ")
+    error_message <- paste0("These columns from the metadata attribute tab: ", current_metadata_diff, " do not match these columns in the current datatable: ", current_data_diff, ". Please review ", attribute_info)
+    stop(error_message, call. = FALSE)
+  }
+  
+  attribute_table <- reorder_attributes_helper(raw_attribute_table, reorder_index)
+  
   codes <- readxl::read_xlsx(attribute_info, sheet = "code_definitions")
   attribute_list <- list()
   attribute_names <- unique(codes$attribute_name)
@@ -60,6 +79,12 @@ create_datatable <- function(filepath,
 #' @keywords internal  
 code_helper <- function(code, definitions) {
   codeDefinition <- list(code = code, definition = definitions)
+}
+
+#' Reorder helper function 
+#' @keywords internal
+reorder_attributes_helper <- function(attribute_metadata_to_reorder, index_of_csv_col_order) {
+  attribute_metadata_to_reorder[index_of_csv_col_order, ]
 }
 
 #' Add Data Table 
