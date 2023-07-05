@@ -18,13 +18,12 @@ knitr::opts_chunk$set(
 library(EMLaide)
 ```
 
-## Updates to the EDI portal
 
-This article describes how to update an EDI package using EMLaide. See the official EDI guidelines for when updating a package is appropriate at the link [here](https://edirepository.org/resources/updating-a-data-package).
-
-EDI updates are very similar to data package uploads.  
+This article describes how to update an EDI package using EMLaide. See the official EDI guidelines for when to update a package (instead of creating a new one) at the link [here](https://edirepository.org/resources/updating-a-data-package).
 
 ## Generate EML Document
+
+EDI updates are very similar to data package uploads.  
 
 To update an existing EDI package, you will have to first create a new EML with the updated tables and metadata. Please reference the article [Create EML from Template](https://cvpia-osc.github.io/EMLaide/articles/create-EML-from-template.html) to see specifications for creating an EML document using EMLaide.
 
@@ -53,7 +52,7 @@ EML::eml_validate(paste0(updated_edi_number, ".xml"))
 
 ## Permissions for updates
 
-You must have the credentials (EDI username, EDI password) for the account that uploaded the original EDI package in order to update it.
+You must have the credentials (`EDI username`, `EDI password`) for the account that uploaded the original EDI package in order to update it.
 
 ## Update the package
 
@@ -68,9 +67,9 @@ One option is to update the package manually on the [EDI portal](https://portal.
 5) If applicable, under **Data Upload Options**, select *Allow PASTA+ to skip the upload of a data entity if it has a matching copy*.
 
 
-## Update using API 
+### Update using API 
 
-Assuming you have written your updated EML document with the identifier `updated_edi_number`, you can evalutae and update your package from RStudio using an API.
+Assuming you have written your updated EML document with the identifier `updated_edi_number`, you can evaluate and update your package from RStudio using an API.
 
 To evaluate your updated edi package, use the function `EMLaide::evaluate_edi_package()`. To update it, use the function `EMLaide::update_edi_package()`.
 

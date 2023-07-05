@@ -101,17 +101,13 @@
     
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://CVPIA-OSC.github.io/EMLaide/">EMLaide</a></span><span class="op">)</span></span></code></pre></div>
-<div class="section level2">
-<h2 id="updates-to-the-edi-portal">Updates to the EDI portal<a class="anchor" aria-label="anchor" href="#updates-to-the-edi-portal"></a>
-</h2>
 <p>This article describes how to update an EDI package using EMLaide.
-See the official EDI guidelines for when updating a package is
-appropriate at the link <a href="https://edirepository.org/resources/updating-a-data-package" class="external-link">here</a>.</p>
-<p>EDI updates are very similar to data package uploads.</p>
-</div>
+See the official EDI guidelines for when to update a package (instead of
+creating a new one) at the link <a href="https://edirepository.org/resources/updating-a-data-package" class="external-link">here</a>.</p>
 <div class="section level2">
 <h2 id="generate-eml-document">Generate EML Document<a class="anchor" aria-label="anchor" href="#generate-eml-document"></a>
 </h2>
+<p>EDI updates are very similar to data package uploads.</p>
 <p>To update an existing EDI package, you will have to first create a
 new EML with the updated tables and metadata. Please reference the
 article <a href="https://cvpia-osc.github.io/EMLaide/articles/create-EML-from-template.html" class="external-link">Create
@@ -142,9 +138,9 @@ the package:</p>
 <div class="section level2">
 <h2 id="permissions-for-updates">Permissions for updates<a class="anchor" aria-label="anchor" href="#permissions-for-updates"></a>
 </h2>
-<p>You must have the credentials (EDI username, EDI password) for the
-account that uploaded the original EDI package in order to update
-it.</p>
+<p>You must have the credentials (<code>EDI username</code>,
+<code>EDI password</code>) for the account that uploaded the original
+EDI package in order to update it.</p>
 </div>
 <div class="section level2">
 <h2 id="update-the-package">Update the package<a class="anchor" aria-label="anchor" href="#update-the-package"></a>
@@ -167,12 +163,11 @@ Package</em>
 matching copy</em>.</li>
 </ol>
 </div>
-</div>
-<div class="section level2">
-<h2 id="update-using-api">Update using API<a class="anchor" aria-label="anchor" href="#update-using-api"></a>
-</h2>
+<div class="section level3">
+<h3 id="update-using-api">Update using API<a class="anchor" aria-label="anchor" href="#update-using-api"></a>
+</h3>
 <p>Assuming you have written your updated EML document with the
-identifier <code>updated_edi_number</code>, you can evalutae and update
+identifier <code>updated_edi_number</code>, you can evaluate and update
 your package from RStudio using an API.</p>
 <p>To evaluate your updated edi package, use the function
 <code><a href="../reference/evaluate_edi_package.html">EMLaide::evaluate_edi_package()</a></code>. To update it, use the
@@ -195,6 +190,7 @@ function <code><a href="../reference/update_edi_package.html">EMLaide::update_ed
 <span>                   package_size <span class="op">=</span> <span class="st">"medium"</span>, <span class="co"># default</span></span>
 <span>                   existing_package_identifier <span class="op">=</span> <span class="va">old_edi_number</span>, </span>
 <span>                   environment <span class="op">=</span> <span class="st">"production"</span><span class="op">)</span></span></code></pre></div>
+</div>
 </div>
   </div>
 
