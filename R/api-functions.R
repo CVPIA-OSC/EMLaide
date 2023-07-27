@@ -70,7 +70,11 @@ evaluate_edi_package <- function(user_id, password, eml_file_path, environment =
     config = httr::authenticate(paste0('uid=', user_id, ",o=EDI", ',dc=edirepository,dc=org'), password),
     body = httr::upload_file(eml_file_path)
   )
+  message("-------------------------------------------------------------")
+  message(paste0('uid=', user_id, ",o=EDI", ',dc=edirepository,dc=org'), password)
   message(httr::authenticate(paste0('uid=', user_id, ",o=EDI", ',dc=edirepository,dc=org'), password))
+  message("-------------------------------------------------------------")
+  
   if (response$status_code == "202") {
     # pull transaction id from response content 
     transaction_id <- httr::content(response, as = 'text', encoding = 'UTF-8')
