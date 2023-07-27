@@ -71,6 +71,8 @@ evaluate_edi_package <- function(user_id, password, eml_file_path, environment =
     body = httr::upload_file(eml_file_path)
   )
   message("-------------------------------------------------------------")
+  message(response)
+  message("-------------------------------------------------------------")
   message(paste0('uid=', user_id, ",o=EDI", ',dc=edirepository,dc=org'), password)
   message(httr::authenticate(paste0('uid=', user_id, ",o=EDI", ',dc=edirepository,dc=org'), password))
   message("-------------------------------------------------------------")
@@ -87,9 +89,6 @@ evaluate_edi_package <- function(user_id, password, eml_file_path, environment =
         url = paste0(base_url, "evaluate/report/eml/", transaction_id),
         config = httr::authenticate(paste0('uid=', user_id, ",o=EDI", ',dc=edirepository,dc=org'), password)
       )
-      message("------------------------------")
-      message(httr::authenticate(paste0('uid=', user_id, ",o=EDI", ',dc=edirepository,dc=org'), password))
-      message("------------------------------")
       iter <- iter + 1
       if (response$status_code == "200") {
         # use generate_report_df() function defined above to parse transaction_response 
@@ -106,6 +105,8 @@ evaluate_edi_package <- function(user_id, password, eml_file_path, environment =
       }
     }
   } else {
+    message(httr::authenticate(paste0('uid=', user_id, ",o=EDI", ',dc=edirepository,dc=org'), password))
+    message("---------------------------------------------------------------------------------------")
     message("Your request to evaluate an EDI package failed,
            please check that you entered a valid username, password, and XML document.
            That XML document must link to a csv accessible online.
@@ -245,7 +246,6 @@ update_edi_package <- function(user_id, password, existing_package_identifier, e
     config = httr::authenticate(paste0('uid=', user_id, ",o=EDI", ',dc=edirepository,dc=org'), password),
     body = httr::upload_file(eml_file_path)
   )
-  message(httr::authenticate(paste0('uid=', user_id, ",o=EDI", ',dc=edirepository,dc=org'), password))
   if (response$status_code == "202") {
     Sys.sleep(sleep_time)
     transaction_id <- httr::content(response, as = 'text', encoding = 'UTF-8')
