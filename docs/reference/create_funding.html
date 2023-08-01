@@ -38,6 +38,9 @@ This award element is then nested within a project node to complete a funding se
     <li>
       <a href="../articles/create-EML-from-template.html">Create EML Document from Template</a>
     </li>
+    <li>
+      <a href="../articles/update-data-package.html">Update Data Package</a>
+    </li>
   </ul></li>
       </ul><ul class="nav navbar-nav navbar-right"><li>
   <a href="https://github.com/CVPIA-OSC/EMLaide" class="external-link">
@@ -70,8 +73,7 @@ This award element is then nested within a project node to complete a funding se
 <span>  <span class="va">award_title</span>,</span>
 <span>  funder_identifier <span class="op">=</span> <span class="cn">NULL</span>,</span>
 <span>  award_number <span class="op">=</span> <span class="cn">NULL</span>,</span>
-<span>  award_url <span class="op">=</span> <span class="cn">NULL</span>,</span>
-<span>  funding_description <span class="op">=</span> <span class="cn">NULL</span></span>
+<span>  award_url <span class="op">=</span> <span class="cn">NULL</span></span>
 <span><span class="op">)</span></span></code></pre></div>
     </div>
 
@@ -103,10 +105,6 @@ the registry. The funder identifier must be registered. Follow the instructions 
 <dd><p>(Optional) Optional to include a link to information about the funding
 award on the funding organization's webpage.</p></dd>
 
-
-<dt>funding_description</dt>
-<dd><p>(Optional) Provide a short description of the funding received.</p></dd>
-
 </dl></div>
     <div id="value">
     <h2>Value</h2>
@@ -121,10 +119,7 @@ award on the funding organization's webpage.</p></dd>
 <span class="r-in"><span>               funder_identifier <span class="op">=</span> <span class="st">"http://dx.doi.org/10.13039/100000001"</span>,</span></span>
 <span class="r-in"><span>               award_number <span class="op">=</span> <span class="st">"1656026"</span>,</span></span>
 <span class="r-in"><span>               award_title <span class="op">=</span> <span class="st">"National Science Foundation Grant"</span>,</span></span>
-<span class="r-in"><span>               award_url <span class="op">=</span> <span class="st">"https://www.nsf.gov/awardsearch/showAward?AWD_ID=1656026"</span>,</span></span>
-<span class="r-in"><span>               funding_description <span class="op">=</span> <span class="st">"BLE LTER is supported by the National Science </span></span></span>
-<span class="r-in"><span><span class="st">                                     Foundation under award #1656026 </span></span></span>
-<span class="r-in"><span><span class="st">                                      (2017-08-01 to 2022-07-31)."</span> <span class="op">)</span></span></span>
+<span class="r-in"><span>               award_url <span class="op">=</span> <span class="st">"https://www.nsf.gov/awardsearch/showAward?AWD_ID=1656026"</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $funderName</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] "National Science Foundation"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
@@ -136,9 +131,6 @@ award on the funding organization's webpage.</p></dd>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $awardNumber</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] "1656026"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $description</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "BLE LTER is supported by the National Science \n                                     Foundation under award #1656026 \n                                      (2017-08-01 to 2022-07-31)."</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $awardUrl</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] "https://www.nsf.gov/awardsearch/showAward?AWD_ID=1656026"</span>

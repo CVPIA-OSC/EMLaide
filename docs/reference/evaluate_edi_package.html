@@ -39,6 +39,9 @@ package."><meta property="og:image" content="https://CVPIA-OSC.github.io/EMLaide
     <li>
       <a href="../articles/create-EML-from-template.html">Create EML Document from Template</a>
     </li>
+    <li>
+      <a href="../articles/update-data-package.html">Update Data Package</a>
+    </li>
   </ul></li>
       </ul><ul class="nav navbar-nav navbar-right"><li>
   <a href="https://github.com/CVPIA-OSC/EMLaide" class="external-link">
@@ -67,7 +70,13 @@ package.</p>
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">evaluate_edi_package</span><span class="op">(</span><span class="va">user_id</span>, <span class="va">password</span>, <span class="va">eml_file_path</span>, environment <span class="op">=</span> <span class="st">"staging"</span><span class="op">)</span></span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">evaluate_edi_package</span><span class="op">(</span></span>
+<span>  <span class="va">user_id</span>,</span>
+<span>  <span class="va">password</span>,</span>
+<span>  <span class="va">eml_file_path</span>,</span>
+<span>  environment <span class="op">=</span> <span class="st">"staging"</span>,</span>
+<span>  package_size <span class="op">=</span> <span class="st">"medium"</span></span>
+<span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
