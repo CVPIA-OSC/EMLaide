@@ -25,10 +25,9 @@ reserve_edi_id <- function(user_id, password, environment = "production") {
     edi_number <- httr::content(response, as = "text", encoding = "UTF-8")
     paste0("edi.", edi_number, ".1", sep = "")
   } else {
-    message("Your request to reserve an EDI number failed, 
-          please check that you entered a valid username and password. 
-          See more information on request status below")
-    print(response)
+    message("Failed to reserve an EDI number. Status code: ", response$status_code, ". Please check that
+            you entered a valid username and password. See full response below.")
+    stop(response)
   }
 }
 
@@ -93,16 +92,14 @@ evaluate_edi_package <- function(user_id, password, eml_file_path, environment =
         break
       }
       else if(iter > max_iter) {
-        print("Request timed out, check that your inputs are all valid and try again")
-        break 
+        stop("Request timed out, check that your inputs are all valid and try again")
       }
     }
   } else {
-    message("Your request to evaluate an EDI package failed,
-           please check that you entered a valid username, password, and XML document.
-           That XML document must link to a csv accessible online.
+    message("Failed to evaluate EDI package. Status code: ", response$status_code, ".
+           Please check that you entered a valid username, password, and XML document.
            See more information on request status below")
-    print(response)
+    stop(response)
   }
 }
 
@@ -162,7 +159,7 @@ upload_edi_package <- function(user_id, password, eml_file_path, environment = "
     else if (check_error$status_code == "200" & 
              message != "Attempting to insert a data package that already exists in PASTA") { 
       report_df <- generate_report_df(check_error)
-      stop("EML not valid. Please fix errors in report dataframe or if report dataframe comes back empty please try to evaluate_edi_package().")
+      message("EML not valid. Please fix errors in report dataframe or if report dataframe comes back empty please try to evaluate_edi_package().")
       return(report_df)
       break
     } else {
@@ -183,18 +180,16 @@ upload_edi_package <- function(user_id, password, eml_file_path, environment = "
         # Stop loop if iterating through more than 5 times 
         else if(iter > max_iter) {
           stop("Request timed out, check that your inputs are all valid, rerun evaluate_edi_package(), and try again")
-          break 
         }
         iter <- iter + 1
       }
     }
     # Adds error handling message for 505, 405 & other errors that come from bad initial response 
   } else {
-    stop("Your request to upload an EDI package failed,
-           please check that you entered a valid username, password, and XML document.
-           That XML document must link to a csv accessible online.
+    message("Failed to upload EDI package. Status code: ", response$status_code, ".
+           Please check that you entered a valid username, password, and XML document.
            See more information on request status below")
-    print(response)
+    stop(response)
   }
 }
 
@@ -254,7 +249,7 @@ update_edi_package <- function(user_id, password, existing_package_identifier, e
     else if (check_error$status_code == "200" & 
              message != paste0("Attempting to update a data package to revision ", "'", revision_number, "' ", "but an equal")) { 
       report_df <- generate_report_df(check_error)
-      stop("EML not valid. Please fix errors in report dataframe or if report dataframe comes back empty please try to evaluate_edi_package().")
+      message("EML not valid. Please fix errors in report dataframe or if report dataframe comes back empty please try to evaluate_edi_package().")
       return(report_df)
       break
     } else {
@@ -274,17 +269,15 @@ update_edi_package <- function(user_id, password, existing_package_identifier, e
         # Stop loop if iterating through more than 5 times 
         else if(iter > max_iter) {
           stop("Request timed out, check that you inputs are all valid, rerun evalutate_edi_package(), and try again")
-          break 
         }
       }
     }
     # Adds error handling message for 505, 405 & other errors that come from bad initial response 
   } else {
-    message("Your request to update an EDI package failed,
-           please check that you entered a valid username, password, and XML document.
-           That XML document must link to a csv accessible online.
+    message("Failed to update EDI package. Status code: ", response$status_code, ".
+           Please check that you entered a valid username, password, and XML document.
            See more information on request status below")
-    print(response)
+    stop(response)
   }
 }
 
