@@ -98,7 +98,7 @@ evaluate_edi_package <- function(user_id, password, eml_file_path, environment =
   } else {
     message("Failed to evaluate EDI package. Status code: ", response$status_code, ".
            Please check that you entered a valid username, password, and XML document.
-           See more information on request status below")
+           See full response below.")
     stop(response)
   }
 }
@@ -188,7 +188,7 @@ upload_edi_package <- function(user_id, password, eml_file_path, environment = "
   } else {
     message("Failed to upload EDI package. Status code: ", response$status_code, ".
            Please check that you entered a valid username, password, and XML document.
-           See more information on request status below")
+           See full response below.")
     stop(response)
   }
 }
@@ -276,7 +276,7 @@ update_edi_package <- function(user_id, password, existing_package_identifier, e
   } else {
     message("Failed to update EDI package. Status code: ", response$status_code, ".
            Please check that you entered a valid username, password, and XML document.
-           See more information on request status below")
+           See full response below.")
     stop(response)
   }
 }
