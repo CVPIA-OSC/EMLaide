@@ -8,7 +8,8 @@ upload_edi_package(
   user_id,
   password,
   eml_file_path,
-  environment = "production"
+  environment = "production",
+  package_size = "small"
 )
 }
 \arguments{
