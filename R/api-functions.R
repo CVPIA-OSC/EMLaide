@@ -248,8 +248,7 @@ update_edi_package <- function(user_id, password, existing_package_identifier, e
              message != paste0("Attempting to update a data package to revision ", "'", revision_number, "' ", "but an equal")) { 
       report_df <- generate_report_df(check_error)
       message("EML not valid. Please fix errors in report dataframe or if report dataframe comes back empty please try to evaluate_edi_package().")
-      return(report_df)
-      break
+      stop(report_df)
     } else {
       iter <- 0
       max_iter <- 10
