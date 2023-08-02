@@ -88,8 +88,7 @@ evaluate_edi_package <- function(user_id, password, eml_file_path, environment =
         report_df <- generate_report_df(response)
         assign("report_df", report_df, envir = .GlobalEnv)
         print("Please check for errors in the report_df in .GlobalEnv")
-        return(report_df)
-        break
+        stop(report_df)
       }
       else if(iter > max_iter) {
         stop("Request timed out, check that your inputs are all valid and try again")
@@ -160,8 +159,7 @@ upload_edi_package <- function(user_id, password, eml_file_path, environment = "
              message != "Attempting to insert a data package that already exists in PASTA") { 
       report_df <- generate_report_df(check_error)
       message("EML not valid. Please fix errors in report dataframe or if report dataframe comes back empty please try to evaluate_edi_package().")
-      return(report_df)
-      break
+     stop(report_df)
     } else {
       iter <- 0
       max_iter <- 20
