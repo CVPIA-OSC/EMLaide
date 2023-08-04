@@ -13,7 +13,9 @@
 #' reserve_edi_id(user_id = "samuelwright")}
 #' @export                
 
-reserve_edi_id <- function(user_id, password, environment = "production") {
+reserve_edi_id <- function(user_id, password, environment = c("production", "staging", "development")) {
+  environment <- match.arg(environment)
+  
   base_url <- dplyr::case_when(environment == "staging" ~ "https://pasta-s.lternet.edu/package/reservations/eml/edi",
                                environment == "development" ~ "https://pasta-d.lternet.edu/package/reservations/eml/edi",
                                environment == "production" ~ "https://pasta.lternet.edu/package/reservations/eml/edi")
@@ -23,11 +25,15 @@ reserve_edi_id <- function(user_id, password, environment = "production") {
   )
   if (response$status_code == "201") {
     edi_number <- httr::content(response, as = "text", encoding = "UTF-8")
-    paste0("edi.", edi_number, ".1", sep = "")
+    cli::cli_alert_success("edi number: 'edi.{edi_number}.1' has been reserved.")
+    invisible(paste0("edi.", edi_number, ".1", sep = ""))
   } else {
-    message("Failed to reserve an EDI number. Status code: ", response$status_code, ". Please check that
-            you entered a valid username and password. See full response below.")
-    stop(response)
+    
+    cli::cli_abort(c(
+      "Failed to reserve an EDI number under {.var environment} = {environment}", 
+      "x" = "response returned status code `{response$status_code}` with message {httr::content(response)}"
+    ))
+    
   }
 }
 
