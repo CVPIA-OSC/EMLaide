@@ -49,6 +49,7 @@ reserve_edi_id <- function(user_id, password, environment = c("production", "sta
 #' "staging" - environment to test upload and rendering of new environment, "development"
 #' @param eml_file_path The file path to the EML metadata document that you wish to evaluate. 
 #' (A web link to the csv must be included in the dataset information in the EML in order for a data package to be evaluated.) 
+#' @param .max_timeout the maximim number of minutes to wait before timing out on xml upload
 #' @details For more information about the validation services see \href{https://pastaplus-core.readthedocs.io/en/latest/doc_tree/pasta_api/data_package_manager_api.html#upload-and-evaluation}{the PASTAplus docs}
 #' @return This package returns a data frame that contains the status of the 
 #' package. The data frame contains the following information:
@@ -59,11 +60,7 @@ reserve_edi_id <- function(user_id, password, environment = c("production", "sta
 #' \dontrun{evaluate_edi_package(user_id = "samuelwright", 
 #'                               eml_file_path = "data/edi20.1.xml")}
 #' @export   
-evaluate_edi_package <- function(user_id, password, eml_file_path, environment = "staging", package_size = "medium") {
-  sleep_time <- switch(package_size,
-                       "small" = 2,
-                       "medium" = 15,
-                       "large" = 60)
+evaluate_edi_package <- function(user_id, password, eml_file_path, environment = "staging", .max_timout = 5) {
   # Select package environment 
   base_url <- dplyr::case_when(environment == "staging" ~ "https://pasta-s.lternet.edu/package/",
                                environment == "development" ~ "https://pasta-d.lternet.edu/package/",
@@ -75,11 +72,13 @@ evaluate_edi_package <- function(user_id, password, eml_file_path, environment =
     config = httr::authenticate(paste0('uid=', user_id, ",o=EDI", ',dc=edirepository,dc=org'), password),
     body = httr::upload_file(eml_file_path)
   )
+  
   if (response$status_code == "202") {
     # pull transaction id from response content 
     transaction_id <- httr::content(response, as = 'text', encoding = 'UTF-8')
-    iter <- 0
-    max_iter <- 5
+    
+    timeout_in_seconds <- .max_timout * 60
+    sleep_time <- 2 # initial sleep
     while(TRUE){ # Loop through a few times to give EDI time to evaluate package 
       Sys.sleep(sleep_time) 
       # use transaction id to read evaluation report
@@ -87,24 +86,30 @@ evaluate_edi_package <- function(user_id, password, eml_file_path, environment =
         url = paste0(base_url, "evaluate/report/eml/", transaction_id),
         config = httr::authenticate(paste0('uid=', user_id, ",o=EDI", ',dc=edirepository,dc=org'), password)
       )
-      iter <- iter + 1
+      
       if (response$status_code == "200") {
         # use generate_report_df() function defined above to parse transaction_response 
         # content into a report_df table 
         report_df <- generate_report_df(response)
-        assign("report_df", report_df, envir = .GlobalEnv)
-        print("Please check for errors in the report_df in .GlobalEnv")
-        stop(report_df)
+        assign("report_df", report_df, envir = .GlobalEnv) # why not return this ?
+        cli::cli_alert_info("Please check for errors in the report_df in .GlobalEnv")
+        return(TRUE)
       }
-      else if(iter > max_iter) {
-        stop("Request timed out, check that your inputs are all valid and try again")
+      
+      if(sleep_time > timeout_in_seconds) {
+        cli::cli_abort(c(
+          "Request Timed Out", 
+          "x" = "check to make sure inputs are valid and try again, if correct try increasong {.var .max_timeout}."
+        ))
       }
+      
+      sleep_time = sleep_time * 2 # next time around wait twice as long
     }
   } else {
-    message("Failed to evaluate EDI package. Status code: ", response$status_code, ".
-           Please check that you entered a valid username, password, and XML document.
-           See full response below.")
-    stop(response)
+    cli::cli_abort(c(
+      "Failed to evaluate EDI package", 
+      "x" = "status code: {response$status_code} and message {httr::content(response)}"
+    ))
   }
 }
 
