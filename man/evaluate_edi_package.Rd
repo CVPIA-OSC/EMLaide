@@ -4,7 +4,13 @@
 \alias{evaluate_edi_package}
 \title{Validate EDI Data Package}
 \usage{
-evaluate_edi_package(user_id, password, eml_file_path, environment = "staging")
+evaluate_edi_package(
+  user_id,
+  password,
+  eml_file_path,
+  environment = "staging",
+  package_size = "medium"
+)
 }
 \arguments{
 \item{user_id}{EDI data portal user ID. Create an account an

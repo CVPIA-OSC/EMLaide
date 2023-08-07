@@ -18,7 +18,7 @@ maintenance_metadata <- structure(list(status = "ongoing", update_frequency = "a
                                   row.names = c(NA, -1L), class = c("tbl_df", "tbl", "data.frame"))
 funding_metadata <- structure(list(funder_name = "USBR", funder_identifier = NA, 
                                    award_number = "R14AC00096", award_title = "Salmonid Spawning and Rearing Habitat Restoration in the Sacramento River", 
-                                   award_url = NA, funding_description = NA), row.names = c(NA, -1L), class = c("tbl_df", "tbl", "data.frame"))
+                                   award_url = NA), row.names = c(NA, -1L), class = c("tbl_df", "tbl", "data.frame"))
 personnel_metadata <- structure(list(first_name = c("Amanda", "John", "Steve", "Ryan"), 
                                      last_name = c("Banet", "Hannon", "Tussing", "Greathouse"), 
                                      email = c("abanet@csuchico edu", "jhannon@usbr.gov", "sptussing@earthlink.net", "rgreathouse@psmfc.org"), 
@@ -107,7 +107,7 @@ test_that("Add project adds the approprite project information to the parent ele
     award = list(list(funderName = "United States Bureau of Reclamation", 
                       funderIdentifier = "https://www.wikidata.org/wiki/Q1010548", 
                       title = "Salmonid Spawning and Rearing Habitat Restoration in the Sacramento River", 
-                      awardNumber = "R14AC00096", description = NA, awardUrl = NA))))
+                      awardNumber = "R14AC00096", awardUrl = NA))))
   expect_equal(add_project(parent_element, funding_metadata, project_title = "My project", project_lead = personnel_metadata), expected_project)
 })
 
@@ -186,7 +186,7 @@ test_that("You can append all metadata inputs (except datatable) to parent eleme
                                                                                                                                                              award = list(list(funderName = "United States Bureau of Reclamation", 
                                                                                                                                                                                funderIdentifier = "https://www.wikidata.org/wiki/Q1010548", 
                                                                                                                                                                                title = "Salmonid Spawning and Rearing Habitat Restoration in the Sacramento River", 
-                                                                                                                                                                               awardNumber = "R14AC00096", description = NA, awardUrl = NA))), 
+                                                                                                                                                                               awardNumber = "R14AC00096", awardUrl = NA))), 
                                 coverage = list(geographicCoverage = list(geographicDescription = "Sacramento Riverin northern California in the reach of the river between Keswick Dam and Sacramento", 
                                                                           boundingCoordinates = list(westBoundingCoordinate = -122.448217, 
                                                                                                      eastBoundingCoordinate = -121.484446, northBoundingCoordinate = 40.612354, 

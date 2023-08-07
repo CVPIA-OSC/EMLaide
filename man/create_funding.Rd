@@ -9,8 +9,7 @@ create_funding(
   award_title,
   funder_identifier = NULL,
   award_number = NULL,
-  award_url = NULL,
-  funding_description = NULL
+  award_url = NULL
 )
 }
 \arguments{
@@ -30,8 +29,6 @@ the registry. The funder identifier must be registered. Follow the instructions 
 
 \item{award_url}{(Optional) Optional to include a link to information about the funding
 award on the funding organization's webpage.}
-
-\item{funding_description}{(Optional) Provide a short description of the funding received.}
 }
 \value{
 An award list that is then added to the project element of an EML file.
@@ -45,8 +42,5 @@ create_funding(funder_name = "National Science Foundation",
                funder_identifier = "http://dx.doi.org/10.13039/100000001",
                award_number = "1656026",
                award_title = "National Science Foundation Grant",
-               award_url = "https://www.nsf.gov/awardsearch/showAward?AWD_ID=1656026",
-               funding_description = "BLE LTER is supported by the National Science 
-                                     Foundation under award #1656026 
-                                      (2017-08-01 to 2022-07-31)." )
+               award_url = "https://www.nsf.gov/awardsearch/showAward?AWD_ID=1656026")
 }

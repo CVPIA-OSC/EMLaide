@@ -63,6 +63,9 @@
     <li>
       <a href="../articles/create-EML-from-template.html">Create EML Document from Template</a>
     </li>
+    <li>
+      <a href="../articles/update-data-package.html">Update Data Package</a>
+    </li>
   </ul>
 </li>
       </ul>
@@ -103,21 +106,21 @@ example, please download the <a href="https://cvpia-data-stewardship.s3-us-west-
 the <a href="https://docs.ropensci.org/EML/" class="external-link">EML</a> R package’s <a href="https://docs.ropensci.org/EML/reference/write_eml.html" class="external-link"><code>write_eml</code></a>
 function to convert our list into a valid EML document.</p>
 <p>Our EML file will contain the following elements:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">-</span><span class="at"> eml </span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="at">  -access</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="at">  -dataset</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> creator</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> contact</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> associated parties</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> title  </span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> abstract </span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> keyword set  </span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> license </span></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> methods </span></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> maintenance </span></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> project</span></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> coverage </span></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> data table </span></span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="kw">-</span><span class="at"> eml </span></span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="at">  -access</span></span>
+<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a><span class="at">  -dataset</span></span>
+<span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> creator</span></span>
+<span id="cb1-5"><a href="#cb1-5" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> contact</span></span>
+<span id="cb1-6"><a href="#cb1-6" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> associated parties</span></span>
+<span id="cb1-7"><a href="#cb1-7" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> title  </span></span>
+<span id="cb1-8"><a href="#cb1-8" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> abstract </span></span>
+<span id="cb1-9"><a href="#cb1-9" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> keyword set  </span></span>
+<span id="cb1-10"><a href="#cb1-10" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> license </span></span>
+<span id="cb1-11"><a href="#cb1-11" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> methods </span></span>
+<span id="cb1-12"><a href="#cb1-12" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> maintenance </span></span>
+<span id="cb1-13"><a href="#cb1-13" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> project</span></span>
+<span id="cb1-14"><a href="#cb1-14" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> coverage </span></span>
+<span id="cb1-15"><a href="#cb1-15" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> data table </span></span></code></pre></div>
 <p>We have two main sections within our EML document:</p>
 <ol style="list-style-type: decimal">
 <li>Access - The <a href="https://eml.ecoinformatics.org/schema/eml_xsd.html#eml_access" class="external-link">Access

@@ -31,7 +31,7 @@ project_lead <- dplyr::tibble(first_name = "Stacy", last_name = "Banet", email =
                               role = "creator", organization = "USBR", orcid = NA)
 funding_metadata <- list(funder_name = "USBR", funder_identifier = NA, award_number = "R14AC00096", 
                          award_title = "Salmonid Spawning and Rearing Habitat Restoration in the Sacramento River", 
-                         award_url = NA, funding_description = NA)
+                         award_url = NA)
 
 dataset <- list() \%>\%
    add_title(list(title = "O.mykiss Habitat monitoring and contact point project", short_name = "O.mykiss monitoring")) \%>\%
